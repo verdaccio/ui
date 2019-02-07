@@ -1,6 +1,5 @@
 /**
  * @prettier
- * @flow
  */
 
 import React, { Fragment } from 'react';

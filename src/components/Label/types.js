@@ -1,6 +1,5 @@
 /**
  * @prettier
- * @flow
  */
 import type { Styles } from '../../../../types';
 

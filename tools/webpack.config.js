@@ -1,5 +1,4 @@
 const path = require("path");
-const StyleLintPlugin = require("stylelint-webpack-plugin");
 
 const SRC_ROOT = path.resolve(__dirname, "../src/");
 const APP_ROOT = path.resolve(__dirname, "../static/");
@@ -10,20 +9,11 @@ module.exports = {
   output: {
     path: `${APP_ROOT}/static/`,
     filename: "[name].[hash].js"
-    // publicPath: "ToReplaceByVerdaccio/-/static"
   },
 
   resolve: {
     extensions: [".js", ".jsx"]
   },
-
-  plugins: [
-    new StyleLintPlugin({
-      files: ["src/**/styles.js"],
-      failOnError: false,
-      emitErrors: true
-    })
-  ],
 
   optimization: {
     runtimeChunk: {
@@ -43,14 +33,6 @@ module.exports = {
 
   module: {
     rules: [
-      // /* Pre loader */
-      // {
-      //   enforce: "pre",
-      //   test: /\.jsx?$/,
-      //   exclude: /node_modules/,
-      //   use: "eslint-loader"
-      // },
-
       /* Normal loader */
       {
         test: /\.jsx?$/,

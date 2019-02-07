@@ -1,6 +1,5 @@
 /**
  * @prettier
- * @flow
  */
 
 import React, { Component } from 'react';
@@ -99,7 +98,7 @@ export class Search extends Component<IProps, IState> {
       case 'click':
       case 'enter':
         this.setState({ search: '' });
-        // $FlowFixMe
+        
         history.push(`/-/web/version/${suggestionValue}`);
         break;
     }

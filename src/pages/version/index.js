@@ -1,15 +1,14 @@
 /**
  * @prettier
- * @flow
  */
 
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import Grid from '@material-ui/core/Grid/index';
 import Loading from '../../components/Loading';
 import DetailContainer from '../../components/DetailContainer';
 import DetailSidebar from '../../components/DetailSidebar';
-import {callDetailPage} from '../../utils/calls';
-import {getRouterPackageName} from '../../utils/package';
+import { callDetailPage } from '../../utils/calls';
+import { getRouterPackageName } from '../../utils/package';
 
 export const DetailContext = React.createContext();
 
@@ -35,9 +34,9 @@ class VersionPage extends Component<any, any> {
 
   /* eslint no-unused-vars: 0 */
   async componentDidUpdate(nextProps: any, prevState: any) {
-    const {packageName} = this.state;
+    const { packageName } = this.state;
     if (packageName !== prevState.packageName) {
-      const {readMe, packageMeta} = await callDetailPage(packageName);
+      const { readMe, packageMeta } = await callDetailPage(packageName);
       this.setState({
         readMe,
         packageMeta,
@@ -49,7 +48,7 @@ class VersionPage extends Component<any, any> {
   }
 
   static getDerivedStateFromProps(nextProps: any, prevState: any) {
-    const {match} = nextProps;
+    const { match } = nextProps;
     const packageName = getRouterPackageName(match);
 
     if (packageName !== prevState.packageName) {
@@ -70,8 +69,7 @@ class VersionPage extends Component<any, any> {
   }
 
   async loadPackageInfo() {
-    const {packageName} = this.state;
-    // FIXME: use utility
+    const { packageName } = this.state;
     document.title = `Verdaccio - ${packageName}`;
 
     this.setState({
@@ -79,7 +77,7 @@ class VersionPage extends Component<any, any> {
     });
 
     try {
-      const {readMe, packageMeta} = await callDetailPage(packageName);
+      const { readMe, packageMeta } = await callDetailPage(packageName);
       this.setState({
         readMe,
         packageMeta,
@@ -103,11 +101,11 @@ class VersionPage extends Component<any, any> {
   };
 
   render() {
-    const {isLoading, packageMeta, readMe, packageName} = this.state;
+    const { isLoading, packageMeta, readMe, packageName } = this.state;
 
     if (isLoading === false) {
       return (
-        <DetailContextProvider value={{packageMeta, readMe, packageName, enableLoading: this.enableLoading}}>
+        <DetailContextProvider value={{ packageMeta, readMe, packageName, enableLoading: this.enableLoading }}>
           <Grid className={'container content'} container={true} spacing={0}>
             <Grid item={true} xs={8}>
               {this.renderDetail()}

@@ -12,7 +12,7 @@ import RouterApp from './router';
 import API from './utils/api';
 import './styles/typeface-roboto.scss';
 import './styles/main.scss';
-import 'normalize.css';
+// import 'normalize.css';
 import Footer from './components/Footer';
 
 export const AppContext = React.createContext();
@@ -67,7 +67,6 @@ export default class App extends Component {
         isLoading: false,
       });
     } catch (error) {
-      // FIXME: add dialog
       console.error({
         title: 'Warning',
         message: `Unable to load package list: ${error.message}`,

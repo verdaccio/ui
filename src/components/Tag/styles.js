@@ -1,6 +1,5 @@
 /**
  * @prettier
- * @flow
  */
 
 import styled from 'react-emotion';

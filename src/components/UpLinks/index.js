@@ -12,7 +12,6 @@ import React from 'react';
 class UpLinks extends React.PureComponent<any> {
   render() {
     return (
-      // $FlowFixMe
       <DetailContextConsumer>
         {({ packageMeta }) => {
           return this.renderContent(packageMeta._uplinks);

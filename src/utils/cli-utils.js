@@ -1,6 +1,5 @@
 /**
  * @prettier
- * @flow
  */
 
 export const copyToClipBoardUtility = (str: string) => (event: SyntheticEvent<HTMLElement>) => {
@@ -15,7 +14,7 @@ export const copyToClipBoardUtility = (str: string) => (event: SyntheticEvent<HT
     selection.removeAllRanges();
     selection.addRange(range);
     document.execCommand('copy');
-    // $FlowFixMe
+
     document.body.removeChild(node);
   }
 };

@@ -1,7 +1,6 @@
 const path = require("path");
 const webpack = require("webpack");
 const HTMLWebpackPlugin = require("html-webpack-plugin");
-const FriendlyErrorsPlugin = require("friendly-errors-webpack-plugin");
 const baseConfig = require("./webpack.config");
 const StyleLintPlugin = require("stylelint-webpack-plugin");
 
@@ -45,7 +44,6 @@ export default {
     }),
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NoEmitOnErrorsPlugin(),
-    new FriendlyErrorsPlugin(),
     new StyleLintPlugin({
       files: ["src/**/styles.js"],
       failOnError: false,

@@ -1,4 +1,3 @@
-// @flow
 /* eslint-disable max-len */
 /* eslint-disable react/jsx-curly-brace-presence */
 

@@ -6,7 +6,13 @@ import ora from "ora";
 
 const DIST_PATH = path.resolve(__dirname, "../static/");
 
-const compiler = webpack(config);
+let compiler
+try {
+  compiler = webpack(config);
+} catch (e) {
+  console.error(e)
+}
+
 const spinner = ora("Compiler is running...").start();
 compiler.hooks.done.tap("Verdaccio Dev Server", () => {
   if (!global.rebuild) {

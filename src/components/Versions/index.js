@@ -1,6 +1,5 @@
 /**
  * @prettier
- * @flow
  */
 
 import { DetailContextConsumer } from '../../pages/version/index';
@@ -14,7 +13,6 @@ import { DIST_TAGS } from '../../../lib/constants';
 class Versions extends React.PureComponent<any> {
   render() {
     return (
-      // $FlowFixMe
       <DetailContextConsumer>
         {({ packageMeta }) => {
           return this.renderContent(packageMeta[DIST_TAGS], packageMeta.versions);
@@ -37,7 +35,6 @@ class Versions extends React.PureComponent<any> {
     </List>
   );
 
-  // $FlowFixMe
   renderContent(distTags: object, versions: object) {
     return (
       <>

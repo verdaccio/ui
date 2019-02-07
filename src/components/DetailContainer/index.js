@@ -1,6 +1,5 @@
 /**
  * @prettier
- * @flow
  */
 
 import React, { Component } from 'react';
@@ -30,7 +29,6 @@ class DetailContainer extends Component<any, any> {
     );
   }
 
-  // $FlowFixMe
   renderTabs = ({ readMe }) => {
     const { tabPosition } = this.state;
 

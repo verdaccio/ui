@@ -1,6 +1,5 @@
 /**
  * @prettier
- * @flow
  */
 
 /* eslint react/jsx-max-depth: 0 */
@@ -53,7 +52,6 @@ class DependencyBlock extends Component<any, any> {
     const deps = Object.entries(dependencies);
 
     return (
-      // $FlowFixMe
       <DetailContextConsumer>
         {({ enableLoading }) => {
           return (
@@ -85,7 +83,6 @@ class Dependencies extends Component<any, any> {
     );
   }
 
-  // $FlowFixMe
   renderDependencies({ packageMeta }) {
     const { latest } = packageMeta;
     // console.log('renderDependencies', latest);

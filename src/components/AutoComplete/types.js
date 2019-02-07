@@ -1,6 +1,5 @@
 /**
  * @prettier
- * @flow
  */
 
 import { InputAdornmentProps } from '@material-ui/core/InputAdornment';

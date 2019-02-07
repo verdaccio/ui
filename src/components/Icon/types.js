@@ -1,6 +1,5 @@
 /**
  * @prettier
- * @flow
  */
 import { Icons } from './index';
 import type { Styles } from '../../../../types';
@@ -23,7 +22,7 @@ export interface IIconsMap {
 export interface IProps {
   name: $Keys<typeof Icons>;
   className?: string;
-  // $FlowFixMe
+  
   onClick?: (event: SyntheticMouseEvent<SVGElement | HTMLSpanElement>) => void;
   size?: 'sm' | 'md';
   pointer?: boolean;

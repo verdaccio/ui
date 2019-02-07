@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
 import isEmpty from 'lodash/isEmpty';
 
 import PackageDetail from '../../components/PackageDetail';
@@ -11,10 +10,10 @@ import classes from './detail.scss';
 import PackageSidebar from '../../components/PackageSidebar/index';
 
 export default class Detail extends Component {
-  static propTypes = {
-    match: PropTypes.object,
-    isUserLoggedIn: PropTypes.bool,
-  };
+  // static propTypes = {
+  //   match: PropTypes.object,
+  //   isUserLoggedIn: PropTypes.bool,
+  // };
 
   state = {
     readMe: '',
