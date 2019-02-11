@@ -2,10 +2,15 @@
  * @prettier
  */
 
-import styled, { css } from '@emotion/styled';
+import styled from '@emotion/styled';
+// @ts-ignore
 import logo from './img/logo.svg';
 
-const Logo = styled('div')`
+interface Props {
+  md?: boolean;
+}
+
+const Logo = styled('div')<Props>`
   && {
     display: inline-block;
     vertical-align: middle;
@@ -18,7 +23,7 @@ const Logo = styled('div')`
     height: 40px;
     ${props =>
       props.md &&
-      css`
+      `
         width: 90px;
         height: 90px;
       `};
