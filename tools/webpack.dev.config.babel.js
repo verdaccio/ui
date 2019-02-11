@@ -17,7 +17,7 @@ export default {
       "react-hot-loader/patch",
       "webpack-dev-server/client?http://localhost:4872",
       "webpack/hot/only-dev-server",
-      `${SRC_ROOT}/index.js`
+      `${SRC_ROOT}/index.tsx`
     ]
   },
 

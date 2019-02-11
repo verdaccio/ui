@@ -4,7 +4,7 @@ const SRC_ROOT = path.resolve(__dirname, "../src/");
 const APP_ROOT = path.resolve(__dirname, "../static/");
 
 module.exports = {
-  entry: `${SRC_ROOT}/index.js`,
+  entry: `${SRC_ROOT}/index.tsx`,
 
   output: {
     path: `${APP_ROOT}/static/`,
@@ -12,7 +12,7 @@ module.exports = {
   },
 
   resolve: {
-    extensions: [".js", ".jsx"]
+    extensions: ['.tsx', '.ts', '.js']
   },
 
   optimization: {
@@ -33,11 +33,10 @@ module.exports = {
 
   module: {
     rules: [
-      /* Normal loader */
       {
-        test: /\.jsx?$/,
+        test: /\.(t|j)sx?$/,
+        loader: 'babel-loader',
         exclude: /node_modules/,
-        use: "babel-loader"
       },
       {
         test: /\.(jpe?g|png|gif|svg)$/,

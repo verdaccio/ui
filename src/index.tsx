@@ -1,24 +1,25 @@
-import React from "react";
+import React, { ReactElement } from "react";
 import ReactDOM from "react-dom";
 import { AppContainer } from "react-hot-loader";
 
+// @ts-ignore
 import App from "./app";
 
 const rootNode = document.getElementById("root");
 
-const renderApp = Component => {
+const renderApp = () => {
   ReactDOM.render(
     <AppContainer>
-      <Component />
+      <App />
     </AppContainer>,
     rootNode
   );
 };
 
-renderApp(App);
+renderApp();
 
 if (module.hot) {
   module.hot.accept("./app", () => {
-    renderApp(App);
+    renderApp();
   });
 }
