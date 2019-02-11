@@ -2,7 +2,7 @@
  * @prettier
  */
 
-import styled, { css } from '@emotion/styled';
+import styled from '@emotion/styled';
 import mq from '../../utils/styles/media';
 import Icon from '../Icon';
 
@@ -22,13 +22,13 @@ export const Inner = styled('div')`
     align-items: center;
     justify-content: flex-end;
     width: 100%;
-    ${mq.medium(css`
+    ${mq.medium(`
       min-width: 400px;
       max-width: 800px;
       margin: auto;
       justify-content: space-between;
     `)};
-    ${mq.large(css`
+    ${mq.large(`
       max-width: 1240px;
     `)};
   }
@@ -38,7 +38,7 @@ export const Left = styled('div')`
   && {
     align-items: center;
     display: none;
-    ${mq.medium(css`
+    ${mq.medium(`
       display: flex;
     `)};
   }

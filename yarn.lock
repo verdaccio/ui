@@ -1046,6 +1046,26 @@
     "@emotion/utils" "0.11.1"
     "@emotion/weak-memoize" "0.2.2"
 
+"@emotion/core@^10.0.7":
+  version "10.0.7"
+  resolved "https://registry.yarnpkg.com/@emotion/core/-/core-10.0.7.tgz#a894324b944cb06dcd36813afe35f07b0ed8d20d"
+  integrity sha512-f5ZeA8R5mTiD2VDFCy6kRTXrQXN/1s79WPvEZZSwROJIyy9mHBB0/Lxg9BSIXfFdXryVw76kHNehTcBkgDYS7A==
+  dependencies:
+    "@emotion/cache" "^10.0.7"
+    "@emotion/css" "^10.0.7"
+    "@emotion/serialize" "^0.11.4"
+    "@emotion/sheet" "0.9.2"
+    "@emotion/utils" "0.11.1"
+
+"@emotion/css@^10.0.7":
+  version "10.0.7"
+  resolved "https://registry.yarnpkg.com/@emotion/css/-/css-10.0.7.tgz#fbee607e07aeea444b147719b6472612fff9199b"
+  integrity sha512-r8JuPanNW0+ftBKFSna+6p5X7ewvU8d8NaNBlFjdPYl7xmtbDmoz8E7ceXqF4QgdRH4FBFIIRFzTA4Y05JwkIw==
+  dependencies:
+    "@emotion/serialize" "^0.11.4"
+    "@emotion/utils" "0.11.1"
+    babel-plugin-emotion "^10.0.7"
+
 "@emotion/hash@0.7.1":
   version "0.7.1"
   resolved "https://registry.yarnpkg.com/@emotion/hash/-/hash-0.7.1.tgz#9833722341379fb7d67f06a4b00ab3c37913da53"

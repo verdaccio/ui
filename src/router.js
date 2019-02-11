@@ -11,8 +11,8 @@ import { AppContextConsumer } from './app';
 // import {asyncComponent} from '../others/utils/asyncComponent';
 import history from './history';
 import Header from './components/Header';
-// import HomePage from './pages/home';
-import NotFound from './components/NotFound';
+import HomePage from './pages/home';
+// import NotFound from './components/NotFound';
 // const NotFound = asyncComponent(() => import("./components/NotFound"));
 // const DetailPackage = asyncComponent(() => import("./pages/detail"));
 // const VersionPackage = asyncComponent(() => import("./pages/version"));
@@ -25,7 +25,7 @@ class RouterApp extends Component<any, any> {
         <Fragment>
           {this.renderHeader()}
           <Switch>
-            <Route exact={true} path={'/'} render={NotFound} />
+            <Route exact={true} path={'/'} render={HomePage} />
             {/* <Route exact={true} path={'/-/web/detail/@:scope/:package'} render={this.renderDetailPage} />
             <Route exact={true} path={'/-/web/detail/:package'} render={this.renderDetailPage} />
             <Route exact={true} path={'/-/web/version/@:scope/:package'} render={this.renderVersionPage} />

@@ -3,7 +3,7 @@
  */
 
 import React from 'react';
-import styled, { css } from '@emotion/styled';
+import styled from '@emotion/styled';
 
 import TextField from '../TextField';
 import { IInputField } from './types';
@@ -21,15 +21,15 @@ export const InputField = ({ color, ...others }: IInputField) => (
   <TextField
     {...others}
     classes={{
-      input: css`
+      input: `
         && {
           ${color &&
-            css`
+            `
               color: ${color};
             `};
         }
       `,
-      root: css`
+      root: `
         && {
           &:before {
             content: '';
@@ -37,7 +37,7 @@ export const InputField = ({ color, ...others }: IInputField) => (
           }
           &:after {
             ${color &&
-              css`
+              `
                 border-color: ${color};
               `};
           }

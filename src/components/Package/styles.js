@@ -2,7 +2,7 @@
  * @prettier
  */
 
-import styled, { css } from '@emotion/styled';
+import styled from '@emotion/styled';
 import { Link } from 'react-router-dom';
 import { default as Photo } from '@material-ui/core/Avatar';
 import { default as Ico } from '../Icon';
@@ -170,7 +170,7 @@ export const WrapperLink = styled(Link)`
     text-decoration: none;
     display: block;
     color: #2f273c;
-    ${mq.medium(css`
+    ${mq.medium(`
       ${Header} {
         flex-direction: row;
         justify-content: space-between;

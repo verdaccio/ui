@@ -2,10 +2,10 @@
  * @prettier
  */
 
-import styled, { css } from '@emotion/styled';
-import AppBar from '@material-ui/core/AppBar/index';
-import Toolbar from '@material-ui/core/Toolbar/index';
-import IconButton from '@material-ui/core/IconButton/index';
+import styled from '@emotion/styled';
+import AppBar from '@material-ui/core/AppBar';
+import Toolbar from '@material-ui/core/Toolbar';
+import IconButton from '@material-ui/core/IconButton';
 
 import colors from '../../utils/styles/colors';
 import mq from '../../utils/styles/media';
@@ -78,7 +78,7 @@ export const NavBar = styled(AppBar)`
     min-height: 60px;
     display: flex;
     justify-content: center;
-    ${mq.medium(css`
+    ${mq.medium(`
       ${SearchWrapper} {
         display: flex;
       }
@@ -89,12 +89,12 @@ export const NavBar = styled(AppBar)`
         display: none;
       }
     `)};
-    ${mq.large(css`
+    ${mq.large(`
       ${InnerNavBar} {
         padding: 0 20px;
       }
     `)};
-    ${mq.xlarge(css`
+    ${mq.xlarge(`
       ${InnerNavBar} {
         max-width: 1240px;
         width: 100%;

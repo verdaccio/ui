@@ -139,13 +139,14 @@ export default class App extends Component {
     const {isLoading, isUserLoggedIn, packages, logoUrl, user, scope} = this.state;
     return (
       <Container isLoading={isLoading}>
-        {isLoading ? (
+       <Loading />
+        {/* {isLoading ? (
           <Loading />
         ) : (
           <Fragment>
             <AppContextProvider value={{isUserLoggedIn, packages, logoUrl, user, scope}}>{this.renderContent()}</AppContextProvider>
           </Fragment>
-        )}
+        )} */}
         {this.renderLoginModal()}
       </Container>
     );

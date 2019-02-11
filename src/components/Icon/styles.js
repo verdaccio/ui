@@ -2,7 +2,7 @@
  * @prettier
  */
 
-import styled, { css } from '@emotion/styled';
+import styled from '@emotion/styled';
 import { IProps } from './types';
 
 const getSize = (size: string) => {
@@ -25,7 +25,7 @@ const getSize = (size: string) => {
   }
 };
 
-const commonStyle = ({ size = 'sm', pointer, modifiers }: IProps) => css`
+const commonStyle = ({ size = 'sm', pointer, modifiers }: IProps) => `
   && {
     display: inline-block;
     cursor: ${pointer ? 'pointer' : 'default'};

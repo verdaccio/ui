@@ -10,13 +10,13 @@ interface Props {
   centered?: boolean;
 }
 
+// @ts-ignore-start
 const Spinner: React.FC<Props> = ({ size, centered }): React.ReactElement<HTMLDivElement> => (
-  // @ts-ignore
   <Wrapper centered={centered}>
-    // @ts-ignore
     <Circular size={size} />
   </Wrapper>
 );
+// @ts-ignore-end
 
 Spinner.defaultProps = {
   size: 50,

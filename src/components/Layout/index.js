@@ -2,7 +2,7 @@
  * @prettier
  */
 
-import styled, { css } from '@emotion/styled';
+import styled from '@emotion/styled';
 
 export const Content = styled('div')`
   && {
@@ -22,7 +22,7 @@ export const Container = styled('div')`
     overflow: hidden;
     ${({ isLoading }) =>
       isLoading &&
-      css`
+      `
         ${Content} {
           background-color: #f5f6f8;
         }

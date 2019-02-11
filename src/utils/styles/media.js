@@ -1,5 +1,3 @@
-import { css } from 'emotion';
-
 const breakpoints = {
   small: 576,
   medium: 768,
@@ -16,7 +14,7 @@ const mq = Object.keys(breakpoints).reduce(
     const suffix =
       typeof breakpoints[label] === 'string' ? '' : 'px';
     accumulator[label] = cls =>
-      css`
+      `
         @media (${prefix + breakpoints[label] + suffix}) {
           ${cls};
         }

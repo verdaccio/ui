@@ -1,4 +1,4 @@
-import React, { ReactElement } from "react";
+import React from "react";
 import ReactDOM from "react-dom";
 import { AppContainer } from "react-hot-loader";
 
