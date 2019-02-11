@@ -1,4 +1,4 @@
-import styled from 'react-emotion';
+import styled from '@emotion/styled';
 import Typography from '@material-ui/core/Typography';
 import { default as MuiListItemText } from '@material-ui/core/ListItemText';
 

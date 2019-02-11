@@ -2,7 +2,7 @@
  * @prettier
  */
 
-import styled, { css } from 'react-emotion';
+import styled, { css } from '@emotion/styled';
 import { Link } from 'react-router-dom';
 import { default as Photo } from '@material-ui/core/Avatar';
 import { default as Ico } from '../Icon';
@@ -14,7 +14,7 @@ import colors from '../../utils/styles/colors';
 import Label from '../Label';
 
 // HEADER
-export const Header = styled.div`
+export const Header = styled('div')`
   && {
     display: flex;
     flex-direction: column;
@@ -22,13 +22,13 @@ export const Header = styled.div`
   }
 `;
 
-export const Name = styled.span`
+export const Name = styled('span')`
   && {
     ${ellipsis('50%')};
   }
 `;
 
-export const MainInfo = styled.span`
+export const MainInfo = styled('span')`
   && {
     font-size: 16px;
     font-weight: 600;
@@ -47,7 +47,7 @@ export const MainInfo = styled.span`
   }
 `;
 
-export const OverviewItem = styled.span`
+export const OverviewItem = styled('span')`
   && {
     display: flex;
     align-items: center;
@@ -56,7 +56,7 @@ export const OverviewItem = styled.span`
   }
 `;
 
-export const Overview = styled.span`
+export const Overview = styled('span')`
   && {
     position: relative;
     display: flex;
@@ -64,7 +64,7 @@ export const Overview = styled.span`
   }
 `;
 
-export const Version = styled.span`
+export const Version = styled('span')`
   && {
     font-size: 12px;
     padding: 0 0 0 10px;
@@ -87,7 +87,7 @@ export const Icon = styled(Ico)`
   }
 `;
 
-export const Published = styled.span`
+export const Published = styled('span')`
   && {
     display: none;
     color: ${colors.greyLight};
@@ -96,13 +96,13 @@ export const Published = styled.span`
 `;
 
 // Content
-export const Field = styled.div`
+export const Field = styled('div')`
   && {
     padding: 0 0 5px 0;
   }
 `;
 
-export const Content = styled.div`
+export const Content = styled('div')`
   && {
     ${Field} {
       :last-child {
@@ -118,7 +118,7 @@ export const Text = styled(Label)`
   }
 `;
 
-export const Details = styled.span`
+export const Details = styled('span')`
   && {
     margin-left: 5px;
     line-height: 14px;
@@ -127,7 +127,7 @@ export const Details = styled.span`
   }
 `;
 
-export const Author = styled.div`
+export const Author = styled('div')`
   && {
     display: flex;
     align-items: center;
@@ -143,14 +143,14 @@ export const Avatar = styled(Photo)`
   }
 `;
 
-export const Description = styled.div`
+export const Description = styled('div')`
   && {
     margin: 5px 0;
   }
 `;
 
 // Footer
-export const Footer = styled.div`
+export const Footer = styled('div')`
   && {
     display: none;
     padding: 5px 0 0 0;

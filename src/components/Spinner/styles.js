@@ -2,11 +2,11 @@
  * @prettier
  */
 
-import styled, { css } from 'react-emotion';
+import styled, { css } from '@emotion/styled';
 import CircularProgress from '@material-ui/core/CircularProgress/index';
 import colors from '../../utils/styles/colors';
 
-export const Wrapper = styled.div`
+export const Wrapper = styled('div')`
   && {
     display: flex;
     align-items: center;

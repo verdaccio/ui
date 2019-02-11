@@ -2,9 +2,9 @@
  * @prettier
  */
 
-import styled, { css } from 'react-emotion';
+import styled, { css } from '@emotion/styled';
 
-export const Content = styled.div`
+export const Content = styled('div')`
   && {
     background-color: #ffffff;
     flex: 1;
@@ -14,7 +14,7 @@ export const Content = styled.div`
   }
 `;
 
-export const Container = styled.div`
+export const Container = styled('div')`
   && {
     display: flex;
     flex-direction: column;

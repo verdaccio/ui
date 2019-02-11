@@ -3,12 +3,12 @@
  */
 
 import React from 'react';
-import styled, { css } from 'react-emotion';
+import styled, { css } from '@emotion/styled';
 
 import TextField from '../TextField';
 import { IInputField } from './types';
 
-export const Wrapper = styled.div`
+export const Wrapper = styled('div')`
   && {
     width: 100%;
     height: 32px;

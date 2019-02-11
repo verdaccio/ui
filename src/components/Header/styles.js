@@ -2,7 +2,7 @@
  * @prettier
  */
 
-import styled, { css } from 'react-emotion';
+import styled, { css } from '@emotion/styled';
 import AppBar from '@material-ui/core/AppBar/index';
 import Toolbar from '@material-ui/core/Toolbar/index';
 import IconButton from '@material-ui/core/IconButton/index';
@@ -18,7 +18,7 @@ export const InnerNavBar = styled(Toolbar)`
   }
 `;
 
-export const Greetings = styled.span`
+export const Greetings = styled('span')`
   && {
     margin: 0 5px 0 0;
   }
@@ -37,7 +37,7 @@ export const LeftSide = styled(RightSide)`
   }
 `;
 
-export const MobileNavBar = styled.div`
+export const MobileNavBar = styled('div')`
   && {
     align-items: center;
     display: flex;
@@ -47,7 +47,7 @@ export const MobileNavBar = styled.div`
   }
 `;
 
-export const InnerMobileNavBar = styled.div`
+export const InnerMobileNavBar = styled('div')`
   && {
     border-radius: 4px;
     background-color: ${colors.greyLight};
@@ -64,7 +64,7 @@ export const IconSearchButton = styled(IconButton)`
   }
 `;
 
-export const SearchWrapper = styled.div`
+export const SearchWrapper = styled('div')`
   && {
     display: none;
     max-width: 393px;

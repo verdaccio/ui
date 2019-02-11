@@ -2,7 +2,7 @@
  * @prettier
  */
 
-import styled from 'react-emotion';
+import styled from '@emotion/styled';
 import Card from '@material-ui/core/Card/index';
 import Typography from '@material-ui/core/Typography/index';
 

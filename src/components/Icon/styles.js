@@ -2,7 +2,7 @@
  * @prettier
  */
 
-import styled, { css } from 'react-emotion';
+import styled, { css } from '@emotion/styled';
 import { IProps } from './types';
 
 const getSize = (size: string) => {
@@ -40,7 +40,7 @@ export const Svg = styled.svg`
   }
 `;
 
-export const ImgWrapper = styled.span`
+export const ImgWrapper = styled('span')`
   && {
     ${commonStyle};
   }

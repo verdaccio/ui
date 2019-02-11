@@ -2,10 +2,10 @@
  * @prettier
  */
 
-import styled from 'react-emotion';
+import styled from '@emotion/styled';
 import colors from '../../utils/styles/colors';
 
-export const Content = styled.div`
+export const Content = styled('div')`
   && {
     padding: 10px;
     background-color: ${colors.white};

@@ -2,10 +2,10 @@
  * @prettier
  */
 
-import styled from 'react-emotion';
+import styled from '@emotion/styled';
 import { ellipsis } from '../../utils/styles/mixings';
 
-export const Wrapper = styled.span`
+export const Wrapper = styled('span')`
   && {
     vertical-align: middle;
     line-height: 22px;

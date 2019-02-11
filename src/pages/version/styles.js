@@ -2,7 +2,7 @@
  * @prettier
  */
 
-import styled from 'react-emotion';
+import styled from '@emotion/styled';
 import DialogTitle from '@material-ui/core/DialogTitle/index';
 import colors from '../../utils/styles/colors';
 import { fontSize } from '../../utils/styles/sizes';

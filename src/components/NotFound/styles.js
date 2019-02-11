@@ -2,7 +2,7 @@
  * @prettier
  */
 
-import styled from 'react-emotion';
+import styled from '@emotion/styled';
 import Typography from '@material-ui/core/Typography/index';
 import { default as MuiList } from '@material-ui/core/List/index';
 import { default as MuiCard } from '@material-ui/core/Card/index';

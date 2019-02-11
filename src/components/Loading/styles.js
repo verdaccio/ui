@@ -2,9 +2,9 @@
  * @prettier
  */
 
-import styled from 'react-emotion';
+import styled from '@emotion/styled';
 
-export const Wrapper = styled.div`
+export const Wrapper = styled('div')`
   && {
     transform: translate(-50%, -50%);
     top: 50%;
@@ -13,7 +13,7 @@ export const Wrapper = styled.div`
   }
 `;
 
-export const Badge = styled.div`
+export const Badge = styled('div')`
   && {
     margin: 0 0 30px 0;
     border-radius: 25px;

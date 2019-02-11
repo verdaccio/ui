@@ -2,10 +2,10 @@
  * @prettier
  */
 
-import styled, { css } from 'react-emotion';
+import styled, { css } from '@emotion/styled';
 import logo from './img/logo.svg';
 
-const Logo = styled.div`
+const Logo = styled('div')`
   && {
     display: inline-block;
     vertical-align: middle;
