@@ -3,7 +3,7 @@
  */
 
 import styled from '@emotion/styled';
-import { IProps } from './types';
+import { Props } from './index';
 
 const getSize = (size: string) => {
   switch (size) {
@@ -25,7 +25,7 @@ const getSize = (size: string) => {
   }
 };
 
-const commonStyle = ({ size = 'sm', pointer, modifiers }: IProps) => `
+const commonStyle = ({ size = 'sm', pointer, modifiers }: Pick<Props, 'size' | 'modifiers' | 'pointer'>) => `
   && {
     display: inline-block;
     cursor: ${pointer ? 'pointer' : 'default'};

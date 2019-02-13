@@ -2,8 +2,9 @@
  * @prettier
  */
 
+import React from 'react';
 import styled from '@emotion/styled';
-import { ellipsis } from '../../utils/styles/mixings';
+// import { ellipsis } from '../../utils/styles/mixings';
 
 export const Wrapper = styled('span')`
   && {
@@ -14,6 +15,9 @@ export const Wrapper = styled('span')`
     background-color: hsla(0, 0%, 51%, 0.1);
     padding: 0.22rem 0.4rem;
     margin: 5px 10px 0 0;
-    ${ellipsis('300px')};
   }
 `;
+
+const Tag: React.FC = ({ children }) => <Wrapper>{children}</Wrapper>;
+
+export default Tag;

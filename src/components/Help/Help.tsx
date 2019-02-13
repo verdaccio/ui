@@ -3,37 +3,43 @@
  */
 
 import React, { Fragment } from 'react';
-import type { Node } from 'react';
-import CardActions from '@material-ui/core/CardActions/index';
-import CardContent from '@material-ui/core/CardContent/index';
-import Button from '@material-ui/core/Button/index';
-import Typography from '@material-ui/core/Typography/index';
+import CardActions from '@material-ui/core/CardActions';
+import CardContent from '@material-ui/core/CardContent';
+import Button from '@material-ui/core/Button';
+import Typography from '@material-ui/core/Typography';
+import styled from '@emotion/styled';
+import Card from '@material-ui/core/Card';
 
-import CopyToClipBoard from '../CopyToClipBoard/index';
+import CopyToClipBoard from '../CopyToClipBoard/copy-to-clipboard';
 import { getRegistryURL } from '../../utils/url';
-import { CardStyled as Card, HelpTitle } from './styles';
 
-function renderHeadingClipboardSegments(title: string, text: string): Node {
+export const CardStyled = styled(Card)`
+  && {
+    width: 600px;
+    margin: auto;
+  }
+`;
+
+function renderHeadingClipboardSegments(title: string, text: string) {
   return (
-    <Fragment>
+    <>
       <Typography variant={'body2'}>{title}</Typography>
       <CopyToClipBoard text={text} />
-    </Fragment>
+    </>
   );
 }
 
-const Help = (): Node => {
+const Help = () => {
   const registryUrl = getRegistryURL();
-
   return (
     <Card id={'help-card'}>
       <CardContent>
         <Typography component={'h2'} gutterBottom={true} id={'help-card__title'} variant={'headline'}>
           {'No Package Published Yet.'}
         </Typography>
-        <HelpTitle color={'textSecondary'} gutterBottom={true}>
+        <Typography color="primary" style={{ marginBottom: '20px' }}>
           {'To publish your first package just:'}
-        </HelpTitle>
+        </Typography>
         {renderHeadingClipboardSegments('1. Login', `$ npm adduser --registry ${registryUrl}`)}
         {renderHeadingClipboardSegments('2. Publish', `$ npm publish --registry ${registryUrl}`)}
         <Typography variant={'body2'}>{'3. Refresh this page.'}</Typography>

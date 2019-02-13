@@ -2,7 +2,11 @@
  * @prettier
  */
 
+import React from 'react';
 import styled from '@emotion/styled';
+
+import Logo from '../Logo';
+import Spinner from '../Spinner';
 
 export const Wrapper = styled('div')`
   && {
@@ -21,3 +25,14 @@ export const Badge = styled('div')`
     background: #f7f8f6;
   }
 `;
+
+const Loading: React.FC = (): React.ReactElement<HTMLDivElement> => (
+  <Wrapper>
+    <Badge>
+      <Logo md={true} />
+    </Badge>
+    <Spinner />
+  </Wrapper>
+);
+
+export default Loading;
