@@ -10,7 +10,7 @@ import { AppContextConsumer } from './app';
 
 // import {asyncComponent} from '../others/utils/asyncComponent';
 import history from './history';
-import Header from './components/Header';
+import Header from './components/Header/Header';
 import HomePage from './pages/home/Home';
 // import NotFound from './components/NotFound';
 // const NotFound = asyncComponent(() => import("./components/NotFound"));

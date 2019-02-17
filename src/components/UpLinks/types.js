@@ -1,5 +1,0 @@
-/**
- * @prettier
- */
-
-export interface IProps {}

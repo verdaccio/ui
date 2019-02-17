@@ -8,7 +8,7 @@ import Grid from '@material-ui/core/Grid';
 import DialogTitle from '@material-ui/core/DialogTitle';
 
 import Loading from '../../components/Loading';
-import DetailContainer from '../../components/DetailContainer';
+import DetailContainer from '../../components/DetailContainer/DetailContainer';
 import DetailSidebar from '../../components/DetailSidebar';
 import { callDetailPage } from '../../utils/calls';
 import { getRouterPackageName } from '../../utils/package';
@@ -26,6 +26,7 @@ export const Title = styled(DialogTitle)`
 export interface DetailContextProps {
   packageMeta: any;
   packageName: string;
+  readMe?: string;
 }
 
 // TODO -> create a DetailContext HOC

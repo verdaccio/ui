@@ -12,7 +12,7 @@ import { DetailContext, DetailContextProps } from '../../pages/version/Version';
 import Install from '../Install';
 import Authors from '../Author';
 import License from '../License/License';
-import Repository from '../Repository';
+import Repository from '../Repository/Repositoy';
 import Developers from '../Developers';
 import colors from '../../utils/styles/colors';
 

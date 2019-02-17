@@ -3,9 +3,9 @@
  */
 
 import styled from '@emotion/styled';
-import Typography from '@material-ui/core/Typography/index';
-import { default as MuiList } from '@material-ui/core/List/index';
-import { default as MuiCard } from '@material-ui/core/Card/index';
+import Typography from '@material-ui/core/Typography';
+import { default as MuiList } from '@material-ui/core/List';
+import { default as MuiCard } from '@material-ui/core/Card';
 
 export const Wrapper = styled('div')`
   display: flex;

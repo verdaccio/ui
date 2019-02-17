@@ -6,7 +6,7 @@ import {makeLogin, isTokenExpire} from './utils/login';
 
 import Loading from './components/Loading';
 import LoginModal from './components/Login';
-import Header from './components/Header';
+import Header from './components/Header/Header';
 import {Container, Content} from './components/Layout/Layout';
 import RouterApp from './router';
 import API from './utils/api';
