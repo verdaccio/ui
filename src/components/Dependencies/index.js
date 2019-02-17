@@ -8,7 +8,7 @@ import React, { Component, Fragment } from 'react';
 import { withRouter } from 'react-router-dom';
 import CardContent from '@material-ui/core/CardContent/index';
 
-import { DetailContextConsumer } from '../../pages/version';
+import { DetailContextConsumer } from '../../pages/version/Version';
 import { Content, CardWrap, Heading, Tags, Tag } from './styles';
 
 class DepDetail extends Component<any, any> {

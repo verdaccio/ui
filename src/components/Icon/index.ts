@@ -1,1 +1,5 @@
-export { default } from './Icon'
+/**
+ * @prettier
+ */
+
+export { default } from './Icon';

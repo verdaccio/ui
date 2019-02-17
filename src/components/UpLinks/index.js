@@ -2,7 +2,7 @@
  * @prettier
  */
 
-import { DetailContextConsumer } from '../../pages/version/index';
+import { DetailContextConsumer } from '../../pages/version/Version';
 import { formatDateDistance } from '../../utils/package';
 import { Heading, Spacer, ListItemText } from './styles';
 import List from '@material-ui/core/List/index';

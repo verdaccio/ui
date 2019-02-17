@@ -17,8 +17,8 @@ import AccountCircle from '@material-ui/icons/AccountCircle';
 import { default as IconSearch } from '@material-ui/icons/Search';
 
 import { getRegistryURL } from '../../utils/url';
-import ExternalLink from '../Link';
-import Logo from '../Logo';
+import ExternalLink from '../Link/Link';
+import Logo from '../Logo/Logo';
 import RegistryInfoDialog from '../RegistryInfoDialog';
 import Label from '../Label';
 import Search from '../Search';

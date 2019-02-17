@@ -3,7 +3,7 @@
 
 import React, {Component, Fragment} from 'react';
 
-import { DetailContextConsumer } from '../../pages/version/index';
+import { DetailContextConsumer } from '../../pages/version/Version';
 import Card from '@material-ui/core/Card/index';
 import CardContent from '@material-ui/core/CardContent/index';
 import Grid from '@material-ui/core/Grid/index';

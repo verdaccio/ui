@@ -1,1 +1,5 @@
-export { default } from './Help'
+/**
+ * @prettier
+ */
+
+export { default } from './Help';

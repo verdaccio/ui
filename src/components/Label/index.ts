@@ -1,1 +1,5 @@
-export  { default } from './Label'
+/**
+ * @prettier
+ */
+
+export { default } from './Label';

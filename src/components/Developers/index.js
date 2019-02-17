@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 
-import { DetailContextConsumer } from '../../pages/version';
+import { DetailContextConsumer } from '../../pages/version/Version';
 import Card from '@material-ui/core/Card';
 import Avatar from '@material-ui/core/Avatar';
 import Tooltip from '@material-ui/core/Tooltip';

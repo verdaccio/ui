@@ -5,7 +5,7 @@
 import React from 'react';
 import styled from '@emotion/styled';
 
-import TextField from '../TextField';
+import TextField from '../TextField/TextField';
 import { IInputField } from './types';
 
 export const Wrapper = styled('div')`

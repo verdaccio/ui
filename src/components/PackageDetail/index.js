@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import isNil from 'lodash/isNil';
 
-import Readme from '../Readme';
+import Readme from '../Readme/Readme';
 
 import classes from './packageDetail.scss';
 

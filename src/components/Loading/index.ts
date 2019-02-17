@@ -1,1 +1,5 @@
-export { default } from './Loading'
+/**
+ * @prettier
+ */
+
+export { default } from './Loading';

@@ -7,7 +7,7 @@ import {makeLogin, isTokenExpire} from './utils/login';
 import Loading from './components/Loading';
 import LoginModal from './components/Login';
 import Header from './components/Header';
-import {Container, Content} from './components/Layout';
+import {Container, Content} from './components/Layout/Layout';
 import RouterApp from './router';
 import API from './utils/api';
 import './styles/typeface-roboto.scss';
@@ -137,7 +137,6 @@ export default class App extends React.Component {
 
   render() {
     const {isLoading, isUserLoggedIn, packages, logoUrl, user, scope} = this.state;
-    console.log('packages', packages)
     return (
       <Container isLoading={isLoading}>
         {isLoading ? (

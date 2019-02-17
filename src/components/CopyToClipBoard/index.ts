@@ -1,1 +1,5 @@
-export { default } from './copy-to-clipboard'
+/**
+ * @prettier
+ */
+
+export { default } from './CopyToClipBoard';

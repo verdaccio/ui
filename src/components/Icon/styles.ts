@@ -3,7 +3,7 @@
  */
 
 import styled from '@emotion/styled';
-import { Props } from './index';
+import { Props } from './Icon';
 
 const getSize = (size: string) => {
   switch (size) {
@@ -35,20 +35,14 @@ const commonStyle = ({ size = 'sm', pointer, modifiers }: Pick<Props, 'size' | '
 `;
 
 export const Svg = styled.svg`
-  && {
-    ${commonStyle};
-  }
+  ${commonStyle};
 `;
 
 export const ImgWrapper = styled('span')`
-  && {
-    ${commonStyle};
-  }
+  ${commonStyle};
 `;
 
 export const Img = styled.img`
-  && {
-    width: 100%;
-    height: auto;
-  }
+  width: 100%;
+  height: auto;
 `;

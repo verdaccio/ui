@@ -1,1 +1,5 @@
-export { default } from './Spinner'
+/**
+ * @prettier
+ */
+
+export { default } from './Spinner';
