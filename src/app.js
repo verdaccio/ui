@@ -1,4 +1,4 @@
-import React, {Component, Fragment} from 'react';
+import React from 'react';
 import isNil from 'lodash/isNil';
 
 import storage from './utils/storage';
@@ -20,7 +20,7 @@ export const AppContext = React.createContext();
 export const AppContextProvider = AppContext.Provider;
 export const AppContextConsumer = AppContext.Consumer;
 
-export default class App extends Component {
+export default class App extends React.Component {
   state = {
     error: {},
     logoUrl: window.VERDACCIO_LOGO,
@@ -137,16 +137,16 @@ export default class App extends Component {
 
   render() {
     const {isLoading, isUserLoggedIn, packages, logoUrl, user, scope} = this.state;
+    console.log('packages', packages)
     return (
       <Container isLoading={isLoading}>
-       <Loading />
-        {/* {isLoading ? (
+        {isLoading ? (
           <Loading />
         ) : (
-          <Fragment>
+          <>
             <AppContextProvider value={{isUserLoggedIn, packages, logoUrl, user, scope}}>{this.renderContent()}</AppContextProvider>
-          </Fragment>
-        )} */}
+          </>
+        )}
         {this.renderLoginModal()}
       </Container>
     );
@@ -167,14 +167,14 @@ export default class App extends Component {
 
   renderContent = () => {
     return (
-      <Fragment>
+      <>
         <Content>
           <RouterApp onLogout={this.handleLogout} onToggleLoginModal={this.handleToggleLoginModal}>
             {this.renderHeader()}
           </RouterApp>
         </Content>
         <Footer />
-      </Fragment>
+      </>
     );
   };
 

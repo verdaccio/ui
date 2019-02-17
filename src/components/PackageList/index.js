@@ -47,6 +47,6 @@ export default class PackageList extends React.Component {
   hasPackages() {
     const {packages} = this.props;
 
-    return packages.length > 0;
+    return packages && packages.length > 0;
   }
 }

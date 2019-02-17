@@ -2,9 +2,7 @@
   "name": "ui",
   "version": "1.0.0",
   "description": "Verdaccio User Interface",
-  "author": {
-    "name": "Verdaccio Core Team"
-  },
+  "author": "Verdaccio Core Team",
   "repository": {
     "type": "git",
     "url": "git://github.com/verdaccio/ui"
@@ -36,7 +34,7 @@
     "@types/react-router-dom": "^4.3.1",
     "@types/webpack-env": "^1.13.7",
     "@verdaccio/babel-preset": "^0.0.4",
-    "@verdaccio/types": "4.1.4",
+    "@verdaccio/types": "5.0.0-beta.2",
     "autosuggest-highlight": "3.1.1",
     "awesome-typescript-loader": "^5.2.1",
     "cross-env": "5.2.0",
@@ -74,6 +72,7 @@
     "stylelint-webpack-plugin": "0.10.5",
     "typeface-roboto": "0.0.54",
     "url-loader": "1.1.1",
+    "verdaccio": "^3.11.4",
     "webpack": "4.20.2",
     "webpack-bundle-analyzer": "3.0.2",
     "webpack-cli": "3.1.1",
@@ -88,6 +87,7 @@
   ],
   "scripts": {
     "pre:webpack": "rimraf static/*",
+    "dev:start": "verdaccio",
     "dev:webui": "cross-env BABEL_ENV=ui babel-node tools/dev.server.js",
     "lint:css": "stylelint 'src/webui/**/styles.js'"
   },
