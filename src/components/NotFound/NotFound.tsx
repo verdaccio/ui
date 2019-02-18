@@ -15,12 +15,13 @@ import { Wrapper, Inner, EmptyPackage } from './styles';
 import PackageImg from './img/package.svg';
 
 interface Props {
-  history: any;
+  history?: any;
   width?: any;
+  pkg?: string;
 }
 
 // eslint-disable-next-line react/prop-types
-const NotFound: React.FC<Props> = ({ history, width }) => {
+const NotFound: React.FC<Props> = ({ history, width, pkg }) => {
   const handleGoTo = (to: string) => () => {
     history.push(to);
   };
@@ -59,4 +60,4 @@ const NotFound: React.FC<Props> = ({ history, width }) => {
   );
 };
 
-export default withRouter(NotFound);
+export default NotFound;

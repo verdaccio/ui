@@ -1,1 +1,5 @@
-export { default } from './Header'
+/**
+ * @prettier
+ */
+
+export { default } from './Header';

@@ -1,1 +1,5 @@
-export { default } from './Versions'
+/**
+ * @prettier
+ */
+
+export { default } from './Versions';

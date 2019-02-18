@@ -1,1 +1,5 @@
-export { default } from './NoItems'
+/**
+ * @prettier
+ */
+
+export { default } from './NoItems';

@@ -1,1 +1,5 @@
-export { default } from './PackageDetail'
+/**
+ * @prettier
+ */
+
+export { default } from './PackageDetail';

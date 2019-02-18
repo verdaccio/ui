@@ -1,1 +1,5 @@
-export { default, DetailContext, DetailContextProps } from './Version'
+/**
+ * @prettier
+ */
+
+export { default, DetailContext, DetailContextProps } from './Version';

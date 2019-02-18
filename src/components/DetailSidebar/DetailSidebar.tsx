@@ -9,11 +9,11 @@ import Grid, { GridSpacing } from '@material-ui/core/Grid';
 
 import { DetailContext, DetailContextProps } from '../../pages/version/Version';
 
-import Install from '../Install';
+import Install from '../Install/Install';
 import Authors from '../Author';
 import License from '../License/License';
-import Repository from '../Repository/Repositoy';
-import Developers from '../Developers';
+import Repository from '../Repository';
+import Developers from '../Developers/Developers';
 import colors from '../../utils/styles/colors';
 
 export const Content = styled('div')`
@@ -22,9 +22,9 @@ export const Content = styled('div')`
 `;
 
 interface Props {
-  children: React.ReactNode;
-  open: boolean;
-  onClose: () => void;
+  children?: React.ReactNode;
+  open?: boolean;
+  onClose?: () => void;
 }
 
 const DetailSidebar: React.FC<Props> = () => {

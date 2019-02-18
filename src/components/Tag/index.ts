@@ -1,1 +1,5 @@
-export { default } from './Tag'
+/**
+ * @prettier
+ */
+
+export { default } from './Tag';

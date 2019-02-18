@@ -21,9 +21,9 @@ export const Content = styled('div')`
 `;
 
 interface Props {
-  children: React.ReactNode;
-  open: boolean;
-  onClose: () => void;
+  children?: React.ReactNode;
+  open?: boolean;
+  onClose?: () => void;
 }
 
 const DetailContainer: React.FC<Props> = () => {

@@ -1,1 +1,5 @@
-export { default } from './RegistryInfoContent'
+/**
+ * @prettier
+ */
+
+export { default } from './RegistryInfoContent';

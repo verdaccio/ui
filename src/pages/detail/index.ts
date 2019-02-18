@@ -1,1 +1,5 @@
-export { default } from './Detail'
+/**
+ * @prettier
+ */
+
+export { default } from './Detail';

@@ -7,13 +7,15 @@
 
 import React from 'react';
 
-import styled from '@emotion/styled';
+/**
+ * @prettier
+ */
+
 import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
 import Grid from '@material-ui/core/Grid';
 import GitHub from '../../icons/GitHub';
 import CopyToClipBoard from '../CopyToClipBoard';
-import BugReport from '@material-ui/icons/BugReport';
 import CardActions from '@material-ui/core/CardActions';
 import Button from '@material-ui/core/Button';
 

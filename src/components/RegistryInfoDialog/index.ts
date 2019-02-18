@@ -1,1 +1,5 @@
-export { default } from './RegistryInfoDialog'
+/**
+ * @prettier
+ */
+
+export { default } from './RegistryInfoDialog';

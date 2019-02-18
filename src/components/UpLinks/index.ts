@@ -1,1 +1,5 @@
-export { default } from './UpLinks'
+/**
+ * @prettier
+ */
+
+export { default } from './UpLinks';

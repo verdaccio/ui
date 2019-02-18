@@ -66,7 +66,7 @@ const Version: React.FC<Props> = ({ match }) => {
   });
 
   const renderDetail = () => <DetailContainer />;
-  // const renderSidebar = () => <DetailSidebar />;
+  const renderSidebar = () => <DetailSidebar />;
 
   return !isLoading ? (
     <DetailContext.Provider value={{ packageMeta, readMe, packageName, enableLoading: setIsLoading }}>
@@ -74,9 +74,9 @@ const Version: React.FC<Props> = ({ match }) => {
         <Grid item={true} xs={8}>
           {renderDetail()}
         </Grid>
-        {/* <Grid item={true} xs={4}>
+        <Grid item={true} xs={4}>
           {renderSidebar()}
-        </Grid> */}
+        </Grid>
       </Grid>
     </DetailContext.Provider>
   ) : (

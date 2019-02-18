@@ -1,1 +1,5 @@
-export { default } from './NotFound'
+/**
+ * @prettier
+ */
+
+export { default } from './NotFound';

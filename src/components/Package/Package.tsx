@@ -3,18 +3,16 @@
  */
 
 import React from 'react';
-import type { Element } from 'react';
-import { spacing } from '../../utils/styles/mixings';
+import Avatar from '@material-ui/core/Avatar';
+// import { spacing } from '../../utils/styles/mixings';
 
 import Tag from '../Tag';
 import { formatDate, formatDateDistance } from '../../utils/package';
 
-import { IProps } from './types';
 import {
   WrapperLink,
   Header,
   MainInfo,
-  Name,
   Version,
   Overview,
   Published,
@@ -23,7 +21,6 @@ import {
   Icon,
   Text,
   Details,
-  Avatar,
   Author,
   Field,
   Content,
@@ -36,10 +33,26 @@ const getInitialsName = (name: string) =>
     .reduce((accumulator, currentValue) => accumulator.charAt(0) + currentValue.charAt(0), '')
     .toUpperCase();
 
-const Package = ({ name: label, version, time, author: { name, avatar }, description, license, keywords = [] }: IProps): Element<WrapperLink> => {
+interface Props {
+  name: string;
+  version: string;
+  time: string;
+  author: Author;
+  description?: string;
+  keywords?: string[];
+  license?: string;
+}
+
+interface Author {
+  name: string;
+  avatar: string;
+  email: string;
+}
+
+const Package: React.FC<Props> = ({ name: label, version, time, author: { name, avatar }, description, license, keywords = [] }) => {
   const renderMainInfo = () => (
     <MainInfo>
-      <Name>{label}</Name>
+      <span>{label}</span>
       <Version>{`v${version}`}</Version>
     </MainInfo>
   );
@@ -58,7 +71,7 @@ const Package = ({ name: label, version, time, author: { name, avatar }, descrip
   const renderLicenseInfo = () =>
     license && (
       <OverviewItem>
-        <Icon modifiers={spacing('margin', '4px', '5px', '0px', '0px')} name={'license'} pointer={true} />
+        <Icon name={'license'} pointer={true} />
         {license}
       </OverviewItem>
     );
@@ -66,7 +79,7 @@ const Package = ({ name: label, version, time, author: { name, avatar }, descrip
   const renderPublishedInfo = () => (
     <OverviewItem>
       <Icon name={'time'} pointer={true} />
-      <Published modifiers={spacing('margin', '0px', '5px', '0px', '0px')}>{`Published on ${formatDate(time)} •`}</Published>
+      <Published>{`Published on ${formatDate(time)} •`}</Published>
       {`${formatDateDistance(time)} ago`}
     </OverviewItem>
   );
@@ -101,4 +114,5 @@ const Package = ({ name: label, version, time, author: { name, avatar }, descrip
     </WrapperLink>
   );
 };
+
 export default Package;

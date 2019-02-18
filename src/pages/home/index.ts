@@ -1,1 +1,5 @@
-export { default } from './Home'
+/**
+ * @prettier
+ */
+
+export { default } from './Home';

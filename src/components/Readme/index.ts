@@ -1,1 +1,5 @@
-export { default } from './Readme'
+/**
+ * @prettier
+ */
+
+export { default } from './Readme';
