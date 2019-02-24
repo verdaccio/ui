@@ -1,8 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+ // @ts-ignore
 import classes from './style.scss';
 
+ // @ts-ignore
 export default function Module({title, description, children, className}) {
   return (
     <div className={`${classes.module} ${className}`}>

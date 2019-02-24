@@ -3,8 +3,10 @@ import PropTypes from 'prop-types';
 import Module from '../../Module';
 import ModuleContentPlaceholder from '../../ModuleContentPlaceholder';
 
+ // @ts-ignore
 import classes from './style.scss';
 
+ // @ts-ignore
 const renderSection = (title, url) => (
   <li>
     <span>{title}</span>
@@ -14,9 +16,11 @@ const renderSection = (title, url) => (
   </li>
 );
 
+ // @ts-ignore
 const Infos = ({homepage, repository, license}) => {
   const showInfo = homepage || repository || license;
   return (
+     // @ts-ignore
     <Module className={classes.infosModule} title={'Infos'}>
       {showInfo ? (
         <ul>

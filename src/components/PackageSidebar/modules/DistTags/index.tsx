@@ -3,8 +3,10 @@ import propTypes from 'prop-types';
 import Module from '../../Module';
 import ModuleContentPlaceholder from '../../ModuleContentPlaceholder';
 
+ // @ts-ignore
 import classes from './style.scss';
 
+ // @ts-ignore
 const renderDistTags = (distTags) => {
 
   const tags = Object.entries(distTags);

@@ -3,11 +3,13 @@ import propTypes from 'prop-types';
 import Module from '../../Module';
 import ModuleContentPlaceholder from '../../ModuleContentPlaceholder';
 
+ // @ts-ignore
 import classes from './style.scss';
 
+ // @ts-ignore
 const renderRecentReleases = (recentReleases) => (
   <ul>
-    {recentReleases.map((versionInfo) => {
+    {recentReleases.map((versionInfo: any) => {
       const {version, time} = versionInfo;
       return (
         <li className={'last-sync-item'} key={version}>

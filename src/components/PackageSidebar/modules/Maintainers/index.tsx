@@ -10,6 +10,7 @@ import Module from '../../Module';
 import MaintainerInfo from './MaintainerInfo';
 import ModuleContentPlaceholder from '../../ModuleContentPlaceholder';
 
+ // @ts-ignore
 import classes from './style.scss';
 
 const CONTRIBUTORS_TO_SHOW = 5;
@@ -21,6 +22,7 @@ export default class Maintainers extends React.Component {
 
   state = {};
 
+   // @ts-ignore
   constructor(props) {
     super(props);
     this.handleShowAllContributors = this.handleShowAllContributors.bind(this);
@@ -41,6 +43,7 @@ export default class Maintainers extends React.Component {
   }
 
   get showAllContributors() {
+     // @ts-ignore
     const { showAllContributors } = this.state;
     return showAllContributors || size(this.contributors) <= 5;
   }
@@ -80,6 +83,7 @@ export default class Maintainers extends React.Component {
     });
   }
 
+   // @ts-ignore
   renderAuthorAndContributors(author) {
     return (
       <div>
@@ -110,8 +114,9 @@ export default class Maintainers extends React.Component {
   render() {
     const contributors = this.renderContributors();
     return (
+       // @ts-ignore
       <Module className={classes.maintainersModule} title={'Maintainers'}>
-        {contributors.length || has(this.author, 'name') ? (
+        {contributors && contributors.length || has(this.author, 'name') ? (
           this.renderAuthorAndContributors(this.author)
         ) : (
           <ModuleContentPlaceholder text={'Not Available!'} />

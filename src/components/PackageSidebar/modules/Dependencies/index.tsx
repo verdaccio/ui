@@ -5,14 +5,17 @@ import Module from '../../Module';
 import {getDetailPageURL} from '../../../../utils/url';
 import ModuleContentPlaceholder from '../../ModuleContentPlaceholder';
 
+ // @ts-ignore
 import classes from './style.scss';
 
 export const NO_DEPENDENCIES = 'Zero Dependencies!';
 export const DEP_ITEM_CLASS = 'dependency-item';
 
+ // @ts-ignore
 const renderDependenciesList = (dependencies, dependenciesList) => {
   return (
     <ul>
+       // @ts-ignore
       {dependenciesList.map((dependenceName, index) => {
         return (
           <li
@@ -32,6 +35,7 @@ const renderDependenciesList = (dependencies, dependenciesList) => {
 const Dependencies = ({dependencies = {}, title = 'Dependencies'}) => {
   const dependenciesList = Object.keys(dependencies);
   return (
+     // @ts-ignore
     <Module className={classes.dependenciesModule} title={title}>
       {dependenciesList.length > 0 ? (
         renderDependenciesList(dependencies, dependenciesList)

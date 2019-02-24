@@ -15,25 +15,27 @@ import {
   getRecentReleases,
 } from '../../utils/package';
 import API from '../../utils/api';
-import {DIST_TAGS} from '../../../lib/constants';
 
-export default class PackageSidebar extends React.Component {
+class PackageSidebar extends React.Component {
   state = {};
 
   static propTypes = {
     packageName: PropTypes.string.isRequired,
   };
 
+   // @ts-ignore
   constructor(props) {
     super(props);
     this.loadPackageData = this.loadPackageData.bind(this);
   }
 
   async componentDidMount() {
+     // @ts-ignore
     const { packageName } = this.props;
     await this.loadPackageData(packageName);
   }
 
+   // @ts-ignore
   async loadPackageData(packageName) {
     let packageMeta;
 
@@ -51,6 +53,7 @@ export default class PackageSidebar extends React.Component {
   }
 
   render() {
+    // @ts-ignore
     const { packageMeta } = this.state;
 
     if (packageMeta) {
@@ -64,7 +67,7 @@ export default class PackageSidebar extends React.Component {
       const homepage = get(packageMeta, 'latest.homepage', null);
 
       // dist-tags
-      const distTags = packageMeta[DIST_TAGS];
+      const distTags = packageMeta['dist-tags'];
 
       // Lastsync component
       const recentReleases = getRecentReleases(time);
@@ -102,3 +105,5 @@ export default class PackageSidebar extends React.Component {
     );
   }
 }
+
+export default PackageSidebar

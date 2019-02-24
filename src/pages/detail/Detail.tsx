@@ -8,12 +8,11 @@ import isEmpty from 'lodash/isEmpty';
 import PackageDetail from '../../components/PackageDetail/PackageDetail';
 import NotFound from '../../components/NotFound/NotFound';
 import Spinner from '../../components/Spinner';
+import PackageSidebar from '../../components/PackageSidebar';
 import API from '../../utils/api';
 
 // @ts-ignore
 import classes from './detail.scss';
-// @ts-ignore
-import PackageSidebar from '../../components/PackageSidebar/index';
 
 interface Props {
   isUserLoggedIn: boolean;
@@ -66,6 +65,8 @@ const Detail: React.FC<Props> = ({ match: { params }, isUserLoggedIn }) => {
     </div>
   );
 };
+
+export default Detail;
 
 //   componentDidUpdate(prevProps) {
 //     const { isUserLoggedIn, match } = this.props;

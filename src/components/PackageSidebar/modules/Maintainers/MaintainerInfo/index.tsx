@@ -1,8 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+ // @ts-ignore  
 import classes from './style.scss';
 
+ // @ts-ignore
 const MaintainerInfo = ({title, name, avatar}) => {
   const avatarDescription = `${title} ${name}'s avatar`;
   return (

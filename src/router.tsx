@@ -5,18 +5,17 @@
 /* eslint  react/jsx-max-depth:0 */
 
 import React from 'react';
-import { Router, Route, Switch, BrowserRouterProps } from 'react-router-dom';
+import { Router, Route, Switch } from 'react-router-dom';
 import { AppContext } from './app';
 
 import { asyncComponent } from './utils/asyncComponent';
 import history from './history';
 import Header from './components/Header/Header';
-import HomePage from './pages/home/Home';
-import NotFound from './components/NotFound';
-// const NotFound = asyncComponent(() => import("./components/NotFound"));
-// const DetailPackage = asyncComponent(() => import('./pages/detail'));
+
+const NotFound = asyncComponent(() => import('./components/NotFound'));
+const DetailPackage = asyncComponent(() => import('./pages/detail'));
 const VersionPackage = asyncComponent(() => import('./pages/version'));
-// const HomePage = asyncComponent(() => import("./pages/home"));
+const HomePage = asyncComponent(() => import('./pages/home'));
 
 interface Props {
   onLogout: () => void;
@@ -40,21 +39,21 @@ const RouterApp: React.FC<Props> = ({ onLogout, onToggleLoginModal }) => {
     </AppContext.Consumer>
   );
 
-  // const renderDetailPage = (routerProps: BrowserRouterProps) => (
-  //   <AppContext.Consumer>
-  //     {function renderConsumerVersionPage({ isUserLoggedIn }: any) {
-  //       return <DetailPackage {...routerProps} isUserLoggedIn={isUserLoggedIn} />;
-  //     }}
-  //   </AppContext.Consumer>
-  // );
+  const renderDetailPage = (routerProps: any) => (
+    <AppContext.Consumer>
+      {function renderConsumerVersionPage({ isUserLoggedIn }: any) {
+        return <DetailPackage {...routerProps} isUserLoggedIn={isUserLoggedIn} />;
+      }}
+    </AppContext.Consumer>
+  );
 
-  // const renderVersionPage = (routerProps: BrowserRouterProps) => (
-  //   <AppContext.Consumer>
-  //     {function renderConsumerVersionPage({ isUserLoggedIn }: any) {
-  //       return <VersionPackage {...routerProps} isUserLoggedIn={isUserLoggedIn} />;
-  //     }}
-  //   </AppContext.Consumer>
-  // );
+  const renderVersionPage = (routerProps: any) => (
+    <AppContext.Consumer>
+      {function renderConsumerVersionPage({ isUserLoggedIn }: any) {
+        return <VersionPackage {...routerProps} isUserLoggedIn={isUserLoggedIn} />;
+      }}
+    </AppContext.Consumer>
+  );
 
   return (
     <Router history={history}>
@@ -62,10 +61,9 @@ const RouterApp: React.FC<Props> = ({ onLogout, onToggleLoginModal }) => {
         {renderHeader()}
         <Switch>
           <Route exact={true} path={'/'} render={renderHomePage} />
-          {/* <Route exact={true} path={'/-/web/detail/@:scope/:package'} render={this.renderDetailPage} />
-          <Route exact={true} path={'/-/web/detail/:package'} render={this.renderDetailPage} />
-          <Route exact={true} path={'/-/web/version/@:scope/:package'} render={this.renderVersionPage} />
-          <Route exact={true} path={'/-/web/version/:package'} render={this.renderVersionPage} /> */}
+          {/* <Route exact={true} path={'/-/web/detail/@:scope/:package'} render={renderDetailPage} />
+          <Route exact={true} path={'/-/web/version/@:scope/:package'} render={renderVersionPage} />
+          <Route exact={true} path={'/-/web/version/:package'} render={renderVersionPage} /> */}
           <Route component={NotFound} />
         </Switch>
       </>
