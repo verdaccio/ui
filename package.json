@@ -18,7 +18,7 @@
     "lodash": "4.17.11",
     "lunr-mutable-indexes": "2.3.2",
     "react": "^16.8.1",
-    "react-dom": "^16.8.1"
+    "react-dom": "^16.8.3"
   },
   "devDependencies": {
     "@commitlint/cli": "7.2.1",
@@ -30,6 +30,7 @@
     "@material-ui/styles": "^3.0.0-alpha.10",
     "@types/lodash": "^4.14.120",
     "@types/node": "*",
+    "@types/react-dom": "^16.8.2",
     "@types/react-router-dom": "latest",
     "@types/webpack-env": "^1.13.7",
     "@verdaccio/babel-preset": "^0.0.4",
@@ -53,7 +54,7 @@
     "prettier": "1.14.3",
     "prop-types": "15.6.2",
     "react-autosuggest": "9.4.2",
-    "react-hot-loader": "4.2.0",
+    "react-hot-loader": "^4.7.1",
     "react-router": "4.3.1",
     "react-router-dom": "4.2.2",
     "resolve-url-loader": "3.0.0",

@@ -2,73 +2,54 @@
  * @prettier
  */
 
-import styled from '@emotion/styled';
-import AppBar from '@material-ui/core/AppBar';
-import Toolbar, { ToolbarProps } from '@material-ui/core/Toolbar';
-import IconButton from '@material-ui/core/IconButton';
-
+import { makeStyles } from '@material-ui/styles';
 import colors from '../../utils/styles/colors';
 // import mq from '../../utils/styles/media';
 
-export const InnerNavBar = styled(Toolbar)`
-  && {
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 15px;
-  }
-`;
-
-export const Greetings = styled('span')`
-  margin: 0 5px 0 0;
-`;
-
-export const RightSide = styled(Toolbar)`
-  && {
-    display: flex;
-    padding: 0;
-  }
-`;
-
-export const LeftSide = styled(RightSide)`
-  && {
-    flex: 1;
-  }
-`;
-
-export const MobileNavBar = styled('div')`
-  align-items: center;
-  display: flex;
-  border-bottom: 1px solid ${colors.greyLight};
-  padding: 8px;
-  position: relative;
-`;
-
-export const InnerMobileNavBar = styled('div')`
-  border-radius: 4px;
-  background-color: ${colors.greyLight};
-  color: ${colors.white};
-  width: 100%;
-  padding: 0px 5px;
-  margin: 0 10px 0 0;
-`;
-
-export const IconSearchButton = styled(IconButton)`
-  && {
-    display: block;
-  }
-`;
-
-export const SearchWrapper = styled('div')`
-  display: none;
-  max-width: 393px;
-  width: 100%;
-`;
-
-export const NavBar = styled(AppBar)`
-  && {
-    background-color: ${colors.primary};
-    min-height: 60px;
-    display: flex;
-    justify-content: center;
-  }
-`;
+export const useStyles = makeStyles(() => ({
+  greetings: {
+    margin: '0 5px 0 0',
+  },
+  innerNavBar: {
+    backgroundColor: '#4b5e40',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    padding: '0 15px',
+  },
+  rightSide: {
+    display: 'flex',
+    padding: 0,
+  },
+  leftSide: {
+    flex: 1,
+  },
+  mobileNavBar: {
+    alignItems: 'center',
+    display: 'flex',
+    borderBottom: '1px solid',
+    borderColor: colors.greyLight,
+    padding: 8,
+    position: 'relative',
+  },
+  innerMobileNavBar: {
+    borderRadius: 4,
+    backgroundColor: colors.greyLight,
+    color: colors.white,
+    width: '100%',
+    padding: '0px 5px',
+    margin: '0 10px 0 0',
+  },
+  iconSearchButton: {
+    display: 'block',
+  },
+  searchWrapper: {
+    display: 'none',
+    maxWidth: 393,
+    width: '100%',
+  },
+  navBar: {
+    minHeight: 60,
+    display: 'flex',
+    justifyContent: 'center',
+  },
+}));

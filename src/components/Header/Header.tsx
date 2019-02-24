@@ -19,14 +19,14 @@ import AccountCircle from '@material-ui/icons/AccountCircle';
 import { default as IconSearch } from '@material-ui/icons/Search';
 
 import { getRegistryURL } from '../../utils/url';
-// import ExternalLink from '../Link/Link';
+import ExternalLink from '../Link/Link';
 import Logo from '../Logo/Logo';
 import RegistryInfoDialog from '../RegistryInfoDialog/RegistryInfoDialog';
 import Label from '../Label';
 import Search from '../Search';
 import RegistryInfoContent from '../RegistryInfoContent';
 
-import { Greetings, InnerNavBar, MobileNavBar, InnerMobileNavBar, SearchWrapper } from './styles';
+import { useStyles } from './styles';
 
 interface Props {
   logo: string;
@@ -44,6 +44,8 @@ const Header: React.FC<Props> = ({ withoutSearch, logo, username, scope, onLogou
   const [registryUrl] = React.useState(getRegistryURL());
   const [showMobileNavBar, setShowMobileNavBar] = React.useState(false);
   const [anchorEl, setAnchorEl] = React.useState(null);
+
+  const classes = useStyles();
 
   const handleToggleMNav = () => {
     setShowMobileNavBar(!showMobileNavBar);
@@ -123,9 +125,9 @@ const Header: React.FC<Props> = ({ withoutSearch, logo, username, scope, onLogou
         {renderLogo()}
       </Link>
       {!withoutSearch && (
-        <SearchWrapper>
+        <div className={classes.searchWrapper}>
           <Search />
-        </SearchWrapper>
+        </div>
       )}
     </Toolbar>
   );
@@ -139,7 +141,7 @@ const Header: React.FC<Props> = ({ withoutSearch, logo, username, scope, onLogou
   );
 
   const renderRightSide = () => (
-    <Toolbar>
+    <div className={classes.rightSide}>
       {!withoutSearch && renderToolTipIcon('Search packages', 'search')}
       {renderToolTipIcon('Documentation', 'help')}
       {renderToolTipIcon('Registry Information', 'info')}
@@ -150,12 +152,12 @@ const Header: React.FC<Props> = ({ withoutSearch, logo, username, scope, onLogou
           {'Login'}
         </Button>
       )}
-    </Toolbar>
+    </div>
   );
 
   const renderGreetings = () => (
     <>
-      <Greetings>{`Hi,`}</Greetings>
+      <span className={classes.greetings}>{`Hi,`}</span>
       <Label capitalize={true} text={username!} weight={'bold'} />
     </>
   );
@@ -179,7 +181,7 @@ const Header: React.FC<Props> = ({ withoutSearch, logo, username, scope, onLogou
         break;
       case 'search':
         content = (
-          <IconButton color={'inherit'} onClick={handleToggleMNav}>
+          <IconButton color={'inherit'} onClick={handleToggleMNav} className={classes.iconSearchButton}>
             <IconSearch />
           </IconButton>
         );
@@ -194,8 +196,8 @@ const Header: React.FC<Props> = ({ withoutSearch, logo, username, scope, onLogou
 
   return (
     <>
-      <AppBar position={'static'}>
-        <Toolbar>
+      <AppBar position={'static'} className={classes.navBar}>
+        <Toolbar className={classes.innerNavBar}>
           {renderLeftSide()}
           {renderRightSide()}
         </Toolbar>
@@ -203,14 +205,14 @@ const Header: React.FC<Props> = ({ withoutSearch, logo, username, scope, onLogou
       </AppBar>
       {showMobileNavBar &&
         !withoutSearch && (
-          <MobileNavBar>
-            <InnerMobileNavBar>
+          <div className={classes.mobileNavBar}>
+            <div className={classes.innerMobileNavBar}>
               <Search />
-            </InnerMobileNavBar>
+            </div>
             <Button color={'inherit'} onClick={handleToggleMNav}>
               {'Cancel'}
             </Button>
-          </MobileNavBar>
+          </div>
         )}
     </>
   );

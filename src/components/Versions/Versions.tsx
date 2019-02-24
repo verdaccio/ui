@@ -12,8 +12,6 @@ import React from 'react';
 import { DetailContext, DetailContextProps } from '../../pages/version/Version';
 import { formatDateDistance } from '../../utils/package';
 import { Spacer } from './styles';
-// @ts-ignore
-import { DIST_TAGS } from '../../../lib/constants';
 
 const Versions: React.FC = () => {
   const renderPackageList = (packages: any, isVersion: boolean = false) => (
@@ -31,7 +29,7 @@ const Versions: React.FC = () => {
   );
 
   const renderContent: React.FC<DetailContextProps> = ({ packageMeta }) => {
-    const distTags = packageMeta[DIST_TAGS];
+    const distTags = packageMeta['dist-tags'];
     const versions = packageMeta.versions;
     return (
       <>

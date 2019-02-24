@@ -2,44 +2,37 @@
  * @prettier
  */
 
-import styled from '@emotion/styled';
-import Typography from '@material-ui/core/Typography';
-import { default as MuiList } from '@material-ui/core/List';
-import { default as MuiCard } from '@material-ui/core/Card';
+import { makeStyles } from '@material-ui/styles';
 
-export const Wrapper = styled('div')`
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  justify-content: center;
-  flex: 1;
-  padding: 16px;
-`;
+const useStyles = makeStyles(() => ({
+  wrapper: {
+    display: 'flex',
+    alignItems: 'center',
+    flexDirection: 'column',
+    justifyContent: 'center',
+    flex: 1,
+    padding: 16,
+  },
+  inner: {
+    maxWidth: 650,
+    display: 'flex',
+    flexDirection: 'column',
+  },
+  emptyPackage: {
+    width: 150,
+    margin: '0 auto',
+  },
+  heading: {
+    color: '#4b5e40',
+  },
+  list: {
+    paddingTop: 0,
+    paddingBottom: 0,
+    color: '#4b5e40',
+  },
+  card: {
+    marginTop: 24,
+  },
+}));
 
-export const Inner = styled('div')`
-  max-width: 650px;
-  display: flex;
-  flex-direction: column;
-`;
-
-export const EmptyPackage = styled('img')`
-  width: 150px;
-  margin: 0 auto;
-`;
-
-export const Heading = styled(Typography)`
-  && {
-    color: #4b5e40;
-  }
-`;
-
-export const List = styled(MuiList)`
-  && {
-    padding: 0;
-    color: #4b5e40;
-  }
-`;
-
-export const Card = styled(MuiCard)`
-  margin-top: 24px;
-`;
+export default useStyles;

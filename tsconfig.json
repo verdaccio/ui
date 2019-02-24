@@ -2,7 +2,7 @@
   "compilerOptions": {    
     "lib": ["dom", "es2018", "esnext"],
     "target": "es2017",
-    "module": "es2015",
+    "module": "esnext",
     "moduleResolution": "node",
     "esModuleInterop": true,
     "noEmit": true,

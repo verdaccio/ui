@@ -1,19 +1,24 @@
+// @ts-ignore
 import storage from './storage';
 
 class API {
+  // @ts-ignore
   request(url, method = 'GET', options = {}) {
+    // @ts-ignore
     if (!window.VERDACCIO_API_URL) {
       throw new Error('VERDACCIO_API_URL is not defined!');
     }
-
+    // @ts-ignore
     const token = storage.getItem('token');
     if (token) {
+      // @ts-ignore
       if (!options.headers) options.headers = {};
-
+    // @ts-ignore
       options.headers.authorization = `Bearer ${token}`;
     }
 
     if (!['http://', 'https://', '//'].some((prefix) => url.startsWith(prefix))) {
+      // @ts-ignore
       url = window.VERDACCIO_API_URL + url;
     }
 
@@ -22,6 +27,7 @@ class API {
      * @param {object} response
      * @returns {promise}
      */
+    // @ts-ignore
     function handleResponseType(response) {
       if (response.headers) {
         const contentType = response.headers.get('Content-Type');
@@ -44,7 +50,9 @@ class API {
         credentials: 'same-origin',
         ...options,
       })
+      // @ts-ignore
         .then(handleResponseType)
+        // @ts-ignore
         .then(([responseOk, body]) => {
           if (responseOk) {
             resolve(body);
@@ -52,6 +60,7 @@ class API {
             reject(body);
           }
         })
+        // @ts-ignore
         .catch((error) => {
           reject(error);
         });

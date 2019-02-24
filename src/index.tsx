@@ -2,7 +2,6 @@ import React from "react";
 import ReactDOM from "react-dom";
 import { AppContainer } from "react-hot-loader";
 
-// @ts-ignore
 import App from "./app";
 
 const rootNode = document.getElementById("root");

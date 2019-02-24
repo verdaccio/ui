@@ -4,34 +4,33 @@
 
 import React from 'react';
 import CircularProgress from '@material-ui/core/CircularProgress';
-import styled from '@emotion/styled';
+import { makeStyles } from '@material-ui/styles';
 
 interface Props {
   size?: number;
   centered?: boolean;
 }
 
-const Wrapper = styled('div')<{ centered?: boolean }>`
-  && {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    ${props =>
-      props.centered &&
-      `
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-      `};
-  }
-`;
+// TODO -> fixed the circularprogress color
+const useStyles = makeStyles(() => ({
+  wrapper: {
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  progress: {
+    color: '#4b5e40',
+  },
+}));
 
-const Spinner: React.FC<Props> = ({ size, centered }): React.ReactElement<HTMLDivElement> => (
-  <Wrapper centered={centered}>
-    <CircularProgress size={size} color="primary" />
-  </Wrapper>
-);
+const Spinner: React.FC<Props> = ({ size }): React.ReactElement<HTMLDivElement> => {
+  const classes = useStyles();
+  return (
+    <div className={classes.wrapper}>
+      <CircularProgress className={classes.progress} size={size} />
+    </div>
+  );
+};
 
 Spinner.defaultProps = {
   size: 50,

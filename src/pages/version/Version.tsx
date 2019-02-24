@@ -50,7 +50,9 @@ const Version: React.FC<Props> = ({ match }) => {
 
     try {
       const { readMe, packageMeta } = await callDetailPage(packageName);
+      // @ts-ignore
       setReadme(readMe);
+      // @ts-ignore
       setPackageMeta(packageMeta);
       setNotFound(false);
       setIsLoading(false);
@@ -61,9 +63,12 @@ const Version: React.FC<Props> = ({ match }) => {
     }
   };
 
-  React.useEffect(() => {
-    loadPackageInfo();
-  });
+  React.useEffect(
+    () => {
+      loadPackageInfo();
+    },
+    [readMe]
+  );
 
   const renderDetail = () => <DetailContainer />;
   const renderSidebar = () => <DetailSidebar />;

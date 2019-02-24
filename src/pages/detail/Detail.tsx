@@ -12,6 +12,7 @@ import API from '../../utils/api';
 
 // @ts-ignore
 import classes from './detail.scss';
+// @ts-ignore
 import PackageSidebar from '../../components/PackageSidebar/index';
 
 interface Props {
@@ -25,15 +26,19 @@ const Detail: React.FC<Props> = ({ match: { params }, isUserLoggedIn }) => {
 
   const packageName = `${(params.scope && '@' + params.scope + '/') || ''}${params.package}`;
 
-  React.useEffect(() => {
-    loadPackageInfo();
-  });
+  React.useEffect(
+    () => {
+      loadPackageInfo();
+    },
+    [readMe]
+  );
 
   const loadPackageInfo = async () => {
     setReadMe('');
 
     try {
       const resp = await API.request(`package/readme/${packageName}`, 'GET');
+      // @ts-ignore
       setReadMe(resp);
       setNotFound(false);
     } catch (err) {
