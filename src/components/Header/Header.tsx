@@ -120,7 +120,7 @@ const Header: React.FC<Props> = ({ withoutSearch, logo, username, scope, onLogou
   };
 
   const renderLeftSide = () => (
-    <Toolbar>
+    <>
       <Link style={{ marginRight: '1em' }} to={'/'}>
         {renderLogo()}
       </Link>
@@ -129,7 +129,7 @@ const Header: React.FC<Props> = ({ withoutSearch, logo, username, scope, onLogou
           <Search />
         </div>
       )}
-    </Toolbar>
+    </>
   );
 
   const renderLogo = () => (logo ? <img alt={'logo'} height={'40px'} src={logo} /> : <Logo />);
@@ -196,8 +196,8 @@ const Header: React.FC<Props> = ({ withoutSearch, logo, username, scope, onLogou
 
   return (
     <>
-      <AppBar position={'static'} className={classes.navBar}>
-        <Toolbar className={classes.innerNavBar}>
+      <AppBar position={'static'} color={'primary'}>
+        <Toolbar className={classes.innerNavBar} disableGutters={true}>
           {renderLeftSide()}
           {renderRightSide()}
         </Toolbar>

@@ -9,15 +9,12 @@ import API from './utils/api';
 import RouterApp from './router';
 import Loading from './components/Loading';
 import Header from './components/Header';
-import { Container, Content } from './components/Layout';
+// import { Container, Content } from './components/Layout';
 import LoginModal from './components/Login';
 import Footer from './components/Footer';
 
 // @ts-ignore
 import './styles/main.scss'
-
-// @ts-ignore
-import packagesJson from './packages.json'
 
 interface AppContextProps {
   isUserLoggedIn: boolean
@@ -157,11 +154,11 @@ const App: React.FC = () => {
 
   const renderContent = () => (
     <>
-      <Content>
+      <>
         <RouterApp onLogout={handleLogout} onToggleLoginModal={handleToggleLoginModal}>
             {renderHeader()}
         </RouterApp>
-      </Content>
+      </>
       <Footer />
     </>
   )
@@ -177,14 +174,14 @@ const App: React.FC = () => {
   )
 
   return (
-    <Container isLoading={isLoading}>
+    <>
       {isLoading ? (
         <Loading />
       ) : (
         <AppContext.Provider value={{ isUserLoggedIn, packages, logoUrl, user, scope }}>{renderContent()}</AppContext.Provider >
         )}
       {renderLoginModal()}
-    </Container>
+    </>
   )
 }
 

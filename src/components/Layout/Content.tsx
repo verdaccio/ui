@@ -7,11 +7,12 @@ import { makeStyles } from '@material-ui/styles';
 
 const useStyles = makeStyles(() => ({
   wrapper: {
-    backgroundColor: '#ffffff',
-    flex: 1,
-    display: 'flex',
-    position: 'relative',
-    flexDirection: 'column',
+    marginLeft: 'auto',
+    marginRight: 'auto',
+    marginTop: 30,
+    maxWidth: 1240,
+    minWidth: 400,
+    width: '100%',
   },
 }));
 

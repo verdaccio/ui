@@ -11,10 +11,14 @@ export const useStyles = makeStyles(() => ({
     margin: '0 5px 0 0',
   },
   innerNavBar: {
-    backgroundColor: '#4b5e40',
     justifyContent: 'space-between',
     alignItems: 'center',
-    padding: '0 15px',
+    display: 'flex',
+    marginLeft: 'auto',
+    marginRight: 'auto',
+    maxWidth: 1240,
+    minWidth: 400,
+    width: '100%',
   },
   rightSide: {
     display: 'flex',
@@ -46,10 +50,5 @@ export const useStyles = makeStyles(() => ({
     display: 'none',
     maxWidth: 393,
     width: '100%',
-  },
-  navBar: {
-    minHeight: 60,
-    display: 'flex',
-    justifyContent: 'center',
   },
 }));

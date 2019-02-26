@@ -12,9 +12,7 @@ interface Props {
 }
 
 const Home: React.FC<Props> = ({ packages, isUserLoggedIn }): React.ReactElement<HTMLDivElement> => (
-  <div>
-    <PackageList packages={packages} isUserLoggedIn={isUserLoggedIn} />
-  </div>
+  <PackageList packages={packages} isUserLoggedIn={isUserLoggedIn} />
 );
 
 Home.defaultProps = {
