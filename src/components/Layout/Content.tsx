@@ -6,19 +6,15 @@ import React from 'react';
 import { makeStyles } from '@material-ui/styles';
 
 const useStyles = makeStyles(() => ({
-  wrapper: {
-    marginLeft: 'auto',
-    marginRight: 'auto',
-    marginTop: 30,
-    maxWidth: 1240,
-    minWidth: 400,
-    width: '100%',
+  container: {
+    display: 'flex',
+    flexDirection: 'column',
   },
 }));
 
 const Content: React.FC = ({ children }) => {
   const classes = useStyles();
-  return <div className={classes.wrapper}>{children}</div>;
+  return <div className={classes.container}>{children}</div>;
 };
 
 export default Content;

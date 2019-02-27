@@ -7,10 +7,12 @@ import { makeStyles } from '@material-ui/styles';
 import colors from '../../utils/styles/colors';
 
 export const useStyles = makeStyles((theme: Theme) => {
-  console.log('theme', theme);
   return {
     greetings: {
       margin: '0 5px 0 0',
+    },
+    navBar: {
+      backgroundColor: theme.palette.primary.main,
     },
     innerNavBar: {
       justifyContent: 'space-between',
@@ -20,13 +22,13 @@ export const useStyles = makeStyles((theme: Theme) => {
       marginRight: 'auto',
       minWidth: 400,
       width: '100%',
-      // maxWidth: theme.breakpoints.values.sm,
-      // [theme.breakpoints.up('md')]: {
-      //   maxWidth: theme.breakpoints.values.md,
-      // },
-      // [theme.breakpoints.up('lg')]: {
-      //   maxWidth: theme.breakpoints.values.lg,
-      // },
+      maxWidth: theme.breakpoints.values.sm,
+      [theme.breakpoints.up('md')]: {
+        maxWidth: theme.breakpoints.values.md,
+      },
+      [theme.breakpoints.up('lg')]: {
+        maxWidth: theme.breakpoints.values.lg,
+      },
     },
     rightSide: {
       display: 'flex',

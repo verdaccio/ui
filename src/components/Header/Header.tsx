@@ -196,7 +196,7 @@ const Header: React.FC<Props> = ({ withoutSearch, logo, username, scope, onLogou
 
   return (
     <>
-      <AppBar position={'static'} color={'primary'}>
+      <AppBar position={'static'} color={'primary'} className={classes.navBar}>
         <Toolbar className={classes.innerNavBar} disableGutters={true}>
           {renderLeftSide()}
           {renderRightSide()}

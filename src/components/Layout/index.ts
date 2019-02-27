@@ -2,5 +2,4 @@
  * @prettier
  */
 
-export { default as Content } from './Container';
-export { default as Container } from './Content';
+export { default } from './Content';

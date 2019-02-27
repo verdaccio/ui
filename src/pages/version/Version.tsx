@@ -27,6 +27,7 @@ export interface DetailContextProps {
   packageMeta: any;
   packageName: string;
   readMe?: string;
+  enableLoading: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
 // TODO -> create a DetailContext HOC
@@ -37,7 +38,7 @@ interface Props {
 }
 
 const Version: React.FC<Props> = ({ match }) => {
-  const [isLoading, setIsLoading] = React.useState(false);
+  const [isLoading, setIsLoading] = React.useState(true);
   const [packageName] = React.useState(getRouterPackageName(match));
   const [packageMeta, setPackageMeta] = React.useState(null);
   const [readMe, setReadme] = React.useState('');
@@ -50,6 +51,7 @@ const Version: React.FC<Props> = ({ match }) => {
 
     try {
       const { readMe, packageMeta } = await callDetailPage(packageName);
+      console.log('packageMeta', packageMeta);
       // @ts-ignore
       setReadme(readMe);
       // @ts-ignore
@@ -63,25 +65,24 @@ const Version: React.FC<Props> = ({ match }) => {
     }
   };
 
-  React.useEffect(
-    () => {
-      loadPackageInfo();
-    },
-    [readMe]
-  );
+  React.useEffect(() => {
+    loadPackageInfo();
+  }, []);
 
   const renderDetail = () => <DetailContainer />;
   const renderSidebar = () => <DetailSidebar />;
 
+  console.log(packageMeta, readMe, packageName);
+
   return !isLoading ? (
     <DetailContext.Provider value={{ packageMeta, readMe, packageName, enableLoading: setIsLoading }}>
-      <Grid className={'container content'} container={true} spacing={0}>
+      <Grid container={true} spacing={0}>
         <Grid item={true} xs={8}>
           {renderDetail()}
         </Grid>
-        <Grid item={true} xs={4}>
+        {/* <Grid item={true} xs={4}>
           {renderSidebar()}
-        </Grid>
+        </Grid> */}
       </Grid>
     </DetailContext.Provider>
   ) : (

@@ -11,7 +11,7 @@ import { DetailContext, DetailContextProps } from '../../pages/version/Version';
 import Readme from '../Readme/Readme';
 import Versions from '../Versions/Versions';
 import { preventXSS } from '../../utils/sec-utils';
-import Dependencies from '../Dependencies';
+import Dependencies from '../Dependencies/Dependencies';
 import UpLinks from '../UpLinks/UpLinks';
 
 export const Content = styled('div')`
@@ -41,7 +41,7 @@ const DetailContainer: React.FC<Props> = () => {
 
   const renderTabs: React.FC<DetailContextProps> = ({ readMe }) => (
     <>
-      <Tabs indicatorColor={'primary'} onChange={handleChange} textColor={'primary'} value={tabPosition} variant={'fullWidth'}>
+      <Tabs indicatorColor={'primary'} onChange={handleChange} textColor={'primary'} value={tabPosition}>
         <Tab label={'Readme'} />
         <Tab label={'Dependencies'} />
         <Tab label={'Versions'} />

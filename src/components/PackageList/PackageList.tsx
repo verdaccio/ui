@@ -10,9 +10,10 @@ import Help from '../Help';
 import { formatAuthor, formatLicense } from '../../utils/package';
 
 const useStyles = makeStyles(() => ({
-  pkgContainer: {
+  container: {
     margin: 0,
     padding: 0,
+    overflow: 'hidden',
   },
 }));
 
@@ -33,7 +34,7 @@ const PackageList: React.FC<Props> = ({ packages, isUserLoggedIn }) => {
       return <Package key={i} {...{ name, version, author, description, license, time, keywords }} />;
     });
 
-  return <div className={classes.pkgContainer}>{hasPackages() ? renderList() : <Help />}</div>;
+  return <div className={classes.container}>{hasPackages() ? renderList() : <Help />}</div>;
 };
 
 export default PackageList;

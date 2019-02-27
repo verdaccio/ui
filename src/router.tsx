@@ -10,8 +10,9 @@ import { AppContext } from './app';
 
 import { asyncComponent } from './utils/asyncComponent';
 import history from './history';
+import Content from './components/Layout';
 import Header from './components/Header';
-import { Content } from './components/Layout';
+import Footer from './components/Footer';
 
 const NotFound = asyncComponent(() => import('./components/NotFound'));
 const DetailPackage = asyncComponent(() => import('./pages/detail'));
@@ -63,12 +64,14 @@ const RouterApp: React.FC<Props> = ({ onLogout, onToggleLoginModal }) => {
         <Content>
           <Switch>
             <Route exact={true} path={'/'} render={renderHomePage} />
+            <Route exact={true} path={'/-/web/version/@:scope/:package'} render={renderVersionPage} />
             {/* <Route exact={true} path={'/-/web/detail/@:scope/:package'} render={renderDetailPage} />
           <Route exact={true} path={'/-/web/version/@:scope/:package'} render={renderVersionPage} />
           <Route exact={true} path={'/-/web/version/:package'} render={renderVersionPage} /> */}
             <Route component={NotFound} />
           </Switch>
         </Content>
+        <Footer />
       </>
     </Router>
   );

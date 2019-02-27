@@ -1,6 +1,7 @@
 import React from 'react'
 import isNil from 'lodash/isNil';
 import 'normalize.css';
+import { makeStyles } from '@material-ui/styles';
 
 // @ts-ignore
 import storage from './utils/storage';
@@ -9,12 +10,21 @@ import API from './utils/api';
 import RouterApp from './router';
 import Loading from './components/Loading';
 import Header from './components/Header';
-// import { Container, Content } from './components/Layout';
 import LoginModal from './components/Login';
-import Footer from './components/Footer';
 
-// @ts-ignore
-import './styles/main.scss'
+const useStyles = makeStyles(({ isLoading }) => ({
+  container: {
+    backgroundColor: isLoading ? '#f5f6f8' : '#ffffff',
+    flex: 1,
+    height: '100%',
+    position: 'absolute',
+    display: 'flex',
+    flexDirection: 'column',
+    width: '100%',
+    top: 0,
+    left: 0,
+  },
+}));
 
 interface AppContextProps {
   isUserLoggedIn: boolean
@@ -39,7 +49,7 @@ interface LoginProps {
 
 export const AppContext = React.createContext<AppContextProps | null>(null);
 
-const App: React.FC = () => {
+const App: React.FC = () => {  
   const [error, setError] = React.useState({})
   // @ts-ignore
   const [logoUrl, setLogoUrl] = React.useState(window.VERDACCIO_LOGO)
@@ -50,6 +60,8 @@ const App: React.FC = () => {
   const [isUserLoggedIn, setIsUserLoggedIn] = React.useState(false)
   const [packages, setPackages] = React.useState([])
   const [isLoading, setIsLoading] = React.useState(true)
+
+  const classes = useStyles({ isLoading });
 
   /**
    * handles login
@@ -152,17 +164,6 @@ const App: React.FC = () => {
     />
   )
 
-  const renderContent = () => (
-    <>
-      <>
-        <RouterApp onLogout={handleLogout} onToggleLoginModal={handleToggleLoginModal}>
-            {renderHeader()}
-        </RouterApp>
-      </>
-      <Footer />
-    </>
-  )
-
   const renderLoginModal = () => (
     <LoginModal
       error={error}
@@ -174,14 +175,16 @@ const App: React.FC = () => {
   )
 
   return (
-    <>
+    <div className={classes.container}>
       {isLoading ? (
         <Loading />
       ) : (
-        <AppContext.Provider value={{ isUserLoggedIn, packages, logoUrl, user, scope }}>{renderContent()}</AppContext.Provider >
+        <AppContext.Provider value={{ isUserLoggedIn, packages, logoUrl, user, scope }}>
+          <RouterApp onLogout={handleLogout} onToggleLoginModal={handleToggleLoginModal} />
+        </AppContext.Provider >
         )}
       {renderLoginModal()}
-    </>
+    </div>
   )
 }
 
