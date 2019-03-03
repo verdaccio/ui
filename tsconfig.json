@@ -11,10 +11,11 @@
     "allowJs": true,
     "checkJs": false,
     "jsx": "react",
-    "typeRoots": ["node_modules/@types", "./custom_typings"]
+    "typeRoots": ["node_modules/@types", "./types/**/*"]
   },
   "include": [
-    "./src/**/*"
+    "./src/**/*",
+    "./types/**/*"
   ],
   "exclude": [
     "node_modules"

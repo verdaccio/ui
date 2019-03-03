@@ -8,12 +8,18 @@ import storage from './utils/storage';
 import { makeLogin, isTokenExpire } from './utils/login';
 import API from './utils/api';
 import RouterApp from './router';
-import Loading from './components/Loading';
-import Header from './components/Header';
-import LoginModal from './components/Login';
+import Loading from './components/patterns/Loading';
+import Header from './components/patterns/Header';
+import LoginModal from './components/patterns/Login';
 
 const useStyles = makeStyles(({ isLoading }) => ({
+  // '@global': {
+  //   body: {
+  //     fontFamily: 'Roboto", "Helvetica", "Arial", sans-serif',
+  //   },
+  // },
   container: {
+    fontFamily: 'Roboto", "Helvetica", "Arial", sans-serif',
     backgroundColor: isLoading ? '#f5f6f8' : '#ffffff',
     flex: 1,
     height: '100%',
