@@ -13,13 +13,8 @@ import Header from './components/patterns/Header';
 import LoginModal from './components/patterns/Login';
 
 const useStyles = makeStyles(({ isLoading }) => ({
-  // '@global': {
-  //   body: {
-  //     fontFamily: 'Roboto", "Helvetica", "Arial", sans-serif',
-  //   },
-  // },
   container: {
-    fontFamily: 'Roboto", "Helvetica", "Arial", sans-serif',
+    fontFamily: '"Roboto", "Helvetica", "Arial", sans-serif',
     backgroundColor: isLoading ? '#f5f6f8' : '#ffffff',
     flex: 1,
     height: '100%',

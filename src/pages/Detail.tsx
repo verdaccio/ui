@@ -64,14 +64,3 @@ const Detail: React.FC<Props> = ({ match: { params }, isUserLoggedIn }) => {
 };
 
 export default Detail;
-
-//   componentDidUpdate(prevProps) {
-//     const { isUserLoggedIn, match } = this.props;
-//     const condition1 = prevProps.isUserLoggedIn !== isUserLoggedIn;
-//     const condition2 =
-//       prevProps.match.params.package !== match.params.package;
-//     if (condition1 || condition2) {
-//       const packageName = this.getPackageName(this.props);
-//       this.loadPackageInfo(packageName);
-//     }
-//   }

@@ -2,15 +2,16 @@
  * @prettier
  */
 import React from 'react';
+import { withRouter } from 'react-router-dom';
 import Card from '@material-ui/core/Card';
 import ListItem from '@material-ui/core/ListItem';
-import ListItemText from '@material-ui/core/ListItemText';
+
 import { makeStyles } from '@material-ui/styles';
 import { Theme } from '@material-ui/core/styles';
 import { unstable_Box as Box } from '@material-ui/core/Box';
+import Chip from '@material-ui/core/Chip';
 
 import Tag from '../../primitives/Tag';
-import Link from '../../primitives/Link';
 import Icon from '../../primitives/Icon';
 import Avatar from '../../primitives/Avatar';
 import Heading from '../../primitives/Heading';
@@ -42,9 +43,17 @@ const useStyles = makeStyles((theme: Theme) => ({
       left: 0,
     },
   },
+  licenseInfoIcon: {
+    marginTop: 4,
+    marginRight: 5,
+  },
+  publishedInfoIcon: {
+    marginRight: 5,
+  },
 }));
 
 interface Props {
+  history?: any;
   name: string;
   version: string;
   time: string;
@@ -60,7 +69,7 @@ interface Author {
   email: string;
 }
 
-const Package: React.FC<Props> = ({ name: label, version, time, author: { name, avatar }, description, license, keywords = [] }) => {
+const Package: React.FC<Props> = ({ history, name: label, version, time, author: { name, avatar }, description, license, keywords = [] }) => {
   const classes = useStyles();
 
   const renderMainInfo = () => (
@@ -78,16 +87,16 @@ const Package: React.FC<Props> = ({ name: label, version, time, author: { name, 
   const renderLicenseInfo = () =>
     license && (
       // @ts-ignore
-      <Box display="flex" flexDirection="column" alignItems="center">
-        <Icon name={'license'} pointer={true} />
+      <Box display="flex" alignItems="center">
+        <Icon name={'license'} pointer={true} className={classes.licenseInfoIcon} />
         <Heading>{license}</Heading>
       </Box>
     );
 
   const renderPublishedInfo = () => (
     // @ts-ignore
-    <Box display="flex" flexDirection="column" alignItems="center">
-      <Icon name={'time'} pointer={true} />
+    <Box display="flex" alignItems="center">
+      <Icon name={'time'} pointer={true} className={classes.publishedInfoIcon} />
       <div>{`Published on ${formatDate(time)} •`}</div>
       {`${formatDateDistance(time)} ago`}
     </Box>
@@ -103,15 +112,35 @@ const Package: React.FC<Props> = ({ name: label, version, time, author: { name, 
     </Box>
   );
 
-  const renderDescription = () => description && <div>{description}</div>;
+  const renderDescription = () => description && <Heading variant="body2">{description}</Heading>;
+
+  const renderKeywords = () => (
+    // @ts-ignore
+    <Box display="flex" alignItems="center" flexWrap="wrap">
+      {keywords.map(keyword => (
+        <Chip label={keyword} />
+      ))}
+    </Box>
+  );
+
+  const handleGoToPackageDetail = () => {
+    history.push(`/-/web/detail/${label}`);
+  };
 
   return (
     <ListItem>
-      <Card className={classes.card}>
-        {renderMainInfo()}
+      <Card className={classes.card} onClick={handleGoToPackageDetail}>
+        <Box display="flex" justifyContent="space-between">
+          {renderMainInfo()}
+          <Box display="flex">
+            {renderLicenseInfo()}
+            {renderPublishedInfo()}
+          </Box>
+        </Box>
         <Box display="flex" flexDirection="column">
           {renderAuthorInfo()}
           {renderDescription()}
+          {renderKeywords()}
         </Box>
       </Card>
     </ListItem>

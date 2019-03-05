@@ -19,10 +19,9 @@ import AccountCircle from '@material-ui/icons/AccountCircle';
 import { default as IconSearch } from '@material-ui/icons/Search';
 
 import { getRegistryURL } from '../../../utils/url';
-import ExternalLink from '../../primitives/Link';
+import Heading from '../../primitives/Heading';
 import Logo from '../../primitives/Logo';
 import RegistryInfoDialog from '../RegistryInfoDialog/RegistryInfoDialog';
-import Label from '../../primitives/Text';
 import Search from '../Search';
 import RegistryInfoContent from '../RegistryInfoContent';
 
@@ -158,7 +157,7 @@ const Header: React.FC<Props> = ({ withoutSearch, logo, username, scope, onLogou
   const renderGreetings = () => (
     <>
       <span className={classes.greetings}>{`Hi,`}</span>
-      <Text capitalize={true} text={username!} weight={'bold'} />
+      <Heading>{username}</Heading>
     </>
   );
 

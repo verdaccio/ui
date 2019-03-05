@@ -22,6 +22,8 @@ export const useStyles = makeStyles((theme: Theme) => {
       marginRight: 'auto',
       minWidth: 400,
       width: '100%',
+      paddingLeft: 16,
+      paddingRight: 16,
       maxWidth: theme.breakpoints.values.sm,
       [theme.breakpoints.up('md')]: {
         maxWidth: theme.breakpoints.values.md,
