@@ -10,7 +10,7 @@ import CssBaseline from '@material-ui/core/CssBaseline';
 import { ThemeProvider } from '@material-ui/styles';
 
 import App from './app';
-import { theme } from './design-utils/theme';
+import { theme } from './theme-utils/theme';
 
 const rootNode = document.getElementById('root');
 

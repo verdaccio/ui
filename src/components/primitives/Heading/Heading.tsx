@@ -7,7 +7,7 @@ import classnames from 'classnames';
 import Typography, { TypographyProps } from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/styles';
 
-import { getColor } from '../../../design-utils/utils';
+import { getColor } from '../../../theme-utils/design-utils';
 
 interface Props extends Omit<TypographyProps, 'color'> {
   bold?: boolean;
