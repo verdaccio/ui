@@ -5,12 +5,12 @@
 /* eslint no-unused-vars: 0 */
 
 import React from 'react';
-import Card from '@material-ui/core/Card/index';
+import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
 import Avatar from '@material-ui/core/Avatar';
 import Typography from '@material-ui/core/Typography';
 
-import { DetailContext, DetailContextProps } from '../../pages/version/Version';
+import { DetailContext, DetailContextProps } from '../../../pages/Version';
 
 interface Props {
   name: string;

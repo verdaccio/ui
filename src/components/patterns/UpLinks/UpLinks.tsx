@@ -6,14 +6,9 @@ import styled from '@emotion/styled';
 import Typography from '@material-ui/core/Typography';
 import ListItemText from '@material-ui/core/ListItemText';
 
-import { DetailContext } from '../../pages/version/Version';
-// import { formatDateDistance } from '../../utils/package';
+import { DetailContext } from '../../../pages/Version';
 import List from '@material-ui/core/List/index';
 import ListItem from '@material-ui/core/ListItem/index';
-
-// const Heading = styled(Typography)`
-//   font-weight: 700;
-// `;
 
 const Spacer = styled('div')`
   flex: 1 1 auto;
@@ -21,14 +16,6 @@ const Spacer = styled('div')`
   white-space: nowrap;
   height: 0.5em;
 `;
-
-// const ListItemText = styled(MuiListItemText)`
-//   && {
-//     flex: none;
-//     color: black;
-//     opacity: 0.6;
-//   }
-// `;
 
 interface Props {
   packageMeta: {

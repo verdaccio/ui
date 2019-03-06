@@ -14,16 +14,12 @@ import React from 'react';
 import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
 import Grid from '@material-ui/core/Grid';
-import GitHub from '../../icons/GitHub';
+import GitHub from '../../../icons/GitHub';
 import CopyToClipBoard from '../CopyToClipBoard';
 import CardActions from '@material-ui/core/CardActions';
 import Button from '@material-ui/core/Button';
 
-import { DetailContext, DetailContextProps } from '../../pages/version/Version';
-
-// export const GridRepo = styled(Grid)`
-//   align-items: center;
-// `;
+import { DetailContext, DetailContextProps } from '../../../pages/version';
 
 const Repository: React.FC = () => {
   const renderAuthor: React.FC<DetailContextProps> = ({
@@ -34,9 +30,7 @@ const Repository: React.FC = () => {
     repository ? (
       <Card>
         <CardContent style={{ textAlign: 'center' }}>
-          <Grid container={true} spacing={24}>
-            {renderRepository(repository, bugs)}
-          </Grid>
+          <Grid container={true}>{renderRepository(repository, bugs)}</Grid>
         </CardContent>
         <CardActions>
           <Button size={'small'}>{'Open Bugs'}</Button>

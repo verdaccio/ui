@@ -9,10 +9,10 @@ import ListItemText from '@material-ui/core/ListItemText';
 
 import React from 'react';
 
-import { DetailContext, DetailContextProps } from '../../pages/version/Version';
-import { formatDateDistance } from '../../utils/package';
+import { DetailContext, DetailContextProps } from '../../../pages/Version';
+import { formatDateDistance } from '../../../utils/package';
 import { Spacer } from './styles';
-import { Version, DistTag } from './types';
+import { Versions as Version, DistTag } from './types';
 
 const Versions: React.FC = () => {
   const renderPackageList = (versions: Version) => (

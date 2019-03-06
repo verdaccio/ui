@@ -9,7 +9,7 @@ import CardContent from '@material-ui/core/CardContent';
 import Typography from '@material-ui/core/Typography';
 import Chip from '@material-ui/core/Chip';
 
-import { DetailContext, DetailContextProps } from '../../pages/version/Version';
+import { DetailContext, DetailContextProps } from '../../../pages/Version';
 import DependencyDetail from './DependencyDetail';
 
 interface Props {

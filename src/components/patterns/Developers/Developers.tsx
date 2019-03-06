@@ -13,7 +13,7 @@ import Tooltip from '@material-ui/core/Tooltip';
 import Add from '@material-ui/icons/Add';
 
 // import colors from '../../utils/styles/colors';
-import { DetailContext, DetailContextProps } from '../../pages/version/Version';
+import { DetailContext, DetailContextProps } from '../../../pages/Version';
 
 export const Details = styled('span')`
   display: flex;
@@ -29,27 +29,6 @@ export const Content = styled('div')`
     margin: 5px;
   }
 `;
-
-// export const CardContent = styled(MuiCardContent)`
-//   && {
-//     padding-bottom: 20px;
-//   }
-// `;
-
-// export const Heading = styled(Typography)`
-//   && {
-//     font-weight: 700;
-//     margin-bottom: 10px;
-//     text-transform: capitalize;
-//   }
-// `;
-
-// export const Fab = styled(MuiFab)`
-//   && {
-//     background-color: ${colors.primary};
-//     color: ${colors.white};
-//   }
-// `;
 
 interface Props {
   type: 'contributors' | 'maintainers';

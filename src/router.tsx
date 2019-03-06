@@ -15,7 +15,7 @@ import Footer from './components/patterns/Footer';
 
 // const NotFound = asyncComponent(() => import('./components/patterns/NotFound'));
 // const DetailPackage = asyncComponent(() => import('./pages/Detail'));
-// const VersionPackage = asyncComponent(() => import('./pages/Version'));
+const VersionPackage = asyncComponent(() => import('./pages/Version'));
 const HomePage = asyncComponent(() => import('./pages/Home'));
 
 const useStyles = makeStyles((theme: Theme) => ({
@@ -73,13 +73,13 @@ const RouterApp: React.FC<Props> = ({ onLogout, onToggleLoginModal }) => {
   //   </AppContext.Consumer>
   // );
 
-  // const renderVersionPage = (routerProps: any) => (
-  //   <AppContext.Consumer>
-  //     {function renderConsumerVersionPage({ isUserLoggedIn }: any) {
-  //       return <VersionPackage {...routerProps} isUserLoggedIn={isUserLoggedIn} />;
-  //     }}
-  //   </AppContext.Consumer>
-  // );
+  const renderVersionPage = (routerProps: any) => (
+    <AppContext.Consumer>
+      {function renderConsumerVersionPage({ isUserLoggedIn }: any) {
+        return <VersionPackage {...routerProps} isUserLoggedIn={isUserLoggedIn} />;
+      }}
+    </AppContext.Consumer>
+  );
 
   return (
     <Router history={history}>
@@ -88,8 +88,8 @@ const RouterApp: React.FC<Props> = ({ onLogout, onToggleLoginModal }) => {
         <div className={classes.content}>
           <Switch>
             <Route exact={true} path={'/'} render={renderHomePage} />
-            {/* <Route exact={true} path={'/-/web/version/@:scope/:package'} render={renderVersionPage} />
-            <Route component={NotFound} /> */}
+            <Route exact={true} path={'/-/web/version/@:scope/:package'} render={renderVersionPage} />
+            <Route exact={true} path={'/-/web/detail/:package'} render={renderVersionPage} />
           </Switch>
         </div>
         <Footer />

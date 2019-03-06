@@ -6,7 +6,7 @@
 
 import React from 'react';
 
-import { DetailContext, DetailContextProps } from '../../pages/version/Version';
+import { DetailContext, DetailContextProps } from '../../../pages/Version';
 import Card from '@material-ui/core/Card/index';
 import CardContent from '@material-ui/core/CardContent/index';
 import Avatar from '@material-ui/core/Avatar';

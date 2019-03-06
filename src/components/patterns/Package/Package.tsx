@@ -2,10 +2,9 @@
  * @prettier
  */
 import React from 'react';
-import { withRouter } from 'react-router-dom';
+import { withRouter, RouteComponentProps } from 'react-router-dom';
 import Card from '@material-ui/core/Card';
 import ListItem from '@material-ui/core/ListItem';
-
 import { makeStyles } from '@material-ui/styles';
 import { Theme } from '@material-ui/core/styles';
 import { unstable_Box as Box } from '@material-ui/core/Box';
@@ -52,8 +51,7 @@ const useStyles = makeStyles((theme: Theme) => ({
   },
 }));
 
-interface Props {
-  history?: any;
+interface Props extends RouteComponentProps {
   name: string;
   version: string;
   time: string;
@@ -118,7 +116,7 @@ const Package: React.FC<Props> = ({ history, name: label, version, time, author:
     // @ts-ignore
     <Box display="flex" alignItems="center" flexWrap="wrap">
       {keywords.map(keyword => (
-        <Chip label={keyword} />
+        <Chip key={keyword} label={keyword} />
       ))}
     </Box>
   );
@@ -147,4 +145,4 @@ const Package: React.FC<Props> = ({ history, name: label, version, time, author:
   );
 };
 
-export default Package;
+export default withRouter(Package);

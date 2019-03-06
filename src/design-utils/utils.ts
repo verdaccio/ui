@@ -8,14 +8,12 @@ export const getColor = (color: string): string | undefined => {
   if (!color) return undefined;
 
   const [colorKey, colorVariant] = color.split('.');
-  console.log('colorVariant', colorVariant);
   const shade = theme.palette[colorKey as Palette];
-
   if (shade) {
     if (typeof shade === 'string') {
       return shade;
     }
-    if (typeof color === 'object') {
+    if (typeof shade === 'object') {
       if (isPaletteColor(shade) && shade[colorVariant as keyof PaletteColor]) {
         return shade[colorVariant as keyof PaletteColor];
       }

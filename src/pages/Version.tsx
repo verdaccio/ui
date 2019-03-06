@@ -30,7 +30,6 @@ export interface DetailContextProps {
   enableLoading: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-// TODO -> create a DetailContext HOC
 export const DetailContext = React.createContext<DetailContextProps | null>(null);
 
 interface Props {
@@ -70,7 +69,7 @@ const Version: React.FC<Props> = ({ match }) => {
   }, []);
 
   const renderDetail = () => <DetailContainer />;
-  const renderSidebar = () => <DetailSidebar />;
+  // const renderSidebar = () => <DetailSidebar />;
 
   console.log(packageMeta, readMe, packageName);
 

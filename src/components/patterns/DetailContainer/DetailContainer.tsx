@@ -7,18 +7,12 @@ import styled from '@emotion/styled';
 import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 
-import { DetailContext, DetailContextProps } from '../../pages/version/Version';
+import { DetailContext, DetailContextProps } from '../../../pages/Version';
 import Readme from '../Readme/Readme';
 import Versions from '../Versions/Versions';
-import { preventXSS } from '../../utils/sec-utils';
+import { preventXSS } from '../../../utils/sec-utils';
 import Dependencies from '../Dependencies/Dependencies';
 import UpLinks from '../UpLinks/UpLinks';
-
-export const Content = styled('div')`
-  && {
-    padding: 15px;
-  }
-`;
 
 interface Props {
   children?: React.ReactNode;

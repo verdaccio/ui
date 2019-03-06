@@ -9,7 +9,7 @@ import Grid, { GridSpacing } from '@material-ui/core/Grid';
 
 import { DetailContext, DetailContextProps } from '../../../pages/Version';
 
-// import Install from './Install';
+import Install from './Install';
 import Authors from '../Author';
 import License from '../License/License';
 import Repository from '../Repository';

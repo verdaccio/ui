@@ -5,7 +5,7 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/styles';
 
-import { DetailContext, DetailContextProps } from '../../pages/version/Version';
+import { DetailContext, DetailContextProps } from '../../../pages/Version';
 
 import DependencyBlock from './DependencyBlock';
 
