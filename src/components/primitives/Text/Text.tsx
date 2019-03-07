@@ -3,29 +3,29 @@
  */
 
 import React from 'react';
-import styled from '@emotion/styled';
-import { fontWeight } from '../../../utils/styles/sizes';
+import Typography, { TypographyProps } from '@material-ui/core/Typography';
+import { getColor } from '../../../theme-utils/design-utils';
 
-const Wrapper = styled('div')`
-  font-weight: ${({ weight }) => fontWeight[weight as keyof typeof fontWeight]};
-  text-transform: ${({ capitalize }) => (capitalize ? 'capitalize' : 'none')};
-  ${({ modifiers }: Pick<Props, Exclude<keyof Props, 'text'>>) => modifiers && modifiers};
-`;
-
-interface Props {
-  text: string;
-  capitalize?: boolean;
-  weight?: string;
-  // TODO -> replace any by some proper type
-  modifiers?: any;
+interface Props extends Omit<TypographyProps, 'color'> {
+  color?: string;
+  is?: 'p' | 'span' | 'a' | 'div';
 }
 
-const Text: React.FC<Props> = ({ text, ...props }) => <Wrapper {...props}>{text}</Wrapper>;
+const Text: React.FC<Props> = ({ color, is, ...props }) => {
+  const setColor = (): React.CSSProperties | undefined => {
+    if (!color) return;
+    const paletteColor = getColor(color);
+    if (paletteColor) {
+      return { color: paletteColor };
+    }
+    return;
+  };
+
+  return <Typography {...props} component={is} style={{ ...setColor() }} />;
+};
 
 Text.defaultProps = {
-  text: '',
-  capitalize: false,
-  weight: 'regular',
+  color: 'text.primary',
 };
 
 export default Text;
