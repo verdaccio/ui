@@ -9,6 +9,8 @@ import Fade from '@material-ui/core/Fade';
 import { makeStyles } from '@material-ui/styles';
 import { Theme } from '@material-ui/core/styles';
 
+import Text from '../../primitives/Text';
+
 import Icon from '../../primitives/Icon';
 // @ts-ignore
 import { version } from '../../../../package.json';
@@ -16,7 +18,9 @@ import { goToVerdaccioWebsite } from '../../../utils/windows.js';
 
 const useStyles = makeStyles((theme: Theme) => ({
   container: {
-    borderTop: '1px solid rgb(227, 227, 227);',
+    borderTop: 1,
+    borderTopStyle: 'solid',
+    borderColor: theme.palette.divider,
     width: '100%',
   },
   inner: {
@@ -30,6 +34,9 @@ const useStyles = makeStyles((theme: Theme) => ({
     [theme.breakpoints.up('lg')]: {
       maxWidth: theme.breakpoints.values.lg,
     },
+    earth: {
+      cursor: 'pointer',
+    },
   },
 }));
 
@@ -37,7 +44,7 @@ const Footer: React.FC = () => {
   const classes = useStyles();
 
   const renderTooltip = () => (
-    <Box>
+    <Box display="flex" alignItems="center">
       <Icon name={'earth'} size={'md'} />
       <Fade>
         <Box display="flex" alignItems="center" flexDirection="column">
@@ -55,16 +62,26 @@ const Footer: React.FC = () => {
 
   const renderLeft = () => (
     <Box display="flex" alignItems="center">
-      Made with ♥ on
-      <Icon img={true} name={'earth'} onClick={goToVerdaccioWebsite} />
+      <Text is="span" variant="subtitle2" color="disabled">
+        Made with
+        <Text color="red" is="span">
+          ♥
+        </Text>
+        on
+      </Text>
+      <Icon img={true} name={'earth'} onClick={goToVerdaccioWebsite} className={classes.earth} />
     </Box>
   );
 
   const renderRight = () => (
     <Box display="flex" alignItems="center">
-      Powered by
+      <Text is="span" variant="subtitle2" color="disabled">
+        Powered by
+      </Text>
       <Icon img={true} name={'verdaccio'} onClick={goToVerdaccioWebsite} pointer={true} size={'md'} />
-      {`/ ${version}`}
+      <Text is="span" variant="subtitle2" color="disabled">
+        {`/ ${version}`}
+      </Text>
     </Box>
   );
 
