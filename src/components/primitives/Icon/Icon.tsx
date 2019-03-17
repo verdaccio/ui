@@ -63,6 +63,8 @@ export interface Props {
   name: string;
   className?: string;
   onClick?: (event: React.SyntheticEvent<SVGElement | HTMLSpanElement>) => void;
+  onMouseOver?: (event: React.MouseEvent<SVGSVGElement | HTMLSpanElement, MouseEvent>) => void;
+  onMouseLeave?: (event: React.MouseEvent<SVGSVGElement | HTMLSpanElement, MouseEvent>) => void;
   size?: 'sm' | 'md';
   pointer?: boolean;
   img?: boolean;
