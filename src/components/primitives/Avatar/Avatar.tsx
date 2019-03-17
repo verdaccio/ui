@@ -12,7 +12,7 @@ const useStyles = makeStyles((theme: Theme) => ({
   normal: {
     width: 30,
     height: 30,
-    background: theme.palette.primary.main,
+    background: theme.colors.primary,
   },
 }));
 

@@ -12,7 +12,7 @@ export const useStyles = makeStyles((theme: Theme) => {
       margin: '0 5px 0 0',
     },
     navBar: {
-      backgroundColor: theme.palette.primary.main,
+      backgroundColor: theme.colors.primary,
     },
     innerNavBar: {
       justifyContent: 'space-between',

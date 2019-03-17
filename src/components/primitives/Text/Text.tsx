@@ -3,29 +3,30 @@
  */
 
 import React from 'react';
+import { Theme } from '@material-ui/core/styles';
 import Typography, { TypographyProps } from '@material-ui/core/Typography';
-import { getColor } from '../../../theme-utils/design-utils';
+import { makeStyles } from '@material-ui/styles';
+
+import { Colors } from '../../../theme-utils/theme';
 
 interface Props extends Omit<TypographyProps, 'color'> {
-  color?: string;
+  color?: Colors;
   is?: 'p' | 'span' | 'a' | 'div';
 }
 
-const Text: React.FC<Props> = ({ color, is, ...props }) => {
-  const setColor = (): React.CSSProperties | undefined => {
-    if (!color) return;
-    const paletteColor = getColor(color);
-    if (paletteColor) {
-      return { color: paletteColor };
-    }
-    return;
-  };
+const useStyles = makeStyles(({ colors }: Theme) => ({
+  textClass: ({ color }: Props) => ({
+    color: colors[color!],
+  }),
+}));
 
-  return <Typography {...props} component={is} style={{ ...setColor() }} />;
+const Text: React.FC<Props> = ({ is, color, ...props }) => {
+  const classes = useStyles({ color });
+  return <Typography {...props} component={is} className={classes.textClass} />;
 };
 
 Text.defaultProps = {
-  color: 'text.primary',
+  color: 'primary',
 };
 
 export default Text;
