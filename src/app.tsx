@@ -27,7 +27,7 @@ const useStyles = makeStyles(({ isLoading }) => ({
   },
 }));
 
-interface AppContextProps {
+export interface AppContextProps {
   isUserLoggedIn: boolean
   packages: Array<any>
   logoUrl: string
@@ -48,7 +48,7 @@ interface LoginProps {
   }
 }
 
-export const AppContext = React.createContext<AppContextProps | null>(null);
+export const AppContext = React.createContext<undefined | AppContextProps>(undefined)
 
 const App: React.FC = () => {  
   const [error, setError] = React.useState({})

@@ -14,26 +14,26 @@ type Display = 'flex' | 'inline-flex';
 type FlexDirection = 'row' | 'column';
 type AlignItems = 'center' | 'flex-start' | 'flex-end';
 type JustifyContent = 'center' | 'flex-start' | 'flex-end' | 'space-between' | 'space-around';
+type FlexGrow = number;
 
 interface Props {
   alignItems?: AlignItems | Array<AlignItems>;
   justifyContent?: JustifyContent;
   display?: Display;
   flexDirection?: FlexDirection | Array<FlexDirection>;
+  flexGrow?: number;
   spacingX?: Spacings;
   spacingY?: Spacings;
   className?: string;
 }
 
 const useStyles = makeStyles(({ spacings }: Theme) => ({
-  flexClass: ({ display, justifyContent, alignItems, flexDirection, spacingX, spacingY }: Props) => ({
+  flexClass: ({ display, justifyContent, alignItems, flexDirection, flexGrow, spacingX, spacingY }: Props) => ({
     '& > *': {
       marginRight: spacings[spacingX!],
       marginBottom: spacings[spacingY!],
     },
-    '& > * :last-child': {
-      margin: spacings.none,
-    },
+    ...responsiveProp('flexGrow', flexGrow),
     ...responsiveProp('display', display),
     ...responsiveProp('justifyContent', justifyContent),
     ...responsiveProp('alignItems', alignItems),
@@ -50,6 +50,7 @@ Flex.defaultProps = {
   alignItems: 'flex-start',
   justifyContent: 'flex-start',
   display: 'flex',
+  flexGrow: 0,
   flexDirection: 'row',
   spacingX: 'none',
   spacingY: 'none',

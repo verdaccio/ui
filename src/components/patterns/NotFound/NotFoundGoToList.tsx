@@ -13,6 +13,7 @@ import { withRouter, RouteComponentProps } from 'react-router-dom';
 const useStyles = makeStyles((theme: Theme) => ({
   root: {
     marginTop: theme.spacings.giga,
+    width: '100%    ',
   },
   list: {
     paddingTop: 0,
@@ -31,7 +32,7 @@ const NotFoundGoToList: React.FC<RouteComponentProps> = ({ history }) => {
   return (
     <Card className={classes.root}>
       <List className={classes.list} style={{ padding: 0 }}>
-        <ListItem button onClick={handleGoTo('/')}>
+        <ListItem divider button onClick={handleGoTo('/')}>
           {'Home'}
         </ListItem>
         <ListItem button onClick={() => history.goBack()}>

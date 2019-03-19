@@ -2,7 +2,7 @@
  * @prettier
  */
 
-import React from 'react';
+import React, { useContext } from 'react';
 import { Router, Route, Switch } from 'react-router-dom';
 import { makeStyles } from '@material-ui/styles';
 import { Theme } from '@material-ui/core/styles';
@@ -12,17 +12,14 @@ import { asyncComponent } from './utils/asyncComponent';
 import history from './history';
 import Header from './components/patterns/Header';
 import Footer from './components/patterns/Footer';
+import NotFound from './components/patterns/NotFound';
+import Flex from './components/primitives/Flex';
 
-// const NotFound = asyncComponent(() => import('./components/patterns/NotFound'));
-// const DetailPackage = asyncComponent(() => import('./pages/Detail'));
 const VersionPackage = asyncComponent(() => import('./pages/Version'));
 const HomePage = asyncComponent(() => import('./pages/Home'));
 
 const useStyles = makeStyles((theme: Theme) => ({
-  content: {
-    display: 'flex',
-    flexDirection: 'column',
-    flex: 1,
+  root: {
     marginRight: 'auto',
     marginLeft: 'auto',
     maxHeight: '100%',
@@ -48,50 +45,24 @@ interface Props {
 
 const RouterApp: React.FC<Props> = ({ onLogout, onToggleLoginModal }) => {
   const classes = useStyles();
+  const context = useContext(AppContext);
 
-  const renderHeader = () => (
-    <AppContext.Consumer>
-      {function renderConsumerVersionPage({ logoUrl, scope, user }: any) {
-        return <Header logo={logoUrl} onLogout={onLogout} onToggleLoginModal={onToggleLoginModal} scope={scope} username={user.username} />;
-      }}
-    </AppContext.Consumer>
-  );
-
-  const renderHomePage = () => (
-    <AppContext.Consumer>
-      {function renderConsumerVersionPage({ isUserLoggedIn, packages }: any) {
-        return <HomePage isUserLoggedIn={isUserLoggedIn} packages={packages} />;
-      }}
-    </AppContext.Consumer>
-  );
-
-  // const renderDetailPage = (routerProps: any) => (
-  //   <AppContext.Consumer>
-  //     {function renderConsumerVersionPage({ isUserLoggedIn }: any) {
-  //       return <DetailPackage {...routerProps} isUserLoggedIn={isUserLoggedIn} />;
-  //     }}
-  //   </AppContext.Consumer>
-  // );
-
-  const renderVersionPage = (routerProps: any) => (
-    <AppContext.Consumer>
-      {function renderConsumerVersionPage({ isUserLoggedIn }: any) {
-        return <VersionPackage {...routerProps} isUserLoggedIn={isUserLoggedIn} />;
-      }}
-    </AppContext.Consumer>
-  );
+  if (!context) {
+    throw new Error('An error occurred on AppContext');
+  }
 
   return (
     <Router history={history}>
       <>
-        {renderHeader()}
-        <div className={classes.content}>
+        <Header logo={context.logoUrl} onLogout={onLogout} onToggleLoginModal={onToggleLoginModal} scope={context.scope} username={context.user.username} />
+        <Flex flexDirection="column" flexGrow={1} alignItems="center" className={classes.root}>
           <Switch>
-            <Route exact={true} path={'/'} render={renderHomePage} />
-            <Route exact={true} path={'/-/web/version/@:scope/:package'} render={renderVersionPage} />
-            <Route exact={true} path={'/-/web/detail/:package'} render={renderVersionPage} />
+            <Route exact path={'/'} render={() => <HomePage isUserLoggedIn={context.isUserLoggedIn} packages={context.packages} />} />
+            <Route exact path={'/-/web/version/@:scope/:package'} render={() => <VersionPackage isUserLoggedIn={context.isUserLoggedIn} />} />
+            <Route exact path={'/-/web/detail/:package'} render={() => <VersionPackage isUserLoggedIn={context.isUserLoggedIn} />} />
+            <Route path="*" render={() => <NotFound />} />
           </Switch>
-        </div>
+        </Flex>
         <Footer />
       </>
     </Router>
