@@ -12,7 +12,7 @@ const FooterToolTip: React.FC = () => {
   const [showFlags, setShowFlags] = useState(false);
   return (
     <Flex spacingX="byte">
-      <Icon name="earth" size="md" onMouseOver={() => setShowFlags(true)} onMouseLeave={() => setShowFlags(false)} pointer />
+      <Icon name="earth" size="md" onMouseOver={() => setShowFlags(true)} onMouseLeave={() => setShowFlags(false)} />
       <Fade in={showFlags}>
         <div>
           <Flex alignItems="center" spacingX="byte">
