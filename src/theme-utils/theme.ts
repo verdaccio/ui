@@ -4,30 +4,50 @@
 
 import { createMuiTheme } from '@material-ui/core/styles';
 
-const palette = {
+const colors = {
   primary: '#4b5e40',
   secondary: '#20232a',
   blue: '#2196f3',
+  red: '#e25555',
+  disabled: '#999999',
+  divider: '#e3e3e3',
   text: '#3c3c3c',
 };
 
-export type Palette = keyof typeof palette;
+export type Colors = keyof typeof colors;
+
+const spacing = 4;
+
+const spacings = {
+  none: 0,
+  byte: spacing,
+  kilo: spacing * 2,
+  mega: spacing * 3,
+  giga: spacing * 4,
+  tera: spacing * 5,
+  peta: spacing * 6,
+  exa: spacing * 7,
+  zetta: spacing * 8,
+};
+
+export type Spacings = keyof typeof spacings;
 
 export const theme = createMuiTheme({
-  palette: {
-    ...palette,
-    primary: { main: palette.primary },
-    secondary: { main: palette.secondary },
-    text: { primary: palette.text },
-  },
+  colors,
+  spacing,
+  spacings,
 });
 
-declare module '@material-ui/core/styles/createPalette' {
-  interface CustomPalette {
-    blue: string;
-    text: string;
+export type Theme = keyof typeof theme;
+
+declare module '@material-ui/core/styles/createMuiTheme' {
+  interface Theme {
+    spacings: typeof spacings;
+    colors: typeof colors;
   }
 
-  interface Palette extends CustomPalette {}
-  interface PaletteOptions extends Partial<CustomPalette> {}
+  interface ThemeOptions {
+    spacings: typeof spacings;
+    colors: typeof colors;
+  }
 }
