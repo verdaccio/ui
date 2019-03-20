@@ -24,13 +24,13 @@ const useStyles = makeStyles((theme: Theme) => ({
     marginLeft: 'auto',
     maxHeight: '100%',
     overflowY: 'scroll',
-    minWidth: 400,
     width: '100%',
     marginBottom: 20,
     marginTop: 20,
     maxWidth: theme.breakpoints.values.sm,
     [theme.breakpoints.up('md')]: {
       maxWidth: theme.breakpoints.values.md,
+      minWidth: 400,
     },
     [theme.breakpoints.up('lg')]: {
       maxWidth: theme.breakpoints.values.lg,

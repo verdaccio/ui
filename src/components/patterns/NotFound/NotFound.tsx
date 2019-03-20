@@ -16,6 +16,7 @@ import PackageImg from './img/package.svg';
 const useStyles = makeStyles((theme: Theme) => ({
   root: {
     padding: 16,
+    height: '100%',
   },
   img: {
     width: 150,
