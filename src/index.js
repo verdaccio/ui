@@ -1,12 +1,14 @@
-import React from "react";
-import ReactDOM from "react-dom";
-import { AppContainer } from "react-hot-loader";
+import './utils/__setPublicPath__';
 
-import App from "./app";
+import React from 'react';
+import ReactDOM from 'react-dom';
+import {AppContainer} from 'react-hot-loader';
 
-const rootNode = document.getElementById("root");
+import App from './app';
 
-const renderApp = Component => {
+const rootNode = document.getElementById('root');
+
+const renderApp = (Component) => {
   ReactDOM.render(
     <AppContainer>
       <Component />
@@ -18,7 +20,7 @@ const renderApp = Component => {
 renderApp(App);
 
 if (module.hot) {
-  module.hot.accept("./app", () => {
+  module.hot.accept('./app', () => {
     renderApp(App);
   });
 }

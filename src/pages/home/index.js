@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
 import PackageList from '../../components/PackageList';
@@ -10,10 +10,10 @@ class Home extends Component {
   };
 
   render() {
-    const {packages} = this.props;
+    const { packages } = this.props;
     return (
-      <div className={'container content'}>
-       <PackageList packages={packages} /> 
+      <div className={"container content"}>
+        <PackageList packages={packages} />
       </div>
     );
   }

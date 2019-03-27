@@ -1,46 +1,58 @@
-import React, {Component} from 'react';
+/**
+ * @prettier
+ */
+
+import React, { Component } from 'react';
+
+import List from '@material-ui/core/List/index';
+import ListItemText from '@material-ui/core/ListItemText/index';
 
 import { DetailContextConsumer } from '../../pages/version/index';
-import Card from '@material-ui/core/Card/index';
-import CardContent from '@material-ui/core/CardContent/index';
 import CopyToClipBoard from '../CopyToClipBoard';
-import Button from '@material-ui/core/Button';
-import CardActions from '@material-ui/core/CardActions';
 
-class Install extends Component<any, any> {
+import { Heading, InstallItem, PackageMangerAvatar } from './styles';
+// logos of package managers
+import npm from './img/npm.svg';
+import pnpm from './img/pnpm.svg';
+import yarn from './img/yarn.svg';
+
+class Install extends Component {
   render() {
     return (
       <DetailContextConsumer>
-        {(context) => {
+        {context => {
           return this.renderCopyCLI(context);
         }}
       </DetailContextConsumer>
     );
+  }
+
+  renderCopyCLI = ({ packageName }) => {
+    return (
+      <>
+        <List subheader={<Heading variant={'subheading'}>{'Installation'}</Heading>}>{this.renderListItems(packageName)}</List>
+      </>
+    );
   };
 
-  renderCopyCLI = ({packageName}) => {
+  renderListItems = packageName => {
     return (
-      <Card>
-        <CardContent>
-          <CopyToClipBoard text={`npm install ${packageName}`} />
-          <CopyToClipBoard text={`pnpm install ${packageName}`} />
-          <CopyToClipBoard text={`yarn add ${packageName}`} />
-          <CardActions>
-            {this.renderDownloadButton()}
-          </CardActions>
-        </CardContent>
-      </Card>
+      <>
+        <InstallItem>
+          <PackageMangerAvatar alt={'npm logo'} src={npm} />
+          <ListItemText primary={<CopyToClipBoard text={`npm install ${packageName}`} />} secondary={'Install using NPM'} />
+        </InstallItem>
+        <InstallItem>
+          <PackageMangerAvatar alt={'yarn logo'} src={yarn} />
+          <ListItemText primary={<CopyToClipBoard text={`yarn add ${packageName}`} />} secondary={'Install using Yarn'} />
+        </InstallItem>
+        <InstallItem>
+          <PackageMangerAvatar alt={'pnpm logo'} src={pnpm} />
+          <ListItemText primary={<CopyToClipBoard text={`pnpm install ${packageName}`} />} secondary={'Install using PNPM'} />
+        </InstallItem>
+      </>
     );
-  }
-
-  renderDownloadButton = () => {
-    return (
-      <Button color={"primary"} size={'small'} variant={"contained"}>
-        {'Download Tarball'}
-      </Button>
-    );
-  }
+  };
 }
-
 
 export default Install;

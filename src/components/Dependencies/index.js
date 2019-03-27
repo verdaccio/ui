@@ -10,7 +10,9 @@ import { withRouter } from 'react-router-dom';
 import CardContent from '@material-ui/core/CardContent/index';
 
 import { DetailContextConsumer } from '../../pages/version';
-import { Content, CardWrap, Heading, Tags, Tag } from './styles';
+
+import { CardWrap, Heading, Tags, Tag } from './styles';
+import NoItems from '../NoItems';
 
 class DepDetail extends Component<any, any> {
   constructor(props: any) {
@@ -26,7 +28,7 @@ class DepDetail extends Component<any, any> {
   render() {
     const { name, version } = this.state;
     const tagText = `${name}@${version}`;
-    return <Tag clickable={true} component={'div'} label={tagText} onClick={this.handleOnClick} />;
+    return <Tag className={'dep-tag'} clickable={true} component={'div'} label={tagText} onClick={this.handleOnClick} />;
   }
 
   handleOnClick = () => {
@@ -34,20 +36,13 @@ class DepDetail extends Component<any, any> {
     const { onLoading, history } = this.props;
 
     onLoading();
-    history.push(`/-/web/version/${name}`);
+    history.push(`/-/web/detail/${name}`);
   };
 }
 
 const WrappDepDetail = withRouter(DepDetail);
 
 class DependencyBlock extends Component<any, any> {
-  renderTags = (deps: any, enableLoading: any) =>
-    deps.map(dep => {
-      const [name, version] = dep;
-
-      return <WrappDepDetail key={name} name={name} onLoading={enableLoading} version={version} />;
-    });
-
   render() {
     const { dependencies, title } = this.props;
     const deps = Object.entries(dependencies);
@@ -59,7 +54,7 @@ class DependencyBlock extends Component<any, any> {
           return (
             <CardWrap>
               <CardContent>
-                <Heading variant={'subheading'}>{title}</Heading>
+                <Heading variant={'subheading'}>{`${title} (${deps.length})`}</Heading>
                 <Tags>{this.renderTags(deps, enableLoading)}</Tags>
               </CardContent>
             </CardWrap>
@@ -68,6 +63,13 @@ class DependencyBlock extends Component<any, any> {
       </DetailContextConsumer>
     );
   }
+
+  renderTags = (deps: any, enableLoading: any) =>
+    deps.map(dep => {
+      const [name, version] = dep;
+
+      return <WrappDepDetail key={name} name={name} onLoading={enableLoading} version={version} />;
+    });
 }
 
 class Dependencies extends Component<any, any> {
@@ -85,23 +87,29 @@ class Dependencies extends Component<any, any> {
     );
   }
 
+  checkDependencyLength(dependency: Object = {}) {
+    return Object.keys(dependency).length > 0;
+  }
+
   // $FlowFixMe
   renderDependencies({ packageMeta }) {
     const { latest } = packageMeta;
-    // console.log('renderDependencies', latest);
-    const { dependencies, devDependencies, peerDependencies } = latest;
-    // console.log('dependencies', dependencies);
-    // console.log('devDependencies', devDependencies);
+    const { dependencies, devDependencies, peerDependencies, name } = latest;
 
-    return (
-      <Content>
-        <Fragment>
-          {dependencies && <DependencyBlock dependencies={dependencies} title={'Dependencies'} />}
-          {devDependencies && <DependencyBlock dependencies={devDependencies} title={'DevDependencies'} />}
-          {peerDependencies && <DependencyBlock dependencies={peerDependencies} title={'PeerDependencies'} />}
-        </Fragment>
-      </Content>
-    );
+    const dependencyMap = { dependencies, devDependencies, peerDependencies };
+
+    const dependencyList = Object.keys(dependencyMap).reduce((result, value, key) => {
+      const selectedDepndency = dependencyMap[value];
+      if (selectedDepndency && this.checkDependencyLength(selectedDepndency)) {
+        result.push(<DependencyBlock className={'dependency-block'} dependencies={selectedDepndency} key={key} title={value} />);
+      }
+      return result;
+    }, []);
+
+    if (dependencyList.length) {
+      return <Fragment>{dependencyList}</Fragment>;
+    }
+    return <NoItems className={'no-dependencies'} text={`${name} has no dependencies.`} />;
   }
 }
 

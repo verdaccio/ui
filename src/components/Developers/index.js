@@ -1,11 +1,12 @@
 import React, {Component} from 'react';
 
-import { DetailContextConsumer } from '../../pages/version';
-import Card from '@material-ui/core/Card';
 import Avatar from '@material-ui/core/Avatar';
 import Tooltip from '@material-ui/core/Tooltip';
 import Add from '@material-ui/icons/Add';
-import { Details, Heading, Content, CardContent, Fab } from './styles';
+
+import { DetailContextConsumer } from '../../pages/version';
+
+import { Details, Heading, Content, Fab } from './styles';
 
 interface Props {
   type: 'contributors' | 'maintainers'
@@ -23,42 +24,57 @@ class Developers extends Component<Props, any> {
           const { type } = this.props;
           const developerType = packageMeta.latest[type];
           if (!developerType || developerType.length === 0) return null;
-          return this.renderDevelopers(developerType);
+          return this.renderDevelopers(developerType, packageMeta);
         }}
       </DetailContextConsumer>
     );
   };
 
-  renderDevelopers = (developers) => {
+  handleLoadMore = () => {
+    this.setState((prev) => ({ visibleDevs: prev.visibleDevs + 6 }));
+  }
+
+  renderDevelopers = (developers, packageMeta) => {
     const { type } = this.props;
     const { visibleDevs } = this.state;
     return (
-      <Card>
-        <CardContent>
-          <Heading variant={'subheading'}>{type}</Heading>
-          <Content>
-            {developers.slice(0, visibleDevs).map(developer => (
-              <Details key={developer.email}>{this.renderDeveloperDetails(developer)}</Details>
-            ))}
-            {visibleDevs < developers.length &&
-              <Fab onClick={this.handleLoadMore} size={'small'}><Add /></Fab>
-            }
-          </Content>
-        </CardContent>
-      </Card>
+      <>
+        <Heading variant={'subheading'}>{type}</Heading>
+        <Content>
+          {developers.slice(0, visibleDevs).map(developer => (
+            <Details key={developer.email}>{this.renderDeveloperDetails(developer, packageMeta)}</Details>
+          ))}
+          {visibleDevs < developers.length &&
+            <Fab onClick={this.handleLoadMore} size={'small'}><Add /></Fab>
+          }
+        </Content>
+      </>
     );
   }
 
-  renderDeveloperDetails= ({name, avatar }) => {
+  renderLinkForMail(email, avatarComponent, packageName, version) {
+    if(!email) {
+      return avatarComponent;
+    }
+    return (
+      <a href={`mailto:${email}?subject=${packageName}@${version}`} target={"_top"}>
+        {avatarComponent}
+      </a>
+    );
+  }
+
+  renderDeveloperDetails = ({ name, avatar, email }, packageMeta) => {
+    const { 
+        name: packageName,
+        version,
+      } = packageMeta.latest;
+  
+    const avatarComponent = <Avatar aria-label={name} src={avatar} />;
     return (
       <Tooltip title={name}>
-        <Avatar aria-label={name} src={avatar} />
+        {this.renderLinkForMail(email, avatarComponent, packageName, version)}
       </Tooltip>
     );
-  }
-
-  handleLoadMore = () => {
-    this.setState((prev) => ({ visibleDevs: prev.visibleDevs + 6 }));
   }
 
 }
