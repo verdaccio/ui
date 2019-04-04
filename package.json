@@ -48,6 +48,7 @@
     "identity-obj-proxy": "3.0.0",
     "in-publish": "2.0.0",
     "jest": "24.1.0",
+    "jest-emotion": "10.0.10",
     "jest-environment-jsdom": "24.0.0",
     "jest-environment-jsdom-global": "1.1.1",
     "jest-environment-node": "24.0.0",

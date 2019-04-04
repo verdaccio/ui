@@ -34,6 +34,9 @@ module.exports = {
     '__snapshots__',
     '<rootDir>/build',
   ],
+  snapshotSerializers: [
+    "jest-emotion"
+  ],
   coveragePathIgnorePatterns: [
     'node_modules',
     'fixtures',
