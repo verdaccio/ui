@@ -1,6 +1,6 @@
 {
   "name": "@verdaccio/ui-theme",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Verdaccio User Interface",
   "author": {
     "name": "Verdaccio Core Team"
@@ -104,7 +104,6 @@
     "test:clean": "npx jest --clearCache",
     "test": "cross-env NODE_ENV=test BABEL_ENV=test TZ=UTC FORCE_COLOR=1 jest --config ./jest.config.js --maxWorkers 2 --passWithNoTests",
     "test:size": "bundlesize",
-    "pre:ci": "npm run lint && npm run build:webui",
     "lint": "npm run flow && npm run lint:js && npm run lint:css",
     "lint:js": "eslint .",
     "lint:css": "stylelint 'src/webui/**/styles.js'",
