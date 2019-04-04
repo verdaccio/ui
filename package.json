@@ -107,6 +107,7 @@
     "test:size": "bundlesize",
     "lint": "npm run flow && npm run lint:js && npm run lint:css",
     "lint:js": "eslint .",
+    "coverage:publish": "codecov",
     "lint:css": "stylelint 'src/webui/**/styles.js'",
     "pre:webpack": "rimraf static/*",
     "dev": "cross-env BABEL_ENV=ui babel-node tools/dev.server.js",
