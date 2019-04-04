@@ -2,31 +2,11 @@ npm-debug.log
 verdaccio-*.tgz
 .DS_Store
 build/
-
-### Test
-
-test/unit/partials/store/test-*-storage/*
-test/unit/partials/store/storage_default_storage/*
-.verdaccio-db.json
-.sinopia-db.json
-
 ###
-!bin/verdaccio
-test-storage*
-access-storage*
-.verdaccio_test_env
 node_modules
 package-lock.json
-npm_test-fails-add-tarball*
 yarn-error.log
-
-
-# Istanbul
-coverage/
-.nyc*
-
 .idea/
-
 
 # React
 bundle.js
@@ -35,4 +15,5 @@ __tests__
 
 # Compiled script
 static/*
+coverage/
 

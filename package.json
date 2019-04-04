@@ -22,6 +22,7 @@
     "codecov": "3.2.0",
     "cross-env": "5.2.0",
     "css-loader": "0.28.10",
+    "date-fns": "1.30.1",
     "emotion": "9.2.12",
     "enzyme": "3.9.0",
     "enzyme-adapter-react-16": "1.10.0",
@@ -50,7 +51,6 @@
     "jest-environment-jsdom": "24.0.0",
     "jest-environment-jsdom-global": "1.1.1",
     "jest-environment-node": "24.0.0",
-    "lint-staged": "7.3.0",
     "localstorage-memory": "1.0.3",
     "mini-css-extract-plugin": "0.5.0",
     "node-mocks-http": "1.7.3",
@@ -96,30 +96,21 @@
   },
   "keywords": [
     "verdaccio",
-    "verdaccio-ui"
+    "verdaccio-plugin",
+    "verdaccio-theme"
   ],
   "scripts": {
     "flow": "flow check",
-    "pretest": "npm run code:build",
     "test:clean": "npx jest --clearCache",
     "test": "cross-env NODE_ENV=test BABEL_ENV=test TZ=UTC FORCE_COLOR=1 jest --config ./jest.config.js --maxWorkers 2 --passWithNoTests",
-    "test:functional": "cross-env NODE_ENV=test jest --config ./test/jest.config.functional.js --testPathPattern ./test/functional/index* --passWithNoTests",
-    "test:e2e": "cross-env BABEL_ENV=test jest --config ./test/jest.config.e2e.js",
     "test:size": "bundlesize",
-    "test:all": "npm run build:webui && npm run test && npm run test:functional && npm run test:e2e && npm run test:size",
     "pre:ci": "npm run lint && npm run build:webui",
-    "coverage:publish": "codecov",
     "lint": "npm run flow && npm run lint:js && npm run lint:css",
     "lint:js": "eslint .",
     "lint:css": "stylelint 'src/webui/**/styles.js'",
-    "dev:start": "cross-env BABEL_ENV=registry babel-node src/lib/cli",
-    "code:build": "cross-env BABEL_ENV=registry babel src/ --out-dir build/ --ignore src/webui/ --copy-files",
-    "code:docker-build": "cross-env BABEL_ENV=registry-docker babel src/ --out-dir build/ --ignore src/webui/ --copy-files",
     "pre:webpack": "rimraf static/*",
-    "dev:webui": "cross-env BABEL_ENV=ui babel-node tools/dev.server.js",
-    "build:webui": "npm run pre:webpack && cross-env BABEL_ENV=ui webpack --config tools/webpack.prod.config.babel.js",
-    "build:docker": "docker build -t verdaccio . --no-cache",
-    "build:docker:rpi": "docker build -f Dockerfile.rpi -t verdaccio:rpi ."
+    "dev": "cross-env BABEL_ENV=ui babel-node tools/dev.server.js",
+    "build": "npm run pre:webpack && cross-env BABEL_ENV=ui webpack --config tools/webpack.prod.config.babel.js"
   },
   "engines": {
     "node": ">=6.12.0",
@@ -127,24 +118,8 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged && commitlint -e $GIT_PARAMS"
+      "pre-commit": "commitlint -e $GIT_PARAMS"
     }
-  },
-  "lint-staged": {
-    "linters": {
-      "*.yaml": [
-        "prettier --parser yaml --no-config --single-quote --write",
-        "git add"
-      ],
-      "*": [
-        "eslint .",
-        "prettier --write",
-        "git add"
-      ]
-    },
-    "ignore": [
-      "*.json"
-    ]
   },
   "license": "MIT",
   "commitlint": {
