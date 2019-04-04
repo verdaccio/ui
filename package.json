@@ -1,5 +1,5 @@
 {
-  "name": "ui",
+  "name": "@verdaccio/ui-theme",
   "version": "0.0.1",
   "description": "Verdaccio User Interface",
   "author": {
@@ -9,7 +9,7 @@
     "type": "git",
     "url": "git://github.com/verdaccio/ui"
   },
-  "main": "build/index.js",
+  "main": "index.js",
   "devDependencies": {
     "@commitlint/cli": "7.5.2",
     "@commitlint/config-conventional": "7.5.0",
