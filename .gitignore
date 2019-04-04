@@ -1,26 +1,38 @@
-# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+npm-debug.log
+verdaccio-*.tgz
+.DS_Store
+build/
+
+### Test
+
+test/unit/partials/store/test-*-storage/*
+test/unit/partials/store/storage_default_storage/*
+.verdaccio-db.json
+.sinopia-db.json
+
+###
+!bin/verdaccio
+test-storage*
+access-storage*
+.verdaccio_test_env
+node_modules
+package-lock.json
+npm_test-fails-add-tarball*
+yarn-error.log
+
+
+# Istanbul
+coverage/
+.nyc*
 
 .idea/
 
-# dependencies
-/node_modules
-/.pnp
-.pnp.js
 
-# testing
-/coverage
+# React
+bundle.js
+bundle.js.map
+__tests__
 
 # Compiled script
-/static
-/dist
+static/*
 
-# misc
-.DS_Store
-.env.local
-.env.development.local
-.env.test.local
-.env.production.local
-
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*

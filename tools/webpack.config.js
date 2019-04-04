@@ -1,77 +1,74 @@
-const path = require("path");
-const StyleLintPlugin = require("stylelint-webpack-plugin");
-
-const SRC_ROOT = path.resolve(__dirname, "../src/");
-const APP_ROOT = path.resolve(__dirname, "../static/");
+const env = require('../src/config/env');
+const StyleLintPlugin = require('stylelint-webpack-plugin');
 
 module.exports = {
-  entry: `${SRC_ROOT}/index.js`,
+  entry: `${env.SRC_ROOT}/webui/src/index.js`,
 
   output: {
-    path: `${APP_ROOT}/static/`,
-    filename: "[name].[hash].js"
-    // publicPath: "ToReplaceByVerdaccio/-/static"
+    path: `${env.APP_ROOT}/static/`,
+    filename: '[name].[hash].js',
+    publicPath: 'ToReplaceByVerdaccio/-/static',
   },
 
   resolve: {
-    extensions: [".js", ".jsx"]
+    extensions: ['.js', '.jsx'],
   },
 
   plugins: [
     new StyleLintPlugin({
-      files: ["src/**/styles.js"],
+      files: ['src/webui/**/styles.js'],
       failOnError: false,
       emitErrors: true
-    })
+    }),
   ],
 
   optimization: {
     runtimeChunk: {
-      name: "manifest"
+      name: 'manifest',
     },
     splitChunks: {
       cacheGroups: {
         vendor: {
           test: /[\\/]node_modules[\\/]/,
-          name: "vendors",
+          name: 'vendors',
           priority: -20,
-          chunks: "all"
-        }
-      }
-    }
+          chunks: 'all',
+        },
+      },
+    },
   },
 
   module: {
     rules: [
-      // /* Pre loader */
-      // {
-      //   enforce: "pre",
-      //   test: /\.jsx?$/,
-      //   exclude: /node_modules/,
-      //   use: "eslint-loader"
-      // },
+      /* Pre loader */
+      {
+        enforce: 'pre',
+        test: /\.jsx?$/,
+        exclude: /node_modules/,
+        use: 'eslint-loader',
+      },
 
       /* Normal loader */
       {
         test: /\.jsx?$/,
         exclude: /node_modules/,
-        use: "babel-loader"
+        use: 'babel-loader',
       },
       {
         test: /\.(jpe?g|png|gif|svg)$/,
         use: [
           {
-            loader: "file-loader"
-          }
+            loader: 'file-loader'
+          },
         ]
       },
       {
         test: /\.(woff|woff2|eot|ttf|otf)$/,
-        loader: "url-loader",
+        loader: 'url-loader',
         options: {
-          name: "fonts/[name].[ext]",
-          limit: 50
-        }
+          name: 'fonts/[name].[ext]',
+          limit: 50,
+        },
       },
       {
         test: /\.scss$/,
@@ -83,17 +80,17 @@ module.exports = {
         test: /\.css$/,
         use: [
           {
-            loader: "style-loader"
+            loader: 'style-loader',
           },
           {
-            loader: "css-loader"
-          }
-        ]
-      }
-    ]
+            loader: 'css-loader',
+          },
+        ],
+      },
+    ],
   },
 
   stats: {
-    children: false
-  }
+    children: false,
+  },
 };
