@@ -102,6 +102,7 @@
   ],
   "scripts": {
     "flow": "flow check",
+    "release": "standard-version -a -s",
     "test:clean": "npx jest --clearCache",
     "test": "cross-env NODE_ENV=test BABEL_ENV=test TZ=UTC FORCE_COLOR=1 jest --config ./jest.config.js --maxWorkers 2 --passWithNoTests",
     "test:size": "bundlesize",
