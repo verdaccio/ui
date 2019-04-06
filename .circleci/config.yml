@@ -2,7 +2,7 @@ version: 2
 
 aliases:
   - &defaults
-    working_directory: ~/verdaccio
+    working_directory: ~/verdaccio-ui
   - &node8_executor
     docker:
       - image: circleci/node:8
@@ -29,11 +29,6 @@ aliases:
     filters:
       tags:
         only: /.*/
-      branches:
-        ignore:
-          - gh-pages
-          - l10n_master
-          - /release\/.*/
   - &execute_on_release
     filters:
       tags:
