@@ -20,6 +20,7 @@
     "autosuggest-highlight": "3.1.1",
     "bundlesize": "0.17.1",
     "codecov": "3.2.0",
+    "concurrently": "4.1.0",
     "cross-env": "5.2.0",
     "css-loader": "0.28.10",
     "date-fns": "1.30.1",
@@ -113,8 +114,10 @@
     "coverage:publish": "codecov",
     "lint:css": "stylelint 'src/webui/**/styles.js'",
     "pre:webpack": "rimraf static/*",
-    "dev": "cross-env BABEL_ENV=ui babel-node tools/dev.server.js",
-    "build": "npm run pre:webpack && cross-env BABEL_ENV=ui webpack --config tools/webpack.prod.config.babel.js"
+    "dev:web": "cross-env BABEL_ENV=ui babel-node tools/dev.server.js",
+    "verdaccio:server": "node tools/verdaccio.js",
+    "build": "npm run pre:webpack && cross-env BABEL_ENV=ui webpack --config tools/webpack.prod.config.babel.js",
+    "dev": "concurrently --kill-others \"npm run dev:web\" \"npm run verdaccio:server\""
   },
   "engines": {
     "node": ">=8",
