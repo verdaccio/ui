@@ -1,0 +1,56 @@
+web:
+  title: Verdaccio
+  # gravatar: false
+  # sort_packages: asc
+
+plugins: ../
+
+auth:
+  auth-memory:
+    users:
+      foo:
+        name: test
+        password: test
+      bar:
+        name: bar
+        password: test
+store:
+  memory:
+    limit: 1000
+
+# theme:
+
+
+security:
+  api:
+    jwt:
+      sign:
+        expiresIn: 60d
+        notBefore: 1
+  web:
+    sign:
+      expiresIn: 7d
+      notBefore: 1
+
+uplinks:
+  npmjs:
+    url: https://registry.npmjs.org/
+
+packages:
+  '@*/*':
+    access: $all
+    publish: $authenticated
+    unpublish: $authenticated
+
+  '**':
+    access: $all
+    publish: $authenticated
+    unpublish: $authenticated
+
+middlewares:
+  audit:
+    enabled: true
+
+logs:
+- { type: stdout, format: pretty, level: trace }
+

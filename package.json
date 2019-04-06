@@ -52,6 +52,7 @@
     "jest-environment-jsdom": "24.0.0",
     "jest-environment-jsdom-global": "1.1.1",
     "jest-environment-node": "24.0.0",
+    "js-yaml": "3.13.1",
     "localstorage-memory": "1.0.3",
     "mini-css-extract-plugin": "0.5.0",
     "node-mocks-http": "1.7.3",
@@ -85,6 +86,7 @@
     "supertest": "3.4.2",
     "typeface-roboto": "0.0.54",
     "url-loader": "1.1.2",
+    "verdaccio": "4.0.0-alpha.7",
     "verdaccio-auth-memory": "0.0.4",
     "verdaccio-memory": "2.0.0",
     "webpack": "4.20.2",
@@ -115,8 +117,8 @@
     "build": "npm run pre:webpack && cross-env BABEL_ENV=ui webpack --config tools/webpack.prod.config.babel.js"
   },
   "engines": {
-    "node": ">=6.12.0",
-    "npm": ">=3"
+    "node": ">=8",
+    "npm": ">=5"
   },
   "husky": {
     "hooks": {
