@@ -2,8 +2,14 @@ workflow "build and test" {
   resolves = [
     "lint",
     "test",
+    "branch-filter",
   ]
   on = "push"
+}
+
+action "branch-filter" {
+  uses = "actions/bin/filter@master"
+  args = "branch"
 }
 
 action "install" {
@@ -31,8 +37,9 @@ action "test" {
 
 workflow "release" {
   resolves = [
-    "publish",
+    "github-release",
     "tag-filter",
+    "lint",
   ]
   on = "push"
 }
@@ -40,14 +47,25 @@ workflow "release" {
 action "tag-filter" {
   uses = "actions/bin/filter@master"
   args = "tag v*"
-  secrets = ["REGISTRY_AUTH_TOKEN"]
+}
+
+action "publish" {
+  needs = ["test"]
+  uses = "docker://node:10"
+  args = "sh scripts/publish.sh"
+  secrets = [
+    "REGISTRY_AUTH_TOKEN",
+  ]
   env = {
     REGISTRY_URL = "registry.verdaccio.org"
   }
 }
 
-action "publish" {
-  needs = ["build"]
+action "github-release" {
+  needs = ["publish"]
   uses = "docker://node:10"
-  args = "sh scripts/publish.sh"
+  args = "sh scripts/github-release.sh"
+  secrets = [
+    "GITHUB_TOKEN",
+  ]
 }
