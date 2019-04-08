@@ -1,3 +1,7 @@
+/**
+ * @prettier
+ */
+
 const fs = require('fs');
 const startServer = require('verdaccio').default;
 const yalm = require('js-yaml');
@@ -11,9 +15,9 @@ const handler = function(webServer, addr, pkgName, pkgVersion) {
 
   process.on('SIGTERM', () => {
     webServer.close(() => {
-      console.log('Process terminated')
-    })
-  })
+      console.log('Process terminated');
+    });
+  });
 };
 
 startServer(configJsonFormat, 8080, '', '1.0.0', 'verdaccio', handler);
