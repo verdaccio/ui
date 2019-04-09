@@ -35,22 +35,46 @@ action "test" {
   args = "yarn run test"
 }
 
+
 workflow "release" {
   resolves = [
     "github-release",
-    "tag-filter",
-    "lint",
+    "release:lint",
   ]
   on = "push"
 }
 
-action "tag-filter" {
+action "release:tag-filter" {
   uses = "actions/bin/filter@master"
   args = "tag v*"
 }
 
-action "publish" {
-  needs = ["test"]
+action "release:install" {
+  uses = "docker://node:10"
+  needs = ["release:tag-filter"]
+  args = "yarn install"
+}
+
+action "release:build" {
+  uses = "docker://node:10"
+  needs = ["release:install"]
+  args = "yarn run build"
+}
+
+action "release:lint" {
+  uses = "docker://node:10"
+  needs = ["release:install"]
+  args = "yarn run lint"
+}
+
+action "release:test" {
+  uses = "docker://node:10"
+  needs = ["release:build"]
+  args = "yarn run test"
+}
+
+action "release:publish" {
+  needs = ["release:test"]
   uses = "docker://node:10"
   args = "sh scripts/publish.sh"
   secrets = [
@@ -62,7 +86,7 @@ action "publish" {
 }
 
 action "github-release" {
-  needs = ["publish"]
+  needs = ["release:publish"]
   uses = "docker://node:10"
   args = "sh scripts/github-release.sh"
   secrets = [
