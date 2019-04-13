@@ -35,7 +35,6 @@ action "test" {
   args = "yarn run test"
 }
 
-
 workflow "release" {
   resolves = [
     "github-release",
@@ -81,7 +80,7 @@ action "release:publish" {
     "REGISTRY_AUTH_TOKEN",
   ]
   env = {
-    REGISTRY_URL = "registry.verdaccio.org"
+    REGISTRY_URL = "registry.npmjs.org"
   }
 }
 
