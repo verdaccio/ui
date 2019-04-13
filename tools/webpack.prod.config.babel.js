@@ -50,6 +50,7 @@ const prodConf = {
       filename: 'index.html',
       favicon: `${env.SRC_ROOT}/webui/template/favicon.ico`,
       verdaccioURL: 'ToReplaceByVerdaccio',
+      version_app: 'ToReplaceByVersion',
       template: `${env.SRC_ROOT}/webui/template/index.html`,
       debug: false,
       inject: true,

@@ -6,7 +6,6 @@
 import React from 'react';
 import type { Element } from 'react';
 
-import { version } from '../../../../package.json';
 import { Wrapper, Left, Right, Earth, Flags, Love, Flag, Logo, Inner, ToolTip } from './styles';
 import { goToVerdaccioWebsite } from '../../utils/windows.js';
 
@@ -28,7 +27,7 @@ const MADEWITH_LABEL = ' Made with';
 const ON_LABEL = 'on';
 const HEARTH_EMOJI = '♥';
 
-const renderRight = () => (
+const renderRight = (version = window.VERDACCIO_VERSION) => (
   <Right>
     {POWERED_LABEL}
     <Logo img={true} name={'verdaccio'} onClick={goToVerdaccioWebsite} pointer={true} size={'md'} />
