@@ -120,16 +120,17 @@
     "dev:web": "cross-env BABEL_ENV=ui babel-node tools/dev.server.js",
     "verdaccio:server": "node tools/verdaccio.js",
     "build": "npm run pre:webpack && cross-env BABEL_ENV=ui webpack --config tools/webpack.prod.config.babel.js",
-    "dev": "concurrently --kill-others \"npm run dev:web\" \"npm run verdaccio:server\""
+    "dev": "concurrently --kill-others \"npm run dev:web\" \"npm run verdaccio:server\"",
+    "commitmsg": "commitlint -e $GIT_PARAMS"
   },
   "engines": {
     "node": ">=8",
     "npm": ">=5"
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "commitlint -e $GIT_PARAMS"
-    }
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ]
   },
   "license": "MIT",
   "commitlint": {
