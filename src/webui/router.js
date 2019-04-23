@@ -16,6 +16,7 @@ import Header from './components/Header';
 const NotFound = asyncComponent(() => import('./components/NotFound'));
 const VersionPackage = asyncComponent(() => import('./pages/version'));
 const HomePage = asyncComponent(() => import('./pages/home'));
+const PackagesCachedPage = asyncComponent(() => import('./pages/packages-cached'));
 
 class RouterApp extends Component<any, any> {
   render() {
@@ -27,6 +28,7 @@ class RouterApp extends Component<any, any> {
             <Route exact={true} path={'/'} render={this.renderHomePage} />
             <Route exact={true} path={'/-/web/detail/@:scope/:package'} render={this.renderVersionPage} />
             <Route exact={true} path={'/-/web/detail/:package'} render={this.renderVersionPage} />
+            <Route exact={true} path={'/-/web/packages/cached'} render={this.renderPackagesCachedPage} />
             <Route component={NotFound} />
           </Switch>
         </Fragment>
@@ -61,6 +63,16 @@ class RouterApp extends Component<any, any> {
       <AppContextConsumer>
         {function renderConsumerVersionPage({ isUserLoggedIn }) {
           return <VersionPackage {...routerProps} isUserLoggedIn={isUserLoggedIn} />;
+        }}
+      </AppContextConsumer>
+    );
+  };
+
+  renderPackagesCachedPage = (routerProps: any) => {
+    return (
+      <AppContextConsumer>
+        {function renderConsumerVersionPage({ isUserLoggedIn }) {
+          return <PackagesCachedPage {...routerProps} isUserLoggedIn={isUserLoggedIn} />;
         }}
       </AppContextConsumer>
     );

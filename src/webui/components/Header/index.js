@@ -13,6 +13,7 @@ import MenuItem from '@material-ui/core/MenuItem/index';
 import Menu from '@material-ui/core/Menu/index';
 import Info from '@material-ui/icons/Info';
 import Help from '@material-ui/icons/Help';
+import List from '@material-ui/icons/List';
 import Tooltip from '@material-ui/core/Tooltip/index';
 import AccountCircle from '@material-ui/icons/AccountCircle';
 import { default as IconSearch } from '@material-ui/icons/Search';
@@ -158,6 +159,13 @@ class Header extends Component<IProps, IState> {
           </IconSearchButton>
         );
         break;
+      case 'list':
+        content = (
+          <IconButton color={'inherit'} component={Link} to={'/-/web/packages/cached'}>
+            <List />
+          </IconButton>
+        );
+        break;
     }
     return (
       <Tooltip disableFocusListener={true} title={title}>
@@ -171,6 +179,7 @@ class Header extends Component<IProps, IState> {
     return (
       <RightSide>
         {!withoutSearch && this.renderToolTipIcon('Search packages', 'search')}
+        {this.renderToolTipIcon('Cached Packages', 'list')}
         {this.renderToolTipIcon('Documentation', 'help')}
         {this.renderToolTipIcon('Registry Information', 'info')}
         {username ? (
