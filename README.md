@@ -30,7 +30,7 @@ yarn dev
 ```
 The configuration file is located on `tools/_config.yaml`.
 
-Run lintings and test to check your code is clean.
+Run linting tooling and test to check your code is clean before commit.
 
 ```
 yarn lint && yarn test
