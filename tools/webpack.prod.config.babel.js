@@ -47,6 +47,7 @@ const prodConf = {
       title: 'ToReplaceByTitle',
       scope: 'ToReplaceByScope',
       logo: 'ToReplaceByLogo',
+      primary_color: 'ToReplaceByPrimaryColor',
       filename: 'index.html',
       favicon: `${env.SRC_ROOT}/webui/template/favicon.ico`,
       verdaccioURL: 'ToReplaceByVerdaccio',

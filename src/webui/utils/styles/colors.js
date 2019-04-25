@@ -30,7 +30,7 @@ const colors = {
     // Main colors
     // -------------------------
 
-    primary: '#4b5e40',
+    primary: window.VERDACCIO_PRIMARY_COLOR || '#4b5e40',
     secondary: '#20232a',
 
 };
