@@ -29,7 +29,7 @@ action "test" {
   args = "yarn run test"
 }
 
-workflow "release" {
+workflow "build, test & release" {
   resolves = [
     "github-release",
   ]
