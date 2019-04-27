@@ -1,7 +1,8 @@
 workflow "build & test" {
   resolves = [
-    "lint",
-    "test",
+    "node:8",
+    "node:10",
+    "node:11",
   ]
   on = "pull_request"
 }
