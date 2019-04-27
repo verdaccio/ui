@@ -1,4 +1,4 @@
-workflow "build & test on PR" {
+workflow "build & test" {
   resolves = [,
     "node:12"
   ]
@@ -38,7 +38,7 @@ action "node:12" {
   args = "sh scripts/build-test.sh"
 }
 
-workflow "release" {
+workflow "build, test & release" {
   resolves = [
     "github-release"
   ]
