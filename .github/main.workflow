@@ -2,14 +2,8 @@ workflow "build and test" {
   resolves = [
     "lint",
     "test",
-    "branch-filter",
   ]
-  on = "push"
-}
-
-action "branch-filter" {
-  uses = "actions/bin/filter@master"
-  args = "branch"
+  on = "pull_request"
 }
 
 action "install" {
@@ -38,42 +32,25 @@ action "test" {
 workflow "release" {
   resolves = [
     "github-release",
-    "release:lint",
   ]
   on = "push"
 }
 
+action "release:authorization" {
+  needs = ["test"]
+  uses = "actions/bin/filter@master"
+  args = ["actor", "ayusharma", "juanpicado"]
+}
+
 action "release:tag-filter" {
+  needs = ["release:authorization"],
   uses = "actions/bin/filter@master"
   args = "tag v*"
 }
 
-action "release:install" {
-  uses = "docker://node:10"
-  needs = ["release:tag-filter"]
-  args = "yarn install"
-}
-
-action "release:build" {
-  uses = "docker://node:10"
-  needs = ["release:install"]
-  args = "yarn run build"
-}
-
-action "release:lint" {
-  uses = "docker://node:10"
-  needs = ["release:install"]
-  args = "yarn run lint"
-}
-
-action "release:test" {
-  uses = "docker://node:10"
-  needs = ["release:build"]
-  args = "yarn run test"
-}
 
 action "release:publish" {
-  needs = ["release:test"]
+  needs = ["release:tag-filter"]
   uses = "docker://node:10"
   args = "sh scripts/publish.sh"
   secrets = [
@@ -91,4 +68,49 @@ action "github-release" {
   secrets = [
     "GITHUB_TOKEN",
   ]
+}
+
+workflow "node version compatibility" {
+  resolves = [
+    "node version compatibility 8: test",
+    "node version compatibility 11: test",
+  ]
+  on = "pull_request"
+}
+
+action "node version compatibility 8: install" {
+  uses = "docker://node:8"
+  args = "yarn install"
+}
+
+action "node version compatibility 8: build" {
+  needs = ["node version compatibility 8: install"]
+  uses = "docker://node:8"
+  args = "yarn run build"
+}
+
+
+action "node version compatibility 8: test" {
+  needs = ["node version compatibility 8: build"]
+  uses = "docker://node:8"
+  args = "yarn run test"
+}
+
+
+action "node version compatibility 11: install" {
+  uses = "docker://node:11"
+  args = "yarn install"
+}
+
+action "node version compatibility 11: build" {
+  needs = ["node version compatibility 11: install"]
+  uses = "docker://node:11"
+  args = "yarn run build"
+}
+
+
+action "node version compatibility 11: test" {
+  needs = ["node version compatibility 11: build"]
+  uses = "docker://node:11"
+  args = "yarn run test"
 }
