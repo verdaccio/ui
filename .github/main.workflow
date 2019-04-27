@@ -1,8 +1,5 @@
-workflow "build & test" {
-  resolves = [
-    "node:8",
-    "node:10",
-    "node:11",
+workflow "build & test on PR" {
+  resolves = [,
     "node:12"
   ]
   on = "pull_request"
@@ -32,7 +29,11 @@ action "node:11" {
 }
 
 action "node:12" {
-  needs = ["PR:filter"]
+  needs = [
+    "node:8",
+    "node:10",
+    "node:11"
+  ]
   uses = "docker://node:12"
   args = "sh scripts/build-test.sh"
 }
@@ -42,17 +43,6 @@ workflow "release" {
     "github-release"
   ]
   on = "push"
-}
-
-action "release:filter" {
-  uses = "actions/bin/filter@master"
-  args = "tag v*"
-}
-
-action "release:authorization" {
-  needs = ["release:filter"]
-  uses = "actions/bin/filter@master"
-  args = ["actor", "ayusharma", "juanpicado"]
 }
 
 action "release:node:8" {
@@ -74,17 +64,32 @@ action "release:node:11" {
 }
 
 action "release:node:12" {
-  needs = ["release:authorization"]
+  needs = [
+      "node:8",
+      "node:10",
+      "node:11",
+  ]
   uses = "docker://node:12"
   args = "sh scripts/build-test.sh"
 }
 
+action "release:filter" {
+  needs = [
+    "release:node:12"
+  ]
+  uses = "actions/bin/filter@master"
+  args = "tag v*"
+}
+
+action "release:authorization" {
+  needs = ["release:filter"]
+  uses = "actions/bin/filter@master"
+  args = ["actor", "ayusharma", "juanpicado"]
+}
+
 action "release:publish" {
   needs = [
-    "release:node:8",
-    "release:node:10",
-    "release:node:11",
-    "release:node:12"
+    "release:authorization"
   ]
   uses = "docker://node:10"
   args = "sh scripts/publish.sh"
