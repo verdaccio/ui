@@ -6,51 +6,71 @@ workflow "build & test" {
   on = "pull_request"
 }
 
-action "install" {
-  uses = "docker://node:10"
-  args = "yarn install"
+action "PR:filter" {
+  uses = "actions/bin/filter@master"
+  args = "action 'opened|synchronize'"
 }
 
-action "build" {
-  uses = "docker://node:10"
-  needs = ["install"]
-  args = "yarn run build"
+action "node:8" {
+  needs = ["PR:filter"]
+  uses = "docker://node:8"
+  args = "sh scripts/build-test.sh"
 }
 
-action "lint" {
+action "node:10" {
+  needs = ["PR:filter"]
   uses = "docker://node:10"
-  needs = ["install"]
-  args = "yarn run lint"
+  args = "sh scripts/build-test.sh"
 }
 
-action "test" {
-  uses = "docker://node:10"
-  needs = ["build"]
-  args = "yarn run test"
+action "node:11" {
+  needs = ["PR:filter"]
+  uses = "docker://node:11"
+  args = "sh scripts/build-test.sh"
 }
 
-workflow "build, test & release" {
+workflow "release" {
   resolves = [
-    "github-release",
-    "lint"
+    "github-release"
   ]
   on = "push"
 }
 
-action "release:tag-filter" {
-  needs = ["test"]
+action "release:filter" {
   uses = "actions/bin/filter@master"
   args = "tag v*"
 }
 
 action "release:authorization" {
-  needs = ["release:tag-filter"]
+  needs = ["release:filter"]
   uses = "actions/bin/filter@master"
   args = ["actor", "ayusharma", "juanpicado"]
 }
 
-action "release:publish" {
+action "release:node:8" {
   needs = ["release:authorization"]
+  uses = "docker://node:8"
+  args = "sh scripts/build-test.sh"
+}
+
+action "release:node:10" {
+  needs = ["release:authorization"]
+  uses = "docker://node:10"
+  args = "sh scripts/build-test.sh"
+}
+
+action "release:node:11" {
+  needs = ["release:authorization"]
+  uses = "docker://node:11"
+  args = "sh scripts/build-test.sh"
+}
+
+action "release:publish" {
+  needs = [
+    "release:node:8",
+    "release:node:10",
+    "release:node:11"
+  ]
   uses = "docker://node:10"
   args = "sh scripts/publish.sh"
   secrets = [
@@ -68,49 +88,4 @@ action "github-release" {
   secrets = [
     "GITHUB_TOKEN",
   ]
-}
-
-workflow "node version compatibility" {
-  resolves = [
-    "node version compatibility 8: test",
-    "node version compatibility 11: test",
-  ]
-  on = "pull_request"
-}
-
-action "node version compatibility 8: install" {
-  uses = "docker://node:8"
-  args = "yarn install"
-}
-
-action "node version compatibility 8: build" {
-  needs = ["node version compatibility 8: install"]
-  uses = "docker://node:8"
-  args = "yarn run build"
-}
-
-
-action "node version compatibility 8: test" {
-  needs = ["node version compatibility 8: build"]
-  uses = "docker://node:8"
-  args = "yarn run test"
-}
-
-
-action "node version compatibility 11: install" {
-  uses = "docker://node:11"
-  args = "yarn install"
-}
-
-action "node version compatibility 11: build" {
-  needs = ["node version compatibility 11: install"]
-  uses = "docker://node:11"
-  args = "yarn run build"
-}
-
-
-action "node version compatibility 11: test" {
-  needs = ["node version compatibility 11: build"]
-  uses = "docker://node:11"
-  args = "yarn run test"
 }
