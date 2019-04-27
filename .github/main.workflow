@@ -1,4 +1,4 @@
-workflow "build and test" {
+workflow "build & test" {
   resolves = [
     "lint",
     "test",
@@ -32,25 +32,25 @@ action "test" {
 workflow "build, test & release" {
   resolves = [
     "github-release",
+    "lint"
   ]
   on = "push"
 }
 
-action "release:authorization" {
-  needs = ["test"]
-  uses = "actions/bin/filter@master"
-  args = ["actor", "ayusharma", "juanpicado"]
-}
-
 action "release:tag-filter" {
-  needs = ["release:authorization"],
+  needs = ["test"]
   uses = "actions/bin/filter@master"
   args = "tag v*"
 }
 
+action "release:authorization" {
+  needs = ["release:tag-filter"]
+  uses = "actions/bin/filter@master"
+  args = ["actor", "ayusharma", "juanpicado"]
+}
 
 action "release:publish" {
-  needs = ["release:tag-filter"]
+  needs = ["release:authorization"]
   uses = "docker://node:10"
   args = "sh scripts/publish.sh"
   secrets = [
