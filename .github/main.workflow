@@ -3,6 +3,7 @@ workflow "build & test" {
     "node:8",
     "node:10",
     "node:11",
+    "node:12"
   ]
   on = "pull_request"
 }
@@ -27,6 +28,12 @@ action "node:10" {
 action "node:11" {
   needs = ["PR:filter"]
   uses = "docker://node:11"
+  args = "sh scripts/build-test.sh"
+}
+
+action "node:12" {
+  needs = ["PR:filter"]
+  uses = "docker://node:12"
   args = "sh scripts/build-test.sh"
 }
 
@@ -66,11 +73,18 @@ action "release:node:11" {
   args = "sh scripts/build-test.sh"
 }
 
+action "release:node:12" {
+  needs = ["release:authorization"]
+  uses = "docker://node:12"
+  args = "sh scripts/build-test.sh"
+}
+
 action "release:publish" {
   needs = [
     "release:node:8",
     "release:node:10",
-    "release:node:11"
+    "release:node:11",
+    "release:node:12"
   ]
   uses = "docker://node:10"
   args = "sh scripts/publish.sh"
