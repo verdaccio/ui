@@ -45,29 +45,26 @@ workflow "release" {
   on = "push"
 }
 
-action "release:node:8" {
-  needs = ["release:authorization"]
+action "push:node:8" {
   uses = "docker://node:8"
   args = "sh scripts/build-test.sh"
 }
 
-action "release:node:10" {
-  needs = ["release:authorization"]
+action "push:node:10" {
   uses = "docker://node:10"
   args = "sh scripts/build-test.sh"
 }
 
-action "release:node:11" {
-  needs = ["release:authorization"]
+action "push:node:11" {
   uses = "docker://node:11"
   args = "sh scripts/build-test.sh"
 }
 
-action "release:node:12" {
+action "push:node:12" {
   needs = [
-      "node:8",
-      "node:10",
-      "node:11",
+      "push:node:8",
+      "push:node:10",
+      "push:node:11",
   ]
   uses = "docker://node:12"
   args = "sh scripts/build-test.sh"
@@ -75,7 +72,7 @@ action "release:node:12" {
 
 action "release:filter" {
   needs = [
-    "release:node:12"
+    "push:node:12"
   ]
   uses = "actions/bin/filter@master"
   args = "tag v*"
