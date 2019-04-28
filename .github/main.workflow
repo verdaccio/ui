@@ -6,7 +6,7 @@ workflow "build and test on branch" {
     "branch.lint.node.10",
     "branch.test.node.10",
     "branch.test.node.8",
-    "branch.test.node.12"
+    # "branch.test.node.12"
   ]
   on = "push"
 }
@@ -60,24 +60,24 @@ action "branch.test.node.8" {
   args = "yarn run test"
 }
 
-# node 12
-action "branch.install.node.12" {
-  needs = ["branch.filter"]
-  uses = "docker://node:12"
-  args = "yarn install"
-}
+# @todo node 12
+# action "branch.install.node.12" {
+#   needs = ["branch.filter"]
+#   uses = "docker://node:12"
+#   args = "yarn install"
+# }
 
-action "branch.build.node.12" {
-  uses = "docker://node:12"
-  needs = ["branch.install.node.12"]
-  args = "yarn run build"
-}
+# action "branch.build.node.12" {
+#   uses = "docker://node:12"
+#   needs = ["branch.install.node.12"]
+#   args = "yarn run build"
+# }
 
-action "branch.test.node.12" {
-  uses = "docker://node:12"
-  needs = ["branch.build.node.12"]
-  args = "yarn run test"
-}
+# action "branch.test.node.12" {
+#   uses = "docker://node:12"
+#   needs = ["branch.build.node.12"]
+#   args = "yarn run test"
+# }
 
 ################################################
 # Workflow for a Pull request
@@ -141,24 +141,24 @@ action "pr.test.node.8" {
   args = "yarn run test"
 }
 
-# node 12
-action "pr.install.node.12" {
-  needs = ["pr.filter"]
-  uses = "docker://node:12"
-  args = "yarn install"
-}
+# @todo node 12
+# action "pr.install.node.12" {
+#   needs = ["pr.filter"]
+#   uses = "docker://node:12"
+#   args = "yarn install"
+# }
 
-action "pr.build.node.12" {
-  uses = "docker://node:12"
-  needs = ["pr.install.node.12"]
-  args = "yarn run build"
-}
+# action "pr.build.node.12" {
+#   uses = "docker://node:12"
+#   needs = ["pr.install.node.12"]
+#   args = "yarn run build"
+# }
 
-action "pr.test.node.12" {
-  uses = "docker://node:12"
-  needs = ["pr.build.node.12"]
-  args = "yarn run test"
-}
+# action "pr.test.node.12" {
+#   uses = "docker://node:12"
+#   needs = ["pr.build.node.12"]
+#   args = "yarn run test"
+# }
 
 
 ################################################
