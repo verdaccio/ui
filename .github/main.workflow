@@ -14,7 +14,7 @@ workflow "build and test on branch" {
 # node 10 
 action "branch.filter" {
   uses = "actions/bin/filter@master"
-  args = "not ref refs/pulls/*"
+  args = "branch"
 }
 
 action "branch.install.node.10" {
@@ -95,7 +95,7 @@ workflow "build and test on PR" {
 # node 10 
 action "pr.filter" {
   uses = "actions/bin/filter@master"
-  args = "ref refs/pulls/*"
+  args = "action 'opened|synchronize|reopened'"
 }
 
 action "pr.install.node.10" {
@@ -165,7 +165,6 @@ action "pr.test.node.12" {
 # Workflow for a github release when a tag is
 # pushed
 ################################################
-
 workflow "github release" {
   resolves = [
     "release.github",
@@ -203,8 +202,14 @@ action "release.test" {
   args = "yarn run test"
 }
 
-action "release.npm.publish" {
+action "release.auth" {
   needs = ["release.test"]
+  uses = "actions/bin/filter@master"
+  args = ["actor", "octocat", "torvalds"]
+}
+
+action "release.npm.publish" {
+  needs = ["release.auth"]
   uses = "docker://node:10"
   args = "sh scripts/publish.sh"
   secrets = [
