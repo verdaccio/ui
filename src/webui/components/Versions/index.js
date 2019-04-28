@@ -32,7 +32,8 @@ class Versions extends React.PureComponent<any> {
             <ListItem className={'version-item'} key={version}>
               <ListItemText>{version}</ListItemText>
               <Spacer />
-              <ListItemText>{isVersion && timeMap[version] ? `${formatDateDistance(timeMap[version])} ago` : packages[version]}</ListItemText>
+              {isVersion && <ListItemText>{timeMap[version] ? `${formatDateDistance(timeMap[version])} ago` : 'Not available'}</ListItemText>}
+              {isVersion === false && <ListItemText>{packages[version]}</ListItemText>}
             </ListItem>
           ))}
       </List>
