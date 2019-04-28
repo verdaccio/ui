@@ -1,4 +1,4 @@
-import {API_ERROR} from '../../../../../src/lib/constants';
+import {API_ERROR} from '../../../../src/lib/constants';
 /**
  * API mock for login endpoint
  * @param {object}  config configuration of api call

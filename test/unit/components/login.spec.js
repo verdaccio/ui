@@ -6,7 +6,7 @@
 import React from 'react';
 import { mount } from 'enzyme';
 
-import LoginModal from '../../../../src/webui/components/Login';
+import LoginModal from '../../../src/webui/components/Login/index';
 
 const eventUsername = {
   target: {

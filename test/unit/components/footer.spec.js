@@ -2,9 +2,9 @@
 import React from 'react';
 import { mount } from 'enzyme';
 
-import Footer from '../../../../src/webui/components/Footer/index';
+import Footer from '../../../src/webui/components/Footer/index';
 
-jest.mock('../../../../package.json', () => ({
+jest.mock('../../../package.json', () => ({
     version: '4.0.0-alpha.3'
 }));
 
