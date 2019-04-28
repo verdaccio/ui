@@ -87,7 +87,7 @@ workflow "build and test on PR" {
     "pr.lint.node.10",
     "pr.test.node.10",
     "pr.test.node.8",
-    "pr.test.node.12"
+    # "pr.test.node.12"
   ]
   on = "pull_request"
 }
