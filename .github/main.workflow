@@ -1,93 +1,79 @@
-workflow "build & test" {
-  resolves = [,
-    "node:12"
-  ]
-  on = "pull_request"
-}
-
-action "PR:filter" {
-  uses = "actions/bin/filter@master"
-  args = "action 'opened|synchronize'"
-}
-
-action "node:8" {
-  needs = ["PR:filter"]
-  uses = "docker://node:8"
-  args = "sh scripts/build-test.sh"
-}
-
-action "node:10" {
-  needs = ["PR:filter"]
-  uses = "docker://node:10"
-  args = "sh scripts/build-test.sh"
-}
-
-action "node:11" {
-  needs = ["PR:filter"]
-  uses = "docker://node:11"
-  args = "sh scripts/build-test.sh"
-}
-
-action "node:12" {
-  needs = [
-    "node:8",
-    "node:10",
-    "node:11"
-  ]
-  uses = "docker://node:12"
-  args = "sh scripts/build-test.sh"
-}
-
-workflow "build, test & release" {
+workflow "build and test" {
   resolves = [
-    "github-release"
+    "lint",
+    "test",
+    "branch-filter",
   ]
   on = "push"
 }
 
-action "push:node:8" {
-  uses = "docker://node:8"
-  args = "sh scripts/build-test.sh"
+action "branch-filter" {
+  uses = "actions/bin/filter@master"
+  args = "branch"
 }
 
-action "push:node:10" {
+action "install" {
   uses = "docker://node:10"
-  args = "sh scripts/build-test.sh"
+  args = "yarn install"
 }
 
-action "push:node:11" {
-  uses = "docker://node:11"
-  args = "sh scripts/build-test.sh"
+action "build" {
+  uses = "docker://node:10"
+  needs = ["install"]
+  args = "yarn run build"
 }
 
-action "push:node:12" {
-  needs = [
-      "push:node:8",
-      "push:node:10",
-      "push:node:11",
+action "lint" {
+  uses = "docker://node:10"
+  needs = ["install"]
+  args = "yarn run lint"
+}
+
+action "test" {
+  uses = "docker://node:10"
+  needs = ["build"]
+  args = "yarn run test"
+}
+
+workflow "release" {
+  resolves = [
+    "github-release",
+    "release:lint",
   ]
-  uses = "docker://node:12"
-  args = "sh scripts/build-test.sh"
+  on = "push"
 }
 
-action "release:filter" {
-  needs = [
-    "push:node:12"
-  ]
+action "release:tag-filter" {
   uses = "actions/bin/filter@master"
   args = "tag v*"
 }
 
-action "release:authorization" {
-  needs = ["release:filter"]
-  uses = "actions/bin/filter@master"
-  args = ["actor", "ayusharma", "juanpicado"]
+action "release:install" {
+  uses = "docker://node:10"
+  needs = ["release:tag-filter"]
+  args = "yarn install"
+}
+
+action "release:build" {
+  uses = "docker://node:10"
+  needs = ["release:install"]
+  args = "yarn run build"
+}
+
+action "release:lint" {
+  uses = "docker://node:10"
+  needs = ["release:install"]
+  args = "yarn run lint"
+}
+
+action "release:test" {
+  uses = "docker://node:10"
+  needs = ["release:build"]
+  args = "yarn run test"
 }
 
 action "release:publish" {
-  needs = [
-    "release:authorization"
-  ]
+  needs = ["release:test"]
   uses = "docker://node:10"
   args = "sh scripts/publish.sh"
   secrets = [
