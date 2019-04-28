@@ -11,6 +11,8 @@ import ListItem from '@material-ui/core/ListItem/index';
 import React from 'react';
 import { DIST_TAGS } from '../../../lib/constants';
 
+const NOT_AVAILABLE = 'Not available';
+
 class Versions extends React.PureComponent<any> {
   render() {
     return (
@@ -24,7 +26,6 @@ class Versions extends React.PureComponent<any> {
   }
 
   renderPackageList = (packages: any, isVersion: boolean = false, timeMap: Object = {}) => {
-    const notAvailable = 'Not available';
     return (
       <List>
         {Object.keys(packages)
@@ -33,7 +34,7 @@ class Versions extends React.PureComponent<any> {
             <ListItem className={'version-item'} key={version}>
               <ListItemText>{version}</ListItemText>
               <Spacer />
-              {isVersion && <ListItemText>{timeMap[version] ? `${formatDateDistance(timeMap[version])} ago` : notAvailable}</ListItemText>}
+              {isVersion && <ListItemText>{timeMap[version] ? `${formatDateDistance(timeMap[version])} ago` : NOT_AVAILABLE}</ListItemText>}
               {isVersion === false && <ListItemText>{packages[version]}</ListItemText>}
             </ListItem>
           ))}
