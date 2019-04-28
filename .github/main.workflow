@@ -1,79 +1,210 @@
-workflow "build and test" {
+################################################
+# Workflow for a branch push 
+################################################
+workflow "build and test on branch" {
   resolves = [
-    "lint",
-    "test",
-    "branch-filter",
+    "branch.lint.node.10",
+    "branch.test.node.10",
+    "branch.test.node.8",
+    "branch.test.node.12"
   ]
   on = "push"
 }
 
-action "branch-filter" {
+# node 10 
+action "branch.filter" {
   uses = "actions/bin/filter@master"
-  args = "branch"
+  args = "not ref refs/pulls/*"
 }
 
-action "install" {
+action "branch.install.node.10" {
+  needs = ["branch.filter"]
   uses = "docker://node:10"
   args = "yarn install"
 }
 
-action "build" {
+action "branch.build.node.10" {
   uses = "docker://node:10"
-  needs = ["install"]
+  needs = ["branch.install.node.10"]
   args = "yarn run build"
 }
 
-action "lint" {
+action "branch.lint.node.10" {
   uses = "docker://node:10"
-  needs = ["install"]
+  needs = ["branch.install.node.10"]
   args = "yarn run lint"
 }
 
-action "test" {
+action "branch.test.node.10" {
   uses = "docker://node:10"
-  needs = ["build"]
+  needs = ["branch.build.node.10"]
   args = "yarn run test"
 }
 
-workflow "release" {
+# node 8
+action "branch.install.node.8" {
+  needs = ["branch.filter"]
+  uses = "docker://node:8"
+  args = "yarn install"
+}
+
+action "branch.build.node.8" {
+  uses = "docker://node:8"
+  needs = ["branch.install.node.8"]
+  args = "yarn run build"
+}
+
+action "branch.test.node.8" {
+  uses = "docker://node:8"
+  needs = ["branch.build.node.8"]
+  args = "yarn run test"
+}
+
+# node 12
+action "branch.install.node.12" {
+  needs = ["branch.filter"]
+  uses = "docker://node:12"
+  args = "yarn install"
+}
+
+action "branch.build.node.12" {
+  uses = "docker://node:12"
+  needs = ["branch.install.node.12"]
+  args = "yarn run build"
+}
+
+action "branch.test.node.12" {
+  uses = "docker://node:12"
+  needs = ["branch.build.node.12"]
+  args = "yarn run test"
+}
+
+################################################
+# Workflow for a Pull request
+################################################
+workflow "build and test on PR" {
   resolves = [
-    "github-release",
-    "release:lint",
+    "pr.lint.node.10",
+    "pr.test.node.10",
+    "pr.test.node.8",
+    "pr.test.node.12"
+  ]
+  on = "pull_request"
+}
+
+# node 10 
+action "pr.filter" {
+  uses = "actions/bin/filter@master"
+  args = "ref refs/pulls/*"
+}
+
+action "pr.install.node.10" {
+  needs = ["pr.filter"]
+  uses = "docker://node:10"
+  args = "yarn install"
+}
+
+action "pr.build.node.10" {
+  uses = "docker://node:10"
+  needs = ["pr.install.node.10"]
+  args = "yarn run build"
+}
+
+action "pr.lint.node.10" {
+  uses = "docker://node:10"
+  needs = ["pr.install.node.10"]
+  args = "yarn run lint"
+}
+
+action "pr.test.node.10" {
+  uses = "docker://node:10"
+  needs = ["pr.build.node.10"]
+  args = "yarn run test"
+}
+
+# node 8
+action "pr.install.node.8" {
+  needs = ["pr.filter"]
+  uses = "docker://node:8"
+  args = "yarn install"
+}
+
+action "pr.build.node.8" {
+  uses = "docker://node:8"
+  needs = ["pr.install.node.8"]
+  args = "yarn run build"
+}
+
+action "pr.test.node.8" {
+  uses = "docker://node:8"
+  needs = ["pr.build.node.8"]
+  args = "yarn run test"
+}
+
+# node 12
+action "pr.install.node.12" {
+  needs = ["pr.filter"]
+  uses = "docker://node:12"
+  args = "yarn install"
+}
+
+action "pr.build.node.12" {
+  uses = "docker://node:12"
+  needs = ["pr.install.node.12"]
+  args = "yarn run build"
+}
+
+action "pr.test.node.12" {
+  uses = "docker://node:12"
+  needs = ["pr.build.node.12"]
+  args = "yarn run test"
+}
+
+
+################################################
+# Workflow for a github release when a tag is
+# pushed
+################################################
+
+workflow "github release" {
+  resolves = [
+    "release.github",
+    "release.lint",
   ]
   on = "push"
 }
 
-action "release:tag-filter" {
+action "release.filter" {
   uses = "actions/bin/filter@master"
   args = "tag v*"
 }
 
-action "release:install" {
+action "release.install" {
   uses = "docker://node:10"
-  needs = ["release:tag-filter"]
+  needs = ["release.filter"]
   args = "yarn install"
 }
 
-action "release:build" {
+action "release.build" {
   uses = "docker://node:10"
-  needs = ["release:install"]
+  needs = ["release.install"]
   args = "yarn run build"
 }
 
-action "release:lint" {
+action "release.lint" {
   uses = "docker://node:10"
-  needs = ["release:install"]
+  needs = ["release.install"]
   args = "yarn run lint"
 }
 
-action "release:test" {
+action "release.test" {
   uses = "docker://node:10"
-  needs = ["release:build"]
+  needs = ["release.build"]
   args = "yarn run test"
 }
 
-action "release:publish" {
-  needs = ["release:test"]
+action "release.npm.publish" {
+  needs = ["release.test"]
   uses = "docker://node:10"
   args = "sh scripts/publish.sh"
   secrets = [
@@ -84,8 +215,8 @@ action "release:publish" {
   }
 }
 
-action "github-release" {
-  needs = ["release:publish"]
+action "release.github" {
+  needs = ["release.npm.publish"]
   uses = "docker://node:10"
   args = "sh scripts/github-release.sh"
   secrets = [
