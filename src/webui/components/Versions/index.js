@@ -24,6 +24,7 @@ class Versions extends React.PureComponent<any> {
   }
 
   renderPackageList = (packages: any, isVersion: boolean = false, timeMap: Object = {}) => {
+    const notAvailable = 'Not available';
     return (
       <List>
         {Object.keys(packages)
@@ -32,7 +33,7 @@ class Versions extends React.PureComponent<any> {
             <ListItem className={'version-item'} key={version}>
               <ListItemText>{version}</ListItemText>
               <Spacer />
-              {isVersion && <ListItemText>{timeMap[version] ? `${formatDateDistance(timeMap[version])} ago` : 'Not available'}</ListItemText>}
+              {isVersion && <ListItemText>{timeMap[version] ? `${formatDateDistance(timeMap[version])} ago` : notAvailable}</ListItemText>}
               {isVersion === false && <ListItemText>{packages[version]}</ListItemText>}
             </ListItem>
           ))}
