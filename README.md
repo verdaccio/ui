@@ -38,7 +38,7 @@ yarn lint && yarn test
 
 Remember we follow the [the Conventional Commits specification](https://www.conventionalcommits.org/en/v1.0.0-beta.4/).
 
-🤓 Feel free to participate in code reviews, let us know if you want to participate in this plugin.
+🤓 Feel free to participate in code reviews, let us know if you want to participate in this plugin. 
 
 
 ## Open Collective Sponsors
