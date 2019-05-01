@@ -92,14 +92,19 @@ workflow "build and test on PR" {
   on = "pull_request"
 }
 
-# node 10 
-action "pr.filter" {
+action "pr.filter.fork" {
+  uses = "verdaccio/github-actions/pull-request-fork-filter@master"
+}
+
+action "pr.filter.event" {
+  needs = ["pr.filter.fork"]
   uses = "actions/bin/filter@master"
   args = "action 'opened|synchronize|reopened'"
 }
 
+# node 10 
 action "pr.install.node.10" {
-  needs = ["pr.filter"]
+  needs = ["pr.filter.event"]
   uses = "docker://node:10"
   args = "yarn install"
 }
@@ -124,7 +129,7 @@ action "pr.test.node.10" {
 
 # node 8
 action "pr.install.node.8" {
-  needs = ["pr.filter"]
+  needs = ["pr.filter.event"]
   uses = "docker://node:8"
   args = "yarn install"
 }
