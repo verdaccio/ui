@@ -6,7 +6,7 @@ module.exports = {
   collectCoverage: true,
   testEnvironment: 'jest-environment-jsdom-global',
   testURL: 'http://localhost',
-  testRegex: '(test/unit/webui/.*\\.spec)\\.js',
+  testRegex: '(test/unit/.*\\.spec)\\.js',
   setupFiles: [
     './test/unit/setup.js'
   ],
@@ -35,6 +35,7 @@ module.exports = {
     '<rootDir>/build',
   ],
   snapshotSerializers: [
+    'enzyme-to-json/serializer',
     "jest-emotion"
   ],
   coveragePathIgnorePatterns: [

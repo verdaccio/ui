@@ -3,7 +3,7 @@
  */
 import React from 'react';
 import { shallow } from 'enzyme';
-import Help from '../../../../src/webui/components/Help/index';
+import Help from '../../../src/webui/components/Help/index';
 
 describe('<Help /> component', () => {
 
