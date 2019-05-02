@@ -5,7 +5,7 @@ import {
   formatDateDistance,
   getLastUpdatedPackageTime,
   getRecentReleases
-} from '../../../../src/webui/utils/package';
+} from '../../../src/webui/utils/package';
 
 import { packageMeta } from '../components/store/packageMeta';
 

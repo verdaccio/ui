@@ -1,11 +1,11 @@
 import React from 'react';
 import { mount } from 'enzyme';
-import storage from '../../../src/webui/utils/storage';
-import App from '../../../src/webui/app';
+import storage from '../../src/webui/utils/storage';
+import App from '../../src/webui/app';
 
 import { generateTokenWithTimeRange } from './components/__mocks__/token';
 
-jest.mock('../../../src/webui/utils/storage', () => {
+jest.mock('../../src/webui/utils/storage', () => {
   class LocalStorageMock {
     constructor() {
       this.store = {};
@@ -26,7 +26,7 @@ jest.mock('../../../src/webui/utils/storage', () => {
   return new LocalStorageMock();
 });
 
-jest.mock('../../../src/webui/utils/api', () => ({
+jest.mock('../../src/webui/utils/api', () => ({
   request: require('./components/__mocks__/api').default.request
 }));
 
@@ -36,7 +36,7 @@ describe('App', () => {
   beforeEach(() => {
     wrapper = mount(<App />);
   });
-  
+
   test('toggleLoginModal: should toggle the value in state', () => {
     const { handleToggleLoginModal } = wrapper.instance();
     expect(wrapper.state().showLoginModal).toBeFalsy();
