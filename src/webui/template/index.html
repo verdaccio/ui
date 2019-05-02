@@ -9,6 +9,8 @@
     <link rel="icon" type="image/png" href="<%= htmlWebpackPlugin.options.verdaccioURL %>/-/static/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <script>
+        window.__VERDACCIO_BASENAME_UI_OPTIONS = JSON.parse('<%= htmlWebpackPlugin.options.__UI_OPTIONS %>');
+        window.VERDACCIO_BASENAME = '<%= htmlWebpackPlugin.options.basename %>';
         window.VERDACCIO_API_URL = '<%= htmlWebpackPlugin.options.verdaccioURL %>/-/verdaccio/';
         window.VERDACCIO_SCOPE = '<%= htmlWebpackPlugin.options.scope %>';
         window.VERDACCIO_LOGO = '<%= htmlWebpackPlugin.options.logo %>';
