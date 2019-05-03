@@ -11,7 +11,7 @@ module.exports = {
   },
 
   resolve: {
-    extensions: ['.js', '.jsx'],
+    extensions: ['.js', '.jsx', '.ts', '.tsx'],
   },
 
   plugins: [
@@ -87,6 +87,11 @@ module.exports = {
           },
         ],
       },
+      {
+        test: /\.tsx?$/,
+        use: 'ts-loader',
+        exclude: /node_modules/
+      }
     ],
   },
 

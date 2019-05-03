@@ -1,7 +1,7 @@
+import IconButton from '@material-ui/core/IconButton';
 import styled from 'react-emotion';
-import IconButton from '@material-ui/core/IconButton/index';
 
-export const ClipBoardCopy = styled.div`
+export const ClipBoardCopy = styled('div')`
   && {
     display: flex;
     align-items: center;
@@ -9,7 +9,7 @@ export const ClipBoardCopy = styled.div`
   }
 `;
 
-export const ClipBoardCopyText = styled.span`
+export const ClipBoardCopyText = styled('span')`
   && {
     display: inline-block;
     text-overflow: ellipsis;

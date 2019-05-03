@@ -3,9 +3,9 @@
  * @flow
  */
 
+import Card from '@material-ui/core/Card';
+import Typography from '@material-ui/core/Typography';
 import styled from 'react-emotion';
-import Card from '@material-ui/core/Card/index';
-import Typography from '@material-ui/core/Typography/index';
 
 export const CardStyled = styled(Card)`
   && {

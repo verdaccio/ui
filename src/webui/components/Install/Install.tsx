@@ -2,32 +2,36 @@
  * @prettier
  */
 
+import List from '@material-ui/core/List';
+import ListItemText from '@material-ui/core/ListItemText';
 import React, { Component } from 'react';
 
-import List from '@material-ui/core/List/index';
-import ListItemText from '@material-ui/core/ListItemText/index';
-
-import { DetailContextConsumer } from '../../pages/version/index';
+// @ts-ignore
+import { DetailContextConsumer } from '../../pages/version';
 import CopyToClipBoard from '../CopyToClipBoard';
 
-import { Heading, InstallItem, PackageMangerAvatar } from './styles';
 // logos of package managers
+//@ts-ignore // TODO: add svg type
 import npm from './img/npm.svg';
+//@ts-ignore // TODO: add svg type
 import pnpm from './img/pnpm.svg';
+//@ts-ignore // TODO: add svg type
 import yarn from './img/yarn.svg';
 
+import { Heading, InstallItem, PackageMangerAvatar } from './styles';
+
 class Install extends Component {
-  render() {
+  public render() {
     return (
       <DetailContextConsumer>
-        {context => {
+        {(context: any) => {
           return this.renderCopyCLI(context);
         }}
       </DetailContextConsumer>
     );
   }
 
-  renderCopyCLI = ({ packageName }) => {
+  public renderCopyCLI = ({ packageName }: { packageName: string }) => {
     return (
       <>
         <List subheader={<Heading variant={'subheading'}>{'Installation'}</Heading>}>{this.renderListItems(packageName)}</List>
@@ -35,7 +39,7 @@ class Install extends Component {
     );
   };
 
-  renderListItems = packageName => {
+  public renderListItems = (packageName: string) => {
     return (
       <>
         <InstallItem>

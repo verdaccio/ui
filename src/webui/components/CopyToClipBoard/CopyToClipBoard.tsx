@@ -1,29 +1,27 @@
 /**
  * @prettier
- * @flow
  */
 
-import React from 'react';
-import type { Node } from 'react';
-
+import Tooltip from '@material-ui/core/Tooltip';
 import FileCopy from '@material-ui/icons/FileCopy';
-import Tooltip from '@material-ui/core/Tooltip/index';
+import React from 'react';
 
-import { ClipBoardCopy, ClipBoardCopyText, CopyIcon } from './styles';
 import { copyToClipBoardUtility } from '../../utils/cli-utils';
 import { TEXT } from '../../utils/constants';
+
+import { ClipBoardCopy, ClipBoardCopyText, CopyIcon } from './styles';
 import { IProps } from './types';
 
-const CopyToClipBoard = ({ text, children }: IProps): Node => {
+const CopyToClipBoard: React.FC<IProps> = ({ text, children }) => {
   const renderToolTipFileCopy = () => (
-    <Tooltip disableFocusListener={true} title={TEXT.CLIPBOARD_COPY}>
+    <Tooltip disableFocusListener title={TEXT.CLIPBOARD_COPY}>
       <CopyIcon onClick={copyToClipBoardUtility(text)}>
         <FileCopy />
       </CopyIcon>
     </Tooltip>
   );
 
-  const renderText = children => {
+  const renderText = (children: any) => {
     if (children) {
       return <ClipBoardCopyText>{children}</ClipBoardCopyText>;
     }

@@ -2,8 +2,6 @@
  * @prettier
  */
 
-// @flow
-
 export const DIST_TAGS = 'dist-tags';
 
 export const HEADERS = {

@@ -1,7 +1,8 @@
 /**
  * @prettier
- * @flow
  */
+
+import { SyntheticEvent } from 'react';
 
 export const copyToClipBoardUtility = (str: string) => (event: SyntheticEvent<HTMLElement>) => {
   event.preventDefault();
@@ -12,10 +13,9 @@ export const copyToClipBoardUtility = (str: string) => (event: SyntheticEvent<HT
     const range = document.createRange();
     const selection = window.getSelection();
     range.selectNodeContents(node);
-    selection.removeAllRanges();
-    selection.addRange(range);
+    selection!.removeAllRanges();
+    selection!.addRange(range);
     document.execCommand('copy');
-    // $FlowFixMe
     document.body.removeChild(node);
   }
 };
