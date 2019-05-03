@@ -1,12 +1,13 @@
 /**
  * @prettier
- * @flow
  */
 
 import styled, { css } from 'react-emotion';
+
+// @ts-ignore
 import logo from './img/logo.svg';
 
-const Logo = styled.div`
+const Logo = styled('div')`
   && {
     display: inline-block;
     vertical-align: middle;
@@ -18,6 +19,7 @@ const Logo = styled.div`
     width: 40px;
     height: 40px;
     ${props =>
+      // @ts-ignore
       props.md &&
       css`
         width: 90px;

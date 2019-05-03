@@ -1,12 +1,11 @@
 /**
  * @prettier
- * @flow
  */
 
+import { default as TextFieldMaterialUI, TextFieldProps } from '@material-ui/core/TextField';
 import React from 'react';
-import { TextFieldProps, default as TextFieldMaterialUI } from '@material-ui/core/TextField';
 
-const TextField = ({ InputProps, classes, ...other }: TextFieldProps) => (
+const TextField: React.FC<TextFieldProps> = ({ InputProps, classes, ...other }) => (
   <TextFieldMaterialUI
     {...other}
     InputProps={{

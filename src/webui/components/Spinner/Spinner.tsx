@@ -1,15 +1,14 @@
 /**
  * @prettier
- * @flow
  */
 
 import React from 'react';
-import type { Node } from 'react';
 
+import { Circular, Wrapper } from './styles';
 import { IProps } from './types';
-import { Wrapper, Circular } from './styles';
 
-const Spinner = ({ size = 50, centered = false }: IProps): Node => (
+const Spinner: React.FC<IProps> = ({ size = 50, centered = false }) => (
+  // @ts-ignore
   <Wrapper centered={centered}>
     <Circular size={size} />
   </Wrapper>

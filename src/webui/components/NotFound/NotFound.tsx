@@ -2,19 +2,21 @@
  * @prettier
  */
 
+import ListItem from '@material-ui/core/ListItem';
+import Typography from '@material-ui/core/Typography';
+import withWidth, { isWidthUp } from '@material-ui/core/withWidth';
 import React from 'react';
-import { withRouter } from 'react-router-dom';
-import withWidth, { isWidthUp } from '@material-ui/core/withWidth/index';
-import ListItem from '@material-ui/core/ListItem/index';
-import Typography from '@material-ui/core/Typography/index';
-import { Wrapper, Inner, EmptyPackage, Heading, Card, List } from './styles';
+import { RouteComponentProps, withRouter } from 'react-router-dom';
+
+// @ts-ignore
 import PackageImg from './img/package.svg';
+import { Card, EmptyPackage, Heading, Inner, List, Wrapper } from './styles';
 
 export const NOT_FOUND_TEXT = "Sorry, we couldn't find it...";
 
 // eslint-disable-next-line react/prop-types
-const NotFound = ({ history, width }) => {
-  const handleGoTo = to => () => {
+const NotFound: React.FC<RouteComponentProps & { width: any }> = ({ history, width }) => {
+  const handleGoTo = (to: string) => () => {
     history.push(to);
   };
 
@@ -24,17 +26,17 @@ const NotFound = ({ history, width }) => {
 
   const renderList = () => (
     <List>
-      <ListItem button={true} divider={true} onClick={handleGoTo('/')}>
-        {'Home'}
+      <ListItem button divider onClick={handleGoTo('/')}>
+        Home
       </ListItem>
-      <ListItem button={true} divider={true} onClick={handleGoBack()}>
-        {'Back'}
+      <ListItem button divider onClick={handleGoBack()}>
+        Back
       </ListItem>
     </List>
   );
 
   const renderSubTitle = () => (
-    <Typography variant={'subtitle1'}>
+    <Typography variant="subtitle1">
       <div>{"The page you're looking for doesn't exist."}</div>
       <div>{'Perhaps these links will help find what you are looking for:'}</div>
     </Typography>
@@ -43,8 +45,8 @@ const NotFound = ({ history, width }) => {
   return (
     <Wrapper>
       <Inner>
-        <EmptyPackage alt={'404 - Page not found'} src={PackageImg} />
-        <Heading className={'not-found-text'} variant={isWidthUp('sm', width) ? 'h2' : 'h4'}>
+        <EmptyPackage alt="404 - Page not found" src={PackageImg} />
+        <Heading className="not-found-text" variant={isWidthUp('sm', width) ? 'h2' : 'h4'}>
           {NOT_FOUND_TEXT}
         </Heading>
         {renderSubTitle()}

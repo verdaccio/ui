@@ -20,6 +20,7 @@
     "@types/node": "12.0.0",
     "@types/react": "16.8.15",
     "@types/react-dom": "16.8.4",
+    "@types/react-router-dom": "4.3.2",
     "@verdaccio/babel-preset": "0.1.0",
     "@verdaccio/types": "5.0.0-beta.4",
     "autosuggest-highlight": "3.1.1",
