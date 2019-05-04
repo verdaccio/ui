@@ -1,3 +1,6 @@
 {
-  "presets": [["@verdaccio", {"typescript": true}]]
+  "presets": [
+    ["@verdaccio", { "typescript": true }],
+    "@babel/preset-flow",
+  ]
 }

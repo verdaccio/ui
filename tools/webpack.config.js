@@ -88,6 +88,8 @@ module.exports = {
           },
         ],
       },
+
+       /* Typescript loader */
       {
         test: /\.tsx?$/,
         use: 'babel-loader',

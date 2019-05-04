@@ -4,9 +4,11 @@ export function getRegistryURL() {
 }
 
 export function getBaseNamePath() {
-  return window.__VERDACCIO_BASENAME_UI_OPTIONS.url_prefix;
+  // @ts-ignore
+  return window.__VERDACCIO_BASENAME_UI_OPTIONS && window.__VERDACCIO_BASENAME_UI_OPTIONS.url_prefix!;
 }
 
 export function getRootPath() {
-  return window.__VERDACCIO_BASENAME_UI_OPTIONS.base;
+   // @ts-ignore
+  return window.__VERDACCIO_BASENAME_UI_OPTIONS && window.__VERDACCIO_BASENAME_UI_OPTIONS.base!;
 }
