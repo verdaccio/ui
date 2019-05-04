@@ -1,24 +1,22 @@
 /**
  * @prettier
- * @flow
  */
 
 import React from 'react';
-import type { Element } from 'react';
 
 import { Wrapper, Left, Right, Earth, Flags, Love, Flag, Logo, Inner, ToolTip } from './styles';
 import { goToVerdaccioWebsite } from '../../utils/windows.js';
 
 const renderTooltip = () => (
   <ToolTip>
-    <Earth name={'earth'} size={'md'} />
+    <Earth name="earth" size="md" />
     <Flags>
-      <Flag name={'spain'} size={'md'} />
-      <Flag name={'nicaragua'} size={'md'} />
-      <Flag name={'india'} size={'md'} />
-      <Flag name={'brazil'} size={'md'} />
-      <Flag name={'china'} size={'md'} />
-      <Flag name={'austria'} size={'md'} />
+      <Flag name="spain" size="md" />
+      <Flag name="nicaragua" size="md" />
+      <Flag name="india" size="md" />
+      <Flag name="brazil" size="md" />
+      <Flag name="china" size="md" />
+      <Flag name="austria" size="md" />
     </Flags>
   </ToolTip>
 );
@@ -27,10 +25,11 @@ const MADEWITH_LABEL = ' Made with';
 const ON_LABEL = 'on';
 const HEARTH_EMOJI = '♥';
 
+// @ts-ignore
 const renderRight = (version = window.VERDACCIO_VERSION) => (
   <Right>
     {POWERED_LABEL}
-    <Logo img={true} name={'verdaccio'} onClick={goToVerdaccioWebsite} pointer={true} size={'md'} />
+    <Logo img={true} name="verdaccio" onClick={goToVerdaccioWebsite} pointer={true} size="md" />
     {`/ ${version}`}
   </Right>
 );
@@ -44,7 +43,7 @@ const renderLeft = () => (
   </Left>
 );
 
-const Footer = (): Element<Wrapper> => (
+const Footer: React.FC = () => (
   <Wrapper>
     <Inner>
       {renderLeft()}

@@ -8,7 +8,7 @@ import mq from '../../utils/styles/media';
 import Icon from '../Icon';
 import colors from '../../utils/styles/colors';
 
-export const Wrapper = styled.div`
+export const Wrapper = styled('div')`
   && {
     background: ${colors.snow};
     border-top: 1px solid ${colors.greyGainsboro};
@@ -18,7 +18,7 @@ export const Wrapper = styled.div`
   }
 `;
 
-export const Inner = styled.div`
+export const Inner = styled('div')`
   && {
     display: flex;
     align-items: center;
@@ -36,7 +36,7 @@ export const Inner = styled.div`
   }
 `;
 
-export const Left = styled.div`
+export const Left = styled('div')`
   && {
     align-items: center;
     display: none;
@@ -52,7 +52,7 @@ export const Right = styled(Left)`
   }
 `;
 
-export const ToolTip = styled.span`
+export const ToolTip = styled('span')`
   && {
     position: relative;
     height: 18px;
@@ -65,7 +65,7 @@ export const Earth = styled(Icon)`
   }
 `;
 
-export const Flags = styled.span`
+export const Flags = styled('span')`
   && {
     position: absolute;
     background: ${colors.greyAthens};
@@ -92,7 +92,7 @@ export const Flags = styled.span`
   }
 `;
 
-export const Love = styled.span`
+export const Love = styled('span')`
   && {
     color: ${colors.love};
     padding: 0 5px;
