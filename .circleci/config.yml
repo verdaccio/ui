@@ -75,7 +75,7 @@ jobs:
       - save_cache:
           key: *repo_key
           paths:
-            - ~/local-storage
+            - ~/ui-theme
 
   test_node11:
     <<: *defaults
