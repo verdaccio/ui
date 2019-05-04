@@ -5,7 +5,7 @@ import {
   formatDateDistance,
   getLastUpdatedPackageTime,
   getRecentReleases
-} from '../../../../src/webui/utils/package';
+} from '../../../src/webui/utils/package';
 
 import { packageMeta } from '../components/store/packageMeta';
 
@@ -52,13 +52,21 @@ describe('formatDate', () => {
 
 describe('formatDateDistance', () => {
   test('should calculate the distance', () => {
+    const dateAboutTwoMonthsAgo = () => {
+      const date = new Date();
+      date.setMonth(date.getMonth() - 1);
+      date.setDate(date.getDay() - 20);
+      return date;
+    };
     const dateTwoMonthsAgo = () => {
       const date = new Date();
       date.setMonth(date.getMonth() - 2);
       return date;
     };
-    const date = dateTwoMonthsAgo();
-    expect(formatDateDistance(date)).toEqual('about 2 months');
+    const date1 = dateAboutTwoMonthsAgo();
+    const date2 = dateTwoMonthsAgo();
+    expect(formatDateDistance(date1)).toEqual('about 2 months');
+    expect(formatDateDistance(date2)).toEqual('2 months');
   });
 });
 

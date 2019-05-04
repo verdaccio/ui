@@ -6,7 +6,7 @@
 import React from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
 import { shallow } from 'enzyme';
-import Header from '../../../../src/webui/components/Header';
+import Header from '../../../src/webui/components/Header/index';
 
 describe('<Header /> component with logged in state', () => {
   let wrapper;

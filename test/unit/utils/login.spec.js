@@ -1,4 +1,4 @@
-import { isTokenExpire, makeLogin } from '../../../../src/webui/utils/login';
+import { isTokenExpire, makeLogin } from '../../../src/webui/utils/login';
 
 import {
   generateTokenWithTimeRange,

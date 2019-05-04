@@ -10,6 +10,7 @@ import Adapter from 'enzyme-adapter-react-16';
 configure({ adapter: new Adapter() });
 
 global.__APP_VERSION__ = '1.0.0';
+global.__VERDACCIO_BASENAME_UI_OPTIONS = {};
 
 // mocking few DOM methods
 if (global.document) {
