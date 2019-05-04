@@ -45,7 +45,9 @@ const prodConf = {
     }),
     new HTMLWebpackPlugin({
       title: 'ToReplaceByTitle',
+      __UI_OPTIONS: 'ToReplaceByVerdaccioUI',
       scope: 'ToReplaceByScope',
+      basename: 'ToReplaceByPrefix',
       logo: 'ToReplaceByLogo',
       primary_color: 'ToReplaceByPrimaryColor',
       filename: 'index.html',
