@@ -1,34 +1,24 @@
 {
     "compilerOptions": {
-      "plugins": [{ "name": "typescript-tslint-plugin" }],
-      "types": ["react"],
-  
-      "resolveJsonModule": true,
-      "skipLibCheck": true,
-      "diagnostics": true,
-      "lib": ["dom", "es2018", "esnext"],
-      "target": "es2017",
-      "module": "es2015",
-      "moduleResolution": "node",
-      "esModuleInterop": true,
-      "noEmit": false,
-      "sourceMap": true,
-      "jsx": "react",
-      "allowJs": false,
-      "checkJs": false,
+      "target": "esnext",
+      "module": "commonjs",
+      "declaration": true,
+      "noImplicitAny": false,
       "strict": true,
-      "noUnusedLocals": true,
-      "noUnusedParameters": true,
-      "noImplicitReturns": true,
-      "emitDecoratorMetadata": true,
-      "experimentalDecorators": true,
-  
-      "baseUrl": "."
+      "outDir": "lib",
+      "allowSyntheticDefaultImports": true,
+      "esModuleInterop": true,
+      "typeRoots": [
+        "./node_modules/@verdaccio/types/lib/verdaccio",
+        "./node_modules/@types"
+      ]
     },
+    "include": [
+      "src/*.ts",
+      "types/*.d.ts"
+    ],
     "exclude": [
       "node_modules",
-      "flow-typed",
-      "scripts"
     ]
   }
   
