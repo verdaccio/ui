@@ -2,7 +2,6 @@
  * @prettier
  */
 import React from 'react';
-import { Element } from 'react';
 
 import BugReport from '@material-ui/icons/BugReport';
 import Grid from '@material-ui/core/Grid';
@@ -36,7 +35,7 @@ import {
 
 const Package: React.FC<IProps> = ({
   author: { name: authorName, avatar: authorAvatar },
-  bugs: { url },
+  bugs,
   description,
   dist: { unpackedSize },
   homepage,
@@ -102,8 +101,9 @@ const Package: React.FC<IProps> = ({
     );
 
   const renderBugsLink = () =>
-    url && (
-      <a href={url} target="_blank">
+    bugs &&
+    bugs.url && (
+      <a href={bugs.url} target="_blank">
         <Tooltip aria-label="Bugs" title="Open an issue">
           <IconButton aria-label="Bugs">
             {/* eslint-disable-next-line react/jsx-max-depth */}
@@ -131,6 +131,7 @@ const Package: React.FC<IProps> = ({
   };
 
   const renderSecondaryComponent = () => {
+    //@ts-ignore
     const tags = keywords.sort().map((keyword, index) => <Tag key={index}>{keyword}</Tag>);
     return (
       <>
@@ -140,11 +141,14 @@ const Package: React.FC<IProps> = ({
     );
   };
 
+  const renderPackageListItemText = () => (
+    //@ts-ignore
+    <PackageListItemText className="package-link" component="div" primary={renderPrimaryComponent()} secondary={renderSecondaryComponent()} />
+  );
+
   return (
     <PackageList className={'package'}>
-      <ListItem alignItems={'flex-start'}>
-        <PackageListItemText className="package-link" component="div" primary={renderPrimaryComponent()} secondary={renderSecondaryComponent()} />
-      </ListItem>
+      <ListItem alignItems={'flex-start'}>{renderPackageListItemText()}</ListItem>
       <PackageListItem alignItems={'flex-start'}>
         {renderAuthorInfo()}
         {renderVersionInfo()}

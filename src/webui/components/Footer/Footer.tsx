@@ -26,13 +26,15 @@ const ON_LABEL = 'on';
 const HEARTH_EMOJI = '♥';
 
 // @ts-ignore
-const renderRight = (version = window.VERDACCIO_VERSION) => (
-  <Right>
-    {POWERED_LABEL}
-    <Logo img={true} name="verdaccio" onClick={goToVerdaccioWebsite} pointer={true} size="md" />
-    {`/ ${version}`}
-  </Right>
-);
+const renderRight = (version = window.VERDACCIO_VERSION) => {
+  return (
+    <Right>
+      {POWERED_LABEL}
+      <Logo img={true} name="verdaccio" onClick={goToVerdaccioWebsite} pointer={true} size="md" />
+      {`/ ${version}`}
+    </Right>
+  );
+};
 
 const renderLeft = () => (
   <Left>

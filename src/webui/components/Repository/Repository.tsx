@@ -27,7 +27,13 @@ class Repository extends Component<any, any> {
     return (<GithubLink href={url} target='_blank'>{url}</GithubLink>);
   }
 
-  renderRepository = ({packageMeta: { latest:  { repository: { url } } }}: any) => {
+  renderRepository = ({packageMeta}: any) => {
+    const { 
+      repository: {
+        //@ts-ignore
+        url,
+      } = {},
+    } = packageMeta.latest;
     
     if (!url) {
       return null;
