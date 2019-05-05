@@ -5,8 +5,8 @@
 import React, { Component } from 'react';
 import Grid from '@material-ui/core/Grid/index';
 import Loading from '../../components/Loading/Loading';
-import DetailContainer from '../../components/DetailContainer';
-import DetailSidebar from '../../components/DetailSidebar';
+import DetailContainer from '../../components/DetailContainer/DetailContainer';
+import DetailSidebar from '../../components/DetailSidebar/DetailSidebar';
 import { callDetailPage } from '../../utils/calls';
 import { getRouterPackageName } from '../../utils/package';
 import NotFound from '../../components/NotFound';

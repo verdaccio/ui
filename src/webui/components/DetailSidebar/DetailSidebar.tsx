@@ -8,7 +8,7 @@ import ActionBar from '../ActionBar/ActionBar';
 import Author from '../Author';
 import Developers from '../Developers';
 import Dist from '../Dist/Dist';
-import Engine from '../Engines';
+import Engine from '../Engines/Engines';
 import Install from '../Install';
 import Repository from '../Repository/Repository';
 
