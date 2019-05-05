@@ -1,14 +1,15 @@
 /**
  * @prettier
- * @flow
  */
 
 import React from 'react';
-import Typography from '@material-ui/core/Typography/index';
+import Typography from '@material-ui/core/Typography';
 
-import { IProps } from './types';
+interface IProps {
+  text: string;
+}
 
-const NoItems = ({ text }: IProps) => (
+const NoItems: React.FC<IProps> = ({ text }) => (
   <Typography gutterBottom={true} variant={'subtitle1'}>
     {text}
   </Typography>

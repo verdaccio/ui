@@ -9,6 +9,7 @@ import { DetailContextConsumer } from '../../pages/version/Version';
 import CopyToClipBoard from '../CopyToClipBoard';
 
 import { Heading, GithubLink, RepositoryListItem } from './styles';
+// @ts-ignore
 import git from './img/git.png';
 
 class Repository extends Component<any, any> {
@@ -22,16 +23,11 @@ class Repository extends Component<any, any> {
     );
   };
 
-  renderRepositoryText(url) {
-    return (<GithubLink href={url} target={"_blank"}>{url}</GithubLink>);
+  renderRepositoryText(url: string) {
+    return (<GithubLink href={url} target='_blank'>{url}</GithubLink>);
   }
 
-  renderRepository = ({packageMeta}) => {
-    const { 
-      repository: {
-        url,
-      } = {},
-    } = packageMeta.latest;
+  renderRepository = ({packageMeta: { latest:  { repository: { url } } }}: any) => {
     
     if (!url) {
       return null;
@@ -39,7 +35,7 @@ class Repository extends Component<any, any> {
 
     return (
       <>
-        <List dense={true} subheader={<Heading variant={"subheading"}>{'Repository'}</Heading>}>
+        <List dense={true} subheader={<Heading variant='subheading'>Repository</Heading>}>
           <RepositoryListItem>
             <Avatar src={git} />
             <ListItemText primary={this.renderContent(url)} />
@@ -49,7 +45,7 @@ class Repository extends Component<any, any> {
     );
   }
   
-  renderContent(url) {
+  renderContent(url: string) {
     return (
       <CopyToClipBoard text={url}>
         {this.renderRepositoryText(url)}

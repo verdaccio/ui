@@ -1,12 +1,11 @@
 /**
  * @prettier
- * @flow
  */
 
-import type { Node } from 'react';
+import { ReactNode } from 'react';
 
 export interface IProps {
-  children: Node;
+  children: ReactNode;
   open: boolean;
   onClose: () => void;
 }
