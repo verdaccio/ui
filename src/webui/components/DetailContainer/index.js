@@ -6,7 +6,7 @@
 import React, { Component } from 'react';
 
 import { DetailContextConsumer } from '../../pages/version/Version';
-import Readme from '../Readme';
+import Readme from '../Readme/Readme';
 import Versions from '../Versions';
 import { preventXSS } from '../../utils/sec-utils';
 import Tabs from '@material-ui/core/Tabs/index';

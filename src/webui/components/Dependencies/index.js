@@ -10,7 +10,7 @@ import CardContent from '@material-ui/core/CardContent/index';
 import { DetailContextConsumer } from '../../pages/version/Version';
 
 import { CardWrap, Heading, Tags, Tag } from './styles';
-import NoItems from '../NoItems';
+import NoItems from '../NoItems/NoItems';
 
 class DepDetail extends Component<any, any> {
   constructor(props: any) {

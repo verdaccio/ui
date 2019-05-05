@@ -10,7 +10,7 @@ import Developers from '../Developers';
 import Dist from '../Dist/Dist';
 import Engine from '../Engines';
 import Install from '../Install';
-import Repository from '../Repository';
+import Repository from '../Repository/Repository';
 
 
 import { DetailContextConsumer } from '../../pages/version/Version';

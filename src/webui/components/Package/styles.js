@@ -16,7 +16,7 @@ import Typography from '@material-ui/core/Typography/index';
 
 import { breakpoints } from '../../utils/styles/media';
 import Ico from '../Icon/Icon';
-import Label from '../Label';
+import Label from '../Label/Label';
 import colors from '../../utils/styles/colors';
 
 export const OverviewItem = styled.span`
