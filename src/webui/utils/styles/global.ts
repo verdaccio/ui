@@ -1,7 +1,5 @@
 import { injectGlobal } from 'emotion';
-import { fontFamilyBase } from './fonts';
 import { fontSize, fontWeight } from './sizes';
-import { textColor } from './colors';
 
 export default injectGlobal`
     html,
@@ -10,9 +8,7 @@ export default injectGlobal`
     }
 
     body {
-        font-family: ${fontFamilyBase};
         font-size: ${fontSize.base};
-        color: ${textColor};
     }
 
     ul {

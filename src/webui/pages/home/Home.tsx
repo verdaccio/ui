@@ -1,22 +1,16 @@
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
+import React from 'react';
 
 import PackageList from '../../components/PackageList';
 
-class Home extends Component<any, any> {
-  static propTypes = {
-    isUserLoggedIn: PropTypes.bool.isRequired,
-    packages: PropTypes.array.isRequired,
-  };
-
-  render() {
-    const { packages } = this.props;
-    return (
-      <div className={"container content"}>
-        <PackageList packages={packages} />
-      </div>
-    );
-  }
+interface Props {
+  isUserLoggedIn: boolean
+  packages: Array<any>
 }
+
+const Home: React.FC<Props> = ({ packages }) => (
+  <div className='container content'>
+    <PackageList packages={packages} />
+  </div>
+)
 
 export default Home;

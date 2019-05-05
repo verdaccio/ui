@@ -10,7 +10,7 @@ export function isTokenExpire(token) {
         return true;
     }
 
-    let [,payload] = token.split('.');
+    let [,payload]: any = token.split('.');
 
     if (!payload) {
         return true;
@@ -47,7 +47,7 @@ export async function makeLogin(username, password) {
     }
 
     try {
-        const response = await API.request('login', 'POST', {
+        const response: { username?: string, token?: string } = await API.request('login', 'POST', {
             body: JSON.stringify({username, password}),
             headers: {
                 Accept: HEADERS.JSON,

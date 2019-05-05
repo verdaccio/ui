@@ -73,7 +73,7 @@ export const packageMeta = {
       type: 'git',
       url: 'git://github.com/verdaccio/verdaccio.git'
     },
-    main: 'index.js',
+    main: 'index.ts',
     bin: { verdaccio: './bin/verdaccio' },
     dependencies: {
       '@verdaccio/file-locking': '0.0.3',

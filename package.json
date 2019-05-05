@@ -9,7 +9,7 @@
     "type": "git",
     "url": "git://github.com/verdaccio/ui"
   },
-  "main": "index.js",
+  "main": "index.ts",
   "devDependencies": {
     "@commitlint/cli": "7.5.2",
     "@commitlint/config-conventional": "7.5.0",

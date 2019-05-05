@@ -97,7 +97,6 @@ export class Search extends Component<RouteComponentProps<{}>, IState> {
       case 'click':
       case 'enter':
         this.setState({ search: '' });
-        // $FlowFixMe
         history.push(`/-/web/detail/${suggestionValue}`);
         break;
     }
@@ -115,6 +114,7 @@ export class Search extends Component<RouteComponentProps<{}>, IState> {
       // Keep track of search requests.
       this.requestList.push(controller);
       const suggestions = await API.request(`search/${encodeURIComponent(value)}`, 'GET', { signal });
+      // @ts-ignore
       this.setState({
         suggestions,
         loaded: true,

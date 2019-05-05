@@ -1,11 +1,10 @@
 /**
  * @prettier
- * @flow
  */
 
 /* eslint  react/jsx-max-depth:0 */
 
-import React, { Component, Fragment } from 'react';
+import React, { Component } from 'react';
 import { Router, Route, Switch } from 'react-router-dom';
 import { AppContextConsumer } from './app';
 
@@ -21,7 +20,7 @@ class RouterApp extends Component<any, any> {
   render() {
     return (
       <Router history={history}>
-        <Fragment>
+        <>
           {this.renderHeader()}
           <Switch>
             <Route exact={true} path={'/'} render={this.renderHomePage} />
@@ -29,7 +28,7 @@ class RouterApp extends Component<any, any> {
             <Route exact={true} path={'/-/web/detail/:package'} render={this.renderVersionPage} />
             <Route component={NotFound} />
           </Switch>
-        </Fragment>
+        </>
       </Router>
     );
   }
@@ -39,7 +38,7 @@ class RouterApp extends Component<any, any> {
 
     return (
       <AppContextConsumer>
-        {function renderConsumerVersionPage({ logoUrl, scope, user }) {
+        {function renderConsumerVersionPage({ logoUrl, scope, user }: any) {
           return <Header logo={logoUrl} onLogout={onLogout} onToggleLoginModal={onToggleLoginModal} scope={scope} username={user.username} />;
         }}
       </AppContextConsumer>
@@ -49,7 +48,8 @@ class RouterApp extends Component<any, any> {
   renderHomePage = () => {
     return (
       <AppContextConsumer>
-        {function renderConsumerVersionPage({ isUserLoggedIn, packages }) {
+        {function renderConsumerVersionPage({ isUserLoggedIn, packages }: any) {
+          // @ts-ignore
           return <HomePage isUserLoggedIn={isUserLoggedIn} packages={packages} />;
         }}
       </AppContextConsumer>
@@ -59,7 +59,7 @@ class RouterApp extends Component<any, any> {
   renderVersionPage = (routerProps: any) => {
     return (
       <AppContextConsumer>
-        {function renderConsumerVersionPage({ isUserLoggedIn }) {
+        {function renderConsumerVersionPage({ isUserLoggedIn }: any) {
           return <VersionPackage {...routerProps} isUserLoggedIn={isUserLoggedIn} />;
         }}
       </AppContextConsumer>

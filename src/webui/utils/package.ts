@@ -1,5 +1,4 @@
 import isString from 'lodash/isString';
-import isObject from 'lodash/isObject';
 import format from 'date-fns/format';
 import distanceInWordsToNow from 'date-fns/distance_in_words_to_now';
 
@@ -9,12 +8,12 @@ export const TIMEFORMAT = 'DD.MM.YYYY, HH:mm:ss';
  * Formats license field for webui.
  * @see https://docs.npmjs.com/files/package.json#license
  */
-export function formatLicense(license) {
+export function formatLicense(license: any) {
   if (isString(license)) {
     return license;
   }
 
-  if (isObject(license) && license.type) {
+  if (typeof license === 'object' && license.type) {
     return license.type;
   }
 
@@ -25,12 +24,12 @@ export function formatLicense(license) {
  * Formats repository field for webui.
  * @see https://docs.npmjs.com/files/package.json#repository
  */
-export function formatRepository(repository) {
+export function formatRepository(repository: any) {
   if (isString(repository)) {
     return repository;
   }
 
-  if (isObject(repository) && repository.url) {
+  if (typeof repository === 'object' && repository.url) {
     return repository.url;
   }
 

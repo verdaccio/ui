@@ -27,6 +27,7 @@ export function asyncComponent(getComponent) {
       const { Component } = this.state;
       if (Component) {
         // eslint-disable-next-line verdaccio/jsx-spread
+        // @ts-ignore
         return <Component {...this.props} />;
       }
 

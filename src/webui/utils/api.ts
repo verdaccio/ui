@@ -1,7 +1,8 @@
 import storage from './storage';
 
 class API {
-  request(url, method = 'GET', options = {}) {
+  request(url, method = 'GET', options: any = {}) {
+    // @ts-ignore
       if (!window.VERDACCIO_API_URL) {
         throw new Error('VERDACCIO_API_URL is not defined!');
       }
@@ -14,6 +15,7 @@ class API {
       }
 
       if (!['http://', 'https://', '//'].some((prefix) => url.startsWith(prefix))) {
+         // @ts-ignore
         url = window.VERDACCIO_API_URL + url;
       }
 
@@ -44,6 +46,7 @@ class API {
           credentials: 'same-origin',
           ...options,
         })
+         // @ts-ignore
         .then(handleResponseType)
         .then(([responseOk, body]) => {
           if (responseOk) {
