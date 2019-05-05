@@ -5,7 +5,7 @@ import React from 'react';
 import List from '@material-ui/core/List/index';
 import ListItem from '@material-ui/core/ListItem/index';
 
-import { DetailContextConsumer } from '../../pages/version/index';
+import { DetailContextConsumer } from '../../pages/version/Version';
 import NoItems from '../NoItems';
 import { formatDateDistance } from '../../utils/package';
 

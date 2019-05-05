@@ -10,7 +10,7 @@ import HomeIcon from '@material-ui/icons/Home';
 import List from '@material-ui/core/List/index';
 import Tooltip from '@material-ui/core/Tooltip/index';
 
-import { DetailContextConsumer } from '../../pages/version/index';
+import { DetailContextConsumer } from '../../pages/version/Version';
 import { Fab, ActionListItem } from './styles';
 
 const ACTIONS = {

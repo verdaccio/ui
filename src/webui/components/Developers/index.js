@@ -8,7 +8,7 @@ import Avatar from '@material-ui/core/Avatar';
 import Add from '@material-ui/icons/Add';
 import Tooltip from '@material-ui/core/Tooltip';
 
-import { DetailContextConsumer } from '../../pages/version';
+import { DetailContextConsumer } from '../../pages/version/Version';
 import { Details, Heading, Content, Fab } from './styles';
 
 interface Props {

@@ -2,27 +2,27 @@
  * @prettier
  */
 
-import React, { Component } from 'react';
+import React, { Component, ReactNode } from 'react';
 
 import Avatar from '@material-ui/core/Avatar/index';
 import List from '@material-ui/core/List/index';
 import ListItemText from '@material-ui/core/ListItemText/index';
 
-import { DetailContextConsumer } from '../../pages/version/index';
+import { DetailContextConsumer } from '../../pages/version/Version';
 import { Heading, AuthorListItem } from './styles';
 
 class Authors extends Component<any, any> {
   render() {
     return (
       <DetailContextConsumer>
-        {context => {
+        {(context: any) => {
           return this.renderAuthor(context);
         }}
       </DetailContextConsumer>
     );
   }
 
-  renderLinkForMail(email, avatarComponent, packageName, version) {
+  renderLinkForMail(email: string, avatarComponent: ReactNode, packageName: string, version: string) {
     if (!email) {
       return avatarComponent;
     }
@@ -33,7 +33,7 @@ class Authors extends Component<any, any> {
     );
   }
 
-  renderAuthor = ({ packageMeta }) => {
+  renderAuthor = ({ packageMeta }: any) => {
     const { author, name: packageName, version } = packageMeta.latest;
 
     if (!author) {

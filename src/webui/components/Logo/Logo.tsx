@@ -1,13 +1,17 @@
 /**
  * @prettier
  */
-
+import React from 'react';
 import styled, { css } from 'react-emotion';
 
 // @ts-ignore
 import logo from './img/logo.svg';
 
-const Logo = styled('div')`
+interface Props {
+  md?: boolean;
+}
+
+const LogoWrapper = styled('div')`
   && {
     display: inline-block;
     vertical-align: middle;
@@ -27,5 +31,14 @@ const Logo = styled('div')`
       `};
   }
 `;
+
+const Logo: React.FC<Props> = ({ md }) => {
+  // @ts-ignore
+  return <LogoWrapper md />;
+};
+
+Logo.defaultProps = {
+  md: false,
+};
 
 export default Logo;

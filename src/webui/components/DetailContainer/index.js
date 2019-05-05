@@ -5,7 +5,7 @@
 
 import React, { Component } from 'react';
 
-import { DetailContextConsumer } from '../../pages/version/index';
+import { DetailContextConsumer } from '../../pages/version/Version';
 import Readme from '../Readme';
 import Versions from '../Versions';
 import { preventXSS } from '../../utils/sec-utils';

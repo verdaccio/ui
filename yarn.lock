@@ -1473,6 +1473,11 @@
     csstype "^2.0.0"
     indefinite-observable "^1.0.1"
 
+"@types/lodash@4.14.123":
+  version "4.14.123"
+  resolved "https://registry.verdaccio.org/@types%2flodash/-/lodash-4.14.123.tgz#39be5d211478c8dd3bdae98ee75bb7efe4abfe4d"
+  integrity sha512-pQvPkc4Nltyx7G1Ww45OjVqUsJP4UsZm+GWJpigXgkikZqJgRm4c48g027o6tdgubWHwFRF15iFd+Y4Pmqv6+Q==
+
 "@types/material-ui@0.21.6":
   version "0.21.6"
   resolved "https://registry.verdaccio.org/@types%2fmaterial-ui/-/material-ui-0.21.6.tgz#047377ac49e623c2dafe47ccdf8713dcb02bd793"

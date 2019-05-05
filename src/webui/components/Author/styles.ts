@@ -1,11 +1,10 @@
 /**
  * @prettier
- * @flow
  */
 
 import styled from 'react-emotion';
-import ListItem from '@material-ui/core/ListItem/index';
-import Typography from '@material-ui/core/Typography/index';
+import ListItem from '@material-ui/core/ListItem';
+import Typography from '@material-ui/core/Typography';
 
 export const Heading = styled(Typography)`
   && {

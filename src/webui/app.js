@@ -8,7 +8,7 @@ import isNil from 'lodash/isNil';
 import storage from './utils/storage';
 import { makeLogin, isTokenExpire } from './utils/login';
 
-import Loading from './components/Loading';
+import Loading from './components/Loading/Loading';
 import LoginModal from './components/Login';
 import Header from './components/Header';
 import { Container, Content } from './components/Layout';

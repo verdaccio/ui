@@ -1,9 +1,10 @@
 /**
  * @prettier
- * @flow
  */
-import { Icons } from './index';
-import type { Styles } from '../../../../types';
+
+import { MouseEvent } from 'react';
+import { Icons } from './Icon';
+import  { Styles } from '../../../../types';
 
 export interface IIconsMap {
   brazil: string;
@@ -24,10 +25,9 @@ export interface IIconsMap {
 }
 
 export interface IProps {
-  name: $Keys<typeof Icons>;
+  name: keyof typeof Icons;
   className?: string;
-  // $FlowFixMe
-  onClick?: (event: SyntheticMouseEvent<SVGElement | HTMLSpanElement>) => void;
+  onClick?: (event: MouseEvent<SVGElement | HTMLSpanElement>) => void;
   size?: 'sm' | 'md';
   pointer?: boolean;
   img?: boolean;

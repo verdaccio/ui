@@ -1,6 +1,5 @@
 /**
  * @prettier
- * @flow
  */
 
 import styled, { css } from 'react-emotion';
@@ -35,19 +34,19 @@ const commonStyle = ({ size = 'sm', pointer, modifiers }: IProps) => css`
   }
 `;
 
-export const Svg = styled.svg`
+export const Svg = styled('svg')`
   && {
     ${commonStyle};
   }
 `;
 
-export const ImgWrapper = styled.span`
+export const ImgWrapper = styled('span')`
   && {
     ${commonStyle};
   }
 `;
 
-export const Img = styled.img`
+export const Img = styled('img')`
   && {
     width: 100%;
     height: auto;

@@ -14,7 +14,7 @@ import history from './history';
 import Header from './components/Header';
 
 const NotFound = asyncComponent(() => import('./components/NotFound'));
-const VersionPackage = asyncComponent(() => import('./pages/version'));
+const VersionPackage = asyncComponent(() => import('./pages/version/Version'));
 const HomePage = asyncComponent(() => import('./pages/home'));
 
 class RouterApp extends Component<any, any> {

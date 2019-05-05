@@ -1,18 +1,24 @@
 /**
  * @prettier
- * @flow
  */
 
 import React, { Component } from 'react';
 import Grid from '@material-ui/core/Grid/index';
-import Loading from '../../components/Loading';
+import Loading from '../../components/Loading/Loading';
 import DetailContainer from '../../components/DetailContainer';
 import DetailSidebar from '../../components/DetailSidebar';
 import { callDetailPage } from '../../utils/calls';
 import { getRouterPackageName } from '../../utils/package';
 import NotFound from '../../components/NotFound';
 
-export const DetailContext = React.createContext();
+export interface DetailContextProps {
+  packageMeta: any
+  readMe: any
+  packageName: string
+  enableLoading: () => void
+}
+
+export const DetailContext = React.createContext<DetailContextProps | null>(null);
 
 export const DetailContextProvider = DetailContext.Provider;
 export const DetailContextConsumer = DetailContext.Consumer;

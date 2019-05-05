@@ -1,11 +1,10 @@
 /**
  * @prettier
- * @flow
  */
 
 import styled, { css } from 'react-emotion';
 import mq from '../../utils/styles/media';
-import Icon from '../Icon';
+import Icon from '../Icon/Icon';
 import colors from '../../utils/styles/colors';
 
 export const Wrapper = styled('div')`

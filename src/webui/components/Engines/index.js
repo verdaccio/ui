@@ -9,7 +9,7 @@ import Grid from '@material-ui/core/Grid/index';
 import List from '@material-ui/core/List/index';
 import ListItemText from '@material-ui/core/ListItemText/index';
 
-import { DetailContextConsumer } from '../../pages/version/index';
+import { DetailContextConsumer } from '../../pages/version/Version';
 import { Heading, EngineListItem } from './styles';
 import node from './img/node.png';
 import npm from '../Install/img/npm.svg';
