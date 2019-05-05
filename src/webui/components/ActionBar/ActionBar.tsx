@@ -33,13 +33,13 @@ class ActionBar extends Component<any, any> {
     return (
       <DetailContextConsumer>
         {context => {
-          return this.renderActionBar(context);
+          return this.renderActionBar(context!);
         }}
       </DetailContextConsumer>
     );
   }
 
-  renderIconsWithLink(link, component) {
+  renderIconsWithLink(link: any, component: any) {
     if (!link) {
       return null;
     }
@@ -51,6 +51,7 @@ class ActionBar extends Component<any, any> {
   }
 
   renderActionBarListItems = packageMeta => {
+    // @ts-ignore
     const { latest: { bugs: { url: issue } = {}, homepage, dist: { tarball } = {} } = {} } = packageMeta;
 
     const actionsMap = {
@@ -64,8 +65,9 @@ class ActionBar extends Component<any, any> {
       if (link) {
         const fab = <Fab size={'small'}>{ACTIONS[value]['icon']}</Fab>;
         component.push(
+           // @ts-ignore
           <Tooltip key={key} title={ACTIONS[value]['title']}>
-            {this.renderIconsWithLink(link, fab)}
+            <>{this.renderIconsWithLink(link, fab)}</>
           </Tooltip>
         );
       }

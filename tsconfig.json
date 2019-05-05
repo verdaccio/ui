@@ -10,11 +10,14 @@
       "esModuleInterop": true,
       "jsx": "react",
       "typeRoots": [
-        "./types/*.d.ts"
+        "types/*.d.ts"
       ]
     },
+    "include": [
+      "src",
+    ],
     "exclude": [
-      "node_modules/*",
+      "node_modules",
     ]
   }
   

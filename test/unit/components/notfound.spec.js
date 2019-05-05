@@ -5,7 +5,7 @@
 import React from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
 import { shallow } from 'enzyme';
-import NotFound from '../../../src/webui/components/NotFound/index';
+import NotFound from '../../../src/webui/components/NotFound';
 
 console.error = jest.fn();
 

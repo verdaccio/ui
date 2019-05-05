@@ -125,7 +125,7 @@
     "test:clean": "npx jest --clearCache",
     "test": "cross-env NODE_ENV=test BABEL_ENV=test TZ=UTC jest --config ./jest.config.js --maxWorkers 2 --passWithNoTests",
     "test:size": "bundlesize",
-    "lint": "npm run flow && npm run lint:js && npm run lint:css",
+    "lint": "npm run type-check && npm run lint:js && npm run lint:css",
     "lint:js": "eslint .",
     "coverage:publish": "codecov",
     "lint:css": "stylelint 'src/webui/**/styles.js'",

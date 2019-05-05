@@ -1,14 +1,13 @@
 /**
- * @flow
  * @prettier
  */
 
 import React from 'react';
 import { mount } from 'enzyme';
 
-import { Search } from '../../../src/webui/components/Search/index';
+import { Search } from '../../../src/webui/components/Search';
 
-const SEARCH_FILE_PATH = '../../../src/webui/components/Search/index';
+const SEARCH_FILE_PATH = '../../../src/webui/components/Search';
 const API_FILE_PATH = '../../../src/webui/utils/api';
 const URL_FILE_PATH = '../../../src/webui/utils/url';
 

@@ -4,7 +4,7 @@
 
 import React from 'react';
 import { shallow, mount } from 'enzyme';
-import Readme from '../../../src/webui/components/Readme/index';
+import Readme from '../../../src/webui/components/Readme';
 
 describe('<Readme /> component', () => {
   test('should load the component in default state', () => {

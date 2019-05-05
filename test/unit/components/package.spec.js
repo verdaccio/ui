@@ -4,8 +4,8 @@
 
 import React from 'react';
 import { shallow } from 'enzyme';
-import Package from '../../../src/webui/components/Package/index';
-import Tag from '../../../src/webui/components/Tag/index';
+import Package from '../../../src/webui/components/Package';
+import Tag from '../../../src/webui/components/Tag';
 import { Version, WrapperLink, Field, OverviewItem } from '../../../src/webui/components/Package/styles';
 
 

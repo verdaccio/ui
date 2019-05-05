@@ -1,12 +1,11 @@
 /**
  * @prettier
- * @flow
  */
 
 import React from 'react';
 import { mount } from 'enzyme';
 
-import LoginModal from '../../../src/webui/components/Login/index';
+import LoginModal from '../../../src/webui/components/Login';
 
 const eventUsername = {
   target: {

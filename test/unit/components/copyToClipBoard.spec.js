@@ -1,12 +1,11 @@
 /**
  * @prettier
- * @flow
  */
 
 import React from 'react';
 import { shallow } from 'enzyme';
 
-import CopyToClipBoard from '../../../src/webui/components/CopyToClipBoard/index';
+import CopyToClipBoard from '../../../src/webui/components/CopyToClipBoard';
 import { CopyIcon } from '../../../src/webui/components/CopyToClipBoard/styles';
 
 describe('<CopyToClipBoard /> component', () => {
