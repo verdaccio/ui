@@ -12,7 +12,7 @@ import { Wrapper, Badge } from './styles';
 const Loading: React.FC = () => (
   <Wrapper>
     <Badge>
-      <Logo md />
+      <Logo size="md" />
     </Badge>
     <Spinner />
   </Wrapper>

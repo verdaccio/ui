@@ -2,43 +2,34 @@
  * @prettier
  */
 import React from 'react';
-import styled, { css } from 'react-emotion';
+import { makeStyles } from '@material-ui/styles';
 
-// @ts-ignore
-import logo from './img/logo.svg';
+import logo from './img/logo.svg'
+
+const sizing = {
+  md: 90,
+  sm: 40,
+};
 
 interface Props {
-  md?: boolean;
+  size?: keyof typeof sizing;
 }
 
-const LogoWrapper = styled('div')`
-  && {
-    display: inline-block;
-    vertical-align: middle;
-    box-sizing: border-box;
-    background-position: center;
-    background-size: contain;
-    background-image: url(${logo});
-    background-repeat: no-repeat;
-    width: 40px;
-    height: 40px;
-    ${props =>
-      // @ts-ignore
-      props.md &&
-      css`
-        width: 90px;
-        height: 90px;
-      `};
-  }
-`;
+const useStyles = makeStyles({
+  logo: ({ size }: Props) => ({
+    display: 'inline-block',
+    width: sizing[size!],
+    height: sizing[size!]
+  }),
+});
 
-const Logo: React.FC<Props> = ({ md }) => {
-  // @ts-ignore
-  return <LogoWrapper md />;
+const Logo: React.FC<Props> = ({ size }) => {
+  const classes = useStyles({ size });
+  return <img src={logo} alt="Verdaccio" className={classes.logo} />;
 };
 
 Logo.defaultProps = {
-  md: false,
+  size: 'sm',
 };
 
 export default Logo;

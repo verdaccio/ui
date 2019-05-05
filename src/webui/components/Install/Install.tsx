@@ -11,11 +11,8 @@ import { DetailContextConsumer } from '../../pages/version/Version';
 import CopyToClipBoard from '../CopyToClipBoard';
 
 // logos of package managers
-//@ts-ignore // TODO: add svg type
 import npm from './img/npm.svg';
-//@ts-ignore // TODO: add svg type
 import pnpm from './img/pnpm.svg';
-//@ts-ignore // TODO: add svg type
 import yarn from './img/yarn.svg';
 
 import { Heading, InstallItem, PackageMangerAvatar } from './styles';

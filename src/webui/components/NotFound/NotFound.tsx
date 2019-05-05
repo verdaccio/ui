@@ -8,7 +8,6 @@ import withWidth, { isWidthUp } from '@material-ui/core/withWidth';
 import React from 'react';
 import { RouteComponentProps, withRouter } from 'react-router-dom';
 
-// @ts-ignore
 import PackageImg from './img/package.svg';
 import { Card, EmptyPackage, Heading, Inner, List, Wrapper } from './styles';
 
