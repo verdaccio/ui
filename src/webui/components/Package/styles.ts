@@ -14,7 +14,6 @@ import Photo from '@material-ui/core/Avatar';
 import Typography from '@material-ui/core/Typography';
 
 import { breakpoints } from '../../utils/styles/media';
-import Ico from '../Icon';
 import Label from '../Label';
 import colors from '../../utils/styles/colors';
 
@@ -35,13 +34,6 @@ export const OverviewItem = styled('span')`
         display: none;
       }
     }
-  }
-`;
-
-export const Icon = styled(Ico)`
-  && {
-    margin: 2px 10px 0px 0;
-    fill: ${colors.greyLight2};
   }
 `;
 

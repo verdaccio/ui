@@ -20,7 +20,6 @@ import {
   Description,
   Details,
   GridRightAligned,
-  Icon,
   IconButton,
   OverviewItem,
   PackageList,
@@ -32,6 +31,8 @@ import {
   Text,
   WrapperLink,
 } from './styles';
+
+import Icon from '../Icon';
 
 const Package: React.FC<IProps> = ({
   author: { name: authorName, avatar: authorAvatar },
@@ -48,7 +49,7 @@ const Package: React.FC<IProps> = ({
   const renderVersionInfo = () =>
     version && (
       <OverviewItem>
-        <Icon name={'version'} />
+        <Icon icon="version" margin="2px 10px 0px 0" grey />
         {`v${version}`}
       </OverviewItem>
     );
@@ -66,7 +67,7 @@ const Package: React.FC<IProps> = ({
   const renderFileSize = () =>
     unpackedSize && (
       <OverviewItem>
-        <Icon name={'filebinary'} />
+        <Icon icon="filebinary" margin="2px 10px 0px 0" grey />
         {fileSizeSI(unpackedSize)}
       </OverviewItem>
     );
@@ -74,7 +75,7 @@ const Package: React.FC<IProps> = ({
   const renderLicenseInfo = () =>
     license && (
       <OverviewItem>
-        <Icon name="law" />
+        <Icon icon="law" margin="2px 10px 0px 0" grey />
         {license}
       </OverviewItem>
     );
@@ -82,7 +83,7 @@ const Package: React.FC<IProps> = ({
   const renderPublishedInfo = () =>
     time && (
       <OverviewItem>
-        <Icon name="time" />
+        <Icon icon="time" margin="2px 10px 0px 0" grey />
         <Published>{`Published on ${formatDate(time)} •`}</Published>
         {`${formatDateDistance(time)} ago`}
       </OverviewItem>

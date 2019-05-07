@@ -4,19 +4,20 @@
 
 import React from 'react';
 
-import { Wrapper, Left, Right, Earth, Flags, Love, Flag, Logo, Inner, ToolTip } from './styles';
+import { Wrapper, Left, Right, Flags, Love, Inner, ToolTip } from './styles';
 import { goToVerdaccioWebsite } from '../../utils/windows';
+import Icon from '../Icon';
 
 const renderTooltip = () => (
   <ToolTip>
-    <Earth name="earth" size="md" />
+    <Icon icon="earth" padding="0 10px" size="md" />
     <Flags>
-      <Flag name="spain" size="md" />
-      <Flag name="nicaragua" size="md" />
-      <Flag name="india" size="md" />
-      <Flag name="brazil" size="md" />
-      <Flag name="china" size="md" />
-      <Flag name="austria" size="md" />
+      <Icon icon="spain" padding="0 5px" size="md" />
+      <Icon icon="nicaragua" padding="0 5px" size="md" />
+      <Icon icon="india" padding="0 5px" size="md" />
+      <Icon icon="brazil" padding="0 5px" size="md" />
+      <Icon icon="china" padding="0 5px" size="md" />
+      <Icon icon="austria" padding="0 5px" size="md" />
     </Flags>
   </ToolTip>
 );
@@ -30,7 +31,7 @@ const renderRight = (version = window.VERDACCIO_VERSION) => {
   return (
     <Right>
       {POWERED_LABEL}
-      <Logo img={true} name="verdaccio" onClick={goToVerdaccioWebsite} pointer={true} size="md" />
+      <Icon icon="verdaccio" padding="0 5px" onClick={goToVerdaccioWebsite} pointer size="md" />
       {`/ ${version}`}
     </Right>
   );

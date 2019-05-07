@@ -3,57 +3,74 @@
  */
 
 import React from 'react';
-import capitalize from 'lodash/capitalize';
+import { makeStyles } from '@material-ui/styles'
 
-import { Svg, Img, ImgWrapper } from './styles';
-import { IProps, IIconsMap } from './types';
+import getIcon from './get-icon'
+import colors from '../../utils/styles/colors';
 
-import brazil from './img/brazil.svg';
-import china from './img/china.svg';
-import india from './img/india.svg';
-import nicaragua from './img/nicaragua.svg';
-import pakistan from './img/pakistan.svg';
-import austria from './img/austria.svg';
-import spain from './img/spain.svg';
-import earth from './img/earth.svg';
-import verdaccio from './img/verdaccio.svg';
-import filebinary from './img/filebinary.svg';
-import law from './img/law.svg';
-import license from './img/license.svg';
-import time from './img/time.svg';
-import version from './img/version.svg';
-
-export const Icons: IIconsMap = {
-  brazil,
-  spain,
-  china,
-  nicaragua,
-  pakistan,
-  india,
-  austria,
-  earth,
-  verdaccio,
-  filebinary,
-  law,
-  license,
-  time,
-  version,
+const icons = {
+  brazil: 'brazil',
+  spain: 'spain',
+  china: 'china',
+  nicaragua: 'nicaragua',
+  pakistan: 'pakistan',
+  india: 'india',
+  austria: 'austria',
+  earth:'earth',
+  verdaccio: 'verdaccio',
+  filebinary: 'filebinary',
+  law: 'law',
+  license: 'license',
+  time: 'time',
+  version: 'version',
 };
 
-const Icon: React.FC<IProps> = ({ className, name, size = 'sm', img = false, pointer = false, ...props }) => {
-  // @ts-ignore
-  const title = capitalize(name);
-  return img ? (
-    <ImgWrapper className={className} pointer={pointer} size={size} title={title} name={name} {...props}>
-      <Img alt={title} src={Icons[name]} />
-    </ImgWrapper>
-  ) : (
-    // @ts-ignore
-    <Svg className={className} pointer={pointer} size={size} {...props}>
-      <title>{title}</title>
-      <use xlinkHref={`${Icons[name]}#${name}`} />
-    </Svg>
-  );
-};
+export type Icons = keyof typeof icons
 
-export default Icon;
+interface Props  {
+  icon: Icons
+  size?: 'md' | 'sm'
+  className?: string
+  margin?: string
+  padding?: string
+  grey?: boolean
+  pointer?: boolean
+  onClick?: (event: React.PointerEvent<Element> | React.MouseEvent<SVGSVGElement, MouseEvent>) => void
+}
+
+const useStyles = makeStyles({
+  container: {
+    // TODO => There will be a proper Flex component 
+    display: 'inline-flex',
+    alignItems: 'center',
+  },
+  icon: (({ grey, margin, padding, pointer, size }) => ({
+    // TODO => the styles below will be parrt of the theme. 
+    // As soon as it is created we will create proper style helpers and replace these kind of stuff
+    color: grey ? colors.greyLight2 : 'inherit',
+    margin,
+    padding,
+    pointer: pointer ? 'pointer' : 'auto',
+    fontSize: size === 'md' ? 18 : 14
+  }))
+})
+
+const Icon: React.FC<Props> = ({ icon, className, onClick, ...props }) => {
+  const classes = useStyles(props)
+  const Component = getIcon(icon)
+
+  return (
+    <div className={classes.container}>
+      <Component className={classes.icon} fontSize="inherit" onClick={onClick} />
+    </div>
+  )
+}
+
+Icon.defaultProps = {
+  size: 'sm',
+  grey: false,
+  pointer: false
+}
+
+export default Icon
+
