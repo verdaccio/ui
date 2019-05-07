@@ -2,7 +2,7 @@ const env = require('../src/config/env');
 const StyleLintPlugin = require('stylelint-webpack-plugin');
 
 module.exports = {
-  entry: `${env.SRC_ROOT}/webui/src/index.js`,
+  entry: `${env.SRC_ROOT}/webui/src/index.tsx`,
 
   output: {
     path: `${env.APP_ROOT}/static/`,

@@ -1,1 +1,1 @@
-export { default, Content, Container } from './Layout'
+export { Content, Container } from './Layout'
