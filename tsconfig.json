@@ -9,6 +9,7 @@
       "allowSyntheticDefaultImports": true,
       "esModuleInterop": true,
       "jsx": "react",
+      "baseUrl": ".",
       "typeRoots": [
         "types/*.d.ts"
       ]
@@ -17,7 +18,7 @@
       "src",
     ],
     "exclude": [
-      "node_modules",
+      "node_modules/*",
     ]
   }
   

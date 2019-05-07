@@ -9,7 +9,7 @@
     "type": "git",
     "url": "git://github.com/verdaccio/ui"
   },
-  "main": "index.ts",
+  "main": "index.js",
   "devDependencies": {
     "@commitlint/cli": "7.5.2",
     "@commitlint/config-conventional": "7.5.0",
@@ -95,9 +95,6 @@
     "stylelint-scss": "3.5.4",
     "stylelint-webpack-plugin": "0.10.5",
     "supertest": "3.4.2",
-    "tslint-config-prettier": "1.18.0",
-    "tslint-plugin-prettier": "2.0.1",
-    "tslint-react": "4.0.0",
     "typeface-roboto": "0.0.54",
     "typescript": "3.2.1",
     "url-loader": "1.1.2",
