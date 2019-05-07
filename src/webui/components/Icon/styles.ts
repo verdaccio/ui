@@ -3,19 +3,13 @@
  */
 
 import styled, { css } from 'react-emotion';
-import { IProps } from './types';
 
-const getSize = (size: string) => {
+const getSize = (size?: 'md' | 'sm') => {
   switch (size) {
     case 'md':
       return `
         width: 18px;
         height: 18px;
-      `;
-    case 'lg':
-      return `
-        width: 20px;
-        height: 20px;
       `;
     default:
       return `
@@ -25,7 +19,7 @@ const getSize = (size: string) => {
   }
 };
 
-const commonStyle = ({ size = 'sm', pointer, modifiers }: IProps) => css`
+const commonStyle = ({ size = 'sm', pointer, modifiers }: any) => css`
   && {
     display: inline-block;
     cursor: ${pointer ? 'pointer' : 'default'};

@@ -78,28 +78,37 @@ export const NavBar = styled(AppBar)`
     min-height: 60px;
     display: flex;
     justify-content: center;
-    ${mq.medium(css`
-      ${SearchWrapper} {
-        display: flex;
-      }
-      ${IconSearchButton} {
-        display: none;
-      }
-      ${MobileNavBar} {
-        display: none;
-      }
-    `)};
-    ${mq.large(css`
-      ${InnerNavBar} {
-        padding: 0 20px;
-      }
-    `)};
-    ${mq.xlarge(css`
-      ${InnerNavBar} {
-        max-width: 1240px;
-        width: 100%;
-        margin: 0 auto;
-      }
-    `)};
+    ${() => {
+      // @ts-ignore
+      return mq.medium(css`
+        ${SearchWrapper} {
+          display: flex;
+        }
+        ${IconSearchButton} {
+          display: none;
+        }
+        ${MobileNavBar} {
+          display: none;
+        }
+      `);
+    }};
+    ${() => {
+      // @ts-ignore
+      return mq.large(css`
+        ${InnerNavBar} {
+          padding: 0 20px;
+        }
+      `);
+    }};
+    ${() => {
+      // @ts-ignore
+      return mq.xlarge(css`
+        ${InnerNavBar} {
+          max-width: 1240px;
+          width: 100%;
+          margin: 0 auto;
+        }
+      `);
+    }};
   }
 `;

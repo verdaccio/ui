@@ -5,13 +5,12 @@
 import React from 'react';
 import styled from 'react-emotion';
 import { fontWeight } from '../../utils/styles/sizes';
-import { Styles } from '../../../../types';
 
 interface Props {
   text: string;
   capitalize?: boolean;
   weight?: string;
-  modifiers?: Styles;
+  modifiers?: any;
 }
 
 const Wrapper = styled('div')`

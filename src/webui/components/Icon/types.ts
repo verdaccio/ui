@@ -4,7 +4,6 @@
 
 import { MouseEvent } from 'react';
 import { Icons } from './Icon';
-import  { Styles } from '../../../../types';
 
 export interface IIconsMap {
   brazil: string;
@@ -31,5 +30,5 @@ export interface IProps {
   size?: 'sm' | 'md';
   pointer?: boolean;
   img?: boolean;
-  modifiers?: Styles;
+  modifiers?: any;
 }
