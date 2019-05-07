@@ -125,6 +125,7 @@ export default class App extends Component<any, any> {
    * Required by: <Header />
    */
   handleDoLogin = async (usernameValue, passwordValue) => {
+    // @ts-ignore
     const { username, token, error } = await makeLogin(usernameValue, passwordValue);
 
     if (username && token) {
