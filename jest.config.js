@@ -10,8 +10,8 @@ module.exports = {
   setupFiles: [
     './test/unit/setup.js'
   ],
-   // Some unit tests rely on data folders that look like packages.  This confuses jest-hast-map
-   // when it tries to scan for package.json files.
+  // Some unit tests rely on data folders that look like packages.  This confuses jest-hast-map
+  // when it tries to scan for package.json files.
   modulePathIgnorePatterns: [
     '<rootDir>/test/unit/partials/mock-store/.*/package.json',
     '<rootDir>/test/functional/store/.*/package.json',

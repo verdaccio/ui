@@ -89,7 +89,7 @@ module.exports = {
         ],
       },
 
-       /* Typescript loader */
+      /* Typescript loader */
       {
         test: /\.tsx?$/,
         use: 'babel-loader',
