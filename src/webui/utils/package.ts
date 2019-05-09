@@ -13,7 +13,7 @@ export function formatLicense(license: any) {
     return license;
   }
 
-  if (typeof license === 'object' && license.type) {
+  if (license && typeof license === 'object' && license.type) {
     return license.type;
   }
 
@@ -29,7 +29,7 @@ export function formatRepository(repository: any) {
     return repository;
   }
 
-  if (typeof repository === 'object' && repository.url) {
+  if (repository && typeof repository === 'object' && repository.url) {
     return repository.url;
   }
 
@@ -81,6 +81,6 @@ export function getRouterPackageName(match) {
   if (scope) {
     return `@${scope}/${packageName}`;
   }
-  
+
   return packageName;
 }

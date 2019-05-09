@@ -37,7 +37,7 @@ const Package: React.FC<IProps> = ({
   author: { name: authorName, avatar: authorAvatar },
   bugs,
   description,
-  dist: { unpackedSize },
+  dist,
   homepage,
   keywords = [],
   license,
@@ -64,10 +64,11 @@ const Package: React.FC<IProps> = ({
     );
 
   const renderFileSize = () =>
-    unpackedSize && (
+    dist &&
+    dist.unpackedSize && (
       <OverviewItem>
         <Icon name={'filebinary'} />
-        {fileSizeSI(unpackedSize)}
+        {fileSizeSI(dist.unpackedSize)}
       </OverviewItem>
     );
 
