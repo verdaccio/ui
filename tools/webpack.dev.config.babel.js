@@ -34,6 +34,7 @@ export default {
       __APP_VERSION__: `"${getPackageJson('version')}"`,
     }),
     new HTMLWebpackPlugin({
+      __UI_OPTIONS: JSON.stringify({base: '/'}),
       title: 'Verdaccio Dev UI',
       scope: '',
       logo: 'https://verdaccio.org/img/logo/symbol/svg/verdaccio-tiny.svg',
