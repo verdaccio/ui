@@ -6,37 +6,46 @@ import Button from '@material-ui/core/Button';
 import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 import Typography from '@material-ui/core/Typography';
+import Card from '@material-ui/core/Card';
+import { makeStyles } from '@material-ui/styles';
 import React from 'react';
 
 import { getRegistryURL } from '../../utils/url';
 import CopyToClipBoard from '../CopyToClipBoard';
 
-import { CardStyled as Card, HelpTitle } from './styles';
+import HelpHeading from './HelpHeading';
+import HelpContent, { HelpStep } from './HelpContent';
 
-function renderHeadingClipboardSegments(title: string, text: string) {
-  return (
-    <>
-      <Typography variant={'body2'}>{title}</Typography>
-      <CopyToClipBoard text={text} />
-    </>
-  );
-}
+const useStyles = makeStyles({
+  card: {
+    width: 600,
+    margin: 'auto',
+  },
+});
 
 const Help: React.FC = () => {
+  const classes = useStyles();
   const registryUrl = getRegistryURL();
+  const publishPackageSteps: Array<HelpStep> = [
+    {
+      title: 'Login',
+      command: `npm adduser --registry ${registryUrl}`,
+    },
+    {
+      title: 'Publish',
+      command: `npm publish --registry ${registryUrl}`,
+    },
+    {
+      title: 'Refresh this page',
+      command: undefined,
+    },
+  ];
 
   return (
-    <Card id="help-card">
+    <Card className={classes.card}>
       <CardContent>
-        <Typography component="h2" gutterBottom id="help-card__title" variant="headline">
-          No Package Published Yet.
-        </Typography>
-        <HelpTitle color="textSecondary" gutterBottom>
-          To publish your first package just:
-        </HelpTitle>
-        {renderHeadingClipboardSegments('1. Login', `npm adduser --registry ${registryUrl}`)}
-        {renderHeadingClipboardSegments('2. Publish', `npm publish --registry ${registryUrl}`)}
-        <Typography variant="body2">3. Refresh this page.</Typography>
+        <HelpHeading />
+        <HelpContent helpSteps={publishPackageSteps} />
       </CardContent>
       <CardActions>
         <Button color="primary" href="https://verdaccio.org/docs/en/installation" size="small" target="_blank">
