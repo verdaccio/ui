@@ -55,6 +55,6 @@ export const InputField = ({ color, ...others }: IInputField) => (
 export const SuggestionContainer = styled(Paper)`
   && {
     max-height: 500px;
-    overflow-y: scroll;
+    overflow-y: auto;
   }
 `;
