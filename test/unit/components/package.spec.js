@@ -32,7 +32,15 @@ describe('<Package /> component', () => {
     };
 
     const wrapper = shallow(
-      <Package {...props} />
+      <Package 
+        author={props.author}
+        description={props.description}
+        keywords={props.keywords}
+        license={props.license}
+        name={props.name}
+        time={props.time}
+        version={props.version} 
+      />
     );
 
 
@@ -77,7 +85,14 @@ describe('<Package /> component', () => {
       description: 'Private NPM repository'
     };
     const wrapper = shallow(
-      <Package {...props} />
+      <Package 
+        author={props.author}
+        description={props.description}
+        license={props.license}
+        name={props.name}
+        time={props.time}
+        version={props.version}  
+      />
     );
 
     // integration expectations

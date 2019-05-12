@@ -1,13 +1,13 @@
 // @flow
 
-export interface IVerdaccioConfig {
+export interface VerdaccioConfig {
   storagePath: string;
   configPath: string;
   domainPath: string;
   port: number;
 }
 
-export interface IRequestPromise {
+export interface RequestPromise {
   status(reason: any): any;
   body_ok(reason: any): any;
   body_error(reason: any): any;
@@ -16,9 +16,9 @@ export interface IRequestPromise {
   send(reason: any): any;
 }
 
-export interface IServerProcess {
-  bridge: IServerBridge;
-  config: IVerdaccioConfig;
+export interface ServerProcess {
+  bridge: ServerBridge;
+  config: VerdaccioConfig;
   childFork: any;
   isDebug: boolean;
   silence: boolean;
@@ -26,18 +26,18 @@ export interface IServerProcess {
   stop(): void;
 }
 
-declare class verdaccio$PromiseAssert<IRequestPromise> extends Promise<any> {
-  constructor(options: any): IRequestPromise;
+declare class verdaccio$PromiseAssert<RequestPromise> extends Promise<any> {
+  constructor(options: any): RequestPromise;
 }
 
-export interface IServerBridge {
+export interface ServerBridge {
   url: string;
   userAgent: string;
   authstr: string;
   request(options: any): typeof verdaccio$PromiseAssert;
-  auth(name: string, password: string): IRequestPromise;
+  auth(name: string, password: string): RequestPromise;
   logout(token: string): Promise<any>;
-  auth(name: string, password: string): IRequestPromise;
+  auth(name: string, password: string): RequestPromise;
   getPackage(name: string): Promise<any>;
   putPackage(name: string, data: any): Promise<any>;
   putVersion(name: string, version: string, data: any): Promise<any>;
@@ -50,5 +50,5 @@ export interface IServerBridge {
   addPackage(name: string): Promise<any>;
   whoami(): Promise<any>;
   ping(): Promise<any>;
-  debug(): IRequestPromise;
+  debug(): RequestPromise;
 }

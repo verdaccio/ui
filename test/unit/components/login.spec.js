@@ -40,7 +40,7 @@ describe('<LoginModal />', () => {
       onCancel: () => {},
       onSubmit: () => {},
     };
-    const wrapper = mount(<LoginModal {...props} />);
+    const wrapper = mount(<LoginModal error={props.error} onCancel={props.onCancel} onSubmit={props.onSubmit} visibility={props.visibility} />);
     expect(wrapper.html()).toMatchSnapshot();
   });
 
@@ -55,7 +55,7 @@ describe('<LoginModal />', () => {
       onCancel: jest.fn(),
       onSubmit: () => {},
     };
-    const wrapper = mount(<LoginModal {...props} />);
+    const wrapper = mount(<LoginModal error={props.error} onCancel={props.onCancel} onSubmit={props.onSubmit} visibility={props.visibility} />);
     wrapper.find('button[id="login--form-cancel"]').simulate('click');
     expect(props.onCancel).toHaveBeenCalled();
   });
@@ -67,7 +67,7 @@ describe('<LoginModal />', () => {
       onCancel: () => {},
       onSubmit: () => {},
     };
-    const wrapper = mount(<LoginModal {...props} />);
+    const wrapper = mount(<LoginModal error={props.error} onCancel={props.onCancel} onSubmit={props.onSubmit} visibility={props.visibility} />);
     const { setCredentials } = wrapper.instance();
 
     expect(setCredentials('username', eventUsername)).toBeUndefined();
@@ -85,7 +85,7 @@ describe('<LoginModal />', () => {
       onSubmit: jest.fn(),
     };
 
-    const wrapper = mount(<LoginModal {...props} />);
+    const wrapper = mount(<LoginModal error={props.error} onCancel={props.onCancel} onSubmit={props.onSubmit} visibility={props.visibility} />);
     const instance = wrapper.instance();
 
     instance.submitCredentials = jest.fn();
@@ -110,7 +110,7 @@ describe('<LoginModal />', () => {
       onSubmit: jest.fn(),
     };
 
-    const wrapper = mount(<LoginModal {...props} />);
+    const wrapper = mount(<LoginModal error={props.error} onCancel={props.onCancel} onSubmit={props.onSubmit} visibility={props.visibility} />);
     const { setCredentials, submitCredentials } = wrapper.instance();
     expect(setCredentials('username', eventUsername)).toBeUndefined();
     expect(wrapper.state('form').username.value).toEqual('xyz');
