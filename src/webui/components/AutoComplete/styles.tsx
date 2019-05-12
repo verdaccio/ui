@@ -4,6 +4,7 @@
 
 import React from 'react';
 import styled, { css } from 'react-emotion';
+import Paper from '@material-ui/core/Paper';
 
 import TextField from '../TextField';
 import { IInputField } from './types';
@@ -49,3 +50,10 @@ export const InputField: React.FC<IInputField> = ({ color, ...others }) => (
     }}
   />
 );
+
+export const SuggestionContainer = styled(Paper)`
+  && {
+    max-height: 500px;
+    overflow-y: scroll;
+  }
+`;

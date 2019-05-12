@@ -6,11 +6,10 @@ import React from 'react';
 import Autosuggest from 'react-autosuggest';
 import match from 'autosuggest-highlight/match';
 import parse from 'autosuggest-highlight/parse';
-import Paper from '@material-ui/core/Paper';
 import MenuItem from '@material-ui/core/MenuItem';
 
 import { fontWeight } from '../../utils/styles/sizes';
-import { Wrapper, InputField } from './styles';
+import { Wrapper, InputField, SuggestionContainer } from './styles';
 import { IProps } from './types';
 
 const renderInputComponent = inputProps => {
@@ -108,12 +107,12 @@ const AutoComplete = ({
   // this format avoid arrow function eslint rule
   function renderSuggestionsContainer({ containerProps, children, query }) {
     return (
-      <Paper {...containerProps} square={true}>
+      <SuggestionContainer {...containerProps} square={true}>
         {suggestionsLoaded && children === null && query && renderMessage(SUGGESTIONS_RESPONSE.NO_RESULT)}
         {suggestionsLoading && query && renderMessage(SUGGESTIONS_RESPONSE.LOADING)}
         {suggestionsError && renderMessage(SUGGESTIONS_RESPONSE.FAILURE)}
         {children}
-      </Paper>
+      </SuggestionContainer>
     );
   }
 

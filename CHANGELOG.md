@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="0.1.7"></a>
+## [0.1.7](https://github.com/verdaccio/ui/compare/v0.1.6...v0.1.7) (2019-05-11)
+
+
+### Bug Fixes
+
+* search suggestion container height ([#54](https://github.com/verdaccio/ui/issues/54)) ([c9fb3c4](https://github.com/verdaccio/ui/commit/c9fb3c4))
+
+
+
 <a name="0.1.6"></a>
 ## [0.1.6](https://github.com/verdaccio/ui/compare/v0.1.5...v0.1.6) (2019-05-07)
 
