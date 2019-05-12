@@ -26,7 +26,7 @@ export interface ServerProcess {
   stop(): void;
 }
 
-declare class verdaccio$PromiseAssert<RequestPromise> extends Promise<any> {
+declare class VerdaccioPromiseAssert<RequestPromise> extends Promise<any> {
   constructor(options: any): RequestPromise;
 }
 
@@ -34,10 +34,9 @@ export interface ServerBridge {
   url: string;
   userAgent: string;
   authstr: string;
-  request(options: any): typeof verdaccio$PromiseAssert;
+  request(options: any): typeof VerdaccioPromiseAssert;
   auth(name: string, password: string): RequestPromise;
   logout(token: string): Promise<any>;
-  auth(name: string, password: string): RequestPromise;
   getPackage(name: string): Promise<any>;
   putPackage(name: string, data: any): Promise<any>;
   putVersion(name: string, version: string, data: any): Promise<any>;

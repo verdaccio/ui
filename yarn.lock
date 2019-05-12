@@ -1201,6 +1201,16 @@
     "@jest/types" "^24.7.0"
     jest-mock "^24.7.0"
 
+"@jest/environment@^24.8.0":
+  version "24.8.0"
+  resolved "https://registry.verdaccio.org/@jest%2fenvironment/-/environment-24.8.0.tgz#0342261383c776bdd652168f68065ef144af0eac"
+  integrity sha512-vlGt2HLg7qM+vtBrSkjDxk9K0YtRBi7HfRFaDxoRtyi+DyVChzhF20duvpdAnKVBV6W5tym8jm0U9EfXbDk1tw==
+  dependencies:
+    "@jest/fake-timers" "^24.8.0"
+    "@jest/transform" "^24.8.0"
+    "@jest/types" "^24.8.0"
+    jest-mock "^24.8.0"
+
 "@jest/fake-timers@^24.7.1":
   version "24.7.1"
   resolved "https://registry.npmjs.org/@jest/fake-timers/-/fake-timers-24.7.1.tgz#56e5d09bdec09ee81050eaff2794b26c71d19db2"
@@ -1209,6 +1219,15 @@
     "@jest/types" "^24.7.0"
     jest-message-util "^24.7.1"
     jest-mock "^24.7.0"
+
+"@jest/fake-timers@^24.8.0":
+  version "24.8.0"
+  resolved "https://registry.verdaccio.org/@jest%2ffake-timers/-/fake-timers-24.8.0.tgz#2e5b80a4f78f284bcb4bd5714b8e10dd36a8d3d1"
+  integrity sha512-2M4d5MufVXwi6VzZhJ9f5S/wU4ud2ck0kxPof1Iz3zWx6Y+V2eJrES9jEktB6O3o/oEyk+il/uNu9PvASjWXQw==
+  dependencies:
+    "@jest/types" "^24.8.0"
+    jest-message-util "^24.8.0"
+    jest-mock "^24.8.0"
 
 "@jest/reporters@^24.7.1":
   version "24.7.1"
@@ -1254,6 +1273,15 @@
     "@jest/types" "^24.7.0"
     "@types/istanbul-lib-coverage" "^2.0.0"
 
+"@jest/test-result@^24.8.0":
+  version "24.8.0"
+  resolved "https://registry.verdaccio.org/@jest%2ftest-result/-/test-result-24.8.0.tgz#7675d0aaf9d2484caa65e048d9b467d160f8e9d3"
+  integrity sha512-+YdLlxwizlfqkFDh7Mc7ONPQAhA4YylU1s529vVM1rsf67vGZH/2GGm5uO8QzPeVyaVMobCQ7FTxl38QrKRlng==
+  dependencies:
+    "@jest/console" "^24.7.1"
+    "@jest/types" "^24.8.0"
+    "@types/istanbul-lib-coverage" "^2.0.0"
+
 "@jest/test-sequencer@^24.7.1":
   version "24.7.1"
   resolved "https://registry.npmjs.org/@jest/test-sequencer/-/test-sequencer-24.7.1.tgz#9c18e428e1ad945fa74f6233a9d35745ca0e63e0"
@@ -1285,12 +1313,42 @@
     source-map "^0.6.1"
     write-file-atomic "2.4.1"
 
+"@jest/transform@^24.8.0":
+  version "24.8.0"
+  resolved "https://registry.verdaccio.org/@jest%2ftransform/-/transform-24.8.0.tgz#628fb99dce4f9d254c6fd9341e3eea262e06fef5"
+  integrity sha512-xBMfFUP7TortCs0O+Xtez2W7Zu1PLH9bvJgtraN1CDST6LBM/eTOZ9SfwS/lvV8yOfcDpFmwf9bq5cYbXvqsvA==
+  dependencies:
+    "@babel/core" "^7.1.0"
+    "@jest/types" "^24.8.0"
+    babel-plugin-istanbul "^5.1.0"
+    chalk "^2.0.1"
+    convert-source-map "^1.4.0"
+    fast-json-stable-stringify "^2.0.0"
+    graceful-fs "^4.1.15"
+    jest-haste-map "^24.8.0"
+    jest-regex-util "^24.3.0"
+    jest-util "^24.8.0"
+    micromatch "^3.1.10"
+    realpath-native "^1.1.0"
+    slash "^2.0.0"
+    source-map "^0.6.1"
+    write-file-atomic "2.4.1"
+
 "@jest/types@^24.7.0":
   version "24.7.0"
   resolved "https://registry.npmjs.org/@jest/types/-/types-24.7.0.tgz#c4ec8d1828cdf23234d9b4ee31f5482a3f04f48b"
   integrity sha512-ipJUa2rFWiKoBqMKP63Myb6h9+iT3FHRTF2M8OR6irxWzItisa8i4dcSg14IbvmXUnBlHBlUQPYUHWyX3UPpYA==
   dependencies:
     "@types/istanbul-lib-coverage" "^2.0.0"
+    "@types/yargs" "^12.0.9"
+
+"@jest/types@^24.8.0":
+  version "24.8.0"
+  resolved "https://registry.verdaccio.org/@jest%2ftypes/-/types-24.8.0.tgz#f31e25948c58f0abd8c845ae26fcea1491dea7ad"
+  integrity sha512-g17UxVr2YfBtaMUxn9u/4+siG1ptg9IGYAYwvpwn61nBg779RXnjE/m7CxYcIzEt0AbHZZAHSEZNhkE2WxURVg==
+  dependencies:
+    "@types/istanbul-lib-coverage" "^2.0.0"
+    "@types/istanbul-reports" "^1.1.1"
     "@types/yargs" "^12.0.9"
 
 "@marionebl/sander@^0.6.0":
@@ -1489,10 +1547,30 @@
   resolved "https://registry.verdaccio.org/@types%2fhistory/-/history-4.7.2.tgz#0e670ea254d559241b6eeb3894f8754991e73220"
   integrity sha512-ui3WwXmjTaY73fOQ3/m3nnajU/Orhi6cEu5rzX+BrAAJxa3eITXZ5ch9suPqtM03OWhAHhPSyBGCN4UKoxO20Q==
 
+"@types/istanbul-lib-coverage@*":
+  version "2.0.1"
+  resolved "https://registry.verdaccio.org/@types%2fistanbul-lib-coverage/-/istanbul-lib-coverage-2.0.1.tgz#42995b446db9a48a11a07ec083499a860e9138ff"
+  integrity sha512-hRJD2ahnnpLgsj6KWMYSrmXkM3rm2Dl1qkx6IOFD5FnuNPXJIG5L0dhgKXCYTRMGzU4n0wImQ/xfmRc4POUFlg==
+
 "@types/istanbul-lib-coverage@^2.0.0":
   version "2.0.0"
   resolved "https://registry.npmjs.org/@types/istanbul-lib-coverage/-/istanbul-lib-coverage-2.0.0.tgz#1eb8c033e98cf4e1a4cedcaf8bcafe8cb7591e85"
   integrity sha512-eAtOAFZefEnfJiRFQBGw1eYqa5GTLCZ1y86N0XSI/D6EB+E8z6VPV/UL7Gi5UEclFqoQk+6NRqEDsfmDLXn8sg==
+
+"@types/istanbul-lib-report@*":
+  version "1.1.1"
+  resolved "https://registry.verdaccio.org/@types%2fistanbul-lib-report/-/istanbul-lib-report-1.1.1.tgz#e5471e7fa33c61358dd38426189c037a58433b8c"
+  integrity sha512-3BUTyMzbZa2DtDI2BkERNC6jJw2Mr2Y0oGI7mRxYNBPxppbtEK1F66u3bKwU2g+wxwWI7PAoRpJnOY1grJqzHg==
+  dependencies:
+    "@types/istanbul-lib-coverage" "*"
+
+"@types/istanbul-reports@^1.1.1":
+  version "1.1.1"
+  resolved "https://registry.verdaccio.org/@types%2fistanbul-reports/-/istanbul-reports-1.1.1.tgz#7a8cbf6a406f36c8add871625b278eaf0b0d255a"
+  integrity sha512-UpYjBi8xefVChsCoBpKShdxTllC9pwISirfoZsUa2AAdQg/Jd2KQGtSbw+ya7GPo7x/wAPlH6JBhKhAsXUEZNA==
+  dependencies:
+    "@types/istanbul-lib-coverage" "*"
+    "@types/istanbul-lib-report" "*"
 
 "@types/jest@^23.0.2":
   version "23.3.14"
@@ -7556,18 +7634,21 @@ jest-emotion@10.0.10:
     css "^2.2.1"
     object-assign "^4.1.1"
 
-jest-environment-jsdom-global@1.1.1:
-  version "1.1.1"
-  resolved "https://registry.npmjs.org/jest-environment-jsdom-global/-/jest-environment-jsdom-global-1.1.1.tgz#c0b5fd969ace23137fd9c4a3b8e3367a54b4ed15"
-  integrity sha512-7+M6yMM6vpHfaR9ymrjobx1kG3TQyMpSu9yH7bz9bVHsBMUEdiBOmf6qVvyi8z09delLmHuPQpUFYm5SIGSzhQ==
+jest-environment-jsdom-global@1.2.0:
+  version "1.2.0"
+  resolved "https://registry.verdaccio.org/jest-environment-jsdom-global/-/jest-environment-jsdom-global-1.2.0.tgz#dd5b16fe0a0566ee40010d8632be5adf5a5ccb65"
+  integrity sha512-41cDl0OxzmFY/cnW0COUN+lnt2N2ks1r3V4fAKOnlZ9xIrGy0PNPan+Bz8HP+uQy/8bGV6T7J4Oi7X+h43It6g==
 
-jest-environment-jsdom@24.0.0:
-  version "24.0.0"
-  resolved "https://registry.npmjs.org/jest-environment-jsdom/-/jest-environment-jsdom-24.0.0.tgz#5affa0654d6e44cd798003daa1a8701dbd6e4d11"
-  integrity sha512-1YNp7xtxajTRaxbylDc2pWvFnfDTH5BJJGyVzyGAKNt/lEULohwEV9zFqTgG4bXRcq7xzdd+sGFws+LxThXXOw==
+jest-environment-jsdom@24.8.0:
+  version "24.8.0"
+  resolved "https://registry.verdaccio.org/jest-environment-jsdom/-/jest-environment-jsdom-24.8.0.tgz#300f6949a146cabe1c9357ad9e9ecf9f43f38857"
+  integrity sha512-qbvgLmR7PpwjoFjM/sbuqHJt/NCkviuq9vus9NBn/76hhSidO+Z6Bn9tU8friecegbJL8gzZQEMZBQlFWDCwAQ==
   dependencies:
-    jest-mock "^24.0.0"
-    jest-util "^24.0.0"
+    "@jest/environment" "^24.8.0"
+    "@jest/fake-timers" "^24.8.0"
+    "@jest/types" "^24.8.0"
+    jest-mock "^24.8.0"
+    jest-util "^24.8.0"
     jsdom "^11.5.1"
 
 jest-environment-jsdom@^24.7.1:
@@ -7618,6 +7699,25 @@ jest-haste-map@^24.7.1:
     invariant "^2.2.4"
     jest-serializer "^24.4.0"
     jest-util "^24.7.1"
+    jest-worker "^24.6.0"
+    micromatch "^3.1.10"
+    sane "^4.0.3"
+    walker "^1.0.7"
+  optionalDependencies:
+    fsevents "^1.2.7"
+
+jest-haste-map@^24.8.0:
+  version "24.8.0"
+  resolved "https://registry.verdaccio.org/jest-haste-map/-/jest-haste-map-24.8.0.tgz#51794182d877b3ddfd6e6d23920e3fe72f305800"
+  integrity sha512-ZBPRGHdPt1rHajWelXdqygIDpJx8u3xOoLyUBWRW28r3tagrgoepPrzAozW7kW9HrQfhvmiv1tncsxqHJO1onQ==
+  dependencies:
+    "@jest/types" "^24.8.0"
+    anymatch "^2.0.0"
+    fb-watchman "^2.0.0"
+    graceful-fs "^4.1.15"
+    invariant "^2.2.4"
+    jest-serializer "^24.4.0"
+    jest-util "^24.8.0"
     jest-worker "^24.6.0"
     micromatch "^3.1.10"
     sane "^4.0.3"
@@ -7678,12 +7778,33 @@ jest-message-util@^24.7.1:
     slash "^2.0.0"
     stack-utils "^1.0.1"
 
+jest-message-util@^24.8.0:
+  version "24.8.0"
+  resolved "https://registry.verdaccio.org/jest-message-util/-/jest-message-util-24.8.0.tgz#0d6891e72a4beacc0292b638685df42e28d6218b"
+  integrity sha512-p2k71rf/b6ns8btdB0uVdljWo9h0ovpnEe05ZKWceQGfXYr4KkzgKo3PBi8wdnd9OtNh46VpNIJynUn/3MKm1g==
+  dependencies:
+    "@babel/code-frame" "^7.0.0"
+    "@jest/test-result" "^24.8.0"
+    "@jest/types" "^24.8.0"
+    "@types/stack-utils" "^1.0.1"
+    chalk "^2.0.1"
+    micromatch "^3.1.10"
+    slash "^2.0.0"
+    stack-utils "^1.0.1"
+
 jest-mock@^24.0.0, jest-mock@^24.7.0:
   version "24.7.0"
   resolved "https://registry.npmjs.org/jest-mock/-/jest-mock-24.7.0.tgz#e49ce7262c12d7f5897b0d8af77f6db8e538023b"
   integrity sha512-6taW4B4WUcEiT2V9BbOmwyGuwuAFT2G8yghF7nyNW1/2gq5+6aTqSPcS9lS6ArvEkX55vbPAS/Jarx5LSm4Fng==
   dependencies:
     "@jest/types" "^24.7.0"
+
+jest-mock@^24.8.0:
+  version "24.8.0"
+  resolved "https://registry.verdaccio.org/jest-mock/-/jest-mock-24.8.0.tgz#2f9d14d37699e863f1febf4e4d5a33b7fdbbde56"
+  integrity sha512-6kWugwjGjJw+ZkK4mDa0Df3sDlUTsV47MSrT0nGQ0RBWJbpODDQ8MHDVtGtUYBne3IwZUhtB7elxHspU79WH3A==
+  dependencies:
+    "@jest/types" "^24.8.0"
 
 jest-pnp-resolver@^1.2.1:
   version "1.2.1"
@@ -7802,6 +7923,24 @@ jest-util@^24.0.0, jest-util@^24.7.1:
     "@jest/source-map" "^24.3.0"
     "@jest/test-result" "^24.7.1"
     "@jest/types" "^24.7.0"
+    callsites "^3.0.0"
+    chalk "^2.0.1"
+    graceful-fs "^4.1.15"
+    is-ci "^2.0.0"
+    mkdirp "^0.5.1"
+    slash "^2.0.0"
+    source-map "^0.6.0"
+
+jest-util@^24.8.0:
+  version "24.8.0"
+  resolved "https://registry.verdaccio.org/jest-util/-/jest-util-24.8.0.tgz#41f0e945da11df44cc76d64ffb915d0716f46cd1"
+  integrity sha512-DYZeE+XyAnbNt0BG1OQqKy/4GVLPtzwGx5tsnDrFcax36rVE3lTA5fbvgmbVPUZf9w77AJ8otqR4VBbfFJkUZA==
+  dependencies:
+    "@jest/console" "^24.7.1"
+    "@jest/fake-timers" "^24.8.0"
+    "@jest/source-map" "^24.3.0"
+    "@jest/test-result" "^24.8.0"
+    "@jest/types" "^24.8.0"
     callsites "^3.0.0"
     chalk "^2.0.1"
     graceful-fs "^4.1.15"

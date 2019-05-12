@@ -10,6 +10,12 @@
     "plugin:react/recommended",
     "plugin:jsx-a11y/recommended"
   ],
+  "globals": {
+    "window": true
+  },
+  "env": {
+    "browser": true
+  },
   "rules": {
     "@typescript-eslint/no-var-requires": 0,
     "react/no-deprecated": 1,
