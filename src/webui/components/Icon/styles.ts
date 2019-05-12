@@ -14,7 +14,7 @@ const getSize = (size?: 'md' | 'sm') => {
     default:
       return `
         width: 14px;
-        height: 16px;
+        height: 14px;
       `;
   }
 };

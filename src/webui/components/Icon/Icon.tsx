@@ -40,10 +40,10 @@ export const Icons: IIconsMap = {
   version,
 };
 
-const Icon: React.FC<IProps> = ({ className, name, size = 'sm', img = false, pointer = false, ...props }) => {
+const Icon: React.FC<IProps> = ({ className, name, size = 'sm', pointer = false, ...props }) => {
   // @ts-ignore
   const title = capitalize(name);
-  return img ? (
+  return name === 'verdaccio' ? (
     <ImgWrapper className={className} pointer={pointer} size={size} title={title} name={name} {...props}>
       <Img alt={title} src={Icons[name]} />
     </ImgWrapper>

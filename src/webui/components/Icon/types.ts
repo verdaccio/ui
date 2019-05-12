@@ -29,6 +29,5 @@ export interface IProps {
   onClick?: (event: MouseEvent<SVGElement | HTMLSpanElement>) => void;
   size?: 'sm' | 'md';
   pointer?: boolean;
-  img?: boolean;
   modifiers?: any;
 }

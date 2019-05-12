@@ -3,55 +3,34 @@
  */
 
 import React from 'react';
+import { makeStyles } from '@material-ui/styles';
 
-import { Wrapper, Left, Right, Earth, Flags, Love, Flag, Logo, Inner, ToolTip } from './styles';
-import { goToVerdaccioWebsite } from '../../utils/windows';
+import colors from '../../utils/styles/colors';
 
-const renderTooltip = () => (
-  <ToolTip>
-    <Earth name="earth" size="md" />
-    <Flags>
-      <Flag name="spain" size="md" />
-      <Flag name="nicaragua" size="md" />
-      <Flag name="india" size="md" />
-      <Flag name="brazil" size="md" />
-      <Flag name="china" size="md" />
-      <Flag name="austria" size="md" />
-    </Flags>
-  </ToolTip>
-);
-const POWERED_LABEL = 'Powered by';
-const MADEWITH_LABEL = ' Made with';
-const ON_LABEL = 'on';
-const HEARTH_EMOJI = '♥';
+import FooterLeft from './FooterLeft';
+import FooterRight from './FooterRight';
 
-// @ts-ignore
-const renderRight = (version = window.VERDACCIO_VERSION) => {
+const useStyles = makeStyles({
+  container: {
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    background: colors.snow,
+    borderTop: `1px solid ${colors.greyGainsboro}`,
+    color: colors.nobel01,
+    fontSize: 14,
+    padding: 20,
+  },
+});
+
+const Footer: React.FC = () => {
+  const classes = useStyles();
   return (
-    <Right>
-      {POWERED_LABEL}
-      <Logo img={true} name="verdaccio" onClick={goToVerdaccioWebsite} pointer={true} size="md" />
-      {`/ ${version}`}
-    </Right>
+    <div className={classes.container}>
+      <FooterLeft />
+      <FooterRight />
+    </div>
   );
 };
-
-const renderLeft = () => (
-  <Left>
-    {MADEWITH_LABEL}
-    <Love>{HEARTH_EMOJI}</Love>
-    {ON_LABEL}
-    {renderTooltip()}
-  </Left>
-);
-
-const Footer: React.FC = () => (
-  <Wrapper>
-    <Inner>
-      {renderLeft()}
-      {renderRight()}
-    </Inner>
-  </Wrapper>
-);
 
 export default Footer;
