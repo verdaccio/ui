@@ -7,7 +7,7 @@ import React from 'react';
 import { makeStyles } from '@material-ui/styles';
 
 const useStyles = makeStyles({
-  subTitle: {
+  subheading: {
     marginBottom: 20,
   },
 });
@@ -19,7 +19,7 @@ const HelpSegmentLogin: React.FC = () => {
       <Typography component="h2" variant="headline" gutterBottom>
         No Package Published Yet.
       </Typography>
-      <Typography color="textSecondary" gutterBottom className={classes.subTitle}>
+      <Typography color="textSecondary" variant="subheading" gutterBottom className={classes.subheading}>
         To publish your first package just:
       </Typography>
     </>
