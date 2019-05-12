@@ -25,8 +25,8 @@ describe('<Header /> component with logged in state', () => {
     routerWrapper = shallow(
       <Router>
         <Header
-          handleLogout={props.handleLogout}
           logo={props.logo}
+          onLogout={props.handleLogout}
           onToggleLoginModal={props.onToggleLoginModal}
           scope={props.scope}
           username={props.username}
@@ -82,8 +82,8 @@ describe('<Header /> component with logged out state', () => {
     routerWrapper = shallow(
       <Router>
         <Header
-          handleLogout={props.handleLogout}
           logo={props.logo}
+          onLogout={props.handleLogout}
           onToggleLoginModal={props.onToggleLoginModal}
           scope={props.scope}
           withoutSearch={props.withoutSearch}
