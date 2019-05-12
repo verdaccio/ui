@@ -6,7 +6,10 @@ module.exports = {
   collectCoverage: true,
   testEnvironment: 'jest-environment-jsdom-global',
   testURL: 'http://localhost',
-  testRegex: '(test/unit/.*\\.spec)\\.js',
+  testRegex: [
+    '(test/unit/.*\\.spec)\\.js',
+    '(src/webui/components/.*\\.test)\\.tsx',
+  ],
   setupFiles: [
     './test/unit/setup.js'
   ],
