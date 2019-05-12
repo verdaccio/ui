@@ -1,0 +1,25 @@
+declare const colors: {
+    black: string;
+    white: string;
+    red: string;
+    grey: string;
+    greySuperLight: string;
+    greyLight: string;
+    greyLight2: string;
+    greyLight3: string;
+    greyDark: string;
+    greyDark2: string;
+    greyChateau: string;
+    greyGainsboro: string;
+    greyAthens: string;
+    eclipse: string;
+    paleNavy: string;
+    saltpan: string;
+    snow: string;
+    love: string;
+    nobel01: string;
+    nobel02: string;
+    primary: any;
+    secondary: string;
+};
+export default colors;
