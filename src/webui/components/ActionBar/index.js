@@ -12,6 +12,7 @@ import Tooltip from '@material-ui/core/Tooltip/index';
 
 import { DetailContextConsumer } from '../../pages/version/index';
 import { Fab, ActionListItem } from './styles';
+import { isURL } from '../../utils/url';
 
 const ACTIONS = {
   homepage: {
@@ -40,9 +41,6 @@ class ActionBar extends Component<any, any> {
   }
 
   renderIconsWithLink(link, component) {
-    if (!link) {
-      return null;
-    }
     return (
       <a href={link} target={'_blank'}>
         {component}
@@ -61,7 +59,7 @@ class ActionBar extends Component<any, any> {
 
     const renderList = Object.keys(actionsMap).reduce((component, value, key) => {
       const link = actionsMap[value];
-      if (link) {
+      if (link && isURL(link)) {
         const fab = <Fab size={'small'}>{ACTIONS[value]['icon']}</Fab>;
         component.push(
           <Tooltip key={key} title={ACTIONS[value]['title']}>
