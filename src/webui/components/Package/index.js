@@ -34,6 +34,7 @@ import {
   Text,
   WrapperLink,
 } from './styles';
+import { isURL } from '../../utils/url';
 
 const Package = ({
   author: { name: authorName, avatar: authorAvatar },
@@ -92,7 +93,8 @@ const Package = ({
     );
 
   const renderHomePageLink = () =>
-    homepage && (
+    homepage &&
+    isURL(homepage) && (
       <a href={homepage} target={'_blank'}>
         <Tooltip aria-label={'Homepage'} title={'Visit homepage'}>
           <IconButton aria-label={'Homepage'}>
@@ -104,7 +106,8 @@ const Package = ({
     );
 
   const renderBugsLink = () =>
-    url && (
+    url &&
+    isURL(url) && (
       <a href={url} target={'_blank'}>
         <Tooltip aria-label={'Bugs'} title={'Open an issue'}>
           <IconButton aria-label={'Bugs'}>
