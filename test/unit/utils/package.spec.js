@@ -63,7 +63,7 @@ describe('formatDateDistance', () => {
       date.setMonth(date.getMonth() - 2);
       return date;
     };
-    const date1 = dateAboutTwoMonthsAgo();
+    // const date1 = dateAboutTwoMonthsAgo();
     const date2 = dateTwoMonthsAgo();
     // FIXME: we need to review this expect, fails every x time.
     // expect(formatDateDistance(date1)).toEqual('about 2 months');
