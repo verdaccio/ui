@@ -10,6 +10,7 @@ import ListItemText from '@material-ui/core/ListItemText/index';
 
 import { DetailContextConsumer } from '../../pages/version/Version';
 import { Heading, AuthorListItem } from './styles';
+import { isEmail } from '../../utils/url';
 
 class Authors extends Component<any, any> {
   render() {
@@ -23,9 +24,10 @@ class Authors extends Component<any, any> {
   }
 
   renderLinkForMail(email: string, avatarComponent: ReactNode, packageName: string, version: string) {
-    if (!email) {
+    if (!email || isEmail(email) === false) {
       return avatarComponent;
     }
+
     return (
       <a href={`mailto:${email}?subject=${packageName}@${version}`} target={'_top'}>
         {avatarComponent}

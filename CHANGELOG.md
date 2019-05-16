@@ -2,6 +2,22 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="0.1.9"></a>
+## [0.1.9](https://github.com/verdaccio/ui/compare/v0.1.8...v0.1.9) (2019-05-16)
+
+
+
+<a name="0.1.8"></a>
+## [0.1.8](https://github.com/verdaccio/ui/compare/v0.1.7...v0.1.8) (2019-05-16)
+
+
+### Bug Fixes
+
+* use auto for overflow-y ([#57](https://github.com/verdaccio/ui/issues/57)) ([01da082](https://github.com/verdaccio/ui/commit/01da082))
+* verify validation url and email ([#60](https://github.com/verdaccio/ui/issues/60)) ([980dac5](https://github.com/verdaccio/ui/commit/980dac5))
+
+
+
 <a name="0.1.7"></a>
 ## [0.1.7](https://github.com/verdaccio/ui/compare/v0.1.6...v0.1.7) (2019-05-11)
 

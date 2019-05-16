@@ -11,6 +11,7 @@ import CopyToClipBoard from '../CopyToClipBoard';
 import { Heading, GithubLink, RepositoryListItem } from './styles';
 // @ts-ignore
 import git from './img/git.png';
+import { isURL } from '../../utils/url';
 
 class Repository extends Component<any, any> {
   render() {
@@ -35,7 +36,7 @@ class Repository extends Component<any, any> {
       } = {},
     } = packageMeta.latest;
     
-    if (!url) {
+    if (!url || isURL(url) === false) {
       return null;
     }
 

@@ -32,6 +32,7 @@ import {
   Text,
   WrapperLink,
 } from './styles';
+import { isURL } from '../../utils/url';
 
 const Package: React.FC<IProps> = ({
   author: { name: authorName, avatar: authorAvatar },
@@ -90,10 +91,11 @@ const Package: React.FC<IProps> = ({
     );
 
   const renderHomePageLink = () =>
-    homepage && (
-      <a href={homepage} target="_blank">
-        <Tooltip aria-label="Homepage" title="Visit homepage">
-          <IconButton aria-label="Homepage">
+    homepage &&
+    isURL(homepage) && (
+      <a href={homepage} target={'_blank'}>
+        <Tooltip aria-label={'Homepage'} title={'Visit homepage'}>
+          <IconButton aria-label={'Homepage'}>
             {/* eslint-disable-next-line react/jsx-max-depth */}
             <HomeIcon />
           </IconButton>
@@ -102,11 +104,11 @@ const Package: React.FC<IProps> = ({
     );
 
   const renderBugsLink = () =>
-    bugs &&
-    bugs.url && (
-      <a href={bugs.url} target="_blank">
-        <Tooltip aria-label="Bugs" title="Open an issue">
-          <IconButton aria-label="Bugs">
+    url &&
+    isURL(url) && (
+      <a href={url} target={'_blank'}>
+        <Tooltip aria-label={'Bugs'} title={'Open an issue'}>
+          <IconButton aria-label={'Bugs'}>
             {/* eslint-disable-next-line react/jsx-max-depth */}
             <BugReport />
           </IconButton>

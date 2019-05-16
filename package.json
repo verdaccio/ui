@@ -1,6 +1,6 @@
 {
   "name": "@verdaccio/ui-theme",
-  "version": "0.1.7",
+  "version": "0.1.9",
   "description": "Verdaccio User Interface",
   "author": {
     "name": "Verdaccio Core Team"
@@ -99,7 +99,8 @@
     "typeface-roboto": "0.0.54",
     "typescript": "3.2.1",
     "url-loader": "1.1.2",
-    "verdaccio": "4.0.0-alpha.7",
+    "validator": "10.11.0",
+    "verdaccio": "next",
     "verdaccio-auth-memory": "0.0.4",
     "verdaccio-memory": "2.0.0",
     "webpack": "4.20.2",

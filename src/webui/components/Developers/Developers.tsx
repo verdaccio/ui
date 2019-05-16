@@ -10,6 +10,7 @@ import Tooltip from '@material-ui/core/Tooltip';
 
 import { DetailContextConsumer } from '../../pages/version/Version';
 import { Details, Heading, Content, Fab } from './styles';
+import { isEmail } from '../../utils/url';
 
 interface Props {
   type: 'contributors' | 'maintainers';
@@ -58,7 +59,7 @@ class Developers extends Component<Props, any> {
   };
 
   renderLinkForMail(email, avatarComponent, packageName, version) {
-    if (!email) {
+    if (!email || isEmail(email) === false) {
       return avatarComponent;
     }
     return (

@@ -54,6 +54,6 @@ export const InputField: React.FC<IInputField> = ({ color, ...others }) => (
 export const SuggestionContainer = styled(Paper)`
   && {
     max-height: 500px;
-    overflow-y: scroll;
+    overflow-y: auto;
   }
 `;
