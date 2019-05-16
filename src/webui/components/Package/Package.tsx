@@ -104,9 +104,10 @@ const Package: React.FC<IProps> = ({
     );
 
   const renderBugsLink = () =>
-    url &&
-    isURL(url) && (
-      <a href={url} target={'_blank'}>
+    bugs &&
+    bugs.url &&
+    isURL(bugs.url) && (
+      <a href={bugs.url} target={'_blank'}>
         <Tooltip aria-label={'Bugs'} title={'Open an issue'}>
           <IconButton aria-label={'Bugs'}>
             {/* eslint-disable-next-line react/jsx-max-depth */}
