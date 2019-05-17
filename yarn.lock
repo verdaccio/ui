@@ -6519,6 +6519,11 @@ https-proxy-agent@^2.2.1:
     agent-base "^4.1.0"
     debug "^3.1.0"
 
+humanize@0.0.9:
+  version "0.0.9"
+  resolved "https://registry.verdaccio.org/humanize/-/humanize-0.0.9.tgz#1994ffaecdfe9c441ed2bdac7452b7bb4c9e41a4"
+  integrity sha1-GZT/rs3+nEQe0r2sdFK3u0yeQaQ=
+
 husky@0.15.0-rc.8:
   version "0.15.0-rc.8"
   resolved "https://registry.npmjs.org/husky/-/husky-0.15.0-rc.8.tgz#b658c597a8f9bbcd00a5c039709e7c61e61238e7"
@@ -13390,6 +13395,15 @@ webpack-bundle-analyzer@3.0.4:
     mkdirp "^0.5.1"
     opener "^1.5.1"
     ws "^6.0.0"
+
+webpack-bundle-size-analyzer@3.0.0:
+  version "3.0.0"
+  resolved "https://registry.verdaccio.org/webpack-bundle-size-analyzer/-/webpack-bundle-size-analyzer-3.0.0.tgz#c0657e9787cf644a0b91d891ae15553ba61bbc71"
+  integrity sha512-GfQ/Mch1o2MGonGPIMawwlxXOmYp/F8EXiT9txDO6qASo7G5hODngWMNW1KkJxeYRvgMUuPgbSsmdsXEsBNEeg==
+  dependencies:
+    commander "^2.19.0"
+    filesize "^3.6.1"
+    humanize "0.0.9"
 
 webpack-cli@3.2.3:
   version "3.2.3"

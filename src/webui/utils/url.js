@@ -1,14 +1,15 @@
-import validator from 'validator';
+import isURLValidator from 'validator/lib/isURL';
+import isEmailValidator from 'validator/lib/isEmail';
 
 export function isURL(url) {
-  return validator.isURL(url || '', {
+  return isURLValidator(url || '', {
     protocols: ['http', 'https', 'git+https'],
     require_protocol: true,
   });
 }
 
 export function isEmail(email) {
-  return validator.isEmail(email || '');
+  return isEmailValidator(email || '');
 }
 
 export function getRegistryURL() {
