@@ -16,4 +16,4 @@ __tests__
 # Compiled script
 static/*
 coverage/
-
+stats.json
