@@ -3,23 +3,28 @@ import { mount } from 'enzyme';
 import storage from '../utils/storage';
 import App from './App';
 
-import { generateTokenWithTimeRange } from './components/__mocks__/token';
+import { generateTokenWithTimeRange } from '../../jest/unit/components/__mocks__/token';
 
 jest.mock('../utils/storage', () => {
   class LocalStorageMock {
     constructor() {
+      // @ts-ignore : Property 'store' does not exist on type 'LocalStorageMock'
       this.store = {};
     }
     clear() {
+      // @ts-ignore : Property 'store' does not exist on type 'LocalStorageMock'
       this.store = {};
     }
     getItem(key) {
+      // @ts-ignore : Property 'store' does not exist on type 'LocalStorageMock'
       return this.store[key] || null;
     }
     setItem(key, value) {
+      // @ts-ignore : Property 'store' does not exist on type 'LocalStorageMock'
       this.store[key] = value.toString();
     }
     removeItem(key) {
+      // @ts-ignore : Property 'store' does not exist on type 'LocalStorageMock'
       delete this.store[key];
     }
   }
@@ -27,7 +32,7 @@ jest.mock('../utils/storage', () => {
 });
 
 jest.mock('../utils/api', () => ({
-  request: require('./components/__mocks__/api').default.request,
+  request: require('../../jest/unit/components/__mocks__/api').default.request,
 }));
 
 describe('App', () => {

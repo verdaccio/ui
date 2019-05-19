@@ -5,7 +5,7 @@ import { Base64 } from 'js-base64';
 import API from './api';
 import { HEADERS } from '../../lib/constants';
 
-export function isTokenExpire(token) {
+export function isTokenExpire(token?: any) {
     if (!isString(token)) {
         return true;
     }
@@ -35,7 +35,7 @@ export function isTokenExpire(token) {
 }
 
 
-export async function makeLogin(username, password) {
+export async function makeLogin(username?: string, password?: string) {
     // checks isEmpty
     if (isEmpty(username) || isEmpty(password)) {
         const error = {
