@@ -1,6 +1,4 @@
-/**
- * @prettier
- */
+
 
 const fs = require('fs');
 const startServer = require('verdaccio').default;
