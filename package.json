@@ -1,6 +1,6 @@
 {
   "name": "@verdaccio/ui-theme",
-  "version": "0.1.9",
+  "version": "0.1.10",
   "description": "Verdaccio User Interface",
   "author": {
     "name": "Verdaccio Core Team"
@@ -105,6 +105,7 @@
     "verdaccio-memory": "2.0.0",
     "webpack": "4.20.2",
     "webpack-bundle-analyzer": "3.0.4",
+    "webpack-bundle-size-analyzer": "3.0.0",
     "webpack-cli": "3.2.3",
     "webpack-dev-server": "3.2.1",
     "webpack-merge": "4.2.1",
@@ -132,6 +133,8 @@
     "dev:web": "cross-env BABEL_ENV=ui babel-node tools/dev.server.js",
     "verdaccio:server": "node tools/verdaccio.js",
     "build": "npm run pre:webpack && cross-env BABEL_ENV=ui webpack --config tools/webpack.prod.config.babel.js",
+    "build:stats": "cross-env BABEL_ENV=ui webpack --config tools/webpack.prod.config.babel.js --json > stats.json",
+    "build:size": "cross-env BABEL_ENV=ui webpack --config tools/webpack.prod.config.babel.js --json | webpack-bundle-size-analyzer",
     "dev": "concurrently --kill-others \"npm run dev:web\" \"npm run verdaccio:server\""
   },
   "engines": {
