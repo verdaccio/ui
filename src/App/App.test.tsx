@@ -5,7 +5,7 @@ import App from './App';
 
 import { generateTokenWithTimeRange } from './components/__mocks__/token';
 
-jest.mock('../../src/webui/utils/storage', () => {
+jest.mock('../utils/storage', () => {
   class LocalStorageMock {
     constructor() {
       this.store = {};
@@ -26,8 +26,8 @@ jest.mock('../../src/webui/utils/storage', () => {
   return new LocalStorageMock();
 });
 
-jest.mock('../../src/webui/utils/api', () => ({
-  request: require('./components/__mocks__/api').default.request
+jest.mock('../utils/api', () => ({
+  request: require('./components/__mocks__/api').default.request,
 }));
 
 describe('App', () => {
@@ -46,7 +46,6 @@ describe('App', () => {
   });
 
   test('isUserAlreadyLoggedIn: token already available in storage', async () => {
-
     storage.setItem('username', 'verdaccio');
     storage.setItem('token', generateTokenWithTimeRange(24));
     const { isUserAlreadyLoggedIn } = wrapper.instance();
@@ -71,7 +70,7 @@ describe('App', () => {
     await handleDoLogin('sam', '1234');
     const result = {
       username: 'sam',
-      token: 'TEST_TOKEN'
+      token: 'TEST_TOKEN',
     };
     expect(wrapper.state('isUserLoggedIn')).toBeTruthy();
     expect(wrapper.state('showLoginModal')).toBeFalsy();
@@ -86,7 +85,7 @@ describe('App', () => {
     const result = {
       description: 'bad username/password, access denied',
       title: 'Unable to login',
-      type: 'error'
+      type: 'error',
     };
     expect(wrapper.state('user')).toEqual({});
     expect(wrapper.state('error')).toEqual(result);

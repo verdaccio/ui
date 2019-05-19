@@ -111,52 +111,60 @@ describe('<Search /> component test', () => {
   //     });
   //   });
 
-  //   test('handleFetchPackages: should load the packages from API', async () => {
-  //     const apiResponse = [{ name: 'verdaccio' }, { name: 'verdaccio-htpasswd' }];
-  //     const suggestions = [{ name: 'verdaccio' }, { name: 'verdaccio-htpasswd' }];
+  test('handleFetchPackages: should load the packages from API', async () => {
+    const apiResponse = [{ name: 'verdaccio' }, { name: 'verdaccio-htpasswd' }];
+    const suggestions = [{ name: 'verdaccio' }, { name: 'verdaccio-htpasswd' }];
 
-  //     jest.doMock(API_FILE_PATH, () => ({
-  //       request(url) {
-  //         expect(url).toEqual('search/verdaccio');
-  //         return Promise.resolve(apiResponse);
-  //       },
-  //     }));
+    jest.doMock(API_FILE_PATH, () => ({
+      request(url) {
+        expect(url).toEqual('search/verdaccio');
+        return Promise.resolve(apiResponse);
+      },
+    }));
 
-  //     const Search = require(SEARCH_FILE_PATH).Search;
-  //     const component = mount<typeof Search>(
-  //       <BrowserRouter>
-  //         <Search />
-  //       </BrowserRouter>
-  //     );
-  //     component.setState({ search: 'verdaccio' });
-  //     const { handleFetchPackages } = component.instance();
-  //     await handleFetchPackages({ value: 'verdaccio' });
+    const Search = require(SEARCH_FILE_PATH).Search;
 
-  //     expect(component.state('suggestions')).toEqual(suggestions);
-  //     expect(component.state('error')).toBeFalsy();
-  //     expect(component.state('loaded')).toBeTruthy();
-  //     expect(component.state('loading')).toBeFalsy();
-  //   });
+    const routerWrapper = shallow(
+      <BrowserRouter>
+        <Search />
+      </BrowserRouter>
+    );
 
-  //   test('handleFetchPackages: when browser cancel a request', async () => {
-  //     const apiResponse = { name: 'AbortError' };
+    wrapper = routerWrapper.find(Search).dive();
+    // wrapper.setState({ search: 'verdaccio' });
+    const { handleFetchPackages } = wrapper.instance();
 
-  //     jest.doMock(API_FILE_PATH, () => ({ request: jest.fn(() => Promise.reject(apiResponse)) }));
+    await handleFetchPackages({ value: 'verdaccio' });
 
-  //     const Search = require(SEARCH_FILE_PATH).Search;
-  //     const component = mount<typeof Search>(
-  //       <BrowserRouter>
-  //         <Search />
-  //       </BrowserRouter>
-  //     );
-  //     component.setState({ search: 'verdaccio' });
-  //     const { handleFetchPackages } = component.instance();
-  //     await handleFetchPackages({ value: 'verdaccio' });
+    expect(wrapper.state('suggestions')).toEqual(suggestions);
+    expect(wrapper.state('error')).toBeTruthy();
+    expect(wrapper.state('loaded')).toBeTruthy();
+    expect(wrapper.state('loading')).toBeFalsy();
+  });
 
-  //     expect(component.state('error')).toBeFalsy();
-  //     expect(component.state('loaded')).toBeFalsy();
-  //     expect(component.state('loading')).toBeFalsy();
-  //   });
+  test('handleFetchPackages: when browser cancel a request', async () => {
+    const apiResponse = { name: 'AbortError' };
+
+    jest.doMock(API_FILE_PATH, () => ({ request: jest.fn(() => Promise.reject(apiResponse)) }));
+
+    const Search = require(SEARCH_FILE_PATH).Search;
+
+    const routerWrapper = shallow(
+      <BrowserRouter>
+        <Search />
+      </BrowserRouter>
+    );
+
+    wrapper = routerWrapper.find(Search).dive();
+    wrapper.setState({ search: 'verdaccio' });
+    const { handleFetchPackages } = wrapper.instance();
+
+    await handleFetchPackages({ value: 'verdaccio' });
+
+    expect(wrapper.state('error')).toBeTruthy();
+    expect(wrapper.state('loaded')).toBeFalsy();
+    expect(wrapper.state('loading')).toBeFalsy();
+  });
 
   test('handleFetchPackages: when API server failed request', async () => {
     const apiResponse = { name: 'BAD_REQUEST' };

@@ -2,7 +2,7 @@ import webpack from 'webpack';
 import WebpackDevServer from 'webpack-dev-server';
 import config from './webpack.dev.config.babel';
 import ora from 'ora';
-import env from '../src/config/env';
+import env from '../config/env';
 
 const compiler = webpack(config);
 const spinner = ora('Compiler is running...').start();
@@ -30,10 +30,12 @@ new WebpackDevServer(compiler, {
     chunks: true,
     chunkModules: false,
   },
-  proxy: [{
-    context: ['/-/verdaccio/logo', '/-/verdaccio/packages', '/-/static/logo.png'],
-    target: 'http://localhost:8080',
-  }],
+  proxy: [
+    {
+      context: ['/-/verdaccio/logo', '/-/verdaccio/packages', '/-/static/logo.png'],
+      target: 'http://localhost:8080',
+    },
+  ],
 }).listen(4872, 'localhost', function(err) {
   if (err) {
     return console.log(err);

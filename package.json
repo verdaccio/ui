@@ -115,7 +115,7 @@
     "lint": "npm run type-check && npm run lint:js && npm run lint:css",
     "lint:js": "eslint .",
     "coverage:publish": "codecov",
-    "lint:css": "stylelint 'src/webui/**/styles.js'",
+    "lint:css": "stylelint 'src/**/styles.js'",
     "pre:webpack": "rimraf static/*",
     "dev:web": "cross-env BABEL_ENV=ui babel-node tools/dev.server.js",
     "verdaccio:server": "node tools/verdaccio.js",
