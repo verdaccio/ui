@@ -1,5 +1,3 @@
-// @flow
-
 export interface VerdaccioConfig {
   storagePath: string;
   configPath: string;
