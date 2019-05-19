@@ -1,10 +1,7 @@
-
-
-import React from 'react';
+import React, { MouseEvent } from 'react';
 import capitalize from 'lodash/capitalize';
 
 import { Svg, Img, ImgWrapper } from './styles';
-import { IProps, IIconsMap } from './types';
 
 import brazil from './img/brazil.svg';
 import china from './img/china.svg';
@@ -21,7 +18,35 @@ import license from './img/license.svg';
 import time from './img/time.svg';
 import version from './img/version.svg';
 
-export const Icons: IIconsMap = {
+export interface IconsMap {
+  brazil: string;
+  spain: string;
+  china: string;
+  nicaragua: string;
+  pakistan: string;
+  austria: string;
+  india: string;
+  earth: string;
+  verdaccio: string;
+  license: string;
+  time: string;
+  law: string;
+  version: string;
+  filebinary: string;
+  [key: string]: string;
+}
+
+export interface Props {
+  name: keyof typeof Icons;
+  className?: string;
+  onClick?: (event: MouseEvent<SVGElement | HTMLSpanElement>) => void;
+  size?: 'sm' | 'md';
+  pointer?: boolean;
+  img?: boolean;
+  modifiers?: any;
+}
+
+export const Icons: IconsMap = {
   brazil,
   spain,
   china,
@@ -38,7 +63,7 @@ export const Icons: IIconsMap = {
   version,
 };
 
-const Icon: React.FC<IProps> = ({ className, name, size = 'sm', img = false, pointer = false, ...props }) => {
+const Icon: React.FC<Props> = ({ className, name, size = 'sm', img = false, pointer = false, ...props }) => {
   // @ts-ignore
   const title = capitalize(name);
   return img ? (

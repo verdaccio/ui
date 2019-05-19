@@ -1,10 +1,11 @@
-
-
-import React from 'react';
+import React, { ReactNode } from 'react';
 
 import { Wrapper } from './styles';
-import { IProps } from './types';
 
-const Tag: React.FC<IProps> = ({ children }) => <Wrapper>{children}</Wrapper>;
+interface Props {
+  children: ReactNode;
+}
+
+const Tag: React.FC<Props> = ({ children }) => <Wrapper>{children}</Wrapper>;
 
 export default Tag;

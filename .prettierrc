@@ -3,7 +3,7 @@
   "printWidth": 160,
   "tabWidth": 2,
   "singleQuote": true,
-  "requirePragma": true,
+  "requirePragma": false,
   "bracketSpacing": true,
   "jsxBracketSameLine": true,
   "trailingComma": "es5",

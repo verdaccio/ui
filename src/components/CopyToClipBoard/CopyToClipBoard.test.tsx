@@ -1,5 +1,3 @@
-
-
 import React from 'react';
 import { shallow } from 'enzyme';
 
@@ -22,11 +20,13 @@ describe('<CopyToClipBoard /> component', () => {
       preventDefault: jest.fn(),
     };
 
+    // @ts-ignore: Property 'getSelection' does not exist on type 'Global'.
     global.getSelection = jest.fn(() => ({
       removeAllRanges: () => {},
       addRange: () => {},
     }));
 
+    // @ts-ignore: Property 'document/getSelection' does not exist on type 'Global'.
     const { document, getSelection } = global;
 
     wrapper.find(CopyIcon).simulate('click', event);

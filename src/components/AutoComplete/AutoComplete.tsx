@@ -1,6 +1,4 @@
-
-
-import React from 'react';
+import React, { KeyboardEvent } from 'react';
 import Autosuggest from 'react-autosuggest';
 import match from 'autosuggest-highlight/match';
 import parse from 'autosuggest-highlight/parse';
@@ -8,7 +6,25 @@ import MenuItem from '@material-ui/core/MenuItem';
 
 import { fontWeight } from '../../utils/styles/sizes';
 import { Wrapper, InputField, SuggestionContainer } from './styles';
-import { IProps } from './types';
+
+export interface Props {
+  suggestions: any[];
+  suggestionsLoading?: boolean;
+  suggestionsLoaded?: boolean;
+  suggestionsError?: boolean;
+  apiLoading?: boolean;
+  color?: string;
+  value?: string;
+  placeholder?: string;
+  startAdornment?: any;
+  disableUnderline?: boolean;
+  onChange?: (event: KeyboardEvent<HTMLInputElement>, { newValue, method }: { newValue: string; method: string }) => void;
+  onSuggestionsFetch?: ({ value: string }) => Promise<void>;
+  onCleanSuggestions?: () => void;
+  onClick?: (event: KeyboardEvent<HTMLInputElement>, { suggestionValue, method }: { suggestionValue: any[]; method: string }) => void;
+  onKeyDown?: (event: KeyboardEvent<HTMLInputElement>) => void;
+  onBlur?: (event: KeyboardEvent<HTMLInputElement>) => void;
+}
 
 const renderInputComponent = inputProps => {
   const { ref, startAdornment, disableUnderline, onKeyDown, ...others } = inputProps;
@@ -82,7 +98,7 @@ const AutoComplete = ({
   suggestionsLoading = false,
   suggestionsLoaded = false,
   suggestionsError = false,
-}: IProps) => {
+}: Props) => {
   const autosuggestProps = {
     renderInputComponent,
     suggestions,

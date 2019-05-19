@@ -1,5 +1,3 @@
-
-
 import Tooltip from '@material-ui/core/Tooltip';
 import FileCopy from '@material-ui/icons/FileCopy';
 import React from 'react';
@@ -8,9 +6,13 @@ import { copyToClipBoardUtility } from '../../utils/cli-utils';
 import { TEXT } from '../../utils/constants';
 
 import { ClipBoardCopy, ClipBoardCopyText, CopyIcon } from './styles';
-import { IProps } from './types';
 
-const CopyToClipBoard: React.FC<IProps> = ({ text, children }) => {
+interface Props {
+  text: string;
+  children?: any;
+}
+
+const CopyToClipBoard: React.FC<Props> = ({ text, children }) => {
   const renderToolTipFileCopy = () => (
     <Tooltip disableFocusListener title={TEXT.CLIPBOARD_COPY}>
       <CopyIcon onClick={copyToClipBoardUtility(text)}>

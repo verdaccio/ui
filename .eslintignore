@@ -1,0 +1,12 @@
+node_modules
+coverage/
+build/
+*.md
+*.lock
+*.yaml
+Dockerfile
+*.rpi
+*.html
+*.scss
+*.png
+*.jpg

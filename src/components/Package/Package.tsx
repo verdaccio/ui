@@ -1,4 +1,3 @@
-
 import React from 'react';
 
 import BugReport from '@material-ui/icons/BugReport';
@@ -10,7 +9,32 @@ import Tooltip from '@material-ui/core/Tooltip';
 import Tag from '../Tag';
 import fileSizeSI from '../../utils/file-size';
 import { formatDate, formatDateDistance } from '../../utils/package';
-import { IProps } from './types';
+
+interface Author {
+  name: string;
+  avatar?: string;
+  email?: string;
+}
+
+interface Bugs {
+  url: string;
+}
+interface Dist {
+  unpackedSize: number;
+}
+
+interface Props {
+  name: string;
+  version: string;
+  time: string;
+  author: Author;
+  description?: string;
+  keywords?: string[];
+  license?: string;
+  homepage?: string;
+  bugs?: Bugs;
+  dist?: Dist;
+}
 
 import {
   Author,
@@ -32,7 +56,7 @@ import {
 } from './styles';
 import { isURL } from '../../utils/url';
 
-const Package: React.FC<IProps> = ({
+const Package: React.FC<Props> = ({
   author: { name: authorName, avatar: authorAvatar },
   bugs,
   description,

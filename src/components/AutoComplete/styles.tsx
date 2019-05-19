@@ -1,11 +1,12 @@
-
-
 import React from 'react';
 import styled, { css } from 'react-emotion';
 import Paper from '@material-ui/core/Paper';
 
 import TextField from '../TextField';
-import { IInputField } from './types';
+
+export interface InputFieldProps {
+  color: string;
+}
 
 export const Wrapper = styled('div')`
   && {
@@ -16,7 +17,7 @@ export const Wrapper = styled('div')`
   }
 `;
 
-export const InputField: React.FC<IInputField> = ({ color, ...others }) => (
+export const InputField: React.FC<InputFieldProps> = ({ color, ...others }) => (
   <TextField
     {...others}
     classes={{

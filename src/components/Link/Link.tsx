@@ -1,10 +1,8 @@
-
-
-import React from 'react';
+import React, { ReactNode } from 'react';
 
 interface Props {
-  children?: Node;
-  to?: string;
+  children?: ReactNode;
+  to: string;
   blank?: boolean;
 }
 

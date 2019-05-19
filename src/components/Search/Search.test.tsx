@@ -1,13 +1,11 @@
-
-
 import React from 'react';
 import { mount } from 'enzyme';
 
-import { Search } from './Search';
+import Search from './Search';
 
 const SEARCH_FILE_PATH = './Search';
-const API_FILE_PATH = '../../../src/webui/utils/api';
-const URL_FILE_PATH = '../../../src/webui/utils/url';
+const API_FILE_PATH = '../../utils/api';
+const URL_FILE_PATH = '../../utils/url';
 
 // Global mocks
 const event = {
@@ -101,7 +99,7 @@ describe('<Search /> component: mocks specific tests ', () => {
   beforeEach(() => {
     jest.resetModules();
     jest.doMock('lodash/debounce', () => {
-      return function debounceMock(fn) {
+      return function debounceMock(fn, delay) {
         return fn;
       };
     });
@@ -119,7 +117,7 @@ describe('<Search /> component: mocks specific tests ', () => {
     }));
 
     const Search = require(SEARCH_FILE_PATH).Search;
-    const component = mount(<Search />);
+    const component = mount<any>(<Search />);
     component.setState({ search: 'verdaccio' });
     const { handleFetchPackages } = component.instance();
     await handleFetchPackages({ value: 'verdaccio' });
@@ -136,7 +134,7 @@ describe('<Search /> component: mocks specific tests ', () => {
     jest.doMock(API_FILE_PATH, () => ({ request: jest.fn(() => Promise.reject(apiResponse)) }));
 
     const Search = require(SEARCH_FILE_PATH).Search;
-    const component = mount(<Search />);
+    const component = mount<any>(<Search />);
     component.setState({ search: 'verdaccio' });
     const { handleFetchPackages } = component.instance();
     await handleFetchPackages({ value: 'verdaccio' });
@@ -157,7 +155,7 @@ describe('<Search /> component: mocks specific tests ', () => {
     }));
 
     const Search = require(SEARCH_FILE_PATH).Search;
-    const component = mount(<Search />);
+    const component = mount<any>(<Search />);
     component.setState({ search: 'verdaccio' });
     const { handleFetchPackages } = component.instance();
     await handleFetchPackages({ value: 'verdaccio' });
@@ -174,7 +172,7 @@ describe('<Search /> component: mocks specific tests ', () => {
     const suggestionValue = [];
     const Search = require(SEARCH_FILE_PATH).Search;
     const pushHandler = jest.fn();
-    const component = mount(<Search history={{ push: pushHandler }} />);
+    const component = mount<any>(<Search history={{ push: pushHandler }} />);
     const { handleClickSearch } = component.instance();
 
     // click

@@ -1,6 +1,4 @@
-
-
-import React, { Component } from 'react';
+import React, { KeyboardEvent, Component } from 'react';
 import { withRouter, RouteComponentProps } from 'react-router-dom';
 
 import { default as IconSearch } from '@material-ui/icons/Search';
@@ -11,8 +9,23 @@ import API from '../../utils/api';
 import AutoComplete from '../AutoComplete';
 import colors from '../../utils/styles/colors';
 
-import { IState } from './types';
-import { cancelAllSearchRequests, handlePackagesClearRequested, handleSearch, handleClickSearch, handleFetchPackages, onBlur } from './types';
+export interface State {
+  search: string;
+  suggestions: any[];
+  loading: boolean;
+  loaded: boolean;
+  error: boolean;
+}
+
+export type cancelAllSearchRequests = () => void;
+export type handlePackagesClearRequested = () => void;
+export type handleSearch = (event: KeyboardEvent<HTMLInputElement>, { newValue, method }: { newValue: string; method: string }) => void;
+export type handleClickSearch = (
+  event: KeyboardEvent<HTMLInputElement>,
+  { suggestionValue, method }: { suggestionValue: Array<object>; method: string }
+) => void;
+export type handleFetchPackages = ({ value: string }) => Promise<void>;
+export type onBlur = (event: KeyboardEvent<HTMLInputElement>) => void;
 
 const CONSTANTS = {
   API_DELAY: 300,
@@ -20,7 +33,7 @@ const CONSTANTS = {
   ABORT_ERROR: 'AbortError',
 };
 
-export class Search extends Component<RouteComponentProps<{}>, IState> {
+export class Search extends Component<RouteComponentProps<{}>, State> {
   requestList: Array<any>;
 
   constructor(props: RouteComponentProps<{}>) {

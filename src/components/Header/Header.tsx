@@ -1,5 +1,3 @@
-
-
 import React, { SyntheticEvent, Component } from 'react';
 import { Link } from 'react-router-dom';
 
@@ -21,12 +19,28 @@ import Label from '../Label/Label';
 import Search from '../Search/Search';
 import RegistryInfoContent from '../RegistryInfoContent/RegistryInfoContent';
 
-import { IProps, IState } from './types';
-import { ToolTipType } from './types';
 import { Greetings, NavBar, InnerNavBar, MobileNavBar, InnerMobileNavBar, LeftSide, RightSide, IconSearchButton, SearchWrapper } from './styles';
 
-class Header extends Component<IProps, IState> {
-  constructor(props: IProps) {
+interface Props {
+  logo: string;
+  username?: string;
+  onLogout: () => void;
+  onToggleLoginModal: () => void;
+  scope: string;
+  withoutSearch?: boolean;
+}
+
+interface State {
+  anchorEl?: any;
+  openInfoDialog: boolean;
+  registryUrl: string;
+  showMobileNavBar: boolean;
+}
+
+type ToolTipType = 'search' | 'help' | 'info';
+
+class Header extends Component<Props, State> {
+  constructor(props: Props) {
     super(props);
     this.state = {
       openInfoDialog: false,
