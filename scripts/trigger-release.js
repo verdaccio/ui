@@ -1,24 +1,25 @@
-"use strict";
+'use strict';
 
-const [ /* node */, /* file */, tag] = process.argv;
+const [, , /* node */ /* file */ tag] = process.argv;
 
-const getStdin = require("get-stdin");
+const getStdin = require('get-stdin');
 const Octokit = require('@octokit/rest');
 const octokit = new Octokit({
   auth: `token ${process.env.GITHUB_TOKEN}`,
 });
 
-
-const [repoOwner, repoName] = process.env.GITHUB_REPOSITORY.split("/");
+const [repoOwner, repoName] = process.env.GITHUB_REPOSITORY.split('/');
 
 getStdin()
-  .then(changelog => octokit.repos.createRelease({
-    owner: repoOwner,
-    repo: repoName,
-    tag_name: tag,
-    body: changelog,
-    draft: true,
-  }))
+  .then(changelog =>
+    octokit.repos.createRelease({
+      owner: repoOwner,
+      repo: repoName,
+      tag_name: tag,
+      body: changelog,
+      draft: true,
+    })
+  )
   .catch(err => {
     // eslint-disable-next-line no-console
     console.error(err);

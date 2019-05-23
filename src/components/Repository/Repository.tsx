@@ -1,6 +1,6 @@
 /* eslint react/jsx-max-depth: 0 */
 
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import Avatar from '@material-ui/core/Avatar';
 import List from '@material-ui/core/List';
 import ListItemText from '@material-ui/core/ListItemText';
@@ -17,32 +17,36 @@ class Repository extends Component<any, any> {
   render() {
     return (
       <DetailContextConsumer>
-        {(context) => {
-          return this.renderRepository(context);
+        {context => {
+          return context && context.packageMeta && this.renderRepository(context.packageMeta);
         }}
       </DetailContextConsumer>
     );
-  };
-
-  renderRepositoryText(url: string) {
-    return (<GithubLink href={url} target='_blank'>{url}</GithubLink>);
   }
 
-  renderRepository = ({packageMeta}: any) => {
-    const { 
+  renderRepositoryText(url: string) {
+    return (
+      <GithubLink href={url} target="_blank">
+        {url}
+      </GithubLink>
+    );
+  }
+
+  renderRepository = packageMeta => {
+    const {
       repository: {
         //@ts-ignore
         url,
       } = {},
     } = packageMeta.latest;
-    
+
     if (!url || isURL(url) === false) {
       return null;
     }
 
     return (
       <>
-        <List dense={true} subheader={<Heading variant='subheading'>Repository</Heading>}>
+        <List dense={true} subheader={<Heading variant="subheading">Repository</Heading>}>
           <RepositoryListItem>
             <Avatar src={git} />
             <ListItemText primary={this.renderContent(url)} />
@@ -50,16 +54,11 @@ class Repository extends Component<any, any> {
         </List>
       </>
     );
-  }
-  
+  };
+
   renderContent(url: string) {
-    return (
-      <CopyToClipBoard text={url}>
-        {this.renderRepositoryText(url)}
-      </CopyToClipBoard>
-    );
+    return <CopyToClipBoard text={url}>{this.renderRepositoryText(url)}</CopyToClipBoard>;
   }
 }
-
 
 export default Repository;

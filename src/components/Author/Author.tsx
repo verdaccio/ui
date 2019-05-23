@@ -1,5 +1,3 @@
-
-
 import React, { Component, ReactNode } from 'react';
 
 import Avatar from '@material-ui/core/Avatar';
@@ -15,7 +13,7 @@ class Authors extends Component<any, any> {
     return (
       <DetailContextConsumer>
         {(context: any) => {
-          return this.renderAuthor(context);
+          return context && context.packageMeta && this.renderAuthor(context.packageMeta);
         }}
       </DetailContextConsumer>
     );
@@ -33,7 +31,7 @@ class Authors extends Component<any, any> {
     );
   }
 
-  renderAuthor = ({ packageMeta }: any) => {
+  renderAuthor = packageMeta => {
     const { author, name: packageName, version } = packageMeta.latest;
 
     if (!author) {

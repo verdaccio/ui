@@ -1,5 +1,3 @@
-
-
 import React, { Component } from 'react';
 import isNil from 'lodash/isNil';
 
@@ -12,8 +10,8 @@ import Header from '../components/Header';
 import { Container, Content } from '../components/Layout';
 import RouterApp from '../router';
 import API from '../utils/api';
-import './styles/typeface-roboto.scss';
-import './styles/main.scss';
+import '../styles/typeface-roboto.scss';
+import '../styles/main.scss';
 import 'normalize.css';
 import Footer from '../components/Footer';
 

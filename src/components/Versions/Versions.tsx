@@ -1,5 +1,3 @@
-
-
 import { DetailContextConsumer } from '../../pages/version/Version';
 import { formatDateDistance } from '../../utils/package';
 import { Heading, Spacer, ListItemText } from './styles';
@@ -14,8 +12,8 @@ class Versions extends React.PureComponent<any> {
   render() {
     return (
       <DetailContextConsumer>
-        {({ packageMeta }: any) => {
-          return this.renderContent(packageMeta);
+        {context => {
+          return context && context.packageMeta && this.renderContent(context.packageMeta);
         }}
       </DetailContextConsumer>
     );

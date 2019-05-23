@@ -1,4 +1,3 @@
-
 import React from 'react';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
@@ -13,8 +12,15 @@ class UpLinks extends React.PureComponent<any> {
   render() {
     return (
       <DetailContextConsumer>
-        {({ packageMeta }: any) => {
-          return this.renderContent(packageMeta._uplinks, packageMeta.latest);
+        {context => {
+          return (
+            context &&
+            context.packageMeta &&
+            context.packageMeta &&
+            context.packageMeta._uplinks &&
+            context.packageMeta.latest &&
+            this.renderContent(context.packageMeta._uplinks, context.packageMeta.latest)
+          );
         }}
       </DetailContextConsumer>
     );

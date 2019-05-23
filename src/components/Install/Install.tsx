@@ -1,5 +1,3 @@
-
-
 import List from '@material-ui/core/List';
 import ListItemText from '@material-ui/core/ListItemText';
 import React, { Component } from 'react';
@@ -20,7 +18,7 @@ class Install extends Component {
     return (
       <DetailContextConsumer>
         {(context: any) => {
-          return this.renderCopyCLI(context);
+          return context && context.packageName && this.renderCopyCLI(context);
         }}
       </DetailContextConsumer>
     );

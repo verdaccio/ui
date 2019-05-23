@@ -8,7 +8,7 @@ import addHours from 'date-fns/add_hours';
 export function generateTokenWithTimeRange(limit = 0) {
     const payload = {
         username: 'verdaccio',
-        exp: Number.parseInt(addHours(new Date(), limit).getTime() / 1000, 10)
+        exp: Number.parseInt(String(addHours(new Date(), limit).getTime() / 1000), 10)
     };
     return `xxxxxx.${Base64.encode(JSON.stringify(payload))}.xxxxxx`;
 }

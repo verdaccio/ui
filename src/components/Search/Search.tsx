@@ -49,7 +49,6 @@ export class Search extends Component<RouteComponentProps<{}>, State> {
       error: false,
     };
     this.requestList = [];
-    this.handleFetchPackages = debounce(this.handleFetchPackages, CONSTANTS.API_DELAY);
   }
 
   /**
@@ -155,7 +154,7 @@ export class Search extends Component<RouteComponentProps<{}>, State> {
         onChange={this.handleSearch}
         onCleanSuggestions={this.handlePackagesClearRequested}
         onClick={this.handleClickSearch}
-        onSuggestionsFetch={this.handleFetchPackages}
+        onSuggestionsFetch={debounce(this.handleFetchPackages, CONSTANTS.API_DELAY)}
         placeholder={CONSTANTS.PLACEHOLDER_TEXT}
         startAdornment={
           <InputAdornment position="start" style={{ color: colors.white }}>
