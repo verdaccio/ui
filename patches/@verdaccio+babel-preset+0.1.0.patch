@@ -1,0 +1,13 @@
+diff --git a/node_modules/@verdaccio/babel-preset/lib/builder.js b/node_modules/@verdaccio/babel-preset/lib/builder.js
+index dfbf864..5d49efb 100644
+--- a/node_modules/@verdaccio/babel-preset/lib/builder.js
++++ b/node_modules/@verdaccio/babel-preset/lib/builder.js
+@@ -73,7 +73,7 @@ module.exports = (api, opts, env, isPro) => {
+         .concat(reactPreset)
+         .concat(transpiler.presets),
+       plugins: defaultPlugins.concat([
+-        "react-hot-loader/babel",
++        //"react-hot-loader/babel",
+         "@babel/transform-runtime",
+         "@babel/syntax-dynamic-import",
+         "emotion"
