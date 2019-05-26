@@ -48,7 +48,7 @@ export default {
     new webpack.NoEmitOnErrorsPlugin(),
     new FriendlyErrorsPlugin(),
     new StyleLintPlugin({
-      files: ['src/**/styles.js'],
+      files: ['src/**/styles.ts'],
       failOnError: false,
       emitErrors: false,
     }),

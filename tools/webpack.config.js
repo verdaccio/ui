@@ -17,7 +17,7 @@ module.exports = {
 
   plugins: [
     new StyleLintPlugin({
-      files: ['src/**/styles.js'],
+      files: ['src/**/styles.ts'],
       failOnError: false,
       emitErrors: true,
     }),
