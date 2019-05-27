@@ -93,7 +93,7 @@
     "verdaccio-auth-memory": "0.0.4",
     "verdaccio-memory": "2.0.0",
     "webpack": "4.20.2",
-    "webpack-bundle-analyzer": "3.0.4",
+    "webpack-bundle-analyzer": "3.3.2",
     "webpack-bundle-size-analyzer": "3.0.0",
     "webpack-cli": "3.2.3",
     "webpack-dev-server": "3.2.1",
