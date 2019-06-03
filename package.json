@@ -91,7 +91,7 @@
     "typeface-roboto": "0.0.54",
     "url-loader": "1.1.2",
     "validator": "10.11.0",
-    "verdaccio": "next",
+    "verdaccio": "4.0.1",
     "verdaccio-auth-memory": "0.0.4",
     "verdaccio-memory": "2.0.0",
     "webpack": "4.20.2",
