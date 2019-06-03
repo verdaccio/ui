@@ -57,7 +57,5 @@ describe('<PackageList /> component', () => {
 
     // package count
     expect(wrapper.find('Package')).toHaveLength(3);
-    // match snapshot
-    expect(wrapper.html()).toMatchSnapshot();
   });
 });
