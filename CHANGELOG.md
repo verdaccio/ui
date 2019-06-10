@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="0.1.11"></a>
+## [0.1.11](https://github.com/verdaccio/ui/compare/v0.1.10...v0.1.11) (2019-06-10)
+
+
+### Bug Fixes
+
+* fixed failed to load all packages after login ([#73](https://github.com/verdaccio/ui/issues/73)) ([7bac088](https://github.com/verdaccio/ui/commit/7bac088))
+
+
+
 <a name="0.1.10"></a>
 ## [0.1.10](https://github.com/verdaccio/ui/compare/v0.1.9...v0.1.10) (2019-05-17)
 
