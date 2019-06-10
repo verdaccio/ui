@@ -120,9 +120,9 @@ export default class App extends Component {
     const { username, token, error } = await makeLogin(usernameValue, passwordValue);
 
     if (username && token) {
-      this.setLoggedUser(username, token);
       storage.setItem('username', username);
       storage.setItem('token', token);
+      this.setLoggedUser(username, token);
     }
 
     if (error) {
