@@ -30,6 +30,8 @@ describe('<Search /> component test', () => {
   });
 
   test('onBlur: should cancel all search requests', async () => {
+    const Search = require(SEARCH_FILE_PATH).Search;
+
     const routerWrapper = shallow(
       <BrowserRouter>
         <Search />
@@ -37,8 +39,9 @@ describe('<Search /> component test', () => {
     );
 
     wrapper = routerWrapper.find(Search).dive();
-    wrapper.setState({ search: 'verdaccio' });
-    const { onBlur, requestList, cancelAllSearchRequests } = wrapper.instance();
+    const { onBlur, requestList, setState } = wrapper.instance();
+    const spyCancelAllSearchRequests = jest.spyOn(wrapper.instance(), 'cancelAllSearchRequests');
+    setState({ search: 'verdaccio' });
 
     const request = {
       abort: jest.fn(),
@@ -53,7 +56,7 @@ describe('<Search /> component test', () => {
     expect(wrapper.state('error')).toBeFalsy();
     expect(wrapper.state('loaded')).toBeFalsy();
     expect(wrapper.state('loading')).toBeFalsy();
-    expect(cancelAllSearchRequests).toHaveBeenCalled();
+    expect(spyCancelAllSearchRequests).toHaveBeenCalled();
     expect(requestList).toEqual([]);
   });
 
@@ -80,7 +83,7 @@ describe('<Search /> component test', () => {
     expect(wrapper.state('search')).toEqual(newValue);
   });
 
-  test.only('handleSearch: cancel all search requests when there is no value in search component with type method', () => {
+  test('handleSearch: cancel all search requests when there is no value in search component with type method', () => {
     const Search = require(SEARCH_FILE_PATH).Search;
 
     const routerWrapper = shallow(
@@ -162,7 +165,7 @@ describe('<Search /> component test', () => {
       const suggestions = [{ name: 'verdaccio' }, { name: 'verdaccio-htpasswd' }];
 
       jest.doMock(API_FILE_PATH, () => ({
-        request(url) {
+        request(url: string) {
           expect(url).toEqual('search/verdaccio');
           return Promise.resolve(apiResponse);
         },
@@ -183,7 +186,7 @@ describe('<Search /> component test', () => {
       await handleFetchPackages({ value: 'verdaccio' });
 
       expect(wrapper.state('suggestions')).toEqual(suggestions);
-      expect(wrapper.state('error')).toBeTruthy();
+      expect(wrapper.state('error')).toBeFalsy();
       expect(wrapper.state('loaded')).toBeTruthy();
       expect(wrapper.state('loading')).toBeFalsy();
     });
@@ -202,12 +205,12 @@ describe('<Search /> component test', () => {
       );
 
       wrapper = routerWrapper.find(Search).dive();
-      wrapper.setState({ search: 'verdaccio' });
-      const { handleFetchPackages } = wrapper.instance();
 
+      const { handleFetchPackages, setState } = wrapper.instance();
+      setState({ search: 'verdaccio' });
       await handleFetchPackages({ value: 'verdaccio' });
 
-      expect(wrapper.state('error')).toBeTruthy();
+      expect(wrapper.state('error')).toBeFalsy();
       expect(wrapper.state('loaded')).toBeFalsy();
       expect(wrapper.state('loading')).toBeFalsy();
     });

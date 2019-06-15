@@ -6,15 +6,12 @@ import NotFound from './NotFound';
 console.error = jest.fn();
 
 describe('<NotFound /> component', () => {
-  let routerWrapper;
-  beforeEach(() => {
-    routerWrapper = shallow(
+  test('should load the component in default state', () => {
+    const routerWrapper = shallow(
       <Router>
         <NotFound />
       </Router>
     );
-  });
-  test('should load the component in default state', () => {
     expect(routerWrapper.find(NotFound)).toMatchSnapshot();
   });
 });
