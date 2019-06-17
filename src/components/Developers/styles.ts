@@ -1,5 +1,3 @@
-
-
 import styled from 'react-emotion';
 import Typography from '@material-ui/core/Typography';
 import { default as MuiFab } from '@material-ui/core/Fab';

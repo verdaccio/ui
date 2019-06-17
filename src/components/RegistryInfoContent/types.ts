@@ -1,5 +1,3 @@
-
-
 export interface IProps {
   scope: string;
   registryUrl: string;

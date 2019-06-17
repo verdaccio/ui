@@ -1,1 +1,1 @@
-export { default } from './NoItems'
+export { default } from './NoItems';

@@ -21,13 +21,13 @@ const register = (url, method = 'get', options = {}) => {
   }
 
   if (url === 'sidebar/verdaccio' && method.toLocaleLowerCase() === 'get') {
-    return new Promise(function (resolve) {
+    return new Promise(function(resolve) {
       resolve(packageMeta);
     });
   }
 
   if (url === 'packages' && method.toLocaleLowerCase() === 'get') {
-    return new Promise(function (resolve) {
+    return new Promise(function(resolve) {
       resolve(packageInformation);
     });
   }

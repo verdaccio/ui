@@ -1,5 +1,3 @@
-
-
 import styled, { css } from 'react-emotion';
 
 const getSize = (size?: 'md' | 'sm') => {

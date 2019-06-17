@@ -1,5 +1,3 @@
-
-
 import { default as MuiCard } from '@material-ui/core/Card';
 import { default as MuiList } from '@material-ui/core/List';
 import Typography from '@material-ui/core/Typography';

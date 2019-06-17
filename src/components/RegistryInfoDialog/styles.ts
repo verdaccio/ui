@@ -1,5 +1,3 @@
-
-
 import styled from 'react-emotion';
 import DialogTitle from '@material-ui/core/DialogTitle';
 import DialogContent from '@material-ui/core/DialogContent';

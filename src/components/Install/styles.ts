@@ -1,5 +1,3 @@
-
-
 import Avatar from '@material-ui/core/Avatar';
 import ListItem from '@material-ui/core/ListItem';
 import Typography from '@material-ui/core/Typography';

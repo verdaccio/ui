@@ -1,1 +1,1 @@
-export { default } from './UpLinks'
+export { default } from './UpLinks';

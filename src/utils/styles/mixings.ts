@@ -1,5 +1,3 @@
-
-
 /**
  * CSS to represent truncated text with an ellipsis.
  */
@@ -26,7 +24,7 @@ interface SpacingShortHand<type> {
 
 const positionMap = ['Top', 'Right', 'Bottom', 'Left'];
 
-export function spacing(property: 'padding' | 'margin', ...values: Array<SpacingShortHand<number | string>>) {
+export function spacing(property: 'padding' | 'margin', ...values: SpacingShortHand<number | string>[]) {
   const [firstValue = 0, secondValue = 0, thirdValue = 0, fourthValue = 0] = values;
   const valuesWithDefaults = [firstValue, secondValue, thirdValue, fourthValue];
   let styles = {};

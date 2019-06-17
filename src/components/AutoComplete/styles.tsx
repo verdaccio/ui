@@ -21,6 +21,7 @@ export const InputField: React.FC<InputFieldProps> = ({ color, ...others }) => (
   <TextField
     {...others}
     classes={{
+      //@ts-ignore
       input: css`
         && {
           ${color &&

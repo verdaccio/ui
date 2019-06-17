@@ -1,1 +1,1 @@
-export { default } from './Dependencies'
+export { default } from './Dependencies';

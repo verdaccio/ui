@@ -1,5 +1,3 @@
-
-
 import styled from 'react-emotion';
 import { default as MuiFab } from '@material-ui/core/Fab';
 import ListItem from '@material-ui/core/ListItem';

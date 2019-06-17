@@ -17,9 +17,9 @@ global.__VERDACCIO_BASENAME_UI_OPTIONS = {};
 // mocking few DOM methods
 // @ts-ignore : Property 'document' does not exist on type 'Global'.
 if (global.document) {
-    // @ts-ignore : Type 'Mock<{ selectNodeContents: () => void; }, []>' is not assignable to type '() => Range'.
-    document.createRange = jest.fn(() => ({
-        selectNodeContents: () => { },
-    }));
-    document.execCommand = jest.fn();
+  // @ts-ignore : Type 'Mock<{ selectNodeContents: () => void; }, []>' is not assignable to type '() => Range'.
+  document.createRange = jest.fn(() => ({
+    selectNodeContents: () => {},
+  }));
+  document.execCommand = jest.fn();
 }

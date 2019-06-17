@@ -1,5 +1,3 @@
-
-
 import styled from 'react-emotion';
 import { Link } from 'react-router-dom';
 

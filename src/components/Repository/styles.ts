@@ -1,5 +1,3 @@
-
-
 import styled from 'react-emotion';
 import Grid from '@material-ui/core/Grid';
 import ListItem from '@material-ui/core/ListItem';

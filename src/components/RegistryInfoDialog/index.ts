@@ -1,1 +1,1 @@
-export { default } from './RegistryInfoDialog'
+export { default } from './RegistryInfoDialog';

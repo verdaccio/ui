@@ -1,1 +1,1 @@
-export { default } from './CopyToClipBoard'
+export { default } from './CopyToClipBoard';

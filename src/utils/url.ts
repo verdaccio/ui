@@ -23,6 +23,6 @@ export function getBaseNamePath() {
 }
 
 export function getRootPath() {
-   // @ts-ignore
+  // @ts-ignore
   return window.__VERDACCIO_BASENAME_UI_OPTIONS && window.__VERDACCIO_BASENAME_UI_OPTIONS.base!;
 }

@@ -36,14 +36,13 @@ export function formatRepository(repository: any) {
   return null;
 }
 
-
 /**
  * For <LastSync /> component
  * @param {array} uplinks
  */
 export function getLastUpdatedPackageTime(uplinks = {}) {
   let lastUpdate = 0;
-  Object.keys(uplinks).forEach((upLinkName) => {
+  Object.keys(uplinks).forEach(upLinkName => {
     const status = uplinks[upLinkName];
     if (status.fetched > lastUpdate) {
       lastUpdate = status.fetched;
@@ -59,13 +58,12 @@ export function getLastUpdatedPackageTime(uplinks = {}) {
  * @returns {Array} last 3 releases
  */
 export function getRecentReleases(time = {}) {
-  const recent = Object.keys(time).map((version) => ({
+  const recent = Object.keys(time).map(version => ({
     version,
     time: formatDate(time[version]),
   }));
   return recent.slice(recent.length - 3, recent.length).reverse();
 }
-
 
 export function formatDate(lastUpdate) {
   return format(new Date(lastUpdate), TIMEFORMAT);

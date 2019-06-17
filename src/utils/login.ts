@@ -6,65 +6,64 @@ import API from './api';
 import { HEADERS } from '../../lib/constants';
 
 export function isTokenExpire(token?: any) {
-    if (!isString(token)) {
-        return true;
-    }
+  if (!isString(token)) {
+    return true;
+  }
 
-    let [, payload]: any = token.split('.');
+  let [, payload]: any = token.split('.');
 
-    if (!payload) {
-        return true;
-    }
+  if (!payload) {
+    return true;
+  }
 
-    try {
-        payload = JSON.parse(Base64.decode(payload));
-    } catch (error) {
-        // eslint-disable-next-line
+  try {
+    payload = JSON.parse(Base64.decode(payload));
+  } catch (error) {
+    // eslint-disable-next-line
         console.error('Invalid token:', error, token);
-        return true;
-    }
+    return true;
+  }
 
-    if (!payload.exp || !isNumber(payload.exp)) {
-        return true;
-    }
-    // Report as expire before (real expire time - 30s)
-    const jsTimestamp = (payload.exp * 1000) - 30000;
-    const expired = Date.now() >= jsTimestamp;
+  if (!payload.exp || !isNumber(payload.exp)) {
+    return true;
+  }
+  // Report as expire before (real expire time - 30s)
+  const jsTimestamp = payload.exp * 1000 - 30000;
+  const expired = Date.now() >= jsTimestamp;
 
-    return expired;
+  return expired;
 }
 
-
 export async function makeLogin(username?: string, password?: string) {
-    // checks isEmpty
-    if (isEmpty(username) || isEmpty(password)) {
-        const error = {
-            title: 'Unable to login',
-            type: 'error',
-            description: 'Username or password can\'t be empty!',
-        };
-        return { error };
-    }
+  // checks isEmpty
+  if (isEmpty(username) || isEmpty(password)) {
+    const error = {
+      title: 'Unable to login',
+      type: 'error',
+      description: "Username or password can't be empty!",
+    };
+    return { error };
+  }
 
-    try {
-        const response: { username?: string, token?: string } = await API.request('login', 'POST', {
-            body: JSON.stringify({ username, password }),
-            headers: {
-                Accept: HEADERS.JSON,
-                'Content-Type': HEADERS.JSON,
-            },
-        });
-        const result = {
-            username: response.username,
-            token: response.token,
-        };
-        return result;
-    } catch (e) {
-        const error = {
-            title: 'Unable to login',
-            type: 'error',
-            description: e.error,
-        };
-        return { error };
-    }
+  try {
+    const response: { username?: string; token?: string } = await API.request('login', 'POST', {
+      body: JSON.stringify({ username, password }),
+      headers: {
+        Accept: HEADERS.JSON,
+        'Content-Type': HEADERS.JSON,
+      },
+    });
+    const result = {
+      username: response.username,
+      token: response.token,
+    };
+    return result;
+  } catch (e) {
+    const error = {
+      title: 'Unable to login',
+      type: 'error',
+      description: e.error,
+    };
+    return { error };
+  }
 }

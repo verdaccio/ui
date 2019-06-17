@@ -1,5 +1,3 @@
-
-
 import styled from 'react-emotion';
 import { default as MuiFab } from '@material-ui/core/Fab';
 import Chip from '@material-ui/core/Chip';

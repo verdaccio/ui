@@ -1,1 +1,1 @@
-export { default } from './Dist'
+export { default } from './Dist';

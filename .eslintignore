@@ -1,12 +1,12 @@
 node_modules
 coverage/
-build/
+static/
+.github/
+.circleci/
 *.md
 *.lock
 *.yaml
 Dockerfile
-*.rpi
 *.html
 *.scss
 *.png
-*.jpg

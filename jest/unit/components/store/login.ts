@@ -4,7 +4,7 @@ import { API_ERROR } from '../../../../lib/constants';
  * @param {object}  config configuration of api call
  * @returns {promise}
  */
-export default function (config) {
+export default function(config) {
   return new Promise((resolve, reject) => {
     const body = JSON.parse(config.body);
     if (body.username === 'sam' && body.password === '1234') {

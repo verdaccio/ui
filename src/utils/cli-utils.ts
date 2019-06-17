@@ -1,5 +1,3 @@
-
-
 import { SyntheticEvent } from 'react';
 
 export const copyToClipBoardUtility = (str: string) => (event: SyntheticEvent<HTMLElement>) => {

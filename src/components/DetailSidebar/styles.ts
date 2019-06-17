@@ -1,5 +1,3 @@
-
-
 import styled from 'react-emotion';
 import Avatar from '@material-ui/core/Avatar';
 import ListItem from '@material-ui/core/ListItem';
