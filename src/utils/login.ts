@@ -34,7 +34,19 @@ export function isTokenExpire(token?: any) {
   return expired;
 }
 
-export async function makeLogin(username?: string, password?: string) {
+export interface LoginBody {
+  username?: string;
+  token?: string;
+  error?: LoginError;
+}
+
+export interface LoginError {
+  title: string;
+  type: string;
+  description: string;
+}
+
+export async function makeLogin(username?: string, password?: string): Promise<LoginBody> {
   // checks isEmpty
   if (isEmpty(username) || isEmpty(password)) {
     const error = {
@@ -46,14 +58,14 @@ export async function makeLogin(username?: string, password?: string) {
   }
 
   try {
-    const response: { username?: string; token?: string } = await API.request('login', 'POST', {
+    const response: LoginBody = await API.request('login', 'POST', {
       body: JSON.stringify({ username, password }),
       headers: {
         Accept: HEADERS.JSON,
         'Content-Type': HEADERS.JSON,
       },
     });
-    const result = {
+    const result: LoginBody = {
       username: response.username,
       token: response.token,
     };

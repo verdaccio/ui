@@ -1,3 +1,3 @@
-export function goToVerdaccioWebsite() {
-  window.open('https://www.verdaccio.org/', '_blank');
+export function goToVerdaccioWebsite(): void {
+  window.open('https://verdaccio.org', '_blank');
 }

@@ -30,7 +30,7 @@ interface Props {
   author: Author;
   description?: string;
   keywords?: string[];
-  license?: string;
+  license?: string | null;
   homepage?: string;
   bugs?: Bugs;
   dist?: Dist;

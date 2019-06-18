@@ -2,12 +2,15 @@
   "extends": [
     "@verdaccio",
     "plugin:react/recommended",
+    "plugin:jest/recommended",
     "plugin:prettier/recommended",
     "plugin:verdaccio/recommended",
     "plugin:jsx-a11y/recommended"
   ],
   "plugins": [
     "react",
+    "jest",
+    "verdaccio",
     "jsx-a11y"
   ],
   "settings": {
@@ -24,6 +27,7 @@
   },
   "rules": {
     "@typescript-eslint/no-var-requires": 0,
+    "@typescript-eslint/indent": 0,
     "prettier/prettier": ["error", null, "@prettier"],
     "react/no-deprecated": 1,
     "react/jsx-no-target-blank": 1,
@@ -85,9 +89,17 @@
     "react/prefer-es6-class": [
       2,
       "always"
-    ]
+    ],
+    "verdaccio/jsx-no-style": ["warn"],
+    "verdaccio/jsx-spread": ["warn"],
+    "jest/expect-expect": 0,
+    "quote-props":["error", "as-needed"]
+  },
+  "globals": {
+    "__DEBUG__": true
   },
   "env": {
-    "browser": true
+    "browser": true,
+    "jest/globals": true
   }
 }
