@@ -1,37 +1,22 @@
 import React from 'react';
-import { makeStyles } from '@material-ui/styles';
 
+import styled from 'react-emotion';
 import logo from './img/logo.svg';
 
-export interface LogoSizing {
-  md: number;
-  sm: number;
-}
+const StyledLogo = styled.div`
+  && {
+    display: inline-block;
+    vertical-align: middle;
+    box-sizing: border-box;
+    background-position: center;
+    background-size: contain;
+    background-image: url(${logo});
+    background-repeat: no-repeat;
+    width: 40px;
+    height: 40px;`;
 
-const sizing: LogoSizing = {
-  md: 90,
-  sm: 40,
-};
-
-interface Props {
-  size?: keyof LogoSizing;
-}
-
-const useStyles = makeStyles({
-  logo: ({ size }: Props) => ({
-    display: 'inline-block',
-    width: sizing[size as string],
-    height: sizing[size as string],
-  }),
-});
-
-const Logo: React.FC<Props> = ({ size }) => {
-  const classes = useStyles({ size });
-  return <img alt="Verdaccio" className={classes.logo} src={logo} />;
-};
-
-Logo.defaultProps = {
-  size: 'sm',
+const Logo: React.FC = () => {
+  return <StyledLogo />;
 };
 
 export default Logo;
