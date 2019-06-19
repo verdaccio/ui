@@ -39,7 +39,7 @@ describe('<Search /> component test', () => {
     );
 
     wrapper = routerWrapper.find(Search).dive();
-    const { onBlur, requestList, setState } = wrapper.instance();
+    const { handleOnBlur, requestList, setState } = wrapper.instance();
     const spyCancelAllSearchRequests = jest.spyOn(wrapper.instance(), 'cancelAllSearchRequests');
     setState({ search: 'verdaccio' });
 
@@ -49,7 +49,7 @@ describe('<Search /> component test', () => {
     // adds a request for AbortController
     wrapper.instance().requestList = [request];
 
-    onBlur(event);
+    handleOnBlur(event);
 
     expect(request.abort).toHaveBeenCalled();
     expect(event.stopPropagation).toHaveBeenCalled();
