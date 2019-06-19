@@ -1,4 +1,4 @@
-import React, { Component, ReactElement } from 'react';
+import React, { Component, ReactElement, Fragment } from 'react';
 
 import { DetailContextConsumer, VersionPageConsumerProps } from '../../pages/version/Version';
 import Readme from '../Readme';
@@ -34,17 +34,25 @@ class DetailContainer extends Component<any, DetailContainerState> {
     this.setState({ tabPosition });
   };
 
+  private renderListTabs(): React.ReactElement<HTMLElement> {
+    return (
+      <Fragment>
+        <Tab id={'readme-tab'} label={'Readme'} />
+        <Tab id={'dependencies-tab'} label={'Dependencies'} />
+        <Tab id={'versions-tab'} label={'Versions'} />
+        <Tab id={'uplinks-tab'} label={'Uplinks'} />
+      </Fragment>
+    );
+  }
+
   private renderTabs = ({ readMe }) => {
     const { tabPosition } = this.state;
 
     return (
-      <>
+      <Fragment>
         <Content>
           <Tabs indicatorColor={'primary'} onChange={this.handleChange} textColor={'primary'} value={tabPosition} variant={'fullWidth'}>
-            <Tab id={'readme-tab'} label={'Readme'} />
-            <Tab id={'dependencies-tab'} label={'Dependencies'} />
-            <Tab id={'versions-tab'} label={'Versions'} />
-            <Tab id={'uplinks-tab'} label={'Uplinks'} />
+            {this.renderListTabs()}
           </Tabs>
           <br />
           {tabPosition === 0 && this.renderReadme(readMe)}
@@ -52,7 +60,7 @@ class DetailContainer extends Component<any, DetailContainerState> {
           {tabPosition === 2 && <Versions />}
           {tabPosition === 3 && <UpLinks />}
         </Content>
-      </>
+      </Fragment>
     );
   };
 
