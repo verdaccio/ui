@@ -1,13 +1,11 @@
-
-
-import React, { Component } from 'react';
+import React, { Component, ReactElement } from 'react';
 
 import Avatar from '@material-ui/core/Avatar';
 import Grid from '@material-ui/core/Grid';
 import List from '@material-ui/core/List';
 import ListItemText from '@material-ui/core/ListItemText';
 
-import { DetailContextConsumer } from '../../pages/version/Version';
+import { DetailContextConsumer, VersionPageConsumerProps } from '../../pages/version/Version';
 import { Heading, EngineListItem } from './styles';
 // @ts-ignore
 import node from './img/node.png';
@@ -19,17 +17,17 @@ const ICONS = {
 };
 
 class Engine extends Component {
-  render() {
+  public render(): ReactElement<HTMLElement> {
     return (
       <DetailContextConsumer>
         {context => {
-          return this.renderEngine(context!);
+          return this.renderEngine(context as VersionPageConsumerProps);
         }}
       </DetailContextConsumer>
     );
   }
 
-  renderEngine = ({ packageMeta }) => {
+  private renderEngine = ({ packageMeta }): ReactElement<HTMLElement> | null => {
     const { engines } = packageMeta.latest;
     if (!engines) {
       return null;
@@ -40,18 +38,18 @@ class Engine extends Component {
       'NPM-version': engines.npm,
     };
 
+    const accumulator: React.ReactNode[] = [];
     const items = Object.keys(engineDict).reduce((markup, text, key) => {
       const heading = engineDict[text];
       if (heading) {
         markup.push(
-          // @ts-ignore
           <Grid item={true} key={key} xs={6}>
             {this.renderListItems(heading, text)}
           </Grid>
         );
       }
       return markup;
-    }, []);
+    }, accumulator);
 
     if (items.length < 1) {
       return null;
@@ -60,7 +58,7 @@ class Engine extends Component {
     return <Grid container={true}>{items}</Grid>;
   };
 
-  renderListItems = (heading, text) => {
+  private renderListItems = (heading, text) => {
     return (
       <List subheader={<Heading variant={'subheading'}>{text.split('-').join(' ')}</Heading>}>
         <EngineListItem>

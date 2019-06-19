@@ -1,4 +1,4 @@
-import React, { KeyboardEvent, Component } from 'react';
+import React, { KeyboardEvent, Component, ReactElement } from 'react';
 import { withRouter, RouteComponentProps } from 'react-router-dom';
 
 import { default as IconSearch } from '@material-ui/icons/Search';
@@ -20,10 +20,7 @@ export interface State {
 export type cancelAllSearchRequests = () => void;
 export type handlePackagesClearRequested = () => void;
 export type handleSearch = (event: KeyboardEvent<HTMLInputElement>, { newValue, method }: { newValue: string; method: string }) => void;
-export type handleClickSearch = (
-  event: KeyboardEvent<HTMLInputElement>,
-  { suggestionValue, method }: { suggestionValue: Array<object>; method: string }
-) => void;
+export type handleClickSearch = (event: KeyboardEvent<HTMLInputElement>, { suggestionValue, method }: { suggestionValue: object[]; method: string }) => void;
 export type handleFetchPackages = ({ value: string }) => Promise<void>;
 export type onBlur = (event: KeyboardEvent<HTMLInputElement>) => void;
 
@@ -34,7 +31,7 @@ const CONSTANTS = {
 };
 
 export class Search extends Component<RouteComponentProps<{}>, State> {
-  requestList: Array<any>;
+  private requestList: any[];
 
   constructor(props: RouteComponentProps<{}>) {
     super(props);
@@ -54,7 +51,7 @@ export class Search extends Component<RouteComponentProps<{}>, State> {
   /**
    * Cancel all the requests which are in pending state.
    */
-  cancelAllSearchRequests: cancelAllSearchRequests = () => {
+  private cancelAllSearchRequests: cancelAllSearchRequests = () => {
     this.requestList.forEach(request => request.abort());
     this.requestList = [];
   };
@@ -62,7 +59,7 @@ export class Search extends Component<RouteComponentProps<{}>, State> {
   /**
    * Cancel all the request from list and make request list empty.
    */
-  handlePackagesClearRequested: handlePackagesClearRequested = () => {
+  private handlePackagesClearRequested: handlePackagesClearRequested = () => {
     this.setState({
       suggestions: [],
     });
@@ -71,7 +68,7 @@ export class Search extends Component<RouteComponentProps<{}>, State> {
   /**
    * onChange method for the input element.
    */
-  handleSearch: handleSearch = (event, { newValue, method }) => {
+  private handleSearch: handleSearch = (event, { newValue, method }) => {
     // stops event bubbling
     event.stopPropagation();
     if (method === 'type') {
@@ -99,7 +96,7 @@ export class Search extends Component<RouteComponentProps<{}>, State> {
   /**
    * When an user select any package by clicking or pressing return key.
    */
-  handleClickSearch: handleClickSearch = (event, { suggestionValue, method }: any) => {
+  private handleClickSearch: handleClickSearch = (event, { suggestionValue, method }: any) => {
     const { history } = this.props;
     // stops event bubbling
     event.stopPropagation();
@@ -116,7 +113,7 @@ export class Search extends Component<RouteComponentProps<{}>, State> {
    * Fetch packages from API.
    * For AbortController see: https://developer.mozilla.org/en-US/docs/Web/API/AbortController
    */
-  handleFetchPackages: handleFetchPackages = async ({ value }) => {
+  private handleFetchPackages: handleFetchPackages = async ({ value }) => {
     try {
       // @ts-ignore
       const controller = new window.AbortController();
@@ -144,23 +141,19 @@ export class Search extends Component<RouteComponentProps<{}>, State> {
     }
   };
 
-  render() {
+  public render(): ReactElement<HTMLElement> {
     const { suggestions, search, loaded, loading, error } = this.state;
 
     return (
       <AutoComplete
         color={colors.white}
-        onBlur={this.onBlur}
+        onBlur={this.handleOnBlur}
         onChange={this.handleSearch}
         onCleanSuggestions={this.handlePackagesClearRequested}
         onClick={this.handleClickSearch}
         onSuggestionsFetch={debounce(this.handleFetchPackages, CONSTANTS.API_DELAY)}
         placeholder={CONSTANTS.PLACEHOLDER_TEXT}
-        startAdornment={
-          <InputAdornment position="start" style={{ color: colors.white }}>
-            <IconSearch />
-          </InputAdornment>
-        }
+        startAdornment={this.getAdorment()}
         suggestions={suggestions}
         suggestionsError={error}
         suggestionsLoaded={loaded}
@@ -170,11 +163,19 @@ export class Search extends Component<RouteComponentProps<{}>, State> {
     );
   }
 
+  public getAdorment(): ReactElement<HTMLElement> {
+    return (
+      <InputAdornment position={'start'} style={{ color: colors.white }}>
+        <IconSearch />
+      </InputAdornment>
+    );
+  }
+
   /**
    * As user focuses out from input, we cancel all the request from requestList
    * and set the API state parameters to default boolean values.
    */
-  onBlur: onBlur = event => {
+  private handleOnBlur: onBlur = event => {
     // stops event bubbling
     event.stopPropagation();
     this.setState(

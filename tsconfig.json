@@ -15,7 +15,7 @@
   },
   "include": [
     "src",
-    "types/**/*.d.ts", "scripts/lib", "node_modules/config"
+    "types/*.d.ts", "scripts/lib", "node_modules/config"
   ],
   "exclude": [
     "node_modules",

@@ -1,5 +1,3 @@
-
-
 import React from 'react';
 
 import { Wrapper, Left, Right, Earth, Flags, Love, Flag, Logo, Inner, ToolTip } from './styles';

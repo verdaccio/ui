@@ -1,6 +1,11 @@
 import API from './api';
 
-export async function callDetailPage(packageName) {
+export interface DetailPage {
+  readMe: any;
+  packageMeta: any;
+}
+
+export async function callDetailPage(packageName): Promise<DetailPage> {
   const readMe = await API.request(`package/readme/${packageName}`, 'GET');
   const packageMeta = await API.request(`sidebar/${packageName}`, 'GET');
 

@@ -36,16 +36,6 @@ export interface IconsMap {
   [key: string]: string;
 }
 
-export interface Props {
-  name: keyof typeof Icons;
-  className?: string;
-  onClick?: (event: MouseEvent<SVGElement | HTMLSpanElement>) => void;
-  size?: 'sm' | 'md';
-  pointer?: boolean;
-  img?: boolean;
-  modifiers?: any;
-}
-
 export const Icons: IconsMap = {
   brazil,
   spain,
@@ -63,11 +53,21 @@ export const Icons: IconsMap = {
   version,
 };
 
+export interface Props {
+  name: keyof IconsMap;
+  className?: string;
+  onClick?: (event: MouseEvent<SVGElement | HTMLSpanElement>) => void;
+  size?: 'sm' | 'md';
+  pointer?: boolean;
+  img?: boolean;
+  modifiers?: any;
+}
+
 const Icon: React.FC<Props> = ({ className, name, size = 'sm', img = false, pointer = false, ...props }) => {
   // @ts-ignore
   const title = capitalize(name);
   return img ? (
-    <ImgWrapper className={className} pointer={pointer} size={size} title={title} name={name} {...props}>
+    <ImgWrapper className={className} name={name} pointer={pointer} size={size} title={title} {...props}>
       <Img alt={title} src={Icons[name]} />
     </ImgWrapper>
   ) : (

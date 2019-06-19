@@ -1,8 +1,6 @@
+import React, { Component, ReactElement } from 'react';
 
-
-import React, { Component } from 'react';
-
-import { DetailContextConsumer } from '../../pages/version/Version';
+import { DetailContextConsumer, VersionPageConsumerProps } from '../../pages/version/Version';
 import Readme from '../Readme';
 import Versions from '../Versions';
 import { preventXSS } from '../../utils/sec-utils';
@@ -12,27 +10,31 @@ import { Content } from './styles';
 import Dependencies from '../Dependencies';
 import UpLinks from '../UpLinks';
 
-class DetailContainer extends Component<any, any> {
-  state = {
+interface DetailContainerState {
+  tabPosition: number;
+}
+
+class DetailContainer extends Component<any, DetailContainerState> {
+  public state = {
     tabPosition: 0,
   };
 
-  render() {
+  public render(): ReactElement<HTMLElement> {
     return (
       <DetailContextConsumer>
         {context => {
-          return this.renderTabs(context!);
+          return this.renderTabs(context as VersionPageConsumerProps);
         }}
       </DetailContextConsumer>
     );
   }
 
-  handleChange = (event: any, tabPosition: number) => {
+  private handleChange = (event: any, tabPosition: number) => {
     event.preventDefault();
     this.setState({ tabPosition });
   };
 
-  renderTabs = ({ readMe }) => {
+  private renderTabs = ({ readMe }) => {
     const { tabPosition } = this.state;
 
     return (
@@ -54,7 +56,7 @@ class DetailContainer extends Component<any, any> {
     );
   };
 
-  renderReadme = (readMe: string) => {
+  private renderReadme = (readMe: string): ReactElement<HTMLElement> => {
     const encodedReadme = preventXSS(readMe);
 
     return <Readme description={encodedReadme} />;

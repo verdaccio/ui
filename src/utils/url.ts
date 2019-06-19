@@ -1,5 +1,6 @@
 import isURLValidator from 'validator/lib/isURL';
 import isEmailValidator from 'validator/lib/isEmail';
+import '../../types';
 
 export function isURL(url): boolean {
   return isURLValidator(url || '', {
@@ -15,18 +16,6 @@ export function isEmail(email): boolean {
 export function getRegistryURL(): string {
   // Don't add slash if it's not a sub directory
   return `${location.origin}${location.pathname === '/' ? '' : location.pathname}`;
-}
-
-// FIXME: this should comes from @verdaccio/types
-export interface VerdaccioOptions {
-  url_prefix: string;
-  base: string;
-}
-
-declare global {
-  interface Window {
-    __VERDACCIO_BASENAME_UI_OPTIONS: VerdaccioOptions;
-  }
 }
 
 export function getBaseNamePath(): string {

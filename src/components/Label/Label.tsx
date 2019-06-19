@@ -1,5 +1,3 @@
-
-
 import React from 'react';
 import styled from 'react-emotion';
 import { fontWeight } from '../../utils/styles/sizes';

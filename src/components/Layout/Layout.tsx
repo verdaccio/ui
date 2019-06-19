@@ -1,5 +1,3 @@
-
-
 import styled, { css } from 'react-emotion';
 
 export const Content = styled('div')`
@@ -19,7 +17,7 @@ export const Container = styled('div')`
     min-height: 100vh;
     overflow: hidden;
     ${props =>
-      //@ts-ignore
+      // @ts-ignore
       props.isLoading &&
       css`
         ${Content} {

@@ -1,8 +1,8 @@
-export interface IProps {
+export interface Props {
   scope: string;
   registryUrl: string;
 }
 
-export interface IState {
+export interface State {
   tabPosition: number;
 }

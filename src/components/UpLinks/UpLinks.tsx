@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { ReactElement } from 'react';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 
@@ -9,7 +9,7 @@ import { formatDateDistance } from '../../utils/package';
 import { Heading, Spacer, ListItemText } from './styles';
 
 class UpLinks extends React.PureComponent<any> {
-  render() {
+  public render(): ReactElement<HTMLElement> {
     return (
       <DetailContextConsumer>
         {context => {
@@ -26,7 +26,7 @@ class UpLinks extends React.PureComponent<any> {
     );
   }
 
-  renderUpLinksList = uplinks => (
+  public renderUpLinksList = uplinks => (
     <List>
       {Object.keys(uplinks)
         .reverse()
@@ -40,12 +40,12 @@ class UpLinks extends React.PureComponent<any> {
     </List>
   );
 
-  renderContent(uplinks, { name }) {
+  public renderContent(uplinks, { name }): ReactElement<HTMLElement> {
     if (Object.keys(uplinks).length > 0) {
       return (
         uplinks && (
           <>
-            <Heading variant="subheading">Uplinks</Heading>
+            <Heading variant="subheading">{'Uplinks'}</Heading>
             {this.renderUpLinksList(uplinks)}
           </>
         )

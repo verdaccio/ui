@@ -3,13 +3,13 @@ import { formatDateDistance } from '../../utils/package';
 import { Heading, Spacer, ListItemText } from './styles';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
-import React from 'react';
+import React, { ReactElement } from 'react';
 import { DIST_TAGS } from '../../../lib/constants';
 
 const NOT_AVAILABLE = 'Not available';
 
 class Versions extends React.PureComponent<any> {
-  render() {
+  public render(): ReactElement<HTMLDivElement> {
     return (
       <DetailContextConsumer>
         {context => {
@@ -19,7 +19,7 @@ class Versions extends React.PureComponent<any> {
     );
   }
 
-  renderPackageList = (packages: any, isVersion: boolean = false, timeMap: Object = {}) => {
+  public renderPackageList = (packages: any, isVersion: boolean = false, timeMap: Record<string, any> = {}): ReactElement<HTMLDivElement> => {
     return (
       <List>
         {Object.keys(packages)
@@ -36,20 +36,20 @@ class Versions extends React.PureComponent<any> {
     );
   };
 
-  renderContent(packageMeta) {
+  public renderContent(packageMeta): ReactElement<HTMLDivElement> {
     const { versions = {}, time: timeMap = {}, [DIST_TAGS]: distTags = {} } = packageMeta;
 
     return (
       <>
         {distTags && (
           <>
-            <Heading variant="subheading">Current Tags</Heading>
+            <Heading variant="subheading">{'Current Tags'}</Heading>
             {this.renderPackageList(distTags, false, timeMap)}
           </>
         )}
         {versions && (
           <>
-            <Heading variant="subheading">Version History</Heading>
+            <Heading variant="subheading">{'Version History'}</Heading>
             {this.renderPackageList(versions, true, timeMap)}
           </>
         )}

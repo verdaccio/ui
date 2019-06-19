@@ -1,20 +1,20 @@
-
-
 import React from 'react';
 import Dialog from '@material-ui/core/Dialog';
 import DialogActions from '@material-ui/core/DialogActions';
 import Button from '@material-ui/core/Button';
 import { Title, Content } from './styles';
 
-import { IProps } from './types';
+import { Props } from './types';
 
-const RegistryInfoDialog: React.FC<IProps> = ({ open = false, children, onClose }) => (
+const LABEL = 'CLOSE';
+
+const RegistryInfoDialog: React.FC<Props> = ({ open = false, children, onClose }): any => (
   <Dialog id="registryInfo--dialog-container" onClose={onClose} open={open}>
-    <Title disableTypography>Register Info</Title>
+    <Title disableTypography={true}>{'Register Info'}</Title>
     <Content>{children}</Content>
     <DialogActions>
       <Button color="inherit" id="registryInfo--dialog-close" onClick={onClose}>
-        CLOSE
+        {LABEL}
       </Button>
     </DialogActions>
   </Dialog>

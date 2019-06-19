@@ -10,14 +10,13 @@
   "plugins": [
     "react",
     "jest",
+    "prettier",
     "verdaccio",
     "jsx-a11y"
   ],
   "settings": {
     "react": {
-      "pragma": "React",
-      "version": "16.4.2",
-      "flowVersion": "0.81.0"
+      "version":  "detect"
     }
   },
   "parserOptions": {
@@ -26,9 +25,25 @@
     }
   },
   "rules": {
+    "babel/no-invalid-this": 0,
+    "no-invalid-this": 0,
+    "no-console": ["error", { "allow": ["warn", "error"] }],
+    "prettier/prettier": "error",
     "@typescript-eslint/no-var-requires": 0,
     "@typescript-eslint/indent": 0,
-    "prettier/prettier": ["error", null, "@prettier"],
+    "@typescript-eslint/explicit-member-accessibility": ["warn",
+      {
+        "accessibility": "explicit",
+        "overrides": {
+          "constructors": "off"
+        }
+      }
+    ],
+    "@typescript-eslint/explicit-function-return-type": ["warn",
+      {
+          "allowExpressions": true,
+          "allowTypedFunctionExpressions": true
+    }],
     "react/no-deprecated": 1,
     "react/jsx-no-target-blank": 1,
     "react/destructuring-assignment": ["error", "always"],
@@ -72,8 +87,9 @@
     "react/jsx-no-duplicate-props": ["error"],
     "react/jsx-no-literals": ["error"],
     "react/jsx-no-undef": ["error"],
+    "react/prop-types": 0,
     "react/jsx-one-expression-per-line": ["error", {"allow": "single-child"}],
-    "react/jsx-curly-brace-presence": ["error", { "props": "always", "children": "ignore" }],
+    "react/jsx-curly-brace-presence": ["warn", { "props": "ignore", "children": "ignore" }],
     "react/jsx-pascal-case": ["error"],
     "react/jsx-props-no-multi-spaces": ["error"],
     "react/jsx-sort-default-props": ["error"],
@@ -93,7 +109,10 @@
     "verdaccio/jsx-no-style": ["warn"],
     "verdaccio/jsx-spread": ["warn"],
     "jest/expect-expect": 0,
-    "quote-props":["error", "as-needed"]
+    "quote-props":["error", "as-needed"],
+    "max-len": ["error", 160],
+    "prefer-spread": 1,
+    "linebreak-style": 0
   },
   "globals": {
     "__DEBUG__": true

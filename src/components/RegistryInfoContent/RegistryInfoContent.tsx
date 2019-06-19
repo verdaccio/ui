@@ -1,8 +1,6 @@
-
-
 import React, { Component } from 'react';
 
-import { IProps, IState } from './types';
+import { Props, State } from './types';
 import { CommandContainer } from './styles';
 import CopyToClipBoard from '../CopyToClipBoard';
 import Tabs from '@material-ui/core/Tabs';
@@ -23,7 +21,7 @@ function TabContainer({ children }) {
   );
 }
 
-class RegistryInfoContent extends Component<IProps, IState> {
+class RegistryInfoContent extends Component<Props, State> {
   state = {
     tabPosition: 0,
   };

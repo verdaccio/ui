@@ -1,4 +1,4 @@
-import React, { SyntheticEvent, Component } from 'react';
+import React, { SyntheticEvent, Component, Fragment, ReactElement } from 'react';
 import { Link } from 'react-router-dom';
 
 import Button from '@material-ui/core/Button';
@@ -49,10 +49,36 @@ class Header extends Component<Props, State> {
     };
   }
 
+  public render(): ReactElement<HTMLElement> {
+    const { showMobileNavBar } = this.state;
+    const { withoutSearch = false } = this.props;
+    return (
+      <div>
+        <NavBar position="static">
+          <InnerNavBar>
+            {this.renderLeftSide()}
+            {this.renderRightSide()}
+          </InnerNavBar>
+          {this.renderInfoDialog()}
+        </NavBar>
+        {showMobileNavBar && !withoutSearch && (
+          <MobileNavBar>
+            <InnerMobileNavBar>
+              <Search />
+            </InnerMobileNavBar>
+            <Button color="inherit" onClick={this.handleDismissMNav}>
+              {'Cancel'}
+            </Button>
+          </MobileNavBar>
+        )}
+      </div>
+    );
+  }
+
   /**
    * opens popover menu for logged in user.
    */
-  handleLoggedInMenu = (event: SyntheticEvent<HTMLElement>) => {
+  public handleLoggedInMenu = (event: SyntheticEvent<HTMLElement>) => {
     this.setState({
       anchorEl: event.currentTarget,
     });
@@ -61,7 +87,7 @@ class Header extends Component<Props, State> {
   /**
    * closes popover menu for logged in user
    */
-  handleLoggedInMenuClose = () => {
+  public handleLoggedInMenuClose = () => {
     this.setState({
       anchorEl: null,
     });
@@ -70,7 +96,7 @@ class Header extends Component<Props, State> {
   /**
    * opens registry information dialog.
    */
-  handleOpenRegistryInfoDialog = () => {
+  public handleOpenRegistryInfoDialog = () => {
     this.setState({
       openInfoDialog: true,
     });
@@ -79,7 +105,7 @@ class Header extends Component<Props, State> {
   /**
    * closes registry information dialog.
    */
-  handleCloseRegistryInfoDialog = () => {
+  public handleCloseRegistryInfoDialog = () => {
     this.setState({
       openInfoDialog: false,
     });
@@ -88,7 +114,7 @@ class Header extends Component<Props, State> {
   /**
    * close/open popover menu for logged in users.
    */
-  handleToggleLogin = () => {
+  public handleToggleLogin = () => {
     const { onToggleLoginModal } = this.props;
     this.setState(
       {
@@ -98,20 +124,20 @@ class Header extends Component<Props, State> {
     );
   };
 
-  handleToggleMNav = () => {
+  public handleToggleMNav = () => {
     const { showMobileNavBar } = this.state;
     this.setState({
       showMobileNavBar: !showMobileNavBar,
     });
   };
 
-  handleDismissMNav = () => {
+  public handleDismissMNav = () => {
     this.setState({
       showMobileNavBar: false,
     });
   };
 
-  renderLeftSide = () => {
+  public renderLeftSide = () => {
     const { withoutSearch = false } = this.props;
     return (
       <LeftSide>
@@ -127,7 +153,7 @@ class Header extends Component<Props, State> {
     );
   };
 
-  renderLogo = () => {
+  public renderLogo = () => {
     const { logo } = this.props;
 
     if (logo) {
@@ -137,7 +163,7 @@ class Header extends Component<Props, State> {
     }
   };
 
-  renderToolTipIcon = (title: string, type: ToolTipType) => {
+  public renderToolTipIcon = (title: string, type: ToolTipType) => {
     let content;
     switch (type) {
       case 'help':
@@ -170,7 +196,7 @@ class Header extends Component<Props, State> {
     );
   };
 
-  renderRightSide = () => {
+  public renderRightSide = () => {
     const { username = '', withoutSearch = false } = this.props;
     return (
       <RightSide>
@@ -181,27 +207,27 @@ class Header extends Component<Props, State> {
           this.renderMenu()
         ) : (
           <Button color="inherit" id="header--button-login" onClick={this.handleToggleLogin}>
-            Login
+            {'Login'}
           </Button>
         )}
       </RightSide>
     );
   };
 
-  renderGreetings = () => {
+  private renderGreetings = () => {
     const { username = '' } = this.props;
     return (
-      <>
-        <Greetings>Hi,</Greetings>
-        <Label capitalize text={username} weight="bold" />
-      </>
+      <Fragment>
+        <Greetings>{'Hi,'}</Greetings>
+        <Label capitalize={true} text={username} weight="bold" />
+      </Fragment>
     );
   };
 
   /**
    * render popover menu
    */
-  renderMenu = () => {
+  private renderMenu = () => {
     const { onLogout } = this.props;
     const { anchorEl } = this.state;
     const open = Boolean(anchorEl);
@@ -225,14 +251,14 @@ class Header extends Component<Props, State> {
           }}>
           <MenuItem disabled={true}>{this.renderGreetings()}</MenuItem>
           <MenuItem id="header--button-logout" onClick={onLogout}>
-            Logout
+            {'Logout'}
           </MenuItem>
         </Menu>
       </>
     );
   };
 
-  renderInfoDialog = () => {
+  private renderInfoDialog = () => {
     const { scope } = this.props;
     const { openInfoDialog, registryUrl } = this.state;
     return (
@@ -241,33 +267,6 @@ class Header extends Component<Props, State> {
       </RegistryInfoDialog>
     );
   };
-
-  render() {
-    const { showMobileNavBar } = this.state;
-    const { withoutSearch = false } = this.props;
-    return (
-      <div>
-        <NavBar position="static">
-          <InnerNavBar>
-            {this.renderLeftSide()}
-            {this.renderRightSide()}
-          </InnerNavBar>
-          {this.renderInfoDialog()}
-        </NavBar>
-        {showMobileNavBar &&
-          !withoutSearch && (
-            <MobileNavBar>
-              <InnerMobileNavBar>
-                <Search />
-              </InnerMobileNavBar>
-              <Button color="inherit" onClick={this.handleDismissMNav}>
-                Cancel
-              </Button>
-            </MobileNavBar>
-          )}
-      </div>
-    );
-  }
 }
 
 export default Header;

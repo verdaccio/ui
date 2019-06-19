@@ -25,7 +25,7 @@ describe('<Package /> component', () => {
     };
 
     const wrapper = shallow(
-      <Package name={props.name} version={props.version} time={props.time} license={props.license} author={props.author} description={props.description} />
+      <Package author={props.author} description={props.description} license={props.license} name={props.name} time={props.time} version={props.version} />
     );
 
     // integration expectations
@@ -37,7 +37,7 @@ describe('<Package /> component', () => {
     expect(wrapper.find(OverviewItem).prop('children')).toHaveReturnedWith(`v${props.version}`);
 
     // TODO - REWRITE THE TEST
-    //expect(wrapper.find(Author).dive())
+    // expect(wrapper.find(Author).dive())
 
     // check description
     expect(wrapper.find(Description).prop('children')).toHaveReturnedWith(props.description);
@@ -63,7 +63,7 @@ describe('<Package /> component', () => {
       description: 'Private NPM repository',
     };
     const wrapper = shallow(
-      <Package name={props.name} version={props.version} time={props.time} license={props.license} author={props.author} description={props.description} />
+      <Package author={props.author} description={props.description} license={props.license} name={props.name} time={props.time} version={props.version} />
     );
 
     // integration expectations

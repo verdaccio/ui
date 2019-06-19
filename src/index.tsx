@@ -19,9 +19,9 @@ const renderApp = Component => {
 
 renderApp(App);
 
-//@ts-ignore
+// @ts-ignore
 if (module.hot) {
-  //@ts-ignore
+  // @ts-ignore
   module.hot.accept('./app', () => {
     renderApp(App);
   });

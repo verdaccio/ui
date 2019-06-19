@@ -1,10 +1,8 @@
-
-
-import React, { Component, Fragment } from 'react';
+import React, { Component, Fragment, ReactElement } from 'react';
 import { withRouter } from 'react-router-dom';
 import CardContent from '@material-ui/core/CardContent';
 
-import { DetailContextConsumer } from '../../pages/version/Version';
+import { DetailContextConsumer, VersionPageConsumerProps } from '../../pages/version/Version';
 
 import { CardWrap, Heading, Tags, Tag } from './styles';
 import NoItems from '../NoItems';
@@ -20,13 +18,13 @@ class DepDetail extends Component<any, any> {
     };
   }
 
-  render() {
+  public render(): ReactElement<HTMLElement> {
     const { name, version } = this.state;
     const tagText = `${name}@${version}`;
     return <Tag className={'dep-tag'} clickable={true} component={'div'} label={tagText} onClick={this.handleOnClick} />;
   }
 
-  handleOnClick = () => {
+  private handleOnClick = () => {
     const { name } = this.state;
     const { onLoading, history } = this.props;
 
@@ -38,7 +36,7 @@ class DepDetail extends Component<any, any> {
 const WrapperDependencyDetail = withRouter(DepDetail);
 
 class DependencyBlock extends Component<any, any> {
-  render() {
+  public render(): ReactElement<HTMLElement> {
     const { dependencies, title } = this.props;
     const deps = Object.entries(dependencies);
 
@@ -58,7 +56,7 @@ class DependencyBlock extends Component<any, any> {
     );
   }
 
-  renderTags = (deps: any, enableLoading: any) =>
+  private renderTags = (deps: any, enableLoading: any) =>
     deps.map(dep => {
       const [name, version] = dep;
 
@@ -67,25 +65,25 @@ class DependencyBlock extends Component<any, any> {
 }
 
 class Dependencies extends Component<any, any> {
-  state = {
+  public state = {
     tabPosition: 0,
   };
 
-  render() {
+  public render(): ReactElement<HTMLElement> {
     return (
       <DetailContextConsumer>
         {packageMeta => {
-          return this.renderDependencies(packageMeta!);
+          return this.renderDependencies(packageMeta as VersionPageConsumerProps);
         }}
       </DetailContextConsumer>
     );
   }
 
-  checkDependencyLength(dependency: Object = {}) {
+  private checkDependencyLength(dependency: Record<string, any> = {}): boolean {
     return Object.keys(dependency).length > 0;
   }
 
-  renderDependencies({ packageMeta }) {
+  private renderDependencies({ packageMeta }): ReactElement<HTMLElement> {
     const { latest } = packageMeta;
     const { dependencies, devDependencies, peerDependencies, name } = latest;
 

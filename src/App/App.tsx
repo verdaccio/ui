@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, ReactElement } from 'react';
 import isNil from 'lodash/isNil';
 
 import storage from '../utils/storage';
@@ -20,7 +20,7 @@ export const AppContextProvider = AppContext.Provider;
 export const AppContextConsumer = AppContext.Consumer;
 
 export default class App extends Component<any, any> {
-  state = {
+  public state = {
     error: {},
     // @ts-ignore
     logoUrl: window.VERDACCIO_LOGO,
@@ -33,20 +33,20 @@ export default class App extends Component<any, any> {
     isLoading: true,
   };
 
-  componentDidMount() {
+  public componentDidMount(): void {
     this.isUserAlreadyLoggedIn();
     this.loadOnHandler();
   }
 
   // eslint-disable-next-line no-unused-vars
-  componentDidUpdate(_, prevState) {
+  public componentDidUpdate(_, prevState): void {
     const { isUserLoggedIn } = this.state;
     if (prevState.isUserLoggedIn !== isUserLoggedIn) {
       this.loadOnHandler();
     }
   }
 
-  render() {
+  public render(): React.ReactElement<HTMLDivElement> {
     const { isLoading, isUserLoggedIn, packages, logoUrl, user, scope } = this.state;
 
     const context: any = { isUserLoggedIn, packages, logoUrl, user, scope };
@@ -66,7 +66,7 @@ export default class App extends Component<any, any> {
     );
   }
 
-  isUserAlreadyLoggedIn = () => {
+  public isUserAlreadyLoggedIn = () => {
     // checks for token validity
     const token = storage.getItem('token');
     const username = storage.getItem('username');
@@ -80,7 +80,7 @@ export default class App extends Component<any, any> {
     }
   };
 
-  loadOnHandler = async () => {
+  public loadOnHandler = async () => {
     try {
       // @ts-ignore
       this.req = await API.request('packages', 'GET');
@@ -99,7 +99,7 @@ export default class App extends Component<any, any> {
     }
   };
 
-  setLoading = isLoading =>
+  public setLoading = isLoading =>
     this.setState({
       isLoading,
     });
@@ -108,7 +108,7 @@ export default class App extends Component<any, any> {
    * Toggles the login modal
    * Required by: <LoginModal /> <Header />
    */
-  handleToggleLoginModal = () => {
+  public handleToggleLoginModal = () => {
     this.setState(prevState => ({
       // @ts-ignore
       showLoginModal: !prevState.showLoginModal,
@@ -120,7 +120,7 @@ export default class App extends Component<any, any> {
    * handles login
    * Required by: <Header />
    */
-  handleDoLogin = async (usernameValue, passwordValue) => {
+  public handleDoLogin = async (usernameValue, passwordValue) => {
     // @ts-ignore
     const { username, token, error } = await makeLogin(usernameValue, passwordValue);
 
@@ -138,7 +138,7 @@ export default class App extends Component<any, any> {
     }
   };
 
-  setLoggedUser = (username, token) => {
+  public setLoggedUser = (username, token) => {
     this.setState({
       user: {
         username,
@@ -153,7 +153,7 @@ export default class App extends Component<any, any> {
    * Logouts user
    * Required by: <Header />
    */
-  handleLogout = () => {
+  public handleLogout = () => {
     storage.removeItem('username');
     storage.removeItem('token');
     this.setState({
@@ -162,12 +162,12 @@ export default class App extends Component<any, any> {
     });
   };
 
-  renderLoginModal = () => {
+  public renderLoginModal = (): ReactElement<HTMLElement> => {
     const { error, showLoginModal } = this.state;
     return <LoginModal error={error} onCancel={this.handleToggleLoginModal} onSubmit={this.handleDoLogin} visibility={showLoginModal} />;
   };
 
-  renderContent = () => {
+  public renderContent = (): ReactElement<HTMLElement> => {
     return (
       <>
         <Content>
@@ -180,7 +180,7 @@ export default class App extends Component<any, any> {
     );
   };
 
-  renderHeader = () => {
+  public renderHeader = (): ReactElement<HTMLElement> => {
     const {
       logoUrl,
       // @ts-ignore

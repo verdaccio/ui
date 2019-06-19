@@ -1,6 +1,6 @@
 import { ReactNode } from 'react';
 
-export interface IProps {
+export interface Props {
   children: ReactNode;
   open: boolean;
   onClose: () => void;

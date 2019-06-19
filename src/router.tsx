@@ -1,8 +1,6 @@
-
-
 /* eslint  react/jsx-max-depth:0 */
 
-import React, { Component } from 'react';
+import React, { Component, ReactElement } from 'react';
 import { Router, Route, Switch } from 'react-router-dom';
 import { AppContextConsumer } from './App/App';
 
@@ -15,7 +13,7 @@ const VersionPackage = asyncComponent(() => import('./pages/version/Version'));
 const HomePage = asyncComponent(() => import('./pages/home'));
 
 class RouterApp extends Component<any, any> {
-  render() {
+  public render(): ReactElement<HTMLDivElement> {
     return (
       <Router history={history}>
         <>
@@ -31,7 +29,7 @@ class RouterApp extends Component<any, any> {
     );
   }
 
-  renderHeader = () => {
+  public renderHeader = (): ReactElement<HTMLDivElement> => {
     const { onLogout, onToggleLoginModal } = this.props;
 
     return (
@@ -43,7 +41,7 @@ class RouterApp extends Component<any, any> {
     );
   };
 
-  renderHomePage = () => {
+  public renderHomePage = (): ReactElement<HTMLDivElement> => {
     return (
       <AppContextConsumer>
         {function renderConsumerVersionPage({ isUserLoggedIn, packages }: any) {
@@ -54,7 +52,7 @@ class RouterApp extends Component<any, any> {
     );
   };
 
-  renderVersionPage = (routerProps: any) => {
+  public renderVersionPage = (routerProps: any): ReactElement<HTMLDivElement> => {
     return (
       <AppContextConsumer>
         {function renderConsumerVersionPage({ isUserLoggedIn }: any) {

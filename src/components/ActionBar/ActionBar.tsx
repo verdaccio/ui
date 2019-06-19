@@ -1,6 +1,4 @@
-
-
-import React, { Component } from 'react';
+import React, { Component, ReactElement } from 'react';
 
 import BugReportIcon from '@material-ui/icons/BugReport';
 import DownloadIcon from '@material-ui/icons/CloudDownload';
@@ -8,7 +6,7 @@ import HomeIcon from '@material-ui/icons/Home';
 import List from '@material-ui/core/List';
 import Tooltip from '@material-ui/core/Tooltip';
 
-import { DetailContextConsumer } from '../../pages/version/Version';
+import { DetailContextConsumer, VersionPageConsumerProps } from '../../pages/version/Version';
 import { Fab, ActionListItem } from './styles';
 import { isURL } from '../../utils/url';
 
@@ -28,17 +26,17 @@ const ACTIONS = {
 };
 
 class ActionBar extends Component<any, any> {
-  render() {
+  public render(): ReactElement<HTMLElement> {
     return (
       <DetailContextConsumer>
         {context => {
-          return this.renderActionBar(context!);
+          return this.renderActionBar(context as VersionPageConsumerProps);
         }}
       </DetailContextConsumer>
     );
   }
 
-  renderIconsWithLink(link: string, component: any) {
+  private renderIconsWithLink(link: string, component: any): ReactElement<HTMLElement> {
     return (
       <a href={link} target={'_blank'}>
         {component}
@@ -46,7 +44,7 @@ class ActionBar extends Component<any, any> {
     );
   }
 
-  renderActionBarListItems = packageMeta => {
+  private renderActionBarListItems = packageMeta => {
     // @ts-ignore
     const { latest: { bugs: { url: issue } = {}, homepage, dist: { tarball } = {} } = {} } = packageMeta;
 
@@ -61,7 +59,7 @@ class ActionBar extends Component<any, any> {
       if (link && isURL(link)) {
         const fab = <Fab size={'small'}>{ACTIONS[value]['icon']}</Fab>;
         component.push(
-           // @ts-ignore
+          // @ts-ignore
           <Tooltip key={key} title={ACTIONS[value]['title']}>
             <>{this.renderIconsWithLink(link, fab)}</>
           </Tooltip>
@@ -77,7 +75,7 @@ class ActionBar extends Component<any, any> {
     );
   };
 
-  renderActionBar = ({ packageMeta = {} }) => {
+  private renderActionBar = ({ packageMeta = {} }) => {
     return <List>{this.renderActionBarListItems(packageMeta)}</List>;
   };
 }

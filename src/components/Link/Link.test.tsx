@@ -8,7 +8,7 @@ describe('<Link /> component', () => {
     to: 'https://github.com/verdaccio/ui',
   };
   test('should render the component in default state', () => {
-    const wrapper = shallow(<Link to={props.to} blank />);
+    const wrapper = shallow(<Link blank={true} to={props.to} />);
     expect(wrapper.html()).toMatchSnapshot();
   });
 });

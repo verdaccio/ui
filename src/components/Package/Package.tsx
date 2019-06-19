@@ -68,7 +68,7 @@ const Package: React.FC<Props> = ({
   time,
   version,
 }) => {
-  const renderVersionInfo = () =>
+  const renderVersionInfo = (): React.ReactNode =>
     version && (
       <OverviewItem>
         <Icon name={'version'} />
@@ -76,7 +76,7 @@ const Package: React.FC<Props> = ({
       </OverviewItem>
     );
 
-  const renderAuthorInfo = () =>
+  const renderAuthorInfo = (): React.ReactNode =>
     authorName && (
       <Author>
         <Avatar alt={authorName} src={authorAvatar} />
@@ -86,7 +86,7 @@ const Package: React.FC<Props> = ({
       </Author>
     );
 
-  const renderFileSize = () =>
+  const renderFileSize = (): React.ReactNode =>
     dist &&
     dist.unpackedSize && (
       <OverviewItem>
@@ -95,7 +95,7 @@ const Package: React.FC<Props> = ({
       </OverviewItem>
     );
 
-  const renderLicenseInfo = () =>
+  const renderLicenseInfo = (): React.ReactNode =>
     license && (
       <OverviewItem>
         <Icon name="law" />
@@ -103,7 +103,7 @@ const Package: React.FC<Props> = ({
       </OverviewItem>
     );
 
-  const renderPublishedInfo = () =>
+  const renderPublishedInfo = (): React.ReactNode =>
     time && (
       <OverviewItem>
         <Icon name="time" />
@@ -112,7 +112,7 @@ const Package: React.FC<Props> = ({
       </OverviewItem>
     );
 
-  const renderHomePageLink = () =>
+  const renderHomePageLink = (): React.ReactNode =>
     homepage &&
     isURL(homepage) && (
       <a href={homepage} target={'_blank'}>
@@ -125,7 +125,7 @@ const Package: React.FC<Props> = ({
       </a>
     );
 
-  const renderBugsLink = () =>
+  const renderBugsLink = (): React.ReactNode =>
     bugs &&
     bugs.url &&
     isURL(bugs.url) && (
@@ -139,7 +139,7 @@ const Package: React.FC<Props> = ({
       </a>
     );
 
-  const renderPrimaryComponent = () => {
+  const renderPrimaryComponent = (): React.ReactNode => {
     return (
       <Grid container={true} item={true} xs={12}>
         <Grid item={true} xs={true}>
@@ -156,8 +156,8 @@ const Package: React.FC<Props> = ({
     );
   };
 
-  const renderSecondaryComponent = () => {
-    //@ts-ignore
+  const renderSecondaryComponent = (): React.ReactNode => {
+    // @ts-ignore
     const tags = keywords.sort().map((keyword, index) => <Tag key={index}>{keyword}</Tag>);
     return (
       <>
@@ -167,8 +167,8 @@ const Package: React.FC<Props> = ({
     );
   };
 
-  const renderPackageListItemText = () => (
-    //@ts-ignore
+  const renderPackageListItemText = (): React.ReactNode => (
+    // @ts-ignore
     <PackageListItemText className="package-link" component="div" primary={renderPrimaryComponent()} secondary={renderSecondaryComponent()} />
   );
 

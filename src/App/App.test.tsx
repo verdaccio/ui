@@ -7,24 +7,20 @@ import { generateTokenWithTimeRange } from '../../jest/unit/components/__mocks__
 
 jest.mock('../utils/storage', () => {
   class LocalStorageMock {
-    constructor() {
-      // @ts-ignore : Property 'store' does not exist on type 'LocalStorageMock'
+    store: object;
+    public constructor() {
       this.store = {};
     }
-    clear() {
-      // @ts-ignore : Property 'store' does not exist on type 'LocalStorageMock'
+    public clear(): void {
       this.store = {};
     }
-    getItem(key) {
-      // @ts-ignore : Property 'store' does not exist on type 'LocalStorageMock'
+    public getItem(key): unknown {
       return this.store[key] || null;
     }
-    setItem(key, value) {
-      // @ts-ignore : Property 'store' does not exist on type 'LocalStorageMock'
+    public setItem(key, value): void {
       this.store[key] = value.toString();
     }
-    removeItem(key) {
-      // @ts-ignore : Property 'store' does not exist on type 'LocalStorageMock'
+    public removeItem(key): void {
       delete this.store[key];
     }
   }

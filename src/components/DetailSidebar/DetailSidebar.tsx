@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, { Component, ReactElement } from 'react';
 
 import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
@@ -12,21 +12,16 @@ import Engine from '../Engines/Engines';
 import Install from '../Install';
 import Repository from '../Repository/Repository';
 
-
-import { DetailContextConsumer } from '../../pages/version/Version';
+import { DetailContextConsumer, VersionPageConsumerProps } from '../../pages/version/Version';
 
 import { TitleListItem, TitleListItemText } from './styles';
 
 class DetailSidebar extends Component {
-  render() {
-    return (
-      <DetailContextConsumer>
-        {(context) => this.renderSideBar(context!)}
-      </DetailContextConsumer>
-    );
-  };
+  public render(): ReactElement<HTMLElement> {
+    return <DetailContextConsumer>{context => this.renderSideBar(context as VersionPageConsumerProps)}</DetailContextConsumer>;
+  }
 
-  renderSideBar = ({packageName, packageMeta}) => {
+  private renderSideBar = ({ packageName, packageMeta }): ReactElement<HTMLElement> => {
     return (
       <div className={'sidebar-info'}>
         <Card>
@@ -44,52 +39,49 @@ class DetailSidebar extends Component {
         </Card>
       </div>
     );
-  }
+  };
 
-  renderTitle = (packageName, packageMeta) => {
-      return (
-        <List className='detail-info'>
-          <TitleListItem alignItems='flex-start'>
-            <TitleListItemText
-              primary={<b>{packageName}</b>}
-              secondary={packageMeta.latest.description}
-            />
-          </TitleListItem>
-        </List>
-      );
-  }
+  private renderTitle = (packageName, packageMeta) => {
+    return (
+      <List className="detail-info">
+        <TitleListItem alignItems="flex-start">
+          <TitleListItemText primary={<b>{packageName}</b>} secondary={packageMeta.latest.description} />
+        </TitleListItem>
+      </List>
+    );
+  };
 
-  renderCopyCLI = () => {
+  private renderCopyCLI = () => {
     return <Install />;
-  }
+  };
 
-  renderMaintainers = () => {
-    return <Developers type='maintainers' />;
-  }
+  private renderMaintainers = () => {
+    return <Developers type="maintainers" />;
+  };
 
-  renderContributors = () => {
-    return <Developers type='contributors' />;
-  }
-  
-  renderRepository = () => {
+  private renderContributors = () => {
+    return <Developers type="contributors" />;
+  };
+
+  private renderRepository = () => {
     return <Repository />;
-  }
+  };
 
-  renderAuthor = () => {
+  private renderAuthor = () => {
     return <Author />;
-  }
+  };
 
-  renderEngine = () => {
+  private renderEngine = () => {
     return <Engine />;
-  }
+  };
 
-  renderDist = () => {
+  private renderDist = () => {
     return <Dist />;
-  }
+  };
 
-  renderActionBar = () => {
+  private renderActionBar = () => {
     return <ActionBar />;
-  }
+  };
 }
 
 export default DetailSidebar;

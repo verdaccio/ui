@@ -1,29 +1,33 @@
-
 import React from 'react';
 import { makeStyles } from '@material-ui/styles';
 
-import logo from './img/logo.svg'
+import logo from './img/logo.svg';
 
-const sizing = {
+export interface LogoSizing {
+  md: number;
+  sm: number;
+}
+
+const sizing: LogoSizing = {
   md: 90,
   sm: 40,
 };
 
 interface Props {
-  size?: keyof typeof sizing;
+  size?: keyof LogoSizing;
 }
 
 const useStyles = makeStyles({
   logo: ({ size }: Props) => ({
     display: 'inline-block',
-    width: sizing[size!],
-    height: sizing[size!]
+    width: sizing[size as string],
+    height: sizing[size as string],
   }),
 });
 
 const Logo: React.FC<Props> = ({ size }) => {
   const classes = useStyles({ size });
-  return <img src={logo} alt="Verdaccio" className={classes.logo} />;
+  return <img alt="Verdaccio" className={classes.logo} src={logo} />;
 };
 
 Logo.defaultProps = {
