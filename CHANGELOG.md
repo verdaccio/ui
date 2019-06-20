@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="0.2.0"></a>
+# [0.2.0](https://github.com/verdaccio/ui/compare/v0.1.11...v0.2.0) (2019-06-20)
+
+
+### Features
+
+* migrating flow to typescript ([#47](https://github.com/verdaccio/ui/issues/47)) ([6b5d0b7](https://github.com/verdaccio/ui/commit/6b5d0b7))
+
+
+
 <a name="0.1.11"></a>
 ## [0.1.11](https://github.com/verdaccio/ui/compare/v0.1.10...v0.1.11) (2019-06-10)
 
