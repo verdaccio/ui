@@ -1,7 +1,3 @@
-/**
- * @prettier
- */
-
 const fs = require('fs');
 const startServer = require('verdaccio').default;
 const yalm = require('js-yaml');

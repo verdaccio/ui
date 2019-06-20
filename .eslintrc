@@ -1,50 +1,49 @@
 {
-  "plugins": [
-    "babel",
-    "react",
-    "flowtype",
-    "jest",
-    "verdaccio",
-    "jsx-a11y"
-  ],
   "extends": [
-    "eslint:recommended",
-    "google",
-    "plugin:flowtype/recommended",
+    "@verdaccio",
+    "plugin:react/recommended",
     "plugin:jest/recommended",
     "plugin:prettier/recommended",
-    "plugin:react/recommended",
     "plugin:verdaccio/recommended",
     "plugin:jsx-a11y/recommended"
   ],
+  "plugins": [
+    "react",
+    "jest",
+    "prettier",
+    "verdaccio",
+    "jsx-a11y"
+  ],
   "settings": {
     "react": {
-      "pragma": "React",
-      "version": "16.4.2",
-      "flowVersion": "0.81.0"
+      "version":  "detect"
     }
   },
-  "parser": "babel-eslint",
   "parserOptions": {
-    "sourceType": "module",
-    "ecmaVersion": 7,
     "ecmaFeatures": {
-      "impliedStrict": true,
       "jsx": true
     }
   },
-  "env": {
-    "browser": true,
-    "node": true,
-    "es6": true,
-    "jest": true
-  },
-  "globals": {
-    "__APP_VERSION__": true
-  },
   "rules": {
-    "babel/no-invalid-this": 1,
-    "prettier/prettier": ["error", null, "@prettier"],
+    "babel/no-invalid-this": 0,
+    "no-invalid-this": 0,
+    "no-console": ["error", { "allow": ["warn", "error"] }],
+    "prettier/prettier": "error",
+    "@typescript-eslint/no-var-requires": 0,
+    "@typescript-eslint/indent": 0,
+    "@typescript-eslint/explicit-member-accessibility": ["warn",
+      {
+        "accessibility": "explicit",
+        "overrides": {
+          "constructors": "off"
+        }
+      }
+    ],
+    "@typescript-eslint/explicit-function-return-type": ["warn",
+      {
+          "allowExpressions": true,
+          "allowTypedFunctionExpressions": true
+    }],
     "react/no-deprecated": 1,
     "react/jsx-no-target-blank": 1,
     "react/destructuring-assignment": ["error", "always"],
@@ -88,8 +87,9 @@
     "react/jsx-no-duplicate-props": ["error"],
     "react/jsx-no-literals": ["error"],
     "react/jsx-no-undef": ["error"],
+    "react/prop-types": 0,
     "react/jsx-one-expression-per-line": ["error", {"allow": "single-child"}],
-    "react/jsx-curly-brace-presence": ["error", { "props": "always", "children": "ignore" }],
+    "react/jsx-curly-brace-presence": ["warn", { "props": "ignore", "children": "ignore" }],
     "react/jsx-pascal-case": ["error"],
     "react/jsx-props-no-multi-spaces": ["error"],
     "react/jsx-sort-default-props": ["error"],
@@ -106,23 +106,19 @@
       2,
       "always"
     ],
-    "semi": ["error"],
-    "comma-dangle": ["error"],
-    "camelcase": 0,
-    "no-useless-escape": ["error"],
-    "no-invalid-this": 0,
-    "handle-callback-err": ["error"],
-    "no-fallthrough": ["error"],
-    "no-new-require": ["error"],
-    "max-len": ["error", 160],
-    "require-jsdoc": 0,
-    "valid-jsdoc": 0,
-    "prefer-spread": 1,
-    "prefer-rest-params": 1,
-    "linebreak-style": 0,
-    "quote-props":["error", "as-needed"],
     "verdaccio/jsx-no-style": ["warn"],
     "verdaccio/jsx-spread": ["warn"],
-    "jest/expect-expect": 0
+    "jest/expect-expect": 0,
+    "quote-props":["error", "as-needed"],
+    "max-len": ["error", 160],
+    "prefer-spread": 1,
+    "linebreak-style": 0
+  },
+  "globals": {
+    "__DEBUG__": true
+  },
+  "env": {
+    "browser": true,
+    "jest/globals": true
   }
 }

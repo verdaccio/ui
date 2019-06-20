@@ -76,6 +76,14 @@ jobs:
           key: *repo_key
           paths:
             - ~/ui-theme
+  test_bundlesize:
+    <<: *defaults
+    <<: *default_executor
+    steps:
+      - *restore_repo
+      - run:
+          name: Test BundleSize
+          command: yarn test:size
 
   test_node11:
     <<: *defaults
@@ -84,7 +92,7 @@ jobs:
       - *restore_repo
       - run:
           name: Test with Node 11
-          command: yarn run test
+          command: yarn test
 
   test_node8:
     <<: *defaults
@@ -156,11 +164,15 @@ workflows:
           requires:
             - prepare
           <<: *ignore_non_dev_branches
-      - coverage:
+      - test_bundlesize:
           requires:
             - test_node11
             - test_node8
             - test_node10
+          <<: *ignore_non_dev_branches
+      - coverage:
+          requires:
+            - test_bundlesize
           <<: *ignore_non_dev_branches
       - publish_package:
           requires:
