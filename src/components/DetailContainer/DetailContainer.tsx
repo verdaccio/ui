@@ -34,14 +34,14 @@ class DetailContainer extends Component<any, DetailContainerState> {
     this.setState({ tabPosition });
   };
 
-  private renderListTabs(): React.ReactElement<HTMLElement> {
+  private renderListTabs(tabPosition: number): React.ReactElement<HTMLElement> {
     return (
-      <Fragment>
+      <Tabs indicatorColor={'primary'} onChange={this.handleChange} textColor={'primary'} value={tabPosition} variant={'fullWidth'}>
         <Tab id={'readme-tab'} label={'Readme'} />
         <Tab id={'dependencies-tab'} label={'Dependencies'} />
         <Tab id={'versions-tab'} label={'Versions'} />
         <Tab id={'uplinks-tab'} label={'Uplinks'} />
-      </Fragment>
+      </Tabs>
     );
   }
 
@@ -51,9 +51,7 @@ class DetailContainer extends Component<any, DetailContainerState> {
     return (
       <Fragment>
         <Content>
-          <Tabs indicatorColor={'primary'} onChange={this.handleChange} textColor={'primary'} value={tabPosition} variant={'fullWidth'}>
-            {this.renderListTabs()}
-          </Tabs>
+          {this.renderListTabs(tabPosition)}
           <br />
           {tabPosition === 0 && this.renderReadme(readMe)}
           {tabPosition === 1 && <Dependencies />}
