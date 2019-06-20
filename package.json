@@ -109,6 +109,32 @@
     "verdaccio-plugin",
     "verdaccio-theme"
   ],
+  "bundlesize": [
+    {
+      "path": "./static/vendors.*.js",
+      "maxSize": "180 kB"
+    },
+    {
+      "path": "./static/main.*.js",
+      "maxSize": "30 kB"
+    },
+    {
+      "path": "./static/[0-9].*.{js,css}",
+      "maxSize": "30 kB"
+    },
+    {
+      "path": "./static/*.svg",
+      "maxSize": "1.3 kB"
+    },
+    {
+      "path": "./static/*.png",
+      "maxSize": "15 kB"
+    },
+    {
+      "path": "./static/fonts/*.{woff,woff2}",
+      "maxSize": "20 kB"
+    }
+  ],
   "scripts": {
     "type-check": "tsc --noEmit",
     "type-check:watch": "npm run type-check -- --watch",
@@ -120,6 +146,7 @@
     "lint:css": "stylelint 'src/**/styles.ts'",
     "coverage:publish": "codecov",
     "pre:webpack": "rimraf static/*",
+    "prepublish": "in-publish && npm run build || not-in-publish",
     "dev:web": "cross-env BABEL_ENV=ui babel-node tools/dev.server.js",
     "verdaccio:server": "node tools/verdaccio.js",
     "build": "npm run pre:webpack && cross-env BABEL_ENV=ui webpack --config tools/webpack.prod.config.babel.js",
