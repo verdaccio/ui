@@ -78,7 +78,7 @@ jobs:
             - ~/ui-theme
   test_bundlesize:
     <<: *defaults
-    <<: *node11_executor
+    <<: *default_executor
     steps:
       - *restore_repo
       - run:
