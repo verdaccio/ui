@@ -3,31 +3,44 @@ import Grid from '@material-ui/core/Grid';
 import Loading from '../../components/Loading/Loading';
 import DetailContainer from '../../components/DetailContainer/DetailContainer';
 import DetailSidebar from '../../components/DetailSidebar/DetailSidebar';
-import { callDetailPage, DetailPage } from '../../utils/calls';
+import { callDetailPage } from '../../utils/calls';
 import { getRouterPackageName } from '../../utils/package';
 import NotFound from '../../components/NotFound';
+import { PackageMetaInterface } from '../../../types/packageMeta';
 
 export interface DetailContextProps {
-  packageMeta: any;
-  readMe: any;
+  packageMeta: PackageMetaInterface;
+  readMe: string;
   packageName: string;
   enableLoading: () => void;
 }
 
-export const DetailContext = React.createContext<DetailContextProps | null>(null);
+export const DetailContext = React.createContext<Partial<DetailContextProps>>({});
 
 export interface VersionPageConsumerProps {
-  packageMeta: any;
-  readMe: any;
-  packageName: any;
-  enableLoading: any;
+  packageMeta: PackageMetaInterface;
+  readMe: string;
+  packageName: string;
+  enableLoading: () => void;
 }
 
-export const DetailContextProvider: Provider<VersionPageConsumerProps | null> = DetailContext.Provider;
-export const DetailContextConsumer: Consumer<VersionPageConsumerProps | null> = DetailContext.Consumer;
+export const DetailContextProvider: Provider<Partial<VersionPageConsumerProps>> = DetailContext.Provider;
+export const DetailContextConsumer: Consumer<Partial<VersionPageConsumerProps>> = DetailContext.Consumer;
 
-class VersionPage extends Component<any, any> {
-  constructor(props: any) {
+interface PropsInterface {
+  match: boolean;
+}
+
+interface StateInterface {
+  readMe: string;
+  packageName: string;
+  packageMeta: PackageMetaInterface | null;
+  isLoading: boolean;
+  notFound: boolean;
+}
+
+class VersionPage extends Component<PropsInterface, StateInterface> {
+  constructor(props) {
     super(props);
 
     this.state = {
@@ -39,7 +52,7 @@ class VersionPage extends Component<any, any> {
     };
   }
 
-  public static getDerivedStateFromProps(nextProps: any, prevState: any): any {
+  public static getDerivedStateFromProps(nextProps, prevState): { packageName?: string; isLoading: boolean; notFound?: boolean } | null {
     const { match } = nextProps;
     const packageName = getRouterPackageName(match);
 
@@ -65,7 +78,7 @@ class VersionPage extends Component<any, any> {
   }
 
   /* eslint no-unused-vars: 0 */
-  public async componentDidUpdate(nextProps: any, prevState: any): Promise<void> {
+  public async componentDidUpdate(nextProps, prevState: StateInterface): Promise<void> {
     const { packageName } = this.state;
     if (packageName !== prevState.packageName) {
       const { readMe, packageMeta } = await callDetailPage(packageName);

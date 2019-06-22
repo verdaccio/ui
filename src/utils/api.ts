@@ -6,9 +6,9 @@ import '../../types';
  * @param {object} response
  * @returns {promise}
  */
-function handleResponseType(response): Promise<any> {
+function handleResponseType(response: Response): Promise<[boolean, Blob | string]> | Promise<void> {
   if (response.headers) {
-    const contentType = response.headers.get('Content-Type');
+    const contentType = response.headers.get('Content-Type') as string;
     if (contentType.includes('application/pdf')) {
       return Promise.all([response.ok, response.blob()]);
     }

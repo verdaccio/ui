@@ -13,7 +13,7 @@ import { Heading, GithubLink, RepositoryListItem } from './styles';
 import git from './img/git.png';
 import { isURL } from '../../utils/url';
 
-class Repository extends Component<any, any> {
+class Repository extends Component {
   public render(): ReactElement<HTMLElement> {
     return (
       <DetailContextConsumer>
@@ -33,12 +33,7 @@ class Repository extends Component<any, any> {
   }
 
   private renderRepository = packageMeta => {
-    const {
-      repository: {
-        // @ts-ignore
-        url,
-      } = {},
-    } = packageMeta.latest;
+    const { repository: { url = null } = {} } = packageMeta.latest;
 
     if (!url || isURL(url) === false) {
       return null;

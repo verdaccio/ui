@@ -12,7 +12,12 @@ const NotFound = asyncComponent(() => import('./components/NotFound'));
 const VersionPackage = asyncComponent(() => import('./pages/version/Version'));
 const HomePage = asyncComponent(() => import('./pages/home'));
 
-class RouterApp extends Component<any, any> {
+interface RouterAppProps {
+  onLogout: () => void;
+  onToggleLoginModal: () => void;
+}
+
+class RouterApp extends Component<RouterAppProps> {
   public render(): ReactElement<HTMLDivElement> {
     return (
       <Router history={history}>

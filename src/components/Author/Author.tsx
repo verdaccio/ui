@@ -1,4 +1,4 @@
-import React, { Component, ReactNode } from 'react';
+import React, { Component, ReactNode, ReactElement } from 'react';
 
 import Avatar from '@material-ui/core/Avatar';
 import List from '@material-ui/core/List';
@@ -8,18 +8,18 @@ import { DetailContextConsumer } from '../../pages/version/Version';
 import { Heading, AuthorListItem } from './styles';
 import { isEmail } from '../../utils/url';
 
-class Authors extends Component<any, any> {
-  render() {
+class Authors extends Component {
+  public render(): ReactElement<HTMLElement> {
     return (
       <DetailContextConsumer>
-        {(context: any) => {
+        {context => {
           return context && context.packageMeta && this.renderAuthor(context.packageMeta);
         }}
       </DetailContextConsumer>
     );
   }
 
-  renderLinkForMail(email: string, avatarComponent: ReactNode, packageName: string, version: string) {
+  public renderLinkForMail(email: string, avatarComponent: ReactNode, packageName: string, version: string): ReactElement<HTMLElement> | ReactNode {
     if (!email || isEmail(email) === false) {
       return avatarComponent;
     }
@@ -31,7 +31,7 @@ class Authors extends Component<any, any> {
     );
   }
 
-  renderAuthor = packageMeta => {
+  public renderAuthor = packageMeta => {
     const { author, name: packageName, version } = packageMeta.latest;
 
     if (!author) {

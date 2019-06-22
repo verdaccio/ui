@@ -23,10 +23,10 @@ interface Dist {
   unpackedSize: number;
 }
 
-interface Props {
+export interface PackageInterface {
   name: string;
   version: string;
-  time: string;
+  time?: number | string;
   author: Author;
   description?: string;
   keywords?: string[];
@@ -35,6 +35,7 @@ interface Props {
   bugs?: Bugs;
   dist?: Dist;
 }
+// interface Props {} & PackageInterface;
 
 import {
   Author,
@@ -56,7 +57,7 @@ import {
 } from './styles';
 import { isURL } from '../../utils/url';
 
-const Package: React.FC<Props> = ({
+const Package: React.FC<PackageInterface> = ({
   author: { name: authorName, avatar: authorAvatar },
   bugs,
   description,
