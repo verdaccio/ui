@@ -39,7 +39,7 @@ interface StateInterface {
   notFound: boolean;
 }
 
-class VersionPage extends Component<PropsInterface, StateInterface> {
+class VersionPage extends Component<PropsInterface, Partial<StateInterface>> {
   constructor(props) {
     super(props);
 
@@ -81,7 +81,7 @@ class VersionPage extends Component<PropsInterface, StateInterface> {
   public async componentDidUpdate(nextProps, prevState: StateInterface): Promise<void> {
     const { packageName } = this.state;
     if (packageName !== prevState.packageName) {
-      const { readMe, packageMeta } = await callDetailPage(packageName);
+      const { readMe, packageMeta } = (await callDetailPage(packageName)) as Partial<StateInterface>;
       this.setState({
         readMe,
         packageMeta,
@@ -125,7 +125,7 @@ class VersionPage extends Component<PropsInterface, StateInterface> {
     });
 
     try {
-      const { readMe, packageMeta } = await callDetailPage(packageName);
+      const { readMe, packageMeta } = (await callDetailPage(packageName)) as Partial<StateInterface>;
       this.setState({
         readMe,
         packageMeta,

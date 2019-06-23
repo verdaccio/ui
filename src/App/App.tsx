@@ -19,7 +19,7 @@ export const AppContext = React.createContext<null>(null);
 export const AppContextProvider = AppContext.Provider;
 export const AppContextConsumer = AppContext.Consumer;
 
-export default class App extends Component<any, any> {
+export default class App extends Component {
   public state = {
     error: {},
     // @ts-ignore

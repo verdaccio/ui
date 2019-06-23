@@ -7,7 +7,7 @@ import { generateTokenWithTimeRange } from '../../jest/unit/components/__mocks__
 
 jest.mock('../utils/storage', () => {
   class LocalStorageMock {
-    store: object;
+    private store: object;
     public constructor() {
       this.store = {};
     }
