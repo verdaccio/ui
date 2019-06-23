@@ -67,7 +67,7 @@ const Icon: React.FC<Props> = ({ className, name, size = 'sm', img = false, poin
   // @ts-ignore
   const title = capitalize(name);
   return img ? (
-    <ImgWrapper className={className} name={name} pointer={pointer} size={size} title={title} {...props}>
+    <ImgWrapper className={className} pointer={pointer} size={size} title={title} {...props}>
       <Img alt={title} src={Icons[name]} />
     </ImgWrapper>
   ) : (

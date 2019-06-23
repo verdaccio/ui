@@ -3,7 +3,7 @@ import ListItemText from '@material-ui/core/ListItemText';
 import React, { Component } from 'react';
 
 // @ts-ignore
-import { DetailContextConsumer } from '../../pages/version/Version';
+import { DetailContextConsumer, VersionPageConsumerProps } from '../../pages/version/Version';
 import CopyToClipBoard from '../CopyToClipBoard';
 
 // logos of package managers
@@ -14,17 +14,17 @@ import yarn from './img/yarn.svg';
 import { Heading, InstallItem, PackageMangerAvatar } from './styles';
 
 class Install extends Component {
-  public render() {
+  public render(): JSX.Element {
     return (
       <DetailContextConsumer>
-        {(context: any) => {
+        {(context: Partial<VersionPageConsumerProps>) => {
           return context && context.packageName && this.renderCopyCLI(context);
         }}
       </DetailContextConsumer>
     );
   }
 
-  public renderCopyCLI = ({ packageName }: { packageName: string }) => {
+  public renderCopyCLI = ({ packageName = '' }: Partial<VersionPageConsumerProps>) => {
     return (
       <>
         <List subheader={<Heading variant={'subheading'}>{'Installation'}</Heading>}>{this.renderListItems(packageName)}</List>

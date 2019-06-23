@@ -1,6 +1,6 @@
 import styled, { css } from 'react-emotion';
 
-const getSize = (size?: 'md' | 'sm') => {
+const getSize = (size: 'md' | 'sm' | string): string => {
   switch (size) {
     case 'md':
       return `
@@ -15,7 +15,7 @@ const getSize = (size?: 'md' | 'sm') => {
   }
 };
 
-const commonStyle = ({ size = 'sm', pointer, modifiers }: any) => css`
+const commonStyle = ({ size = 'sm' as 'md' | 'sm' | string, pointer, modifiers = null }): string => css`
   && {
     display: inline-block;
     cursor: ${pointer ? 'pointer' : 'default'};

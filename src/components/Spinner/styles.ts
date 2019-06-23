@@ -1,5 +1,5 @@
 import CircularProgress from '@material-ui/core/CircularProgress';
-import styled, { css, Themed } from 'react-emotion';
+import styled, { css } from 'react-emotion';
 
 import colors from '../../utils/styles/colors';
 
@@ -8,7 +8,7 @@ export const Wrapper = styled('div')`
     display: flex;
     align-items: center;
     justify-content: center;
-    ${(props): Themed<any, object> =>
+    ${props =>
       // @ts-ignore
       props.centered &&
       css`

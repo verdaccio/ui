@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
 import Button from '@material-ui/core/Button';
 import DialogTitle from '@material-ui/core/DialogTitle';
 import Dialog from '@material-ui/core/Dialog';
@@ -15,21 +14,34 @@ import FormHelperText from '@material-ui/core/FormHelperText';
 // @ts-ignore
 import classes from './login.scss';
 
-export default class LoginModal extends Component<any, any> {
-  static propTypes = {
-    visibility: PropTypes.bool,
-    error: PropTypes.object,
-    onCancel: PropTypes.func,
-    onSubmit: PropTypes.func,
-  };
+interface FormFields {
+  required: boolean;
+  pristine: boolean;
+  helperText: string;
+  value: string;
+}
+interface FormError {
+  type: string;
+  title: string;
+  description: string;
+}
 
-  static defaultProps = {
-    error: {},
-    onCancel: () => {},
-    onSubmit: () => {},
-    visibility: true,
-  };
+interface LoginModalProps {
+  visibility: boolean;
+  error: Partial<FormError>;
+  onCancel: () => void;
+  onSubmit: (username: string, password: string) => void;
+}
 
+interface LoginModalState {
+  form: {
+    username: Partial<FormFields>;
+    password: Partial<FormFields>;
+  };
+  error: FormError;
+}
+
+export default class LoginModal extends Component<Partial<LoginModalProps>, LoginModalState> {
   constructor(props) {
     super(props);
     this.state = {
@@ -51,11 +63,28 @@ export default class LoginModal extends Component<any, any> {
     };
   }
 
+  public render(): JSX.Element {
+    const { visibility, onCancel, error } = this.props as LoginModalProps;
+    return (
+      <Dialog fullWidth={true} id={'login--form-container'} maxWidth={'xs'} onClose={onCancel} open={visibility}>
+        <form noValidate={true} onSubmit={this.handleValidateCredentials}>
+          <DialogTitle>{'Login'}</DialogTitle>
+          <DialogContent>
+            {this.renderLoginError(error)}
+            {this.renderNameField()}
+            {this.renderPasswordField()}
+          </DialogContent>
+          {this.renderActions()}
+        </form>
+      </Dialog>
+    );
+  }
+
   /**
    * set login modal's username and password to current state
    * Required to login
    */
-  setCredentials = (name, e) => {
+  public setCredentials = (name, e) => {
     const { form } = this.state;
     this.setState({
       form: {
@@ -69,15 +98,15 @@ export default class LoginModal extends Component<any, any> {
     });
   };
 
-  setUsername = event => {
+  public handleUsernameChange = event => {
     this.setCredentials('username', event);
   };
 
-  setPassword = event => {
+  public handlePasswordChange = event => {
     this.setCredentials('password', event);
   };
 
-  validateCredentials = event => {
+  public handleValidateCredentials = event => {
     const { form } = this.state;
     // prevents default submit behavior
     event.preventDefault();
@@ -89,7 +118,7 @@ export default class LoginModal extends Component<any, any> {
             ...acc,
             ...{ [key]: { ...form[key], pristine: false } },
           }),
-          {}
+          { username: {}, password: {} }
         ),
       },
       () => {
@@ -100,10 +129,14 @@ export default class LoginModal extends Component<any, any> {
     );
   };
 
-  submitCredentials = async () => {
+  public submitCredentials = async () => {
     const { form } = this.state;
+    const username = (form.username && form.username.value) || '';
+    const password = (form.password && form.password.value) || '';
     const { onSubmit } = this.props;
-    await onSubmit(form.username.value, form.password.value);
+    if (onSubmit) {
+      await onSubmit(username, password);
+    }
     // let's wait for API response and then set
     // username and password filed to empty state
     this.setState({
@@ -112,12 +145,12 @@ export default class LoginModal extends Component<any, any> {
           ...acc,
           ...{ [key]: { ...form[key], value: '', pristine: true } },
         }),
-        {}
+        { username: {}, password: {} }
       ),
     });
   };
 
-  renderErrorMessage(title, description) {
+  private renderErrorMessage(title, description): JSX.Element {
     return (
       <span>
         <div>
@@ -128,7 +161,7 @@ export default class LoginModal extends Component<any, any> {
     );
   }
 
-  renderMessage(title, description) {
+  private renderMessage(title, description): JSX.Element {
     return (
       <div className={classes.loginErrorMsg} id={'client-snackbar'}>
         <ErrorIcon className={classes.loginIcon} />
@@ -137,37 +170,37 @@ export default class LoginModal extends Component<any, any> {
     );
   }
 
-  renderLoginError({ type, title, description }) {
+  private renderLoginError({ type, title, description }: Partial<FormError>): JSX.Element | false {
     return type === 'error' && <SnackbarContent className={classes.loginError} message={this.renderMessage(title, description)} />;
   }
 
-  renderNameField = () => {
+  private renderNameField = () => {
     const {
       form: { username },
     } = this.state;
     return (
       <FormControl error={!username.value && !username.pristine} fullWidth={true} required={username.required}>
         <InputLabel htmlFor={'username'}>{'Username'}</InputLabel>
-        <Input id={'login--form-username'} onChange={this.setUsername} placeholder={'Your username'} value={username.value} />
+        <Input id={'login--form-username'} onChange={this.handleUsernameChange} placeholder={'Your username'} value={username.value} />
         {!username.value && !username.pristine && <FormHelperText id={'username-error'}>{username.helperText}</FormHelperText>}
       </FormControl>
     );
   };
 
-  renderPasswordField = () => {
+  private renderPasswordField = () => {
     const {
       form: { password },
     } = this.state;
     return (
       <FormControl error={!password.value && !password.pristine} fullWidth={true} required={password.required} style={{ marginTop: '8px' }}>
         <InputLabel htmlFor={'password'}>{'Password'}</InputLabel>
-        <Input id={'login--form-password'} onChange={this.setPassword} placeholder={'Your strong password'} type={'password'} value={password.value} />
+        <Input id={'login--form-password'} onChange={this.handlePasswordChange} placeholder={'Your strong password'} type={'password'} value={password.value} />
         {!password.value && !password.pristine && <FormHelperText id={'password-error'}>{password.helperText}</FormHelperText>}
       </FormControl>
     );
   };
 
-  renderActions = () => {
+  private renderActions = () => {
     const {
       form: { username, password },
     } = this.state;
@@ -183,21 +216,4 @@ export default class LoginModal extends Component<any, any> {
       </DialogActions>
     );
   };
-
-  render() {
-    const { visibility, onCancel, error } = this.props;
-    return (
-      <Dialog fullWidth={true} id={'login--form-container'} maxWidth={'xs'} onClose={onCancel} open={visibility}>
-        <form noValidate={true} onSubmit={this.validateCredentials}>
-          <DialogTitle>{'Login'}</DialogTitle>
-          <DialogContent>
-            {this.renderLoginError(error)}
-            {this.renderNameField()}
-            {this.renderPasswordField()}
-          </DialogContent>
-          {this.renderActions()}
-        </form>
-      </Dialog>
-    );
-  }
 }
