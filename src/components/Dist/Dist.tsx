@@ -2,22 +2,23 @@ import React, { Component } from 'react';
 
 import List from '@material-ui/core/List';
 
-import { DetailContextConsumer } from '../../pages/version/Version';
+import { DetailContextConsumer, VersionPageConsumerProps } from '../../pages/version/Version';
 import { Heading, DistListItem, DistChips } from './styles';
 import fileSizeSI from '../../utils/file-size';
+import { PackageMetaInterface } from 'types/packageMeta';
 
-class Dist extends Component<any, any> {
+class Dist extends Component {
   public render(): JSX.Element {
     return (
       <DetailContextConsumer>
-        {(context: any) => {
-          return this.renderDist(context);
+        {(context: Partial<VersionPageConsumerProps>) => {
+          return context && context.packageMeta && this.renderDist(context.packageMeta);
         }}
       </DetailContextConsumer>
     );
   }
 
-  private renderChips(dist: any, license: string): JSX.Element | never[] {
+  private renderChips(dist, license: string): JSX.Element | never[] {
     const distDict = {
       'file-count': dist.fileCount,
       size: dist.unpackedSize && fileSizeSI(dist.unpackedSize),
@@ -43,8 +44,8 @@ class Dist extends Component<any, any> {
     return chipsList;
   }
 
-  private renderDist = ({ packageMeta }: any) => {
-    const { dist = {}, license } = packageMeta.latest;
+  private renderDist = (packageMeta: PackageMetaInterface) => {
+    const { dist, license } = packageMeta && packageMeta.latest;
 
     return (
       <List subheader={<Heading variant="subheading">{'Latest Distribution'}</Heading>}>

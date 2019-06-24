@@ -8,7 +8,7 @@ import { DIST_TAGS } from '../../../lib/constants';
 
 const NOT_AVAILABLE = 'Not available';
 
-class Versions extends React.PureComponent<any> {
+class Versions extends React.PureComponent {
   public render(): ReactElement<HTMLDivElement> {
     return (
       <DetailContextConsumer>

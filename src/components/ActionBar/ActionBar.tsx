@@ -25,7 +25,7 @@ const ACTIONS = {
   },
 };
 
-class ActionBar extends Component<any, any> {
+class ActionBar extends Component {
   public render(): ReactElement<HTMLElement> {
     return (
       <DetailContextConsumer>
@@ -36,7 +36,7 @@ class ActionBar extends Component<any, any> {
     );
   }
 
-  private renderIconsWithLink(link: string, component: any): ReactElement<HTMLElement> {
+  private renderIconsWithLink(link: string, component: JSX.Element): ReactElement<HTMLElement> {
     return (
       <a href={link} target={'_blank'}>
         {component}

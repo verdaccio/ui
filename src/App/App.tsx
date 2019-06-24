@@ -15,7 +15,7 @@ import '../styles/main.scss';
 import 'normalize.css';
 import Footer from '../components/Footer';
 
-export const AppContext = React.createContext<null>(null);
+export const AppContext = React.createContext<{}>({});
 export const AppContextProvider = AppContext.Provider;
 export const AppContextConsumer = AppContext.Consumer;
 
@@ -49,7 +49,7 @@ export default class App extends Component {
   public render(): React.ReactElement<HTMLDivElement> {
     const { isLoading, isUserLoggedIn, packages, logoUrl, user, scope } = this.state;
 
-    const context: any = { isUserLoggedIn, packages, logoUrl, user, scope };
+    const context = { isUserLoggedIn, packages, logoUrl, user, scope };
 
     return (
       // @ts-ignore

@@ -6,10 +6,11 @@ import { RouteComponentProps, withRouter } from 'react-router-dom';
 
 import PackageImg from './img/package.svg';
 import { Card, EmptyPackage, Heading, Inner, List, Wrapper } from './styles';
+import { Breakpoint } from '@material-ui/core/styles/createBreakpoints';
 
 export const NOT_FOUND_TEXT = "Sorry, we couldn't find it...";
 
-export type NotFoundProps = RouteComponentProps & { width: any; history: any };
+export type NotFoundProps = RouteComponentProps & { width: Breakpoint; history };
 
 const NotFound: React.FC<NotFoundProps> = ({ history, width }) => {
   const handleGoTo = (to: string): (() => void | undefined) => () => {

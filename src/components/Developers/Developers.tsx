@@ -11,8 +11,11 @@ import { isEmail } from '../../utils/url';
 interface Props {
   type: 'contributors' | 'maintainers';
 }
+interface State {
+  visibleDevs: number;
+}
 
-class Developers extends Component<Props, any> {
+class Developers extends Component<Props, State> {
   public state = {
     visibleDevs: 6,
   };
@@ -20,9 +23,9 @@ class Developers extends Component<Props, any> {
   public render(): JSX.Element {
     return (
       <DetailContextConsumer>
-        {({ packageMeta }: any) => {
+        {({ packageMeta }) => {
           const { type } = this.props;
-          const developerType = packageMeta.latest[type];
+          const developerType = packageMeta && packageMeta.latest[type];
           if (!developerType || developerType.length === 0) return null;
           return this.renderDevelopers(developerType, packageMeta);
         }}

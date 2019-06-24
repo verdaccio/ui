@@ -7,8 +7,8 @@ import MenuItem from '@material-ui/core/MenuItem';
 import { fontWeight } from '../../utils/styles/sizes';
 import { Wrapper, InputField, SuggestionContainer } from './styles';
 
-export interface Props {
-  suggestions: any[];
+interface Props {
+  suggestions: unknown[];
   suggestionsLoading?: boolean;
   suggestionsLoaded?: boolean;
   suggestionsError?: boolean;
@@ -16,12 +16,12 @@ export interface Props {
   color?: string;
   value?: string;
   placeholder?: string;
-  startAdornment?: any;
+  startAdornment?: JSX.Element;
   disableUnderline?: boolean;
   onChange?: (event: KeyboardEvent<HTMLInputElement>, { newValue, method }: { newValue: string; method: string }) => void;
   onSuggestionsFetch?: ({ value: string }) => Promise<void>;
   onCleanSuggestions?: () => void;
-  onClick?: (event: KeyboardEvent<HTMLInputElement>, { suggestionValue, method }: { suggestionValue: any[]; method: string }) => void;
+  onClick?: (event: KeyboardEvent<HTMLInputElement>, { suggestionValue, method }: { suggestionValue: string[]; method: string }) => void;
   onKeyDown?: (event: KeyboardEvent<HTMLInputElement>) => void;
   onBlur?: (event: KeyboardEvent<HTMLInputElement>) => void;
 }

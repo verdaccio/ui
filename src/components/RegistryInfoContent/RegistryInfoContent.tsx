@@ -30,7 +30,7 @@ class RegistryInfoContent extends Component<Props, State> {
     return <div>{this.renderTabs()}</div>;
   }
 
-  private handleChange = (event: any, tabPosition: number) => {
+  private handleChange = (event: React.ChangeEvent<{}>, tabPosition: number) => {
     event.preventDefault();
     this.setState({ tabPosition });
   };

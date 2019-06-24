@@ -1,6 +1,7 @@
 import styled, { css } from 'react-emotion';
+import { Breakpoint } from '@material-ui/core/styles/createBreakpoints';
 
-const getSize = (size: 'md' | 'sm' | string): string => {
+const getSize = (size: Breakpoint): string => {
   switch (size) {
     case 'md':
       return `
@@ -15,7 +16,7 @@ const getSize = (size: 'md' | 'sm' | string): string => {
   }
 };
 
-const commonStyle = ({ size = 'sm' as 'md' | 'sm' | string, pointer, modifiers = null }): string => css`
+const commonStyle = ({ size = 'sm' as Breakpoint, pointer, modifiers = null }): string => css`
   && {
     display: inline-block;
     cursor: ${pointer ? 'pointer' : 'default'};
