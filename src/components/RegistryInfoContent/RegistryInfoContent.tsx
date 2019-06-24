@@ -22,15 +22,15 @@ function TabContainer({ children }) {
 }
 
 class RegistryInfoContent extends Component<Props, State> {
-  state = {
+  public state = {
     tabPosition: 0,
   };
 
-  render() {
+  public render() {
     return <div>{this.renderTabs()}</div>;
   }
 
-  renderTabs() {
+  private renderTabs() {
     const { scope, registryUrl } = this.props;
     const { tabPosition } = this.state;
 
@@ -48,7 +48,7 @@ class RegistryInfoContent extends Component<Props, State> {
     );
   }
 
-  renderNpmTab(scope: string, registryUrl: string) {
+  private renderNpmTab(scope: string, registryUrl: string) {
     return (
       <React.Fragment>
         <CopyToClipBoard text={getCLISetConfigRegistry(`${NODE_MANAGER.npm} set`, scope, registryUrl)} />
@@ -58,7 +58,7 @@ class RegistryInfoContent extends Component<Props, State> {
     );
   }
 
-  renderPNpmTab(scope: string, registryUrl: string) {
+  private renderPNpmTab(scope: string, registryUrl: string) {
     return (
       <React.Fragment>
         <CopyToClipBoard text={getCLISetConfigRegistry(`${NODE_MANAGER.pnpm} set`, scope, registryUrl)} />
@@ -68,7 +68,7 @@ class RegistryInfoContent extends Component<Props, State> {
     );
   }
 
-  renderYarnTab(scope: string, registryUrl: string) {
+  private renderYarnTab(scope: string, registryUrl: string) {
     return (
       <React.Fragment>
         <CopyToClipBoard text={getCLISetConfigRegistry(`${NODE_MANAGER.yarn} config set`, scope, registryUrl)} />
@@ -76,7 +76,7 @@ class RegistryInfoContent extends Component<Props, State> {
     );
   }
 
-  handleChange = (event: any, tabPosition: number) => {
+  private handleChange = (event: any, tabPosition: number) => {
     event.preventDefault();
     this.setState({ tabPosition });
   };

@@ -13,11 +13,11 @@ interface Props {
 }
 
 class Developers extends Component<Props, any> {
-  state = {
+  public state = {
     visibleDevs: 6,
   };
 
-  render() {
+  public render() {
     return (
       <DetailContextConsumer>
         {({ packageMeta }: any) => {
@@ -30,11 +30,11 @@ class Developers extends Component<Props, any> {
     );
   }
 
-  handleLoadMore = () => {
+  public handleLoadMore = () => {
     this.setState(prev => ({ visibleDevs: prev.visibleDevs + 6 }));
   };
 
-  renderDevelopers = (developers, packageMeta) => {
+  private renderDevelopers = (developers, packageMeta) => {
     const { type } = this.props;
     const { visibleDevs } = this.state;
     return (
@@ -54,7 +54,7 @@ class Developers extends Component<Props, any> {
     );
   };
 
-  renderLinkForMail(email, avatarComponent, packageName, version) {
+  private renderLinkForMail(email, avatarComponent, packageName, version) {
     if (!email || isEmail(email) === false) {
       return avatarComponent;
     }
@@ -65,7 +65,7 @@ class Developers extends Component<Props, any> {
     );
   }
 
-  renderDeveloperDetails = ({ name, avatar, email }, packageMeta) => {
+  private renderDeveloperDetails = ({ name, avatar, email }, packageMeta) => {
     const { name: packageName, version } = packageMeta.latest;
 
     const avatarComponent = <Avatar aria-label={name} src={avatar} />;

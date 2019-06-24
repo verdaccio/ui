@@ -2,10 +2,10 @@ import React from 'react';
 
 export function asyncComponent(getComponent) {
   return class AsyncComponent extends React.Component {
-    static Component = null;
-    state = { Component: AsyncComponent.Component };
+    public static Component = null;
+    public state = { Component: AsyncComponent.Component };
 
-    componentDidMount() {
+    public componentDidMount() {
       const { Component } = this.state;
       if (!Component) {
         getComponent()
@@ -19,7 +19,8 @@ export function asyncComponent(getComponent) {
           });
       }
     }
-    render() {
+
+    public render() {
       const { Component } = this.state;
       if (Component) {
         // eslint-disable-next-line verdaccio/jsx-spread

@@ -7,7 +7,7 @@ import { Heading, DistListItem, DistChips } from './styles';
 import fileSizeSI from '../../utils/file-size';
 
 class Dist extends Component<any, any> {
-  render() {
+  public render() {
     return (
       <DetailContextConsumer>
         {(context: any) => {
@@ -17,7 +17,7 @@ class Dist extends Component<any, any> {
     );
   }
 
-  renderChips(dist: any, license: string) {
+  private renderChips(dist: any, license: string) {
     const distDict = {
       'file-count': dist.fileCount,
       size: dist.unpackedSize && fileSizeSI(dist.unpackedSize),
@@ -43,7 +43,7 @@ class Dist extends Component<any, any> {
     return chipsList;
   }
 
-  renderDist = ({ packageMeta }: any) => {
+  private renderDist = ({ packageMeta }: any) => {
     const { dist = {}, license } = packageMeta.latest;
 
     return (
