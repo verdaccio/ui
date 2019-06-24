@@ -39,8 +39,7 @@ const register = (url, method = 'get', options = {}) => {
  * Bind API methods
  */
 class API {
-  public request() {
-    const rest = arguments;
+  public request(...rest) {
     return register.call(null, ...rest);
   }
 }
