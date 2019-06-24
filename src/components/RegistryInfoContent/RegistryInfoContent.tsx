@@ -11,7 +11,7 @@ import { getCLISetRegistry, getCLIChangePassword, getCLISetConfigRegistry } from
 import { NODE_MANAGER } from '../../utils/constants';
 
 /* eslint react/prop-types:0 */
-function TabContainer({ children }) {
+function TabContainer({ children }): JSX.Element {
   return (
     <CommandContainer>
       <Typography component="div" style={{ padding: 0, minHeight: 170 }}>
@@ -26,11 +26,16 @@ class RegistryInfoContent extends Component<Props, State> {
     tabPosition: 0,
   };
 
-  public render() {
+  public render(): JSX.Element {
     return <div>{this.renderTabs()}</div>;
   }
 
-  private renderTabs() {
+  private handleChange = (event: any, tabPosition: number) => {
+    event.preventDefault();
+    this.setState({ tabPosition });
+  };
+
+  private renderTabs(): JSX.Element {
     const { scope, registryUrl } = this.props;
     const { tabPosition } = this.state;
 
@@ -48,7 +53,7 @@ class RegistryInfoContent extends Component<Props, State> {
     );
   }
 
-  private renderNpmTab(scope: string, registryUrl: string) {
+  private renderNpmTab(scope: string, registryUrl: string): JSX.Element {
     return (
       <React.Fragment>
         <CopyToClipBoard text={getCLISetConfigRegistry(`${NODE_MANAGER.npm} set`, scope, registryUrl)} />
@@ -58,7 +63,7 @@ class RegistryInfoContent extends Component<Props, State> {
     );
   }
 
-  private renderPNpmTab(scope: string, registryUrl: string) {
+  private renderPNpmTab(scope: string, registryUrl: string): JSX.Element {
     return (
       <React.Fragment>
         <CopyToClipBoard text={getCLISetConfigRegistry(`${NODE_MANAGER.pnpm} set`, scope, registryUrl)} />
@@ -68,18 +73,13 @@ class RegistryInfoContent extends Component<Props, State> {
     );
   }
 
-  private renderYarnTab(scope: string, registryUrl: string) {
+  private renderYarnTab(scope: string, registryUrl: string): JSX.Element {
     return (
       <React.Fragment>
         <CopyToClipBoard text={getCLISetConfigRegistry(`${NODE_MANAGER.yarn} config set`, scope, registryUrl)} />
       </React.Fragment>
     );
   }
-
-  private handleChange = (event: any, tabPosition: number) => {
-    event.preventDefault();
-    this.setState({ tabPosition });
-  };
 }
 
 export default RegistryInfoContent;

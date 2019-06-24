@@ -17,7 +17,7 @@ class Developers extends Component<Props, any> {
     visibleDevs: 6,
   };
 
-  public render() {
+  public render(): JSX.Element {
     return (
       <DetailContextConsumer>
         {({ packageMeta }: any) => {
@@ -54,7 +54,7 @@ class Developers extends Component<Props, any> {
     );
   };
 
-  private renderLinkForMail(email, avatarComponent, packageName, version) {
+  private renderLinkForMail(email, avatarComponent, packageName, version): JSX.Element {
     if (!email || isEmail(email) === false) {
       return avatarComponent;
     }

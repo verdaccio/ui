@@ -8,7 +8,7 @@ import App from './App';
 
 const rootNode = document.getElementById('root');
 
-const renderApp = Component => {
+const renderApp = (Component): void => {
   ReactDOM.render(
     <AppContainer>
       <Component />

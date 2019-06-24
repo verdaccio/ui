@@ -26,7 +26,7 @@ export interface Props {
   onBlur?: (event: KeyboardEvent<HTMLInputElement>) => void;
 }
 
-const renderInputComponent = inputProps => {
+const renderInputComponent = (inputProps): JSX.Element => {
   const { ref, startAdornment, disableUnderline, onKeyDown, ...others } = inputProps;
   return (
     <InputField
@@ -46,7 +46,7 @@ const renderInputComponent = inputProps => {
 
 const getSuggestionValue = (suggestion): string => suggestion.name;
 
-const renderSuggestion = (suggestion, { query, isHighlighted }) => {
+const renderSuggestion = (suggestion, { query, isHighlighted }): JSX.Element => {
   const matches = match(suggestion.name, query);
   const parts = parse(suggestion.name, matches);
   return (
@@ -68,7 +68,7 @@ const renderSuggestion = (suggestion, { query, isHighlighted }) => {
   );
 };
 
-const renderMessage = message => {
+const renderMessage = (message): JSX.Element => {
   return (
     <MenuItem component="div" selected={false}>
       <div>{message}</div>
@@ -98,7 +98,7 @@ const AutoComplete = ({
   suggestionsLoading = false,
   suggestionsLoaded = false,
   suggestionsError = false,
-}: Props) => {
+}: Props): JSX.Element => {
   const autosuggestProps = {
     renderInputComponent,
     suggestions,
@@ -119,7 +119,7 @@ const AutoComplete = ({
   };
 
   // this format avoid arrow function eslint rule
-  function renderSuggestionsContainer({ containerProps, children, query }) {
+  function renderSuggestionsContainer({ containerProps, children, query }): JSX.Element {
     return (
       <SuggestionContainer {...containerProps} square={true}>
         {suggestionsLoaded && children === null && query && renderMessage(SUGGESTIONS_RESPONSE.NO_RESULT)}
