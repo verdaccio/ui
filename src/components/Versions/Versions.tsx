@@ -19,7 +19,7 @@ class Versions extends React.PureComponent {
     );
   }
 
-  public renderPackageList = (packages: any, isVersion: boolean = false, timeMap: Record<string, any> = {}): ReactElement<HTMLDivElement> => {
+  public renderPackageList = (packages: {}, isVersion: boolean = false, timeMap: Record<string, {}> = {}): ReactElement<HTMLDivElement> => {
     return (
       <List>
         {Object.keys(packages)

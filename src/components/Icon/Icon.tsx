@@ -61,7 +61,7 @@ export interface Props {
   size?: Breakpoint;
   pointer?: boolean;
   img?: boolean;
-  // modifiers?: null | undefined;
+  modifiers?: null | undefined;
 }
 
 const Icon: React.FC<Props> = ({ className, name, size = 'sm', img = false, pointer = false, ...props }) => {

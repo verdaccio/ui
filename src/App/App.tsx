@@ -20,10 +20,12 @@ export const AppContext = React.createContext<{}>({});
 export const AppContextProvider = AppContext.Provider;
 export const AppContextConsumer = AppContext.Consumer;
 
-interface AppStateInterface {
+export interface AppStateInterface {
   error?: FormError;
   logoUrl: string;
-  user: {};
+  user: {
+    username?: string;
+  };
   scope: string;
   showLoginModal: boolean;
   isUserLoggedIn: boolean;

@@ -22,7 +22,7 @@ import RegistryInfoContent from '../RegistryInfoContent/RegistryInfoContent';
 import { Greetings, NavBar, InnerNavBar, MobileNavBar, InnerMobileNavBar, LeftSide, RightSide, IconSearchButton, SearchWrapper } from './styles';
 
 interface Props {
-  logo: string;
+  logo?: string;
   username?: string;
   onLogout: () => void;
   onToggleLoginModal: () => void;

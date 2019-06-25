@@ -36,8 +36,8 @@ export const Svg = styled('svg')`
 export const ImgWrapper: StyledOtherComponent<
   {
     size?: Breakpoint;
-    pointer: any;
-    modifiers?: any;
+    pointer: boolean;
+    modifiers?: null | undefined;
     name?: string | unknown;
   },
   DetailedHTMLProps<HTMLAttributes<HTMLSpanElement>, HTMLSpanElement>,
