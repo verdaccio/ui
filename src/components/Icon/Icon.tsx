@@ -61,14 +61,14 @@ export interface Props {
   size?: Breakpoint;
   pointer?: boolean;
   img?: boolean;
-  modifiers?: null | undefined;
+  // modifiers?: null | undefined;
 }
 
 const Icon: React.FC<Props> = ({ className, name, size = 'sm', img = false, pointer = false, ...props }) => {
   // @ts-ignore
   const title = capitalize(name);
   return img ? (
-    <ImgWrapper className={className} pointer={pointer} size={size} title={title} {...props}>
+    <ImgWrapper className={className} name={name} pointer={pointer} size={size} title={title} {...props}>
       <Img alt={title} src={Icons[name]} />
     </ImgWrapper>
   ) : (

@@ -63,7 +63,6 @@ describe('<LoginModal />', () => {
   test('setCredentials - should set username and password in state', () => {
     const props = {
       visibility: true,
-      error: {},
       onCancel: () => {},
       onSubmit: () => {},
     };
@@ -80,7 +79,6 @@ describe('<LoginModal />', () => {
   test('validateCredentials: should validate credentials', async () => {
     const props = {
       visibility: true,
-      error: {},
       onCancel: () => {},
       onSubmit: jest.fn(),
     };

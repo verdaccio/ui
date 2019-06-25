@@ -20,7 +20,7 @@ interface FormFields {
   helperText: string;
   value: string;
 }
-interface FormError {
+export interface FormError {
   type: string;
   title: string;
   description: string;
@@ -28,7 +28,7 @@ interface FormError {
 
 interface LoginModalProps {
   visibility: boolean;
-  error: Partial<FormError>;
+  error?: FormError;
   onCancel: () => void;
   onSubmit: (username: string, password: string) => void;
 }
@@ -38,11 +38,11 @@ interface LoginModalState {
     username: Partial<FormFields>;
     password: Partial<FormFields>;
   };
-  error: FormError;
+  error?: FormError;
 }
 
 export default class LoginModal extends Component<Partial<LoginModalProps>, LoginModalState> {
-  constructor(props) {
+  constructor(props: LoginModalProps) {
     super(props);
     this.state = {
       form: {
@@ -64,13 +64,13 @@ export default class LoginModal extends Component<Partial<LoginModalProps>, Logi
   }
 
   public render(): JSX.Element {
-    const { visibility, onCancel, error } = this.props as LoginModalProps;
+    const { visibility = true, onCancel = () => null, error } = this.props as LoginModalProps;
     return (
       <Dialog fullWidth={true} id={'login--form-container'} maxWidth={'xs'} onClose={onCancel} open={visibility}>
         <form noValidate={true} onSubmit={this.handleValidateCredentials}>
           <DialogTitle>{'Login'}</DialogTitle>
           <DialogContent>
-            {this.renderLoginError(error)}
+            {error && this.renderLoginError(error)}
             {this.renderNameField()}
             {this.renderPasswordField()}
           </DialogContent>
@@ -150,7 +150,7 @@ export default class LoginModal extends Component<Partial<LoginModalProps>, Logi
     });
   };
 
-  private renderErrorMessage(title, description): JSX.Element {
+  public renderErrorMessage(title, description): JSX.Element {
     return (
       <span>
         <div>
@@ -161,7 +161,7 @@ export default class LoginModal extends Component<Partial<LoginModalProps>, Logi
     );
   }
 
-  private renderMessage(title, description): JSX.Element {
+  public renderMessage(title, description): JSX.Element {
     return (
       <div className={classes.loginErrorMsg} id={'client-snackbar'}>
         <ErrorIcon className={classes.loginIcon} />
@@ -170,11 +170,11 @@ export default class LoginModal extends Component<Partial<LoginModalProps>, Logi
     );
   }
 
-  private renderLoginError({ type, title, description }: Partial<FormError>): JSX.Element | false {
+  public renderLoginError({ type, title, description }: FormError): JSX.Element | false {
     return type === 'error' && <SnackbarContent className={classes.loginError} message={this.renderMessage(title, description)} />;
   }
 
-  private renderNameField = () => {
+  public renderNameField = () => {
     const {
       form: { username },
     } = this.state;
@@ -187,7 +187,7 @@ export default class LoginModal extends Component<Partial<LoginModalProps>, Logi
     );
   };
 
-  private renderPasswordField = () => {
+  public renderPasswordField = () => {
     const {
       form: { password },
     } = this.state;
@@ -200,7 +200,7 @@ export default class LoginModal extends Component<Partial<LoginModalProps>, Logi
     );
   };
 
-  private renderActions = () => {
+  public renderActions = () => {
     const {
       form: { username, password },
     } = this.state;
