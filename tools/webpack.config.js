@@ -1,8 +1,8 @@
-const env = require('../src/config/env');
+const env = require('../config/env');
 const StyleLintPlugin = require('stylelint-webpack-plugin');
 
 module.exports = {
-  entry: `${env.SRC_ROOT}/webui/src/index.js`,
+  entry: `${env.SRC_ROOT}/index.tsx`,
 
   output: {
     path: `${env.APP_ROOT}/static/`,
@@ -12,14 +12,14 @@ module.exports = {
   },
 
   resolve: {
-    extensions: ['.js', '.jsx'],
+    extensions: ['.js', '.jsx', '.ts', '.tsx'],
   },
 
   plugins: [
     new StyleLintPlugin({
-      files: ['src/webui/**/styles.js'],
+      files: ['src/**/styles.ts'],
       failOnError: false,
-      emitErrors: true
+      emitErrors: true,
     }),
   ],
 
@@ -59,9 +59,9 @@ module.exports = {
         test: /\.(jpe?g|png|gif|svg)$/,
         use: [
           {
-            loader: 'file-loader'
+            loader: 'file-loader',
           },
-        ]
+        ],
       },
       {
         test: /\.(woff|woff2|eot|ttf|otf)$/,
@@ -75,7 +75,7 @@ module.exports = {
         test: /\.scss$/,
         exclude: /node_modules/,
         loader: `style-loader!css-loader?module&sourceMap=false&localIdentName=[path][name]__[local]--[hash:base64:5]
-        !resolve-url-loader?keepQuery!sass-loader?sourceMap`
+        !resolve-url-loader?keepQuery!sass-loader?sourceMap`,
       },
       {
         test: /\.css$/,
@@ -87,6 +87,13 @@ module.exports = {
             loader: 'css-loader',
           },
         ],
+      },
+
+      /* Typescript loader */
+      {
+        test: /\.tsx?$/,
+        use: 'babel-loader',
+        exclude: /node_modules/,
       },
     ],
   },

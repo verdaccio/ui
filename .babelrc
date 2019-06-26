@@ -1,3 +1,5 @@
 {
-  "presets": [["@verdaccio", { "flow": true }]]
+  "presets": [
+    ["@verdaccio", { "typescript": true }]
+  ]
 }

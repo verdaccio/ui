@@ -1,0 +1,23 @@
+{
+  "compilerOptions": {
+    "skipLibCheck": true,
+    "target": "esnext",
+    "module": "commonjs",
+    "noImplicitAny": false,
+    "strict": true,
+    "outDir": "build",
+    "allowSyntheticDefaultImports": true,
+    "jsx": "react",
+    "allowJs": true,
+    "checkJs": false,
+    "esModuleInterop": true,
+    "baseUrl": ".",
+  },
+  "include": [
+    "src",
+    "types/*.d.ts", "scripts/lib", "node_modules/config"
+  ],
+  "exclude": [
+    "node_modules",
+  ]
+}

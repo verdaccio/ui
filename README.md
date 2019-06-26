@@ -6,14 +6,15 @@
 [Verdaccio](https://verdaccio.org/) UI is a [theme plugin](https://verdaccio.org/docs/en/dev-plugins#theme-plugin) build in React, Flow and Emotion. It uses Jest and Enzyme for Unit testing.
 
 
-[![verdaccio (latest)](https://img.shields.io/npm/v/@verdaccio/ui-theme/latest.svg)](https://www.npmjs.com/package/verdaccio)
+[![verdaccio (latest)](https://img.shields.io/npm/v/@verdaccio/ui-theme/latest.svg)](https://www.npmjs.com/package/@verdaccio/ui-theme)
 [![docker pulls](https://img.shields.io/docker/pulls/verdaccio/verdaccio.svg?maxAge=43200)](https://verdaccio.org/docs/en/docker.html)
 [![backers](https://opencollective.com/verdaccio/tiers/backer/badge.svg?label=Backer&color=brightgreen)](https://opencollective.com/verdaccio)
 [![stackshare](https://img.shields.io/badge/Follow%20on-StackShare-blue.svg?logo=stackshare&style=flat)](https://stackshare.io/verdaccio)
 [![discord](https://img.shields.io/discord/388674437219745793.svg)](http://chat.verdaccio.org/)
-[![node](https://img.shields.io/node/v/@verdaccio/ui-theme/latest.svg)](https://www.npmjs.com/package/verdaccio)
+[![node](https://img.shields.io/node/v/@verdaccio/ui-theme/latest.svg)](https://www.npmjs.com/package/@verdaccio/ui-theme)
 ![MIT](https://img.shields.io/github/license/mashape/apistatus.svg)
 [![Crowdin](https://d322cqt584bo4o.cloudfront.net/verdaccio/localized.svg)](https://crowdin.com/project/verdaccio)
+[![codecov](https://codecov.io/gh/verdaccio/ui/branch/master/graph/badge.svg)](https://codecov.io/gh/verdaccio/ui)
 
 
 [![Twitter followers](https://img.shields.io/twitter/follow/verdaccio_npm.svg?style=social&label=Follow)](https://twitter.com/verdaccio_npm)
@@ -21,9 +22,9 @@
 
 ## Contributing
 
-We use `>=yarn@1.13.0`, keep on mind we use lock file. 
+We use `>=yarn@1.13.0`, keep on mind we use lock file.
 
-For development run the following command, it will execute `webpack` and `verdaccio` to 
+For development run the following command, it will execute `webpack` and `verdaccio` to
 
 ```
 yarn dev
