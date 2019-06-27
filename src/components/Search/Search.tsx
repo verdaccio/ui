@@ -11,10 +11,14 @@ import colors from '../../utils/styles/colors';
 
 export interface State {
   search: string;
-  suggestions: any[];
+  suggestions: unknown[];
   loading: boolean;
   loaded: boolean;
   error: boolean;
+}
+interface AbortControllerInterface {
+  signal: () => void;
+  abort: () => void;
 }
 
 export type cancelAllSearchRequests = () => void;
@@ -31,8 +35,6 @@ const CONSTANTS = {
 };
 
 export class Search extends Component<RouteComponentProps<{}>, State> {
-  private requestList: any[];
-
   constructor(props: RouteComponentProps<{}>) {
     super(props);
     this.state = {
@@ -96,7 +98,10 @@ export class Search extends Component<RouteComponentProps<{}>, State> {
   /**
    * When an user select any package by clicking or pressing return key.
    */
-  private handleClickSearch: handleClickSearch = (event, { suggestionValue, method }: any) => {
+  private handleClickSearch = (
+    event: React.KeyboardEvent<HTMLInputElement>,
+    { suggestionValue, method }: { suggestionValue: string[]; method: string }
+  ): void | undefined => {
     const { history } = this.props;
     // stops event bubbling
     event.stopPropagation();
@@ -163,7 +168,9 @@ export class Search extends Component<RouteComponentProps<{}>, State> {
     );
   }
 
-  public getAdorment(): ReactElement<HTMLElement> {
+  private requestList: AbortControllerInterface[];
+
+  public getAdorment(): JSX.Element {
     return (
       <InputAdornment position={'start'} style={{ color: colors.white }}>
         <IconSearch />

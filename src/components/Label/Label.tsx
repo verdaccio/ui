@@ -6,7 +6,7 @@ interface Props {
   text: string;
   capitalize?: boolean;
   weight?: string;
-  modifiers?: any;
+  modifiers?: null | undefined;
 }
 
 const Wrapper = styled('div')`

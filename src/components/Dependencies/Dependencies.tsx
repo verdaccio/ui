@@ -1,5 +1,5 @@
 import React, { Component, Fragment, ReactElement } from 'react';
-import { withRouter } from 'react-router-dom';
+import { withRouter, RouteProps } from 'react-router-dom';
 import CardContent from '@material-ui/core/CardContent';
 
 import { DetailContextConsumer, VersionPageConsumerProps } from '../../pages/version/Version';
@@ -7,8 +7,19 @@ import { DetailContextConsumer, VersionPageConsumerProps } from '../../pages/ver
 import { CardWrap, Heading, Tags, Tag } from './styles';
 import NoItems from '../NoItems';
 
-class DepDetail extends Component<any, any> {
-  constructor(props: any) {
+interface DepDetailProps {
+  name: string;
+  version: string;
+  onLoading: () => void;
+  history: string[];
+}
+interface DepDetailState {
+  name: string;
+  version: string;
+}
+
+class DepDetail extends Component<DepDetailProps & RouteProps, DepDetailState> {
+  constructor(props: DepDetailProps) {
     super(props);
     const { name, version } = this.props;
 
@@ -33,16 +44,16 @@ class DepDetail extends Component<any, any> {
   };
 }
 
-const WrapperDependencyDetail = withRouter(DepDetail);
+const WrapperDependencyDetail = withRouter<any>(DepDetail);
 
-class DependencyBlock extends Component<any, any> {
+class DependencyBlock extends Component<{ title: string; dependencies: [] }> {
   public render(): ReactElement<HTMLElement> {
     const { dependencies, title } = this.props;
-    const deps = Object.entries(dependencies);
+    const deps = Object.entries(dependencies) as [];
 
     return (
       <DetailContextConsumer>
-        {({ enableLoading }: any) => {
+        {({ enableLoading }) => {
           return (
             <CardWrap>
               <CardContent>
@@ -56,15 +67,15 @@ class DependencyBlock extends Component<any, any> {
     );
   }
 
-  private renderTags = (deps: any, enableLoading: any) =>
+  private renderTags = (deps: [], enableLoading?: () => void) =>
     deps.map(dep => {
-      const [name, version] = dep;
+      const [name, version] = dep as [string, string];
 
       return <WrapperDependencyDetail key={name} name={name} onLoading={enableLoading} version={version} />;
     });
 }
 
-class Dependencies extends Component<any, any> {
+class Dependencies extends Component {
   public state = {
     tabPosition: 0,
   };
@@ -79,7 +90,7 @@ class Dependencies extends Component<any, any> {
     );
   }
 
-  private checkDependencyLength(dependency: Record<string, any> = {}): boolean {
+  private checkDependencyLength<T>(dependency: Record<string, T> = {}): boolean {
     return Object.keys(dependency).length > 0;
   }
 

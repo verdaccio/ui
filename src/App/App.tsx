@@ -14,14 +14,26 @@ import '../styles/typeface-roboto.scss';
 import '../styles/main.scss';
 import 'normalize.css';
 import Footer from '../components/Footer';
+import { FormError } from 'src/components/Login/Login';
 
-export const AppContext = React.createContext<null>(null);
+export const AppContext = React.createContext<{}>({});
 export const AppContextProvider = AppContext.Provider;
 export const AppContextConsumer = AppContext.Consumer;
 
-export default class App extends Component<any, any> {
-  public state = {
-    error: {},
+export interface AppStateInterface {
+  error?: FormError;
+  logoUrl: string;
+  user: {
+    username?: string;
+  };
+  scope: string;
+  showLoginModal: boolean;
+  isUserLoggedIn: boolean;
+  packages: [];
+  isLoading: boolean;
+}
+export default class App extends Component<{}, AppStateInterface> {
+  public state: AppStateInterface = {
     // @ts-ignore
     logoUrl: window.VERDACCIO_LOGO,
     user: {},
@@ -49,7 +61,7 @@ export default class App extends Component<any, any> {
   public render(): React.ReactElement<HTMLDivElement> {
     const { isLoading, isUserLoggedIn, packages, logoUrl, user, scope } = this.state;
 
-    const context: any = { isUserLoggedIn, packages, logoUrl, user, scope };
+    const context = { isUserLoggedIn, packages, logoUrl, user, scope };
 
     return (
       // @ts-ignore
@@ -112,7 +124,6 @@ export default class App extends Component<any, any> {
     this.setState(prevState => ({
       // @ts-ignore
       showLoginModal: !prevState.showLoginModal,
-      error: {},
     }));
   };
 

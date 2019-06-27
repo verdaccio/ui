@@ -1,8 +1,9 @@
 import API from './api';
+import { PackageMetaInterface } from 'types/packageMeta';
 
 export interface DetailPage {
-  readMe: any;
-  packageMeta: any;
+  readMe: string | {};
+  packageMeta: PackageMetaInterface | {};
 }
 
 export async function callDetailPage(packageName): Promise<DetailPage> {

@@ -8,7 +8,7 @@ import { formatDateDistance } from '../../utils/package';
 
 import { Heading, Spacer, ListItemText } from './styles';
 
-class UpLinks extends React.PureComponent<any> {
+class UpLinks extends React.PureComponent<{}> {
   public render(): ReactElement<HTMLElement> {
     return (
       <DetailContextConsumer>

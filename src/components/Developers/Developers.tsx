@@ -11,18 +11,21 @@ import { isEmail } from '../../utils/url';
 interface Props {
   type: 'contributors' | 'maintainers';
 }
+interface State {
+  visibleDevs: number;
+}
 
-class Developers extends Component<Props, any> {
-  state = {
+class Developers extends Component<Props, State> {
+  public state = {
     visibleDevs: 6,
   };
 
-  render() {
+  public render(): JSX.Element {
     return (
       <DetailContextConsumer>
-        {({ packageMeta }: any) => {
+        {({ packageMeta }) => {
           const { type } = this.props;
-          const developerType = packageMeta.latest[type];
+          const developerType = packageMeta && packageMeta.latest[type];
           if (!developerType || developerType.length === 0) return null;
           return this.renderDevelopers(developerType, packageMeta);
         }}
@@ -30,11 +33,11 @@ class Developers extends Component<Props, any> {
     );
   }
 
-  handleLoadMore = () => {
+  public handleLoadMore = () => {
     this.setState(prev => ({ visibleDevs: prev.visibleDevs + 6 }));
   };
 
-  renderDevelopers = (developers, packageMeta) => {
+  private renderDevelopers = (developers, packageMeta) => {
     const { type } = this.props;
     const { visibleDevs } = this.state;
     return (
@@ -54,7 +57,7 @@ class Developers extends Component<Props, any> {
     );
   };
 
-  renderLinkForMail(email, avatarComponent, packageName, version) {
+  private renderLinkForMail(email, avatarComponent, packageName, version): JSX.Element {
     if (!email || isEmail(email) === false) {
       return avatarComponent;
     }
@@ -65,7 +68,7 @@ class Developers extends Component<Props, any> {
     );
   }
 
-  renderDeveloperDetails = ({ name, avatar, email }, packageMeta) => {
+  private renderDeveloperDetails = ({ name, avatar, email }, packageMeta) => {
     const { name: packageName, version } = packageMeta.latest;
 
     const avatarComponent = <Avatar aria-label={name} src={avatar} />;

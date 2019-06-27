@@ -8,7 +8,7 @@ import { Props } from './types';
 
 const LABEL = 'CLOSE';
 
-const RegistryInfoDialog: React.FC<Props> = ({ open = false, children, onClose }): any => (
+const RegistryInfoDialog: React.FC<Props> = ({ open = false, children, onClose }) => (
   <Dialog id="registryInfo--dialog-container" onClose={onClose} open={open}>
     <Title disableTypography={true}>{'Register Info'}</Title>
     <Content>{children}</Content>

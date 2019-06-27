@@ -7,7 +7,7 @@ import { generateTokenWithTimeRange } from '../../jest/unit/components/__mocks__
 
 jest.mock('../utils/storage', () => {
   class LocalStorageMock {
-    store: object;
+    private store: object;
     public constructor() {
       this.store = {};
     }
@@ -43,7 +43,7 @@ describe('App', () => {
     expect(wrapper.state().showLoginModal).toBeFalsy();
     handleToggleLoginModal();
     expect(wrapper.state('showLoginModal')).toBeTruthy();
-    expect(wrapper.state('error')).toEqual({});
+    expect(wrapper.state('error')).toEqual(undefined);
   });
 
   test('isUserAlreadyLoggedIn: token already available in storage', async () => {

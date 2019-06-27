@@ -1,11 +1,11 @@
-import React from 'react';
+import React, { ComponentClass } from 'react';
 
-export function asyncComponent(getComponent) {
+export function asyncComponent(getComponent): ComponentClass {
   return class AsyncComponent extends React.Component {
-    static Component = null;
-    state = { Component: AsyncComponent.Component };
+    public static Component = null;
+    public state = { Component: AsyncComponent.Component };
 
-    componentDidMount() {
+    public componentDidMount(): void {
       const { Component } = this.state;
       if (!Component) {
         getComponent()
@@ -19,7 +19,8 @@ export function asyncComponent(getComponent) {
           });
       }
     }
-    render() {
+
+    public render(): JSX.Element | null {
       const { Component } = this.state;
       if (Component) {
         // eslint-disable-next-line verdaccio/jsx-spread

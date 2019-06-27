@@ -1,6 +1,9 @@
 import styled, { css } from 'react-emotion';
+import { Breakpoint } from '@material-ui/core/styles/createBreakpoints';
+import { StyledOtherComponent } from 'create-emotion-styled';
+import { DetailedHTMLProps, HTMLAttributes } from 'react';
 
-const getSize = (size?: 'md' | 'sm') => {
+const getSize = (size: Breakpoint): string => {
   switch (size) {
     case 'md':
       return `
@@ -15,7 +18,7 @@ const getSize = (size?: 'md' | 'sm') => {
   }
 };
 
-const commonStyle = ({ size = 'sm', pointer, modifiers }: any) => css`
+const commonStyle = ({ size = 'sm' as Breakpoint, pointer, modifiers = null }): string => css`
   && {
     display: inline-block;
     cursor: ${pointer ? 'pointer' : 'default'};
@@ -30,7 +33,16 @@ export const Svg = styled('svg')`
   }
 `;
 
-export const ImgWrapper = styled('span')`
+export const ImgWrapper: StyledOtherComponent<
+  {
+    size?: Breakpoint;
+    pointer: boolean;
+    modifiers?: null | undefined;
+    name?: string | unknown;
+  },
+  DetailedHTMLProps<HTMLAttributes<HTMLSpanElement>, HTMLSpanElement>,
+  {}
+> = styled('span')`
   && {
     ${commonStyle};
   }

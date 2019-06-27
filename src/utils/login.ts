@@ -5,30 +5,34 @@ import { Base64 } from 'js-base64';
 import API from './api';
 import { HEADERS } from '../../lib/constants';
 
-export function isTokenExpire(token?: any) {
+interface PayloadInterface {
+  exp: number;
+}
+
+export function isTokenExpire(token?: string): boolean {
   if (!isString(token)) {
     return true;
   }
 
-  let [, payload]: any = token.split('.');
+  const [, payload] = token.split('.');
 
   if (!payload) {
     return true;
   }
 
+  let exp: number;
   try {
-    payload = JSON.parse(Base64.decode(payload));
+    exp = JSON.parse(Base64.decode(payload)).exp;
   } catch (error) {
-    // eslint-disable-next-line
-        console.error('Invalid token:', error, token);
+    console.error('Invalid token:', error, token);
     return true;
   }
 
-  if (!payload.exp || !isNumber(payload.exp)) {
+  if (!exp || !isNumber(exp)) {
     return true;
   }
   // Report as expire before (real expire time - 30s)
-  const jsTimestamp = payload.exp * 1000 - 30000;
+  const jsTimestamp = exp * 1000 - 30000;
   const expired = Date.now() >= jsTimestamp;
 
   return expired;

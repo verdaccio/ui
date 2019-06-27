@@ -8,7 +8,7 @@ import { WrapperLink, Description, OverviewItem } from './styles';
  * Generates one month back date from current time
  * @return {object} date object
  */
-const dateOneMonthAgo = () => new Date(1544377770747);
+const dateOneMonthAgo = (): Date => new Date(1544377770747);
 
 describe('<Package /> component', () => {
   test.skip('should load the component', () => {

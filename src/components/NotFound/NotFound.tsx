@@ -6,21 +6,22 @@ import { RouteComponentProps, withRouter } from 'react-router-dom';
 
 import PackageImg from './img/package.svg';
 import { Card, EmptyPackage, Heading, Inner, List, Wrapper } from './styles';
+import { Breakpoint } from '@material-ui/core/styles/createBreakpoints';
 
 export const NOT_FOUND_TEXT = "Sorry, we couldn't find it...";
 
-export type NotFoundProps = RouteComponentProps & { width: any; history: any };
+export type NotFoundProps = RouteComponentProps & { width: Breakpoint; history };
 
 const NotFound: React.FC<NotFoundProps> = ({ history, width }) => {
-  const handleGoTo = (to: string) => () => {
+  const handleGoTo = (to: string): (() => void | undefined) => () => {
     history.push(to);
   };
 
-  const handleGoBack = () => () => {
+  const handleGoBack = (): ((e: React.MouseEvent<HTMLElement, MouseEvent>) => void | undefined) => () => {
     history.goBack();
   };
 
-  const renderList = () => (
+  const renderList = (): JSX.Element => (
     <List>
       <ListItem button={true} divider={true} onClick={handleGoTo('/')}>
         {'Home'}
@@ -31,7 +32,7 @@ const NotFound: React.FC<NotFoundProps> = ({ history, width }) => {
     </List>
   );
 
-  const renderSubTitle = () => (
+  const renderSubTitle = (): JSX.Element => (
     <Typography variant="subtitle1">
       <div>{"The page you're looking for doesn't exist."}</div>
       <div>{'Perhaps these links will help find what you are looking for:'}</div>
