@@ -124,7 +124,6 @@ export default class App extends Component<{}, AppStateInterface> {
     this.setState(prevState => ({
       // @ts-ignore
       showLoginModal: !prevState.showLoginModal,
-      error: undefined,
     }));
   };
 
