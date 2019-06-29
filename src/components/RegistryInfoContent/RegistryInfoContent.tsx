@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { css } from 'emotion';
 
 import { Props, State } from './types';
 import { CommandContainer } from './styles';
@@ -14,7 +15,12 @@ import { NODE_MANAGER } from '../../utils/constants';
 function TabContainer({ children }): JSX.Element {
   return (
     <CommandContainer>
-      <Typography component="div" style={{ padding: 0, minHeight: 170 }}>
+      <Typography
+        className={css`
+          padding: 0;
+          min-height: 170;
+        `}
+        component="div">
         {children}
       </Typography>
     </CommandContainer>

@@ -1,5 +1,6 @@
 import React, { SyntheticEvent, Component, Fragment, ReactElement } from 'react';
 import { Link } from 'react-router-dom';
+import { css } from 'emotion';
 
 import Button from '@material-ui/core/Button';
 import IconButton from '@material-ui/core/IconButton';
@@ -141,7 +142,11 @@ class Header extends Component<Props, State> {
     const { withoutSearch = false } = this.props;
     return (
       <LeftSide>
-        <Link style={{ marginRight: '1em' }} to={'/'}>
+        <Link
+          className={css`
+            margin-right: '1em';
+          `}
+          to={'/'}>
           {this.renderLogo()}
         </Link>
         {!withoutSearch && (
