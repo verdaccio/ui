@@ -1,5 +1,5 @@
 import React, { Component, Fragment, ReactElement } from 'react';
-import { withRouter, RouteProps } from 'react-router-dom';
+import { withRouter, RouteComponentProps } from 'react-router-dom';
 import CardContent from '@material-ui/core/CardContent';
 
 import { DetailContextConsumer, VersionPageConsumerProps } from '../../pages/version/Version';
@@ -7,18 +7,18 @@ import { DetailContextConsumer, VersionPageConsumerProps } from '../../pages/ver
 import { CardWrap, Heading, Tags, Tag } from './styles';
 import NoItems from '../NoItems';
 
-interface DepDetailProps {
+type DepDetailProps = {
   name: string;
   version: string;
-  onLoading: () => void;
-  history: string[];
-}
+  onLoading?: () => void;
+} & RouteComponentProps;
+
 interface DepDetailState {
   name: string;
   version: string;
 }
 
-class DepDetail extends Component<DepDetailProps & RouteProps, DepDetailState> {
+class DepDetail extends Component<DepDetailProps, DepDetailState> {
   constructor(props: DepDetailProps) {
     super(props);
     const { name, version } = this.props;
@@ -39,12 +39,12 @@ class DepDetail extends Component<DepDetailProps & RouteProps, DepDetailState> {
     const { name } = this.state;
     const { onLoading, history } = this.props;
 
-    onLoading();
+    onLoading && onLoading();
     history.push(`/-/web/detail/${name}`);
   };
 }
 
-const WrapperDependencyDetail = withRouter<any>(DepDetail);
+const WrapperDependencyDetail = withRouter(DepDetail);
 
 class DependencyBlock extends Component<{ title: string; dependencies: [] }> {
   public render(): ReactElement<HTMLElement> {
