@@ -3,7 +3,7 @@ import React from 'react';
 import styled from 'react-emotion';
 import logo from './img/logo.svg';
 
-const StyledLogo = styled.div`
+const StyledLogo = styled('div')`
   && {
     display: inline-block;
     vertical-align: middle;
