@@ -1,5 +1,6 @@
 import React, { KeyboardEvent, Component, ReactElement } from 'react';
 import { withRouter, RouteComponentProps } from 'react-router-dom';
+import { css } from 'emotion';
 
 import { default as IconSearch } from '@material-ui/icons/Search';
 import InputAdornment from '@material-ui/core/InputAdornment';
@@ -48,6 +49,28 @@ export class Search extends Component<RouteComponentProps<{}>, State> {
       error: false,
     };
     this.requestList = [];
+  }
+
+  public render(): ReactElement<HTMLElement> {
+    const { suggestions, search, loaded, loading, error } = this.state;
+
+    return (
+      <AutoComplete
+        color={colors.white}
+        onBlur={this.handleOnBlur}
+        onChange={this.handleSearch}
+        onCleanSuggestions={this.handlePackagesClearRequested}
+        onClick={this.handleClickSearch}
+        onSuggestionsFetch={debounce(this.handleFetchPackages, CONSTANTS.API_DELAY)}
+        placeholder={CONSTANTS.PLACEHOLDER_TEXT}
+        startAdornment={this.getAdorment()}
+        suggestions={suggestions}
+        suggestionsError={error}
+        suggestionsLoaded={loaded}
+        suggestionsLoading={loading}
+        value={search}
+      />
+    );
   }
 
   /**
@@ -146,33 +169,15 @@ export class Search extends Component<RouteComponentProps<{}>, State> {
     }
   };
 
-  public render(): ReactElement<HTMLElement> {
-    const { suggestions, search, loaded, loading, error } = this.state;
-
-    return (
-      <AutoComplete
-        color={colors.white}
-        onBlur={this.handleOnBlur}
-        onChange={this.handleSearch}
-        onCleanSuggestions={this.handlePackagesClearRequested}
-        onClick={this.handleClickSearch}
-        onSuggestionsFetch={debounce(this.handleFetchPackages, CONSTANTS.API_DELAY)}
-        placeholder={CONSTANTS.PLACEHOLDER_TEXT}
-        startAdornment={this.getAdorment()}
-        suggestions={suggestions}
-        suggestionsError={error}
-        suggestionsLoaded={loaded}
-        suggestionsLoading={loading}
-        value={search}
-      />
-    );
-  }
-
   private requestList: AbortControllerInterface[];
 
   public getAdorment(): JSX.Element {
     return (
-      <InputAdornment position={'start'} style={{ color: colors.white }}>
+      <InputAdornment
+        className={css`
+          color: ${colors.white};
+        `}
+        position={'start'}>
         <IconSearch />
       </InputAdornment>
     );

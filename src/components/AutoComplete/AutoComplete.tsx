@@ -1,4 +1,5 @@
 import React, { KeyboardEvent } from 'react';
+import { css } from 'emotion';
 import Autosuggest from 'react-autosuggest';
 import match from 'autosuggest-highlight/match';
 import parse from 'autosuggest-highlight/parse';
@@ -53,12 +54,14 @@ const renderSuggestion = (suggestion, { query, isHighlighted }): JSX.Element => 
     <MenuItem component="div" selected={isHighlighted}>
       <div>
         {parts.map((part, index) => {
-          return part.highlight ? (
-            <a href={suggestion.link} key={String(index)} style={{ fontWeight: fontWeight.semiBold }}>
-              {part.text}
-            </a>
-          ) : (
-            <a href={suggestion.link} key={String(index)} style={{ fontWeight: fontWeight.light }}>
+          const fw = part.highlight ? fontWeight.semiBold : fontWeight.light;
+          return (
+            <a
+              className={css`
+                font-weight: ${fw};
+              `}
+              href={suggestion.link}
+              key={String(index)}>
               {part.text}
             </a>
           );
