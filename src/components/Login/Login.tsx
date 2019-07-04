@@ -12,8 +12,7 @@ import FormControl from '@material-ui/core/FormControl';
 import FormHelperText from '@material-ui/core/FormHelperText';
 import { css } from 'emotion';
 
-// @ts-ignore
-import classes from './login.scss';
+import * as classes from './styles';
 
 interface FormFields {
   required: boolean;
@@ -195,7 +194,7 @@ export default class LoginModal extends Component<Partial<LoginModalProps>, Logi
     return (
       <FormControl
         className={css`
-          margin-top: '8px';
+          margin-top: 8px;
         `}
         error={!password.value && !password.pristine}
         fullWidth={true}

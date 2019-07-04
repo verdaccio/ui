@@ -25,6 +25,7 @@ export interface AppStateInterface {
   logoUrl: string;
   user: {
     username?: string;
+    token?: string;
   };
   scope: string;
   showLoginModal: boolean;
