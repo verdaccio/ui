@@ -1,7 +1,7 @@
-import { injectGlobal, css } from 'emotion';
+import { injectGlobal } from 'emotion';
 import { fontSize, fontWeight } from './sizes';
 import colors from './colors';
-import mq, { breakpoints } from './media';
+import { breakpoints } from './media';
 
 export default injectGlobal`
     html,
