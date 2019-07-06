@@ -31,10 +31,10 @@ class Dist extends Component {
 
       const value = dist === 'license' ? formatLicense(distDict[dist]) : distDict[dist];
       const label = (
-        <span>
+        <>
           {/* eslint-disable-next-line */}
           <b>{dist.replace('-', ' ')}</b>: {value}
-        </span>
+        </>
       );
       return <DistChips key={key} label={label} />;
     });
