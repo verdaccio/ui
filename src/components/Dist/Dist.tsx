@@ -6,6 +6,7 @@ import { DetailContextConsumer, VersionPageConsumerProps } from '../../pages/ver
 import { Heading, DistListItem, DistChips } from './styles';
 import fileSizeSI from '../../utils/file-size';
 import { PackageMetaInterface } from 'types/packageMeta';
+import { formatLicense } from '../../utils/package';
 
 class Dist extends Component {
   public render(): JSX.Element {
@@ -18,28 +19,25 @@ class Dist extends Component {
     );
   }
 
-  private renderChips(dist, license: string): JSX.Element | never[] {
+  private renderChips(dist, license: PackageMetaInterface['latest']['license']): (JSX.Element | undefined)[] {
     const distDict = {
       'file-count': dist.fileCount,
       size: dist.unpackedSize && fileSizeSI(dist.unpackedSize),
       license,
     };
 
-    const chipsList = Object.keys(distDict).reduce((componentList, title, key) => {
-      // @ts-ignore
-      const value = distDict[title];
-      if (value) {
-        const label = (
-          <span>
-            {/* eslint-disable-next-line */}
-            <b>{title.split('-').join(' ')}</b>:{value}
-          </span>
-        );
-        // @ts-ignore is not assignable to parameter of type 'never'
-        componentList.push(<DistChips key={key} label={label} />);
-      }
-      return componentList;
-    }, []);
+    const chipsList = Object.keys(distDict).map((dist, key) => {
+      if (!distDict[dist]) return;
+
+      const value = dist === 'license' ? formatLicense(distDict[dist]) : distDict[dist];
+      const label = (
+        <span>
+          {/* eslint-disable-next-line */}
+          <b>{dist.replace('-', ' ')}</b>: {value}
+        </span>
+      );
+      return <DistChips key={key} label={label} />;
+    });
 
     return chipsList;
   }

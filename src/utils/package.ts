@@ -6,11 +6,6 @@ import { isObject } from 'util';
 
 export const TIMEFORMAT = 'DD.MM.YYYY, HH:mm:ss';
 
-export interface License {
-  type: string;
-  url: string;
-}
-
 /**
  * Formats license field for webui.
  * @see https://docs.npmjs.com/files/package.json#license
