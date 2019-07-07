@@ -27,7 +27,8 @@ describe('<Author /> component', () => {
     }));
 
     const Author = require('./Author').default;
-    expect(<Author />).toMatchSnapshot();
+    const wrapper = shallow(<Author />);
+    expect(wrapper.html()).toMatchSnapshot();
   });
 
   test('should render the component when there is no author information available', () => {
@@ -69,6 +70,7 @@ describe('<Author /> component', () => {
     }));
 
     const Author = require('./Author').default;
-    expect(<Author />).toMatchSnapshot();
+    const wrapper = shallow(<Author />);
+    expect(wrapper.html()).toMatchSnapshot();
   });
 });
