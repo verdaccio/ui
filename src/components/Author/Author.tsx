@@ -1,12 +1,13 @@
 import React, { Component, ReactNode, ReactElement } from 'react';
 
-import Avatar from '@material-ui/core/Avatar';
 import List from '@material-ui/core/List';
 import ListItemText from '@material-ui/core/ListItemText';
 
 import { DetailContextConsumer } from '../../pages/version/Version';
 import { Heading, AuthorListItem } from './styles';
 import { isEmail } from '../../utils/url';
+
+import Avatar from '../primitives/Avatar';
 
 class Authors extends Component {
   public render(): ReactElement<HTMLElement> {

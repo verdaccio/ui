@@ -1,7 +1,6 @@
 /* eslint react/jsx-max-depth: 0 */
 
 import React, { Component, Fragment, ReactElement } from 'react';
-import Avatar from '@material-ui/core/Avatar';
 import List from '@material-ui/core/List';
 import ListItemText from '@material-ui/core/ListItemText';
 
@@ -12,6 +11,8 @@ import { Heading, GithubLink, RepositoryListItem } from './styles';
 
 import git from './img/git.png';
 import { isURL } from '../../utils/url';
+
+import Avatar from '../primitives/Avatar';
 
 class Repository extends Component {
   public render(): ReactElement<HTMLElement> {
@@ -41,7 +42,7 @@ class Repository extends Component {
 
     return (
       <Fragment>
-        <List dense={true} subheader={<Heading variant="subtitle1">{'Repository'}</Heading>}>
+        <List dense={true} subheader={<Heading variant="subtitle1">Repository</Heading>}>
           <RepositoryListItem>
             <Avatar src={git} />
             <ListItemText primary={this.renderContent(url)} />

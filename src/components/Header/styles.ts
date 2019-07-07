@@ -1,10 +1,11 @@
 import styled, { css } from 'react-emotion';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
-import IconButton from '@material-ui/core/IconButton';
 
 import colors from '../../utils/styles/colors';
 import mq from '../../utils/styles/media';
+
+import IconButton from '../primitives/IconButton';
 
 export const InnerNavBar = styled(Toolbar)`
   && {
@@ -60,6 +61,12 @@ export const IconSearchButton = styled(IconButton)`
   }
 `;
 
+export const IconHelpButton = styled(IconButton)`
+  && {
+   color: white;
+  }
+`;
+
 export const SearchWrapper = styled('div')`
   && {
     display: none;
@@ -75,8 +82,8 @@ export const NavBar = styled(AppBar)`
     display: flex;
     justify-content: center;
     ${() => {
-      // @ts-ignore
-      return mq.medium(css`
+    // @ts-ignore
+    return mq.medium(css`
         ${SearchWrapper} {
           display: flex;
         }
@@ -87,24 +94,24 @@ export const NavBar = styled(AppBar)`
           display: none;
         }
       `);
-    }};
+  }};
     ${() => {
-      // @ts-ignore
-      return mq.large(css`
+    // @ts-ignore
+    return mq.large(css`
         ${InnerNavBar} {
           padding: 0 20px;
         }
       `);
-    }};
+  }};
     ${() => {
-      // @ts-ignore
-      return mq.xlarge(css`
+    // @ts-ignore
+    return mq.xlarge(css`
         ${InnerNavBar} {
           max-width: 1240px;
           width: 100%;
           margin: 0 auto;
         }
       `);
-    }};
+  }};
   }
 `;

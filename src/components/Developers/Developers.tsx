@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
 
-import Avatar from '@material-ui/core/Avatar';
 import Add from '@material-ui/icons/Add';
 import Tooltip from '@material-ui/core/Tooltip';
 
 import { DetailContextConsumer } from '../../pages/version/Version';
 import { Details, Heading, Content, Fab } from './styles';
 import { isEmail } from '../../utils/url';
+
+import Avatar from '../primitives/Avatar';
 
 interface Props {
   type: 'contributors' | 'maintainers';
@@ -62,7 +63,7 @@ class Developers extends Component<Props, State> {
       return avatarComponent;
     }
     return (
-      <a href={`mailto:${email}?subject=${packageName}@${version}`} target={'_top'}>
+      <a href={`mailto:${email}?subject=${packageName}@${version}`} target="_top">
         {avatarComponent}
       </a>
     );

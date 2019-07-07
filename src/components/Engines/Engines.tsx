@@ -1,9 +1,10 @@
 import React, { Component, ReactElement } from 'react';
 
-import Avatar from '@material-ui/core/Avatar';
 import Grid from '@material-ui/core/Grid';
 import List from '@material-ui/core/List';
 import ListItemText from '@material-ui/core/ListItemText';
+
+import Avatar from '../primitives/Avatar';
 
 import { DetailContextConsumer, VersionPageConsumerProps } from '../../pages/version/Version';
 import { Heading, EngineListItem } from './styles';
