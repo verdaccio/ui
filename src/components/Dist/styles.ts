@@ -4,7 +4,7 @@ import Chip from '@material-ui/core/Chip';
 import Typography from '@material-ui/core/Typography';
 
 import colors from '../../utils/styles/colors';
-import ListItem from '../ListItem'
+import ListItem from '../ListItem';
 
 export const Heading = styled(Typography)`
   && {

@@ -1,6 +1,6 @@
 import styled from 'react-emotion';
 
-import IconButton from '../primitives/IconButton'
+import IconButton from '../primitives/IconButton';
 
 export const ClipBoardCopy = styled('div')`
   && {

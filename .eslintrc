@@ -85,7 +85,7 @@
     "react/jsx-no-bind": ["error"],
     "react/jsx-no-comment-textnodes": ["error"],
     "react/jsx-no-duplicate-props": ["error"],
-    "react/jsx-no-literals": ["error"],
+    "react/display-name": 0,
     "react/jsx-no-undef": ["error"],
     "react/prop-types": 0,
     "react/jsx-one-expression-per-line": ["error", {"allow": "single-child"}],

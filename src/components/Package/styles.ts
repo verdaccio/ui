@@ -12,7 +12,7 @@ import Ico from '../Icon';
 import Label from '../Label';
 import colors from '../../utils/styles/colors';
 
-import ListItem from '../ListItem'
+import ListItem from '../ListItem';
 import { default as MuiIconButton } from '../primitives/IconButton';
 
 export const OverviewItem = styled('span')`

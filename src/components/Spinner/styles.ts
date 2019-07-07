@@ -9,9 +9,9 @@ export const Wrapper = styled('div')`
     align-items: center;
     justify-content: center;
     ${props =>
-    // @ts-ignore
-    props.centered &&
-    css`
+      // @ts-ignore
+      props.centered &&
+      css`
         position: absolute;
         top: 50%;
         left: 50%;

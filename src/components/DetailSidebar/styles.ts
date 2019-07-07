@@ -3,7 +3,7 @@ import Avatar from '@material-ui/core/Avatar';
 import ListItemText from '@material-ui/core/ListItemText';
 
 import colors from '../../utils/styles/colors';
-import ListItem from '../ListItem'
+import ListItem from '../ListItem';
 
 export const TitleListItem = styled(ListItem)`
   && {
