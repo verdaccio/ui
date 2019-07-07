@@ -13,9 +13,9 @@ describe('formatLicense', (): void => {
   });
 
   test('should check license field for other value', (): void => {
-    expect(formatLicense(null)).toBeNull();
-    expect(formatLicense({})).toBeNull();
-    expect(formatLicense([])).toBeNull();
+    expect(formatLicense(null)).toBeUndefined();
+    expect(formatLicense({})).toBeUndefined();
+    expect(formatLicense([])).toBeUndefined();
   });
 });
 
