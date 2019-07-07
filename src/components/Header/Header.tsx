@@ -144,7 +144,7 @@ class Header extends Component<Props, State> {
       <LeftSide>
         <Link
           className={css`
-            margin-right: '1em';
+            margin-right: 1em;
           `}
           to="/">
           {this.renderLogo()}
