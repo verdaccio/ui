@@ -12,7 +12,7 @@ export const TIMEFORMAT = 'DD.MM.YYYY, HH:mm:ss';
  */
 // License should use type License defined above, but conflicts with the unit test that provide array or empty object
 /* eslint-disable @typescript-eslint/no-explicit-any */
-export function formatLicense(license: any): string | null {
+export function formatLicense(license: any): string | undefined {
   if (isString(license)) {
     return license;
   }
@@ -21,7 +21,7 @@ export function formatLicense(license: any): string | null {
     return license.type;
   }
 
-  return null;
+  return;
 }
 
 export interface Repository {

@@ -5,7 +5,7 @@ export interface PackageMetaInterface {
       fileCount: number;
       unpackedSize: number;
     };
-    license?: Partial<LicenseInterface> | string | null;
+    license?: Partial<LicenseInterface> | string;
   };
   _uplinks: {};
 }
