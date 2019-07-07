@@ -6,10 +6,29 @@ import HomeIcon from '@material-ui/icons/Home';
 import ListItem from '@material-ui/core/ListItem';
 import Tooltip from '@material-ui/core/Tooltip';
 
+import { PackageMetaInterface } from 'types/packageMeta';
 import Tag from '../Tag';
 import fileSizeSI from '../../utils/file-size';
 import { formatDate, formatDateDistance } from '../../utils/package';
-
+import {
+  Author,
+  Avatar,
+  Description,
+  Details,
+  GridRightAligned,
+  Icon,
+  IconButton,
+  OverviewItem,
+  PackageList,
+  PackageListItem,
+  PackageListItemText,
+  PackageTitle,
+  Published,
+  TagContainer,
+  Text,
+  WrapperLink,
+} from './styles';
+import { isURL } from '../../utils/url';
 interface Author {
   name: string;
   avatar?: string;
@@ -30,32 +49,11 @@ export interface PackageInterface {
   author: Author;
   description?: string;
   keywords?: string[];
-  license?: string | null;
+  license?: PackageMetaInterface['latest']['license'];
   homepage?: string;
   bugs?: Bugs;
   dist?: Dist;
 }
-// interface Props {} & PackageInterface;
-
-import {
-  Author,
-  Avatar,
-  Description,
-  Details,
-  GridRightAligned,
-  Icon,
-  IconButton,
-  OverviewItem,
-  PackageList,
-  PackageListItem,
-  PackageListItemText,
-  PackageTitle,
-  Published,
-  TagContainer,
-  Text,
-  WrapperLink,
-} from './styles';
-import { isURL } from '../../utils/url';
 
 const Package: React.FC<PackageInterface> = ({
   author: { name: authorName, avatar: authorAvatar },
