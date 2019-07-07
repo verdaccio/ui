@@ -38,7 +38,7 @@ class ActionBar extends Component {
 
   private renderIconsWithLink(link: string, component: JSX.Element): ReactElement<HTMLElement> {
     return (
-      <a href={link} target={'_blank'}>
+      <a href={link} target="_blank">
         {component}
       </a>
     );
@@ -57,7 +57,7 @@ class ActionBar extends Component {
     const renderList = Object.keys(actionsMap).reduce((component, value, key) => {
       const link = actionsMap[value];
       if (link && isURL(link)) {
-        const fab = <Fab size={'small'}>{ACTIONS[value]['icon']}</Fab>;
+        const fab = <Fab size="small">{ACTIONS[value]['icon']}</Fab>;
         component.push(
           // @ts-ignore
           <Tooltip key={key} title={ACTIONS[value]['title']}>
@@ -70,7 +70,7 @@ class ActionBar extends Component {
 
     return (
       <>
-        <ActionListItem alignItems={'flex-start'}>{renderList}</ActionListItem>
+        <ActionListItem alignItems="flex-start">{renderList}</ActionListItem>
       </>
     );
   };

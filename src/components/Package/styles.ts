@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 
 import Grid from '@material-ui/core/Grid';
 import List from '@material-ui/core/List';
-import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
 import MuiIconButton from '@material-ui/core/IconButton';
 import Photo from '@material-ui/core/Avatar';
@@ -13,6 +12,8 @@ import { breakpoints } from '../../utils/styles/media';
 import Ico from '../Icon';
 import Label from '../Label';
 import colors from '../../utils/styles/colors';
+
+import ListItem from '../ListItem'
 
 export const OverviewItem = styled('span')`
   && {

@@ -1,11 +1,7 @@
-import React, { ReactNode } from 'react';
+import React from 'react';
 
 import { Wrapper } from './styles';
 
-interface Props {
-  children: ReactNode;
-}
-
-const Tag: React.FC<Props> = ({ children }) => <Wrapper>{children}</Wrapper>;
+const Tag: React.FC = ({ children }) => <Wrapper>{children}</Wrapper>;
 
 export default Tag;

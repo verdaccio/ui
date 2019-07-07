@@ -1,9 +1,9 @@
 import styled from 'react-emotion';
 import Avatar from '@material-ui/core/Avatar';
-import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
 
 import colors from '../../utils/styles/colors';
+import ListItem from '../ListItem'
 
 export const TitleListItem = styled(ListItem)`
   && {

@@ -48,7 +48,7 @@ class Dist extends Component {
     const { dist, license } = packageMeta && packageMeta.latest;
 
     return (
-      <List subheader={<Heading variant="subheading">{'Latest Distribution'}</Heading>}>
+      <List subheader={<Heading variant="subtitle1">Latest Distribution</Heading>}>
         <DistListItem>{this.renderChips(dist, license)}</DistListItem>
       </List>
     );

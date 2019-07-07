@@ -5,7 +5,7 @@ import CardContent from '@material-ui/core/CardContent';
 import List from '@material-ui/core/List';
 
 import ActionBar from '../ActionBar/ActionBar';
-import Author from '../Author';
+// import Authors from '../Author';
 import Developers from '../Developers';
 import Dist from '../Dist/Dist';
 import Engine from '../Engines/Engines';
@@ -23,7 +23,7 @@ class DetailSidebar extends Component {
 
   private renderSideBar = ({ packageName, packageMeta }): ReactElement<HTMLElement> => {
     return (
-      <div className={'sidebar-info'}>
+      <div className="sidebar-info">
         <Card>
           <CardContent>
             {this.renderTitle(packageName, packageMeta)}
@@ -32,7 +32,7 @@ class DetailSidebar extends Component {
             {this.renderRepository()}
             {this.renderEngine()}
             {this.renderDist()}
-            {this.renderAuthor()}
+            {/* {this.renderAuthors()} */}
             {this.renderMaintainers()}
             {this.renderContributors()}
           </CardContent>
@@ -67,9 +67,9 @@ class DetailSidebar extends Component {
     return <Repository />;
   };
 
-  private renderAuthor = () => {
-    return <Author />;
-  };
+  // private renderAuthors = () => {
+  //   return <Authors />;
+  // };
 
   private renderEngine = () => {
     return <Engine />;

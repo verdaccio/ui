@@ -42,7 +42,7 @@ class Developers extends Component<Props, State> {
     const { visibleDevs } = this.state;
     return (
       <>
-        <Heading variant={'subheading'}>{type}</Heading>
+        <Heading variant="subtitle1">{type}</Heading>
         <Content>
           {developers.slice(0, visibleDevs).map(developer => (
             <Details key={developer.email}>{this.renderDeveloperDetails(developer, packageMeta)}</Details>

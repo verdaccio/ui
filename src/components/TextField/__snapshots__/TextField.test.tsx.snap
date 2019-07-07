@@ -1,3 +1,3 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<TextField /> component should render the component in default state 1`] = `"<div class=\\"MuiFormControl-root-1\\"><div class=\\"MuiInputBase-root-18 MuiInput-root-5 MuiInput-underline-9 MuiInputBase-formControl-19 MuiInput-formControl-6\\"><input type=\\"text\\" aria-invalid=\\"false\\" class=\\"MuiInputBase-input-28 MuiInput-input-13\\" name=\\"test\\" value=\\"test\\"/></div></div>"`;
+exports[`<TextField /> component should render the component in default state 1`] = `"<div class=\\"MuiFormControl-root MuiTextField-root\\"><div class=\\"MuiInputBase-root MuiInput-root MuiInput-underline MuiInputBase-formControl MuiInput-formControl\\"><input type=\\"text\\" aria-invalid=\\"false\\" class=\\"MuiInputBase-input MuiInput-input\\" name=\\"test\\" value=\\"test\\"/></div></div>"`;

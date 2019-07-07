@@ -32,7 +32,7 @@ class DepDetail extends Component<DepDetailProps, DepDetailState> {
   public render(): ReactElement<HTMLElement> {
     const { name, version } = this.state;
     const tagText = `${name}@${version}`;
-    return <Tag className={'dep-tag'} clickable={true} component={'div'} label={tagText} onClick={this.handleOnClick} />;
+    return <Tag className="dep-tag" clickable={true} label={tagText} onClick={this.handleOnClick} />;
   }
 
   private handleOnClick = () => {
@@ -57,7 +57,7 @@ class DependencyBlock extends Component<{ title: string; dependencies: [] }> {
           return (
             <CardWrap>
               <CardContent>
-                <Heading variant="subheading">{`${title} (${deps.length})`}</Heading>
+                <Heading variant="subtitle1">{`${title} (${deps.length})`}</Heading>
                 <Tags>{this.renderTags(deps, enableLoading)}</Tags>
               </CardContent>
             </CardWrap>

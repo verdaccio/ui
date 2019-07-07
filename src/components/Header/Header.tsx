@@ -32,7 +32,7 @@ interface Props {
 }
 
 interface State {
-  anchorEl?: null | HTMLElement | ((element: HTMLElement) => HTMLElement);
+  anchorEl?: null | Element | ((element: Element) => Element);
   openInfoDialog: boolean;
   registryUrl: string;
   showMobileNavBar: boolean;
@@ -146,7 +146,7 @@ class Header extends Component<Props, State> {
           className={css`
             margin-right: '1em';
           `}
-          to={'/'}>
+          to="/">
           {this.renderLogo()}
         </Link>
         {!withoutSearch && (
@@ -174,7 +174,7 @@ class Header extends Component<Props, State> {
       case 'help':
         content = (
           // @ts-ignore
-          <IconButton blank={true} color={'inherit'} component={ExternalLink} to={'https://verdaccio.org/docs/en/installation'}>
+          <IconButton blank={true} color="inherit" component={ExternalLink} to="https://verdaccio.org/docs/en/installation">
             <Help />
           </IconButton>
         );
@@ -223,7 +223,7 @@ class Header extends Component<Props, State> {
     const { username = '' } = this.props;
     return (
       <Fragment>
-        <Greetings>{'Hi,'}</Greetings>
+        <Greetings>Hi,</Greetings>
         <Label capitalize={true} text={username} weight="bold" />
       </Fragment>
     );
