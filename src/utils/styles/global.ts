@@ -3,6 +3,9 @@ import { fontSize, fontWeight } from './sizes';
 import colors from './colors';
 import { breakpoints } from './media';
 
+const fontFamily = `-apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", 
+    Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"`;
+
 export default injectGlobal`
     html,
     body {
@@ -10,6 +13,7 @@ export default injectGlobal`
     }
 
     body {
+        font-family: ${fontFamily};
         font-size: ${fontSize.base};
         color: ${colors.eclipse};
     }
