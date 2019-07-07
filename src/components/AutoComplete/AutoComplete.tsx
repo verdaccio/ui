@@ -51,7 +51,7 @@ const renderSuggestion = (suggestion, { query, isHighlighted }): JSX.Element => 
   const matches = match(suggestion.name, query);
   const parts = parse(suggestion.name, matches);
   return (
-    <MenuItem component="div" selected={isHighlighted}>
+    <MenuItem component={'div'} selected={isHighlighted}>
       <div>
         {parts.map((part, index) => {
           const fw = part.highlight ? fontWeight.semiBold : fontWeight.light;
@@ -73,7 +73,7 @@ const renderSuggestion = (suggestion, { query, isHighlighted }): JSX.Element => 
 
 const renderMessage = (message): JSX.Element => {
   return (
-    <MenuItem component="div" selected={false}>
+    <MenuItem component={'div'} selected={false}>
       <div>{message}</div>
     </MenuItem>
   );

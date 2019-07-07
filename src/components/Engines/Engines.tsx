@@ -61,7 +61,7 @@ class Engine extends Component {
 
   private renderListItems = (heading, text) => {
     return (
-      <List subheader={<Heading variant="subtitle1">{text.split('-').join(' ')}</Heading>}>
+      <List subheader={<Heading variant={'subtitle1'}>{text.split('-').join(' ')}</Heading>}>
         <EngineListItem>
           {ICONS[text]}
           <ListItemText primary={heading} />

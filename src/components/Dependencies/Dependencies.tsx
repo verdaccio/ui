@@ -32,7 +32,7 @@ class DepDetail extends Component<DepDetailProps, DepDetailState> {
   public render(): ReactElement<HTMLElement> {
     const { name, version } = this.state;
     const tagText = `${name}@${version}`;
-    return <Tag className="dep-tag" clickable={true} label={tagText} onClick={this.handleOnClick} />;
+    return <Tag className={'dep-tag'} clickable={true} label={tagText} onClick={this.handleOnClick} />;
   }
 
   private handleOnClick = () => {
@@ -57,7 +57,7 @@ class DependencyBlock extends Component<{ title: string; dependencies: [] }> {
           return (
             <CardWrap>
               <CardContent>
-                <Heading variant="subtitle1">{`${title} (${deps.length})`}</Heading>
+                <Heading variant={'subtitle1'}>{`${title} (${deps.length})`}</Heading>
                 <Tags>{this.renderTags(deps, enableLoading)}</Tags>
               </CardContent>
             </CardWrap>
@@ -104,7 +104,7 @@ class Dependencies extends Component {
       const selectedDepndency = dependencyMap[value];
       if (selectedDepndency && this.checkDependencyLength(selectedDepndency)) {
         // @ts-ignore
-        result.push(<DependencyBlock className="dependency-block" dependencies={selectedDepndency} key={key} title={value} />);
+        result.push(<DependencyBlock className={'dependency-block'} dependencies={selectedDepndency} key={key} title={value} />);
       }
       return result;
     }, []);
@@ -112,7 +112,7 @@ class Dependencies extends Component {
     if (dependencyList.length) {
       return <Fragment>{dependencyList}</Fragment>;
     }
-    return <NoItems className="no-dependencies" text={`${name} has no dependencies.`} />;
+    return <NoItems className={'no-dependencies'} text={`${name} has no dependencies.`} />;
   }
 }
 

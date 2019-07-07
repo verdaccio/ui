@@ -5,14 +5,14 @@ import { goToVerdaccioWebsite } from '../../utils/windows';
 
 const renderTooltip = (): JSX.Element => (
   <ToolTip>
-    <Earth name="earth" size="md" />
+    <Earth name={'earth'} size={'md'} />
     <Flags>
-      <Flag name="spain" size="md" />
-      <Flag name="nicaragua" size="md" />
-      <Flag name="india" size="md" />
-      <Flag name="brazil" size="md" />
-      <Flag name="china" size="md" />
-      <Flag name="austria" size="md" />
+      <Flag name={'spain'} size={'md'} />
+      <Flag name={'nicaragua'} size={'md'} />
+      <Flag name={'india'} size={'md'} />
+      <Flag name={'brazil'} size={'md'} />
+      <Flag name={'china'} size={'md'} />
+      <Flag name={'austria'} size={'md'} />
     </Flags>
   </ToolTip>
 );
@@ -26,7 +26,7 @@ const renderRight = (version = window.VERDACCIO_VERSION): JSX.Element => {
   return (
     <Right>
       {POWERED_LABEL}
-      <Logo img={true} name="verdaccio" onClick={goToVerdaccioWebsite} pointer={true} size="md" />
+      <Logo img={true} name={'verdaccio'} onClick={goToVerdaccioWebsite} pointer={true} size={'md'} />
       {`/ ${version}`}
     </Right>
   );

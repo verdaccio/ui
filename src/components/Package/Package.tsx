@@ -99,7 +99,7 @@ const Package: React.FC<PackageInterface> = ({
   const renderLicenseInfo = (): React.ReactNode =>
     license && (
       <OverviewItem>
-        <Icon name="law" />
+        <Icon name={'law'} />
         {license}
       </OverviewItem>
     );
@@ -107,7 +107,7 @@ const Package: React.FC<PackageInterface> = ({
   const renderPublishedInfo = (): React.ReactNode =>
     time && (
       <OverviewItem>
-        <Icon name="time" />
+        <Icon name={'time'} />
         <Published>{`Published on ${formatDate(time)} •`}</Published>
         {`${formatDateDistance(time)} ago`}
       </OverviewItem>
@@ -170,7 +170,7 @@ const Package: React.FC<PackageInterface> = ({
 
   const renderPackageListItemText = (): React.ReactNode => (
     // @ts-ignore
-    <PackageListItemText className="package-link" component="div" primary={renderPrimaryComponent()} secondary={renderSecondaryComponent()} />
+    <PackageListItemText className={'package-link'} component={'div'} primary={renderPrimaryComponent()} secondary={renderSecondaryComponent()} />
   );
 
   return (

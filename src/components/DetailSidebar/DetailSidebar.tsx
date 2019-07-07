@@ -23,7 +23,7 @@ class DetailSidebar extends Component {
 
   private renderSideBar = ({ packageName, packageMeta }): ReactElement<HTMLElement> => {
     return (
-      <div className="sidebar-info">
+      <div className={'sidebar-info'}>
         <Card>
           <CardContent>
             {this.renderTitle(packageName, packageMeta)}
@@ -43,8 +43,8 @@ class DetailSidebar extends Component {
 
   private renderTitle = (packageName, packageMeta) => {
     return (
-      <List className="detail-info">
-        <TitleListItem alignItems="flex-start">
+      <List className={'detail-info'}>
+        <TitleListItem alignItems={'flex-start'}>
           <TitleListItemText primary={<b>{packageName}</b>} secondary={packageMeta.latest.description} />
         </TitleListItem>
       </List>
@@ -56,11 +56,11 @@ class DetailSidebar extends Component {
   };
 
   private renderMaintainers = () => {
-    return <Developers type="maintainers" />;
+    return <Developers type={'maintainers'} />;
   };
 
   private renderContributors = () => {
-    return <Developers type="contributors" />;
+    return <Developers type={'contributors'} />;
   };
 
   private renderRepository = () => {

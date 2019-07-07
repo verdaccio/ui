@@ -26,7 +26,7 @@ class Authors extends Component {
     }
 
     return (
-      <a href={`mailto:${email}?subject=${packageName}@${version}`} target="_top">
+      <a href={`mailto:${email}?subject=${packageName}@${version}`} target={'_top'}>
         {avatarComponent}
       </a>
     );
@@ -41,7 +41,7 @@ class Authors extends Component {
 
     const avatarComponent = <Avatar alt={author.name} src={author.avatar} />;
     return (
-      <List subheader={<Heading variant="subtitle1">Author</Heading>}>
+      <List subheader={<Heading variant={'subtitle1'}>{'Author'}</Heading>}>
         <AuthorListItem>
           {this.renderLinkForMail(author.email, avatarComponent, packageName, version)}
           <ListItemText primary={author.name} />

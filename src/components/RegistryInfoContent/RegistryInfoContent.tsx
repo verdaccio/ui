@@ -20,7 +20,7 @@ function TabContainer({ children }): JSX.Element {
           padding: 0;
           min-height: 170;
         `}
-        component="div">
+        component={'div'}>
         {children}
       </Typography>
     </CommandContainer>
@@ -47,7 +47,7 @@ class RegistryInfoContent extends Component<Props, State> {
 
     return (
       <React.Fragment>
-        <Tabs indicatorColor="primary" onChange={this.handleChange} textColor="primary" value={tabPosition} variant="fullWidth">
+        <Tabs indicatorColor={'primary'} onChange={this.handleChange} textColor={'primary'} value={tabPosition} variant={'fullWidth'}>
           <Tab label={NODE_MANAGER.npm} />
           <Tab label={NODE_MANAGER.pnpm} />
           <Tab label={NODE_MANAGER.yarn} />

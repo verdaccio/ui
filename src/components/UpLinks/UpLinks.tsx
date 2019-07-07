@@ -45,7 +45,7 @@ class UpLinks extends React.PureComponent<{}> {
       return (
         uplinks && (
           <>
-            <Heading variant="subtitle1">Uplinks</Heading>
+            <Heading variant={'subtitle1'}>{'Uplinks'}</Heading>
             {this.renderUpLinksList(uplinks)}
           </>
         )

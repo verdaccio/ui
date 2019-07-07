@@ -27,7 +27,7 @@ class Repository extends Component {
 
   private renderRepositoryText(url: string): ReactElement<HTMLElement> {
     return (
-      <GithubLink href={url} target="_blank">
+      <GithubLink href={url} target={'_blank'}>
         {url}
       </GithubLink>
     );
@@ -42,7 +42,7 @@ class Repository extends Component {
 
     return (
       <Fragment>
-        <List dense={true} subheader={<Heading variant="subtitle1">Repository</Heading>}>
+        <List dense={true} subheader={<Heading variant={'subtitle1'}>{'Repository'}</Heading>}>
           <RepositoryListItem>
             <Avatar src={git} />
             <ListItemText primary={this.renderContent(url)} />

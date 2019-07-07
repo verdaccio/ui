@@ -27,7 +27,7 @@ class Install extends Component {
   public renderCopyCLI = ({ packageName = '' }: Partial<VersionPageConsumerProps>) => {
     return (
       <>
-        <List subheader={<Heading variant="subtitle1">Installation</Heading>}>{this.renderListItems(packageName)}</List>
+        <List subheader={<Heading variant={'subtitle1'}>{'Installation'}</Heading>}>{this.renderListItems(packageName)}</List>
       </>
     );
   };

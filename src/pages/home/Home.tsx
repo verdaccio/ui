@@ -8,7 +8,7 @@ interface Props {
 }
 
 const Home: React.FC<Props> = ({ packages }) => (
-  <div className="container content">
+  <div className={'container content'}>
     <PackageList packages={packages} />
   </div>
 );

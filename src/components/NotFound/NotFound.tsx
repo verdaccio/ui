@@ -33,7 +33,7 @@ const NotFound: React.FC<NotFoundProps> = ({ history, width }) => {
   );
 
   const renderSubTitle = (): JSX.Element => (
-    <Typography variant="subtitle1">
+    <Typography variant={'subtitle1'}>
       <div>{"The page you're looking for doesn't exist."}</div>
       <div>{'Perhaps these links will help find what you are looking for:'}</div>
     </Typography>
@@ -42,8 +42,8 @@ const NotFound: React.FC<NotFoundProps> = ({ history, width }) => {
   return (
     <Wrapper>
       <Inner>
-        <EmptyPackage alt="404 - Page not found" src={PackageImg} />
-        <Heading className="not-found-text" variant={isWidthUp('sm', width) ? 'h2' : 'h4'}>
+        <EmptyPackage alt={'404 - Page not found'} src={PackageImg} />
+        <Heading className={'not-found-text'} variant={isWidthUp('sm', width) ? 'h2' : 'h4'}>
           {NOT_FOUND_TEXT}
         </Heading>
         {renderSubTitle()}

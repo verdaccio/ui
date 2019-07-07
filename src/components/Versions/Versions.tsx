@@ -25,7 +25,7 @@ class Versions extends React.PureComponent {
         {Object.keys(packages)
           .reverse()
           .map(version => (
-            <ListItem className="version-item" key={version}>
+            <ListItem className={'version-item'} key={version}>
               <ListItemText>{version}</ListItemText>
               <Spacer />
               {isVersion && <ListItemText>{timeMap[version] ? `${formatDateDistance(timeMap[version])} ago` : NOT_AVAILABLE}</ListItemText>}
@@ -43,13 +43,13 @@ class Versions extends React.PureComponent {
       <>
         {distTags && (
           <>
-            <Heading variant="subtitle1">Current Tags</Heading>
+            <Heading variant={'subtitle1'}>{'Current Tags'}</Heading>
             {this.renderPackageList(distTags, false, timeMap)}
           </>
         )}
         {versions && (
           <>
-            <Heading variant="subtitle1">Version History</Heading>
+            <Heading variant={'subtitle1'}>{'Version History'}</Heading>
             {this.renderPackageList(versions, true, timeMap)}
           </>
         )}

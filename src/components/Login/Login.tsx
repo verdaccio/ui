@@ -67,9 +67,9 @@ export default class LoginModal extends Component<Partial<LoginModalProps>, Logi
   public render(): JSX.Element {
     const { visibility = true, onCancel = () => null, error } = this.props as LoginModalProps;
     return (
-      <Dialog fullWidth={true} id="login--form-container" maxWidth="xs" onClose={onCancel} open={visibility}>
+      <Dialog fullWidth={true} id={'login--form-container'} maxWidth={'xs'} onClose={onCancel} open={visibility}>
         <form noValidate={true} onSubmit={this.handleValidateCredentials}>
-          <DialogTitle>Login</DialogTitle>
+          <DialogTitle>{'Login'}</DialogTitle>
           <DialogContent>
             {error && this.renderLoginError(error)}
             {this.renderNameField()}
@@ -164,7 +164,7 @@ export default class LoginModal extends Component<Partial<LoginModalProps>, Logi
 
   public renderMessage(title, description): JSX.Element {
     return (
-      <div className={classes.loginErrorMsg} id="client-snackbar">
+      <div className={classes.loginErrorMsg} id={'client-snackbar'}>
         <ErrorIcon className={classes.loginIcon} />
         {this.renderErrorMessage(title, description)}
       </div>
@@ -181,9 +181,9 @@ export default class LoginModal extends Component<Partial<LoginModalProps>, Logi
     } = this.state;
     return (
       <FormControl error={!username.value && !username.pristine} fullWidth={true} required={username.required}>
-        <InputLabel htmlFor="username">Username</InputLabel>
-        <Input id="login--form-username" onChange={this.handleUsernameChange} placeholder="Your username" value={username.value} />
-        {!username.value && !username.pristine && <FormHelperText id="username-error">{username.helperText}</FormHelperText>}
+        <InputLabel htmlFor={'username'}>{'Username'}</InputLabel>
+        <Input id={'login--form-username'} onChange={this.handleUsernameChange} placeholder={'Your username'} value={username.value} />
+        {!username.value && !username.pristine && <FormHelperText id={'username-error'}>{username.helperText}</FormHelperText>}
       </FormControl>
     );
   };
@@ -200,9 +200,9 @@ export default class LoginModal extends Component<Partial<LoginModalProps>, Logi
         error={!password.value && !password.pristine}
         fullWidth={true}
         required={password.required}>
-        <InputLabel htmlFor="password">Password</InputLabel>
-        <Input id="login--form-password" onChange={this.handlePasswordChange} placeholder="Your strong password" type="password" value={password.value} />
-        {!password.value && !password.pristine && <FormHelperText id="password-error">{password.helperText}</FormHelperText>}
+        <InputLabel htmlFor={'password'}>{'Password'}</InputLabel>
+        <Input id={'login--form-password'} onChange={this.handlePasswordChange} placeholder={'Your strong password'} type={'password'} value={password.value} />
+        {!password.value && !password.pristine && <FormHelperText id={'password-error'}>{password.helperText}</FormHelperText>}
       </FormControl>
     );
   };
@@ -213,11 +213,11 @@ export default class LoginModal extends Component<Partial<LoginModalProps>, Logi
     } = this.state;
     const { onCancel } = this.props;
     return (
-      <DialogActions className="dialog-footer">
-        <Button color="inherit" id="login--form-cancel" onClick={onCancel} type="button">
+      <DialogActions className={'dialog-footer'}>
+        <Button color={'inherit'} id={'login--form-cancel'} onClick={onCancel} type={'button'}>
           {'Cancel'}
         </Button>
-        <Button color="inherit" disabled={!password.value || !username.value} id="login--form-submit" type="submit">
+        <Button color={'inherit'} disabled={!password.value || !username.value} id={'login--form-submit'} type={'submit'}>
           {'Login'}
         </Button>
       </DialogActions>

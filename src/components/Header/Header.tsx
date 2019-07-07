@@ -66,7 +66,7 @@ class Header extends Component<Props, State> {
     const { withoutSearch = false } = this.props;
     return (
       <div>
-        <NavBar position="static">
+        <NavBar position={'static'}>
           <InnerNavBar>
             {this.renderLeftSide()}
             {this.renderRightSide()}
@@ -78,7 +78,7 @@ class Header extends Component<Props, State> {
             <InnerMobileNavBar>
               <Search />
             </InnerMobileNavBar>
-            <Button color="inherit" onClick={this.handleDismissMNav}>
+            <Button color={'inherit'} onClick={this.handleDismissMNav}>
               {'Cancel'}
             </Button>
           </MobileNavBar>
@@ -157,7 +157,7 @@ class Header extends Component<Props, State> {
           className={css`
             margin-right: 1em;
           `}
-          to="/">
+          to={'/'}>
           {this.renderLogo()}
         </Link>
         {!withoutSearch && (
@@ -173,7 +173,7 @@ class Header extends Component<Props, State> {
     const { logo } = this.props;
 
     if (logo) {
-      return <img alt="logo" height="40px" src={logo} />;
+      return <img alt={'logo'} height={'40px'} src={logo} />;
     } else {
       return <Logo />;
     }
@@ -185,7 +185,7 @@ class Header extends Component<Props, State> {
       case 'help':
         content = (
           // @ts-ignore
-          <ExternalLink blank={true} to="https://verdaccio.org/docs/en/installation">
+          <ExternalLink blank={true} to={'https://verdaccio.org/docs/en/installation'}>
             <IconHelpButton>
               <Help />
             </IconHelpButton>
@@ -194,14 +194,14 @@ class Header extends Component<Props, State> {
         break;
       case 'info':
         content = (
-          <IconButton color="inherit" id="header--button-registryInfo" onClick={this.handleOpenRegistryInfoDialog}>
+          <IconButton color={'inherit'} id={'header--button-registryInfo'} onClick={this.handleOpenRegistryInfoDialog}>
             <Info />
           </IconButton>
         );
         break;
       case 'search':
         content = (
-          <IconSearchButton color="inherit" onClick={this.handleToggleMNav}>
+          <IconSearchButton color={'inherit'} onClick={this.handleToggleMNav}>
             <IconSearch />
           </IconSearchButton>
         );
@@ -224,7 +224,7 @@ class Header extends Component<Props, State> {
         {username ? (
           this.renderMenu()
         ) : (
-          <Button color="inherit" id="header--button-login" onClick={this.handleToggleLogin}>
+          <Button color={'inherit'} id={'header--button-login'} onClick={this.handleToggleLogin}>
             {'Login'}
           </Button>
         )}
@@ -236,8 +236,8 @@ class Header extends Component<Props, State> {
     const { username = '' } = this.props;
     return (
       <Fragment>
-        <Greetings>Hi,</Greetings>
-        <Label capitalize={true} text={username} weight="bold" />
+        <Greetings>{'Hi,'}</Greetings>
+        <Label capitalize={true} text={username} weight={'bold'} />
       </Fragment>
     );
   };
@@ -251,7 +251,7 @@ class Header extends Component<Props, State> {
     const open = Boolean(anchorEl);
     return (
       <>
-        <IconButton color="inherit" id="header--button-account" onClick={this.handleLoggedInMenu}>
+        <IconButton color={'inherit'} id={'header--button-account'} onClick={this.handleLoggedInMenu}>
           <AccountCircle />
         </IconButton>
         <Menu
@@ -260,7 +260,7 @@ class Header extends Component<Props, State> {
             vertical: 'top',
             horizontal: 'right',
           }}
-          id="sidebar-menu"
+          id={'sidebar-menu'}
           onClose={this.handleLoggedInMenuClose}
           open={open}
           transformOrigin={{
@@ -268,7 +268,7 @@ class Header extends Component<Props, State> {
             horizontal: 'right',
           }}>
           <MenuItem disabled={true}>{this.renderGreetings()}</MenuItem>
-          <MenuItem id="header--button-logout" onClick={onLogout}>
+          <MenuItem id={'header--button-logout'} onClick={onLogout}>
             {'Logout'}
           </MenuItem>
         </Menu>

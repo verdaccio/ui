@@ -43,13 +43,13 @@ class Developers extends Component<Props, State> {
     const { visibleDevs } = this.state;
     return (
       <>
-        <Heading variant="subtitle1">{type}</Heading>
+        <Heading variant={'subtitle1'}>{type}</Heading>
         <Content>
           {developers.slice(0, visibleDevs).map(developer => (
             <Details key={developer.email}>{this.renderDeveloperDetails(developer, packageMeta)}</Details>
           ))}
           {visibleDevs < developers.length && (
-            <Fab onClick={this.handleLoadMore} size="small">
+            <Fab onClick={this.handleLoadMore} size={'small'}>
               <Add />
             </Fab>
           )}
@@ -63,7 +63,7 @@ class Developers extends Component<Props, State> {
       return avatarComponent;
     }
     return (
-      <a href={`mailto:${email}?subject=${packageName}@${version}`} target="_top">
+      <a href={`mailto:${email}?subject=${packageName}@${version}`} target={'_top'}>
         {avatarComponent}
       </a>
     );
