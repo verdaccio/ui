@@ -44,7 +44,7 @@ class ActionBar extends Component {
     );
   }
 
-  private renderActionBarListItems = packageMeta => {
+  private renderActionBar = ({ packageMeta }) => {
     // @ts-ignore
     const { latest: { bugs: { url: issue } = {}, homepage, dist: { tarball } = {} } = {} } = packageMeta;
 
@@ -68,15 +68,15 @@ class ActionBar extends Component {
       return component;
     }, []);
 
-    return (
-      <>
-        <ActionListItem alignItems={'flex-start'}>{renderList}</ActionListItem>
-      </>
-    );
-  };
+    if (renderList.length > 0) {
+      return (
+        <List>
+          <ActionListItem alignItems={'flex-start'}>{renderList}</ActionListItem>
+        </List>
+      );
+    }
 
-  private renderActionBar = ({ packageMeta = {} }) => {
-    return <List>{this.renderActionBarListItems(packageMeta)}</List>;
+    return null;
   };
 }
 

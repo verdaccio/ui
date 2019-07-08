@@ -11,7 +11,12 @@ export interface PackageMetaInterface {
       fileCount: number;
       unpackedSize: number;
     };
-    license: string;
+    license?: Partial<LicenseInterface> | string;
   };
   _uplinks: {};
+}
+
+interface LicenseInterface {
+  type: string;
+  url: string;
 }
