@@ -71,7 +71,6 @@ describe('App', () => {
     await handleDoLogin('sam', '1234');
     const result = {
       username: 'sam',
-      token: 'TEST_TOKEN',
     };
     expect(wrapper.state('isUserLoggedIn')).toBeTruthy();
     expect(wrapper.state('showLoginModal')).toBeFalsy();
