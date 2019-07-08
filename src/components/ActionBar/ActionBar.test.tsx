@@ -14,7 +14,7 @@ describe('<ActionBar /> component', () => {
           url: 'https://verdaccio.tld/bugs',
         },
         dist: {
-          tarball: 'https://verdaccio.tld/download'
+          tarball: 'https://verdaccio.tld/download',
         },
       },
     };
