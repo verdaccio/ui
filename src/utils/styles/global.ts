@@ -32,8 +32,8 @@ export default injectGlobal`
         padding: 15px;
         flex: 1;
 
-        @media screen and (min-width: ${breakpoints.large}px) {
-          max-width: ${breakpoints.large}px;
+        @media screen and (min-width: ${breakpoints.container}px) {
+          max-width: ${breakpoints.container}px;
           width: 100%;
           margin-left: auto;
           margin-right: auto;

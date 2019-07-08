@@ -4,6 +4,7 @@ export const breakpoints = {
   small: 576,
   medium: 768,
   large: 1024,
+  container: 1240,
   xlarge: 1275,
 };
 
