@@ -72,12 +72,6 @@ module.exports = {
         },
       },
       {
-        test: /\.scss$/,
-        exclude: /node_modules/,
-        loader: `style-loader!css-loader?module&sourceMap=false&localIdentName=[path][name]__[local]--[hash:base64:5]
-        !resolve-url-loader?keepQuery!sass-loader?sourceMap`,
-      },
-      {
         test: /\.css$/,
         use: [
           {
