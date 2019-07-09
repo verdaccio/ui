@@ -25,7 +25,6 @@ export interface AppStateInterface {
   logoUrl: string;
   user: {
     username?: string;
-    token?: string;
   };
   scope: string;
   showLoginModal: boolean;
@@ -133,7 +132,7 @@ export default class App extends Component<{}, AppStateInterface> {
     if (username && token) {
       storage.setItem('username', username);
       storage.setItem('token', token);
-      this.setLoggedUser(username, token);
+      this.setLoggedUser(username);
     }
 
     if (error) {
@@ -144,7 +143,7 @@ export default class App extends Component<{}, AppStateInterface> {
     }
   };
 
-  public setLoggedUser = (username, token) => {
+  public setLoggedUser = username => {
     this.setState({
       user: {
         username,
