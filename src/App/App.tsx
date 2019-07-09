@@ -81,7 +81,7 @@ export default class App extends Component<{}, AppStateInterface> {
       this.handleLogout();
     } else {
       this.setState({
-        user: { username, token },
+        user: { username },
         isUserLoggedIn: true,
       });
     }
@@ -148,7 +148,6 @@ export default class App extends Component<{}, AppStateInterface> {
     this.setState({
       user: {
         username,
-        token,
       },
       isUserLoggedIn: true, // close login modal after successful login
       showLoginModal: false, // set isUserLoggedIn to true

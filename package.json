@@ -85,7 +85,7 @@
     "stylelint-webpack-plugin": "0.10.5",
     "supertest": "4.0.2",
     "typeface-roboto": "0.0.54",
-    "typescript": "3.4.5",
+    "typescript": "3.5.2",
     "url-loader": "1.1.2",
     "validator": "10.11.0",
     "verdaccio": "4.0.3",
