@@ -195,7 +195,7 @@ export default class LoginModal extends Component<Partial<LoginModalProps>, Logi
     return (
       <FormControl
         className={css`
-          margin-top: '8px';
+          margin-top: 8px;
         `}
         error={!password.value && !password.pristine}
         fullWidth={true}
