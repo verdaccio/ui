@@ -7,8 +7,8 @@ export interface DetailPage {
 }
 
 export async function callDetailPage(packageName): Promise<DetailPage> {
-  const readMe = await API.request(`package/readme/${packageName}`, 'GET');
-  const packageMeta = await API.request(`sidebar/${packageName}`, 'GET');
+  const readMe = await API.request<string | {}>(`package/readme/${packageName}`, 'GET');
+  const packageMeta = await API.request<PackageMetaInterface | {}>(`sidebar/${packageName}`, 'GET');
 
   return { readMe, packageMeta };
 }
