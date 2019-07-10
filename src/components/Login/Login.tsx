@@ -12,8 +12,7 @@ import FormControl from '@material-ui/core/FormControl';
 import FormHelperText from '@material-ui/core/FormHelperText';
 import { css } from 'emotion';
 
-// @ts-ignore
-import classes from './login.scss';
+import * as classes from './styles';
 
 interface FormFields {
   required: boolean;
