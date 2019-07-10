@@ -2,6 +2,35 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="0.2.1"></a>
+## [0.2.1](https://github.com/verdaccio/ui/compare/v0.2.0...v0.2.1) (2019-07-10)
+
+
+### Bug Fixes
+
+* [@typescript-eslint](https://github.com/typescript-eslint)/explicit-function-return-type ([31c11f2](https://github.com/verdaccio/ui/commit/31c11f2))
+* [@typescript-eslint](https://github.com/typescript-eslint)/explicit-member-accessibility ([55f50e9](https://github.com/verdaccio/ui/commit/55f50e9))
+* [@typescript-eslint](https://github.com/typescript-eslint)/no-explicit-any ([2f28ade](https://github.com/verdaccio/ui/commit/2f28ade))
+* [@typescript-eslint](https://github.com/typescript-eslint)/no-explicit-any ([6eec4f4](https://github.com/verdaccio/ui/commit/6eec4f4))
+* [@typescript-eslint](https://github.com/typescript-eslint)/no-explicit-any ([ec8ed12](https://github.com/verdaccio/ui/commit/ec8ed12))
+* [@typescript-eslint](https://github.com/typescript-eslint)/no-explicit-any for file-size.ts ([b683b68](https://github.com/verdaccio/ui/commit/b683b68))
+* add missing global font-family ([c57f9dd](https://github.com/verdaccio/ui/commit/c57f9dd))
+* added packageMeta type ([3c54b11](https://github.com/verdaccio/ui/commit/3c54b11))
+* container breakpoint ([60b7161](https://github.com/verdaccio/ui/commit/60b7161))
+* incorrect logos styles ([fdad635](https://github.com/verdaccio/ui/commit/fdad635)), closes [#47](https://github.com/verdaccio/ui/issues/47)
+* logo component styled ([210bcf3](https://github.com/verdaccio/ui/commit/210bcf3))
+* remove any types and added additional component state interfaces ([116055c](https://github.com/verdaccio/ui/commit/116055c))
+* remove token from AppState ([78b4c3f](https://github.com/verdaccio/ui/commit/78b4c3f))
+* remove undefined error ([d1ed3e7](https://github.com/verdaccio/ui/commit/d1ed3e7))
+* support deprecated license object properties ([b2e420d](https://github.com/verdaccio/ui/commit/b2e420d))
+* type lint for login ([91e603e](https://github.com/verdaccio/ui/commit/91e603e))
+* typescript warnings - prefer-rest-params ([e33570b](https://github.com/verdaccio/ui/commit/e33570b))
+* update snapshot for verdaccio/jsx-no-style ([e7d145f](https://github.com/verdaccio/ui/commit/e7d145f))
+* updated type to fix unit test ([7cab3f2](https://github.com/verdaccio/ui/commit/7cab3f2))
+* verdaccio/jsx-no-style ([55b1402](https://github.com/verdaccio/ui/commit/55b1402))
+
+
+
 <a name="0.2.0"></a>
 # [0.2.0](https://github.com/verdaccio/ui/compare/v0.1.11...v0.2.0) (2019-06-20)
 

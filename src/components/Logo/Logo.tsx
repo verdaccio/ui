@@ -3,7 +3,16 @@ import React from 'react';
 import styled from 'react-emotion';
 import logo from './img/logo.svg';
 
-const StyledLogo = styled('div')`
+export enum Size {
+  Small = '40px',
+  Big = '90px',
+}
+
+interface Props {
+  size?: Size;
+}
+
+const StyledLogo = styled('div')<Props>`
   && {
     display: inline-block;
     vertical-align: middle;
@@ -12,11 +21,11 @@ const StyledLogo = styled('div')`
     background-size: contain;
     background-image: url(${logo});
     background-repeat: no-repeat;
-    width: 40px;
-    height: 40px;`;
-
-const Logo: React.FC = () => {
-  return <StyledLogo />;
+    width: ${({ size }) => size};
+    height: ${({ size }) => size};
+`;
+const Logo: React.FC<Props> = ({ size = Size.Small }) => {
+  return <StyledLogo size={size} />;
 };
 
 export default Logo;
