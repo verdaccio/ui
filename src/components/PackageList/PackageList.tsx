@@ -7,8 +7,7 @@ import Help from '../Help';
 import { formatLicense } from '../../utils/package';
 import { PackageInterface } from '../Package/Package';
 
-// @ts-ignore
-import classes from './packageList.scss';
+import * as classes from './styles';
 
 interface Props {
   packages: PackageInterface[];
