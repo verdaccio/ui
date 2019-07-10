@@ -6,6 +6,7 @@ export function isURL(url): boolean {
   return isURLValidator(url || '', {
     protocols: ['http', 'https', 'git+https'],
     require_protocol: true,
+    require_tld: false,
   });
 }
 
