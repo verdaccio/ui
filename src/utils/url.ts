@@ -2,7 +2,7 @@ import isURLValidator from 'validator/lib/isURL';
 import isEmailValidator from 'validator/lib/isEmail';
 import '../../types';
 
-export function isURL(url): boolean {
+export function isURL(url: string): boolean {
   return isURLValidator(url || '', {
     protocols: ['http', 'https', 'git+https'],
     require_protocol: true,
