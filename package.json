@@ -23,6 +23,7 @@
     "@types/react": "16.8.16",
     "@types/react-dom": "16.8.4",
     "@types/react-router-dom": "4.3.2",
+    "@types/validator": "10.11.1",
     "@verdaccio/babel-preset": "0.2.1",
     "@verdaccio/eslint-config": "0.0.1",
     "@verdaccio/types": "6.1.0",
