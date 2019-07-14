@@ -2,11 +2,15 @@
 
 import React, { Component, ReactElement } from 'react';
 import { Router, Route, Switch } from 'react-router-dom';
+import { createBrowserHistory } from 'history';
 import { AppContextConsumer, AppStateInterface } from './App/App';
 
 import { asyncComponent } from './utils/asyncComponent';
-import history from './history';
 import Header from './components/Header';
+
+const history = createBrowserHistory({
+  basename: window.__VERDACCIO_BASENAME_UI_OPTIONS && window.__VERDACCIO_BASENAME_UI_OPTIONS.url_prefix,
+});
 
 const NotFound = asyncComponent(() => import('./components/NotFound'));
 const VersionPackage = asyncComponent(() => import('./pages/version/Version'));
