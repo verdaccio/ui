@@ -157,7 +157,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "commitlint -e $GIT_PARAMS"
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
     }
   },
   "license": "MIT",
