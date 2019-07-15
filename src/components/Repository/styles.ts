@@ -6,36 +6,36 @@ import Typography from '@material-ui/core/Typography';
 import Github from '../../icons/GitHub';
 import colors from '../../utils/styles/colors';
 
-export const Heading = styled(Typography)`
-  && {
-    font-weight: 700;
-    text-transform: capitalize;
-  }
-`;
+export const Heading = styled(Typography)({
+  '&&': {
+    fontWeight: 700,
+    textTransform: 'capitalize',
+  },
+});
 
-export const GridRepo = styled(Grid)`
-  && {
-    align-items: center;
-  }
-`;
+export const GridRepo = styled(Grid)({
+  '&&': {
+    alignItems: 'center',
+  },
+});
 
-export const GithubLink = styled('a')`
-  && {
-    color: ${colors.primary};
-  }
-`;
+export const GithubLink = styled('a')({
+  '&&': {
+    color: colors.primary,
+  },
+});
 
-export const GithubLogo = styled(Github)`
-  && {
-    font-size: 40px;
-    color: ${colors.primary};
-    background-color: ${colors.greySuperLight};
-  }
-`;
+export const GithubLogo = styled(Github)({
+  '&&': {
+    fontSize: '40px',
+    color: colors.primary,
+    backgroundColor: colors.greySuperLight,
+  },
+});
 
-export const RepositoryListItem = styled(ListItem)`
-  && {
-    padding-left: 0;
-    padding-right: 0;
-  }
-`;
+export const RepositoryListItem = styled(ListItem)({
+  '&&': {
+    paddingLeft: 0,
+    paddingRight: 0,
+  },
+});

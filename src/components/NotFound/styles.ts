@@ -23,18 +23,18 @@ export const EmptyPackage = styled('img')({
   margin: '0 auto',
 });
 
-export const Heading = styled(Typography)`
-  && {
-    color: #4b5e40;
-  }
-`;
+export const Heading = styled(Typography)({
+  '&&': {
+    color: '#4b5e40',
+  },
+});
 
-export const List = styled(MuiList)`
-  && {
-    padding: 0;
-    color: #4b5e40;
-  }
-`;
+export const List = styled(MuiList)({
+  '&&': {
+    padding: 0,
+    color: '#4b5e40',
+  },
+});
 
 export const Card = styled(MuiCard)({
   marginTop: '24px',

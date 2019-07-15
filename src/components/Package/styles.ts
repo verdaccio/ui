@@ -34,57 +34,57 @@ export const OverviewItem = styled('span')`
   }
 `;
 
-export const Icon = styled(Ico)`
-  && {
-    margin: 2px 10px 0px 0;
-    fill: ${colors.greyLight2};
-  }
-`;
+export const Icon = styled(Ico)({
+  '&&': {
+    margin: '2px 10px 0px 0',
+    fill: colors.greyLight2,
+  },
+});
 
-export const Published = styled('span')`
-  && {
-    color: ${colors.greyLight2};
-    margin: 0px 5px 0px 0px;
-  }
-`;
+export const Published = styled('span')({
+  '&&': {
+    color: colors.greyLight2,
+    margin: '0px 5px 0px 0px',
+  },
+});
 
 // @ts-ignore
-export const Text = styled(Label)`
-  && {
-    font-size: 12px;
-    font-weight: 500;
-    color: ${colors.greyLight2};
-  }
-`;
+export const Text = styled(Label)({
+  '&&': {
+    fontSize: '12px',
+    fontWeight: 500,
+    color: colors.greyLight2,
+  },
+});
 
-export const Details = styled('span')`
-  && {
-    margin-left: 5px;
-    line-height: 1.5;
-    display: flex;
-    flex-direction: column;
-  }
-`;
+export const Details = styled('span')({
+  '&&': {
+    marginLeft: '5px',
+    lineHeight: 1.5,
+    display: 'flex',
+    flexDirection: 'column',
+  },
+});
 
-export const Author = styled('div')`
-  && {
-    display: flex;
-    align-items: center;
-  }
-`;
+export const Author = styled('div')({
+  '&&': {
+    display: 'flex',
+    alignItems: 'center',
+  },
+});
 
-export const Avatar = styled(Photo)`
-  && {
-    width: 20px;
-    height: 20px;
-  }
-`;
+export const Avatar = styled(Photo)({
+  '&&': {
+    width: '20px',
+    height: '20px',
+  },
+});
 
-export const WrapperLink = styled(Link)`
-  && {
-    text-decoration: none;
-  }
-`;
+export const WrapperLink = styled(Link)({
+  '&&': {
+    textDecoration: 'none',
+  },
+});
 
 export const PackageTitle = styled('span')`
   && {
@@ -106,31 +106,31 @@ export const PackageTitle = styled('span')`
   }
 `;
 
-export const GridRightAligned = styled(Grid)`
-  && {
-    text-align: right;
-  }
-`;
+export const GridRightAligned = styled(Grid)({
+  '&&': {
+    textAlign: 'right',
+  },
+});
 
-export const PackageList = styled(List)`
-  && {
-    padding: 12px 0 12px 0;
+export const PackageList = styled(List)({
+  '&&': {
+    padding: '12px 0 12px 0',
 
-    &:hover {
-      background-color: ${colors.greyLight3};
-    }
-  }
-`;
+    '&:hover': {
+      backgroundColor: colors.greyLight3,
+    },
+  },
+});
 
-export const IconButton = styled(MuiIconButton)`
-  && {
-    padding: 6px;
+export const IconButton = styled(MuiIconButton)({
+  '&&': {
+    padding: '6px',
 
-    svg {
-      font-size: 16px;
-    }
-  }
-`;
+    svg: {
+      fontSize: '16px',
+    },
+  },
+});
 
 export const TagContainer = styled('span')`
   && {
@@ -143,17 +143,17 @@ export const TagContainer = styled('span')`
   }
 `;
 
-export const PackageListItem = styled(ListItem)`
-  && {
-    padding-top: 0;
-  }
-`;
+export const PackageListItem = styled(ListItem)({
+  '&&': {
+    paddingTop: 0,
+  },
+});
 
-export const PackageListItemText = styled(ListItemText)`
-  && {
-    padding-right: 0;
-  }
-`;
+export const PackageListItemText = styled(ListItemText)({
+  '&&': {
+    paddingRight: 0,
+  },
+});
 
 export const Description = styled(Typography)({
   color: colors.greyDark2,
