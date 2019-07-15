@@ -3,11 +3,11 @@ import Typography from '@material-ui/core/Typography';
 import { default as MuiFab } from '@material-ui/core/Fab';
 import colors from '../../utils/styles/colors';
 
-export const Details = styled('span')`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-`;
+export const Details = styled('span')({
+  display: 'flex',
+  flexDirection: 'column',
+  alignItems: 'center',
+});
 
 export const Content = styled('div')`
   margin: 10px 0 10px 0;

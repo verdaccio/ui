@@ -8,12 +8,12 @@ export const Heading = styled(Typography)`
   }
 `;
 
-export const Spacer = styled('div')`
-  flex: 1 1 auto;
-  border-bottom: 1px dotted rgba(0, 0, 0, 0.2);
-  white-space: nowrap;
-  height: 0.5em;
-`;
+export const Spacer = styled('div')({
+  flex: '1 1 auto',
+  borderBottom: '1px dotted rgba(0, 0, 0, 0.2)',
+  whiteSpace: 'nowrap',
+  height: '0.5em',
+});
 
 export const ListItemText = styled(MuiListItemText)`
   && {

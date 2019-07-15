@@ -155,8 +155,8 @@ export const PackageListItemText = styled(ListItemText)`
   }
 `;
 
-export const Description = styled(Typography)`
-  color: ${colors.greyDark2};
-  font-size: 14px;
-  padding-right: 0;
-`;
+export const Description = styled(Typography)({
+  color: colors.greyDark2,
+  fontSize: '14px',
+  paddingRight: 0,
+});

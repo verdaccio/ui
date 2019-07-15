@@ -3,25 +3,25 @@ import { default as MuiList } from '@material-ui/core/List';
 import Typography from '@material-ui/core/Typography';
 import styled from 'react-emotion';
 
-export const Wrapper = styled('div')`
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  justify-content: center;
-  flex: 1;
-  padding: 16px;
-`;
+export const Wrapper = styled('div')({
+  display: 'flex',
+  alignItems: 'center',
+  flexDirection: 'column',
+  justifyContent: 'center',
+  flex: 1,
+  padding: '16px',
+});
 
-export const Inner = styled('div')`
-  max-width: 650px;
-  display: flex;
-  flex-direction: column;
-`;
+export const Inner = styled('div')({
+  maxWidth: '650px',
+  display: 'flex',
+  flexDirection: 'column',
+});
 
-export const EmptyPackage = styled('img')`
-  width: 150px;
-  margin: 0 auto;
-`;
+export const EmptyPackage = styled('img')({
+  width: '150px',
+  margin: '0 auto',
+});
 
 export const Heading = styled(Typography)`
   && {
@@ -36,6 +36,6 @@ export const List = styled(MuiList)`
   }
 `;
 
-export const Card = styled(MuiCard)`
-  margin-top: 24px;
-`;
+export const Card = styled(MuiCard)({
+  marginTop: '24px',
+});
