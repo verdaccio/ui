@@ -23,6 +23,7 @@ const StyledLogo = styled('div')<Props>`
     background-repeat: no-repeat;
     width: ${({ size }) => size};
     height: ${({ size }) => size};
+  }
 `;
 const Logo: React.FC<Props> = ({ size = Size.Small }) => {
   return <StyledLogo size={size} />;
