@@ -6,30 +6,30 @@ import Typography from '@material-ui/core/Typography';
 
 import colors from '../../utils/styles/colors';
 
-export const Heading = styled(Typography)`
-  && {
-    font-weight: 700;
-    text-transform: capitalize;
-  }
-`;
+export const Heading = styled(Typography)({
+  '&&': {
+    fontWeight: 700,
+    textTransform: 'capitalize',
+  },
+});
 
-export const DistListItem = styled(ListItem)`
-  && {
-    padding-left: 0;
-    padding-right: 0;
-  }
-`;
+export const DistListItem = styled(ListItem)({
+  '&&': {
+    paddingLeft: 0,
+    paddingRight: 0,
+  },
+});
 
-export const DistChips = styled(Chip)`
-  && {
-    margin-right: 5px;
-    text-transform: capitalize;
-  }
-`;
+export const DistChips = styled(Chip)({
+  '&&': {
+    marginRight: '5px',
+    textTransform: 'capitalize',
+  },
+});
 
-export const DownloadButton = styled(MuiFab)`
-  && {
-    background-color: ${colors.primary};
-    color: ${colors.white};
-  }
-`;
+export const DownloadButton = styled(MuiFab)({
+  '&&': {
+    backgroundColor: colors.primary,
+    color: colors.white,
+  },
+});

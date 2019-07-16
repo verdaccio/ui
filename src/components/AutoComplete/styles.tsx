@@ -8,14 +8,14 @@ export interface InputFieldProps {
   color: string;
 }
 
-export const Wrapper = styled('div')`
-  && {
-    width: 100%;
-    height: 32px;
-    position: relative;
-    z-index: 1;
-  }
-`;
+export const Wrapper = styled('div')({
+  '&&': {
+    width: '100%',
+    height: '32px',
+    position: 'relative',
+    zIndex: 1,
+  },
+});
 
 export const InputField: React.FC<InputFieldProps> = ({ color, ...others }) => (
   <TextField
@@ -51,9 +51,9 @@ export const InputField: React.FC<InputFieldProps> = ({ color, ...others }) => (
   />
 );
 
-export const SuggestionContainer = styled(Paper)`
-  && {
-    max-height: 500px;
-    overflow-y: auto;
-  }
-`;
+export const SuggestionContainer = styled(Paper)({
+  '&&': {
+    maxHeight: '500px',
+    overflowY: 'auto',
+  },
+});

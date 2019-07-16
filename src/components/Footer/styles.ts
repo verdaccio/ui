@@ -3,15 +3,15 @@ import mq from '../../utils/styles/media';
 import Icon from '../Icon/Icon';
 import colors from '../../utils/styles/colors';
 
-export const Wrapper = styled('div')`
-  && {
-    background: ${colors.snow};
-    border-top: 1px solid ${colors.greyGainsboro};
-    color: ${colors.nobel01};
-    font-size: 14px;
-    padding: 20px;
-  }
-`;
+export const Wrapper = styled('div')({
+  '&&': {
+    background: colors.snow,
+    borderTop: `1px solid ${colors.greyGainsboro}`,
+    color: colors.nobel01,
+    fontSize: '14px',
+    padding: '20px',
+  },
+});
 
 export const Inner = styled('div')`
   && {
@@ -50,24 +50,24 @@ export const Left = styled('div')`
   }
 `;
 
-export const Right = styled(Left)`
-  && {
-    display: flex;
-  }
-`;
+export const Right = styled(Left)({
+  '&&': {
+    display: 'flex',
+  },
+});
 
-export const ToolTip = styled('span')`
-  && {
-    position: relative;
-    height: 18px;
-  }
-`;
+export const ToolTip = styled('span')({
+  '&&': {
+    position: 'relative',
+    height: '18px',
+  },
+});
 
-export const Earth = styled(Icon)`
-  && {
-    padding: 0 10px;
-  }
-`;
+export const Earth = styled(Icon)({
+  '&&': {
+    padding: '0 10px',
+  },
+});
 
 export const Flags = styled('span')`
   && {
@@ -96,17 +96,17 @@ export const Flags = styled('span')`
   }
 `;
 
-export const Love = styled('span')`
-  && {
-    color: ${colors.love};
-    padding: 0 5px;
-  }
-`;
+export const Love = styled('span')({
+  '&&': {
+    color: colors.love,
+    padding: '0 5px',
+  },
+});
 
-export const Flag = styled(Icon)`
-  && {
-    padding: 0 5px;
-  }
-`;
+export const Flag = styled(Icon)({
+  '&&': {
+    padding: '0 5px',
+  },
+});
 
 export const Logo = Flag;
