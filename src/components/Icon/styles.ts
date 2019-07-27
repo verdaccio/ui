@@ -48,9 +48,9 @@ export const ImgWrapper: StyledOtherComponent<
   }
 `;
 
-export const Img = styled('img')`
-  && {
-    width: 100%;
-    height: auto;
-  }
-`;
+export const Img = styled('img')({
+  '&&': {
+    width: '100%',
+    height: 'auto',
+  },
+});

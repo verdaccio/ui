@@ -1,14 +1,14 @@
 import styled, { css } from 'react-emotion';
 
-export const Content = styled('div')`
-  && {
-    background-color: #ffffff;
-    flex: 1;
-    display: flex;
-    position: relative;
-    flex-direction: column;
-  }
-`;
+export const Content = styled('div')({
+  '&&': {
+    backgroundColor: '#ffffff',
+    flex: 1,
+    display: 'flex',
+    position: 'relative',
+    flexDirection: 'column',
+  },
+});
 
 export const Container = styled('div')`
   && {

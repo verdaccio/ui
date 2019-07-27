@@ -20,8 +20,8 @@ export const Wrapper = styled('div')`
   }
 `;
 
-export const Circular = styled(CircularProgress)`
-  && {
-    color: ${colors.primary};
-  }
-`;
+export const Circular = styled(CircularProgress)({
+  '&&': {
+    color: colors.primary,
+  },
+});
