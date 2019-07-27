@@ -25,16 +25,16 @@ function handleResponseType(response: Response): Promise<[boolean, Blob | string
 }
 
 class API {
-  public request<T>(url: string, method = 'GET', options?: RequestInit): Promise<T> {
+  public request<T>(url: string, method = 'GET', options: RequestInit = { headers: {} }): Promise<T> {
     if (!window.VERDACCIO_API_URL) {
       throw new Error('VERDACCIO_API_URL is not defined!');
     }
 
     const token = storage.getItem('token');
-    const headers = new Headers(options && options.headers);
-    if (token && options && options.headers) {
-      headers.set('Authorization', `Bearer ${token}`);
-      options.headers = Object.assign(options.headers, headers);
+    if (token && options.headers && typeof options.headers['Authorization'] === 'undefined') {
+      options.headers = Object.assign({}, options.headers, {
+        ['Authorization']: `Bearer ${token}`,
+      });
     }
 
     if (!['http://', 'https://', '//'].some(prefix => url.startsWith(prefix))) {
