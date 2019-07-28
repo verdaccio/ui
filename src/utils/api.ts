@@ -21,7 +21,7 @@ function handleResponseType(response: Response): Promise<[boolean, Blob | string
     }
 
     // unfortunatelly on download files there is no header available
-    if (response.url.match(/tgz/).length > 0) {
+    if (response.url && response.url.match(/.tgz/) !== null) {
       return Promise.all([response.ok, response.blob()]);
     }
   }

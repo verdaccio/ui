@@ -17,7 +17,7 @@ export interface Action {
   handler?: Function;
 }
 
-async function downloadHandler(link: string): Promise<void> {
+export async function downloadHandler(link: string): Promise<void> {
   const fileStream: Blob = await api.request(link, 'GET', {
     headers: {
       ['accept']: 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3',
@@ -73,7 +73,7 @@ class ActionBar extends Component {
       tarball,
     };
 
-    const renderList = Object.keys(actionsMap).reduce((component, value, key) => {
+    const renderList = Object.keys(actionsMap).reduce((component: React.ReactElement[], value, key) => {
       const link = actionsMap[value];
       if (link && isURL(link)) {
         const actionItem: Action = ACTIONS[value];
