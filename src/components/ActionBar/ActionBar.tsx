@@ -8,7 +8,7 @@ import Tooltip from '@material-ui/core/Tooltip';
 
 import { DetailContextConsumer, VersionPageConsumerProps } from '../../pages/version/Version';
 import { Fab, ActionListItem } from './styles';
-import { isURL } from '../../utils/url';
+import { isURL, extractFileName, downloadFile } from '../../utils/url';
 import api from '../../utils/api';
 
 export interface Action {
@@ -18,12 +18,14 @@ export interface Action {
 }
 
 async function downloadHandler(link: string): Promise<void> {
-  await api.request(link, 'GET', {
+  const fileStream: Blob = await api.request(link, 'GET', {
     headers: {
       ['accept']: 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3',
     },
     credentials: 'include',
   });
+  const fileName = extractFileName(link);
+  downloadFile(fileStream, fileName);
 }
 
 const ACTIONS = {
