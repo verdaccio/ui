@@ -9,6 +9,22 @@ import Tooltip from '@material-ui/core/Tooltip';
 import { DetailContextConsumer, VersionPageConsumerProps } from '../../pages/version/Version';
 import { Fab, ActionListItem } from './styles';
 import { isURL } from '../../utils/url';
+import api from '../../utils/api';
+
+export interface Action {
+  icon: string;
+  title: string;
+  handler?: Function;
+}
+
+async function downloadHandler(link: string): Promise<void> {
+  await api.request(link, 'GET', {
+    headers: {
+      ['accept']: 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3',
+    },
+    credentials: 'include',
+  });
+}
 
 const ACTIONS = {
   homepage: {
@@ -22,6 +38,7 @@ const ACTIONS = {
   tarball: {
     icon: <DownloadIcon />,
     title: 'Download tarball',
+    handler: downloadHandler,
   },
 };
 
@@ -57,13 +74,31 @@ class ActionBar extends Component {
     const renderList = Object.keys(actionsMap).reduce((component, value, key) => {
       const link = actionsMap[value];
       if (link && isURL(link)) {
-        const fab = <Fab size={'small'}>{ACTIONS[value]['icon']}</Fab>;
-        component.push(
-          // @ts-ignore
-          <Tooltip key={key} title={ACTIONS[value]['title']}>
-            <>{this.renderIconsWithLink(link, fab)}</>
-          </Tooltip>
-        );
+        const actionItem: Action = ACTIONS[value];
+        if (actionItem.handler) {
+          const fab = (
+            <Tooltip key={key} title={actionItem['title']}>
+              <Fab
+                /* eslint-disable react/jsx-no-bind */
+                onClick={() => {
+                  /* eslint-disable @typescript-eslint/no-non-null-assertion */
+                  actionItem.handler!(link);
+                }}
+                size={'small'}>
+                {actionItem['icon']}
+              </Fab>
+            </Tooltip>
+          );
+          component.push(fab);
+        } else {
+          const fab = <Fab size={'small'}>{actionItem['icon']}</Fab>;
+          component.push(
+            // @ts-ignore
+            <Tooltip key={key} title={actionItem['title']}>
+              <>{this.renderIconsWithLink(link, fab)}</>
+            </Tooltip>
+          );
+        }
       }
       return component;
     }, []);

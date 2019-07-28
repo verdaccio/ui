@@ -25,7 +25,7 @@ function handleResponseType(response: Response): Promise<[boolean, Blob | string
 }
 
 class API {
-  public request<T>(url: string, method = 'GET', options: RequestInit = { headers: {} }): Promise<T> {
+  public request<T>(url: string, method = 'GET', options: RequestInit = { headers: {} }, isFile: boolean = false): Promise<T> {
     if (!window.VERDACCIO_API_URL) {
       throw new Error('VERDACCIO_API_URL is not defined!');
     }
@@ -50,11 +50,11 @@ class API {
       })
         // @ts-ignore
         .then(handleResponseType)
-        .then(([responseOk, body]) => {
-          if (responseOk) {
-            resolve(body);
+        .then(response => {
+          if (response[0]) {
+            resolve(response[1]);
           } else {
-            reject(body);
+            reject(new Error('something went wrong'));
           }
         })
         .catch(error => {
