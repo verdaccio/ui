@@ -19,13 +19,18 @@ function handleResponseType(response: Response): Promise<[boolean, Blob | string
     if (contentType.includes('text/')) {
       return Promise.all([response.ok, response.text()]);
     }
+
+    // unfortunatelly on download files there is no header available
+    if (response.url.match(/tgz/).length > 0) {
+      return Promise.all([response.ok, response.blob()]);
+    }
   }
 
   return Promise.resolve();
 }
 
 class API {
-  public request<T>(url: string, method = 'GET', options: RequestInit = { headers: {} }, isFile: boolean = false): Promise<T> {
+  public request<T>(url: string, method = 'GET', options: RequestInit = { headers: {} }): Promise<T> {
     if (!window.VERDACCIO_API_URL) {
       throw new Error('VERDACCIO_API_URL is not defined!');
     }

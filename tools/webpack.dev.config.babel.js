@@ -41,7 +41,7 @@ export default {
       scope: '',
       logo: 'https://verdaccio.org/img/logo/symbol/svg/verdaccio-tiny.svg',
       filename: 'index.html',
-      verdaccioURL: '//localhost:8080',
+      verdaccioURL: '//localhost:4872',
       template: `${env.SRC_ROOT}/template/index.html`,
       debug: true,
       inject: true,
