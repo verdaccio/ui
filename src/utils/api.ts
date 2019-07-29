@@ -6,7 +6,7 @@ import '../../types';
  * @param {object} response
  * @returns {promise}
  */
-function handleResponseType(response: Response): Promise<[boolean, Blob | string]> | Promise<void> {
+export function handleResponseType(response: Response): Promise<[boolean, Blob | string]> | Promise<void> {
   if (response.headers) {
     const contentType = response.headers.get('Content-Type') as string;
     if (contentType.includes('application/pdf')) {
@@ -21,7 +21,7 @@ function handleResponseType(response: Response): Promise<[boolean, Blob | string
     }
 
     // unfortunatelly on download files there is no header available
-    if (response.url && response.url.match(/.tgz/) !== null) {
+    if (response.url && response.url.endsWith('.tgz') !== null) {
       return Promise.all([response.ok, response.blob()]);
     }
   }

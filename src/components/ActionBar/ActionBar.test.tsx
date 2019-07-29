@@ -44,7 +44,7 @@ describe('<ActionBar /> component', () => {
     const ActionBar = require('./ActionBar').default;
     const wrapper = shallow(<ActionBar />);
     // FIXME: this only renders the DetailContextConsumer, thus
-    // the wrapper will be 
+    // the wrapper will be always empty
     expect(wrapper.html()).toEqual('');
   });
 
