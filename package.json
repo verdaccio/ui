@@ -95,8 +95,8 @@
     "webpack": "4.20.2",
     "webpack-bundle-analyzer": "3.3.2",
     "webpack-bundle-size-analyzer": "3.0.0",
-    "webpack-cli": "3.2.3",
-    "webpack-dev-server": "3.2.1",
+    "webpack-cli": "3.3.6",
+    "webpack-dev-server": "3.7.2",
     "webpack-merge": "4.2.1",
     "whatwg-fetch": "3.0.0",
     "xss": "1.0.6"
