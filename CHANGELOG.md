@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="0.2.2"></a>
+## [0.2.2](https://github.com/verdaccio/ui/compare/v0.2.1...v0.2.2) (2019-07-29)
+
+
+### Bug Fixes
+
+* css repetition is not closed in Logo component ([ec243b1](https://github.com/verdaccio/ui/commit/ec243b1))
+* localhost domain download tarball button ([cca2c3c](https://github.com/verdaccio/ui/commit/cca2c3c))
+* proxy webpack setting ([5c484bb](https://github.com/verdaccio/ui/commit/5c484bb))
+* token were not being send it ([fd74c52](https://github.com/verdaccio/ui/commit/fd74c52))
+
+
+
 <a name="0.2.1"></a>
 ## [0.2.1](https://github.com/verdaccio/ui/compare/v0.2.0...v0.2.1) (2019-07-10)
 
