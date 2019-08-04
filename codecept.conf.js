@@ -1,30 +1,6 @@
 exports.config = {
   tests: './test/acceptance/*_test.js',
   output: './test/acceptance/output',
-  multiple: {
-    basic: {
-      browsers: [
-        {
-          browser: 'safari',
-          capabilities: {
-            os: 'OS X',
-            os_version: 'High Sierra',
-            resolution: 'maximize',
-            'browserstack.local': true,
-          },
-        },
-        {
-          browser: 'safari',
-          capabilities: {
-            os: 'OS X',
-            os_version: 'High Sierra',
-            resolution: 'maximize',
-            'browserstack.local': true,
-          },
-        },
-      ],
-    },
-  },
   helpers: {
     WebDriver: {
       url: 'hub.browserstack.com',
