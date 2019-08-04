@@ -35,7 +35,7 @@
     "babel-loader": "8.0.6",
     "browserstack-local": "1.4.2",
     "bundlesize": "0.18.0",
-    "codeceptjs": "2.1.0",
+    "codeceptjs": "2.2.1",
     "codecov": "3.5.0",
     "concurrently": "4.1.1",
     "cross-env": "5.2.0",

@@ -33,7 +33,7 @@
   dependencies:
     "@babel/highlight" "^7.0.0"
 
-"@babel/core@7.5.5":
+"@babel/core@7.5.5", "@babel/core@^7.4.5":
   version "7.5.5"
   resolved "https://registry.verdaccio.org/@babel%2fcore/-/core-7.5.5.tgz#17b2686ef0d6bc58f963dddd68ab669755582c30"
   integrity sha512-i4qoSr2KTtce0DmkuuQBV4AuQgGPUcPXMr9L5MyYAtk06z068lQ10a4O009fe5OB/DfNV+h+qqT7ddNV8UnRjg==
@@ -1127,6 +1127,13 @@
   dependencies:
     exec-sh "^0.3.2"
     minimist "^1.2.0"
+
+"@codeceptjs/detox-helper@^1.0.1":
+  version "1.0.1"
+  resolved "https://registry.verdaccio.org/@codeceptjs%2fdetox-helper/-/detox-helper-1.0.1.tgz#ced2e02a0deb53a8f72b8c3a0bdcce1ec67a3b42"
+  integrity sha512-kuZ5hKHCN/FwWgv7HKFpkEXDnxKGYfZB2gc+0TaJBWSUPZEr68EXPyKTDZi+OwheDRGsVeKGzP9zHVFOj9FZow==
+  dependencies:
+    detox "^12.11.0"
 
 "@commitlint/cli@8.1.0":
   version "8.1.0"
@@ -2811,14 +2818,6 @@ axios@0.15.3:
   dependencies:
     follow-redirects "1.0.0"
 
-axios@^0.18.0:
-  version "0.18.1"
-  resolved "https://registry.verdaccio.org/axios/-/axios-0.18.1.tgz#ff3f0de2e7b5d180e757ad98000f1081b87bcea3"
-  integrity sha512-0BfJq4NSfQXd+SkFdrvFbG7addhYSBA2mQwISr46pD6E5iqkWg02RAs8vyTT/j0RTnoYmeXauBuSv1qKwR179g==
-  dependencies:
-    follow-redirects "1.5.10"
-    is-buffer "^2.0.2"
-
 axios@^0.19.0:
   version "0.19.0"
   resolved "https://registry.verdaccio.org/axios/-/axios-0.19.0.tgz#8e09bff3d9122e133f7b8101c8fbdd00ed3d2ab8"
@@ -3088,6 +3087,11 @@ bl@^3.0.0:
   integrity sha512-EUAyP5UHU5hxF8BPT0LKW8gjYLhq1DQIcneOX/pL/m2Alo+OYDQAJlHq+yseMP50Os2nHXOSic6Ss3vSQeyf4A==
   dependencies:
     readable-stream "^3.0.1"
+
+bluebird@3.5.x:
+  version "3.5.5"
+  resolved "https://registry.verdaccio.org/bluebird/-/bluebird-3.5.5.tgz#a8d0afd73251effbbd5fe384a77d73003c17a71f"
+  integrity sha512-5am6HnnfN+urzt4yfg7IgTbotDjIT/u8AJpEt0sIU9FtXfVeezXAPKswrG+xKUCOYAINpSdgZVDU6QFh+cuH3w==
 
 bluebird@^3.5.1:
   version "3.5.4"
@@ -3421,9 +3425,17 @@ bundlesize@0.18.0:
     gzip-size "^4.0.0"
     prettycli "^1.4.3"
 
-bunyan@1.8.12:
+bunyan-debug-stream@^1.1.0:
+  version "1.1.1"
+  resolved "https://registry.verdaccio.org/bunyan-debug-stream/-/bunyan-debug-stream-1.1.1.tgz#4740a00b7d5c2d9d1b714925ab0802516040813e"
+  integrity sha512-jJbQ1gXUL6vMmZVdbaTFK1v1sGa7axLrSQQwkB6HU9HCPTzsw2HsKcPHm1vgXZlEck/4IvEuRwg/9+083YelCg==
+  dependencies:
+    colors "^1.0.3"
+    exception-formatter "^1.0.4"
+
+bunyan@1.8.12, bunyan@^1.8.12:
   version "1.8.12"
-  resolved "https://registry.npmjs.org/bunyan/-/bunyan-1.8.12.tgz#f150f0f6748abdd72aeae84f04403be2ef113797"
+  resolved "https://registry.verdaccio.org/bunyan/-/bunyan-1.8.12.tgz#f150f0f6748abdd72aeae84f04403be2ef113797"
   integrity sha1-8VDw9nSKvdcq6uhPBEA74u8RN5c=
   optionalDependencies:
     dtrace-provider "~0.8"
@@ -3700,6 +3712,11 @@ chardet@^0.7.0:
   resolved "https://registry.verdaccio.org/chardet/-/chardet-0.7.0.tgz#90094849f0937f2eedc2425d0d28a9e5f0cbad9e"
   integrity sha512-mT8iDcrh03qDGRRmoA2hmBJnxpllMR+0/0qlzjqZES6NdiWDcZkCNAk4rPFZ9Q85r27unkiNNg8ZOiwZXBHwcA==
 
+charenc@~0.0.1:
+  version "0.0.2"
+  resolved "https://registry.verdaccio.org/charenc/-/charenc-0.0.2.tgz#c0a1d2f3a7092e03774bfa83f14c0fc5790a8667"
+  integrity sha1-wKHS86cJLgN3S/qD8UwPxXkKhmc=
+
 check-types@^7.3.0:
   version "7.4.0"
   resolved "https://registry.npmjs.org/check-types/-/check-types-7.4.0.tgz#0378ec1b9616ec71f774931a3c6516fad8c152f4"
@@ -3716,6 +3733,15 @@ cheerio@^1.0.0-rc.2:
     htmlparser2 "^3.9.1"
     lodash "^4.15.0"
     parse5 "^3.0.1"
+
+child-process-promise@^2.2.0:
+  version "2.2.1"
+  resolved "https://registry.verdaccio.org/child-process-promise/-/child-process-promise-2.2.1.tgz#4730a11ef610fad450b8f223c79d31d7bdad8074"
+  integrity sha1-RzChHvYQ+tRQuPIjx50x172tgHQ=
+  dependencies:
+    cross-spawn "^4.0.2"
+    node-version "^1.0.0"
+    promise-polyfill "^6.0.1"
 
 chokidar@^2.0.2:
   version "2.1.5"
@@ -3916,31 +3942,36 @@ code-point-at@^1.0.0:
   resolved "https://registry.npmjs.org/code-point-at/-/code-point-at-1.1.0.tgz#0d070b4d043a5bea33a2f1a40e2edb3d9a4ccf77"
   integrity sha1-DQcLTQQ6W+ozovGkDi7bPZpMz3c=
 
-codeceptjs@2.1.0:
-  version "2.1.0"
-  resolved "https://registry.verdaccio.org/codeceptjs/-/codeceptjs-2.1.0.tgz#761e4a02b598702ead4c35e0dcba10eebbfdc30c"
-  integrity sha512-cDwr3Dgdefs105ugQjVzdS9GcJSvomNlL6TbdLUxr5dkzCyR3Rh6ZVr7MXYAgUjK7PRhfqPwmootUK+47VJcSg==
+codeceptjs@2.2.1:
+  version "2.2.1"
+  resolved "https://registry.verdaccio.org/codeceptjs/-/codeceptjs-2.2.1.tgz#2a18832a2bbb58eb330280d85bc8cc687172cf7f"
+  integrity sha512-t12aHMroBA/leFhbSHR09N/uwqAkHg7S7gXtvo8+0/L5ttpTILAbIWoXG9iSZpzz2FIgnwtPmn/OD+sBUN8FkA==
   dependencies:
+    "@codeceptjs/detox-helper" "^1.0.1"
     allure-js-commons "^1.3.2"
     archiver "^3.0.0"
-    axios "^0.18.0"
+    axios "^0.19.0"
     chalk "^1.1.3"
     commander "^2.20.0"
     css-to-xpath "^0.1.0"
-    cucumber-expressions "^6.0.1"
+    cucumber-expressions "^6.6.2"
     escape-string-regexp "^1.0.3"
     figures "^2.0.0"
     fn-args "^4.0.0"
+    fs-extra "^8.0.1"
     gherkin "^5.1.0"
     glob "^6.0.1"
-    inquirer "^6.2.2"
-    js-beautify "^1.9.1"
+    inquirer "^6.4.1"
+    js-beautify "^1.10.0"
+    lodash.clonedeep "^4.5.0"
     lodash.merge "^4.6.1"
     mkdirp "^0.5.1"
     mocha "^4.1.0"
+    mocha-junit-reporter "^1.23.0"
     parse-function "^5.2.10"
     promise-retry "^1.1.1"
     requireg "^0.1.8"
+    resq "^1.5.0"
     sprintf-js "^1.1.1"
 
 codecov@3.5.0:
@@ -4024,6 +4055,11 @@ colormin@^1.0.5:
     color "^0.11.0"
     css-color-names "0.0.4"
     has "^1.0.1"
+
+colors@^1.0.3:
+  version "1.3.3"
+  resolved "https://registry.verdaccio.org/colors/-/colors-1.3.3.tgz#39e005d546afe01e01f9c4ca8fa50f686a01205d"
+  integrity sha512-mmGt/1pZqYRjMxB1axhTo16/snVZ5krrKkcmMeVKxzECMMXoCgnvTPp10QgHfcbQZw8Dq2jMNG6je4JlWU0gWg==
 
 colors@~1.1.2:
   version "1.1.2"
@@ -4583,6 +4619,11 @@ cross-spawn@^5.0.1:
     shebang-command "^1.2.0"
     which "^1.2.9"
 
+crypt@~0.0.1:
+  version "0.0.2"
+  resolved "https://registry.verdaccio.org/crypt/-/crypt-0.0.2.tgz#88d7ff7ec0dfb86f713dc87bbb42d044d3e6c41b"
+  integrity sha1-iNf/fsDfuG9xPch7u0LQRNPmxBs=
+
 crypto-browserify@^3.11.0:
   version "3.12.0"
   resolved "https://registry.npmjs.org/crypto-browserify/-/crypto-browserify-3.12.0.tgz#396cf9f3137f03e4b8e532c58f698254e00f80ec"
@@ -4898,7 +4939,7 @@ csstype@^2.5.7:
   resolved "https://registry.verdaccio.org/csstype/-/csstype-2.6.5.tgz#1cd1dff742ebf4d7c991470ae71e12bb6751e034"
   integrity sha512-JsTaiksRsel5n7XwqPAfB0l3TFKdpjW/kgAELf9vrb5adGA7UCPLajKK5s3nFrcFm3Rkyp/Qkgl73ENc1UY3cA==
 
-cucumber-expressions@^6.0.1:
+cucumber-expressions@^6.6.2:
   version "6.6.2"
   resolved "https://registry.verdaccio.org/cucumber-expressions/-/cucumber-expressions-6.6.2.tgz#d89640eccc72a78380b6c210eae36a64e7462b81"
   integrity sha512-WcFSVBiWNLJbIcAAC3t/ACU46vaOKfe1UIF5H3qveoq+Y4XQm9j3YwHurQNufRKBBg8nCnpU7Ttsx7egjS3hwA==
@@ -5169,6 +5210,32 @@ detect-node@^2.0.4:
   version "2.0.4"
   resolved "https://registry.npmjs.org/detect-node/-/detect-node-2.0.4.tgz#014ee8f8f669c5c58023da64b8179c083a28c46c"
   integrity sha512-ZIzRpLJrOj7jjP2miAtgqIfmzbxa4ZOr5jJc601zklsfEx9oTzmmj2nVpIPRpNlRTIh8lc1kyViIY7BWSGNmKw==
+
+detox@^12.11.0:
+  version "12.11.3"
+  resolved "https://registry.verdaccio.org/detox/-/detox-12.11.3.tgz#510de28c47f2542a8bc4ddab4ceaa7859e1db7e9"
+  integrity sha512-Ds1x6VLWjUsIR6FDXORan7NxRlugI4RCCpH5n3L++UIBuMvSicaWSKcmU0rCYCFUeluKDofx+QBgnEryNxRUSg==
+  dependencies:
+    "@babel/core" "^7.4.5"
+    bunyan "^1.8.12"
+    bunyan-debug-stream "^1.1.0"
+    chalk "^2.4.2"
+    child-process-promise "^2.2.0"
+    fs-extra "^4.0.2"
+    funpermaproxy "^1.0.1"
+    get-port "^2.1.0"
+    ini "^1.3.4"
+    lodash "^4.17.5"
+    minimist "^1.2.0"
+    proper-lockfile "^3.0.2"
+    sanitize-filename "^1.6.1"
+    shell-utils "^1.0.9"
+    tail "^2.0.0"
+    telnet-client "0.15.3"
+    tempfile "^2.0.0"
+    ws "^3.3.1"
+    yargs "^13.0.0"
+    yargs-parser "^13.0.0"
 
 diacritic@0.0.2:
   version "0.0.2"
@@ -5944,6 +6011,13 @@ evp_bytestokey@^1.0.0, evp_bytestokey@^1.0.3:
     md5.js "^1.3.4"
     safe-buffer "^5.1.1"
 
+exception-formatter@^1.0.4:
+  version "1.0.7"
+  resolved "https://registry.verdaccio.org/exception-formatter/-/exception-formatter-1.0.7.tgz#3291616b86fceabefa97aee6a4708032c6e3b96d"
+  integrity sha512-zV45vEsjytJrwfGq6X9qd1Ll56cW4NC2mhCO6lqwMk4ZpA1fZ6C3UiaQM/X7if+7wZFmCgss3ahp9B/uVFuLRw==
+  dependencies:
+    colors "^1.0.3"
+
 exec-sh@^0.3.2:
   version "0.3.2"
   resolved "https://registry.npmjs.org/exec-sh/-/exec-sh-0.3.2.tgz#6738de2eb7c8e671d0366aea0b0db8c6f7d7391b"
@@ -6566,6 +6640,15 @@ fs-constants@^1.0.0:
   resolved "https://registry.npmjs.org/fs-constants/-/fs-constants-1.0.0.tgz#6be0de9be998ce16af8afc24497b9ee9b7ccd9ad"
   integrity sha512-y6OAwoSIf7FyjMIv94u+b5rdheZEjzR63GTyZJm5qh4Bi+2YgwLCcI/fPFZkL5PSixOt6ZNKm+w+Hfp/Bciwow==
 
+fs-extra@^4.0.2:
+  version "4.0.3"
+  resolved "https://registry.verdaccio.org/fs-extra/-/fs-extra-4.0.3.tgz#0d852122e5bc5beb453fb028e9c0c9bf36340c94"
+  integrity sha512-q6rbdDd1o2mAnQreO7YADIxf/Whx4AHBiRf6d+/cVT8h44ss+lHgxf1FemcqDnQt9X3ct4McHr+JMGlYSsK7Cg==
+  dependencies:
+    graceful-fs "^4.1.2"
+    jsonfile "^4.0.0"
+    universalify "^0.1.0"
+
 fs-extra@^6.0.1:
   version "6.0.1"
   resolved "https://registry.verdaccio.org/fs-extra/-/fs-extra-6.0.1.tgz#8abc128f7946e310135ddc93b98bddb410e7a34b"
@@ -6643,6 +6726,11 @@ functional-red-black-tree@^1.0.1:
   resolved "https://registry.verdaccio.org/functional-red-black-tree/-/functional-red-black-tree-1.0.1.tgz#1b0ab3bd553b2a0d6399d29c0e3ea0b252078327"
   integrity sha1-GwqzvVU7Kg1jmdKcDj6gslIHgyc=
 
+funpermaproxy@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.verdaccio.org/funpermaproxy/-/funpermaproxy-1.0.1.tgz#4650e69b7c334d9717c06beba9b339cc08ac3335"
+  integrity sha512-9pEzs5vnNtR7ZGihly98w/mQ7blsvl68Wj30ZCDAXy7qDN4CWLLjdfjtH/P2m6whsnaJkw15hysCNHMXue+wdA==
+
 gauge@~2.7.3:
   version "2.7.4"
   resolved "https://registry.npmjs.org/gauge/-/gauge-2.7.4.tgz#2c03405c7538c39d7eb37b317022e325fb018bf7"
@@ -6684,6 +6772,13 @@ get-pkg-repo@^1.0.0:
     normalize-package-data "^2.3.0"
     parse-github-repo-url "^1.3.0"
     through2 "^2.0.0"
+
+get-port@^2.1.0:
+  version "2.1.0"
+  resolved "https://registry.verdaccio.org/get-port/-/get-port-2.1.0.tgz#8783f9dcebd1eea495a334e1a6a251e78887ab1a"
+  integrity sha1-h4P53OvR7qSVozThpqJR54iHqxo=
+  dependencies:
+    pinkie-promise "^2.0.0"
 
 get-stdin@6.0.0, get-stdin@^6.0.0:
   version "6.0.0"
@@ -7557,7 +7652,7 @@ ini@^1.3.2, ini@^1.3.4, ini@^1.3.5, ini@~1.3.0:
   resolved "https://registry.npmjs.org/ini/-/ini-1.3.5.tgz#eee25f56db1c9ec6085e0c22778083f596abf927"
   integrity sha512-RZY5huIKCMRWDUqZlEi72f/lmXKMvuszcMBduliQ3nnWbx9X/ZBQO7DijMEYS9EhHBb2qacRUMtC7svLwe0lcw==
 
-inquirer@^6.2.1:
+inquirer@^6.2.1, inquirer@^6.4.1:
   version "6.5.0"
   resolved "https://registry.verdaccio.org/inquirer/-/inquirer-6.5.0.tgz#2303317efc9a4ea7ec2e2df6f86569b734accf42"
   integrity sha512-scfHejeG/lVZSpvCXpsB4j/wQNPM5JC8kiElOI0OUTwmc1RTpXr4H32/HOlQHcZiYl2z2VElwuCVDRG8vFmbnA==
@@ -7711,7 +7806,7 @@ is-boolean-object@^1.0.0:
   resolved "https://registry.npmjs.org/is-boolean-object/-/is-boolean-object-1.0.0.tgz#98f8b28030684219a95f375cfbd88ce3405dff93"
   integrity sha1-mPiygDBoQhmpXzdc+9iM40Bd/5M=
 
-is-buffer@^1.1.5:
+is-buffer@^1.1.5, is-buffer@~1.1.1:
   version "1.1.6"
   resolved "https://registry.npmjs.org/is-buffer/-/is-buffer-1.1.6.tgz#efaa2ea9daa0d7ab2ea13a97b2b8ad51fefbe8be"
   integrity sha512-NcdALwpXkTm5Zvvbk7owOUSvVvBKDgKP5/ewfXEznmQFfs4ZRmanOeKBTjRVjka3QFoN6XJ+9F3USqfHqTaU5w==
@@ -8484,7 +8579,7 @@ js-base64@^2.1.9:
   resolved "https://registry.verdaccio.org/js-base64/-/js-base64-2.5.1.tgz#1efa39ef2c5f7980bb1784ade4a8af2de3291121"
   integrity sha512-M7kLczedRMYX4L8Mdh4MzyAMM9O5osx+4FcOQuTvr3A9F2D9S5JXheN0ewNbrvK2UatkTRhL5ejGmGSjNMiZuw==
 
-js-beautify@^1.9.1:
+js-beautify@^1.10.0:
   version "1.10.1"
   resolved "https://registry.verdaccio.org/js-beautify/-/js-beautify-1.10.1.tgz#bdfe738ddbcaa12e4fced5af2d7cfad59f60ac0a"
   integrity sha512-4y8SHOIRC+/YQ2gs3zJEKBUraQerq49FJYyXRpdzUGYQzCq8q9xtIh0YXial1S5KmonVui4aiUb6XaGyjE51XA==
@@ -9127,7 +9222,7 @@ lodash@4.17.14:
   resolved "https://registry.verdaccio.org/lodash/-/lodash-4.17.14.tgz#9ce487ae66c96254fe20b599f21b6816028078ba"
   integrity sha512-mmKYbW3GLuJeX+iGP+Y7Gp1AiGHGbXHCOh/jZmrawMmsE7MS4znI3RL2FsjbqOyMayHInjOeykW7PEajUk1/xw==
 
-lodash@^4.17.12, lodash@^4.17.13, lodash@^4.17.14, lodash@~4.17.10:
+lodash@4.x.x, lodash@^4.17.12, lodash@^4.17.13, lodash@^4.17.14, lodash@~4.17.10:
   version "4.17.15"
   resolved "https://registry.verdaccio.org/lodash/-/lodash-4.17.15.tgz#b447f6670a0455bbfeedd11392eff330ea097548"
   integrity sha512-8xOcRHvCjnocdS5cpwXQXVzmmh5e5+saE2QGoeQmbKmRS6J3VQppPOIt0MnmE+4xlZoumy0GPG0D0MVIQbNA1A==
@@ -9309,6 +9404,15 @@ md5.js@^1.3.4:
     hash-base "^3.0.0"
     inherits "^2.0.1"
     safe-buffer "^5.1.2"
+
+md5@^2.1.0:
+  version "2.2.1"
+  resolved "https://registry.verdaccio.org/md5/-/md5-2.2.1.tgz#53ab38d5fe3c8891ba465329ea23fac0540126f9"
+  integrity sha1-U6s41f48iJG6RlMp6iP6wFQBJvk=
+  dependencies:
+    charenc "~0.0.1"
+    crypt "~0.0.1"
+    is-buffer "~1.1.1"
 
 mdast-util-compact@^1.0.0:
   version "1.0.2"
@@ -9625,6 +9729,17 @@ mkdirp@0.5.1, mkdirp@0.5.x, mkdirp@^0.5.0, mkdirp@^0.5.1, mkdirp@~0.5.0, mkdirp@
   integrity sha1-MAV0OOrGz3+MR2fzhkjWaX11yQM=
   dependencies:
     minimist "0.0.8"
+
+mocha-junit-reporter@^1.23.0:
+  version "1.23.1"
+  resolved "https://registry.verdaccio.org/mocha-junit-reporter/-/mocha-junit-reporter-1.23.1.tgz#ba11519c0b967f404e4123dd69bc4ba022ab0f12"
+  integrity sha512-qeDvKlZyAH2YJE1vhryvjUQ06t2hcnwwu4k5Ddwn0GQINhgEYFhlGM0DwYCVUHq5cuo32qAW6HDsTHt7zz99Ng==
+  dependencies:
+    debug "^2.2.0"
+    md5 "^2.1.0"
+    mkdirp "~0.5.1"
+    strip-ansi "^4.0.0"
+    xml "^1.0.0"
 
 mocha@^4.1.0:
   version "4.1.0"
@@ -9974,6 +10089,11 @@ node-releases@^1.1.23:
   integrity sha512-uq1iL79YjfYC0WXoHbC/z28q/9pOl8kSHaXdWmAAc8No+bDwqkZbzIJz55g/MUsPgSGm9LZ7QSUbzTcH5tz47w==
   dependencies:
     semver "^5.3.0"
+
+node-version@^1.0.0:
+  version "1.2.0"
+  resolved "https://registry.verdaccio.org/node-version/-/node-version-1.2.0.tgz#34fde3ffa8e1149bd323983479dda620e1b5060d"
+  integrity sha512-ma6oU4Sk0qOoKEAymVoTvk8EdXEobdS7m/mAGhDJ8Rouugho48crHBORAmy5BoOcv8wraPM6xumapQp5hl4iIQ==
 
 noop-logger@^0.1.1:
   version "0.1.1"
@@ -11529,6 +11649,11 @@ promise-inflight@^1.0.1:
   resolved "https://registry.npmjs.org/promise-inflight/-/promise-inflight-1.0.1.tgz#98472870bf228132fcbdd868129bad12c3c029e3"
   integrity sha1-mEcocL8igTL8vdhoEputEsPAKeM=
 
+promise-polyfill@^6.0.1:
+  version "6.1.0"
+  resolved "https://registry.verdaccio.org/promise-polyfill/-/promise-polyfill-6.1.0.tgz#dfa96943ea9c121fca4de9b5868cb39d3472e057"
+  integrity sha1-36lpQ+qcEh/KTem1hoyznTRy4Fc=
+
 promise-retry@^1.1.1:
   version "1.1.1"
   resolved "https://registry.verdaccio.org/promise-retry/-/promise-retry-1.1.1.tgz#6739e968e3051da20ce6497fb2b50f6911df3d6d"
@@ -11569,6 +11694,15 @@ prop-types@15.7.2, prop-types@^15.5.10, prop-types@^15.5.8, prop-types@^15.6.0, 
     loose-envify "^1.4.0"
     object-assign "^4.1.1"
     react-is "^16.8.1"
+
+proper-lockfile@^3.0.2:
+  version "3.2.0"
+  resolved "https://registry.verdaccio.org/proper-lockfile/-/proper-lockfile-3.2.0.tgz#89ca420eea1d55d38ca552578851460067bcda66"
+  integrity sha512-iMghHHXv2bsxl6NchhEaFck8tvX3F9cknEEh1SUpguUOBjN7PAAW9BLzmbc1g/mCD1gY3EE2EABBHPJfFdHFmA==
+  dependencies:
+    graceful-fs "^4.1.11"
+    retry "^0.12.0"
+    signal-exit "^3.0.2"
 
 proto-list@~1.2.1:
   version "1.2.4"
@@ -12684,6 +12818,13 @@ sane@^4.0.3:
     minimist "^1.1.1"
     walker "~1.0.5"
 
+sanitize-filename@^1.6.1:
+  version "1.6.2"
+  resolved "https://registry.verdaccio.org/sanitize-filename/-/sanitize-filename-1.6.2.tgz#01b4fc8809f14e9d22761fe70380fe7f3f902185"
+  integrity sha512-cmTzND7RMxUB+f7gI+4+KAVHWEg0lfXvQJdko+FXDP5bNbGIdx4KMP5pX6lv5jfT9jSf6OBbjyxjFtZQwYA/ig==
+  dependencies:
+    truncate-utf8-bytes "^1.0.0"
+
 sax@^1.2.4, sax@~1.2.1, sax@~1.2.4:
   version "1.2.4"
   resolved "https://registry.npmjs.org/sax/-/sax-1.2.4.tgz#2816234e2378bddc4e5354fab5caa895df7100d9"
@@ -12915,6 +13056,13 @@ shebang-regex@^1.0.0:
   version "1.0.0"
   resolved "https://registry.npmjs.org/shebang-regex/-/shebang-regex-1.0.0.tgz#da42f49740c0b42db2ca9728571cb190c98efea3"
   integrity sha1-2kL0l0DAtC2yypcoVxyxkMmO/qM=
+
+shell-utils@^1.0.9:
+  version "1.0.10"
+  resolved "https://registry.verdaccio.org/shell-utils/-/shell-utils-1.0.10.tgz#7fe7b8084f5d6d21323d941267013bc38aed063e"
+  integrity sha512-p1xuqhj3jgcXiV8wGoF1eL/NOvapN9tyGDoObqKwvZTUZn7fIzK75swLTEHfGa7sObeN9vxFplHw/zgYUYRTsg==
+  dependencies:
+    lodash "4.x.x"
 
 shellwords@^0.1.1:
   version "0.1.1"
@@ -13698,6 +13846,11 @@ table@^5.2.3:
     slice-ansi "^2.1.0"
     string-width "^3.0.0"
 
+tail@^2.0.0:
+  version "2.0.2"
+  resolved "https://registry.verdaccio.org/tail/-/tail-2.0.2.tgz#86073f3a9a568807b7fd886897a7350314275b5f"
+  integrity sha512-raFipiKWdGKEzxbvZwnhUGqjvsv0gpa/1A479rL//NOxnNwYZDN4MPk6xJJdUFs8P2Xrff3nbH5fcyYRLU4UHQ==
+
 tapable@^1.0.0, tapable@^1.1.0:
   version "1.1.1"
   resolved "https://registry.npmjs.org/tapable/-/tapable-1.1.1.tgz#4d297923c5a72a42360de2ab52dadfaaec00018e"
@@ -13759,12 +13912,32 @@ teeny-request@^3.11.3:
     node-fetch "^2.2.0"
     uuid "^3.3.2"
 
+telnet-client@0.15.3:
+  version "0.15.3"
+  resolved "https://registry.verdaccio.org/telnet-client/-/telnet-client-0.15.3.tgz#99ec754e4acf6fa51dc69898f574df3c2550712e"
+  integrity sha512-GSfdzQV0BKIYsmeXq7bJFJ2wHeJud6icaIxCUf6QCGQUD6R0BBGbT1+yLDhq67JRdgRpwyPwUbV7JxFeRrZomQ==
+  dependencies:
+    bluebird "3.5.x"
+
+temp-dir@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.verdaccio.org/temp-dir/-/temp-dir-1.0.0.tgz#0a7c0ea26d3a39afa7e0ebea9c1fc0bc4daa011d"
+  integrity sha1-CnwOom06Oa+n4OvqnB/AvE2qAR0=
+
 temp-fs@^0.9.9:
   version "0.9.9"
   resolved "https://registry.verdaccio.org/temp-fs/-/temp-fs-0.9.9.tgz#8071730437870720e9431532fe2814364f8803d7"
   integrity sha1-gHFzBDeHByDpQxUy/igUNk+IA9c=
   dependencies:
     rimraf "~2.5.2"
+
+tempfile@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.verdaccio.org/tempfile/-/tempfile-2.0.0.tgz#6b0446856a9b1114d1856ffcbe509cccb0977265"
+  integrity sha1-awRGhWqbERTRhW/8vlCczLCXcmU=
+  dependencies:
+    temp-dir "^1.0.0"
+    uuid "^3.0.1"
 
 test-exclude@^5.0.0:
   version "5.1.0"
@@ -13986,6 +14159,13 @@ trough@^1.0.0:
   resolved "https://registry.verdaccio.org/trough/-/trough-1.0.4.tgz#3b52b1f13924f460c3fbfd0df69b587dbcbc762e"
   integrity sha512-tdzBRDGWcI1OpPVmChbdSKhvSVurznZ8X36AYURAcl+0o2ldlCY2XPzyXNNxwJwwyIU+rIglTCG4kxtNKBQH7Q==
 
+truncate-utf8-bytes@^1.0.0:
+  version "1.0.2"
+  resolved "https://registry.verdaccio.org/truncate-utf8-bytes/-/truncate-utf8-bytes-1.0.2.tgz#405923909592d56f78a5818434b0b78489ca5f2b"
+  integrity sha1-QFkjkJWS1W94pYGENLC3hInKXys=
+  dependencies:
+    utf8-byte-length "^1.0.1"
+
 tryer@^1.0.0:
   version "1.0.1"
   resolved "https://registry.npmjs.org/tryer/-/tryer-1.0.1.tgz#f2c85406800b9b0f74c9f7465b81eaad241252f8"
@@ -14117,6 +14297,11 @@ uglifyjs-webpack-plugin@^1.2.4:
     uglify-es "^3.3.4"
     webpack-sources "^1.1.0"
     worker-farm "^1.5.2"
+
+ultron@~1.1.0:
+  version "1.1.1"
+  resolved "https://registry.verdaccio.org/ultron/-/ultron-1.1.1.tgz#9fe1536a10a664a65266a1e3ccf85fd36302bc9c"
+  integrity sha512-UIEXBNeYmKptWH6z8ZnqTeS8fV74zG0/eRU9VGkpzz+LIJNs8W/zM/L+7ctCkRrgbNnnR0xxw4bKOr0cW0N0Og==
 
 unherit@^1.0.4:
   version "1.1.2"
@@ -14331,6 +14516,11 @@ use@^3.1.0:
   version "3.1.1"
   resolved "https://registry.npmjs.org/use/-/use-3.1.1.tgz#d50c8cac79a19fbc20f2911f56eb973f4e10070f"
   integrity sha512-cwESVXlO3url9YWlFW/TA9cshCEhtu7IKJ/p5soJ/gGpj7vbvFrAY/eIioQ6Dw23KjZhYgiIo8HOs1nQ2vr/oQ==
+
+utf8-byte-length@^1.0.1:
+  version "1.0.4"
+  resolved "https://registry.verdaccio.org/utf8-byte-length/-/utf8-byte-length-1.0.4.tgz#f45f150c4c66eee968186505ab93fcbb8ad6bf61"
+  integrity sha1-9F8VDExm7uloGGUFq5P8u4rWv2E=
 
 util-deprecate@^1.0.1, util-deprecate@~1.0.1:
   version "1.0.2"
@@ -14905,6 +15095,15 @@ write@1.0.3:
   dependencies:
     mkdirp "^0.5.1"
 
+ws@^3.3.1:
+  version "3.3.3"
+  resolved "https://registry.verdaccio.org/ws/-/ws-3.3.3.tgz#f1cf84fe2d5e901ebce94efaece785f187a228f2"
+  integrity sha512-nnWLa/NwZSt4KQJu51MYlCcSQ5g7INpOrOMt4XV8j4dqTXdmlUmSHQ8/oLC069ckre0fRsgfvsKwbTdtKLCDkA==
+  dependencies:
+    async-limiter "~1.0.0"
+    safe-buffer "~5.1.0"
+    ultron "~1.1.0"
+
 ws@^5.2.0:
   version "5.2.2"
   resolved "https://registry.npmjs.org/ws/-/ws-5.2.2.tgz#dffef14866b8e8dc9133582514d1befaf96e980f"
@@ -14935,6 +15134,11 @@ xml-name-validator@^3.0.0:
   version "3.0.0"
   resolved "https://registry.npmjs.org/xml-name-validator/-/xml-name-validator-3.0.0.tgz#6ae73e06de4d8c6e47f9fb181f78d648ad457c6a"
   integrity sha512-A5CUptxDsvxKJEU3yO6DuWBSJz/qizqzJKOMIfUJHETbBw/sFaDxgd6fxm1ewUaM0jZ444Fc5vC5ROYurg/4Pw==
+
+xml@^1.0.0:
+  version "1.0.1"
+  resolved "https://registry.verdaccio.org/xml/-/xml-1.0.1.tgz#78ba72020029c5bc87b8a81a3cfcd74b4a2fc1e5"
+  integrity sha1-eLpyAgApxbyHuKgaPPzXS0ovweU=
 
 xmlchars@^1.3.1:
   version "1.3.1"
@@ -15083,7 +15287,7 @@ yargs@13.2.4:
     y18n "^4.0.0"
     yargs-parser "^13.1.0"
 
-yargs@^13.2.4:
+yargs@^13.0.0, yargs@^13.2.4:
   version "13.3.0"
   resolved "https://registry.verdaccio.org/yargs/-/yargs-13.3.0.tgz#4c657a55e07e5f2cf947f8a366567c04a0dedc83"
   integrity sha512-2eehun/8ALW8TLoIl7MVaRUrg+yCnenu8B4kBlRxj3GJGDKU1Og7sMXPNm1BYyM1DOJmTZ4YeN/Nwxv+8XJsUA==

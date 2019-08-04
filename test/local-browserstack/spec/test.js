@@ -1,1 +1,1 @@
-browser.url('http://localhost:4872');
+browser.url('https://verdaccio.org');
