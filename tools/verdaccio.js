@@ -1,19 +1,26 @@
 const fs = require('fs');
 const startServer = require('verdaccio').default;
 const yalm = require('js-yaml');
+const path = require('path');
 
-const configJsonFormat = yalm.safeLoad(fs.readFileSync('./tools/_config.yaml', 'utf8'));
+const storageLocation = path.join(__dirname, '../partials/storage');
+const pluginsLocation = path.join(__dirname, '../partials/plugins');
+const configJsonFormat = Object.assign({}, yalm.safeLoad(fs.readFileSync('./tools/_verdaccio.config.yaml', 'utf8')), {
+  storage: storageLocation,
+  plugins: pluginsLocation,
+});
 
-const handler = function(webServer, addr, pkgName, pkgVersion) {
+const serverHandler = function(webServer, addr, pkgName, pkgVersion) {
   webServer.listen(addr.port || addr.path, addr.host, () => {
     console.log(`${pkgName}:${pkgVersion} running ${addr.proto}://${addr.host}:${addr.port}`);
   });
 
   process.on('SIGTERM', () => {
     webServer.close(() => {
-      console.log('Process terminated');
+      console.log('verdaccio server has been shutdown');
     });
   });
 };
 
-startServer(configJsonFormat, 8080, '', '1.0.0', 'verdaccio', handler);
+// https://verdaccio.org/docs/en/node-api
+startServer(configJsonFormat, 8080, '', '1.0.0', 'verdaccio', serverHandler);
