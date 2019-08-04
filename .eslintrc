@@ -5,7 +5,8 @@
     "plugin:jest/recommended",
     "plugin:prettier/recommended",
     "plugin:verdaccio/recommended",
-    "plugin:jsx-a11y/recommended"
+    "plugin:jsx-a11y/recommended",
+    "plugin:wdio/recommended"
   ],
   "plugins": [
     "react",
@@ -13,7 +14,8 @@
     "prettier",
     "verdaccio",
     "jsx-a11y",
-    "codeceptjs"
+    "codeceptjs",
+    "wdio"
   ],
   "settings": {
     "react": {
