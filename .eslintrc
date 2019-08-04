@@ -12,7 +12,8 @@
     "jest",
     "prettier",
     "verdaccio",
-    "jsx-a11y"
+    "jsx-a11y",
+    "codeceptjs"
   ],
   "settings": {
     "react": {
@@ -119,6 +120,7 @@
   },
   "env": {
     "browser": true,
-    "jest/globals": true
+    "jest/globals": true,
+    "codeceptjs/codeceptjs": true,
   }
 }
