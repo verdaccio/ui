@@ -1,5 +1,5 @@
 import React from 'react';
-import { shallow } from 'enzyme';
+import { mount, shallow } from 'enzyme';
 
 describe('<ActionBar /> component', () => {
   beforeEach(() => {
@@ -43,6 +43,31 @@ describe('<ActionBar /> component', () => {
 
     const ActionBar = require('./ActionBar').default;
     const wrapper = shallow(<ActionBar />);
+    // FIXME: this only renders the DetailContextConsumer, thus
+    // the wrapper will be always empty
     expect(wrapper.html()).toEqual('');
+  });
+
+  test('when there is a button to download a tarball', () => {
+    const packageMeta = {
+      latest: {
+        dist: {
+          tarball: 'http://localhost:8080/bootstrap/-/bootstrap-4.3.1.tgz',
+        },
+      },
+    };
+
+    jest.doMock('../../pages/version/Version', () => ({
+      DetailContextConsumer: component => {
+        return component.children({ packageMeta });
+      },
+    }));
+
+    const ActionBar = require('./ActionBar').default;
+    const wrapper = mount(<ActionBar />);
+    expect(wrapper.html()).toMatchSnapshot();
+
+    const button = wrapper.find('button');
+    expect(button).toHaveLength(1);
   });
 });
