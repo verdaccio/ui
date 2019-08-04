@@ -1,7 +1,7 @@
 web:
-  title: Verdaccio
-  # gravatar: false
-  # sort_packages: asc
+  title: Verdaccio Local Dev
+  sort_packages: asc
+  primary_color: #CCC
 
 plugins: ../
 
@@ -14,22 +14,15 @@ auth:
       bar:
         name: bar
         password: test
-store:
-  memory:
-    limit: 1000
-
-# theme:
-
-
 security:
   api:
     jwt:
       sign:
-        expiresIn: 60d
+        expiresIn: 120d
         notBefore: 1
   web:
     sign:
-      expiresIn: 7d
+      expiresIn: 100d
       notBefore: 1
 
 uplinks:
@@ -41,12 +34,18 @@ packages:
     access: $all
     publish: $authenticated
     unpublish: $authenticated
-
+  'vue':
+    access: foo
+    publish: foo
+    unpublish: foo
+  'jquery':
+    access: $all
+    publish: bar
+    unpublish: bar
   '**':
     access: $all
     publish: $authenticated
     unpublish: $authenticated
-
 middlewares:
   audit:
     enabled: true

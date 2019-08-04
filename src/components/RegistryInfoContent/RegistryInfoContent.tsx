@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { css } from 'emotion';
 
 import { Props, State } from './types';
 import { CommandContainer } from './styles';
@@ -11,10 +12,15 @@ import { getCLISetRegistry, getCLIChangePassword, getCLISetConfigRegistry } from
 import { NODE_MANAGER } from '../../utils/constants';
 
 /* eslint react/prop-types:0 */
-function TabContainer({ children }) {
+function TabContainer({ children }): JSX.Element {
   return (
     <CommandContainer>
-      <Typography component="div" style={{ padding: 0, minHeight: 170 }}>
+      <Typography
+        className={css`
+          padding: 0;
+          min-height: 170;
+        `}
+        component="div">
         {children}
       </Typography>
     </CommandContainer>
@@ -22,15 +28,20 @@ function TabContainer({ children }) {
 }
 
 class RegistryInfoContent extends Component<Props, State> {
-  state = {
+  public state = {
     tabPosition: 0,
   };
 
-  render() {
+  public render(): JSX.Element {
     return <div>{this.renderTabs()}</div>;
   }
 
-  renderTabs() {
+  private handleChange = (event: React.ChangeEvent<{}>, tabPosition: number) => {
+    event.preventDefault();
+    this.setState({ tabPosition });
+  };
+
+  private renderTabs(): JSX.Element {
     const { scope, registryUrl } = this.props;
     const { tabPosition } = this.state;
 
@@ -48,7 +59,7 @@ class RegistryInfoContent extends Component<Props, State> {
     );
   }
 
-  renderNpmTab(scope: string, registryUrl: string) {
+  private renderNpmTab(scope: string, registryUrl: string): JSX.Element {
     return (
       <React.Fragment>
         <CopyToClipBoard text={getCLISetConfigRegistry(`${NODE_MANAGER.npm} set`, scope, registryUrl)} />
@@ -58,7 +69,7 @@ class RegistryInfoContent extends Component<Props, State> {
     );
   }
 
-  renderPNpmTab(scope: string, registryUrl: string) {
+  private renderPNpmTab(scope: string, registryUrl: string): JSX.Element {
     return (
       <React.Fragment>
         <CopyToClipBoard text={getCLISetConfigRegistry(`${NODE_MANAGER.pnpm} set`, scope, registryUrl)} />
@@ -68,18 +79,13 @@ class RegistryInfoContent extends Component<Props, State> {
     );
   }
 
-  renderYarnTab(scope: string, registryUrl: string) {
+  private renderYarnTab(scope: string, registryUrl: string): JSX.Element {
     return (
       <React.Fragment>
         <CopyToClipBoard text={getCLISetConfigRegistry(`${NODE_MANAGER.yarn} config set`, scope, registryUrl)} />
       </React.Fragment>
     );
   }
-
-  handleChange = (event: any, tabPosition: number) => {
-    event.preventDefault();
-    this.setState({ tabPosition });
-  };
 }
 
 export default RegistryInfoContent;

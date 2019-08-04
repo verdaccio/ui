@@ -4,18 +4,18 @@ import ListItem from '@material-ui/core/ListItem';
 
 import colors from '../../utils/styles/colors';
 
-export const ActionListItem = styled(ListItem)`
-  && {
-    padding-top: 0;
-    padding-left: 0;
-    padding-right: 0;
-  }
-`;
+export const ActionListItem = styled(ListItem)({
+  '&&': {
+    paddingTop: 0,
+    paddingLeft: 0,
+    paddingRight: 0,
+  },
+});
 
-export const Fab = styled(MuiFab)`
-  && {
-    background-color: ${colors.primary};
-    color: ${colors.white};
-    margin-right: 10px;
-  }
-`;
+export const Fab = styled(MuiFab)({
+  '&&': {
+    backgroundColor: colors.primary,
+    color: colors.white,
+    marginRight: '10px',
+  },
+});

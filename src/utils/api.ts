@@ -6,9 +6,9 @@ import '../../types';
  * @param {object} response
  * @returns {promise}
  */
-function handleResponseType(response): Promise<any> {
+export function handleResponseType(response: Response): Promise<[boolean, Blob | string]> | Promise<void> {
   if (response.headers) {
-    const contentType = response.headers.get('Content-Type');
+    const contentType = response.headers.get('Content-Type') as string;
     if (contentType.includes('application/pdf')) {
       return Promise.all([response.ok, response.blob()]);
     }
@@ -19,22 +19,27 @@ function handleResponseType(response): Promise<any> {
     if (contentType.includes('text/')) {
       return Promise.all([response.ok, response.text()]);
     }
+
+    // unfortunatelly on download files there is no header available
+    if (response.url && response.url.endsWith('.tgz') !== null) {
+      return Promise.all([response.ok, response.blob()]);
+    }
   }
 
   return Promise.resolve();
 }
 
 class API {
-  public request(url: string, method = 'GET', options: any = {}): Promise<any> {
+  public request<T>(url: string, method = 'GET', options: RequestInit = { headers: {} }): Promise<T> {
     if (!window.VERDACCIO_API_URL) {
       throw new Error('VERDACCIO_API_URL is not defined!');
     }
 
     const token = storage.getItem('token');
-    if (token) {
-      if (!options.headers) options.headers = {};
-
-      options.headers.authorization = `Bearer ${token}`;
+    if (token && options.headers && typeof options.headers['Authorization'] === 'undefined') {
+      options.headers = Object.assign({}, options.headers, {
+        ['Authorization']: `Bearer ${token}`,
+      });
     }
 
     if (!['http://', 'https://', '//'].some(prefix => url.startsWith(prefix))) {
@@ -42,7 +47,7 @@ class API {
       url = window.VERDACCIO_API_URL + url;
     }
 
-    return new Promise<any>((resolve, reject) => {
+    return new Promise((resolve, reject) => {
       fetch(url, {
         method,
         credentials: 'same-origin',
@@ -50,11 +55,11 @@ class API {
       })
         // @ts-ignore
         .then(handleResponseType)
-        .then(([responseOk, body]) => {
-          if (responseOk) {
-            resolve(body);
+        .then(response => {
+          if (response[0]) {
+            resolve(response[1]);
           } else {
-            reject(body);
+            reject(new Error('something went wrong'));
           }
         })
         .catch(error => {

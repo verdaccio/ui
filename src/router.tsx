@@ -2,17 +2,26 @@
 
 import React, { Component, ReactElement } from 'react';
 import { Router, Route, Switch } from 'react-router-dom';
-import { AppContextConsumer } from './App/App';
+import { createBrowserHistory } from 'history';
+import { AppContextConsumer, AppStateInterface } from './App/App';
 
 import { asyncComponent } from './utils/asyncComponent';
-import history from './history';
 import Header from './components/Header';
+
+const history = createBrowserHistory({
+  basename: window.__VERDACCIO_BASENAME_UI_OPTIONS && window.__VERDACCIO_BASENAME_UI_OPTIONS.url_prefix,
+});
 
 const NotFound = asyncComponent(() => import('./components/NotFound'));
 const VersionPackage = asyncComponent(() => import('./pages/version/Version'));
 const HomePage = asyncComponent(() => import('./pages/home'));
 
-class RouterApp extends Component<any, any> {
+interface RouterAppProps {
+  onLogout: () => void;
+  onToggleLoginModal: () => void;
+}
+
+class RouterApp extends Component<RouterAppProps> {
   public render(): ReactElement<HTMLDivElement> {
     return (
       <Router history={history}>
@@ -34,8 +43,8 @@ class RouterApp extends Component<any, any> {
 
     return (
       <AppContextConsumer>
-        {function renderConsumerVersionPage({ logoUrl, scope, user }: any) {
-          return <Header logo={logoUrl} onLogout={onLogout} onToggleLoginModal={onToggleLoginModal} scope={scope} username={user.username} />;
+        {function renderConsumerVersionPage({ logoUrl, scope = '', user }: Partial<AppStateInterface>) {
+          return <Header logo={logoUrl} onLogout={onLogout} onToggleLoginModal={onToggleLoginModal} scope={scope} username={user && user.username} />;
         }}
       </AppContextConsumer>
     );
@@ -44,7 +53,7 @@ class RouterApp extends Component<any, any> {
   public renderHomePage = (): ReactElement<HTMLDivElement> => {
     return (
       <AppContextConsumer>
-        {function renderConsumerVersionPage({ isUserLoggedIn, packages }: any) {
+        {function renderConsumerVersionPage({ isUserLoggedIn, packages }: Partial<AppStateInterface>) {
           // @ts-ignore
           return <HomePage isUserLoggedIn={isUserLoggedIn} packages={packages} />;
         }}
@@ -52,10 +61,10 @@ class RouterApp extends Component<any, any> {
     );
   };
 
-  public renderVersionPage = (routerProps: any): ReactElement<HTMLDivElement> => {
+  public renderVersionPage = (routerProps): ReactElement<HTMLDivElement> => {
     return (
       <AppContextConsumer>
-        {function renderConsumerVersionPage({ isUserLoggedIn }: any) {
+        {function renderConsumerVersionPage({ isUserLoggedIn }: Partial<AppStateInterface>) {
           return <VersionPackage {...routerProps} isUserLoggedIn={isUserLoggedIn} />;
         }}
       </AppContextConsumer>

@@ -1,4 +1,5 @@
 import React, { KeyboardEvent } from 'react';
+import { css } from 'emotion';
 import Autosuggest from 'react-autosuggest';
 import match from 'autosuggest-highlight/match';
 import parse from 'autosuggest-highlight/parse';
@@ -7,8 +8,8 @@ import MenuItem from '@material-ui/core/MenuItem';
 import { fontWeight } from '../../utils/styles/sizes';
 import { Wrapper, InputField, SuggestionContainer } from './styles';
 
-export interface Props {
-  suggestions: any[];
+interface Props {
+  suggestions: unknown[];
   suggestionsLoading?: boolean;
   suggestionsLoaded?: boolean;
   suggestionsError?: boolean;
@@ -16,17 +17,17 @@ export interface Props {
   color?: string;
   value?: string;
   placeholder?: string;
-  startAdornment?: any;
+  startAdornment?: JSX.Element;
   disableUnderline?: boolean;
   onChange?: (event: KeyboardEvent<HTMLInputElement>, { newValue, method }: { newValue: string; method: string }) => void;
   onSuggestionsFetch?: ({ value: string }) => Promise<void>;
   onCleanSuggestions?: () => void;
-  onClick?: (event: KeyboardEvent<HTMLInputElement>, { suggestionValue, method }: { suggestionValue: any[]; method: string }) => void;
+  onClick?: (event: KeyboardEvent<HTMLInputElement>, { suggestionValue, method }: { suggestionValue: string[]; method: string }) => void;
   onKeyDown?: (event: KeyboardEvent<HTMLInputElement>) => void;
   onBlur?: (event: KeyboardEvent<HTMLInputElement>) => void;
 }
 
-const renderInputComponent = inputProps => {
+const renderInputComponent = (inputProps): JSX.Element => {
   const { ref, startAdornment, disableUnderline, onKeyDown, ...others } = inputProps;
   return (
     <InputField
@@ -46,19 +47,21 @@ const renderInputComponent = inputProps => {
 
 const getSuggestionValue = (suggestion): string => suggestion.name;
 
-const renderSuggestion = (suggestion, { query, isHighlighted }) => {
+const renderSuggestion = (suggestion, { query, isHighlighted }): JSX.Element => {
   const matches = match(suggestion.name, query);
   const parts = parse(suggestion.name, matches);
   return (
     <MenuItem component="div" selected={isHighlighted}>
       <div>
         {parts.map((part, index) => {
-          return part.highlight ? (
-            <a href={suggestion.link} key={String(index)} style={{ fontWeight: fontWeight.semiBold }}>
-              {part.text}
-            </a>
-          ) : (
-            <a href={suggestion.link} key={String(index)} style={{ fontWeight: fontWeight.light }}>
+          const fw = part.highlight ? fontWeight.semiBold : fontWeight.light;
+          return (
+            <a
+              className={css`
+                font-weight: ${fw};
+              `}
+              href={suggestion.link}
+              key={String(index)}>
               {part.text}
             </a>
           );
@@ -68,7 +71,7 @@ const renderSuggestion = (suggestion, { query, isHighlighted }) => {
   );
 };
 
-const renderMessage = message => {
+const renderMessage = (message): JSX.Element => {
   return (
     <MenuItem component="div" selected={false}>
       <div>{message}</div>
@@ -98,7 +101,7 @@ const AutoComplete = ({
   suggestionsLoading = false,
   suggestionsLoaded = false,
   suggestionsError = false,
-}: Props) => {
+}: Props): JSX.Element => {
   const autosuggestProps = {
     renderInputComponent,
     suggestions,
@@ -119,7 +122,7 @@ const AutoComplete = ({
   };
 
   // this format avoid arrow function eslint rule
-  function renderSuggestionsContainer({ containerProps, children, query }) {
+  function renderSuggestionsContainer({ containerProps, children, query }): JSX.Element {
     return (
       <SuggestionContainer {...containerProps} square={true}>
         {suggestionsLoaded && children === null && query && renderMessage(SUGGESTIONS_RESPONSE.NO_RESULT)}

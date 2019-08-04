@@ -1,5 +1,6 @@
 import React, { SyntheticEvent, Component, Fragment, ReactElement } from 'react';
 import { Link } from 'react-router-dom';
+import { css } from 'emotion';
 
 import Button from '@material-ui/core/Button';
 import IconButton from '@material-ui/core/IconButton';
@@ -22,7 +23,7 @@ import RegistryInfoContent from '../RegistryInfoContent/RegistryInfoContent';
 import { Greetings, NavBar, InnerNavBar, MobileNavBar, InnerMobileNavBar, LeftSide, RightSide, IconSearchButton, SearchWrapper } from './styles';
 
 interface Props {
-  logo: string;
+  logo?: string;
   username?: string;
   onLogout: () => void;
   onToggleLoginModal: () => void;
@@ -31,7 +32,7 @@ interface Props {
 }
 
 interface State {
-  anchorEl?: any;
+  anchorEl?: null | HTMLElement | ((element: HTMLElement) => HTMLElement);
   openInfoDialog: boolean;
   registryUrl: string;
   showMobileNavBar: boolean;
@@ -141,7 +142,11 @@ class Header extends Component<Props, State> {
     const { withoutSearch = false } = this.props;
     return (
       <LeftSide>
-        <Link style={{ marginRight: '1em' }} to={'/'}>
+        <Link
+          className={css`
+            margin-right: 1em;
+          `}
+          to={'/'}>
           {this.renderLogo()}
         </Link>
         {!withoutSearch && (

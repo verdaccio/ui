@@ -4,7 +4,7 @@ import PackageList from '../../components/PackageList';
 
 interface Props {
   isUserLoggedIn: boolean;
-  packages: any[];
+  packages: [];
 }
 
 const Home: React.FC<Props> = ({ packages }) => (

@@ -1,5 +1,6 @@
 import React, { KeyboardEvent, Component, ReactElement } from 'react';
 import { withRouter, RouteComponentProps } from 'react-router-dom';
+import { css } from 'emotion';
 
 import { default as IconSearch } from '@material-ui/icons/Search';
 import InputAdornment from '@material-ui/core/InputAdornment';
@@ -11,10 +12,14 @@ import colors from '../../utils/styles/colors';
 
 export interface State {
   search: string;
-  suggestions: any[];
+  suggestions: unknown[];
   loading: boolean;
   loaded: boolean;
   error: boolean;
+}
+interface AbortControllerInterface {
+  signal: () => void;
+  abort: () => void;
 }
 
 export type cancelAllSearchRequests = () => void;
@@ -31,8 +36,6 @@ const CONSTANTS = {
 };
 
 export class Search extends Component<RouteComponentProps<{}>, State> {
-  private requestList: any[];
-
   constructor(props: RouteComponentProps<{}>) {
     super(props);
     this.state = {
@@ -46,6 +49,28 @@ export class Search extends Component<RouteComponentProps<{}>, State> {
       error: false,
     };
     this.requestList = [];
+  }
+
+  public render(): ReactElement<HTMLElement> {
+    const { suggestions, search, loaded, loading, error } = this.state;
+
+    return (
+      <AutoComplete
+        color={colors.white}
+        onBlur={this.handleOnBlur}
+        onChange={this.handleSearch}
+        onCleanSuggestions={this.handlePackagesClearRequested}
+        onClick={this.handleClickSearch}
+        onSuggestionsFetch={debounce(this.handleFetchPackages, CONSTANTS.API_DELAY)}
+        placeholder={CONSTANTS.PLACEHOLDER_TEXT}
+        startAdornment={this.getAdorment()}
+        suggestions={suggestions}
+        suggestionsError={error}
+        suggestionsLoaded={loaded}
+        suggestionsLoading={loading}
+        value={search}
+      />
+    );
   }
 
   /**
@@ -96,7 +121,10 @@ export class Search extends Component<RouteComponentProps<{}>, State> {
   /**
    * When an user select any package by clicking or pressing return key.
    */
-  private handleClickSearch: handleClickSearch = (event, { suggestionValue, method }: any) => {
+  private handleClickSearch = (
+    event: React.KeyboardEvent<HTMLInputElement>,
+    { suggestionValue, method }: { suggestionValue: string[]; method: string }
+  ): void | undefined => {
     const { history } = this.props;
     // stops event bubbling
     event.stopPropagation();
@@ -141,31 +169,15 @@ export class Search extends Component<RouteComponentProps<{}>, State> {
     }
   };
 
-  public render(): ReactElement<HTMLElement> {
-    const { suggestions, search, loaded, loading, error } = this.state;
+  private requestList: AbortControllerInterface[];
 
+  public getAdorment(): JSX.Element {
     return (
-      <AutoComplete
-        color={colors.white}
-        onBlur={this.handleOnBlur}
-        onChange={this.handleSearch}
-        onCleanSuggestions={this.handlePackagesClearRequested}
-        onClick={this.handleClickSearch}
-        onSuggestionsFetch={debounce(this.handleFetchPackages, CONSTANTS.API_DELAY)}
-        placeholder={CONSTANTS.PLACEHOLDER_TEXT}
-        startAdornment={this.getAdorment()}
-        suggestions={suggestions}
-        suggestionsError={error}
-        suggestionsLoaded={loaded}
-        suggestionsLoading={loading}
-        value={search}
-      />
-    );
-  }
-
-  public getAdorment(): ReactElement<HTMLElement> {
-    return (
-      <InputAdornment position={'start'} style={{ color: colors.white }}>
+      <InputAdornment
+        className={css`
+          color: ${colors.white};
+        `}
+        position={'start'}>
         <IconSearch />
       </InputAdornment>
     );

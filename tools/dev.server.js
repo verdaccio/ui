@@ -32,7 +32,7 @@ new WebpackDevServer(compiler, {
   },
   proxy: [
     {
-      context: ['/-/verdaccio/logo', '/-/verdaccio/packages', '/-/static/logo.png'],
+      context: ['/-/verdaccio/**', '**/*.tgz'],
       target: 'http://localhost:8080',
     },
   ],

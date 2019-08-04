@@ -1,5 +1,6 @@
 import React, { MouseEvent } from 'react';
 import capitalize from 'lodash/capitalize';
+import { Breakpoint } from '@material-ui/core/styles/createBreakpoints';
 
 import { Svg, Img, ImgWrapper } from './styles';
 
@@ -57,10 +58,10 @@ export interface Props {
   name: keyof IconsMap;
   className?: string;
   onClick?: (event: MouseEvent<SVGElement | HTMLSpanElement>) => void;
-  size?: 'sm' | 'md';
+  size?: Breakpoint;
   pointer?: boolean;
   img?: boolean;
-  modifiers?: any;
+  modifiers?: null | undefined;
 }
 
 const Icon: React.FC<Props> = ({ className, name, size = 'sm', img = false, pointer = false, ...props }) => {

@@ -1,7 +1,7 @@
 /**
  * CSS to represent truncated text with an ellipsis.
  */
-export function ellipsis(width: string | number) {
+export function ellipsis(width: string | number): {} {
   return {
     display: 'inline-block',
     maxWidth: width,
@@ -24,7 +24,7 @@ interface SpacingShortHand<type> {
 
 const positionMap = ['Top', 'Right', 'Bottom', 'Left'];
 
-export function spacing(property: 'padding' | 'margin', ...values: SpacingShortHand<number | string>[]) {
+export function spacing(property: 'padding' | 'margin', ...values: SpacingShortHand<number | string>[]): {} {
   const [firstValue = 0, secondValue = 0, thirdValue = 0, fourthValue = 0] = values;
   const valuesWithDefaults = [firstValue, secondValue, thirdValue, fourthValue];
   let styles = {};
