@@ -1,8 +1,9 @@
 import styled, { css } from 'react-emotion';
+import colors from '../../utils/styles/colors';
 
 export const Content = styled('div')({
   '&&': {
-    backgroundColor: '#ffffff',
+    backgroundColor: colors.white,
     flex: 1,
     display: 'flex',
     position: 'relative',
