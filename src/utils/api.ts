@@ -8,20 +8,20 @@ import '../../types';
  */
 export function handleResponseType(response: Response): Promise<[boolean, Blob | string]> | Promise<void> {
   if (response.headers) {
-    const contentType = response.headers.get('Content-Type') as string;
-    if (contentType.includes('application/pdf')) {
+    const contentType = response.headers.get('Content-Type');
+    if (contentType && contentType.includes('application/pdf')) {
       return Promise.all([response.ok, response.blob()]);
     }
-    if (contentType.includes('application/json')) {
+    if (contentType && contentType.includes('application/json')) {
       return Promise.all([response.ok, response.json()]);
     }
     // it includes all text types
-    if (contentType.includes('text/')) {
+    if (contentType && contentType.includes('text/')) {
       return Promise.all([response.ok, response.text()]);
     }
 
     // unfortunatelly on download files there is no header available
-    if (response.url && response.url.endsWith('.tgz') !== null) {
+    if (response.url && response.url.endsWith('.tgz') === true) {
       return Promise.all([response.ok, response.blob()]);
     }
   }
