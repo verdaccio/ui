@@ -13,6 +13,7 @@ import { breakpoints } from '../../utils/styles/media';
 import Ico from '../Icon';
 import Label from '../Label';
 import colors from '../../utils/styles/colors';
+import { fontWeight } from '../../utils/styles/sizes';
 
 export const OverviewItem = styled('span')`
   && {
@@ -52,7 +53,7 @@ export const Published = styled('span')({
 export const Text = styled(Label)({
   '&&': {
     fontSize: '12px',
-    fontWeight: 500,
+    fontWeight: fontWeight.semiBold,
     color: colors.greyLight2,
   },
 });
