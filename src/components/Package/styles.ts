@@ -13,6 +13,7 @@ import { breakpoints } from '../../utils/styles/media';
 import Ico from '../Icon';
 import Label from '../Label';
 import colors from '../../utils/styles/colors';
+import { fontWeight } from '../../utils/styles/sizes';
 
 export const OverviewItem = styled('span')`
   && {
@@ -36,7 +37,7 @@ export const OverviewItem = styled('span')`
 
 export const Icon = styled(Ico)({
   '&&': {
-    margin: '2px 10px 0px 0',
+    margin: '2px 10px 0 0',
     fill: colors.greyLight2,
   },
 });
@@ -44,7 +45,7 @@ export const Icon = styled(Ico)({
 export const Published = styled('span')({
   '&&': {
     color: colors.greyLight2,
-    margin: '0px 5px 0px 0px',
+    margin: '0 5px 0 0',
   },
 });
 
@@ -52,7 +53,7 @@ export const Published = styled('span')({
 export const Text = styled(Label)({
   '&&': {
     fontSize: '12px',
-    fontWeight: 500,
+    fontWeight: fontWeight.semiBold,
     color: colors.greyLight2,
   },
 });
