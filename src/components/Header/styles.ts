@@ -49,7 +49,7 @@ export const InnerMobileNavBar = styled('div')({
     backgroundColor: colors.greyLight,
     color: colors.white,
     width: '100%',
-    padding: '0px 5px',
+    padding: '0 5px',
     margin: '0 10px 0 0',
   },
 });

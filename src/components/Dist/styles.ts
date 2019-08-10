@@ -5,10 +5,11 @@ import ListItem from '@material-ui/core/ListItem';
 import Typography from '@material-ui/core/Typography';
 
 import colors from '../../utils/styles/colors';
+import { fontWeight } from '../../utils/styles/sizes';
 
 export const Heading = styled(Typography)({
   '&&': {
-    fontWeight: 700,
+    fontWeight: fontWeight.bold,
     textTransform: 'capitalize',
   },
 });
