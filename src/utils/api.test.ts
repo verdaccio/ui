@@ -11,6 +11,22 @@ describe('api', () => {
   };
 
   describe('handleResponseType', () => {
+    test('should handle missing Content-Type', async () => {
+      const response: Response = {
+        url: 'http://localhost:8080/-/packages',
+        ok: false,
+        // @ts-ignore
+        headers: {
+          get: () => null,
+        } as Headers,
+      } as Response;
+
+      const handled = await handleResponseType(response);
+
+      // Should this actually return [false, null] ?
+      expect(handled).toBeUndefined();
+    });
+
     test('should test tgz scenario', async () => {
       const blob = new Blob(['foo']);
       const blobPromise = Promise.resolve<Blob>(blob);
