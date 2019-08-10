@@ -3,17 +3,26 @@ name: Node CI
 on: [push]
 
 jobs:
-  build:
-
-    runs-on: ubuntu-latest
+  ci:
+    name: Test on node ${{ matrix.node_version }} and ${{ matrix.os }}
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        node_version: [8, 10, 12]
+        os: [ubuntu-latest, windows-latest, macOS-latest]
 
     steps:
-    - uses: actions/checkout@master
-    - name: Use Node.js 10.x
+    - uses: actions/checkout@v1
+    - name: Use Node.js ${{ matrix.node_version }}
       uses: actions/setup-node@v1
       with:
-        version: 10.x
-    - name: npm install, build, and test
+        version: ${{ matrix.node_version }}
+
+    - name: Use Yarn 1.17.2
       run: |
-        npm install
-        npm test
+        npm install -g yarn@1.17.2    
+    - name: yarn build
+      run: |
+        yarn install
+        yarn lint
+        yarn build
