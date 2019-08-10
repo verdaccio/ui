@@ -13,7 +13,10 @@ jobs:
       uses: actions/setup-node@v1
       with:
         version: 10.x
-    - name: npm install, build, and test
+    - name: Use Yarn 1.17.2
       run: |
-        npm install
-        npm build
+        npm install -g yarn@1.17.2    
+    - name: yarn build
+      run: |
+        yarn install
+        yarn build
