@@ -13,7 +13,8 @@
     "prettier",
     "verdaccio",
     "jsx-a11y",
-    "codeceptjs"
+    "codeceptjs",
+    "react-hooks"
   ],
   "settings": {
     "react": {
@@ -107,6 +108,8 @@
       2,
       "always"
     ],
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "warn",
     "verdaccio/jsx-no-style": ["warn"],
     "verdaccio/jsx-spread": ["warn"],
     "jest/expect-expect": 0,
