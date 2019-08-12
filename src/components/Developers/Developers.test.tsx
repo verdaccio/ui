@@ -98,6 +98,7 @@ describe('test Developers', () => {
     );
 
     const item2 = wrapper.find(Fab);
+    // TODO: I am not sure here how to verify the method inside the component was called.
     item2.simulate('click');
   });
 });
