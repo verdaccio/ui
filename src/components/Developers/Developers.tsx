@@ -1,79 +1,59 @@
-import React, { Component } from 'react';
-
-import Avatar from '@material-ui/core/Avatar';
+import React, { FC, Fragment } from 'react';
 import Add from '@material-ui/icons/Add';
-import Tooltip from '@material-ui/core/Tooltip';
 
-import { DetailContextConsumer } from '../../pages/version/Version';
+import { DetailContext } from '../../pages/version/Version';
+import { AvatarTooltip } from '../AvatarTooltip';
 import { Details, Heading, Content, Fab } from './styles';
-import { isEmail } from '../../utils/url';
+
+export type DevelopersType = 'contributors' | 'maintainers';
 
 interface Props {
-  type: 'contributors' | 'maintainers';
-}
-interface State {
-  visibleDevs: number;
+  type: DevelopersType;
+  visibleMax?: number;
 }
 
-class Developers extends Component<Props, State> {
-  public state = {
-    visibleDevs: 6,
+export const VISIBLE_MAX = 6;
+
+const Developers: FC<Props> = ({ type, visibleMax }) => {
+  const [visibleDevs, setVisibleDevs] = React.useState<number>(visibleMax || VISIBLE_MAX);
+  const { packageMeta } = React.useContext(DetailContext);
+
+  const handleLoadMore = () => {
+    setVisibleDevs(visibleDevs + VISIBLE_MAX);
   };
 
-  public render(): JSX.Element {
-    return (
-      <DetailContextConsumer>
-        {({ packageMeta }) => {
-          const { type } = this.props;
-          const developerType = packageMeta && packageMeta.latest[type];
-          if (!developerType || developerType.length === 0) return null;
-          return this.renderDevelopers(developerType, packageMeta);
-        }}
-      </DetailContextConsumer>
-    );
-  }
+  const renderDeveloperDetails = ({ name, avatar, email }, packageMeta) => {
+    const { name: packageName, version } = packageMeta.latest;
 
-  public handleLoadMore = () => {
-    this.setState(prev => ({ visibleDevs: prev.visibleDevs + 6 }));
+    return <AvatarTooltip avatar={avatar} email={email} name={name} packageName={packageName} version={version} />;
   };
 
-  private renderDevelopers = (developers, packageMeta) => {
-    const { type } = this.props;
-    const { visibleDevs } = this.state;
+  const renderDevelopers = (developers, packageMeta) => {
+    const listVisibleDevelopers = developers.slice(0, visibleDevs);
+
     return (
-      <>
+      <Fragment>
         <Heading variant={'subheading'}>{type}</Heading>
         <Content>
-          {developers.slice(0, visibleDevs).map(developer => (
-            <Details key={developer.email}>{this.renderDeveloperDetails(developer, packageMeta)}</Details>
+          {listVisibleDevelopers.map(developer => (
+            <Details key={developer.email}>{renderDeveloperDetails(developer, packageMeta)}</Details>
           ))}
           {visibleDevs < developers.length && (
-            <Fab onClick={this.handleLoadMore} size="small">
+            <Fab onClick={handleLoadMore} size="small">
               <Add />
             </Fab>
           )}
         </Content>
-      </>
+      </Fragment>
     );
   };
 
-  private renderLinkForMail(email, avatarComponent, packageName, version): JSX.Element {
-    if (!email || isEmail(email) === false) {
-      return avatarComponent;
-    }
-    return (
-      <a href={`mailto:${email}?subject=${packageName}@${version}`} target={'_top'}>
-        {avatarComponent}
-      </a>
-    );
+  const developerList = packageMeta && packageMeta.latest[type];
+  if (!developerList || developerList.length === 0) {
+    return null;
   }
 
-  private renderDeveloperDetails = ({ name, avatar, email }, packageMeta) => {
-    const { name: packageName, version } = packageMeta.latest;
-
-    const avatarComponent = <Avatar aria-label={name} src={avatar} />;
-    return <Tooltip title={name}>{this.renderLinkForMail(email, avatarComponent, packageName, version)}</Tooltip>;
-  };
-}
+  return renderDevelopers(developerList, packageMeta);
+};
 
 export default Developers;
