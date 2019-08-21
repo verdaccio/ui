@@ -1,4 +1,4 @@
-import React, { Component, ReactElement, Consumer, Provider } from 'react';
+import React, { Component, ReactElement } from 'react';
 import Grid from '@material-ui/core/Grid';
 import Loading from '../../components/Loading/Loading';
 import DetailContainer from '../../components/DetailContainer/DetailContainer';
@@ -6,47 +6,17 @@ import DetailSidebar from '../../components/DetailSidebar/DetailSidebar';
 import { callDetailPage } from '../../utils/calls';
 import { getRouterPackageName } from '../../utils/package';
 import NotFound from '../../components/NotFound';
-import { PackageMetaInterface } from '../../../types/packageMeta';
+import { DetailContextProvider } from './context';
+import { PropsInterface, StateInterface } from './types';
+import { VersionRender } from './VersionRender';
 
-export interface DetailContextProps {
-  packageMeta: PackageMetaInterface;
-  readMe: string;
-  packageName: string;
-  enableLoading: () => void;
-}
-
-export const DetailContext = React.createContext<Partial<DetailContextProps>>({});
-
-export interface VersionPageConsumerProps {
-  packageMeta: PackageMetaInterface;
-  readMe: string;
-  packageName: string;
-  enableLoading: () => void;
-}
-
-export const DetailContextProvider: Provider<Partial<VersionPageConsumerProps>> = DetailContext.Provider;
-export const DetailContextConsumer: Consumer<Partial<VersionPageConsumerProps>> = DetailContext.Consumer;
-
-interface PropsInterface {
-  match: boolean;
-}
-
-interface StateInterface {
-  readMe: string;
-  packageName: string;
-  packageMeta: PackageMetaInterface | null;
-  isLoading: boolean;
-  notFound: boolean;
-}
-
-class VersionPage extends Component<PropsInterface, Partial<StateInterface>> {
+class Version extends Component<PropsInterface, Partial<StateInterface>> {
   constructor(props) {
     super(props);
 
     this.state = {
       readMe: '',
       packageName: getRouterPackageName(props.match),
-      packageMeta: null,
       isLoading: true,
       notFound: false,
     };
@@ -97,21 +67,10 @@ class VersionPage extends Component<PropsInterface, Partial<StateInterface>> {
 
     if (isLoading) {
       return <Loading />;
-    } else if (!packageMeta) {
+    } else if (typeof packageMeta === 'undefined' || typeof packageName === 'undefined' || typeof readMe === 'undefined') {
       return <NotFound />;
     } else {
-      return (
-        <DetailContextProvider value={{ packageMeta, readMe, packageName, enableLoading: this.enableLoading }}>
-          <Grid className={'container content'} container={true} spacing={0}>
-            <Grid item={true} xs={8}>
-              {this.renderDetail()}
-            </Grid>
-            <Grid item={true} xs={4}>
-              {this.renderSidebar()}
-            </Grid>
-          </Grid>
-        </DetailContextProvider>
-      );
+      return <VersionRender enableLoading={this.enableLoading} packageMeta={packageMeta} packageName={packageName} readMe={readMe} />;
     }
   }
 
@@ -147,14 +106,6 @@ class VersionPage extends Component<PropsInterface, Partial<StateInterface>> {
       isLoading: true,
     });
   };
-
-  public renderDetail(): ReactElement<HTMLElement> {
-    return <DetailContainer />;
-  }
-
-  public renderSidebar(): ReactElement<HTMLElement> {
-    return <DetailSidebar />;
-  }
 }
 
-export default VersionPage;
+export default Version;

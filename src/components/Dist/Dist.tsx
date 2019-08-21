@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 
 import List from '@material-ui/core/List';
 
-import { DetailContextConsumer, VersionPageConsumerProps } from '../../pages/version/Version';
+import { VersionPageConsumerProps } from '../../pages/version/types';
+import { DetailContextConsumer } from '../../pages/version/context';
 import { Heading, DistListItem, DistChips } from './styles';
 import fileSizeSI from '../../utils/file-size';
 import { PackageMetaInterface } from 'types/packageMeta';

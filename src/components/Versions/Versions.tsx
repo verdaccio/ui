@@ -1,4 +1,4 @@
-import { DetailContextConsumer } from '../../pages/version/Version';
+import { DetailContextConsumer } from '../../pages/version/context';
 import { formatDateDistance } from '../../utils/package';
 import { Heading, Spacer, ListItemText } from './styles';
 import List from '@material-ui/core/List';

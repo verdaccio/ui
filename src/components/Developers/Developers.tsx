@@ -1,7 +1,7 @@
 import React, { FC, Fragment } from 'react';
 import Add from '@material-ui/icons/Add';
 
-import { DetailContext } from '../../pages/version/Version';
+import { DetailContext } from '../../pages/version/context';
 import { AvatarTooltip } from '../AvatarTooltip';
 import { Details, Heading, Content, Fab } from './styles';
 

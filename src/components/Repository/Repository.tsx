@@ -5,7 +5,7 @@ import Avatar from '@material-ui/core/Avatar';
 import List from '@material-ui/core/List';
 import ListItemText from '@material-ui/core/ListItemText';
 
-import { DetailContextConsumer } from '../../pages/version/Version';
+import { DetailContextConsumer } from '../../pages/version/context';
 import CopyToClipBoard from '../CopyToClipBoard';
 
 import { Heading, GithubLink, RepositoryListItem } from './styles';

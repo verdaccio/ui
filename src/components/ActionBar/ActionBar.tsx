@@ -6,7 +6,8 @@ import HomeIcon from '@material-ui/icons/Home';
 import List from '@material-ui/core/List';
 import Tooltip from '@material-ui/core/Tooltip';
 
-import { DetailContextConsumer, VersionPageConsumerProps } from '../../pages/version/Version';
+import { DetailContextConsumer } from '../../pages/version/context';
+import { VersionPageConsumerProps } from '../../pages/version/types';
 import { Fab, ActionListItem } from './styles';
 import { isURL, extractFileName, downloadFile } from '../../utils/url';
 import api from '../../utils/api';

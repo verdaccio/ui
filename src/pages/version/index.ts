@@ -1,1 +1,2 @@
-export { default, DetailContextProps } from './Version';
+export { DetailContextProps } from './types';
+export { default } from './Version';
