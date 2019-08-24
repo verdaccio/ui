@@ -20,8 +20,9 @@ export function getRouterPackageName(params): string {
 }
 
 const Version = ({ match: { params } }) => {
+  const pkgName = getRouterPackageName(params);
   const [readMe, setReadme] = useState();
-  const [packageName] = useState(getRouterPackageName(params));
+  const [packageName, setPackageName] = useState(pkgName);
   const [packageMeta, setPackageMeta] = useState();
   const [isLoading, setIsLoading] = useState(true);
   const [notFound, setNotFound] = useState(false);
@@ -42,19 +43,26 @@ const Version = ({ match: { params } }) => {
 
   useEffect(() => {
     document.title = `Verdaccio - ${packageName}`;
-  });
+  }, [packageName]);
 
-  if (isLoading) {
-    return <Loading />;
-  } else if (notFound || typeof packageMeta === 'undefined' || typeof packageName === 'undefined' || typeof readMe === 'undefined') {
-    return <NotFound />;
-  } else {
-    return (
-      <DetailContextProvider value={{ packageMeta, readMe, packageName, enableLoading: setIsLoading }}>
-        <Layout />
-      </DetailContextProvider>
-    );
-  }
+  useEffect(() => {
+    const pkgName = getRouterPackageName(params);
+
+    setPackageName(pkgName);
+  }, [params]);
+
+  const isNotFound = notFound || typeof packageMeta === 'undefined' || typeof packageName === 'undefined' || typeof readMe === 'undefined';
+  const renderContent = (): React.ReactElement<HTMLElement> => {
+    if (isLoading) {
+      return <Loading />;
+    } else if (isNotFound) {
+      return <NotFound />;
+    } else {
+      return <Layout />;
+    }
+  };
+
+  return <DetailContextProvider value={{ packageMeta, readMe, packageName, enableLoading: setIsLoading }}>{renderContent()}</DetailContextProvider>;
 };
 
 export default Version;
