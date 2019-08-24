@@ -11,7 +11,8 @@ export interface VersionPageConsumerProps {
   packageMeta: PackageMetaInterface;
   readMe: string;
   packageName: string;
-  enableLoading: () => void;
+  // FIXME: looking for the appropiated type here
+  enableLoading: any;
 }
 
 export interface PropsInterface {
