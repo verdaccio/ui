@@ -1,10 +1,11 @@
-import { DetailContextConsumer } from '../../pages/version/context';
-import { formatDateDistance } from '../../utils/package';
-import { Heading, Spacer, ListItemText } from './styles';
+import React, { ReactElement } from 'react';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
-import React, { ReactElement } from 'react';
+
+import { DetailContextConsumer } from '../../pages/Version';
+import { formatDateDistance } from '../../utils/package';
 import { DIST_TAGS } from '../../../lib/constants';
+import { Heading, Spacer, ListItemText } from './styles';
 
 const NOT_AVAILABLE = 'Not available';
 

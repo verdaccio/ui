@@ -13,7 +13,7 @@ const history = createBrowserHistory({
 });
 
 const NotFound = asyncComponent(() => import('./components/NotFound'));
-const VersionPackage = asyncComponent(() => import('./pages/version/Version'));
+const VersionPackage = asyncComponent(() => import('./pages/Version'));
 const HomePage = asyncComponent(() => import('./pages/home'));
 
 interface RouterAppProps {

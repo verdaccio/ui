@@ -1,7 +1,6 @@
 import React, { Component, ReactElement, Fragment } from 'react';
 
-import { DetailContextConsumer } from '../../pages/version/context';
-import { VersionPageConsumerProps } from '../../pages/version/types';
+import { DetailContextConsumer, VersionPageConsumerProps } from '../../pages/Version';
 import Readme from '../Readme';
 import Versions from '../Versions';
 import { preventXSS } from '../../utils/sec-utils';

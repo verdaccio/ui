@@ -12,8 +12,7 @@ import Engine from '../Engines/Engines';
 import Install from '../Install';
 import Repository from '../Repository/Repository';
 
-import { DetailContextConsumer } from '../../pages/version/context';
-import { VersionPageConsumerProps } from '../../pages/version/types';
+import { DetailContextConsumer, VersionPageConsumerProps } from '../../pages/Version';
 
 import { TitleListItem, TitleListItemText } from './styles';
 

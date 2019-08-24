@@ -2,8 +2,7 @@ import List from '@material-ui/core/List';
 import ListItemText from '@material-ui/core/ListItemText';
 import React, { Component } from 'react';
 
-import { DetailContextConsumer } from '../../pages/version/context';
-import { VersionPageConsumerProps } from '../../pages/version/types';
+import { DetailContextConsumer, VersionPageConsumerProps } from '../../pages/Version';
 
 import CopyToClipBoard from '../CopyToClipBoard';
 

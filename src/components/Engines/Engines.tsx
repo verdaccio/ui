@@ -5,8 +5,7 @@ import Grid from '@material-ui/core/Grid';
 import List from '@material-ui/core/List';
 import ListItemText from '@material-ui/core/ListItemText';
 
-import { VersionPageConsumerProps } from '../../pages/version/types';
-import { DetailContextConsumer } from '../../pages/version/context';
+import { VersionPageConsumerProps, DetailContextConsumer } from '../../pages/Version';
 import { Heading, EngineListItem } from './styles';
 // @ts-ignore
 import node from './img/node.png';

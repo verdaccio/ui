@@ -2,7 +2,7 @@ import React, { ReactElement } from 'react';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 
-import { DetailContextConsumer } from '../../pages/version/context';
+import { DetailContextConsumer } from '../../pages/Version';
 import NoItems from '../NoItems';
 import { formatDateDistance } from '../../utils/package';
 

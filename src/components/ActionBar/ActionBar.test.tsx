@@ -19,7 +19,7 @@ describe('<ActionBar /> component', () => {
       },
     };
 
-    jest.doMock('../../pages/version/Version', () => ({
+    jest.doMock('../../pages/Version', () => ({
       DetailContextConsumer: component => {
         return component.children({ packageMeta });
       },
@@ -35,7 +35,7 @@ describe('<ActionBar /> component', () => {
       latest: {},
     };
 
-    jest.doMock('../../pages/version/Version', () => ({
+    jest.doMock('../../pages/Version', () => ({
       DetailContextConsumer: component => {
         return component.children({ packageMeta });
       },
@@ -57,7 +57,7 @@ describe('<ActionBar /> component', () => {
       },
     };
 
-    jest.doMock('../../pages/version/Version', () => ({
+    jest.doMock('../../pages/Version', () => ({
       DetailContextConsumer: component => {
         return component.children({ packageMeta });
       },

@@ -2,8 +2,7 @@ import React, { Component, Fragment, ReactElement } from 'react';
 import { withRouter, RouteComponentProps } from 'react-router-dom';
 import CardContent from '@material-ui/core/CardContent';
 
-import { DetailContextConsumer } from '../../pages/version/context';
-import { VersionPageConsumerProps } from '../../pages/version/types';
+import { DetailContextConsumer, VersionPageConsumerProps } from '../../pages/Version';
 
 import { CardWrap, Heading, Tags, Tag } from './styles';
 import NoItems from '../NoItems';

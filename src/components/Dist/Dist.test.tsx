@@ -18,7 +18,7 @@ describe('<Dist /> component', () => {
         license: '',
       },
     };
-    jest.doMock('../../pages/version/Version', () => ({
+    jest.doMock('../../pages/Version', () => ({
       DetailContextConsumer: component => {
         return component.children({ packageMeta });
       },
@@ -41,7 +41,7 @@ describe('<Dist /> component', () => {
         license: 'MIT',
       },
     };
-    jest.doMock('../../pages/version/Version', () => ({
+    jest.doMock('../../pages/Version', () => ({
       DetailContextConsumer: component => {
         return component.children({ packageMeta });
       },
@@ -67,7 +67,7 @@ describe('<Dist /> component', () => {
         },
       },
     };
-    jest.doMock('../../pages/version/Version', () => ({
+    jest.doMock('../../pages/Version', () => ({
       DetailContextConsumer: component => {
         return component.children({ packageMeta });
       },

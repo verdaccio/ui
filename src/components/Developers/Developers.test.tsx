@@ -2,7 +2,7 @@ import React from 'react';
 import { mount } from 'enzyme';
 import Developers, { DevelopersType } from './Developers';
 import { Fab } from './styles';
-import { DetailContextProvider } from '../../pages/version/context';
+import { DetailContextProvider } from '../../pages/Version';
 
 describe('test Developers', () => {
   const packageMeta = {

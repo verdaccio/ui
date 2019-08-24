@@ -11,7 +11,7 @@ function renderSidebar(): ReactElement<HTMLElement> {
   return <DetailSidebar />;
 }
 
-const VersionRender: FC<{}> = () => {
+const Layout: FC<{}> = () => {
   return (
     <Grid className={'container content'} container={true} spacing={0}>
       <Grid item={true} xs={8}>
@@ -24,4 +24,4 @@ const VersionRender: FC<{}> = () => {
   );
 };
 
-export { VersionRender };
+export { Layout };

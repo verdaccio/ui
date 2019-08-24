@@ -1,11 +1,11 @@
-import React, { useEffect, useState, useCallback } from 'react';
+import React, { useEffect, useState } from 'react';
 
 import { callDetailPage } from '../../utils/calls';
 import { buildScopePackage } from '../../utils/package';
 import Loading from '../../components/Loading/Loading';
 import NotFound from '../../components/NotFound';
 
-import { VersionRender } from './VersionRender';
+import { Layout } from './Layout';
 import { DetailContextProvider } from './context';
 import { StateInterface } from './types';
 
@@ -20,10 +20,8 @@ export function getRouterPackageName(params): string {
 }
 
 const Version = ({ match: { params } }) => {
-  const handleRouterPackageName = useCallback(() => getRouterPackageName(params), [params]);
-
   const [readMe, setReadme] = useState();
-  const [packageName] = useState(handleRouterPackageName);
+  const [packageName] = useState(getRouterPackageName(params));
   const [packageMeta, setPackageMeta] = useState();
   const [isLoading, setIsLoading] = useState(true);
   const [notFound, setNotFound] = useState(false);
@@ -53,7 +51,7 @@ const Version = ({ match: { params } }) => {
   } else {
     return (
       <DetailContextProvider value={{ packageMeta, readMe, packageName, enableLoading: setIsLoading }}>
-        <VersionRender />
+        <Layout />
       </DetailContextProvider>
     );
   }
