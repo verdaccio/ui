@@ -19,7 +19,7 @@ describe('<Engines /> component', () => {
       },
     };
 
-    jest.doMock('../../pages/version/Version', () => ({
+    jest.doMock('../../pages/Version', () => ({
       DetailContextConsumer: component => {
         return component.children({ packageMeta });
       },
@@ -35,7 +35,7 @@ describe('<Engines /> component', () => {
       latest: {},
     };
 
-    jest.doMock('../../pages/version/Version', () => ({
+    jest.doMock('../../pages/Version', () => ({
       DetailContextConsumer: component => {
         return component.children({ packageMeta });
       },
@@ -53,7 +53,7 @@ describe('<Engines /> component', () => {
       },
     };
 
-    jest.doMock('../../pages/version/Version', () => ({
+    jest.doMock('../../pages/Version', () => ({
       DetailContextConsumer: component => {
         return component.children({ packageMeta });
       },

@@ -29,7 +29,7 @@ describe('<Version /> component', () => {
       },
     };
 
-    jest.doMock('../../pages/version/Version', () => ({
+    jest.doMock('../../pages/Version', () => ({
       DetailContextConsumer: component => {
         return component.children({ packageMeta });
       },

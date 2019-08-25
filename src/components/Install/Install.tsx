@@ -2,8 +2,8 @@ import List from '@material-ui/core/List';
 import ListItemText from '@material-ui/core/ListItemText';
 import React, { Component } from 'react';
 
-// @ts-ignore
-import { DetailContextConsumer, VersionPageConsumerProps } from '../../pages/version/Version';
+import { DetailContextConsumer, VersionPageConsumerProps } from '../../pages/Version';
+
 import CopyToClipBoard from '../CopyToClipBoard';
 
 // logos of package managers

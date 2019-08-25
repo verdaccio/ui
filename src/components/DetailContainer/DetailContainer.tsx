@@ -1,6 +1,6 @@
 import React, { Component, ReactElement, Fragment } from 'react';
 
-import { DetailContextConsumer, VersionPageConsumerProps } from '../../pages/version/Version';
+import { DetailContextConsumer, VersionPageConsumerProps } from '../../pages/Version';
 import Readme from '../Readme';
 import Versions from '../Versions';
 import { preventXSS } from '../../utils/sec-utils';
@@ -13,6 +13,11 @@ import UpLinks from '../UpLinks';
 interface DetailContainerState {
   tabPosition: number;
 }
+
+export const README_LABEL = 'Readme';
+export const DEPS_LABEL = 'Dependencies';
+export const VERSION_LABEL = 'Versions';
+export const UPLINKS_LABEL = 'Uplinks';
 
 class DetailContainer<P> extends Component<P, DetailContainerState> {
   public state = {
@@ -37,10 +42,10 @@ class DetailContainer<P> extends Component<P, DetailContainerState> {
   private renderListTabs(tabPosition: number): React.ReactElement<HTMLElement> {
     return (
       <Tabs indicatorColor={'primary'} onChange={this.handleChange} textColor={'primary'} value={tabPosition} variant={'fullWidth'}>
-        <Tab id={'readme-tab'} label={'Readme'} />
-        <Tab id={'dependencies-tab'} label={'Dependencies'} />
-        <Tab id={'versions-tab'} label={'Versions'} />
-        <Tab id={'uplinks-tab'} label={'Uplinks'} />
+        <Tab data-testid={'readme-tab'} id={'readme-tab'} label={README_LABEL} />
+        <Tab data-testid={'dependencies-tab'} id={'dependencies-tab'} label={DEPS_LABEL} />
+        <Tab data-testid={'versions-tab'} id={'versions-tab'} label={VERSION_LABEL} />
+        <Tab data-testid={'uplinks-tab'} id={'uplinks-tab'} label={UPLINKS_LABEL} />
       </Tabs>
     );
   }
