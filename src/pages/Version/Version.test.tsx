@@ -11,7 +11,7 @@ import ErrorBoundary from '../../App/AppError';
 import { LABEL_NOT_FOUND } from '../../components/NotFound/NotFound';
 // import { NOT_FOUND_TEXT } from '../../components/NotFound/NotFound';
 
-// :-) we mock this otherways fails on render
+// :-) we mock this otherways fails on render, some weird issue on material-ui
 jest.mock('@material-ui/core/Avatar');
 
 describe('test Version page', () => {
@@ -85,4 +85,12 @@ describe('test Version page', () => {
 
     expect(hasReadme).toBeTruthy();
   });
+
+  // Wanna contribute? Here we some scenarios we need to test
+
+  test.todo('should test click on tabs');
+  test.todo('should check what is rendered int he sidebar is correct');
+  test.todo('should test click back home on 404');
+  test.todo('should test click on elements in the sidebar');
+  test.todo('should test other not consider scenarios');
 });
