@@ -8,7 +8,7 @@ module.exports = {
     path: `${env.APP_ROOT}/static/`,
     filename: '[name].[hash].js',
     // FIXME: do we need this?
-    publicPath: 'ToReplaceByVerdaccio/-/static',
+    publicPath: '/-/static',
   },
 
   resolve: {
