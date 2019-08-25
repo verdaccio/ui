@@ -7,7 +7,6 @@ module.exports = {
   output: {
     path: `${env.APP_ROOT}/static/`,
     filename: '[name].[hash].js',
-    // FIXME: do we need this?
     publicPath: '/-/static',
   },
 
