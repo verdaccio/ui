@@ -9,7 +9,6 @@ import Version from './Version';
 import { waitForElement } from '@testing-library/dom';
 import ErrorBoundary from '../../App/AppError';
 import { LABEL_NOT_FOUND } from '../../components/NotFound/NotFound';
-// import { NOT_FOUND_TEXT } from '../../components/NotFound/NotFound';
 
 // :-) we mock this otherways fails on render, some weird issue on material-ui
 jest.mock('@material-ui/core/Avatar');
@@ -27,6 +26,8 @@ describe('test Version page', () => {
 
   beforeEach(() => {
     jest.resetAllMocks();
+    // @ts-ignore
+    fetch.resetMocks();
   });
 
   test('should render the version page', async () => {
