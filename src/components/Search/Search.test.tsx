@@ -5,7 +5,7 @@ import { BrowserRouter } from 'react-router-dom';
 import Search from './Search';
 
 const SEARCH_FILE_PATH = './Search';
-const API_FILE_PATH = '../../utils/api';
+const API_FILE_PATH = '../../utils/calls';
 const URL_FILE_PATH = '../../utils/url';
 
 // Global mocks
@@ -165,8 +165,7 @@ describe('<Search /> component test', () => {
       const suggestions = [{ name: 'verdaccio' }, { name: 'verdaccio-htpasswd' }];
 
       jest.doMock(API_FILE_PATH, () => ({
-        request(url: string) {
-          expect(url).toEqual('search/verdaccio');
+        callSearch(url: string) {
           return Promise.resolve(apiResponse);
         },
       }));
@@ -194,7 +193,7 @@ describe('<Search /> component test', () => {
     test('handleFetchPackages: when browser cancel a request', async () => {
       const apiResponse = { name: 'AbortError' };
 
-      jest.doMock(API_FILE_PATH, () => ({ request: jest.fn(() => Promise.reject(apiResponse)) }));
+      jest.doMock(API_FILE_PATH, () => ({ callSearch: jest.fn(() => Promise.reject(apiResponse)) }));
 
       const Search = require(SEARCH_FILE_PATH).Search;
 
@@ -219,8 +218,7 @@ describe('<Search /> component test', () => {
       const apiResponse = { name: 'BAD_REQUEST' };
 
       jest.doMock(API_FILE_PATH, () => ({
-        request(url) {
-          expect(url).toEqual('search/verdaccio');
+        callSearch(url) {
           return Promise.reject(apiResponse);
         },
       }));

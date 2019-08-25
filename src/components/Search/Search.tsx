@@ -6,9 +6,9 @@ import { default as IconSearch } from '@material-ui/icons/Search';
 import InputAdornment from '@material-ui/core/InputAdornment';
 import debounce from 'lodash/debounce';
 
-import API from '../../utils/api';
 import AutoComplete from '../AutoComplete';
 import colors from '../../utils/styles/colors';
+import { callSearch } from '../../utils/calls';
 
 export interface State {
   search: string;
@@ -148,7 +148,7 @@ export class Search extends Component<RouteComponentProps<{}>, State> {
       const signal = controller.signal;
       // Keep track of search requests.
       this.requestList.push(controller);
-      const suggestions = await API.request(`search/${encodeURIComponent(value)}`, 'GET', { signal });
+      const suggestions = await callSearch(value, signal);
       // @ts-ignore
       this.setState({
         suggestions,
