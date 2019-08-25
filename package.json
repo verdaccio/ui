@@ -1,6 +1,6 @@
 {
   "name": "@verdaccio/ui-theme",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "description": "Verdaccio User Interface",
   "author": {
     "name": "Verdaccio Core Team"
