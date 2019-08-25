@@ -17,7 +17,6 @@ export default class ErrorBoundary extends Component<ErrorProps, ErrorAppState> 
   }
 
   componentDidCatch(error, info) {
-    // Display fallback UI
     this.setState({ hasError: true, error, info });
   }
 
@@ -26,7 +25,6 @@ export default class ErrorBoundary extends Component<ErrorProps, ErrorAppState> 
     const { children } = this.props;
 
     if (hasError) {
-      // You can render any custom fallback UI
       return (
         <>
           <h1>{'Something went wrong.'}</h1>

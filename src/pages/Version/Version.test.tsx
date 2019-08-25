@@ -8,12 +8,19 @@ import vueMetadata from '../../../test/fixtures/metadata/vue.json';
 import Version from './Version';
 import { waitForElement } from '@testing-library/dom';
 import ErrorBoundary from '../../App/AppError';
+import { LABEL_NOT_FOUND } from '../../components/NotFound/NotFound';
 // import { NOT_FOUND_TEXT } from '../../components/NotFound/NotFound';
 
 // :-) we mock this otherways fails on render
 jest.mock('@material-ui/core/Avatar');
 
 describe('test Version page', () => {
+  beforeAll(() => {
+    // FIXME: a better way to mock this
+    // @ts-ignore
+    global.window.VERDACCIO_API_URL = 'http://test';
+  });
+
   afterEach(() => {
     cleanup();
   });
@@ -24,9 +31,6 @@ describe('test Version page', () => {
 
   test('should render the version page', async () => {
     const readmeText = 'test';
-    // FIXME: a better way to mock this
-    // @ts-ignore
-    global.window.VERDACCIO_API_URL = 'http://test';
     // @ts-ignore
     fetch.mockResponses(
       [[JSON.stringify(vueMetadata)], { status: 200, headers: { 'content-type': 'application/json' } }],
@@ -50,6 +54,34 @@ describe('test Version page', () => {
 
     // check whether readme was loaded
     const hasReadme = getByText(readmeText);
+
+    expect(hasReadme).toBeTruthy();
+  });
+
+  test('should render 404 page if the resources are not found', async () => {
+    // @ts-ignore
+    fetch.mockResponses(
+      [[JSON.stringify({})], { status: 404, headers: { 'content-type': 'application/json' } }],
+      [[``], { status: 404, headers: { 'content-type': 'text/html' } }]
+    );
+
+    const { getByTestId, getByText } = render(
+      <ErrorBoundary>
+        <MemoryRouter>
+          <Version match={{ params: { ['package']: 'vue' } }}></Version>
+        </MemoryRouter>
+      </ErrorBoundary>
+    );
+
+    // first it display loading
+    const hasLoading = getByTestId('loading');
+    expect(hasLoading).toBeTruthy();
+
+    // we wait fetch response (mocked above)
+    await waitForElement(() => getByTestId('404'));
+
+    // check whether readme was loaded
+    const hasReadme = getByText(LABEL_NOT_FOUND);
 
     expect(hasReadme).toBeTruthy();
   });

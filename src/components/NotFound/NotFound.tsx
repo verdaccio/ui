@@ -8,7 +8,9 @@ import PackageImg from './img/package.svg';
 import { Card, EmptyPackage, Heading, Inner, List, Wrapper } from './styles';
 import { Breakpoint } from '@material-ui/core/styles/createBreakpoints';
 
-export const NOT_FOUND_TEXT = "Sorry, we couldn't find it...";
+export const NOT_FOUND_TEXT = `Sorry, we couldn't find it...`;
+export const LABEL_NOT_FOUND = `The page you're looking for doesn't exist.`;
+export const LABEL_FOOTER_NOT_FOUND = 'Perhaps these links will help find what you are looking for:';
 
 export type NotFoundProps = RouteComponentProps & { width: Breakpoint; history };
 
@@ -16,8 +18,8 @@ const HOME_LABEL = 'Home';
 
 const renderSubTitle = (): JSX.Element => (
   <Typography variant="subtitle1">
-    <div>{"The page you're looking for doesn't exist."}</div>
-    <div>{'Perhaps these links will help find what you are looking for:'}</div>
+    <div>{LABEL_NOT_FOUND}</div>
+    <div>{LABEL_FOOTER_NOT_FOUND}</div>
   </Typography>
 );
 
