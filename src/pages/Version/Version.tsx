@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 
-import { callDetailPage } from '../../utils/calls';
+import { callDetailPage, callReadme } from '../../utils/calls';
 import { buildScopePackage } from '../../utils/package';
 import Loading from '../../components/Loading/Loading';
 import NotFound from '../../components/NotFound';
@@ -30,7 +30,8 @@ const Version = ({ match: { params } }) => {
   useEffect(() => {
     (async () => {
       try {
-        const { readMe, packageMeta } = (await callDetailPage(packageName)) as Partial<StateInterface>;
+        const packageMeta = (await callDetailPage(packageName)) as Partial<StateInterface>;
+        const readMe = (await callReadme(packageName)) as Partial<StateInterface>;
         setReadme(readMe);
         setPackageMeta(packageMeta);
         setIsLoading(false);

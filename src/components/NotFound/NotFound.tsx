@@ -35,7 +35,7 @@ const NotFound: React.FC<NotFoundProps> = ({ history, width }) => {
   );
 
   return (
-    <Wrapper>
+    <Wrapper data-testid="404">
       <Inner>
         <EmptyPackage alt="404 - Page not found" src={PackageImg} />
         <Heading className="not-found-text" variant={isWidthUp('sm', width) ? 'h2' : 'h4'}>

@@ -6,7 +6,7 @@ import Spinner from '../Spinner';
 import { Wrapper, Badge } from './styles';
 
 const Loading: React.FC = () => (
-  <Wrapper>
+  <Wrapper data-testid="loading">
     <Badge>
       <Logo size={Size.Big} />
     </Badge>

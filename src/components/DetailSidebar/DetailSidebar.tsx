@@ -1,4 +1,4 @@
-import React, { Component, ReactElement } from 'react';
+import React, { ReactElement } from 'react';
 
 import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
@@ -12,76 +12,52 @@ import Engine from '../Engines/Engines';
 import Install from '../Install';
 import Repository from '../Repository/Repository';
 
-import { DetailContextConsumer, VersionPageConsumerProps } from '../../pages/Version';
+import { DetailContext } from '../../pages/Version';
 
 import { TitleListItem, TitleListItemText } from './styles';
 
-class DetailSidebar extends Component {
-  public render(): ReactElement<HTMLElement> {
-    return <DetailContextConsumer>{context => this.renderSideBar(context as VersionPageConsumerProps)}</DetailContextConsumer>;
-  }
+const renderCopyCLI = () => <Install />;
+const renderMaintainers = () => <Developers type="maintainers" />;
+const renderContributors = () => <Developers type="contributors" />;
+const renderRepository = () => <Repository />;
+const renderAuthor = () => <Author />;
+const renderEngine = () => <Engine />;
+const renderDist = () => <Dist />;
+const renderActionBar = () => <ActionBar />;
+const renderTitle = (packageName, packageMeta) => {
+  return (
+    <List className="detail-info">
+      <TitleListItem alignItems="flex-start">
+        <TitleListItemText primary={<b>{packageName}</b>} secondary={packageMeta.latest.description} />
+      </TitleListItem>
+    </List>
+  );
+};
 
-  private renderSideBar = ({ packageName, packageMeta }): ReactElement<HTMLElement> => {
-    return (
-      <div className={'sidebar-info'}>
-        <Card>
-          <CardContent>
-            {this.renderTitle(packageName, packageMeta)}
-            {this.renderActionBar()}
-            {this.renderCopyCLI()}
-            {this.renderRepository()}
-            {this.renderEngine()}
-            {this.renderDist()}
-            {this.renderAuthor()}
-            {this.renderMaintainers()}
-            {this.renderContributors()}
-          </CardContent>
-        </Card>
-      </div>
-    );
-  };
-
-  private renderTitle = (packageName, packageMeta) => {
-    return (
-      <List className="detail-info">
-        <TitleListItem alignItems="flex-start">
-          <TitleListItemText primary={<b>{packageName}</b>} secondary={packageMeta.latest.description} />
-        </TitleListItem>
-      </List>
-    );
-  };
-
-  private renderCopyCLI = () => {
-    return <Install />;
-  };
-
-  private renderMaintainers = () => {
-    return <Developers type="maintainers" />;
-  };
-
-  private renderContributors = () => {
-    return <Developers type="contributors" />;
-  };
-
-  private renderRepository = () => {
-    return <Repository />;
-  };
-
-  private renderAuthor = () => {
-    return <Author />;
-  };
-
-  private renderEngine = () => {
-    return <Engine />;
-  };
-
-  private renderDist = () => {
-    return <Dist />;
-  };
-
-  private renderActionBar = () => {
-    return <ActionBar />;
-  };
+function renderSideBar(packageName, packageMeta): ReactElement<HTMLElement> {
+  return (
+    <div className={'sidebar-info'}>
+      <Card>
+        <CardContent>
+          {renderTitle(packageName, packageMeta)}
+          {renderActionBar()}
+          {renderCopyCLI()}
+          {renderRepository()}
+          {renderEngine()}
+          {renderDist()}
+          {renderAuthor()}
+          {renderMaintainers()}
+          {renderContributors()}
+        </CardContent>
+      </Card>
+    </div>
+  );
 }
+
+const DetailSidebar = () => {
+  const { packageName, packageMeta } = React.useContext(DetailContext);
+
+  return renderSideBar(packageName, packageMeta);
+};
 
 export default DetailSidebar;
