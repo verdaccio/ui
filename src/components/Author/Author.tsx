@@ -4,7 +4,7 @@ import Avatar from '@material-ui/core/Avatar';
 import List from '@material-ui/core/List';
 import ListItemText from '@material-ui/core/ListItemText';
 
-import { DetailContextConsumer, VersionPageConsumerProps } from '../../pages/Version';
+import { DetailContextConsumer } from '../../pages/Version';
 import { Heading, AuthorListItem } from './styles';
 import { isEmail } from '../../utils/url';
 
