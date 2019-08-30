@@ -1,12 +1,31 @@
 import React from 'react';
-import { shallow } from 'enzyme';
+import { mount } from 'enzyme';
+import Engine from './Engines';
 
 jest.mock('./img/node.png', () => '');
 jest.mock('../Install/img/npm.svg', () => '');
 
+const mockPackageMeta = jest.fn(() => ({
+  latest: {
+    homepage: 'https://verdaccio.tld',
+    bugs: {
+      url: 'https://verdaccio.tld/bugs',
+    },
+    dist: {
+      tarball: 'https://verdaccio.tld/download',
+    },
+  },
+}));
+
+jest.mock('../../pages/Version', () => ({
+  DetailContextConsumer: component => {
+    return component.children({ packageMeta: mockPackageMeta() });
+  },
+}));
+
 describe('<Engines /> component', () => {
   beforeEach(() => {
-    jest.resetModules();
+    jest.resetAllMocks();
   });
 
   test('should render the component in default state', () => {
@@ -19,14 +38,10 @@ describe('<Engines /> component', () => {
       },
     };
 
-    jest.doMock('../../pages/Version', () => ({
-      DetailContextConsumer: component => {
-        return component.children({ packageMeta });
-      },
-    }));
+    // @ts-ignore
+    mockPackageMeta.mockImplementation(() => packageMeta);
 
-    const Engines = require('./Engines').default;
-    const wrapper = shallow(<Engines />);
+    const wrapper = mount(<Engine />);
     expect(wrapper.html()).toMatchSnapshot();
   });
 
@@ -35,14 +50,10 @@ describe('<Engines /> component', () => {
       latest: {},
     };
 
-    jest.doMock('../../pages/Version', () => ({
-      DetailContextConsumer: component => {
-        return component.children({ packageMeta });
-      },
-    }));
+    // @ts-ignore
+    mockPackageMeta.mockImplementation(() => packageMeta);
 
-    const Engines = require('./Engines').default;
-    const wrapper = shallow(<Engines />);
+    const wrapper = mount(<Engine />);
     expect(wrapper.html()).toEqual('');
   });
 
@@ -53,14 +64,10 @@ describe('<Engines /> component', () => {
       },
     };
 
-    jest.doMock('../../pages/Version', () => ({
-      DetailContextConsumer: component => {
-        return component.children({ packageMeta });
-      },
-    }));
+    // @ts-ignore
+    mockPackageMeta.mockImplementation(() => packageMeta);
 
-    const Engines = require('./Engines').default;
-    const wrapper = shallow(<Engines />);
+    const wrapper = mount(<Engine />);
     expect(wrapper.html()).toEqual('');
   });
 });
