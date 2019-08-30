@@ -4,7 +4,7 @@ import Avatar from '@material-ui/core/Avatar';
 import List from '@material-ui/core/List';
 import ListItemText from '@material-ui/core/ListItemText';
 
-import { DetailContextConsumer } from '../../pages/Version';
+import { DetailContextConsumer, VersionPageConsumerProps } from '../../pages/Version';
 import { Heading, AuthorListItem } from './styles';
 import { isEmail } from '../../utils/url';
 
@@ -13,7 +13,13 @@ class Authors extends Component {
     return (
       <DetailContextConsumer>
         {context => {
-          return context && context.packageMeta && this.renderAuthor(context.packageMeta);
+          const { packageMeta } = context;
+
+          if (!packageMeta) {
+            return null;
+          }
+
+          return this.renderAuthor(packageMeta);
         }}
       </DetailContextConsumer>
     );
@@ -31,8 +37,8 @@ class Authors extends Component {
     );
   }
 
-  public renderAuthor = packageMeta => {
-    const { author, name: packageName, version } = packageMeta.latest;
+  public renderAuthor = ({ latest }) => {
+    const { author, name: packageName, version } = latest;
 
     if (!author) {
       return null;
