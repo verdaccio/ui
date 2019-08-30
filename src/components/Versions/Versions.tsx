@@ -44,13 +44,13 @@ class Versions extends React.PureComponent {
       <>
         {distTags && (
           <>
-            <Heading variant="subheading">{'Current Tags'}</Heading>
+            <Heading variant="subtitle1">{'Current Tags'}</Heading>
             {this.renderPackageList(distTags, false, timeMap)}
           </>
         )}
         {versions && (
           <>
-            <Heading variant="subheading">{'Version History'}</Heading>
+            <Heading variant="subtitle1">{'Version History'}</Heading>
             {this.renderPackageList(versions, true, timeMap)}
           </>
         )}

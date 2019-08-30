@@ -41,8 +41,8 @@ class Repository extends Component {
 
     return (
       <Fragment>
-        <List dense={true} subheader={<Heading variant="subheading">{'Repository'}</Heading>}>
-          <RepositoryListItem>
+        <List dense={true} subheader={<Heading variant="subtitle1">{'Repository'}</Heading>}>
+          <RepositoryListItem button={true}>
             <Avatar src={git} />
             <ListItemText primary={this.renderContent(url)} />
           </RepositoryListItem>

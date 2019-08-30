@@ -27,7 +27,7 @@ class Install extends Component {
   public renderCopyCLI = ({ packageName = '' }: Partial<VersionPageConsumerProps>) => {
     return (
       <>
-        <List subheader={<Heading variant={'subheading'}>{'Installation'}</Heading>}>{this.renderListItems(packageName)}</List>
+        <List subheader={<Heading variant={'subtitle1'}>{'Installation'}</Heading>}>{this.renderListItems(packageName)}</List>
       </>
     );
   };
@@ -35,15 +35,15 @@ class Install extends Component {
   public renderListItems = (packageName: string) => {
     return (
       <>
-        <InstallItem>
+        <InstallItem button={true}>
           <PackageMangerAvatar alt={'npm logo'} src={npm} />
           <ListItemText primary={<CopyToClipBoard text={`npm install ${packageName}`} />} secondary={'Install using NPM'} />
         </InstallItem>
-        <InstallItem>
+        <InstallItem button={true}>
           <PackageMangerAvatar alt={'yarn logo'} src={yarn} />
           <ListItemText primary={<CopyToClipBoard text={`yarn add ${packageName}`} />} secondary={'Install using Yarn'} />
         </InstallItem>
-        <InstallItem>
+        <InstallItem button={true}>
           <PackageMangerAvatar alt={'pnpm logo'} src={pnpm} />
           <ListItemText primary={<CopyToClipBoard text={`pnpm install ${packageName}`} />} secondary={'Install using PNPM'} />
         </InstallItem>

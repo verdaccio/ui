@@ -5,11 +5,11 @@ exports[`test Developers should render the component for contributors with items
   type="contributors"
 >
   <Styled(WithStyles(ForwardRef(Typography)))
-    variant="subheading"
+    variant="subtitle1"
   >
     <WithStyles(ForwardRef(Typography))
       className="css-18tsvng emotion-0"
-      variant="subheading"
+      variant="subtitle1"
     >
       <ForwardRef(Typography)
         className="css-18tsvng emotion-0"
@@ -47,13 +47,13 @@ exports[`test Developers should render the component for contributors with items
             "subtitle2": "MuiTypography-subtitle2",
           }
         }
-        variant="subheading"
+        variant="subtitle1"
       >
-        <span
-          className="MuiTypography-root css-18tsvng emotion-0"
+        <h6
+          className="MuiTypography-root css-18tsvng emotion-0 MuiTypography-subtitle1"
         >
           contributors
-        </span>
+        </h6>
       </ForwardRef(Typography)>
     </WithStyles(ForwardRef(Typography))>
   </Styled(WithStyles(ForwardRef(Typography)))>
@@ -245,11 +245,11 @@ exports[`test Developers should render the component for maintainers with items 
   type="maintainers"
 >
   <Styled(WithStyles(ForwardRef(Typography)))
-    variant="subheading"
+    variant="subtitle1"
   >
     <WithStyles(ForwardRef(Typography))
       className="css-18tsvng emotion-0"
-      variant="subheading"
+      variant="subtitle1"
     >
       <ForwardRef(Typography)
         className="css-18tsvng emotion-0"
@@ -287,13 +287,13 @@ exports[`test Developers should render the component for maintainers with items 
             "subtitle2": "MuiTypography-subtitle2",
           }
         }
-        variant="subheading"
+        variant="subtitle1"
       >
-        <span
-          className="MuiTypography-root css-18tsvng emotion-0"
+        <h6
+          className="MuiTypography-root css-18tsvng emotion-0 MuiTypography-subtitle1"
         >
           maintainers
-        </span>
+        </h6>
       </ForwardRef(Typography)>
     </WithStyles(ForwardRef(Typography))>
   </Styled(WithStyles(ForwardRef(Typography)))>

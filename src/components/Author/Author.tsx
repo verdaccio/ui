@@ -40,8 +40,8 @@ class Authors extends Component {
 
     const avatarComponent = <Avatar alt={author.name} src={author.avatar} />;
     return (
-      <List subheader={<Heading variant={'subheading'}>{'Author'}</Heading>}>
-        <AuthorListItem>
+      <List subheader={<Heading variant={'subtitle1'}>{'Author'}</Heading>}>
+        <AuthorListItem button={true}>
           {this.renderLinkForMail(author.email, avatarComponent, packageName, version)}
           <ListItemText primary={author.name} />
         </AuthorListItem>
