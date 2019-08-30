@@ -27,15 +27,15 @@ describe('<ActionBar /> component', () => {
   });
 
   test('should render the component in default state', () => {
-    // const ActionBar = require('./ActionBar');
     const wrapper = mount(<ActionBar />);
     expect(wrapper.html()).toMatchSnapshot();
   });
 
   test('when there is no action bar data', () => {
     // @ts-ignore
-    mockPackageMeta.mockImplementation(() => ({latest: {}})
-);
+    mockPackageMeta.mockImplementation(() => ({
+      latest: {},
+    }));
 
     const wrapper = mount(<ActionBar />);
     // FIXME: this only renders the DetailContextConsumer, thus
