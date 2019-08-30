@@ -49,6 +49,12 @@ class ActionBar extends Component {
     return (
       <DetailContextConsumer>
         {context => {
+          const { packageMeta } = context;
+
+          if (!packageMeta) {
+            return null;
+          }
+
           return this.renderActionBar(context as VersionPageConsumerProps);
         }}
       </DetailContextConsumer>
@@ -65,12 +71,18 @@ class ActionBar extends Component {
 
   private renderActionBar = ({ packageMeta }) => {
     // @ts-ignore
-    const { latest: { bugs: { url: issue } = {}, homepage, dist: { tarball } = {} } = {} } = packageMeta;
+    const { latest } = packageMeta;
+
+    if (!latest) {
+      return null;
+    }
+
+    const { homepage, bugs, dist } = latest;
 
     const actionsMap = {
       homepage,
-      issue,
-      tarball,
+      issue: bugs ? bugs.url : null,
+      tarball: dist ? dist.tarball : null,
     };
 
     const renderList = Object.keys(actionsMap).reduce((component: React.ReactElement[], value, key) => {
@@ -117,4 +129,4 @@ class ActionBar extends Component {
   };
 }
 
-export default ActionBar;
+export { ActionBar };
