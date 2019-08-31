@@ -22,7 +22,7 @@ class Versions extends React.PureComponent {
 
   public renderPackageList = (packages: {}, isVersion: boolean = false, timeMap: Record<string, {}> = {}): ReactElement<HTMLDivElement> => {
     return (
-      <List>
+      <List dense={true}>
         {Object.keys(packages)
           .reverse()
           .map(version => (
