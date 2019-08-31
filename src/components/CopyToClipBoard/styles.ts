@@ -19,8 +19,4 @@ export const ClipBoardCopyText = styled('span')({
   },
 });
 
-export const CopyIcon = styled(IconButton)({
-  '&&': {
-    margin: '0 0 0 10px',
-  },
-});
+export const CopyIcon = styled(IconButton)({});

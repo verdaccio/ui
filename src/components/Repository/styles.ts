@@ -6,6 +6,7 @@ import Typography from '@material-ui/core/Typography';
 import Github from '../../icons/GitHub';
 import colors from '../../utils/styles/colors';
 import { fontWeight } from '../../utils/styles/sizes';
+import ListItemText from '@material-ui/core/ListItemText';
 
 export const Heading = styled(Typography)({
   '&&': {
@@ -36,7 +37,16 @@ export const GithubLogo = styled(Github)({
 
 export const RepositoryListItem = styled(ListItem)({
   '&&': {
-    paddingLeft: 0,
-    paddingRight: 0,
+    padding: 0,
+  },
+  '&&:hover': {
+    backgroundColor: 'transparent',
+  },
+});
+
+export const RepositoryListItemText = styled(ListItemText)({
+  '&&': {
+    padding: '0 10px',
+    margin: 0,
   },
 });
