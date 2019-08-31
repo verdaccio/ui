@@ -8,12 +8,15 @@ import vueMetadata from '../../../test/fixtures/metadata/vue.json';
 import Version from './Version';
 import { waitForElement } from '@testing-library/dom';
 import ErrorBoundary from '../../App/AppError';
-import { LABEL_NOT_FOUND } from '../../components/NotFound/NotFound';
+import { LABEL_NOT_FOUND, NOT_FOUND_TEXT } from '../../components/NotFound/NotFound';
 
 // :-) we mock this otherways fails on render, some weird issue on material-ui
 jest.mock('@material-ui/core/Avatar');
 
+jest.mock('../../components/NotFound', () => () => <div>{'Not found'}</div>);
+
 describe('test Version page', () => {
+  jest.setTimeout(40000000);
   beforeAll(() => {
     // FIXME: a better way to mock this
     // @ts-ignore
@@ -79,10 +82,10 @@ describe('test Version page', () => {
     expect(hasLoading).toBeTruthy();
 
     // we wait fetch response (mocked above)
-    await waitForElement(() => getByTestId('404'));
+    await waitForElement(() => getByText('Not found'));
 
     // check whether readme was loaded
-    const hasReadme = getByText(LABEL_NOT_FOUND);
+    const hasReadme = getByText('Not found');
 
     expect(hasReadme).toBeTruthy();
   });
