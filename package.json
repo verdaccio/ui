@@ -66,6 +66,7 @@
     "jest-fetch-mock": "2.1.2",
     "js-base64": "2.5.1",
     "js-yaml": "3.13.1",
+    "lint-staged": "8.2.1",
     "localstorage-memory": "1.0.3",
     "mini-css-extract-plugin": "0.8.0",
     "node-mocks-http": "1.7.6",
@@ -169,8 +170,24 @@
   },
   "husky": {
     "hooks": {
-      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+      "pre-commit": "lint-staged",
+      "commit-msg": "commitlint -e $GIT_PARAMS"
     }
+  },
+  "lint-staged": {
+    "relative": true,
+    "linters": {
+      "*.{js,tsx,ts}": [
+        "eslint",
+        "prettier --write"
+      ],
+      "*": [
+        "git add"
+      ]
+    },
+    "ignore": [
+      "*.json"
+    ]
   },
   "license": "MIT",
   "commitlint": {
