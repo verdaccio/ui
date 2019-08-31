@@ -16,14 +16,14 @@ import { DetailContext } from '../../pages/Version';
 
 import { TitleListItem, TitleListItemText } from './styles';
 
-const renderLatestDescription = (description, version) => {
+const renderLatestDescription = (description, version, isLatest: boolean = true) => {
   return (
     <span>
       <div>{description}</div>
-      {version ? <small>{`Latest ${version}`}</small> : null}
+      {version ? <small>{`${isLatest ? 'Latest v' : 'v'}${version}`}</small> : null}
     </span>
   );
-}
+};
 
 const renderCopyCLI = () => <Install />;
 const renderMaintainers = () => <Developers type="maintainers" />;
@@ -34,10 +34,13 @@ const renderEngine = () => <Engine />;
 const renderDist = () => <Dist />;
 const renderActionBar = () => <ActionBar />;
 const renderTitle = (packageName, packageVersion, packageMeta) => {
+  const version = packageVersion ? packageVersion : packageMeta.latest.version;
+  const isLatest = typeof packageVersion === 'undefined';
+
   return (
     <List className="detail-info">
       <TitleListItem alignItems="flex-start" button={true}>
-        <TitleListItemText primary={<b>{packageName}</b>} secondary={renderLatestDescription(packageMeta.latest.description, packageVersion)} />
+        <TitleListItemText primary={<b>{packageName}</b>} secondary={renderLatestDescription(packageMeta.latest.description, version, isLatest)} />
       </TitleListItem>
     </List>
   );

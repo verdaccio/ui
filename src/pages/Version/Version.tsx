@@ -26,6 +26,7 @@ function fillTitle(text) {
 function isVersionValid(packageMeta, packageVersion): boolean {
   const hasVersion = typeof packageVersion !== 'undefined';
   if (!hasVersion) {
+    // if is undefined, that means versions does not exist, we continue
     return true;
   }
 
