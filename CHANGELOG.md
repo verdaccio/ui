@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.2.4](https://github.com/verdaccio/ui/compare/v0.2.3...v0.2.4) (2019-08-31)
+
+
+### Features
+
+* update material-ui@4.x ([#123](https://github.com/verdaccio/ui/issues/123)) ([67d7188](https://github.com/verdaccio/ui/commit/67d7188))
+
 ### [0.2.3](https://github.com/verdaccio/ui/compare/v0.2.2...v0.2.3) (2019-08-25)
 
 
