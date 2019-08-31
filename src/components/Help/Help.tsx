@@ -12,7 +12,7 @@ import { CardStyled as Card, HelpTitle } from './styles';
 function renderHeadingClipboardSegments(title: string, text: string): React.ReactNode {
   return (
     <Fragment>
-      <Typography variant={'body2'}>{title}</Typography>
+      <Typography variant={'body1'}>{title}</Typography>
       <CopyToClipBoard text={text} />
     </Fragment>
   );
@@ -24,7 +24,7 @@ const Help: React.FC = () => {
   return (
     <Card id="help-card">
       <CardContent>
-        <Typography component="h2" gutterBottom={true} id="help-card__title" variant="headline">
+        <Typography component="h2" gutterBottom={true} id="help-card__title" variant="h5">
           {'No Package Published Yet.'}
         </Typography>
         <HelpTitle color="textSecondary" gutterBottom={true}>

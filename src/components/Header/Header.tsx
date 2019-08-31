@@ -32,7 +32,7 @@ interface Props {
 }
 
 interface State {
-  anchorEl?: null | HTMLElement | ((element: HTMLElement) => HTMLElement);
+  anchorEl?: null | Element | ((element: Element) => Element);
   openInfoDialog: boolean;
   registryUrl: string;
   showMobileNavBar: boolean;

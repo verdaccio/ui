@@ -33,7 +33,7 @@ const Developers: FC<Props> = ({ type, visibleMax }) => {
 
     return (
       <Fragment>
-        <Heading variant={'subheading'}>{type}</Heading>
+        <Heading variant={'subtitle1'}>{type}</Heading>
         <Content>
           {listVisibleDevelopers.map(developer => (
             <Details key={developer.email}>{renderDeveloperDetails(developer, packageMeta)}</Details>

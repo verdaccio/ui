@@ -4,7 +4,7 @@ import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
 import List from '@material-ui/core/List';
 
-import ActionBar from '../ActionBar/ActionBar';
+import { ActionBar } from '../ActionBar/ActionBar';
 import Author from '../Author';
 import Developers from '../Developers';
 import Dist from '../Dist/Dist';
@@ -27,7 +27,7 @@ const renderActionBar = () => <ActionBar />;
 const renderTitle = (packageName, packageMeta) => {
   return (
     <List className="detail-info">
-      <TitleListItem alignItems="flex-start">
+      <TitleListItem alignItems="flex-start" button={true}>
         <TitleListItemText primary={<b>{packageName}</b>} secondary={packageMeta.latest.description} />
       </TitleListItem>
     </List>

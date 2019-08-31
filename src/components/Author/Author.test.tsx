@@ -1,9 +1,28 @@
 import React from 'react';
-import { shallow } from 'enzyme';
+import { mount } from 'enzyme';
+import Authors from './Author';
+
+const mockPackageMeta = jest.fn(() => ({
+  latest: {
+    homepage: 'https://verdaccio.tld',
+    bugs: {
+      url: 'https://verdaccio.tld/bugs',
+    },
+    dist: {
+      tarball: 'https://verdaccio.tld/download',
+    },
+  },
+}));
+
+jest.mock('../../pages/Version', () => ({
+  DetailContextConsumer: component => {
+    return component.children({ packageMeta: mockPackageMeta() });
+  },
+}));
 
 describe('<Author /> component', () => {
   beforeEach(() => {
-    jest.resetModules();
+    jest.resetAllMocks();
   });
 
   test('should render the component in default state', () => {
@@ -20,14 +39,10 @@ describe('<Author /> component', () => {
       },
     };
 
-    jest.doMock('../../pages/Version', () => ({
-      DetailContextConsumer: component => {
-        return component.children({ packageMeta });
-      },
-    }));
+    // @ts-ignore
+    mockPackageMeta.mockImplementation(() => packageMeta);
 
-    const Author = require('./Author').default;
-    const wrapper = shallow(<Author />);
+    const wrapper = mount(<Authors />);
     expect(wrapper.html()).toMatchSnapshot();
   });
 
@@ -39,14 +54,10 @@ describe('<Author /> component', () => {
       },
     };
 
-    jest.doMock('../../pages/Version', () => ({
-      DetailContextConsumer: component => {
-        return component.children({ packageMeta });
-      },
-    }));
+    // @ts-ignore
+    mockPackageMeta.mockImplementation(() => packageMeta);
 
-    const Author = require('./Author').default;
-    const wrapper = shallow(<Author />);
+    const wrapper = mount(<Authors />);
     expect(wrapper.html()).toEqual('');
   });
 
@@ -63,14 +74,10 @@ describe('<Author /> component', () => {
       },
     };
 
-    jest.doMock('../../pages/Version', () => ({
-      DetailContextConsumer: component => {
-        return component.children({ packageMeta });
-      },
-    }));
+    // @ts-ignore
+    mockPackageMeta.mockImplementation(() => packageMeta);
 
-    const Author = require('./Author').default;
-    const wrapper = shallow(<Author />);
+    const wrapper = mount(<Authors />);
     expect(wrapper.html()).toMatchSnapshot();
   });
 });
