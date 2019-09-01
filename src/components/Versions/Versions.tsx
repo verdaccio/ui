@@ -10,20 +10,28 @@ import { DIST_TAGS } from '../../../lib/constants';
 
 import { Heading, Spacer, ListItemText } from './styles';
 
-const NOT_AVAILABLE = 'Not available';
+export const NOT_AVAILABLE = 'Not available';
+export const LABEL_CURRENT_TAGS = 'Current Tags';
+export const LABEL_VERSION_HISTORY = 'Version History';
 
 class Versions extends React.PureComponent {
   public render(): ReactElement<HTMLDivElement> {
     return (
       <DetailContextConsumer>
         {context => {
-          return context && context.packageMeta && this.renderContent(context.packageMeta, context.packageName);
+          const { packageMeta, packageName } = context;
+
+          if (!packageMeta) {
+            return null;
+          }
+
+          return this.renderContent(packageMeta, packageName);
         }}
       </DetailContextConsumer>
     );
   }
 
-  public renderPackageList = (packages: {}, timeMap: Record<string, {}> = {}, packageName): ReactElement<HTMLDivElement> => {
+  public renderPackageList = (packages: {}, timeMap: Record<string, {}>, packageName): ReactElement<HTMLDivElement> => {
     return (
       <List dense={true}>
         {Object.keys(packages)
@@ -64,13 +72,13 @@ class Versions extends React.PureComponent {
       <>
         {distTags && (
           <>
-            <Heading variant="subtitle1">{'Current Tags'}</Heading>
+            <Heading variant="subtitle1">{LABEL_CURRENT_TAGS}</Heading>
             {this.renderTagList(distTags)}
           </>
         )}
         {versions && (
           <>
-            <Heading variant="subtitle1">{'Version History'}</Heading>
+            <Heading variant="subtitle1">{LABEL_VERSION_HISTORY}</Heading>
             {this.renderPackageList(versions, timeMap, packageName)}
           </>
         )}

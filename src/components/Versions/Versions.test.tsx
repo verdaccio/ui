@@ -1,35 +1,20 @@
 import React from 'react';
 import { mount } from 'enzyme';
+import { MemoryRouter } from 'react-router';
 
-import Versions from './Versions';
+import Versions, { LABEL_CURRENT_TAGS, LABEL_VERSION_HISTORY } from './Versions';
+import data from './__partials__/data.json';
+
+import { render, cleanup } from '@testing-library/react';
 
 const mockPackageMeta = jest.fn(() => ({
-  latest: {
-    versions: {
-      '1.0.0': {
-        version: '1.0.0',
-      },
-      '2.0.0': {
-        version: '2.0.0',
-      },
-      '3.0.0': {
-        version: '3.0.0',
-      },
-    },
-    time: {
-      '1.0.0': '2016-08-26T22:36:41.762Z',
-      '2.0.0': '2017-08-26T22:36:41.762Z',
-      '3.0.0': '2018-02-07T06:43:22.801Z',
-    },
-    'dist-tags': {
-      latest: '3.0.0',
-    },
-  },
+  packageName: 'foo',
+  packageMeta: data,
 }));
 
 jest.mock('../../pages/Version', () => ({
   DetailContextConsumer: component => {
-    return component.children({ packageMeta: mockPackageMeta() });
+    return component.children({ ...mockPackageMeta() });
   },
 }));
 
@@ -38,8 +23,49 @@ describe('<Version /> component', () => {
     jest.resetModules();
   });
 
+  afterEach(() => {
+    cleanup();
+  });
+
   test('should render the component in default state', () => {
-    const wrapper = mount(<Versions />);
+    const wrapper = mount(
+      <MemoryRouter>
+        <Versions />
+      </MemoryRouter>
+    );
     expect(wrapper.html()).toMatchSnapshot();
+  });
+
+  test('should render versions', () => {
+    const { getByText } = render(
+      <MemoryRouter>
+        <Versions />
+      </MemoryRouter>
+    );
+
+    expect(getByText(LABEL_VERSION_HISTORY)).toBeTruthy();
+    expect(getByText(LABEL_CURRENT_TAGS)).toBeTruthy();
+
+    // pick some versions
+    expect(getByText('2.3.0')).toBeTruthy();
+    expect(getByText('canary')).toBeTruthy();
+  });
+
+  test('should not render versions', () => {
+    const request = {
+      packageName: 'foo',
+    };
+
+    // @ts-ignore
+    mockPackageMeta.mockImplementation(() => request);
+
+    const { queryByText } = render(
+      <MemoryRouter>
+        <Versions />
+      </MemoryRouter>
+    );
+
+    expect(queryByText(LABEL_VERSION_HISTORY)).toBeFalsy();
+    expect(queryByText(LABEL_CURRENT_TAGS)).toBeFalsy();
   });
 });
