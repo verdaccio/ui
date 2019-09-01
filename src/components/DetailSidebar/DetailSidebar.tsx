@@ -16,6 +16,15 @@ import { DetailContext } from '../../pages/Version';
 
 import { TitleListItem, TitleListItemText } from './styles';
 
+const renderLatestDescription = (description, version, isLatest: boolean = true) => {
+  return (
+    <span>
+      <div>{description}</div>
+      {version ? <small>{`${isLatest ? 'Latest v' : 'v'}${version}`}</small> : null}
+    </span>
+  );
+};
+
 const renderCopyCLI = () => <Install />;
 const renderMaintainers = () => <Developers type="maintainers" />;
 const renderContributors = () => <Developers type="contributors" />;
@@ -24,22 +33,25 @@ const renderAuthor = () => <Author />;
 const renderEngine = () => <Engine />;
 const renderDist = () => <Dist />;
 const renderActionBar = () => <ActionBar />;
-const renderTitle = (packageName, packageMeta) => {
+const renderTitle = (packageName, packageVersion, packageMeta) => {
+  const version = packageVersion ? packageVersion : packageMeta.latest.version;
+  const isLatest = typeof packageVersion === 'undefined';
+
   return (
     <List className="detail-info">
       <TitleListItem alignItems="flex-start" button={true}>
-        <TitleListItemText primary={<b>{packageName}</b>} secondary={packageMeta.latest.description} />
+        <TitleListItemText primary={<b>{packageName}</b>} secondary={renderLatestDescription(packageMeta.latest.description, version, isLatest)} />
       </TitleListItem>
     </List>
   );
 };
 
-function renderSideBar(packageName, packageMeta): ReactElement<HTMLElement> {
+function renderSideBar(packageName, packageVersion, packageMeta): ReactElement<HTMLElement> {
   return (
     <div className={'sidebar-info'}>
       <Card>
         <CardContent>
-          {renderTitle(packageName, packageMeta)}
+          {renderTitle(packageName, packageVersion, packageMeta)}
           {renderActionBar()}
           {renderCopyCLI()}
           {renderRepository()}
@@ -55,9 +67,9 @@ function renderSideBar(packageName, packageMeta): ReactElement<HTMLElement> {
 }
 
 const DetailSidebar = () => {
-  const { packageName, packageMeta } = React.useContext(DetailContext);
+  const { packageName, packageMeta, packageVersion } = React.useContext(DetailContext);
 
-  return renderSideBar(packageName, packageMeta);
+  return renderSideBar(packageName, packageVersion, packageMeta);
 };
 
 export default DetailSidebar;
