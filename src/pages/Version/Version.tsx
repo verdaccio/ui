@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import { render, cleanup } from '@testing-library/react';
 
 import { callDetailPage, callReadme } from '../../utils/calls';
 import { buildScopePackage } from '../../utils/package';
