@@ -68,4 +68,6 @@ describe('<Version /> component', () => {
     expect(queryByText(LABEL_VERSION_HISTORY)).toBeFalsy();
     expect(queryByText(LABEL_CURRENT_TAGS)).toBeFalsy();
   });
+
+  test.todo('should click on version link');
 });
