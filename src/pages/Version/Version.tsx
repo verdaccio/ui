@@ -47,8 +47,8 @@ const Version = ({ match: { params } }) => {
   useEffect(() => {
     (async () => {
       try {
-        const packageMeta = (await callDetailPage(packageName)) as Partial<StateInterface>;
-        const readMe = (await callReadme(packageName)) as Partial<StateInterface>;
+        const packageMeta = (await callDetailPage(packageName, packageVersion)) as Partial<StateInterface>;
+        const readMe = (await callReadme(packageName, packageVersion)) as Partial<StateInterface>;
         if (isVersionValid(packageMeta, packageVersion)) {
           setReadme(readMe);
           setPackageMeta(packageMeta);
@@ -76,7 +76,8 @@ const Version = ({ match: { params } }) => {
     const pkgName = getRouterPackageName(params);
 
     setPackageName(pkgName);
-  }, [params]);
+    setPackageVersion(params.version);
+  }, [params, setPackageName, setPackageVersion]);
 
   const isNotFound = notFound || typeof packageMeta === 'undefined' || typeof packageName === 'undefined' || typeof readMe === 'undefined';
   const renderContent = (): React.ReactElement<HTMLElement> => {
