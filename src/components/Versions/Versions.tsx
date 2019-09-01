@@ -1,6 +1,7 @@
 import React, { ReactElement } from 'react';
 import List from '@material-ui/core/List';
-import { Link } from 'react-router-dom';
+import { Link as RouterLink } from 'react-router-dom';
+import Link from '@material-ui/core/Link';
 import ListItem from '@material-ui/core/ListItem';
 
 import { DetailContextConsumer } from '../../pages/Version';
@@ -29,7 +30,7 @@ class Versions extends React.PureComponent {
           .reverse()
           .map(version => (
             <ListItem className="version-item" key={version}>
-              <Link to={`/-/web/detail/${packageName}/v/${version}`}>
+              <Link component={RouterLink} to={`/-/web/detail/${packageName}/v/${version}`}>
                 <ListItemText>{version}</ListItemText>
               </Link>
               <Spacer />
