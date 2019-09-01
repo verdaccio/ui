@@ -1,6 +1,6 @@
 {
   "name": "@verdaccio/ui-theme",
-  "version": "0.2.4",
+  "version": "0.3.0",
   "description": "Verdaccio User Interface",
   "author": {
     "name": "Verdaccio Core Team"
@@ -144,7 +144,7 @@
   "scripts": {
     "type-check": "tsc --noEmit",
     "type-check:watch": "npm run type-check -- --watch",
-    "release": "standard-version -a -s",
+    "release": "standard-version -a",
     "test:clean": "npx jest --clearCache",
     "test:acceptance": "codeceptjs run --steps",
     "test:acceptance:server": "concurrently --kill-others \"npm run verdaccio:server\" \"npm run test:acceptance\"",
