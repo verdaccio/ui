@@ -1,12 +1,13 @@
 import React, { ReactElement } from 'react';
 import List from '@material-ui/core/List';
+import { Link } from 'react-router-dom';
 import ListItem from '@material-ui/core/ListItem';
 
 import { DetailContextConsumer } from '../../pages/Version';
 import { formatDateDistance } from '../../utils/package';
 import { DIST_TAGS } from '../../../lib/constants';
+
 import { Heading, Spacer, ListItemText } from './styles';
-import { Link } from 'react-router-dom';
 
 const NOT_AVAILABLE = 'Not available';
 
