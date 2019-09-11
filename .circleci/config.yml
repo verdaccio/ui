@@ -1,31 +1,25 @@
 version: 2
 
 aliases:
+  - &repo_path
+    ~/ui-theme
   - &defaults
-    working_directory: ~/ui-theme
-  - &node11_executor
+    working_directory: *repo_path
+  - &node_latest_executor
     docker:
-      - image: circleci/node:11.10.1
-  - &node8_executor
+      - image: circleci/node:latest
+  - &node_lts_executor
     docker:
-      - image: circleci/node:8
-  - &node10_executor
-    docker:
-      - image: circleci/node:10
+      - image: circleci/node:lts
   - &default_executor
-    <<: *node10_executor
-  - &repo_key
-    repo-{{ .Branch }}-{{ .Revision }}
-  - &coverage_key
-    coverage-{{ .Branch }}-{{ .Revision }}
-  - &base_config_key
-    base-config-{{ .Branch }}-{{ .Revision }}
+    <<: *node_latest_executor
   - &yarn_cache_key
     yarn-sha-{{ checksum "yarn.lock" }}
+  - &coverage_key
+    coverage-{{ .Branch }}-{{ .Revision }}
   - &restore_repo
-    restore_cache:
-      keys:
-        - *repo_key
+    attach_workspace:
+      at: *repo_path
   - &ignore_non_dev_branches
     filters:
       tags:
@@ -36,7 +30,7 @@ aliases:
   - &execute_on_release
     filters:
       tags:
-        only: /(v)?[0-9]+(\.[0-9]+)*/
+        only: /v?[0-9]+(\.[0-9]+)*([-+\.][a-zA-Z0-9]+)*/
       branches:
         ignore:
           - /.*/
@@ -49,20 +43,10 @@ jobs:
       - *restore_repo
       - checkout
       - restore_cache:
-          key: *base_config_key
-      - run:
-          name: 'Base environment setup'
-          command: echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" > ~/.npmrc
-      - save_cache:
-          key: *base_config_key
-          paths:
-            - ~/.npmrc
-            - ~/.gitconfig
-      - restore_cache:
           key: *yarn_cache_key
       - run:
-          name: Install Js dependencies
-          command: yarn install --no-progress --registry https://registry.verdaccio.org --no-lockfile
+          name: Install dependencies
+          command: yarn install --frozen-lockfile
       - run:
           name: Build project
           command: yarn run build
@@ -72,10 +56,20 @@ jobs:
             - ~/.yarn
             - ~/.cache/yarn
             - node_modules
-      - save_cache:
-          key: *repo_key
+      - persist_to_workspace:
+          root: *repo_path
           paths:
-            - ~/ui-theme
+            - ./*
+
+  lint:
+    <<: *defaults
+    <<: *default_executor
+    steps:
+      - *restore_repo
+      - run:
+          name: Lint code
+          command: yarn lint
+
   test_bundlesize:
     <<: *defaults
     <<: *default_executor
@@ -85,36 +79,27 @@ jobs:
           name: Test BundleSize
           command: yarn test:size
 
-  test_node11:
+  test_node_latest:
     <<: *defaults
-    <<: *node11_executor
+    <<: *node_latest_executor
     steps:
       - *restore_repo
       - run:
-          name: Test with Node 11
+          name: Test with Node (Latest)
           command: yarn test
-
-  test_node8:
-    <<: *defaults
-    <<: *node8_executor
-    steps:
-      - *restore_repo
-      - run:
-          name: Test with Node 8
-          command: yarn test
-
-  test_node10:
-    <<: *defaults
-    <<: *node10_executor
-    steps:
-      - *restore_repo
-      - run:
-          name: Test with Node 10
-          command: yarn run test
       - save_cache:
           key: *coverage_key
           paths:
           - coverage
+
+  test_node_lts:
+    <<: *defaults
+    <<: *node_lts_executor
+    steps:
+      - *restore_repo
+      - run:
+          name: Test with Node (LTS)
+          command: yarn test
 
   coverage:
     <<: *defaults
@@ -140,8 +125,9 @@ jobs:
     <<: *default_executor
     steps:
       - *restore_repo
-      - restore_cache:
-          key: *base_config_key
+      - run:
+          name: 'Setup publish credentials'
+          command: echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" > ~/.npmrc
       - run:
           name: Publish
           command: yarn publish
@@ -152,29 +138,31 @@ workflows:
     jobs:
       - prepare:
           <<: *ignore_non_dev_branches
-      - test_node11:
-          requires:
-            - prepare
-          <<: *ignore_non_dev_branches
-      - test_node8:
-          requires:
-            - prepare
-          <<: *ignore_non_dev_branches
-      - test_node10:
+      - lint:
           requires:
             - prepare
           <<: *ignore_non_dev_branches
       - test_bundlesize:
           requires:
-            - test_node11
-            - test_node8
-            - test_node10
+            - prepare
+          <<: *ignore_non_dev_branches
+      - test_node_latest:
+          requires:
+            - prepare
+          <<: *ignore_non_dev_branches
+      - test_node_lts:
+          requires:
+            - prepare
           <<: *ignore_non_dev_branches
       - coverage:
           requires:
-            - test_bundlesize
+            - test_node_latest
           <<: *ignore_non_dev_branches
       - publish_package:
           requires:
+            - lint
+            - test_bundlesize
+            - test_node_latest
+            - test_node_lts
             - coverage
           <<: *execute_on_release
