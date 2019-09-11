@@ -152,7 +152,7 @@
     "test:size": "bundlesize",
     "lint": "npm run lint:js && npm run lint:css",
     "lint:js": "npm run type-check && eslint . --ext .js,.ts,.tsx",
-    "lint:css": "stylelint 'src/**/styles.ts'",
+    "lint:css": "stylelint \"src/**/styles.ts\"",
     "coverage:publish": "codecov",
     "pre:webpack": "rimraf static/*",
     "prepublish": "in-publish && npm run build || not-in-publish",
