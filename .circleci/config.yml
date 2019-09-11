@@ -11,9 +11,6 @@ aliases:
   - &node_lts_executor
     docker:
       - image: circleci/node:lts
-  - &node_8_executor
-    docker:
-      - image: circleci/node:8
   - &default_executor
     <<: *node_latest_executor
   - &yarn_cache_key
@@ -104,15 +101,6 @@ jobs:
           name: Test with Node (LTS)
           command: yarn test
 
-  test_node_8:
-    <<: *defaults
-    <<: *node_8_executor
-    steps:
-      - *restore_repo
-      - run:
-          name: Test with Node (8)
-          command: yarn run test
-
   coverage:
     <<: *defaults
     <<: *default_executor
@@ -166,10 +154,6 @@ workflows:
           requires:
             - prepare
           <<: *ignore_non_dev_branches
-      - test_node_8:
-          requires:
-            - prepare
-          <<: *ignore_non_dev_branches
       - coverage:
           requires:
             - test_node_latest
@@ -180,6 +164,5 @@ workflows:
             - test_bundlesize
             - test_node_latest
             - test_node_lts
-            - test_node_8
             - coverage
           <<: *execute_on_release
