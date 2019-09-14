@@ -1,6 +1,30 @@
-# Change Log
+# Changelog
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
+
+## [0.3.0](https://github.com/verdaccio/ui/compare/v0.2.4...v0.3.0) (2019-09-01)
+
+
+### Features
+
+* add browser features to browse by version ([#125](https://github.com/verdaccio/ui/issues/125)) ([1904179](https://github.com/verdaccio/ui/commit/1904179))
+
+### [0.2.4](https://github.com/verdaccio/ui/compare/v0.2.3...v0.2.4) (2019-08-31)
+
+
+### Features
+
+* update material-ui@4.x ([#123](https://github.com/verdaccio/ui/issues/123)) ([67d7188](https://github.com/verdaccio/ui/commit/67d7188))
+
+### [0.2.3](https://github.com/verdaccio/ui/compare/v0.2.2...v0.2.3) (2019-08-25)
+
+
+### Bug Fixes
+
+* missing headers on search endpoint with token ([#121](https://github.com/verdaccio/ui/issues/121)) ([ac58730](https://github.com/verdaccio/ui/commit/ac58730))
+* refactoring version page / fix issue not found page [#100](https://github.com/verdaccio/ui/issues/100) ([#117](https://github.com/verdaccio/ui/issues/117)) ([97e8448](https://github.com/verdaccio/ui/commit/97e8448))
+* remove ToReplaceByVerdaccio [#108](https://github.com/verdaccio/ui/issues/108) ([#122](https://github.com/verdaccio/ui/issues/122)) ([5a9bd60](https://github.com/verdaccio/ui/commit/5a9bd60))
+* **api:** correctly handle responses with missing content-type header ([2049022](https://github.com/verdaccio/ui/commit/2049022))
 
 <a name="0.2.2"></a>
 ## [0.2.2](https://github.com/verdaccio/ui/compare/v0.2.1...v0.2.2) (2019-07-29)

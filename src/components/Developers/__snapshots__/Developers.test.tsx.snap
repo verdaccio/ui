@@ -1,0 +1,487 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`test Developers should render the component for contributors with items 1`] = `
+<Developers
+  type="contributors"
+>
+  <Styled(WithStyles(ForwardRef(Typography)))
+    variant="subtitle1"
+  >
+    <WithStyles(ForwardRef(Typography))
+      className="css-18tsvng emotion-0"
+      variant="subtitle1"
+    >
+      <ForwardRef(Typography)
+        className="css-18tsvng emotion-0"
+        classes={
+          Object {
+            "alignCenter": "MuiTypography-alignCenter",
+            "alignJustify": "MuiTypography-alignJustify",
+            "alignLeft": "MuiTypography-alignLeft",
+            "alignRight": "MuiTypography-alignRight",
+            "body1": "MuiTypography-body1",
+            "body2": "MuiTypography-body2",
+            "button": "MuiTypography-button",
+            "caption": "MuiTypography-caption",
+            "colorError": "MuiTypography-colorError",
+            "colorInherit": "MuiTypography-colorInherit",
+            "colorPrimary": "MuiTypography-colorPrimary",
+            "colorSecondary": "MuiTypography-colorSecondary",
+            "colorTextPrimary": "MuiTypography-colorTextPrimary",
+            "colorTextSecondary": "MuiTypography-colorTextSecondary",
+            "displayBlock": "MuiTypography-displayBlock",
+            "displayInline": "MuiTypography-displayInline",
+            "gutterBottom": "MuiTypography-gutterBottom",
+            "h1": "MuiTypography-h1",
+            "h2": "MuiTypography-h2",
+            "h3": "MuiTypography-h3",
+            "h4": "MuiTypography-h4",
+            "h5": "MuiTypography-h5",
+            "h6": "MuiTypography-h6",
+            "noWrap": "MuiTypography-noWrap",
+            "overline": "MuiTypography-overline",
+            "paragraph": "MuiTypography-paragraph",
+            "root": "MuiTypography-root",
+            "srOnly": "MuiTypography-srOnly",
+            "subtitle1": "MuiTypography-subtitle1",
+            "subtitle2": "MuiTypography-subtitle2",
+          }
+        }
+        variant="subtitle1"
+      >
+        <h6
+          className="MuiTypography-root css-18tsvng emotion-0 MuiTypography-subtitle1"
+        >
+          contributors
+        </h6>
+      </ForwardRef(Typography)>
+    </WithStyles(ForwardRef(Typography))>
+  </Styled(WithStyles(ForwardRef(Typography)))>
+  <Styled(div)>
+    <div
+      className="css-mkcn9c emotion-5"
+    >
+      <Styled(span)
+        key="dave.methvin@gmail.com"
+      >
+        <span
+          className="css-dvxtzn emotion-3"
+        >
+          <AvatarTooltip
+            email="dave.methvin@gmail.com"
+            name="dmethvin"
+            version="1.0.0"
+          >
+            <WithStyles(Tooltip)
+              title="dmethvin"
+            >
+              <Tooltip
+                classes={
+                  Object {
+                    "popper": "MuiTooltip-popper",
+                    "popperInteractive": "MuiTooltip-popperInteractive",
+                    "tooltip": "MuiTooltip-tooltip",
+                    "tooltipPlacementBottom": "MuiTooltip-tooltipPlacementBottom",
+                    "tooltipPlacementLeft": "MuiTooltip-tooltipPlacementLeft",
+                    "tooltipPlacementRight": "MuiTooltip-tooltipPlacementRight",
+                    "tooltipPlacementTop": "MuiTooltip-tooltipPlacementTop",
+                    "touch": "MuiTooltip-touch",
+                  }
+                }
+                title="dmethvin"
+              >
+                <a
+                  aria-describedby={null}
+                  className=""
+                  href="mailto:dave.methvin@gmail.com?subject=undefined@1.0.0"
+                  onBlur={[Function]}
+                  onFocus={[Function]}
+                  onMouseLeave={[Function]}
+                  onMouseOver={[Function]}
+                  onTouchEnd={[Function]}
+                  onTouchStart={[Function]}
+                  target="_top"
+                  title="dmethvin"
+                >
+                  <WithStyles(ForwardRef(Avatar))
+                    aria-label="dmethvin"
+                  >
+                    <ForwardRef(Avatar)
+                      aria-label="dmethvin"
+                      classes={
+                        Object {
+                          "colorDefault": "MuiAvatar-colorDefault",
+                          "img": "MuiAvatar-img",
+                          "root": "MuiAvatar-root",
+                        }
+                      }
+                    >
+                      <div
+                        aria-label="dmethvin"
+                        className="MuiAvatar-root MuiAvatar-colorDefault"
+                      />
+                    </ForwardRef(Avatar)>
+                  </WithStyles(ForwardRef(Avatar))>
+                </a>
+                <ForwardRef(Popper)
+                  anchorEl={
+                    <a
+                      class=""
+                      href="mailto:dave.methvin@gmail.com?subject=undefined@1.0.0"
+                      target="_top"
+                      title="dmethvin"
+                    >
+                      <div
+                        aria-label="dmethvin"
+                        class="MuiAvatar-root MuiAvatar-colorDefault"
+                      />
+                    </a>
+                  }
+                  className="MuiTooltip-popper"
+                  id={null}
+                  open={false}
+                  placement="bottom"
+                  transition={true}
+                />
+              </Tooltip>
+            </WithStyles(Tooltip)>
+          </AvatarTooltip>
+        </span>
+      </Styled(span)>
+      <Styled(span)
+        key="m.goleb@gmail.com"
+      >
+        <span
+          className="css-dvxtzn emotion-3"
+        >
+          <AvatarTooltip
+            email="m.goleb@gmail.com"
+            name="mgol"
+            version="1.0.0"
+          >
+            <WithStyles(Tooltip)
+              title="mgol"
+            >
+              <Tooltip
+                classes={
+                  Object {
+                    "popper": "MuiTooltip-popper",
+                    "popperInteractive": "MuiTooltip-popperInteractive",
+                    "tooltip": "MuiTooltip-tooltip",
+                    "tooltipPlacementBottom": "MuiTooltip-tooltipPlacementBottom",
+                    "tooltipPlacementLeft": "MuiTooltip-tooltipPlacementLeft",
+                    "tooltipPlacementRight": "MuiTooltip-tooltipPlacementRight",
+                    "tooltipPlacementTop": "MuiTooltip-tooltipPlacementTop",
+                    "touch": "MuiTooltip-touch",
+                  }
+                }
+                title="mgol"
+              >
+                <a
+                  aria-describedby={null}
+                  className=""
+                  href="mailto:m.goleb@gmail.com?subject=undefined@1.0.0"
+                  onBlur={[Function]}
+                  onFocus={[Function]}
+                  onMouseLeave={[Function]}
+                  onMouseOver={[Function]}
+                  onTouchEnd={[Function]}
+                  onTouchStart={[Function]}
+                  target="_top"
+                  title="mgol"
+                >
+                  <WithStyles(ForwardRef(Avatar))
+                    aria-label="mgol"
+                  >
+                    <ForwardRef(Avatar)
+                      aria-label="mgol"
+                      classes={
+                        Object {
+                          "colorDefault": "MuiAvatar-colorDefault",
+                          "img": "MuiAvatar-img",
+                          "root": "MuiAvatar-root",
+                        }
+                      }
+                    >
+                      <div
+                        aria-label="mgol"
+                        className="MuiAvatar-root MuiAvatar-colorDefault"
+                      />
+                    </ForwardRef(Avatar)>
+                  </WithStyles(ForwardRef(Avatar))>
+                </a>
+                <ForwardRef(Popper)
+                  anchorEl={
+                    <a
+                      class=""
+                      href="mailto:m.goleb@gmail.com?subject=undefined@1.0.0"
+                      target="_top"
+                      title="mgol"
+                    >
+                      <div
+                        aria-label="mgol"
+                        class="MuiAvatar-root MuiAvatar-colorDefault"
+                      />
+                    </a>
+                  }
+                  className="MuiTooltip-popper"
+                  id={null}
+                  open={false}
+                  placement="bottom"
+                  transition={true}
+                />
+              </Tooltip>
+            </WithStyles(Tooltip)>
+          </AvatarTooltip>
+        </span>
+      </Styled(span)>
+    </div>
+  </Styled(div)>
+</Developers>
+`;
+
+exports[`test Developers should render the component for maintainers with items 1`] = `
+<Developers
+  type="maintainers"
+>
+  <Styled(WithStyles(ForwardRef(Typography)))
+    variant="subtitle1"
+  >
+    <WithStyles(ForwardRef(Typography))
+      className="css-18tsvng emotion-0"
+      variant="subtitle1"
+    >
+      <ForwardRef(Typography)
+        className="css-18tsvng emotion-0"
+        classes={
+          Object {
+            "alignCenter": "MuiTypography-alignCenter",
+            "alignJustify": "MuiTypography-alignJustify",
+            "alignLeft": "MuiTypography-alignLeft",
+            "alignRight": "MuiTypography-alignRight",
+            "body1": "MuiTypography-body1",
+            "body2": "MuiTypography-body2",
+            "button": "MuiTypography-button",
+            "caption": "MuiTypography-caption",
+            "colorError": "MuiTypography-colorError",
+            "colorInherit": "MuiTypography-colorInherit",
+            "colorPrimary": "MuiTypography-colorPrimary",
+            "colorSecondary": "MuiTypography-colorSecondary",
+            "colorTextPrimary": "MuiTypography-colorTextPrimary",
+            "colorTextSecondary": "MuiTypography-colorTextSecondary",
+            "displayBlock": "MuiTypography-displayBlock",
+            "displayInline": "MuiTypography-displayInline",
+            "gutterBottom": "MuiTypography-gutterBottom",
+            "h1": "MuiTypography-h1",
+            "h2": "MuiTypography-h2",
+            "h3": "MuiTypography-h3",
+            "h4": "MuiTypography-h4",
+            "h5": "MuiTypography-h5",
+            "h6": "MuiTypography-h6",
+            "noWrap": "MuiTypography-noWrap",
+            "overline": "MuiTypography-overline",
+            "paragraph": "MuiTypography-paragraph",
+            "root": "MuiTypography-root",
+            "srOnly": "MuiTypography-srOnly",
+            "subtitle1": "MuiTypography-subtitle1",
+            "subtitle2": "MuiTypography-subtitle2",
+          }
+        }
+        variant="subtitle1"
+      >
+        <h6
+          className="MuiTypography-root css-18tsvng emotion-0 MuiTypography-subtitle1"
+        >
+          maintainers
+        </h6>
+      </ForwardRef(Typography)>
+    </WithStyles(ForwardRef(Typography))>
+  </Styled(WithStyles(ForwardRef(Typography)))>
+  <Styled(div)>
+    <div
+      className="css-mkcn9c emotion-5"
+    >
+      <Styled(span)
+        key="dave.methvin@gmail.com"
+      >
+        <span
+          className="css-dvxtzn emotion-3"
+        >
+          <AvatarTooltip
+            email="dave.methvin@gmail.com"
+            name="dmethvin"
+            version="1.0.0"
+          >
+            <WithStyles(Tooltip)
+              title="dmethvin"
+            >
+              <Tooltip
+                classes={
+                  Object {
+                    "popper": "MuiTooltip-popper",
+                    "popperInteractive": "MuiTooltip-popperInteractive",
+                    "tooltip": "MuiTooltip-tooltip",
+                    "tooltipPlacementBottom": "MuiTooltip-tooltipPlacementBottom",
+                    "tooltipPlacementLeft": "MuiTooltip-tooltipPlacementLeft",
+                    "tooltipPlacementRight": "MuiTooltip-tooltipPlacementRight",
+                    "tooltipPlacementTop": "MuiTooltip-tooltipPlacementTop",
+                    "touch": "MuiTooltip-touch",
+                  }
+                }
+                title="dmethvin"
+              >
+                <a
+                  aria-describedby={null}
+                  className=""
+                  href="mailto:dave.methvin@gmail.com?subject=undefined@1.0.0"
+                  onBlur={[Function]}
+                  onFocus={[Function]}
+                  onMouseLeave={[Function]}
+                  onMouseOver={[Function]}
+                  onTouchEnd={[Function]}
+                  onTouchStart={[Function]}
+                  target="_top"
+                  title="dmethvin"
+                >
+                  <WithStyles(ForwardRef(Avatar))
+                    aria-label="dmethvin"
+                  >
+                    <ForwardRef(Avatar)
+                      aria-label="dmethvin"
+                      classes={
+                        Object {
+                          "colorDefault": "MuiAvatar-colorDefault",
+                          "img": "MuiAvatar-img",
+                          "root": "MuiAvatar-root",
+                        }
+                      }
+                    >
+                      <div
+                        aria-label="dmethvin"
+                        className="MuiAvatar-root MuiAvatar-colorDefault"
+                      />
+                    </ForwardRef(Avatar)>
+                  </WithStyles(ForwardRef(Avatar))>
+                </a>
+                <ForwardRef(Popper)
+                  anchorEl={
+                    <a
+                      class=""
+                      href="mailto:dave.methvin@gmail.com?subject=undefined@1.0.0"
+                      target="_top"
+                      title="dmethvin"
+                    >
+                      <div
+                        aria-label="dmethvin"
+                        class="MuiAvatar-root MuiAvatar-colorDefault"
+                      />
+                    </a>
+                  }
+                  className="MuiTooltip-popper"
+                  id={null}
+                  open={false}
+                  placement="bottom"
+                  transition={true}
+                />
+              </Tooltip>
+            </WithStyles(Tooltip)>
+          </AvatarTooltip>
+        </span>
+      </Styled(span)>
+      <Styled(span)
+        key="m.goleb@gmail.com"
+      >
+        <span
+          className="css-dvxtzn emotion-3"
+        >
+          <AvatarTooltip
+            email="m.goleb@gmail.com"
+            name="mgol"
+            version="1.0.0"
+          >
+            <WithStyles(Tooltip)
+              title="mgol"
+            >
+              <Tooltip
+                classes={
+                  Object {
+                    "popper": "MuiTooltip-popper",
+                    "popperInteractive": "MuiTooltip-popperInteractive",
+                    "tooltip": "MuiTooltip-tooltip",
+                    "tooltipPlacementBottom": "MuiTooltip-tooltipPlacementBottom",
+                    "tooltipPlacementLeft": "MuiTooltip-tooltipPlacementLeft",
+                    "tooltipPlacementRight": "MuiTooltip-tooltipPlacementRight",
+                    "tooltipPlacementTop": "MuiTooltip-tooltipPlacementTop",
+                    "touch": "MuiTooltip-touch",
+                  }
+                }
+                title="mgol"
+              >
+                <a
+                  aria-describedby={null}
+                  className=""
+                  href="mailto:m.goleb@gmail.com?subject=undefined@1.0.0"
+                  onBlur={[Function]}
+                  onFocus={[Function]}
+                  onMouseLeave={[Function]}
+                  onMouseOver={[Function]}
+                  onTouchEnd={[Function]}
+                  onTouchStart={[Function]}
+                  target="_top"
+                  title="mgol"
+                >
+                  <WithStyles(ForwardRef(Avatar))
+                    aria-label="mgol"
+                  >
+                    <ForwardRef(Avatar)
+                      aria-label="mgol"
+                      classes={
+                        Object {
+                          "colorDefault": "MuiAvatar-colorDefault",
+                          "img": "MuiAvatar-img",
+                          "root": "MuiAvatar-root",
+                        }
+                      }
+                    >
+                      <div
+                        aria-label="mgol"
+                        className="MuiAvatar-root MuiAvatar-colorDefault"
+                      />
+                    </ForwardRef(Avatar)>
+                  </WithStyles(ForwardRef(Avatar))>
+                </a>
+                <ForwardRef(Popper)
+                  anchorEl={
+                    <a
+                      class=""
+                      href="mailto:m.goleb@gmail.com?subject=undefined@1.0.0"
+                      target="_top"
+                      title="mgol"
+                    >
+                      <div
+                        aria-label="mgol"
+                        class="MuiAvatar-root MuiAvatar-colorDefault"
+                      />
+                    </a>
+                  }
+                  className="MuiTooltip-popper"
+                  id={null}
+                  open={false}
+                  placement="bottom"
+                  transition={true}
+                />
+              </Tooltip>
+            </WithStyles(Tooltip)>
+          </AvatarTooltip>
+        </span>
+      </Styled(span)>
+    </div>
+  </Styled(div)>
+</Developers>
+`;
+
+exports[`test Developers should render the component with no items 1`] = `
+<Developers
+  type="maintainers"
+/>
+`;

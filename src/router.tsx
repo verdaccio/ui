@@ -13,7 +13,7 @@ const history = createBrowserHistory({
 });
 
 const NotFound = asyncComponent(() => import('./components/NotFound'));
-const VersionPackage = asyncComponent(() => import('./pages/version/Version'));
+const VersionPackage = asyncComponent(() => import('./pages/Version'));
 const HomePage = asyncComponent(() => import('./pages/home'));
 
 interface RouterAppProps {
@@ -31,6 +31,8 @@ class RouterApp extends Component<RouterAppProps> {
             <Route exact={true} path={'/'} render={this.renderHomePage} />
             <Route exact={true} path={'/-/web/detail/@:scope/:package'} render={this.renderVersionPage} />
             <Route exact={true} path={'/-/web/detail/:package'} render={this.renderVersionPage} />
+            <Route exact={true} path={'/-/web/detail/:package/v/:version'} render={this.renderVersionPage} />
+            <Route exact={true} path={'/-/web/detail/@:scope/:package/v/:version'} render={this.renderVersionPage} />
             <Route component={NotFound} />
           </Switch>
         </>

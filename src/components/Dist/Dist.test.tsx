@@ -1,5 +1,24 @@
 import React from 'react';
-import { shallow } from 'enzyme';
+import { mount } from 'enzyme';
+import Dist from './Dist';
+
+const mockPackageMeta = jest.fn(() => ({
+  latest: {
+    homepage: 'https://verdaccio.tld',
+    bugs: {
+      url: 'https://verdaccio.tld/bugs',
+    },
+    dist: {
+      tarball: 'https://verdaccio.tld/download',
+    },
+  },
+}));
+
+jest.mock('../../pages/Version', () => ({
+  DetailContextConsumer: component => {
+    return component.children({ packageMeta: mockPackageMeta() });
+  },
+}));
 
 describe('<Dist /> component', () => {
   beforeEach(() => {
@@ -18,14 +37,11 @@ describe('<Dist /> component', () => {
         license: '',
       },
     };
-    jest.doMock('../../pages/version/Version', () => ({
-      DetailContextConsumer: component => {
-        return component.children({ packageMeta });
-      },
-    }));
 
-    const Dist = require('./Dist').default;
-    const wrapper = shallow(<Dist />);
+    // @ts-ignore
+    mockPackageMeta.mockImplementation(() => packageMeta);
+
+    const wrapper = mount(<Dist />);
     expect(wrapper.html()).toMatchSnapshot();
   });
 
@@ -41,14 +57,11 @@ describe('<Dist /> component', () => {
         license: 'MIT',
       },
     };
-    jest.doMock('../../pages/version/Version', () => ({
-      DetailContextConsumer: component => {
-        return component.children({ packageMeta });
-      },
-    }));
 
-    const Dist = require('./Dist').default;
-    const wrapper = shallow(<Dist />);
+    // @ts-ignore
+    mockPackageMeta.mockImplementation(() => packageMeta);
+
+    const wrapper = mount(<Dist />);
     expect(wrapper.html()).toMatchSnapshot();
   });
 
@@ -67,14 +80,11 @@ describe('<Dist /> component', () => {
         },
       },
     };
-    jest.doMock('../../pages/version/Version', () => ({
-      DetailContextConsumer: component => {
-        return component.children({ packageMeta });
-      },
-    }));
 
-    const Dist = require('./Dist').default;
-    const wrapper = shallow(<Dist />);
+    // @ts-ignore
+    mockPackageMeta.mockImplementation(() => packageMeta);
+
+    const wrapper = mount(<Dist />);
     expect(wrapper.html()).toMatchSnapshot();
   });
 });

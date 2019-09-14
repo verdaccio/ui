@@ -174,7 +174,7 @@ const Package: React.FC<PackageInterface> = ({
   return (
     <PackageList className={'package'}>
       <ListItem alignItems={'flex-start'}>{renderPackageListItemText()}</ListItem>
-      <PackageListItem alignItems={'flex-start'}>
+      <PackageListItem alignItems={'flex-start'} button={true}>
         {renderAuthorInfo()}
         {renderVersionInfo()}
         {renderPublishedInfo()}

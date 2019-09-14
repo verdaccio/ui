@@ -9,15 +9,18 @@
     "allowSyntheticDefaultImports": true,
     "jsx": "react",
     "allowJs": true,
+    "resolveJsonModule": true,
     "checkJs": false,
     "esModuleInterop": true,
-    "baseUrl": ".",
+    "baseUrl": "."
   },
   "include": [
     "src",
-    "types/*.d.ts", "scripts/lib", "node_modules/config"
+    "types/*.d.ts",
+    "scripts/lib",
+    "node_modules/config"
   ],
   "exclude": [
-    "node_modules",
+    "node_modules"
   ]
 }

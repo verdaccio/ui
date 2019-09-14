@@ -56,14 +56,8 @@ export function formatDateDistance(lastUpdate): string {
   return distanceInWordsToNow(new Date(lastUpdate));
 }
 
-export function getRouterPackageName(match): string {
-  const packageName = match.params.package;
-  const scope = match.params.scope;
-  if (scope) {
-    return `@${scope}/${packageName}`;
-  }
-
-  return packageName;
+export function buildScopePackage(scope: string, packageName: string) {
+  return `@${scope}/${packageName}`;
 }
 
 /**

@@ -21,7 +21,7 @@ const getSize = (size: Breakpoint): string => {
 const commonStyle = ({ size = 'sm' as Breakpoint, pointer, modifiers = null }): string => css`
   && {
     display: inline-block;
-    cursor: ${pointer ? 'pointer' : 'default'};
+    cursor: ${pointer ? 'pointer' : 'Developers'};
     ${getSize(size)};
     ${modifiers && modifiers};
   }

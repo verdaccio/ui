@@ -1,14 +1,18 @@
 import API from './api';
 import { PackageMetaInterface } from 'types/packageMeta';
 
-export interface DetailPage {
-  readMe: string | {};
-  packageMeta: PackageMetaInterface | {};
+export async function callReadme(packageName, packageVersion?: string): Promise<string | {}> {
+  return await API.request<string | {}>(`package/readme/${packageName}${packageVersion ? `?v=${packageVersion}` : ''}`, 'GET');
 }
 
-export async function callDetailPage(packageName): Promise<DetailPage> {
-  const readMe = await API.request<string | {}>(`package/readme/${packageName}`, 'GET');
-  const packageMeta = await API.request<PackageMetaInterface | {}>(`sidebar/${packageName}`, 'GET');
+export async function callDetailPage(packageName: string, packageVersion?: string): Promise<PackageMetaInterface | {}> {
+  const packageMeta = await API.request<PackageMetaInterface | {}>(`sidebar/${packageName}${packageVersion ? `?v=${packageVersion}` : ''}`, 'GET');
 
-  return { readMe, packageMeta };
+  return packageMeta;
+}
+
+export function callSearch(value: string, signal: any) {
+  // https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API#Browser_compatibility
+  // FUTURE: signal is not well supported for IE and Samsung Browser
+  return API.request(`search/${encodeURIComponent(value)}`, 'GET', { signal, headers: {} });
 }

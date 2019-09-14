@@ -3,6 +3,7 @@ const { defaults } = require('jest-config');
 module.exports = {
   name: 'verdaccio-ui-jest',
   verbose: true,
+  automock: false,
   collectCoverage: true,
   testEnvironment: 'jest-environment-jsdom-global',
   moduleFileExtensions: [...defaults.moduleFileExtensions, 'ts', 'tsx'],

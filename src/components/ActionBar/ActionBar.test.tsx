@@ -1,69 +1,58 @@
 import React from 'react';
-import { mount, shallow } from 'enzyme';
+import { mount } from 'enzyme';
+import { ActionBar } from './ActionBar';
+
+const mockPackageMeta = jest.fn(() => ({
+  latest: {
+    homepage: 'https://verdaccio.tld',
+    bugs: {
+      url: 'https://verdaccio.tld/bugs',
+    },
+    dist: {
+      tarball: 'https://verdaccio.tld/download',
+    },
+  },
+}));
+
+jest.mock('../../pages/Version', () => ({
+  DetailContextConsumer: component => {
+    return component.children({ packageMeta: mockPackageMeta() });
+  },
+}));
 
 describe('<ActionBar /> component', () => {
   beforeEach(() => {
     jest.resetModules();
+    jest.resetAllMocks();
   });
 
   test('should render the component in default state', () => {
-    const packageMeta = {
-      latest: {
-        homepage: 'https://verdaccio.tld',
-        bugs: {
-          url: 'https://verdaccio.tld/bugs',
-        },
-        dist: {
-          tarball: 'https://verdaccio.tld/download',
-        },
-      },
-    };
-
-    jest.doMock('../../pages/version/Version', () => ({
-      DetailContextConsumer: component => {
-        return component.children({ packageMeta });
-      },
-    }));
-
-    const ActionBar = require('./ActionBar').default;
-    const wrapper = shallow(<ActionBar />);
+    const wrapper = mount(<ActionBar />);
     expect(wrapper.html()).toMatchSnapshot();
   });
 
   test('when there is no action bar data', () => {
-    const packageMeta = {
+    // @ts-ignore
+    mockPackageMeta.mockImplementation(() => ({
       latest: {},
-    };
-
-    jest.doMock('../../pages/version/Version', () => ({
-      DetailContextConsumer: component => {
-        return component.children({ packageMeta });
-      },
     }));
 
-    const ActionBar = require('./ActionBar').default;
-    const wrapper = shallow(<ActionBar />);
+    const wrapper = mount(<ActionBar />);
     // FIXME: this only renders the DetailContextConsumer, thus
     // the wrapper will be always empty
     expect(wrapper.html()).toEqual('');
   });
 
   test('when there is a button to download a tarball', () => {
-    const packageMeta = {
+    // @ts-ignore
+    mockPackageMeta.mockImplementation(() => ({
       latest: {
         dist: {
           tarball: 'http://localhost:8080/bootstrap/-/bootstrap-4.3.1.tgz',
         },
       },
-    };
-
-    jest.doMock('../../pages/version/Version', () => ({
-      DetailContextConsumer: component => {
-        return component.children({ packageMeta });
-      },
     }));
 
-    const ActionBar = require('./ActionBar').default;
     const wrapper = mount(<ActionBar />);
     expect(wrapper.html()).toMatchSnapshot();
 

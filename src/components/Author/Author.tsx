@@ -2,10 +2,9 @@ import React, { Component, ReactNode, ReactElement } from 'react';
 
 import Avatar from '@material-ui/core/Avatar';
 import List from '@material-ui/core/List';
-import ListItemText from '@material-ui/core/ListItemText';
 
-import { DetailContextConsumer } from '../../pages/version/Version';
-import { Heading, AuthorListItem } from './styles';
+import { DetailContextConsumer } from '../../pages/Version';
+import { Heading, AuthorListItem, AuthorListItemText } from './styles';
 import { isEmail } from '../../utils/url';
 
 class Authors extends Component {
@@ -13,7 +12,13 @@ class Authors extends Component {
     return (
       <DetailContextConsumer>
         {context => {
-          return context && context.packageMeta && this.renderAuthor(context.packageMeta);
+          const { packageMeta } = context;
+
+          if (!packageMeta) {
+            return null;
+          }
+
+          return this.renderAuthor(packageMeta);
         }}
       </DetailContextConsumer>
     );
@@ -31,8 +36,8 @@ class Authors extends Component {
     );
   }
 
-  public renderAuthor = packageMeta => {
-    const { author, name: packageName, version } = packageMeta.latest;
+  public renderAuthor = ({ latest }) => {
+    const { author, name: packageName, version } = latest;
 
     if (!author) {
       return null;
@@ -40,10 +45,10 @@ class Authors extends Component {
 
     const avatarComponent = <Avatar alt={author.name} src={author.avatar} />;
     return (
-      <List subheader={<Heading variant={'subheading'}>{'Author'}</Heading>}>
-        <AuthorListItem>
+      <List subheader={<Heading variant={'subtitle1'}>{'Author'}</Heading>}>
+        <AuthorListItem button={true}>
           {this.renderLinkForMail(author.email, avatarComponent, packageName, version)}
-          <ListItemText primary={author.name} />
+          <AuthorListItemText primary={author.name} />
         </AuthorListItem>
       </List>
     );

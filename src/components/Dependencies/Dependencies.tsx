@@ -2,7 +2,7 @@ import React, { Component, Fragment, ReactElement } from 'react';
 import { withRouter, RouteComponentProps } from 'react-router-dom';
 import CardContent from '@material-ui/core/CardContent';
 
-import { DetailContextConsumer, VersionPageConsumerProps } from '../../pages/version/Version';
+import { DetailContextConsumer, VersionPageConsumerProps } from '../../pages/Version';
 
 import { CardWrap, Heading, Tags, Tag } from './styles';
 import NoItems from '../NoItems';
@@ -32,7 +32,7 @@ class DepDetail extends Component<DepDetailProps, DepDetailState> {
   public render(): ReactElement<HTMLElement> {
     const { name, version } = this.state;
     const tagText = `${name}@${version}`;
-    return <Tag className={'dep-tag'} clickable={true} component={'div'} label={tagText} onClick={this.handleOnClick} />;
+    return <Tag className={'dep-tag'} clickable={true} label={tagText} onClick={this.handleOnClick} />;
   }
 
   private handleOnClick = () => {
@@ -57,7 +57,7 @@ class DependencyBlock extends Component<{ title: string; dependencies: [] }> {
           return (
             <CardWrap>
               <CardContent>
-                <Heading variant="subheading">{`${title} (${deps.length})`}</Heading>
+                <Heading variant="subtitle1">{`${title} (${deps.length})`}</Heading>
                 <Tags>{this.renderTags(deps, enableLoading)}</Tags>
               </CardContent>
             </CardWrap>

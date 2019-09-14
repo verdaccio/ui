@@ -1,5 +1,5 @@
 import React from 'react';
-import { shallow } from 'enzyme';
+import { mount } from 'enzyme';
 
 import CopyToClipBoard from './CopyToClipBoard';
 import { CopyIcon } from './styles';
@@ -8,7 +8,7 @@ describe('<CopyToClipBoard /> component', () => {
   let wrapper;
 
   beforeEach(() => {
-    wrapper = shallow(<CopyToClipBoard text={'copy text'} />);
+    wrapper = mount(<CopyToClipBoard text={'copy text'} />);
   });
 
   test('render the component', () => {

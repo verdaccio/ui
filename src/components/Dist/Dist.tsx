@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 import List from '@material-ui/core/List';
 
-import { DetailContextConsumer, VersionPageConsumerProps } from '../../pages/version/Version';
+import { VersionPageConsumerProps, DetailContextConsumer } from '../../pages/Version';
 import { Heading, DistListItem, DistChips } from './styles';
 import fileSizeSI from '../../utils/file-size';
 import { PackageMetaInterface } from 'types/packageMeta';
@@ -46,8 +46,8 @@ class Dist extends Component {
     const { dist, license } = packageMeta && packageMeta.latest;
 
     return (
-      <List subheader={<Heading variant="subheading">{'Latest Distribution'}</Heading>}>
-        <DistListItem>{this.renderChips(dist, license)}</DistListItem>
+      <List subheader={<Heading variant="subtitle1">{'Latest Distribution'}</Heading>}>
+        <DistListItem button={true}>{this.renderChips(dist, license)}</DistListItem>
       </List>
     );
   };

@@ -2,7 +2,7 @@ import React, { ReactElement } from 'react';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 
-import { DetailContextConsumer } from '../../pages/version/Version';
+import { DetailContextConsumer } from '../../pages/Version';
 import NoItems from '../NoItems';
 import { formatDateDistance } from '../../utils/package';
 
@@ -45,7 +45,7 @@ class UpLinks extends React.PureComponent<{}> {
       return (
         uplinks && (
           <>
-            <Heading variant="subheading">{'Uplinks'}</Heading>
+            <Heading variant="subtitle1">{'Uplinks'}</Heading>
             {this.renderUpLinksList(uplinks)}
           </>
         )

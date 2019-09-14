@@ -5,7 +5,7 @@ import Grid from '@material-ui/core/Grid';
 import List from '@material-ui/core/List';
 import ListItemText from '@material-ui/core/ListItemText';
 
-import { DetailContextConsumer, VersionPageConsumerProps } from '../../pages/version/Version';
+import { VersionPageConsumerProps, DetailContextConsumer } from '../../pages/Version';
 import { Heading, EngineListItem } from './styles';
 // @ts-ignore
 import node from './img/node.png';
@@ -60,8 +60,8 @@ class Engine extends Component {
 
   private renderListItems = (heading, text) => {
     return (
-      <List subheader={<Heading variant={'subheading'}>{text.split('-').join(' ')}</Heading>}>
-        <EngineListItem>
+      <List subheader={<Heading variant={'subtitle1'}>{text.split('-').join(' ')}</Heading>}>
+        <EngineListItem button={true}>
           {ICONS[text]}
           <ListItemText primary={heading} />
         </EngineListItem>

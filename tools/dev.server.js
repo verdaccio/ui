@@ -18,7 +18,9 @@ new WebpackDevServer(compiler, {
   contentBase: `${env.DIST_PATH}`,
   publicPath: config.output.publicPath,
   hot: true,
-  historyApiFallback: true,
+  historyApiFallback: {
+    disableDotRule: true,
+  },
   quiet: true,
   noInfo: false,
   stats: {
