@@ -72,10 +72,10 @@ exports[`test Developers should render the component for contributors with items
             name="dmethvin"
             version="1.0.0"
           >
-            <WithStyles(Tooltip)
+            <WithStyles(ForwardRef(Tooltip))
               title="dmethvin"
             >
-              <Tooltip
+              <ForwardRef(Tooltip)
                 classes={
                   Object {
                     "popper": "MuiTooltip-popper",
@@ -143,8 +143,8 @@ exports[`test Developers should render the component for contributors with items
                   placement="bottom"
                   transition={true}
                 />
-              </Tooltip>
-            </WithStyles(Tooltip)>
+              </ForwardRef(Tooltip)>
+            </WithStyles(ForwardRef(Tooltip))>
           </AvatarTooltip>
         </span>
       </Styled(span)>
@@ -159,10 +159,10 @@ exports[`test Developers should render the component for contributors with items
             name="mgol"
             version="1.0.0"
           >
-            <WithStyles(Tooltip)
+            <WithStyles(ForwardRef(Tooltip))
               title="mgol"
             >
-              <Tooltip
+              <ForwardRef(Tooltip)
                 classes={
                   Object {
                     "popper": "MuiTooltip-popper",
@@ -230,8 +230,8 @@ exports[`test Developers should render the component for contributors with items
                   placement="bottom"
                   transition={true}
                 />
-              </Tooltip>
-            </WithStyles(Tooltip)>
+              </ForwardRef(Tooltip)>
+            </WithStyles(ForwardRef(Tooltip))>
           </AvatarTooltip>
         </span>
       </Styled(span)>
@@ -312,10 +312,10 @@ exports[`test Developers should render the component for maintainers with items 
             name="dmethvin"
             version="1.0.0"
           >
-            <WithStyles(Tooltip)
+            <WithStyles(ForwardRef(Tooltip))
               title="dmethvin"
             >
-              <Tooltip
+              <ForwardRef(Tooltip)
                 classes={
                   Object {
                     "popper": "MuiTooltip-popper",
@@ -383,8 +383,8 @@ exports[`test Developers should render the component for maintainers with items 
                   placement="bottom"
                   transition={true}
                 />
-              </Tooltip>
-            </WithStyles(Tooltip)>
+              </ForwardRef(Tooltip)>
+            </WithStyles(ForwardRef(Tooltip))>
           </AvatarTooltip>
         </span>
       </Styled(span)>
@@ -399,10 +399,10 @@ exports[`test Developers should render the component for maintainers with items 
             name="mgol"
             version="1.0.0"
           >
-            <WithStyles(Tooltip)
+            <WithStyles(ForwardRef(Tooltip))
               title="mgol"
             >
-              <Tooltip
+              <ForwardRef(Tooltip)
                 classes={
                   Object {
                     "popper": "MuiTooltip-popper",
@@ -470,8 +470,8 @@ exports[`test Developers should render the component for maintainers with items 
                   placement="bottom"
                   transition={true}
                 />
-              </Tooltip>
-            </WithStyles(Tooltip)>
+              </ForwardRef(Tooltip)>
+            </WithStyles(ForwardRef(Tooltip))>
           </AvatarTooltip>
         </span>
       </Styled(span)>
