@@ -76,10 +76,6 @@ class DependencyBlock extends Component<{ title: string; dependencies: [] }> {
 }
 
 class Dependencies extends Component {
-  public state = {
-    tabPosition: 0,
-  };
-
   public render(): ReactElement<HTMLElement> {
     return (
       <DetailContextConsumer>
