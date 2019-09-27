@@ -1,7 +1,7 @@
 export interface PackageMetaInterface {
-  versions: Versions;
-  distTags: DistTags;
-  time: Time;
+  versions?: Versions;
+  distTags?: DistTags;
+  time?: Time;
   latest: {
     name: string;
     dist: {
@@ -27,23 +27,23 @@ export interface Time {
 }
 
 export interface Versions {
-  author: string | Author;
-  maintainers: Maintainer[];
   name: string;
-  description: string;
-  license: string;
-  main: string;
   version: string;
-  keywords: string[];
+  author?: string | Author;
+  maintainers?: Maintainer[];
+  description?: string;
+  license?: string;
+  main?: string;
+  keywords?: string[];
 }
 
 interface Author {
-  name: string;
-  email: string;
+  name?: string;
+  email?: string;
   url?: string;
 }
 
 interface Maintainer {
-  email: string;
-  name: string;
+  email?: string;
+  name?: string;
 }
