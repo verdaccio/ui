@@ -23,17 +23,17 @@ const Versions: React.FC = () => (
       }
 
       // @ts-ignore - Property 'dist-tags' does not exist on type 'PackageMetaInterface'
-      const { versions, time, [DIST_TAGS]: distTags } = packageMeta;
+      const { versions, time = {}, [DIST_TAGS]: distTags } = packageMeta;
 
       return (
         <>
-          {distTags && (
+          {distTags && Object.keys(distTags).length > 0 && (
             <>
               <Heading variant="subtitle1">{LABEL_CURRENT_TAGS}</Heading>
               <VersionsTagList tags={distTags} />
             </>
           )}
-          {versions && packageName && (
+          {versions && Object.keys(versions).length > 0 && packageName && (
             <>
               <Heading variant="subtitle1">{LABEL_VERSION_HISTORY}</Heading>
               <VersionsHistoryList packageName={packageName} time={time} versions={versions} />
