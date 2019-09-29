@@ -10,7 +10,7 @@ import Header from '../components/Header';
 import { Container, Content } from '../components/Layout';
 import RouterApp from '../router';
 import API from '../utils/api';
-import 'typeface-roboto';
+import 'typeface-roboto/index.css';
 import '../utils/styles/global';
 import 'normalize.css';
 import Footer from '../components/Footer';
