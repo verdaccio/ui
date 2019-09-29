@@ -20,7 +20,6 @@ import {
   IconButton,
   OverviewItem,
   PackageList,
-  PackageListItem,
   PackageListItemText,
   PackageTitle,
   Published,
@@ -174,13 +173,13 @@ const Package: React.FC<PackageInterface> = ({
   return (
     <PackageList className={'package'}>
       <ListItem alignItems={'flex-start'}>{renderPackageListItemText()}</ListItem>
-      <PackageListItem alignItems={'flex-start'} button={true}>
+      <ListItem alignItems={'flex-start'}>
         {renderAuthorInfo()}
         {renderVersionInfo()}
         {renderPublishedInfo()}
         {renderFileSize()}
         {renderLicenseInfo()}
-      </PackageListItem>
+      </ListItem>
     </PackageList>
   );
 };
