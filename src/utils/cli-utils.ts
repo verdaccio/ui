@@ -23,7 +23,7 @@ export function getCLISetConfigRegistry(command: string, scope: string, registry
 }
 
 export function getCLISetRegistry(command: string, registryUrl: string): string {
-  return `${command} --registry ${registryUrl}`;
+  return `${command} --registry ${registryUrl} --always-auth`;
 }
 
 export function getCLIChangePassword(command: string, registryUrl: string): string {
