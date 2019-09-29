@@ -30,7 +30,7 @@ const Help: React.FC = () => {
         <HelpTitle color="textSecondary" gutterBottom={true}>
           {'To publish your first package just:'}
         </HelpTitle>
-        {renderHeadingClipboardSegments('1. Login', `npm adduser --registry ${registryUrl}`)}
+        {renderHeadingClipboardSegments('1. Login', `npm adduser --registry ${registryUrl} --always-auth`)}
         {renderHeadingClipboardSegments('2. Publish', `npm publish --registry ${registryUrl}`)}
         <Typography variant="body2">{'3. Refresh this page.'}</Typography>
       </CardContent>
