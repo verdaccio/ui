@@ -14,10 +14,10 @@ function renderSidebar(): ReactElement<HTMLElement> {
 const Layout: FC<{}> = () => {
   return (
     <Grid className={'container content'} container={true} data-testid="version-layout" spacing={0}>
-      <Grid item={true} xs={8}>
+      <Grid item={true} md={8} xs={12}>
         {renderDetail()}
       </Grid>
-      <Grid item={true} xs={4}>
+      <Grid item={true} md={4} xs={12}>
         {renderSidebar()}
       </Grid>
     </Grid>
