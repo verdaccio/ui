@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.3.2](https://github.com/verdaccio/ui/compare/v0.3.1...v0.3.2) (2019-09-30)
+
+
+### Bug Fixes
+
+* sidebar view on small screens ([#136](https://github.com/verdaccio/ui/issues/136)) ([91d818c](https://github.com/verdaccio/ui/commit/91d818c))
+
 ### [0.3.1](https://github.com/verdaccio/ui/compare/v0.3.0...v0.3.1) (2019-09-29)
 
 
