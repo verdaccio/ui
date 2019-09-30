@@ -26,14 +26,14 @@ We use `>=yarn@1.13.0`, keep on mind we use lock file.
 
 For development run the following command, it will execute `webpack` and `verdaccio` to
 
-```
+```bash
 yarn dev
 ```
 The configuration file is located on `tools/_config.yaml`.
 
 Run linting tooling and test to check your code is clean before commit.
 
-```
+```bash
 yarn lint && yarn test
 ```
 
