@@ -5,7 +5,7 @@ import { render } from '@testing-library/react';
 import DetailContainer from './DetailContainer';
 
 describe('DetailContainer', () => {
-  test('renders correctly', async () => {
+  test('renders correctly', () => {
     const { container } = render(<DetailContainer />);
     expect(container.firstChild).toMatchSnapshot();
   });

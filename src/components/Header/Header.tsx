@@ -3,12 +3,10 @@ import { Link } from 'react-router-dom';
 import { css } from 'emotion';
 
 import Button from '@material-ui/core/Button';
-import IconButton from '@material-ui/core/IconButton';
 import MenuItem from '@material-ui/core/MenuItem';
 import Menu from '@material-ui/core/Menu';
 import Info from '@material-ui/icons/Info';
 import Help from '@material-ui/icons/Help';
-import Tooltip from '@material-ui/core/Tooltip';
 import AccountCircle from '@material-ui/icons/AccountCircle';
 import { default as IconSearch } from '@material-ui/icons/Search';
 
@@ -19,6 +17,8 @@ import RegistryInfoDialog from '../RegistryInfoDialog/RegistryInfoDialog';
 import Label from '../Label/Label';
 import Search from '../Search/Search';
 import RegistryInfoContent from '../RegistryInfoContent/RegistryInfoContent';
+import Tooltip from '../../muiComponents/Tooltip';
+import IconButton from '../../muiComponents/IconButton';
 
 import { Greetings, NavBar, InnerNavBar, MobileNavBar, InnerMobileNavBar, LeftSide, RightSide, IconSearchButton, SearchWrapper } from './styles';
 
@@ -174,9 +174,11 @@ class Header extends Component<Props, State> {
       case 'help':
         content = (
           // @ts-ignore
-          <IconButton blank={true} color={'inherit'} component={ExternalLink} to={'https://verdaccio.org/docs/en/installation'}>
-            <Help />
-          </IconButton>
+          <ExternalLink blank={true} to={'https://verdaccio.org/docs/en/installation'}>
+            <IconButton color={'inherit'}>
+              <Help />
+            </IconButton>
+          </ExternalLink>
         );
         break;
       case 'info':
