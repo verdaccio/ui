@@ -1,124 +1,42 @@
 import React from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
-import { shallow } from 'enzyme';
+import Button from '@material-ui/core/Button';
+import { render } from '@testing-library/react';
+
 import Header from './Header';
 
-describe('<Header /> component with logged in state', () => {
-  let wrapper;
-  let routerWrapper;
-  let instance;
-  let props;
+const headerProps = {
+  username: 'verddacio-user',
+  scope: 'test scope',
+  withoutSearch: true,
+  handleToggleLoginModal: () => {},
+  handleLogout: () => {},
+};
 
-  beforeEach(() => {
-    props = {
-      username: 'test user',
-      handleLogout: jest.fn(),
-      logo: '',
-      onToggleLoginModal: jest.fn(),
-      scope: 'test scope',
-      withoutSearch: true,
-    };
-    routerWrapper = shallow(
+/* eslint-disable react/jsx-no-bind*/
+describe('<Header /> component with logged in state', () => {
+  test('should load the component in logged out state', () => {
+    const { container } = render(
       <Router>
-        <Header
-          logo={props.logo}
-          onLogout={props.handleLogout}
-          onToggleLoginModal={props.onToggleLoginModal}
-          scope={props.scope}
-          username={props.username}
-          withoutSearch={props.withoutSearch}
-        />
+        <Header onLogout={headerProps.handleLogout} onToggleLoginModal={headerProps.handleToggleLoginModal} scope={headerProps.scope} />
       </Router>
     );
-    wrapper = routerWrapper.find(Header).dive();
-    instance = wrapper.instance();
+
+    expect(container.firstChild).toMatchSnapshot();
   });
 
   test('should load the component in logged in state', () => {
-    const state = {
-      openInfoDialog: false,
-      packages: undefined,
-      registryUrl: 'http://localhost',
-      showMobileNavBar: false,
-    };
-
-    expect(wrapper.state()).toEqual(state);
-    expect(routerWrapper.html()).toMatchSnapshot();
-  });
-
-  test('handleLoggedInMenu: set anchorEl to html element value in state', () => {
-    // creates a sample menu
-    const div = document.createElement('div');
-    const text = document.createTextNode('sample menu');
-    div.appendChild(text);
-
-    const event = {
-      currentTarget: div,
-    };
-
-    instance.handleLoggedInMenu(event);
-    expect(wrapper.state('anchorEl')).toEqual(div);
-  });
-});
-
-describe('<Header /> component with logged out state', () => {
-  let wrapper;
-  let routerWrapper;
-  let instance;
-  let props;
-
-  beforeEach(() => {
-    props = {
-      handleLogout: jest.fn(),
-      onToggleLoginModal: jest.fn(),
-      scope: 'test scope',
-      logo: '',
-      withoutSearch: true,
-    };
-    routerWrapper = shallow(
+    const { container } = render(
       <Router>
         <Header
-          logo={props.logo}
-          onLogout={props.handleLogout}
-          onToggleLoginModal={props.onToggleLoginModal}
-          scope={props.scope}
-          withoutSearch={props.withoutSearch}
+          onLogout={headerProps.handleLogout}
+          onToggleLoginModal={headerProps.handleToggleLoginModal}
+          scope={headerProps.scope}
+          username={headerProps.username}
         />
       </Router>
     );
-    wrapper = routerWrapper.find(Header).dive();
-    instance = wrapper.instance();
-  });
 
-  test('should load the component in logged out state', () => {
-    const state = {
-      openInfoDialog: false,
-      packages: undefined,
-      registryUrl: 'http://localhost',
-      showMobileNavBar: false,
-    };
-    expect(wrapper.state()).toEqual(state);
-    expect(routerWrapper.html()).toMatchSnapshot();
-  });
-
-  test('handleLoggedInMenuClose: set anchorEl value to null in state', () => {
-    instance.handleLoggedInMenuClose();
-    expect(wrapper.state('anchorEl')).toBeNull();
-  });
-
-  test('handleOpenRegistryInfoDialog: set openInfoDialog to be truthy in state', () => {
-    instance.handleOpenRegistryInfoDialog();
-    expect(wrapper.state('openInfoDialog')).toBeTruthy();
-  });
-
-  test('handleCloseRegistryInfoDialog: set openInfoDialog to be falsy in state', () => {
-    instance.handleCloseRegistryInfoDialog();
-    expect(wrapper.state('openInfoDialog')).toBeFalsy();
-  });
-
-  test('handleToggleLogin: close/open popover menu', () => {
-    instance.handleToggleLogin();
-    expect(wrapper.state('anchorEl')).toBeNull();
-    expect(props.onToggleLoginModal).toHaveBeenCalled();
+    expect(container.firstChild).toMatchSnapshot();
   });
 });
