@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 
 import Grid from '@material-ui/core/Grid';
 import List from '@material-ui/core/List';
-import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
 import MuiIconButton from '@material-ui/core/IconButton';
 import Photo from '@material-ui/core/Avatar';
@@ -120,6 +119,10 @@ export const PackageList = styled(List)({
     '&:hover': {
       backgroundColor: colors.greyLight3,
     },
+
+    '> :last-child': {
+      paddingTop: 0,
+    },
   },
 });
 
@@ -143,12 +146,6 @@ export const TagContainer = styled('span')`
     }
   }
 `;
-
-export const PackageListItem = styled(ListItem)({
-  '&&': {
-    paddingTop: 0,
-  },
-});
 
 export const PackageListItemText = styled(ListItemText)({
   '&&': {
