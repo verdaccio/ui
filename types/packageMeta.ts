@@ -27,6 +27,10 @@ export interface Time {
 }
 
 export interface Versions {
+  [key: string]: Version;
+}
+
+export interface Version {
   name: string;
   version: string;
   author?: string | Author;

@@ -23,7 +23,7 @@ const VersionsHistoryList: React.FC<Props> = ({ versions, packageName, time }) =
       .map(version => (
         <ListItem className="version-item" key={version}>
           <Link component={RouterLink} to={`/-/web/detail/${packageName}/v/${version}`}>
-            <ListItemText>{version}</ListItemText>
+            {version}
           </Link>
           <Spacer />
           <ListItemText>{time[version] ? `${formatDateDistance(time[version])} ago` : NOT_AVAILABLE}</ListItemText>
