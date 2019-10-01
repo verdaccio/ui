@@ -39,4 +39,11 @@ describe('<Header /> component with logged in state', () => {
 
     expect(container.firstChild).toMatchSnapshot();
   });
+
+  test.todo('should login the user');
+  test.todo('should logout the user');
+  test.todo('should open a new tab when clicking on the question icon');
+  test.todo('should open the registrationInfo modal when clicking on the info icon');
+  test.todo('should close the registrationInfo modal when clicking on button close');
+  test.todo('autocompletion should display suggestions according to the type value');
 });
