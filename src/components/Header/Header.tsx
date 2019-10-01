@@ -11,7 +11,6 @@ import AccountCircle from '@material-ui/icons/AccountCircle';
 import { default as IconSearch } from '@material-ui/icons/Search';
 
 import { getRegistryURL } from '../../utils/url';
-import ExternalLink from '../Link';
 import Logo from '../Logo';
 import RegistryInfoDialog from '../RegistryInfoDialog/RegistryInfoDialog';
 import Label from '../Label/Label';
@@ -20,7 +19,18 @@ import RegistryInfoContent from '../RegistryInfoContent/RegistryInfoContent';
 import Tooltip from '../../muiComponents/Tooltip';
 import IconButton from '../../muiComponents/IconButton';
 
-import { Greetings, NavBar, InnerNavBar, MobileNavBar, InnerMobileNavBar, LeftSide, RightSide, IconSearchButton, SearchWrapper } from './styles';
+import {
+  Greetings,
+  NavBar,
+  InnerNavBar,
+  MobileNavBar,
+  InnerMobileNavBar,
+  LeftSide,
+  RightSide,
+  IconSearchButton,
+  SearchWrapper,
+  StyledExternalLink,
+} from './styles';
 
 interface Props {
   logo?: string;
@@ -174,11 +184,11 @@ class Header extends Component<Props, State> {
       case 'help':
         content = (
           // @ts-ignore
-          <ExternalLink blank={true} to={'https://verdaccio.org/docs/en/installation'}>
+          <StyledExternalLink blank={true} to={'https://verdaccio.org/docs/en/installation'}>
             <IconButton color={'inherit'}>
               <Help />
             </IconButton>
-          </ExternalLink>
+          </StyledExternalLink>
         );
         break;
       case 'info':
