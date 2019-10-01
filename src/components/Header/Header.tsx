@@ -16,8 +16,9 @@ import RegistryInfoDialog from '../RegistryInfoDialog/RegistryInfoDialog';
 import Label from '../Label/Label';
 import Search from '../Search/Search';
 import RegistryInfoContent from '../RegistryInfoContent/RegistryInfoContent';
-import Tooltip from '../../muiComponents/Tooltip';
+
 import IconButton from '../../muiComponents/IconButton';
+import Tooltip from '../../muiComponents/Tooltip';
 
 import {
   Greetings,
