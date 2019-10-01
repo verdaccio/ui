@@ -5,6 +5,7 @@ import IconButton from '@material-ui/core/IconButton';
 
 import colors from '../../utils/styles/colors';
 import mq from '../../utils/styles/media';
+import ExternalLink from '../Link';
 
 export const InnerNavBar = styled(Toolbar)({
   '&&': {
@@ -108,3 +109,9 @@ export const NavBar = styled(AppBar)`
     }};
   }
 `;
+
+export const StyledExternalLink = styled(ExternalLink)({
+  '&&': {
+    color: 'white',
+  },
+});
