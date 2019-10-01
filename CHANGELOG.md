@@ -2,6 +2,21 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.3.2](https://github.com/verdaccio/ui/compare/v0.3.1...v0.3.2) (2019-09-30)
+
+
+### Bug Fixes
+
+* sidebar view on small screens ([#136](https://github.com/verdaccio/ui/issues/136)) ([91d818c](https://github.com/verdaccio/ui/commit/91d818c))
+
+### [0.3.1](https://github.com/verdaccio/ui/compare/v0.3.0...v0.3.1) (2019-09-29)
+
+
+### Bug Fixes
+
+* **ui:**  fix the hover effect on the packageItem's author area ([#137](https://github.com/verdaccio/ui/issues/137)) ([2e50981](https://github.com/verdaccio/ui/commit/2e50981))
+* correctly load font files - closes [#128](https://github.com/verdaccio/ui/issues/128) ([#134](https://github.com/verdaccio/ui/issues/134)) ([f61913c](https://github.com/verdaccio/ui/commit/f61913c))
+
 ## [0.3.0](https://github.com/verdaccio/ui/compare/v0.2.4...v0.3.0) (2019-09-01)
 
 
