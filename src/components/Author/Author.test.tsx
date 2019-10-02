@@ -1,29 +1,20 @@
 import React from 'react';
 import { mount } from 'enzyme';
+
+import { DetailContext } from '../../pages/Version';
+
 import Authors from './Author';
-
-const mockPackageMeta = jest.fn(() => ({
-  latest: {
-    homepage: 'https://verdaccio.tld',
-    bugs: {
-      url: 'https://verdaccio.tld/bugs',
-    },
-    dist: {
-      tarball: 'https://verdaccio.tld/download',
-    },
-  },
-}));
-
-jest.mock('../../pages/Version', () => ({
-  DetailContextConsumer: component => {
-    return component.children({ packageMeta: mockPackageMeta() });
-  },
-}));
 
 describe('<Author /> component', () => {
   beforeEach(() => {
     jest.resetAllMocks();
   });
+
+  const component = (packageMeta: React.ContextType<typeof DetailContext>['packageMeta']): JSX.Element => (
+    <DetailContext.Provider value={{ packageMeta }}>
+      <Authors />
+    </DetailContext.Provider>
+  );
 
   test('should render the component in default state', () => {
     const packageMeta = {
@@ -36,13 +27,12 @@ describe('<Author /> component', () => {
           url: '',
           avatar: 'https://www.gravatar.com/avatar/000000',
         },
+        dist: { fileCount: 0, unpackedSize: 0 },
       },
+      _uplinks: {},
     };
 
-    // @ts-ignore
-    mockPackageMeta.mockImplementation(() => packageMeta);
-
-    const wrapper = mount(<Authors />);
+    const wrapper = mount(component(packageMeta));
     expect(wrapper.html()).toMatchSnapshot();
   });
 
@@ -51,14 +41,13 @@ describe('<Author /> component', () => {
       latest: {
         name: 'verdaccio',
         version: '4.0.0',
+        dist: { fileCount: 0, unpackedSize: 0 },
       },
+      _uplinks: {},
     };
 
-    // @ts-ignore
-    mockPackageMeta.mockImplementation(() => packageMeta);
-
-    const wrapper = mount(<Authors />);
-    expect(wrapper.html()).toEqual('');
+    const wrapper = mount(component(packageMeta));
+    expect(wrapper.html()).toBeNull();
   });
 
   test('should render the component when there is no author email', () => {
@@ -71,13 +60,12 @@ describe('<Author /> component', () => {
           url: '',
           avatar: 'https://www.gravatar.com/avatar/000000',
         },
+        dist: { fileCount: 0, unpackedSize: 0 },
       },
+      _uplinks: {},
     };
 
-    // @ts-ignore
-    mockPackageMeta.mockImplementation(() => packageMeta);
-
-    const wrapper = mount(<Authors />);
+    const wrapper = mount(component(packageMeta));
     expect(wrapper.html()).toMatchSnapshot();
   });
 });

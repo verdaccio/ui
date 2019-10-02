@@ -28,11 +28,6 @@ import {
   WrapperLink,
 } from './styles';
 import { isURL } from '../../utils/url';
-interface Author {
-  name: string;
-  avatar?: string;
-  email?: string;
-}
 
 interface Bugs {
   url: string;
@@ -45,7 +40,7 @@ export interface PackageInterface {
   name: string;
   version: string;
   time?: number | string;
-  author: Author;
+  author: Required<PackageMetaInterface['latest']>['author'];
   description?: string;
   keywords?: string[];
   license?: PackageMetaInterface['latest']['license'];
