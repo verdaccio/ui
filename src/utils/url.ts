@@ -26,7 +26,7 @@ export function extractFileName(url: string): string {
 function blobToFile(blob: Blob, fileName: string): File {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const b: any = blob;
-  b.lastModified = new Date();
+  b.lastModified = Date.now();
   b.name = fileName;
   return b as File;
 }
