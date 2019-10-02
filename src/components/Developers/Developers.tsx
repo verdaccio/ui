@@ -22,13 +22,13 @@ const Developers: FC<Props> = ({ type, visibleMax }) => {
     setVisibleDevs(visibleDevs + VISIBLE_MAX);
   };
 
-  const renderDeveloperDetails = ({ name, avatar, email }, packageMeta) => {
+  const renderDeveloperDetails = ({ name, avatar, email }, packageMeta): JSX.Element => {
     const { name: packageName, version } = packageMeta.latest;
 
     return <AvatarTooltip avatar={avatar} email={email} name={name} packageName={packageName} version={version} />;
   };
 
-  const renderDevelopers = (developers, packageMeta) => {
+  const renderDevelopers = (developers, packageMeta): JSX.Element => {
     const listVisibleDevelopers = developers.slice(0, visibleDevs);
 
     return (
