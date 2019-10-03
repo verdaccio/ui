@@ -14,6 +14,7 @@ export const Spacer = styled('div')({
   borderBottom: '1px dotted rgba(0, 0, 0, 0.2)',
   whiteSpace: 'nowrap',
   height: '0.5em',
+  margin: '0 16px',
 });
 
 export const ListItemText = styled(MuiListItemText)({
