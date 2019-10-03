@@ -28,7 +28,7 @@ const Authors: FC = () => {
     <List subheader={<Heading variant={'subtitle1'}>{'Author'}</Heading>}>
       <AuthorListItem button={true}>
         {!email || !isEmail(email) ? (
-          <>{avatarComponent}</>
+          avatarComponent
         ) : (
           <a href={`mailto:${email}?subject=${packageName}@${version}`} target={'_top'}>
             {avatarComponent}
