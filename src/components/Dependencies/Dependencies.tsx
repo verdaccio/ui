@@ -96,14 +96,16 @@ class Dependencies extends Component {
 
     const dependencyMap = { dependencies, devDependencies, peerDependencies };
 
-    const dependencyList = Object.keys(dependencyMap).reduce((result, value, key) => {
-      const selectedDepndency = dependencyMap[value];
-      if (selectedDepndency && this.checkDependencyLength(selectedDepndency)) {
-        // @ts-ignore
-        result.push(<DependencyBlock className="dependency-block" dependencies={selectedDepndency} key={key} title={value} />);
-      }
-      return result;
-    }, []);
+    const dependencyList = Object.keys(dependencyMap).reduce(
+      (result, value, key) => {
+        const selectedDepndency = dependencyMap[value];
+        if (selectedDepndency && this.checkDependencyLength(selectedDepndency)) {
+          result.push(<DependencyBlock dependencies={selectedDepndency} key={key} title={value} />);
+        }
+        return result;
+      },
+      [] as JSX.Element[]
+    );
 
     if (dependencyList.length) {
       return <Fragment>{dependencyList}</Fragment>;
