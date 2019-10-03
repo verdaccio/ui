@@ -60,7 +60,7 @@ const HeaderRight: React.FC<Props> = ({ withoutSearch = false, username, onToggl
           username={username}
         />
       ) : (
-        <Button color="inherit" id="header--button-login" onClick={handleToggleLogin}>
+        <Button color="inherit" data-testid="header--button-login" onClick={handleToggleLogin}>
           {'Login'}
         </Button>
       )}

@@ -107,6 +107,7 @@ exports[`<Header /> component with logged in state should load the component in 
       >
         <button
           class="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorInherit"
+          data-testid="header--tooltip-documentation"
           tabindex="0"
           type="button"
         >
@@ -132,6 +133,7 @@ exports[`<Header /> component with logged in state should load the component in 
       </a>
       <button
         class="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorInherit"
+        data-testid="header--tooltip-info"
         id="header--button-registryInfo"
         tabindex="0"
         type="button"
@@ -157,6 +159,7 @@ exports[`<Header /> component with logged in state should load the component in 
       </button>
       <button
         class="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorInherit"
+        data-testid="header--menu-acountcircle"
         id="header--button-account"
         tabindex="0"
         type="button"
@@ -292,6 +295,7 @@ exports[`<Header /> component with logged in state should load the component in 
       >
         <button
           class="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorInherit"
+          data-testid="header--tooltip-documentation"
           tabindex="0"
           type="button"
         >
@@ -317,6 +321,7 @@ exports[`<Header /> component with logged in state should load the component in 
       </a>
       <button
         class="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorInherit"
+        data-testid="header--tooltip-info"
         id="header--button-registryInfo"
         tabindex="0"
         type="button"
@@ -342,7 +347,7 @@ exports[`<Header /> component with logged in state should load the component in 
       </button>
       <button
         class="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-colorInherit"
-        id="header--button-login"
+        data-testid="header--button-login"
         tabindex="0"
         type="button"
       >

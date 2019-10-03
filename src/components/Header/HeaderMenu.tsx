@@ -18,7 +18,7 @@ interface Props {
 /* eslint-disable react/jsx-max-depth */
 const HeaderMenu: React.FC<Props> = ({ onLogout, username, isMenuOpen = false, anchorEl, onLoggedInMenu, onLoggedInMenuClose }) => (
   <>
-    <IconButton color="inherit" id="header--button-account" onClick={onLoggedInMenu}>
+    <IconButton color="inherit" data-testid="header--menu-acountcircle" id="header--button-account" onClick={onLoggedInMenu}>
       <AccountCircle />
     </IconButton>
     <Menu
@@ -27,7 +27,7 @@ const HeaderMenu: React.FC<Props> = ({ onLogout, username, isMenuOpen = false, a
         vertical: 'top',
         horizontal: 'right',
       }}
-      id="sidebar-menu"
+      id="header--button-account"
       onClose={onLoggedInMenuClose}
       open={isMenuOpen}
       transformOrigin={{

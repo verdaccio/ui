@@ -1,7 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
-import Button from '@material-ui/core/Button';
-import { render } from '@testing-library/react';
+import { render, fireEvent, waitForElementToBeRemoved, waitForElement } from '@testing-library/react';
 
 import Header from './Header';
 
@@ -9,24 +8,26 @@ const headerProps = {
   username: 'verddacio-user',
   scope: 'test scope',
   withoutSearch: true,
-  handleToggleLoginModal: () => {},
-  handleLogout: () => {},
+  handleToggleLoginModal: jest.fn(),
+  handleLogout: jest.fn(),
 };
 
 /* eslint-disable react/jsx-no-bind*/
 describe('<Header /> component with logged in state', () => {
   test('should load the component in logged out state', () => {
-    const { container } = render(
+    const { container, queryByTestId, getByText } = render(
       <Router>
         <Header onLogout={headerProps.handleLogout} onToggleLoginModal={headerProps.handleToggleLoginModal} scope={headerProps.scope} />
       </Router>
     );
 
     expect(container.firstChild).toMatchSnapshot();
+    expect(queryByTestId('header--menu-acountcircle')).toBeNull();
+    expect(getByText('Login')).toBeTruthy();
   });
 
   test('should load the component in logged in state', () => {
-    const { container } = render(
+    const { container, getByTestId, queryByText } = render(
       <Router>
         <Header
           onLogout={headerProps.handleLogout}
@@ -38,12 +39,100 @@ describe('<Header /> component with logged in state', () => {
     );
 
     expect(container.firstChild).toMatchSnapshot();
+    expect(getByTestId('header--menu-acountcircle')).toBeTruthy();
+    expect(queryByText('Login')).toBeNull();
   });
 
-  test.todo('should login the user');
-  test.todo('should logout the user');
-  test.todo('should open a new tab when clicking on the question icon');
-  test.todo('should open the registrationInfo modal when clicking on the info icon');
-  test.todo('should close the registrationInfo modal when clicking on button close');
+  test('should open login dialog', async () => {
+    const { getByText } = render(
+      <Router>
+        <Header onLogout={headerProps.handleLogout} onToggleLoginModal={headerProps.handleToggleLoginModal} scope={headerProps.scope} />
+      </Router>
+    );
+
+    const loginBtn = getByText('Login');
+    fireEvent.click(loginBtn);
+    expect(headerProps.handleToggleLoginModal).toHaveBeenCalled();
+  });
+
+  test('should logout the user', async () => {
+    const { getByText, getByTestId } = render(
+      <Router>
+        <Header
+          onLogout={headerProps.handleLogout}
+          onToggleLoginModal={headerProps.handleToggleLoginModal}
+          scope={headerProps.scope}
+          username={headerProps.username}
+        />
+      </Router>
+    );
+
+    const headerMenuAccountCircle = getByTestId('header--menu-acountcircle');
+    fireEvent.click(headerMenuAccountCircle);
+
+    // wait for button Logout's appearance and return the element
+    const logoutBtn = await waitForElement(() => getByText('Logout'));
+    fireEvent.click(logoutBtn);
+    expect(headerProps.handleLogout).toHaveBeenCalled();
+  });
+
+  test('should be able to click on the question icon', async () => {
+    const { getByTestId } = render(
+      <Router>
+        <Header
+          onLogout={headerProps.handleLogout}
+          onToggleLoginModal={headerProps.handleToggleLoginModal}
+          scope={headerProps.scope}
+          username={headerProps.username}
+        />
+      </Router>
+    );
+
+    const documentationBtn = getByTestId('header--tooltip-documentation');
+    fireEvent.click(documentationBtn);
+  });
+
+  test('should open the registrationInfo modal when clicking on the info icon', async () => {
+    const { getByTestId } = render(
+      <Router>
+        <Header
+          onLogout={headerProps.handleLogout}
+          onToggleLoginModal={headerProps.handleToggleLoginModal}
+          scope={headerProps.scope}
+          username={headerProps.username}
+        />
+      </Router>
+    );
+
+    const infoBtn = getByTestId('header--tooltip-info');
+    fireEvent.click(infoBtn);
+
+    // wait for registrationInfo modal appearance and return the element
+    const registrationInfoModal = await waitForElement(() => getByTestId('registryInfo--dialog'));
+    expect(registrationInfoModal).toBeTruthy();
+  });
+
+  test('should close the registrationInfo modal when clicking on the button close', async () => {
+    const { getByTestId, getByText, queryByTestId } = render(
+      <Router>
+        <Header
+          onLogout={headerProps.handleLogout}
+          onToggleLoginModal={headerProps.handleToggleLoginModal}
+          scope={headerProps.scope}
+          username={headerProps.username}
+        />
+      </Router>
+    );
+
+    const infoBtn = getByTestId('header--tooltip-info');
+    fireEvent.click(infoBtn);
+
+    // wait for Close's button of registrationInfo modal appearance and return the element
+    const closeBtn = await waitForElement(() => getByText('CLOSE'));
+    fireEvent.click(closeBtn);
+
+    const hasRegistrationInfoModalBeenRemoved = await waitForElementToBeRemoved(() => queryByTestId('registryInfo--dialog'));
+    expect(hasRegistrationInfoModalBeenRemoved).toBeTruthy();
+  });
   test.todo('autocompletion should display suggestions according to the type value');
 });
