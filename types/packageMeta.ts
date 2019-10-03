@@ -1,9 +1,3 @@
-export interface Author {
-  name: string;
-  avatar?: string;
-  email?: string;
-}
-
 export interface PackageMetaInterface {
   versions?: Versions;
   distTags?: DistTags;
@@ -49,10 +43,11 @@ export interface Version {
   keywords?: string[];
 }
 
-interface Author {
+export interface Author {
   name?: string;
   email?: string;
   url?: string;
+  avatar?: string;
 }
 
 interface Maintainer {
