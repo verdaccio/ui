@@ -22,7 +22,7 @@ renderApp(App);
 // @ts-ignore
 if (module.hot) {
   // @ts-ignore
-  module.hot.accept('./app', () => {
+  module.hot.accept('./App', () => {
     renderApp(App);
   });
 }
