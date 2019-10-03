@@ -16,11 +16,11 @@ export default class ErrorBoundary extends Component<ErrorProps, ErrorAppState> 
     this.state = { hasError: false, error: null, info: null };
   }
 
-  componentDidCatch(error, info) {
+  public componentDidCatch(error, info) {
     this.setState({ hasError: true, error, info });
   }
 
-  render() {
+  public render(): JSX.Element {
     const { hasError, error, info } = this.state;
     const { children } = this.props;
 

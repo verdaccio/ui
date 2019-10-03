@@ -16,7 +16,7 @@ import { DetailContext } from '../../pages/Version';
 
 import { TitleListItem, TitleListItemText } from './styles';
 
-const renderLatestDescription = (description, version, isLatest: boolean = true) => {
+const renderLatestDescription = (description, version, isLatest: boolean = true): JSX.Element => {
   return (
     <span>
       <div>{description}</div>
@@ -25,15 +25,15 @@ const renderLatestDescription = (description, version, isLatest: boolean = true)
   );
 };
 
-const renderCopyCLI = () => <Install />;
-const renderMaintainers = () => <Developers type="maintainers" />;
-const renderContributors = () => <Developers type="contributors" />;
-const renderRepository = () => <Repository />;
-const renderAuthor = () => <Author />;
-const renderEngine = () => <Engine />;
-const renderDist = () => <Dist />;
-const renderActionBar = () => <ActionBar />;
-const renderTitle = (packageName, packageVersion, packageMeta) => {
+const renderCopyCLI = (): JSX.Element => <Install />;
+const renderMaintainers = (): JSX.Element => <Developers type="maintainers" />;
+const renderContributors = (): JSX.Element => <Developers type="contributors" />;
+const renderRepository = (): JSX.Element => <Repository />;
+const renderAuthor = (): JSX.Element => <Author />;
+const renderEngine = (): JSX.Element => <Engine />;
+const renderDist = (): JSX.Element => <Dist />;
+const renderActionBar = (): JSX.Element => <ActionBar />;
+const renderTitle = (packageName, packageVersion, packageMeta): JSX.Element => {
   const version = packageVersion ? packageVersion : packageMeta.latest.version;
   const isLatest = typeof packageVersion === 'undefined';
 
@@ -66,7 +66,7 @@ function renderSideBar(packageName, packageVersion, packageMeta): ReactElement<H
   );
 }
 
-const DetailSidebar = () => {
+const DetailSidebar = (): JSX.Element => {
   const { packageName, packageMeta, packageVersion } = React.useContext(DetailContext);
 
   return renderSideBar(packageName, packageVersion, packageMeta);
