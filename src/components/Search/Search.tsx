@@ -17,10 +17,6 @@ export interface State {
   loaded: boolean;
   error: boolean;
 }
-interface AbortControllerInterface {
-  signal: () => void;
-  abort: () => void;
-}
 
 export type cancelAllSearchRequests = () => void;
 export type handlePackagesClearRequested = () => void;
@@ -169,7 +165,7 @@ export class Search extends Component<RouteComponentProps<{}>, State> {
     }
   };
 
-  private requestList: AbortControllerInterface[];
+  private requestList: AbortController[];
 
   public getAdorment(): JSX.Element {
     return (
