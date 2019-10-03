@@ -1,7 +1,7 @@
 import List from '@material-ui/core/List';
-import React, { Component } from 'react';
+import React, { Component, useContext } from 'react';
 
-import { DetailContextConsumer, VersionPageConsumerProps } from '../../pages/Version';
+import { DetailContext, VersionPageConsumerProps } from '../../pages/Version';
 
 import CopyToClipBoard from '../CopyToClipBoard';
 
@@ -12,43 +12,29 @@ import yarn from './img/yarn.svg';
 
 import { Heading, InstallItem, PackageMangerAvatar, InstallListItemText } from './styles';
 
-class Install extends Component {
-  public render(): JSX.Element {
-    return (
-      <DetailContextConsumer>
-        {(context: Partial<VersionPageConsumerProps>) => {
-          return context && context.packageName && this.renderCopyCLI(context);
-        }}
-      </DetailContextConsumer>
-    );
+const Install: React.FC<{}> = () => {
+  const { packageName } = useContext(DetailContext);
+
+  if (!packageName) {
+    return null;
   }
 
-  public renderCopyCLI = ({ packageName = '' }: Partial<VersionPageConsumerProps>) => {
-    return (
-      <>
-        <List subheader={<Heading variant={'subtitle1'}>{'Installation'}</Heading>}>{this.renderListItems(packageName)}</List>
-      </>
-    );
-  };
-
-  public renderListItems = (packageName: string) => {
-    return (
-      <>
-        <InstallItem button={true}>
-          <PackageMangerAvatar alt={'npm logo'} src={npm} />
-          <InstallListItemText primary={<CopyToClipBoard text={`npm install ${packageName}`} />} secondary={'Install using NPM'} />
-        </InstallItem>
-        <InstallItem button={true}>
-          <PackageMangerAvatar alt={'yarn logo'} src={yarn} />
-          <InstallListItemText primary={<CopyToClipBoard text={`yarn add ${packageName}`} />} secondary={'Install using Yarn'} />
-        </InstallItem>
-        <InstallItem button={true}>
-          <PackageMangerAvatar alt={'pnpm logo'} src={pnpm} />
-          <InstallListItemText primary={<CopyToClipBoard text={`pnpm install ${packageName}`} />} secondary={'Install using PNPM'} />
-        </InstallItem>
-      </>
-    );
-  };
-}
+  return (
+    <List subheader={<Heading variant={'subtitle1'}>{'Installation'}</Heading>}>
+      <InstallItem button={true}>
+        <PackageMangerAvatar alt={'npm logo'} src={npm} />
+        <InstallListItemText primary={<CopyToClipBoard text={`npm install ${packageName}`} />} secondary={'Install using NPM'} />
+      </InstallItem>
+      <InstallItem button={true}>
+        <PackageMangerAvatar alt={'yarn logo'} src={yarn} />
+        <InstallListItemText primary={<CopyToClipBoard text={`yarn add ${packageName}`} />} secondary={'Install using Yarn'} />
+      </InstallItem>
+      <InstallItem button={true}>
+        <PackageMangerAvatar alt={'pnpm logo'} src={pnpm} />
+        <InstallListItemText primary={<CopyToClipBoard text={`pnpm install ${packageName}`} />} secondary={'Install using PNPM'} />
+      </InstallItem>
+    </List>
+  );
+};
 
 export default Install;
