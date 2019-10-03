@@ -1,48 +1,39 @@
 import React from 'react';
 import { mount } from 'enzyme';
 import { MemoryRouter } from 'react-router';
+import { DetailContext, DetailContextProps } from '../../pages/Version';
 
 import Versions, { LABEL_CURRENT_TAGS, LABEL_VERSION_HISTORY } from './Versions';
 import data from './__partials__/data.json';
 
 import { render, cleanup } from '@testing-library/react';
 
-const mockPackageMeta = jest.fn(() => ({
+const detailContextValue: Partial<DetailContextProps> = {
   packageName: 'foo',
   packageMeta: data,
-}));
+};
 
-jest.mock('../../pages/Version', () => ({
-  DetailContextConsumer: component => {
-    return component.children({ ...mockPackageMeta() });
-  },
-}));
+const ComponentToBeRendered: React.FC<{ contextValue: Partial<DetailContextProps> }> = ({ contextValue }) => (
+  <MemoryRouter>
+    <DetailContext.Provider value={contextValue}>
+      <Versions />
+    </DetailContext.Provider>
+  </MemoryRouter>
+);
 
 describe('<Version /> component', () => {
-  beforeEach(() => {
-    jest.resetModules();
-  });
-
   afterEach(() => {
     cleanup();
   });
 
   // FIXME: this test is not deterministic (writes `N days ago` in the snapshot, where N is random number)
   test.skip('should render the component in default state', () => {
-    const wrapper = mount(
-      <MemoryRouter>
-        <Versions />
-      </MemoryRouter>
-    );
+    const wrapper = mount(<ComponentToBeRendered contextValue={detailContextValue} />);
     expect(wrapper.html()).toMatchSnapshot();
   });
 
   test('should render versions', () => {
-    const { getByText } = render(
-      <MemoryRouter>
-        <Versions />
-      </MemoryRouter>
-    );
+    const { getByText } = render(<ComponentToBeRendered contextValue={detailContextValue} />);
 
     expect(getByText(LABEL_VERSION_HISTORY)).toBeTruthy();
     expect(getByText(LABEL_CURRENT_TAGS)).toBeTruthy();
@@ -53,18 +44,7 @@ describe('<Version /> component', () => {
   });
 
   test('should not render versions', () => {
-    const request = {
-      packageName: 'foo',
-    };
-
-    // @ts-ignore
-    mockPackageMeta.mockImplementation(() => request);
-
-    const { queryByText } = render(
-      <MemoryRouter>
-        <Versions />
-      </MemoryRouter>
-    );
+    const { queryByText } = render(<ComponentToBeRendered contextValue={{ packageName: detailContextValue.packageName }} />);
 
     expect(queryByText(LABEL_VERSION_HISTORY)).toBeFalsy();
     expect(queryByText(LABEL_CURRENT_TAGS)).toBeFalsy();
