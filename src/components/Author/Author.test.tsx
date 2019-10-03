@@ -5,16 +5,16 @@ import { DetailContext } from '../../pages/Version';
 
 import Authors from './Author';
 
+const withAuthorComponent = (packageMeta: React.ContextType<typeof DetailContext>['packageMeta']): JSX.Element => (
+  <DetailContext.Provider value={{ packageMeta }}>
+    <Authors />
+  </DetailContext.Provider>
+);
+
 describe('<Author /> component', () => {
   beforeEach(() => {
     jest.resetAllMocks();
   });
-
-  const component = (packageMeta: React.ContextType<typeof DetailContext>['packageMeta']): JSX.Element => (
-    <DetailContext.Provider value={{ packageMeta }}>
-      <Authors />
-    </DetailContext.Provider>
-  );
 
   test('should render the component in default state', () => {
     const packageMeta = {
@@ -32,7 +32,7 @@ describe('<Author /> component', () => {
       _uplinks: {},
     };
 
-    const wrapper = mount(component(packageMeta));
+    const wrapper = mount(withAuthorComponent(packageMeta));
     expect(wrapper.html()).toMatchSnapshot();
   });
 
@@ -46,7 +46,7 @@ describe('<Author /> component', () => {
       _uplinks: {},
     };
 
-    const wrapper = mount(component(packageMeta));
+    const wrapper = mount(withAuthorComponent(packageMeta));
     expect(wrapper.html()).toBeNull();
   });
 
@@ -65,7 +65,7 @@ describe('<Author /> component', () => {
       _uplinks: {},
     };
 
-    const wrapper = mount(component(packageMeta));
+    const wrapper = mount(withAuthorComponent(packageMeta));
     expect(wrapper.html()).toMatchSnapshot();
   });
 });
