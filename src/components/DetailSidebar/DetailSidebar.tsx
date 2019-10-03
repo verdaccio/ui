@@ -14,14 +14,18 @@ import Repository from '../Repository/Repository';
 
 import { DetailContext } from '../../pages/Version';
 
-import { TitleListItem, TitleListItemText } from './styles';
+import { TitleListItem, TitleListItemText, PackageDescription, PackageVersion } from './styles';
 
 const renderLatestDescription = (description, version, isLatest: boolean = true): JSX.Element => {
   return (
-    <span>
-      <div>{description}</div>
-      {version ? <small>{`${isLatest ? 'Latest v' : 'v'}${version}`}</small> : null}
-    </span>
+    <>
+      <PackageDescription>{description}</PackageDescription>
+      {version ? (
+        <PackageVersion>
+          <small>{`${isLatest ? 'Latest v' : 'v'}${version}`}</small>
+        </PackageVersion>
+      ) : null}
+    </>
   );
 };
 
