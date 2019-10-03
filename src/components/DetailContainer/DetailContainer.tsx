@@ -1,4 +1,4 @@
-import React, { useState, ChangeEvent, useContext } from 'react';
+import React, { useCallback, useState, ChangeEvent, useContext } from 'react';
 import Box from '@material-ui/core/Box';
 
 import { DetailContext } from '../../pages/Version';
@@ -12,11 +12,15 @@ const DetailContainer: React.FC = () => {
   const detailContext = useContext(DetailContext);
   const { readMe } = detailContext;
 
-  const handleChangeTabPosition = (event: ChangeEvent<{}>) => {
-    const eventTarget = event.target as HTMLSpanElement;
-    const chosentab = eventTarget.innerText as TabPosition;
-    setTabPosition(TabPosition[chosentab]);
-  };
+  const handleChangeTabPosition = useCallback(
+    (event: ChangeEvent<{}>) => {
+      event.preventDefault();
+      const eventTarget = event.target as HTMLSpanElement;
+      const chosentab = eventTarget.innerText as TabPosition;
+      setTabPosition(TabPosition[chosentab]);
+    },
+    [setTabPosition]
+  );
 
   return (
     <Box component="div" display="flex" flexDirection="column" padding={2}>

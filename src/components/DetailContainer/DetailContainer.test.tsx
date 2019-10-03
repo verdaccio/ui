@@ -9,5 +9,5 @@ describe('DetailContainer', () => {
     const { container } = render(<DetailContainer />);
     expect(container.firstChild).toMatchSnapshot();
   });
-  // TODO -> implement more tests, for instance if a tab has it's correct content
+  test.todo('should test click on tabs');
 });

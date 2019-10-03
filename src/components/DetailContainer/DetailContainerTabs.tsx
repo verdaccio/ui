@@ -14,11 +14,13 @@ const Tabs = styled(MuiTabs)({
   marginBottom: 16,
 });
 
+const getTabIndex = (tabPosition: TabPosition): number => Object.keys(TabPosition).findIndex(position => position === String(tabPosition).toUpperCase());
+
 const DetailContainerTabs: React.FC<Props> = ({ tabPosition, onChangeTabPosition }) => {
   const [tabPositionIndex, setTabPositionIndex] = useState(0);
 
   useEffect(() => {
-    const tabIndex = Object.keys(TabPosition).findIndex(position => position === String(tabPosition).toUpperCase());
+    const tabIndex = getTabIndex(tabPosition);
     setTabPositionIndex(tabIndex);
   }, [tabPosition]);
 
