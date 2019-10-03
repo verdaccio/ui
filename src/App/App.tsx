@@ -34,11 +34,9 @@ export interface AppStateInterface {
 }
 export default class App extends Component<{}, AppStateInterface> {
   public state: AppStateInterface = {
-    // @ts-ignore
     logoUrl: window.VERDACCIO_LOGO,
     user: {},
-    // @ts-ignore
-    scope: window.VERDACCIO_SCOPE ? `${window.VERDACCIO_SCOPE}:` : '',
+    scope: window.VERDACCIO_SCOPE || '',
     showLoginModal: false,
     isUserLoggedIn: false,
     packages: [],
