@@ -1,8 +1,9 @@
 import React, { FC } from 'react';
 
 import Avatar from '@material-ui/core/Avatar';
-import Tooltip from '@material-ui/core/Tooltip';
 import { isEmail } from '../../utils/url';
+
+import Tooltip from '../../muiComponents/TextField';
 
 export interface AvatarDeveloper {
   name: string;
