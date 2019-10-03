@@ -6,7 +6,7 @@ import HomeIcon from '@material-ui/icons/Home';
 import ListItem from '@material-ui/core/ListItem';
 import Tooltip from '@material-ui/core/Tooltip';
 
-import { PackageMetaInterface } from 'types/packageMeta';
+import { PackageMetaInterface, Author as PackageAuthor } from 'types/packageMeta';
 import Tag from '../Tag';
 import fileSizeSI from '../../utils/file-size';
 import { formatDate, formatDateDistance } from '../../utils/package';
@@ -40,7 +40,7 @@ export interface PackageInterface {
   name: string;
   version: string;
   time?: number | string;
-  author: Required<PackageMetaInterface['latest']>['author'];
+  author: PackageAuthor;
   description?: string;
   keywords?: string[];
   license?: PackageMetaInterface['latest']['license'];
