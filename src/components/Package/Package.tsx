@@ -150,7 +150,6 @@ const Package: React.FC<PackageInterface> = ({
   };
 
   const renderSecondaryComponent = (): React.ReactNode => {
-    // @ts-ignore
     const tags = keywords.sort().map((keyword, index) => <Tag key={index}>{keyword}</Tag>);
     return (
       <>

@@ -70,7 +70,6 @@ class ActionBar extends Component {
   }
 
   private renderActionBar = ({ packageMeta }) => {
-    // @ts-ignore
     const { latest } = packageMeta;
 
     if (!latest) {
