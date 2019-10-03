@@ -1,7 +1,7 @@
 import List from '@material-ui/core/List';
-import React, { Component, useContext } from 'react';
+import React, { useContext } from 'react';
 
-import { DetailContext, VersionPageConsumerProps } from '../../pages/Version';
+import { DetailContext } from '../../pages/Version';
 
 import CopyToClipBoard from '../CopyToClipBoard';
 
