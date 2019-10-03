@@ -29,7 +29,7 @@ export interface AppStateInterface {
   scope: string;
   showLoginModal: boolean;
   isUserLoggedIn: boolean;
-  packages: [];
+  packages: any[];
   isLoading: boolean;
 }
 export default class App extends Component<{}, AppStateInterface> {
@@ -85,11 +85,9 @@ export default class App extends Component<{}, AppStateInterface> {
 
   public loadOnHandler = async () => {
     try {
-      // @ts-ignore
-      this.req = await API.request('packages', 'GET');
+      const packages = await API.request<any[]>('packages', 'GET');
       this.setState({
-        // @ts-ignore
-        packages: this.req,
+        packages,
         isLoading: false,
       });
     } catch (error) {
@@ -113,7 +111,6 @@ export default class App extends Component<{}, AppStateInterface> {
    */
   public handleToggleLoginModal = () => {
     this.setState(prevState => ({
-      // @ts-ignore
       showLoginModal: !prevState.showLoginModal,
     }));
   };
@@ -123,7 +120,6 @@ export default class App extends Component<{}, AppStateInterface> {
    * Required by: <Header />
    */
   public handleDoLogin = async (usernameValue, passwordValue) => {
-    // @ts-ignore
     const { username, token, error } = await makeLogin(usernameValue, passwordValue);
 
     if (username && token) {
@@ -184,7 +180,6 @@ export default class App extends Component<{}, AppStateInterface> {
   public renderHeader = (): ReactElement<HTMLElement> => {
     const {
       logoUrl,
-      // @ts-ignore
       user: { username },
       scope,
     } = this.state;
