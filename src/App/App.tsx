@@ -64,7 +64,6 @@ export default class App extends Component<{}, AppStateInterface> {
     const context = { isUserLoggedIn, packages, logoUrl, user, scope };
 
     return (
-      // @ts-ignore
       <Container isLoading={isLoading}>
         {isLoading ? <Loading /> : <AppContextProvider value={context}>{this.renderContent()}</AppContextProvider>}
         {this.renderLoginModal()}
