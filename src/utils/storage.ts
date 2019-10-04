@@ -1,6 +1,6 @@
 import memoryStorage from 'localstorage-memory';
 
-let storage;
+let storage: Storage;
 try {
   localStorage.setItem('__TEST__', '');
   localStorage.removeItem('__TEST__');

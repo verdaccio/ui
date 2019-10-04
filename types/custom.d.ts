@@ -5,3 +5,8 @@ declare module '*.svg' {
 }
 
 declare module '*.png';
+
+declare module 'localstorage-memory' {
+  const memoryStorage: Storage;
+  export default memoryStorage;
+}
