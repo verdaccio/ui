@@ -1,6 +1,11 @@
 import { isTokenExpire, makeLogin } from './login';
 
-import { generateTokenWithTimeRange, generateTokenWithExpirationAsString, generateTokenWithOutExpiration } from '../../jest/unit/components/__mocks__/token';
+import {
+  generateTokenWithTimeRange,
+  generateTokenWithExpirationAsString,
+  generateTokenWithOutExpiration,
+  generateInvalidToken,
+} from '../../jest/unit/components/__mocks__/token';
 /* eslint-disable no-console */
 console.error = jest.fn();
 
@@ -9,10 +14,6 @@ jest.mock('./api', () => ({
 }));
 
 describe('isTokenExpire', (): void => {
-  test('isTokenExpire - token is not present', () => {
-    expect(isTokenExpire()).toBeTruthy();
-  });
-
   test('isTokenExpire - token is not a valid payload', (): void => {
     expect(isTokenExpire('not_a_valid_token')).toBeTruthy();
   });
@@ -33,10 +34,15 @@ describe('isTokenExpire', (): void => {
   });
 
   test('isTokenExpire - token is not a valid json token', (): void => {
-    const token = generateTokenWithExpirationAsString();
-    const result = ['Invalid token:', new SyntaxError('Unexpected token o in JSON at position 1'), 'xxxxxx.W29iamVjdCBPYmplY3Rd.xxxxxx'];
+    const token = generateInvalidToken();
+    const result = ['Invalid token:', new SyntaxError('Unexpected token i in JSON at position 0'), 'xxxxxx.aW52YWxpZHRva2Vu.xxxxxx'];
     expect(isTokenExpire(token)).toBeTruthy();
     expect(console.error).toHaveBeenCalledWith(...result);
+  });
+
+  test('isTokenExpire - token expiration is not a number', (): void => {
+    const token = generateTokenWithExpirationAsString();
+    expect(isTokenExpire(token)).toBeTruthy();
   });
 });
 
