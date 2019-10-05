@@ -9,7 +9,7 @@ interface PayloadInterface {
   exp: number;
 }
 
-export function isTokenExpire(token?: string): boolean {
+export function isTokenExpire(token: string | null): boolean {
   if (!isString(token)) {
     return true;
   }

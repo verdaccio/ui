@@ -1,56 +1,46 @@
-import React, { Component } from 'react';
+import React, { FC, useContext } from 'react';
 
 import List from '@material-ui/core/List';
 
-import { VersionPageConsumerProps, DetailContextConsumer } from '../../pages/Version';
+import { DetailContext } from '../../pages/Version';
 import { Heading, DistListItem, DistChips } from './styles';
 import fileSizeSI from '../../utils/file-size';
-import { PackageMetaInterface } from 'types/packageMeta';
 import { formatLicense } from '../../utils/package';
 
-class Dist extends Component {
-  public render(): JSX.Element {
-    return (
-      <DetailContextConsumer>
-        {(context: Partial<VersionPageConsumerProps>) => {
-          return context && context.packageMeta && this.renderDist(context.packageMeta);
-        }}
-      </DetailContextConsumer>
-    );
-  }
-
-  private renderChips(dist, license: PackageMetaInterface['latest']['license']): (JSX.Element | undefined)[] {
-    const distDict = {
-      'file-count': dist.fileCount,
-      size: dist.unpackedSize && fileSizeSI(dist.unpackedSize),
-      license,
-    };
-
-    const chipsList = Object.keys(distDict).map((dist, key) => {
-      if (!distDict[dist]) return;
-
-      const value = dist === 'license' ? formatLicense(distDict[dist]) : distDict[dist];
-      const label = (
+const DistChip: FC<{ name: string }> = ({ name, children }) =>
+  children ? (
+    <DistChips
+      // lint rule conflicting with prettier
+      /* eslint-disable react/jsx-wrap-multilines */
+      label={
         <>
-          {/* eslint-disable-next-line */}
-          <b>{dist.replace('-', ' ')}</b>: {value}
+          <b>{name}</b>
+          {': '}
+          {children}
         </>
-      );
-      return <DistChips key={key} label={label} />;
-    });
+      }
+      /* eslint-enable */
+    />
+  ) : null;
 
-    return chipsList;
+const Dist: FC = () => {
+  const { packageMeta } = useContext(DetailContext);
+
+  if (!packageMeta) {
+    return null;
   }
 
-  private renderDist = (packageMeta: PackageMetaInterface) => {
-    const { dist, license } = packageMeta && packageMeta.latest;
+  const { dist, license } = packageMeta && packageMeta.latest;
 
-    return (
-      <List subheader={<Heading variant="subtitle1">{'Latest Distribution'}</Heading>}>
-        <DistListItem button={true}>{this.renderChips(dist, license)}</DistListItem>
-      </List>
-    );
-  };
-}
+  return (
+    <List subheader={<Heading variant="subtitle1">{'Latest Distribution'}</Heading>}>
+      <DistListItem button={true}>
+        <DistChip name="file count">{dist.fileCount}</DistChip>
+        <DistChip name="size">{dist.unpackedSize && fileSizeSI(dist.unpackedSize)}</DistChip>
+        <DistChip name="license">{formatLicense(license)}</DistChip>
+      </DistListItem>
+    </List>
+  );
+};
 
 export default Dist;
