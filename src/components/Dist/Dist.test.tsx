@@ -1,30 +1,16 @@
 import React from 'react';
 import { mount } from 'enzyme';
+
+import { DetailContext } from '../../pages/Version';
 import Dist from './Dist';
 
-const mockPackageMeta = jest.fn(() => ({
-  latest: {
-    homepage: 'https://verdaccio.tld',
-    bugs: {
-      url: 'https://verdaccio.tld/bugs',
-    },
-    dist: {
-      tarball: 'https://verdaccio.tld/download',
-    },
-  },
-}));
-
-jest.mock('../../pages/Version', () => ({
-  DetailContextConsumer: component => {
-    return component.children({ packageMeta: mockPackageMeta() });
-  },
-}));
+const withDistComponent = (packageMeta: React.ContextType<typeof DetailContext>['packageMeta']): JSX.Element => (
+  <DetailContext.Provider value={{ packageMeta }}>
+    <Dist />
+  </DetailContext.Provider>
+);
 
 describe('<Dist /> component', () => {
-  beforeEach(() => {
-    jest.resetModules();
-  });
-
   test('should render the component in default state', () => {
     const packageMeta = {
       latest: {
@@ -36,12 +22,10 @@ describe('<Dist /> component', () => {
         },
         license: '',
       },
+      _uplinks: {},
     };
 
-    // @ts-ignore
-    mockPackageMeta.mockImplementation(() => packageMeta);
-
-    const wrapper = mount(<Dist />);
+    const wrapper = mount(withDistComponent(packageMeta));
     expect(wrapper.html()).toMatchSnapshot();
   });
 
@@ -56,12 +40,10 @@ describe('<Dist /> component', () => {
         },
         license: 'MIT',
       },
+      _uplinks: {},
     };
 
-    // @ts-ignore
-    mockPackageMeta.mockImplementation(() => packageMeta);
-
-    const wrapper = mount(<Dist />);
+    const wrapper = mount(withDistComponent(packageMeta));
     expect(wrapper.html()).toMatchSnapshot();
   });
 
@@ -79,12 +61,10 @@ describe('<Dist /> component', () => {
           url: 'https://www.opensource.org/licenses/mit-license.php',
         },
       },
+      _uplinks: {},
     };
 
-    // @ts-ignore
-    mockPackageMeta.mockImplementation(() => packageMeta);
-
-    const wrapper = mount(<Dist />);
+    const wrapper = mount(withDistComponent(packageMeta));
     expect(wrapper.html()).toMatchSnapshot();
   });
 });
