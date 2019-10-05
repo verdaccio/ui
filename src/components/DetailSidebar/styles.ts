@@ -1,9 +1,6 @@
 import styled from 'react-emotion';
-import Avatar from '@material-ui/core/Avatar';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
-
-import colors from '../../utils/styles/colors';
 
 export const TitleListItem = styled(ListItem)({
   '&&': {
@@ -21,10 +18,14 @@ export const TitleListItemText = styled(ListItemText)({
   },
 });
 
-export const TitleAvatar = styled(Avatar)({
+export const PackageDescription = styled('span')({
   '&&': {
-    color: colors.greySuperLight,
-    backgroundColor: colors.primary,
-    textTransform: 'capitalize',
+    display: 'block',
+  },
+});
+
+export const PackageVersion = styled('span')({
+  '&&': {
+    display: 'block',
   },
 });
