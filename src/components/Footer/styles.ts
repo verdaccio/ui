@@ -90,7 +90,7 @@ export const Flags = styled('span')`
       border-color: ${colors.greyAthens} transparent transparent transparent;
       transform: rotate(90deg);
     }
-    ${ToolTip}:hover & {
+    ${/* sc-selector */ ToolTip}:hover & {
       visibility: visible;
     }
   }

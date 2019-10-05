@@ -1,11 +1,12 @@
 import styled, { css } from 'react-emotion';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
-import IconButton from '@material-ui/core/IconButton';
 
 import colors from '../../utils/styles/colors';
 import mq from '../../utils/styles/media';
 import ExternalLink from '../Link';
+
+import IconButton from '../../muiComponents/IconButton';
 
 export const InnerNavBar = styled(Toolbar)({
   '&&': {
