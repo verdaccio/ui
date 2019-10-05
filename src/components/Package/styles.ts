@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom';
 import Grid from '@material-ui/core/Grid';
 import List from '@material-ui/core/List';
 import ListItemText from '@material-ui/core/ListItemText';
-import MuiIconButton from '@material-ui/core/IconButton';
 import Photo from '@material-ui/core/Avatar';
 import Typography from '@material-ui/core/Typography';
 
@@ -13,6 +12,7 @@ import Ico from '../Icon';
 import Label from '../Label';
 import colors from '../../utils/styles/colors';
 import { fontWeight } from '../../utils/styles/sizes';
+import { default as MuiIconButton } from '../../muiComponents/IconButton';
 
 export const OverviewItem = styled('span')`
   && {
