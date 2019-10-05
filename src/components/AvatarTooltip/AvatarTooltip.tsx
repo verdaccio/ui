@@ -3,7 +3,7 @@ import React, { FC } from 'react';
 import Avatar from '@material-ui/core/Avatar';
 import { isEmail } from '../../utils/url';
 
-import Tooltip from '../../muiComponents/TextField';
+import Tooltip from '../../muiComponents/Tooltip';
 
 export interface AvatarDeveloper {
   name: string;
