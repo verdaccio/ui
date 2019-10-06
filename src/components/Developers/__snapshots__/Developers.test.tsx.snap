@@ -107,25 +107,29 @@ exports[`test Developers should render the component for contributors with items
                     target="_top"
                     title="dmethvin"
                   >
-                    <WithStyles(ForwardRef(Avatar))
+                    <ForwardRef(Avatar)
                       aria-label="dmethvin"
                     >
-                      <ForwardRef(Avatar)
+                      <WithStyles(ForwardRef(Avatar))
                         aria-label="dmethvin"
-                        classes={
-                          Object {
-                            "colorDefault": "MuiAvatar-colorDefault",
-                            "img": "MuiAvatar-img",
-                            "root": "MuiAvatar-root",
-                          }
-                        }
                       >
-                        <div
+                        <ForwardRef(Avatar)
                           aria-label="dmethvin"
-                          className="MuiAvatar-root MuiAvatar-colorDefault"
-                        />
-                      </ForwardRef(Avatar)>
-                    </WithStyles(ForwardRef(Avatar))>
+                          classes={
+                            Object {
+                              "colorDefault": "MuiAvatar-colorDefault",
+                              "img": "MuiAvatar-img",
+                              "root": "MuiAvatar-root",
+                            }
+                          }
+                        >
+                          <div
+                            aria-label="dmethvin"
+                            className="MuiAvatar-root MuiAvatar-colorDefault"
+                          />
+                        </ForwardRef(Avatar)>
+                      </WithStyles(ForwardRef(Avatar))>
+                    </ForwardRef(Avatar)>
                   </a>
                   <ForwardRef(Popper)
                     anchorEl={
@@ -199,25 +203,29 @@ exports[`test Developers should render the component for contributors with items
                     target="_top"
                     title="mgol"
                   >
-                    <WithStyles(ForwardRef(Avatar))
+                    <ForwardRef(Avatar)
                       aria-label="mgol"
                     >
-                      <ForwardRef(Avatar)
+                      <WithStyles(ForwardRef(Avatar))
                         aria-label="mgol"
-                        classes={
-                          Object {
-                            "colorDefault": "MuiAvatar-colorDefault",
-                            "img": "MuiAvatar-img",
-                            "root": "MuiAvatar-root",
-                          }
-                        }
                       >
-                        <div
+                        <ForwardRef(Avatar)
                           aria-label="mgol"
-                          className="MuiAvatar-root MuiAvatar-colorDefault"
-                        />
-                      </ForwardRef(Avatar)>
-                    </WithStyles(ForwardRef(Avatar))>
+                          classes={
+                            Object {
+                              "colorDefault": "MuiAvatar-colorDefault",
+                              "img": "MuiAvatar-img",
+                              "root": "MuiAvatar-root",
+                            }
+                          }
+                        >
+                          <div
+                            aria-label="mgol"
+                            className="MuiAvatar-root MuiAvatar-colorDefault"
+                          />
+                        </ForwardRef(Avatar)>
+                      </WithStyles(ForwardRef(Avatar))>
+                    </ForwardRef(Avatar)>
                   </a>
                   <ForwardRef(Popper)
                     anchorEl={
@@ -357,25 +365,29 @@ exports[`test Developers should render the component for maintainers with items 
                     target="_top"
                     title="dmethvin"
                   >
-                    <WithStyles(ForwardRef(Avatar))
+                    <ForwardRef(Avatar)
                       aria-label="dmethvin"
                     >
-                      <ForwardRef(Avatar)
+                      <WithStyles(ForwardRef(Avatar))
                         aria-label="dmethvin"
-                        classes={
-                          Object {
-                            "colorDefault": "MuiAvatar-colorDefault",
-                            "img": "MuiAvatar-img",
-                            "root": "MuiAvatar-root",
-                          }
-                        }
                       >
-                        <div
+                        <ForwardRef(Avatar)
                           aria-label="dmethvin"
-                          className="MuiAvatar-root MuiAvatar-colorDefault"
-                        />
-                      </ForwardRef(Avatar)>
-                    </WithStyles(ForwardRef(Avatar))>
+                          classes={
+                            Object {
+                              "colorDefault": "MuiAvatar-colorDefault",
+                              "img": "MuiAvatar-img",
+                              "root": "MuiAvatar-root",
+                            }
+                          }
+                        >
+                          <div
+                            aria-label="dmethvin"
+                            className="MuiAvatar-root MuiAvatar-colorDefault"
+                          />
+                        </ForwardRef(Avatar)>
+                      </WithStyles(ForwardRef(Avatar))>
+                    </ForwardRef(Avatar)>
                   </a>
                   <ForwardRef(Popper)
                     anchorEl={
@@ -449,25 +461,29 @@ exports[`test Developers should render the component for maintainers with items 
                     target="_top"
                     title="mgol"
                   >
-                    <WithStyles(ForwardRef(Avatar))
+                    <ForwardRef(Avatar)
                       aria-label="mgol"
                     >
-                      <ForwardRef(Avatar)
+                      <WithStyles(ForwardRef(Avatar))
                         aria-label="mgol"
-                        classes={
-                          Object {
-                            "colorDefault": "MuiAvatar-colorDefault",
-                            "img": "MuiAvatar-img",
-                            "root": "MuiAvatar-root",
-                          }
-                        }
                       >
-                        <div
+                        <ForwardRef(Avatar)
                           aria-label="mgol"
-                          className="MuiAvatar-root MuiAvatar-colorDefault"
-                        />
-                      </ForwardRef(Avatar)>
-                    </WithStyles(ForwardRef(Avatar))>
+                          classes={
+                            Object {
+                              "colorDefault": "MuiAvatar-colorDefault",
+                              "img": "MuiAvatar-img",
+                              "root": "MuiAvatar-root",
+                            }
+                          }
+                        >
+                          <div
+                            aria-label="mgol"
+                            className="MuiAvatar-root MuiAvatar-colorDefault"
+                          />
+                        </ForwardRef(Avatar)>
+                      </WithStyles(ForwardRef(Avatar))>
+                    </ForwardRef(Avatar)>
                   </a>
                   <ForwardRef(Popper)
                     anchorEl={

@@ -1,9 +1,10 @@
-import Avatar from '@material-ui/core/Avatar';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
 import Typography from '@material-ui/core/Typography';
 import styled from 'react-emotion';
 import { fontWeight } from '../../utils/styles/sizes';
+
+import Avatar from '../../muiComponents/Avatar';
 
 export const Heading = styled(Typography)({
   '&&': {

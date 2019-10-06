@@ -1,13 +1,14 @@
 import React, { FC, useContext } from 'react';
 
-import Avatar from '@material-ui/core/Avatar';
 import List from '@material-ui/core/List';
 
 import { DetailContext } from '../../pages/Version';
 import { Heading, AuthorListItem, AuthorListItemText } from './styles';
 import { isEmail } from '../../utils/url';
 
-const Authors: FC = () => {
+import Avatar from '../../muiComponents/Avatar';
+
+const Author: FC = () => {
   const { packageMeta } = useContext(DetailContext);
 
   if (!packageMeta) {
@@ -41,4 +42,4 @@ const Authors: FC = () => {
   );
 };
 
-export default Authors;
+export default Author;
