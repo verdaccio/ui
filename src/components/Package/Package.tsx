@@ -5,7 +5,7 @@ import Grid from '@material-ui/core/Grid';
 import HomeIcon from '@material-ui/icons/Home';
 import ListItem from '@material-ui/core/ListItem';
 
-import { PackageMetaInterface } from 'types/packageMeta';
+import { PackageMetaInterface, Author as PackageAuthor } from 'types/packageMeta';
 import Tag from '../Tag';
 import fileSizeSI from '../../utils/file-size';
 import { formatDate, formatDateDistance } from '../../utils/package';
@@ -28,11 +28,6 @@ import {
   WrapperLink,
 } from './styles';
 import { isURL } from '../../utils/url';
-interface Author {
-  name: string;
-  avatar?: string;
-  email?: string;
-}
 
 interface Bugs {
   url: string;
@@ -45,7 +40,7 @@ export interface PackageInterface {
   name: string;
   version: string;
   time?: number | string;
-  author: Author;
+  author: PackageAuthor;
   description?: string;
   keywords?: string[];
   license?: PackageMetaInterface['latest']['license'];

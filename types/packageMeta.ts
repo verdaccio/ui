@@ -3,12 +3,14 @@ export interface PackageMetaInterface {
   distTags?: DistTags;
   time?: Time;
   latest: {
+    author?: Author;
     name: string;
     dist: {
       fileCount: number;
       unpackedSize: number;
     };
     license?: Partial<LicenseInterface> | string;
+    version: string;
   };
   _uplinks: {};
 }
@@ -41,10 +43,11 @@ export interface Version {
   keywords?: string[];
 }
 
-interface Author {
+export interface Author {
   name?: string;
   email?: string;
   url?: string;
+  avatar?: string;
 }
 
 interface Maintainer {
