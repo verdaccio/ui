@@ -161,6 +161,11 @@ workflows:
           requires:
             - test_node_latest
           <<: *ignore_non_dev_branches
+      - packtracker/report
+          requires:
+            - test_node_latest
+          <<: *ignore_non_dev_branches
+          webpack_config: "./tools/webpack.prod.config.babel.js"
       - publish_package:
           requires:
             - lint
