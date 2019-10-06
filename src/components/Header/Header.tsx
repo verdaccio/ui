@@ -2,7 +2,6 @@ import React, { SyntheticEvent, Component, Fragment, ReactElement } from 'react'
 import { Link } from 'react-router-dom';
 import { css } from 'emotion';
 
-import Button from '@material-ui/core/Button';
 import MenuItem from '@material-ui/core/MenuItem';
 import Menu from '@material-ui/core/Menu';
 import Info from '@material-ui/icons/Info';
@@ -19,6 +18,7 @@ import RegistryInfoContent from '../RegistryInfoContent/RegistryInfoContent';
 
 import IconButton from '../../muiComponents/IconButton';
 import Tooltip from '../../muiComponents/Tooltip';
+import Button from '../../muiComponents/Button';
 
 import {
   Greetings,
