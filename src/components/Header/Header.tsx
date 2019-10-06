@@ -1,7 +1,5 @@
 import React, { useState } from 'react';
 
-import Button from '@material-ui/core/Button';
-
 import Search from '../Search';
 import { getRegistryURL } from '../../utils/url';
 
@@ -9,6 +7,7 @@ import { NavBar, InnerNavBar, MobileNavBar, InnerMobileNavBar } from './styles';
 import HeaderLeft from './HeaderLeft';
 import HeaderRight from './HeaderRight';
 import HeaderInfoDialog from './HeaderInfoDialog';
+import Button from '../../muiComponents/Button';
 
 interface Props {
   logo?: string;

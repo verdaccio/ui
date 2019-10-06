@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import Button from '@material-ui/core/Button';
 import DialogTitle from '@material-ui/core/DialogTitle';
 import Dialog from '@material-ui/core/Dialog';
 import DialogActions from '@material-ui/core/DialogActions';
@@ -13,6 +12,7 @@ import FormHelperText from '@material-ui/core/FormHelperText';
 import { css } from 'emotion';
 
 import * as classes from './styles';
+import Button from '../../muiComponents/Button';
 
 interface FormFields {
   required: boolean;
