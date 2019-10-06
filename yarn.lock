@@ -1470,6 +1470,17 @@
     universal-user-agent "^3.0.0"
     url-template "^2.0.8"
 
+"@packtracker/webpack-plugin@2.2.0":
+  version "2.2.0"
+  resolved "https://registry.verdaccio.org/@packtracker%2fwebpack-plugin/-/webpack-plugin-2.2.0.tgz#eee3e6aa23971208f33c7bd254ccf1b05df0b889"
+  integrity sha512-nue8/tGvqs2iecUfDiujTUs+1lpjtMOqxyehs5Iiot2GVqpL13JAImSRTBfeIPQYQxkSY8EwOabKl+jksYsrBg==
+  dependencies:
+    lodash "^4.17.15"
+    minimist "^1.2.0"
+    omit-deep "^0.3.0"
+    tiny-json-http "^7.1.2"
+    webpack-bundle-analyzer "^3.4.1"
+
 "@samverschueren/stream-to-observable@^0.3.0":
   version "0.3.0"
   resolved "https://registry.verdaccio.org/@samverschueren%2fstream-to-observable/-/stream-to-observable-0.3.0.tgz#ecdf48d532c58ea477acfcab80348424f8d0662f"
@@ -7196,7 +7207,7 @@ is-plain-obj@^1.0.0, is-plain-obj@^1.1.0:
   resolved "https://registry.verdaccio.org/is-plain-obj/-/is-plain-obj-1.1.0.tgz#71a50c8429dfca773c92a390a4a03b39fcd51d3e"
   integrity sha1-caUMhCnfync8kqOQpKA7OfzVHT4=
 
-is-plain-object@^2.0.3, is-plain-object@^2.0.4:
+is-plain-object@^2.0.1, is-plain-object@^2.0.3, is-plain-object@^2.0.4:
   version "2.0.4"
   resolved "https://registry.verdaccio.org/is-plain-object/-/is-plain-object-2.0.4.tgz#2c163b3fafb1b606d9d17928f05c2a1c38e07677"
   integrity sha512-h5PpgXkWitc38BBMYawTYMWJHFZJVnBquFE57xFpjB8pJFiF6gZ+bU+WyI/yqXiFR5mdLsgYNaPe8uao6Uv9Og==
@@ -9552,6 +9563,14 @@ octokit-pagination-methods@^1.1.0:
   version "1.1.0"
   resolved "https://registry.verdaccio.org/octokit-pagination-methods/-/octokit-pagination-methods-1.1.0.tgz#cf472edc9d551055f9ef73f6e42b4dbb4c80bea4"
   integrity sha512-fZ4qZdQ2nxJvtcasX7Ghl+WlWS/d9IgnBIwFZXVNNZUmzpno91SX5bc5vuxiuKoCtK78XxGGNuSCrDC7xYB3OQ==
+
+omit-deep@^0.3.0:
+  version "0.3.0"
+  resolved "https://registry.verdaccio.org/omit-deep/-/omit-deep-0.3.0.tgz#21c8af3499bcadd29651a232cbcacbc52445ebec"
+  integrity sha1-IcivNJm8rdKWUaIyy8rLxSRF6+w=
+  dependencies:
+    is-plain-object "^2.0.1"
+    unset-value "^0.1.1"
 
 on-finished@~2.3.0:
   version "2.3.0"
@@ -12784,6 +12803,11 @@ tiny-invariant@^1.0.2:
   resolved "https://registry.verdaccio.org/tiny-invariant/-/tiny-invariant-1.0.6.tgz#b3f9b38835e36a41c843a3b0907a5a7b3755de73"
   integrity sha512-FOyLWWVjG+aC0UqG76V53yAWdXfH8bO6FNmyZOuUrzDzK8DI3/JRY25UD7+g49JWM1LXwymsKERB+DzI0dTEQA==
 
+tiny-json-http@^7.1.2:
+  version "7.1.2"
+  resolved "https://registry.verdaccio.org/tiny-json-http/-/tiny-json-http-7.1.2.tgz#620e189849bab08992ec23fada7b48c7c61637b4"
+  integrity sha512-XB9Bu+ohdQso6ziPFNVqK+pcTt0l8BSRkW/CCBq0pUVlLxcYDsorpo7ae5yPhu2CF1xYgJuKVLF7cfOGeLCTlA==
+
 tiny-warning@^1.0.0, tiny-warning@^1.0.2:
   version "1.0.3"
   resolved "https://registry.verdaccio.org/tiny-warning/-/tiny-warning-1.0.3.tgz#94a30db453df4c643d0fd566060d60a875d84754"
@@ -13202,6 +13226,14 @@ unquote@~1.1.1:
   resolved "https://registry.verdaccio.org/unquote/-/unquote-1.1.1.tgz#8fded7324ec6e88a0ff8b905e7c098cdc086d544"
   integrity sha1-j97XMk7G6IoP+LkF58CYzcCG1UQ=
 
+unset-value@^0.1.1:
+  version "0.1.2"
+  resolved "https://registry.verdaccio.org/unset-value/-/unset-value-0.1.2.tgz#506810b867f27c2a5a6e9b04833631f6de58d310"
+  integrity sha1-UGgQuGfyfCpabpsEgzYx9t5Y0xA=
+  dependencies:
+    has-value "^0.3.1"
+    isobject "^3.0.0"
+
 unset-value@^1.0.0:
   version "1.0.0"
   resolved "https://registry.verdaccio.org/unset-value/-/unset-value-1.0.0.tgz#8376873f7d2335179ffb1e6fc3a8ed0dfc8ab559"
@@ -13527,7 +13559,7 @@ webidl-conversions@^4.0.2:
   resolved "https://registry.verdaccio.org/webidl-conversions/-/webidl-conversions-4.0.2.tgz#a855980b1f0b6b359ba1d5d9fb39ae941faa63ad"
   integrity sha512-YQ+BmxuTgd6UXZW3+ICGfyqRyHXVlD5GtQr5+qjiNW7bF0cqrzX500HVXPBOvgXb5YnzDd+h0zqyv61KUD7+Sg==
 
-webpack-bundle-analyzer@3.5.2:
+webpack-bundle-analyzer@3.5.2, webpack-bundle-analyzer@^3.4.1:
   version "3.5.2"
   resolved "https://registry.verdaccio.org/webpack-bundle-analyzer/-/webpack-bundle-analyzer-3.5.2.tgz#ac02834f4b31de8e27d71e6c7a612301ebddb79f"
   integrity sha512-g9spCNe25QYUVqHRDkwG414GTok2m7pTTP0wr6l0J50Z3YLS04+BGodTqqoVBL7QfU/U/9p/oiI5XFOyfZ7S/A==

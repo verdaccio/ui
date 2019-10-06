@@ -1,5 +1,6 @@
 const env = require('../config/env');
 const StyleLintPlugin = require('stylelint-webpack-plugin');
+const PacktrackerPlugin = require('@packtracker/webpack-plugin');
 
 module.exports = {
   entry: `${env.SRC_ROOT}/index.tsx`,
@@ -19,6 +20,10 @@ module.exports = {
       files: ['src/**/styles.ts'],
       failOnError: false,
       emitErrors: true,
+    }),
+    new PacktrackerPlugin({
+      project_token: process.env.PACKTRACKER_TOKEN || '0cd636f0-f282-48b7-8437-4b693938d1a3',
+      upload: true,
     }),
   ],
 
