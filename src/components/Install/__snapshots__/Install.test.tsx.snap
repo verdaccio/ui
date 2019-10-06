@@ -105,7 +105,7 @@ exports[`<Install /> renders correctly 1`] = `
           <span
             class="css-1m8aenu emotion-2"
           >
-            npm install foo
+            yarn add foo
           </span>
           <button
             class="MuiButtonBase-root MuiIconButton-root css-0 emotion-3"
@@ -172,7 +172,7 @@ exports[`<Install /> renders correctly 1`] = `
           <span
             class="css-1m8aenu emotion-2"
           >
-            npm install foo
+            pnpm install foo
           </span>
           <button
             class="MuiButtonBase-root MuiIconButton-root css-0 emotion-3"

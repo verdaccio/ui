@@ -32,17 +32,23 @@ describe('<Install />', () => {
   });
 
   test('should have the element NPM', () => {
-    const { getByTestId } = render(<ComponentToBeRendered />);
+    const { getByTestId, queryByText } = render(<ComponentToBeRendered />);
     expect(getByTestId('installListItem-npm')).toBeTruthy();
+    expect(queryByText(`npm install ${detailContextValue.packageName}`)).toBeTruthy();
+    expect(queryByText('Install using npm')).toBeTruthy();
   });
 
   test('should have the element YARN', () => {
-    const { getByTestId } = render(<ComponentToBeRendered />);
+    const { getByTestId, queryByText } = render(<ComponentToBeRendered />);
     expect(getByTestId('installListItem-yarn')).toBeTruthy();
+    expect(queryByText(`yarn add ${detailContextValue.packageName}`)).toBeTruthy();
+    expect(queryByText('Install using yarn')).toBeTruthy();
   });
 
   test('should have the element PNPM', () => {
-    const { getByTestId } = render(<ComponentToBeRendered />);
+    const { getByTestId, queryByText } = render(<ComponentToBeRendered />);
     expect(getByTestId('installListItem-pnpm')).toBeTruthy();
+    expect(queryByText(`pnpm install ${detailContextValue.packageName}`)).toBeTruthy();
+    expect(queryByText('Install using pnpm')).toBeTruthy();
   });
 });
