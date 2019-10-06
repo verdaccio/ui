@@ -1,4 +1,7 @@
-version: 2
+version: 2.1
+
+orbs:
+  packtracker: packtracker/report@2.2.0
 
 aliases:
   - &repo_path
