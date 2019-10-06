@@ -23,6 +23,7 @@ module.exports = {
     }),
     new PacktrackerPlugin({
       project_token: process.env.PACKTRACKER_TOKEN || '0cd636f0-f282-48b7-8437-4b693938d1a3',
+      branch: process.env.CI_BRANCH,
       upload: true,
     }),
   ],
