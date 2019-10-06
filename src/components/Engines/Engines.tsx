@@ -1,12 +1,14 @@
 import React, { Component, ReactElement } from 'react';
 
-import Avatar from '@material-ui/core/Avatar';
 import Grid from '@material-ui/core/Grid';
 import List from '@material-ui/core/List';
 import ListItemText from '@material-ui/core/ListItemText';
 
 import { VersionPageConsumerProps, DetailContextConsumer } from '../../pages/Version';
 import { Heading, EngineListItem } from './styles';
+
+import Avatar from '../../muiComponents/Avatar';
+
 // @ts-ignore
 import node from './img/node.png';
 import npm from '../Install/img/npm.svg';

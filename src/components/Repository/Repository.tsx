@@ -1,7 +1,6 @@
 /* eslint react/jsx-max-depth: 0 */
 
 import React, { Component, Fragment, ReactElement } from 'react';
-import Avatar from '@material-ui/core/Avatar';
 import List from '@material-ui/core/List';
 
 import { DetailContextConsumer } from '../../pages/Version';
@@ -11,6 +10,8 @@ import { Heading, GithubLink, RepositoryListItem, RepositoryListItemText } from 
 
 import git from './img/git.png';
 import { isURL } from '../../utils/url';
+
+import Avatar from '../../muiComponents/Avatar';
 
 class Repository extends Component {
   public render(): ReactElement<HTMLElement> {
