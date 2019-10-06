@@ -1,4 +1,3 @@
-import Button from '@material-ui/core/Button';
 import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 import Typography from '@material-ui/core/Typography';
@@ -6,6 +5,7 @@ import React, { Fragment } from 'react';
 
 import { getRegistryURL } from '../../utils/url';
 import CopyToClipBoard from '../CopyToClipBoard';
+import Button from '../../muiComponents/Button';
 
 import { CardStyled as Card, HelpTitle } from './styles';
 
@@ -35,7 +35,7 @@ const Help: React.FC = () => {
         <Typography variant="body2">{'3. Refresh this page.'}</Typography>
       </CardContent>
       <CardActions>
-        <Button color="primary" href="https://verdaccio.org/docs/en/installation" size="small" target="_blank">
+        <Button color="primary" href="https://verdaccio.org/docs/en/installation" size="small">
           {'Learn More'}
         </Button>
       </CardActions>

@@ -36,7 +36,6 @@ export interface Version {
   name: string;
   version: string;
   author?: string | Author;
-  maintainers?: Maintainer[];
   description?: string;
   license?: string;
   main?: string;
@@ -48,9 +47,4 @@ export interface Author {
   email?: string;
   url?: string;
   avatar?: string;
-}
-
-interface Maintainer {
-  email?: string;
-  name?: string;
 }
