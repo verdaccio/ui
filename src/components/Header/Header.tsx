@@ -33,7 +33,7 @@ const Header: React.FC<Props> = ({ logo, withoutSearch, username, onLogout, onTo
             onLogout={onLogout}
             onOpenRegistryInfoDialog={() => setOpenInfoDialog(true)}
             onToggleLogin={onToggleLoginModal}
-            onToggleMNav={() => setShowMobileNavBar(!showMobileNavBar)}
+            onToggleMobileNav={() => setShowMobileNavBar(!showMobileNavBar)}
             username={username}
             withoutSearch={withoutSearch}
           />
