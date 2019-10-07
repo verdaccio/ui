@@ -76,7 +76,7 @@ describe('<Header /> component with logged in state', () => {
     expect(headerProps.handleLogout).toHaveBeenCalled();
   });
 
-  test('should be able to click on the question icon', async () => {
+  test("The question icon should open a new tab of verdaccio's website - installation doc", async () => {
     const { getByTestId } = render(
       <Router>
         <Header
@@ -89,7 +89,7 @@ describe('<Header /> component with logged in state', () => {
     );
 
     const documentationBtn = getByTestId('header--tooltip-documentation');
-    fireEvent.click(documentationBtn);
+    expect(documentationBtn.getAttribute('href')).toBe('https://verdaccio.org/docs/en/installation');
   });
 
   test('should open the registrationInfo modal when clicking on the info icon', async () => {

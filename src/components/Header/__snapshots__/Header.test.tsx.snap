@@ -102,12 +102,12 @@ exports[`<Header /> component with logged in state should load the component in 
       </button>
       <a
         class="css-1aacqdd emotion-6"
+        data-testid="header--tooltip-documentation"
         href="https://verdaccio.org/docs/en/installation"
         target="_blank"
       >
         <button
           class="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorInherit"
-          data-testid="header--tooltip-documentation"
           tabindex="0"
           type="button"
         >
@@ -290,12 +290,12 @@ exports[`<Header /> component with logged in state should load the component in 
       </button>
       <a
         class="css-1aacqdd emotion-6"
+        data-testid="header--tooltip-documentation"
         href="https://verdaccio.org/docs/en/installation"
         target="_blank"
       >
         <button
           class="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorInherit"
-          data-testid="header--tooltip-documentation"
           tabindex="0"
           type="button"
         >

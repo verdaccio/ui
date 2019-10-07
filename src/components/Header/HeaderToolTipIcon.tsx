@@ -18,8 +18,8 @@ const HeaderToolTipIcon: React.FC<Props> = ({ tooltipIconType, onClick }) => {
   switch (tooltipIconType) {
     case 'help':
       return (
-        <StyledExternalLink blank={true} to={'https://verdaccio.org/docs/en/installation'}>
-          <IconButton color={'inherit'} data-testid={'header--tooltip-documentation'} onClick={onClick}>
+        <StyledExternalLink blank={true} data-testid={'header--tooltip-documentation'} to={'https://verdaccio.org/docs/en/installation'}>
+          <IconButton color={'inherit'}>
             <Help />
           </IconButton>
         </StyledExternalLink>
