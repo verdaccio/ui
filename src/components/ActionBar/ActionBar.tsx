@@ -1,15 +1,15 @@
 import React, { Component, ReactElement } from 'react';
-
 import BugReportIcon from '@material-ui/icons/BugReport';
 import DownloadIcon from '@material-ui/icons/CloudDownload';
 import HomeIcon from '@material-ui/icons/Home';
 import List from '@material-ui/core/List';
 
 import { DetailContextConsumer, VersionPageConsumerProps } from '../../pages/Version';
-import { Fab, ActionListItem } from './styles';
 import { isURL, extractFileName, downloadFile } from '../../utils/url';
 import api from '../../utils/api';
 import Tooltip from '../../muiComponents/Tooltip';
+
+import { Fab, ActionListItem } from './styles';
 
 export interface Action {
   icon: string;

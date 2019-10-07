@@ -3,7 +3,6 @@ import isNil from 'lodash/isNil';
 
 import storage from '../utils/storage';
 import { makeLogin, isTokenExpire } from '../utils/login';
-
 import Loading from '../components/Loading';
 import LoginModal from '../components/Login';
 import Header from '../components/Header';
@@ -14,7 +13,7 @@ import 'typeface-roboto/index.css';
 import '../utils/styles/global';
 import 'normalize.css';
 import Footer from '../components/Footer';
-import { FormError } from 'src/components/Login/Login';
+import { FormError } from '../components/Login/Login';
 
 export const AppContext = React.createContext<{}>({});
 export const AppContextProvider = AppContext.Provider;

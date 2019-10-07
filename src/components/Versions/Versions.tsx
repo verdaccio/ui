@@ -1,13 +1,11 @@
 import React, { useContext } from 'react';
 
 import { DetailContext } from '../../pages/Version';
+import { DIST_TAGS } from '../../../lib/constants';
 
 import { Heading } from './styles';
-
 import VersionsTagList from './VersionsTagList';
 import VersionsHistoryList from './VersionsHistoryList';
-
-import { DIST_TAGS } from '../../../lib/constants';
 
 export const NOT_AVAILABLE = 'Not available';
 export const LABEL_CURRENT_TAGS = 'Current Tags';

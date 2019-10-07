@@ -1,12 +1,11 @@
 import React, { FC, useContext } from 'react';
-
 import List from '@material-ui/core/List';
 
 import { DetailContext } from '../../pages/Version';
-import { Heading, AuthorListItem, AuthorListItemText } from './styles';
 import { isEmail } from '../../utils/url';
-
 import Avatar from '../../muiComponents/Avatar';
+
+import { Heading, AuthorListItem, AuthorListItemText } from './styles';
 
 const Author: FC = () => {
   const { packageMeta } = useContext(DetailContext);

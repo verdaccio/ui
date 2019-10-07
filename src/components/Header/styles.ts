@@ -4,7 +4,6 @@ import Toolbar from '@material-ui/core/Toolbar';
 
 import colors from '../../utils/styles/colors';
 import mq from '../../utils/styles/media';
-
 import IconButton from '../../muiComponents/IconButton';
 import ExternalLink from '../Link';
 

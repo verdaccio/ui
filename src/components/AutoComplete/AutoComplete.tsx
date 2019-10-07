@@ -6,6 +6,7 @@ import parse from 'autosuggest-highlight/parse';
 import MenuItem from '@material-ui/core/MenuItem';
 
 import { fontWeight } from '../../utils/styles/sizes';
+
 import { Wrapper, InputField, SuggestionContainer } from './styles';
 
 interface Props {
@@ -31,6 +32,7 @@ const renderInputComponent = (inputProps): JSX.Element => {
   const { ref, startAdornment, disableUnderline, onKeyDown, ...others } = inputProps;
   return (
     <InputField
+      fullWidth={true}
       InputProps={{
         inputRef: node => {
           ref(node);
@@ -39,7 +41,6 @@ const renderInputComponent = (inputProps): JSX.Element => {
         disableUnderline,
         onKeyDown,
       }}
-      fullWidth={true}
       {...others}
     />
   );

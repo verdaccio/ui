@@ -1,9 +1,10 @@
 import React from 'react';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
-import { Spacer, ListItemText } from './styles';
 
 import { DistTags } from '../../../types/packageMeta';
+
+import { Spacer, ListItemText } from './styles';
 
 interface Props {
   tags: DistTags;

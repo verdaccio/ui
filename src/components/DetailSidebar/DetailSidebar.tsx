@@ -1,5 +1,4 @@
 import React, { ReactElement } from 'react';
-
 import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
 import List from '@material-ui/core/List';
@@ -11,7 +10,6 @@ import Dist from '../Dist/Dist';
 import Engine from '../Engines/Engines';
 import Install from '../Install';
 import Repository from '../Repository/Repository';
-
 import { DetailContext } from '../../pages/Version';
 
 import { TitleListItem, TitleListItemText, PackageDescription, PackageVersion } from './styles';

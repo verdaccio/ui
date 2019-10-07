@@ -1,6 +1,6 @@
-import { formatLicense, formatRepository, formatDate, formatDateDistance, getLastUpdatedPackageTime, getRecentReleases } from './package';
-
 import { packageMeta } from '../../jest/unit/components/store/packageMeta';
+
+import { formatLicense, formatRepository, formatDate, formatDateDistance, getLastUpdatedPackageTime, getRecentReleases } from './package';
 
 describe('formatLicense', (): void => {
   test('should check license field different values', (): void => {

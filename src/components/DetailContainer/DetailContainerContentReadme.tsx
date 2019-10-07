@@ -1,7 +1,6 @@
 import React from 'react';
 
 import { preventXSS } from '../../utils/sec-utils';
-
 import Readme from '../Readme';
 
 interface Props {

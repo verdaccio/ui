@@ -10,11 +10,11 @@ const TextField = forwardRef<TextFieldRef, TextFieldProps>(function ToolTip({ In
   return (
     <MaterialUITextField
       {...props}
+      innerRef={ref}
       InputProps={{
         ...InputProps,
         classes,
       }}
-      innerRef={ref}
     />
   );
 });

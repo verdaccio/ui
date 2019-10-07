@@ -1,5 +1,6 @@
 import React from 'react';
 import { mount } from 'enzyme';
+
 import { ActionBar } from './ActionBar';
 
 const mockPackageMeta: jest.Mock = jest.fn(() => ({

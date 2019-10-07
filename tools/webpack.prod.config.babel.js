@@ -3,10 +3,12 @@ const HTMLWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const UglifyJsWebpackPlugin = require('uglifyjs-webpack-plugin');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
-const baseConfig = require('./webpack.config');
-const env = require('../config/env');
 const _ = require('lodash');
 const merge = require('webpack-merge');
+
+const env = require('../config/env');
+
+const baseConfig = require('./webpack.config');
 const getPackageJson = require('./getPackageJson');
 
 const { version, name, license } = getPackageJson('version', 'name', 'license');
