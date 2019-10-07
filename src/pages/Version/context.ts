@@ -1,4 +1,5 @@
 import React, { Consumer, Provider } from 'react';
+
 import { DetailContextProps, VersionPageConsumerProps } from './types';
 
 export const DetailContext = React.createContext<Partial<DetailContextProps>>({});

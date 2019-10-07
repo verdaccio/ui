@@ -2,8 +2,8 @@ import React from 'react';
 import { render } from '@testing-library/react';
 
 import { DetailContext, DetailContextProps } from '../../pages/Version';
-import data from './__partials__/data.json';
 
+import data from './__partials__/data.json';
 import Install from './Install';
 
 const detailContextValue: Partial<DetailContextProps> = {

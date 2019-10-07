@@ -1,11 +1,11 @@
 import React, { FC, useContext } from 'react';
-
 import List from '@material-ui/core/List';
 
 import { DetailContext } from '../../pages/Version';
-import { Heading, DistListItem, DistChips } from './styles';
 import fileSizeSI from '../../utils/file-size';
 import { formatLicense } from '../../utils/package';
+
+import { Heading, DistListItem, DistChips } from './styles';
 
 const DistChip: FC<{ name: string }> = ({ name, children }) =>
   children ? (

@@ -1,6 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
 import { shallow } from 'enzyme';
+
 import Header from './Header';
 
 describe('<Header /> component with logged in state', () => {

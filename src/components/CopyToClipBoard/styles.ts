@@ -1,5 +1,6 @@
-import IconButton from '../../muiComponents/IconButton';
 import styled from 'react-emotion';
+
+import IconButton from '../../muiComponents/IconButton';
 
 export const ClipBoardCopy = styled('div')({
   '&&': {

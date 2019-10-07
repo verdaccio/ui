@@ -1,8 +1,9 @@
+import { isObject } from 'util';
+
 import { UpLinks } from '@verdaccio/types';
 import isString from 'lodash/isString';
 import format from 'date-fns/format';
 import distanceInWordsToNow from 'date-fns/distance_in_words_to_now';
-import { isObject } from 'util';
 
 export const TIMEFORMAT = 'DD.MM.YYYY, HH:mm:ss';
 

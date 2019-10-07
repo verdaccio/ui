@@ -1,17 +1,15 @@
 /* eslint react/jsx-max-depth: 0 */
 
-import React, { Component, Fragment, ReactElement } from 'react';
 import List from '@material-ui/core/List';
-
-import { DetailContextConsumer } from '../../pages/Version';
-import CopyToClipBoard from '../CopyToClipBoard';
-
-import { Heading, GithubLink, RepositoryListItem, RepositoryListItemText } from './styles';
-
-import git from './img/git.png';
-import { isURL } from '../../utils/url';
+import React, { Component, Fragment, ReactElement } from 'react';
 
 import Avatar from '../../muiComponents/Avatar';
+import { DetailContextConsumer } from '../../pages/Version';
+import { isURL } from '../../utils/url';
+import CopyToClipBoard from '../CopyToClipBoard';
+
+import git from './img/git.png';
+import { GithubLink, Heading, RepositoryListItem, RepositoryListItemText } from './styles';
 
 class Repository extends Component {
   public render(): ReactElement<HTMLElement> {

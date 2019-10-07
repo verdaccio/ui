@@ -1,4 +1,5 @@
 import { css } from 'emotion';
+
 import { fontWeight, fontSize } from '../../utils/styles/sizes';
 
 export const listTitle = css({

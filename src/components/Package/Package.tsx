@@ -1,15 +1,16 @@
 import React from 'react';
-
 import BugReport from '@material-ui/icons/BugReport';
 import Grid from '@material-ui/core/Grid';
 import HomeIcon from '@material-ui/icons/Home';
 import ListItem from '@material-ui/core/ListItem';
-
 import { PackageMetaInterface, Author as PackageAuthor } from 'types/packageMeta';
+
 import Tag from '../Tag';
 import fileSizeSI from '../../utils/file-size';
 import { formatDate, formatDateDistance } from '../../utils/package';
 import Tooltip from '../../muiComponents/Tooltip';
+import { isURL } from '../../utils/url';
+
 import {
   Author,
   Avatar,
@@ -27,7 +28,6 @@ import {
   Text,
   WrapperLink,
 } from './styles';
-import { isURL } from '../../utils/url';
 
 interface Bugs {
   url: string;

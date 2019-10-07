@@ -1,6 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
 import { shallow } from 'enzyme';
+
 import NotFound from './NotFound';
 
 console.error = jest.fn();

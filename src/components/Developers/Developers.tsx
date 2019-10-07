@@ -3,6 +3,7 @@ import Add from '@material-ui/icons/Add';
 
 import { DetailContext } from '../../pages/Version';
 import { AvatarTooltip } from '../AvatarTooltip';
+
 import { Details, Heading, Content, Fab } from './styles';
 
 export type DevelopersType = 'contributors' | 'maintainers';

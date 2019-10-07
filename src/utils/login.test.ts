@@ -1,11 +1,12 @@
-import { isTokenExpire, makeLogin } from './login';
-
 import {
   generateTokenWithTimeRange,
   generateTokenWithExpirationAsString,
   generateTokenWithOutExpiration,
   generateInvalidToken,
 } from '../../jest/unit/components/__mocks__/token';
+
+import { isTokenExpire, makeLogin } from './login';
+
 /* eslint-disable no-console */
 console.error = jest.fn();
 

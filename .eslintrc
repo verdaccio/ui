@@ -5,7 +5,8 @@
     "plugin:jest/recommended",
     "plugin:prettier/recommended",
     "plugin:verdaccio/recommended",
-    "plugin:jsx-a11y/recommended"
+    "plugin:jsx-a11y/recommended",
+    "plugin:import/typescript"
   ],
   "plugins": [
     "react",
@@ -14,7 +15,8 @@
     "verdaccio",
     "jsx-a11y",
     "codeceptjs",
-    "react-hooks"
+    "react-hooks",
+    "import"
   ],
   "settings": {
     "react": {
@@ -28,6 +30,7 @@
     }
   },
   "rules": {
+    "import/order": ["error", {"newlines-between": "always"}],
     "babel/no-invalid-this": 0,
     "no-invalid-this": 0,
     "no-console": ["error", { "allow": ["warn", "error"] }],

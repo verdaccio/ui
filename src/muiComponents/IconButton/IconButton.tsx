@@ -3,8 +3,6 @@ import { default as MaterialUIIconButton, IconButtonProps } from '@material-ui/c
 
 type IconButtonRef = HTMLElementTagNameMap['button'];
 
-/* eslint-disable verdaccio/jsx-spread */
-// eslint-disable-next-line react/display-name
 const IconButton = forwardRef<IconButtonRef, IconButtonProps>(function IconButton(props, ref) {
   return <MaterialUIIconButton {...props} ref={ref} />;
 });

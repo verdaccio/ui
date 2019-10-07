@@ -3,9 +3,9 @@ import { withRouter, RouteComponentProps } from 'react-router-dom';
 import CardContent from '@material-ui/core/CardContent';
 
 import { DetailContextConsumer, VersionPageConsumerProps } from '../../pages/Version';
+import NoItems from '../NoItems';
 
 import { CardWrap, Heading, Tags, Tag } from './styles';
-import NoItems from '../NoItems';
 
 type DepDetailProps = {
   name: string;
