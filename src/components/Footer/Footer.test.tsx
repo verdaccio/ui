@@ -10,10 +10,8 @@ jest.mock('../../../package.json', () => ({
 describe('<Footer /> component', () => {
   let wrapper;
   beforeEach(() => {
-    // @ts-ignore : Property 'VERDACCIO_VERSION' does not exist on type 'Window'
     window.VERDACCIO_VERSION = 'v.1.0.0';
     wrapper = mount(<Footer />);
-    // @ts-ignore : Property 'VERDACCIO_VERSION' does not exist on type 'Window'
     delete window.VERDACCIO_VERSION;
   });
 

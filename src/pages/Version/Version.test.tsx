@@ -10,7 +10,7 @@ import { waitForElement } from '@testing-library/dom';
 import ErrorBoundary from '../../App/AppError';
 
 // :-) we mock this otherways fails on render, some weird issue on material-ui
-jest.mock('@material-ui/core/Avatar');
+jest.mock('../../muiComponents/Avatar');
 
 // eslint-disable-next-line react/display-name
 jest.mock('../../components/NotFound', () => () => <div>{'Not found'}</div>);

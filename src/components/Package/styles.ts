@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom';
 import Grid from '@material-ui/core/Grid';
 import List from '@material-ui/core/List';
 import ListItemText from '@material-ui/core/ListItemText';
-import Photo from '@material-ui/core/Avatar';
 import Typography from '@material-ui/core/Typography';
 
 import { breakpoints } from '../../utils/styles/media';
@@ -13,6 +12,7 @@ import Label from '../Label';
 import colors from '../../utils/styles/colors';
 import { fontWeight } from '../../utils/styles/sizes';
 import { default as MuiIconButton } from '../../muiComponents/IconButton';
+import { default as Photo } from '../../muiComponents/Avatar';
 
 export const OverviewItem = styled('span')`
   && {
@@ -48,7 +48,6 @@ export const Published = styled('span')({
   },
 });
 
-// @ts-ignore
 export const Text = styled(Label)({
   '&&': {
     fontSize: '12px',
