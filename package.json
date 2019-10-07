@@ -27,7 +27,7 @@
     "@types/node": "12.7.8",
     "@types/react": "16.9.2",
     "@types/react-dom": "16.9.0",
-    "@types/react-router-dom": "4.3.5",
+    "@types/react-router-dom": "5.1.0",
     "@types/validator": "10.11.3",
     "@typescript-eslint/parser": "2.3.2",
     "@verdaccio/babel-preset": "2.0.0",
@@ -87,8 +87,6 @@
     "react-dom": "16.10.0",
     "react-emotion": "9.2.12",
     "react-hot-loader": "4.12.11",
-    "react-router": "5.0.1",
-    "react-router-dom": "5.0.1",
     "resolve-url-loader": "3.1.0",
     "rimraf": "3.0.0",
     "source-map-loader": "0.2.4",
@@ -208,5 +206,8 @@
     "type": "opencollective",
     "url": "https://opencollective.com/verdaccio",
     "logo": "https://opencollective.com/verdaccio/logo.txt"
+  },
+  "dependencies": {
+    "react-router-dom": "5.1.2"
   }
 }
