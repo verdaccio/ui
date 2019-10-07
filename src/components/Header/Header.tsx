@@ -184,7 +184,6 @@ class Header extends Component<Props, State> {
     switch (type) {
       case 'help':
         content = (
-          // @ts-ignore
           <StyledExternalLink blank={true} to={'https://verdaccio.org/docs/en/installation'}>
             <IconButton color={'inherit'}>
               <Help />

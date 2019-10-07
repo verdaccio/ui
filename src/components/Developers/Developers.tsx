@@ -18,7 +18,7 @@ const Developers: FC<Props> = ({ type, visibleMax }) => {
   const [visibleDevs, setVisibleDevs] = React.useState<number>(visibleMax || VISIBLE_MAX);
   const { packageMeta } = React.useContext(DetailContext);
 
-  const handleLoadMore = () => {
+  const handleLoadMore = (): void => {
     setVisibleDevs(visibleDevs + VISIBLE_MAX);
   };
 
