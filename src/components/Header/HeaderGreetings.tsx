@@ -1,7 +1,8 @@
 import React from 'react';
 
-import { Greetings } from './styles';
 import Label from '../Label';
+
+import { Greetings } from './styles';
 
 interface Props {
   username: string;
