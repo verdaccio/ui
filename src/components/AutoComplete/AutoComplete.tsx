@@ -28,6 +28,8 @@ interface Props {
   onBlur?: (event: KeyboardEvent<HTMLInputElement>) => void;
 }
 
+/* eslint-disable react/jsx-sort-props  */
+/* eslint-disable verdaccio/jsx-spread */
 const renderInputComponent = (inputProps): JSX.Element => {
   const { ref, startAdornment, disableUnderline, onKeyDown, ...others } = inputProps;
   return (
