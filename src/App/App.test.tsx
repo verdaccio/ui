@@ -1,9 +1,10 @@
 import React from 'react';
 import { mount } from 'enzyme';
-import storage from '../utils/storage';
-import App from './App';
 
+import storage from '../utils/storage';
 import { generateTokenWithTimeRange } from '../../jest/unit/components/__mocks__/token';
+
+import App from './App';
 
 jest.mock('../utils/storage', () => {
   class LocalStorageMock {

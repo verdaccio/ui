@@ -1,7 +1,6 @@
 import React, { FC } from 'react';
 
 import { isEmail } from '../../utils/url';
-
 import Tooltip from '../../muiComponents/Tooltip';
 import Avatar from '../../muiComponents/Avatar';
 

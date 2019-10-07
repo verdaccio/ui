@@ -3,8 +3,8 @@
 import React, { Component, ReactElement } from 'react';
 import { Router, Route, Switch } from 'react-router-dom';
 import { createBrowserHistory } from 'history';
-import { AppContextConsumer, AppStateInterface } from './App/App';
 
+import { AppContextConsumer, AppStateInterface } from './App/App';
 import Header from './components/Header';
 
 const history = createBrowserHistory({

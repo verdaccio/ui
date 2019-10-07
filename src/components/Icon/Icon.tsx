@@ -3,7 +3,6 @@ import capitalize from 'lodash/capitalize';
 import { Breakpoint } from '@material-ui/core/styles/createBreakpoints';
 
 import { Svg, Img, ImgWrapper } from './styles';
-
 import brazil from './img/brazil.svg';
 import china from './img/china.svg';
 import india from './img/india.svg';

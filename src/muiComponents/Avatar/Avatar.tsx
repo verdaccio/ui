@@ -4,8 +4,6 @@ import { default as MaterialUIAvatar, AvatarProps } from '@material-ui/core/Avat
 // The default element type of MUI's Avatar is 'div' and we don't allow the change of this prop
 type AvatarRef = HTMLElementTagNameMap['div'];
 
-/* eslint-disable verdaccio/jsx-spread */
-// eslint-disable-next-line react/display-name
 const Avatar = forwardRef<AvatarRef, AvatarProps>(function Avatar(props, ref) {
   return <MaterialUIAvatar {...props} ref={ref} />;
 });

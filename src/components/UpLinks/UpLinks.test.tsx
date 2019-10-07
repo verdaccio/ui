@@ -2,6 +2,7 @@ import React from 'react';
 import { shallow, mount } from 'enzyme';
 
 import { DetailContext } from '../../pages/Version';
+
 import UpLinks from './UpLinks';
 
 describe('<UpLinks /> component', () => {

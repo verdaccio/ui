@@ -1,10 +1,11 @@
 import React from 'react';
 import Dialog from '@material-ui/core/Dialog';
 import DialogActions from '@material-ui/core/DialogActions';
-import { Title, Content } from './styles';
 
-import { Props } from './types';
 import Button from '../../muiComponents/Button';
+
+import { Title, Content } from './styles';
+import { Props } from './types';
 
 const LABEL = 'CLOSE';
 

@@ -1,5 +1,6 @@
 import React, { FC, ReactElement } from 'react';
 import Grid from '@material-ui/core/Grid';
+
 import DetailContainer from '../../components/DetailContainer';
 import DetailSidebar from '../../components/DetailSidebar';
 

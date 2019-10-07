@@ -1,6 +1,7 @@
 import styled from 'react-emotion';
 import Typography from '@material-ui/core/Typography';
 import { default as MuiListItemText } from '@material-ui/core/ListItemText';
+
 import { fontWeight } from '../../utils/styles/sizes';
 
 export const Heading = styled(Typography)({

@@ -1,5 +1,4 @@
 import React, { Fragment, ReactElement } from 'react';
-
 import Divider from '@material-ui/core/Divider';
 
 import Package from '../Package';

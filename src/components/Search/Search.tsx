@@ -1,7 +1,6 @@
 import React, { KeyboardEvent, Component, ReactElement } from 'react';
 import { withRouter, RouteComponentProps } from 'react-router-dom';
 import { css } from 'emotion';
-
 import { default as IconSearch } from '@material-ui/icons/Search';
 import InputAdornment from '@material-ui/core/InputAdornment';
 import debounce from 'lodash/debounce';

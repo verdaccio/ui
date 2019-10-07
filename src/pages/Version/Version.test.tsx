@@ -1,13 +1,12 @@
 import React from 'react';
 import { render, cleanup } from '@testing-library/react';
-
 import { MemoryRouter } from 'react-router';
+import { waitForElement } from '@testing-library/dom';
 
 import vueMetadata from '../../../test/fixtures/metadata/vue.json';
+import ErrorBoundary from '../../App/AppError';
 
 import Version from './Version';
-import { waitForElement } from '@testing-library/dom';
-import ErrorBoundary from '../../App/AppError';
 
 // :-) we mock this otherways fails on render, some weird issue on material-ui
 jest.mock('../../muiComponents/Avatar');

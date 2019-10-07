@@ -1,17 +1,15 @@
 import React, { Component, ReactElement } from 'react';
-
 import Grid from '@material-ui/core/Grid';
 import List from '@material-ui/core/List';
 import ListItemText from '@material-ui/core/ListItemText';
 
 import { VersionPageConsumerProps, DetailContextConsumer } from '../../pages/Version';
-import { Heading, EngineListItem } from './styles';
-
 import Avatar from '../../muiComponents/Avatar';
+import npm from '../Install/img/npm.svg';
 
+import { Heading, EngineListItem } from './styles';
 // @ts-ignore
 import node from './img/node.png';
-import npm from '../Install/img/npm.svg';
 
 const ICONS = {
   'node-JS': <Avatar src={node} />,
