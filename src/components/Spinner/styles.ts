@@ -3,13 +3,16 @@ import styled, { css } from 'react-emotion';
 
 import colors from '../../utils/styles/colors';
 
+interface WrapperProps {
+  centered: boolean;
+}
+
 export const Wrapper = styled('div')`
   && {
     display: flex;
     align-items: center;
     justify-content: center;
-    ${props =>
-      // @ts-ignore
+    ${(props: WrapperProps) =>
       props.centered &&
       css`
         position: absolute;

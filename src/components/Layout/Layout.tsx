@@ -11,15 +11,18 @@ export const Content = styled('div')({
   },
 });
 
+interface ContainerProps {
+  isLoading: boolean;
+}
+
 export const Container = styled('div')`
   && {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
     overflow: hidden;
-    ${props =>
-      // @ts-ignore
-      props.isLoading &&
+    ${({ isLoading }: ContainerProps) =>
+      isLoading &&
       css`
         ${Content} {
           background-color: #f5f6f8;

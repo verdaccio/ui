@@ -48,7 +48,6 @@ export const Published = styled('span')({
   },
 });
 
-// @ts-ignore
 export const Text = styled(Label)({
   '&&': {
     fontSize: '12px',

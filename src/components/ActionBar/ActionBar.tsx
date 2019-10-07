@@ -70,7 +70,6 @@ class ActionBar extends Component {
   }
 
   private renderActionBar = ({ packageMeta }) => {
-    // @ts-ignore
     const { latest } = packageMeta;
 
     if (!latest) {
@@ -107,7 +106,6 @@ class ActionBar extends Component {
         } else {
           const fab = <Fab size={'small'}>{actionItem['icon']}</Fab>;
           component.push(
-            // @ts-ignore
             <Tooltip key={key} title={actionItem['title']}>
               <>{this.renderIconsWithLink(link, fab)}</>
             </Tooltip>
