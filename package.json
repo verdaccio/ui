@@ -85,6 +85,7 @@
     "react": "16.10.0",
     "react-autosuggest": "9.4.3",
     "react-dom": "16.10.0",
+    "react-router-dom": "5.1.2",
     "react-emotion": "9.2.12",
     "react-hot-loader": "4.12.11",
     "resolve-url-loader": "3.1.0",
@@ -206,8 +207,5 @@
     "type": "opencollective",
     "url": "https://opencollective.com/verdaccio",
     "logo": "https://opencollective.com/verdaccio/logo.txt"
-  },
-  "dependencies": {
-    "react-router-dom": "5.1.2"
   }
 }

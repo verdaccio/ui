@@ -3,6 +3,7 @@ import { render } from '@testing-library/react';
 import { HashRouter } from 'react-router-dom';
 
 import { DetailContextProvider } from '../../pages/Version';
+
 import Dependencies from './Dependencies';
 
 describe('<Dependencies /> component', () => {
