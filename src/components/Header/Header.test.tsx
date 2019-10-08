@@ -1,125 +1,138 @@
 import React from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
-import { shallow } from 'enzyme';
+import { render, fireEvent, waitForElementToBeRemoved, waitForElement } from '@testing-library/react';
 
 import Header from './Header';
 
-describe('<Header /> component with logged in state', () => {
-  let wrapper;
-  let routerWrapper;
-  let instance;
-  let props;
+const headerProps = {
+  username: 'verddacio-user',
+  scope: 'test scope',
+  withoutSearch: true,
+  handleToggleLoginModal: jest.fn(),
+  handleLogout: jest.fn(),
+};
 
-  beforeEach(() => {
-    props = {
-      username: 'test user',
-      handleLogout: jest.fn(),
-      logo: '',
-      onToggleLoginModal: jest.fn(),
-      scope: 'test scope',
-      withoutSearch: true,
-    };
-    routerWrapper = shallow(
+/* eslint-disable react/jsx-no-bind*/
+describe('<Header /> component with logged in state', () => {
+  test('should load the component in logged out state', () => {
+    const { container, queryByTestId, getByText } = render(
       <Router>
-        <Header
-          logo={props.logo}
-          onLogout={props.handleLogout}
-          onToggleLoginModal={props.onToggleLoginModal}
-          scope={props.scope}
-          username={props.username}
-          withoutSearch={props.withoutSearch}
-        />
+        <Header onLogout={headerProps.handleLogout} onToggleLoginModal={headerProps.handleToggleLoginModal} scope={headerProps.scope} />
       </Router>
     );
-    wrapper = routerWrapper.find(Header).dive();
-    instance = wrapper.instance();
+
+    expect(container.firstChild).toMatchSnapshot();
+    expect(queryByTestId('header--menu-acountcircle')).toBeNull();
+    expect(getByText('Login')).toBeTruthy();
   });
 
   test('should load the component in logged in state', () => {
-    const state = {
-      openInfoDialog: false,
-      packages: undefined,
-      registryUrl: 'http://localhost',
-      showMobileNavBar: false,
-    };
-
-    expect(wrapper.state()).toEqual(state);
-    expect(routerWrapper.html()).toMatchSnapshot();
-  });
-
-  test('handleLoggedInMenu: set anchorEl to html element value in state', () => {
-    // creates a sample menu
-    const div = document.createElement('div');
-    const text = document.createTextNode('sample menu');
-    div.appendChild(text);
-
-    const event = {
-      currentTarget: div,
-    };
-
-    instance.handleLoggedInMenu(event);
-    expect(wrapper.state('anchorEl')).toEqual(div);
-  });
-});
-
-describe('<Header /> component with logged out state', () => {
-  let wrapper;
-  let routerWrapper;
-  let instance;
-  let props;
-
-  beforeEach(() => {
-    props = {
-      handleLogout: jest.fn(),
-      onToggleLoginModal: jest.fn(),
-      scope: 'test scope',
-      logo: '',
-      withoutSearch: true,
-    };
-    routerWrapper = shallow(
+    const { container, getByTestId, queryByText } = render(
       <Router>
         <Header
-          logo={props.logo}
-          onLogout={props.handleLogout}
-          onToggleLoginModal={props.onToggleLoginModal}
-          scope={props.scope}
-          withoutSearch={props.withoutSearch}
+          onLogout={headerProps.handleLogout}
+          onToggleLoginModal={headerProps.handleToggleLoginModal}
+          scope={headerProps.scope}
+          username={headerProps.username}
         />
       </Router>
     );
-    wrapper = routerWrapper.find(Header).dive();
-    instance = wrapper.instance();
+
+    expect(container.firstChild).toMatchSnapshot();
+    expect(getByTestId('header--menu-acountcircle')).toBeTruthy();
+    expect(queryByText('Login')).toBeNull();
   });
 
-  test('should load the component in logged out state', () => {
-    const state = {
-      openInfoDialog: false,
-      packages: undefined,
-      registryUrl: 'http://localhost',
-      showMobileNavBar: false,
-    };
-    expect(wrapper.state()).toEqual(state);
-    expect(routerWrapper.html()).toMatchSnapshot();
+  test('should open login dialog', async () => {
+    const { getByText } = render(
+      <Router>
+        <Header onLogout={headerProps.handleLogout} onToggleLoginModal={headerProps.handleToggleLoginModal} scope={headerProps.scope} />
+      </Router>
+    );
+
+    const loginBtn = getByText('Login');
+    fireEvent.click(loginBtn);
+    expect(headerProps.handleToggleLoginModal).toHaveBeenCalled();
   });
 
-  test('handleLoggedInMenuClose: set anchorEl value to null in state', () => {
-    instance.handleLoggedInMenuClose();
-    expect(wrapper.state('anchorEl')).toBeNull();
+  test('should logout the user', async () => {
+    const { getByText, getByTestId } = render(
+      <Router>
+        <Header
+          onLogout={headerProps.handleLogout}
+          onToggleLoginModal={headerProps.handleToggleLoginModal}
+          scope={headerProps.scope}
+          username={headerProps.username}
+        />
+      </Router>
+    );
+
+    const headerMenuAccountCircle = getByTestId('header--menu-acountcircle');
+    fireEvent.click(headerMenuAccountCircle);
+
+    // wait for button Logout's appearance and return the element
+    const logoutBtn = await waitForElement(() => getByText('Logout'));
+    fireEvent.click(logoutBtn);
+    expect(headerProps.handleLogout).toHaveBeenCalled();
   });
 
-  test('handleOpenRegistryInfoDialog: set openInfoDialog to be truthy in state', () => {
-    instance.handleOpenRegistryInfoDialog();
-    expect(wrapper.state('openInfoDialog')).toBeTruthy();
+  test("The question icon should open a new tab of verdaccio's website - installation doc", async () => {
+    const { getByTestId } = render(
+      <Router>
+        <Header
+          onLogout={headerProps.handleLogout}
+          onToggleLoginModal={headerProps.handleToggleLoginModal}
+          scope={headerProps.scope}
+          username={headerProps.username}
+        />
+      </Router>
+    );
+
+    const documentationBtn = getByTestId('header--tooltip-documentation');
+    expect(documentationBtn.getAttribute('href')).toBe('https://verdaccio.org/docs/en/installation');
   });
 
-  test('handleCloseRegistryInfoDialog: set openInfoDialog to be falsy in state', () => {
-    instance.handleCloseRegistryInfoDialog();
-    expect(wrapper.state('openInfoDialog')).toBeFalsy();
+  test('should open the registrationInfo modal when clicking on the info icon', async () => {
+    const { getByTestId } = render(
+      <Router>
+        <Header
+          onLogout={headerProps.handleLogout}
+          onToggleLoginModal={headerProps.handleToggleLoginModal}
+          scope={headerProps.scope}
+          username={headerProps.username}
+        />
+      </Router>
+    );
+
+    const infoBtn = getByTestId('header--tooltip-info');
+    fireEvent.click(infoBtn);
+
+    // wait for registrationInfo modal appearance and return the element
+    const registrationInfoModal = await waitForElement(() => getByTestId('registryInfo--dialog'));
+    expect(registrationInfoModal).toBeTruthy();
   });
 
-  test('handleToggleLogin: close/open popover menu', () => {
-    instance.handleToggleLogin();
-    expect(wrapper.state('anchorEl')).toBeNull();
-    expect(props.onToggleLoginModal).toHaveBeenCalled();
+  test('should close the registrationInfo modal when clicking on the button close', async () => {
+    const { getByTestId, getByText, queryByTestId } = render(
+      <Router>
+        <Header
+          onLogout={headerProps.handleLogout}
+          onToggleLoginModal={headerProps.handleToggleLoginModal}
+          scope={headerProps.scope}
+          username={headerProps.username}
+        />
+      </Router>
+    );
+
+    const infoBtn = getByTestId('header--tooltip-info');
+    fireEvent.click(infoBtn);
+
+    // wait for Close's button of registrationInfo modal appearance and return the element
+    const closeBtn = await waitForElement(() => getByText('CLOSE'));
+    fireEvent.click(closeBtn);
+
+    const hasRegistrationInfoModalBeenRemoved = await waitForElementToBeRemoved(() => queryByTestId('registryInfo--dialog'));
+    expect(hasRegistrationInfoModalBeenRemoved).toBeTruthy();
   });
+  test.todo('autocompletion should display suggestions according to the type value');
 });
