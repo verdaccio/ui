@@ -28,7 +28,7 @@ export interface AppStateInterface {
   scope: string;
   showLoginModal: boolean;
   isUserLoggedIn: boolean;
-  packages: any[];
+  packages: [];
   isLoading: boolean;
 }
 export default class App extends Component<{}, AppStateInterface> {
@@ -85,6 +85,7 @@ export default class App extends Component<{}, AppStateInterface> {
   public loadOnHandler = async () => {
     try {
       const packages = await API.request<any[]>('packages', 'GET');
+      // @ts-ignore: FIX THIS TYPE:  Type 'any[]' is not assignable to type '[]'
       this.setState({
         packages,
         isLoading: false,

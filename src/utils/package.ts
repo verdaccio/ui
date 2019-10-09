@@ -57,10 +57,6 @@ export function formatDateDistance(lastUpdate): string {
   return distanceInWordsToNow(new Date(lastUpdate));
 }
 
-export function buildScopePackage(scope: string, packageName: string): string {
-  return `@${scope}/${packageName}`;
-}
-
 /**
  * For <LastSync /> component
  * @param {array} uplinks
