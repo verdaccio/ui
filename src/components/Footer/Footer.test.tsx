@@ -1,5 +1,5 @@
 import React from 'react';
-import { mount } from 'enzyme';
+import { mount, ReactWrapper } from 'enzyme';
 
 import Footer from './Footer';
 
@@ -8,7 +8,7 @@ jest.mock('../../../package.json', () => ({
 }));
 
 describe('<Footer /> component', () => {
-  let wrapper;
+  let wrapper: ReactWrapper;
   beforeEach(() => {
     window.VERDACCIO_VERSION = 'v.1.0.0';
     wrapper = mount(<Footer />);

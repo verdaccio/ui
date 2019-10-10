@@ -14,7 +14,7 @@ export interface AvatarDeveloper {
 
 const AvatarTooltip: FC<AvatarDeveloper> = ({ name, packageName, version, avatar, email }) => {
   const avatarComponent = <Avatar aria-label={name} src={avatar} />;
-  function renderLinkForMail(email, avatarComponent, packageName, version): JSX.Element {
+  function renderLinkForMail(email: string, avatarComponent: JSX.Element, packageName: string, version: string): JSX.Element {
     if (!email || isEmail(email) === false) {
       return avatarComponent;
     }

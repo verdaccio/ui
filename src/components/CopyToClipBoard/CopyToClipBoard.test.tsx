@@ -1,11 +1,11 @@
 import React from 'react';
-import { mount } from 'enzyme';
+import { mount, ReactWrapper } from 'enzyme';
 
 import CopyToClipBoard from './CopyToClipBoard';
 import { CopyIcon } from './styles';
 
 describe('<CopyToClipBoard /> component', () => {
-  let wrapper;
+  let wrapper: ReactWrapper;
 
   beforeEach(() => {
     wrapper = mount(<CopyToClipBoard text={'copy text'} />);
