@@ -12,5 +12,6 @@ declare global {
     VERDACCIO_SCOPE: string;
     VERDACCIO_VERSION: string;
     VERDACCIO_API_URL: string;
+    VERDACCIO_MODE: 'full' | 'slim';
   }
 }

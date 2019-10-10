@@ -48,6 +48,7 @@ const prodConf = {
       basename: 'ToReplaceByPrefix',
       logo: 'ToReplaceByLogo',
       primary_color: 'ToReplaceByPrimaryColor',
+      mode: 'ToReplaceByMode',
       filename: 'index.html',
       favicon: `${env.SRC_ROOT}/template/favicon.ico`,
       verdaccioURL: 'ToReplaceByVerdaccio',

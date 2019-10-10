@@ -1,5 +1,6 @@
 web:
   title: Verdaccio Local Dev
+  mode: slim
   sort_packages: asc
   primary_color: #CCC
 
@@ -10,10 +11,11 @@ auth:
     users:
       foo:
         name: test
-        password: test
+        password: test  # pragma: allowlist secret
       bar:
         name: bar
-        password: test
+        password: test  # pragma: allowlist secret
+
 security:
   api:
     jwt:
