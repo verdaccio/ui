@@ -19,7 +19,7 @@ export function getRouterPackageName(params): string {
   return packageName;
 }
 
-function fillTitle(text): string {
+function fillTitle(text: string): string {
   return `Verdaccio - ${text}`;
 }
 

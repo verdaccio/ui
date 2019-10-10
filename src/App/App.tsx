@@ -48,7 +48,7 @@ export default class App extends Component<{}, AppStateInterface> {
   }
 
   // eslint-disable-next-line no-unused-vars
-  public componentDidUpdate(_, prevState): void {
+  public componentDidUpdate(_: AppStateInterface, prevState: AppStateInterface): void {
     const { isUserLoggedIn } = this.state;
     if (prevState.isUserLoggedIn !== isUserLoggedIn) {
       this.loadOnHandler();
@@ -99,7 +99,7 @@ export default class App extends Component<{}, AppStateInterface> {
     }
   };
 
-  public setLoading = isLoading =>
+  public setLoading = (isLoading: boolean) =>
     this.setState({
       isLoading,
     });
@@ -118,7 +118,7 @@ export default class App extends Component<{}, AppStateInterface> {
    * handles login
    * Required by: <Header />
    */
-  public handleDoLogin = async (usernameValue, passwordValue) => {
+  public handleDoLogin = async (usernameValue: string, passwordValue: string) => {
     const { username, token, error } = await makeLogin(usernameValue, passwordValue);
 
     if (username && token) {
@@ -135,7 +135,7 @@ export default class App extends Component<{}, AppStateInterface> {
     }
   };
 
-  public setLoggedUser = username => {
+  public setLoggedUser = (username: string) => {
     this.setState({
       user: {
         username,

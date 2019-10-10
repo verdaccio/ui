@@ -58,7 +58,7 @@ class Engine extends Component {
     return <Grid container={true}>{items}</Grid>;
   };
 
-  private renderListItems = (heading, text) => {
+  private renderListItems = (heading: string, text: string) => {
     return (
       <List subheader={<Heading variant={'subtitle1'}>{text.split('-').join(' ')}</Heading>}>
         <EngineListItem button={true}>
