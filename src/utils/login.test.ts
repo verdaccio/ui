@@ -15,6 +15,10 @@ jest.mock('./api', () => ({
 }));
 
 describe('isTokenExpire', (): void => {
+  test('isTokenExpire - null is not a valid payload', (): void => {
+    expect(isTokenExpire(null)).toBeTruthy();
+  });
+
   test('isTokenExpire - token is not a valid payload', (): void => {
     expect(isTokenExpire('not_a_valid_token')).toBeTruthy();
   });
