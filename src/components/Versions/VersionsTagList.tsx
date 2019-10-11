@@ -1,8 +1,8 @@
 import React from 'react';
-import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 
 import { DistTags } from '../../../types/packageMeta';
+import List from '../../muiComponents/List';
 
 import { Spacer, ListItemText } from './styles';
 

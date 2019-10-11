@@ -1,9 +1,9 @@
 import React, { FC, useContext } from 'react';
-import List from '@material-ui/core/List';
 
 import { DetailContext } from '../../pages/Version';
 import fileSizeSI from '../../utils/file-size';
 import { formatLicense } from '../../utils/package';
+import List from '../../muiComponents/List';
 
 import { Heading, DistListItem, DistChips } from './styles';
 

@@ -5,7 +5,7 @@ import React, { useCallback } from 'react';
 import { RouteComponentProps, withRouter } from 'react-router-dom';
 
 import PackageImg from './img/package.svg';
-import { Card, EmptyPackage, Heading, Inner, List, Wrapper } from './styles';
+import { Card, EmptyPackage, Heading, Inner, StyledList, Wrapper } from './styles';
 
 export const NOT_FOUND_TEXT = `Sorry, we couldn't find it...`;
 export const LABEL_NOT_FOUND = `The page you're looking for doesn't exist.`;
@@ -28,11 +28,11 @@ const NotFound: React.FC<NotFoundProps> = ({ history, width }) => {
   }, [history]);
 
   const renderList = (): JSX.Element => (
-    <List>
+    <StyledList>
       <ListItem button={true} divider={true} onClick={handleGomHome}>
         {HOME_LABEL}
       </ListItem>
-    </List>
+    </StyledList>
   );
 
   /* eslint-disable @typescript-eslint/no-non-null-assertion */

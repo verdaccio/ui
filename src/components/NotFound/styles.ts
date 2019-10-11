@@ -1,7 +1,8 @@
 import { default as MuiCard } from '@material-ui/core/Card';
-import { default as MuiList } from '@material-ui/core/List';
 import Typography from '@material-ui/core/Typography';
 import styled from 'react-emotion';
+
+import List from '../../muiComponents/List';
 
 export const Wrapper = styled('div')({
   display: 'flex',
@@ -29,11 +30,9 @@ export const Heading = styled(Typography)({
   },
 });
 
-export const List = styled(MuiList)({
-  '&&': {
-    padding: 0,
-    color: '#4b5e40',
-  },
+export const StyledList = styled(List)({
+  padding: 0,
+  color: '#4b5e40',
 });
 
 export const Card = styled(MuiCard)({

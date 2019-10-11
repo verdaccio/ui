@@ -1,10 +1,10 @@
 import React, { useContext } from 'react';
 import styled from 'react-emotion';
 import Typography from '@material-ui/core/Typography';
-import List from '@material-ui/core/List';
 
 import { DetailContext } from '../../pages/Version';
 import { fontWeight } from '../../utils/styles/sizes';
+import List from '../../muiComponents/List';
 
 import InstallListItem, { DependencyManager } from './InstallListItem';
 

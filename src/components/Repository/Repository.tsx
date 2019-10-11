@@ -1,12 +1,12 @@
 /* eslint react/jsx-max-depth: 0 */
 
-import List from '@material-ui/core/List';
 import React, { Component, Fragment, ReactElement } from 'react';
 
 import Avatar from '../../muiComponents/Avatar';
 import { DetailContextConsumer } from '../../pages/Version';
 import { isURL } from '../../utils/url';
 import CopyToClipBoard from '../CopyToClipBoard';
+import List from '../../muiComponents/List';
 
 import git from './img/git.png';
 import { GithubLink, Heading, RepositoryListItem, RepositoryListItemText } from './styles';
