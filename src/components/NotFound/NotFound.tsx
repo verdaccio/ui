@@ -1,8 +1,9 @@
-import ListItem from '@material-ui/core/ListItem';
 import Typography from '@material-ui/core/Typography';
 import withWidth, { isWidthUp, WithWidthProps } from '@material-ui/core/withWidth';
 import React, { useCallback } from 'react';
 import { RouteComponentProps, withRouter } from 'react-router-dom';
+
+import ListItem from '../../muiComponents/ListItem';
 
 import PackageImg from './img/package.svg';
 import { Card, EmptyPackage, Heading, Inner, List, Wrapper } from './styles';
