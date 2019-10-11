@@ -48,3 +48,7 @@ export interface Author {
   url?: string;
   avatar?: string;
 }
+
+export interface PackageDependencies {
+  [key: string]: string;
+}
