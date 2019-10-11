@@ -5,11 +5,14 @@ import React, { useCallback } from 'react';
 import { useHistory } from 'react-router-dom';
 
 import Button from '../../muiComponents/Button';
+import colors from '../../utils/styles/colors';
+import { spacings } from '../../utils/styles/spacings';
 
 import PackageImg from './img/package.svg';
 
 export const NOT_FOUND_TEXT = "Sorry, we couldn't find it...";
 export const LABEL_NOT_FOUND = "The page you're looking for doesn't exist.";
+export const GO_TO_HOME_PAGE = 'Go to the home page';
 
 const EmptyPackage = styled('img')({
   width: '150px',
@@ -17,8 +20,8 @@ const EmptyPackage = styled('img')({
 });
 
 const StyledHeading = styled(Typography)({
-  color: '#4b5e40',
-  marginBottom: 16,
+  color: colors.primary,
+  marginBottom: spacings.sm,
 });
 
 const NotFound: React.FC = () => {
@@ -35,7 +38,7 @@ const NotFound: React.FC = () => {
         {NOT_FOUND_TEXT}
       </StyledHeading>
       <Button onClick={handleGomHome} variant="contained">
-        {'Go to the home page'}
+        {GO_TO_HOME_PAGE}
       </Button>
     </Box>
   );

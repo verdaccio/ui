@@ -13,4 +13,5 @@ describe('<NotFound /> component', () => {
     );
     expect(container.firstChild).toMatchSnapshot();
   });
+  test.todo('Test Button Click');
 });
