@@ -1,7 +1,7 @@
 import React, { forwardRef } from 'react';
 import { default as MaterialUICircularProgress, CircularProgressProps } from '@material-ui/core/CircularProgress';
 
-type CircularProgressRef = HTMLElementTagNameMap['div'];
+type CircularProgressRef = HTMLDivElement;
 
 const CircularProgress = forwardRef<CircularProgressRef, CircularProgressProps>(function IconButton(props, ref) {
   return <MaterialUICircularProgress {...props} ref={ref} />;
