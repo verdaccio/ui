@@ -9,7 +9,7 @@ interface Props extends Omit<TypographyProps, 'variant'> {
 }
 
 // The reference is already from type of the Component, so the any below is not a problem
-const Text = forwardRef<TextRef, Props>(function Heading(props, ref) {
+const Text = forwardRef<TextRef, Props>(function Text(props, ref) {
   return <MaterialUITypography {...props} ref={ref} />;
 });
 
