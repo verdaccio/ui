@@ -3,7 +3,7 @@ import { default as MaterialUICircularProgress, CircularProgressProps } from '@m
 
 type CircularProgressRef = HTMLDivElement;
 
-const CircularProgress = forwardRef<CircularProgressRef, CircularProgressProps>(function IconButton(props, ref) {
+const CircularProgress = forwardRef<CircularProgressRef, CircularProgressProps>(function CircularProgress(props, ref) {
   return <MaterialUICircularProgress {...props} ref={ref} />;
 });
 
