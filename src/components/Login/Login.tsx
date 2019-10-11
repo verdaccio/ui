@@ -151,7 +151,7 @@ export default class LoginModal extends Component<Partial<LoginModalProps>, Logi
     });
   };
 
-  public renderErrorMessage(title, description): JSX.Element {
+  public renderErrorMessage(title: string, description: string): JSX.Element {
     return (
       <span>
         <div>
@@ -162,7 +162,7 @@ export default class LoginModal extends Component<Partial<LoginModalProps>, Logi
     );
   }
 
-  public renderMessage(title, description): JSX.Element {
+  public renderMessage(title: string, description: string): JSX.Element {
     return (
       <div className={classes.loginErrorMsg} id={'client-snackbar'}>
         <ErrorIcon className={classes.loginIcon} />

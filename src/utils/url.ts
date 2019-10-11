@@ -10,7 +10,7 @@ export function isURL(url: string): boolean {
   });
 }
 
-export function isEmail(email): boolean {
+export function isEmail(email: string): boolean {
   return isEmailValidator(email || '');
 }
 
