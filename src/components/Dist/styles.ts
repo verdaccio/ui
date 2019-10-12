@@ -1,11 +1,11 @@
 import styled from 'react-emotion';
 import { default as MuiFab } from '@material-ui/core/Fab';
 import Chip from '@material-ui/core/Chip';
-import ListItem from '@material-ui/core/ListItem';
 import Typography from '@material-ui/core/Typography';
 
 import colors from '../../utils/styles/colors';
 import { fontWeight } from '../../utils/styles/sizes';
+import ListItem from '../../muiComponents/ListItem';
 
 export const Heading = styled(Typography)({
   '&&': {
