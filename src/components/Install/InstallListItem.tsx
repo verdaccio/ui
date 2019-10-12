@@ -1,10 +1,10 @@
 import React from 'react';
 import styled from 'react-emotion';
-import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
 
 import CopyToClipBoard from '../CopyToClipBoard';
 import Avatar from '../../muiComponents/Avatar';
+import ListItem from '../../muiComponents/ListItem';
 
 // logos of package managers
 import npmLogo from './img/npm.svg';

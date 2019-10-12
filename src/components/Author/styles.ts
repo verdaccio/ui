@@ -1,9 +1,9 @@
 import styled from 'react-emotion';
-import ListItem from '@material-ui/core/ListItem';
 import Typography from '@material-ui/core/Typography';
 import ListItemText from '@material-ui/core/ListItemText';
 
 import { fontWeight } from '../../utils/styles/sizes';
+import ListItem from '../../muiComponents/ListItem';
 
 export const Heading = styled(Typography)({
   '&&': {
