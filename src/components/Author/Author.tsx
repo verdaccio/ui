@@ -1,9 +1,9 @@
 import React, { FC, useContext } from 'react';
-import List from '@material-ui/core/List';
 
 import { DetailContext } from '../../pages/Version';
 import { isEmail } from '../../utils/url';
 import Avatar from '../../muiComponents/Avatar';
+import List from '../../muiComponents/List';
 
 import { StyledText, AuthorListItem, AuthorListItemText } from './styles';
 
