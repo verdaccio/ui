@@ -19,9 +19,7 @@ const renderApp = (Component: React.ElementType): void => {
 
 renderApp(App);
 
-// @ts-ignore
 if (module.hot) {
-  // @ts-ignore
   module.hot.accept('./App', () => {
     renderApp(App);
   });

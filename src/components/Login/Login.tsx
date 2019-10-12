@@ -1,8 +1,4 @@
 import React, { Component } from 'react';
-import DialogTitle from '@material-ui/core/DialogTitle';
-import Dialog from '@material-ui/core/Dialog';
-import DialogActions from '@material-ui/core/DialogActions';
-import DialogContent from '@material-ui/core/DialogContent';
 import SnackbarContent from '@material-ui/core/SnackbarContent';
 import ErrorIcon from '@material-ui/icons/Error';
 import InputLabel from '@material-ui/core/InputLabel';
@@ -12,6 +8,10 @@ import FormHelperText from '@material-ui/core/FormHelperText';
 import { css } from 'emotion';
 
 import Button from '../../muiComponents/Button';
+import Dialog from '../../muiComponents/Dialog';
+import DialogTitle from '../../muiComponents/DialogTitle';
+import DialogContent from '../../muiComponents/DialogContent';
+import DialogActions from '../../muiComponents/DialogActions';
 
 import * as classes from './styles';
 

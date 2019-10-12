@@ -1,3 +1,33 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<NotFound /> component should load the component in default state 1`] = `<withRouter(WithWidth(NotFound)) />`;
+exports[`<NotFound /> component should load the component in default state 1`] = `
+<div
+  class="MuiBox-root MuiBox-root-2"
+  data-testid="404"
+>
+  <img
+    alt="404 - Page not found"
+    class="css-17y48z2 emotion-0"
+    src="[object Object]"
+  />
+  <h4
+    class="MuiTypography-root not-found-text css-7pe7kh emotion-1 MuiTypography-h4"
+  >
+    Sorry, we couldn't find it...
+  </h4>
+  <button
+    class="MuiButtonBase-root MuiButton-root MuiButton-contained"
+    tabindex="0"
+    type="button"
+  >
+    <span
+      class="MuiButton-label"
+    >
+      Go to the home page
+    </span>
+    <span
+      class="MuiTouchRipple-root"
+    />
+  </button>
+</div>
+`;

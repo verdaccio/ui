@@ -1,8 +1,8 @@
 import React from 'react';
-import Dialog from '@material-ui/core/Dialog';
-import DialogActions from '@material-ui/core/DialogActions';
 
 import Button from '../../muiComponents/Button';
+import Dialog from '../../muiComponents/Dialog';
+import DialogActions from '../../muiComponents/DialogActions';
 
 import { Title, Content } from './styles';
 import { Props } from './types';
