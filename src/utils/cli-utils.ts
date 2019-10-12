@@ -37,3 +37,11 @@ export function getCLIChangePassword1(command: string, registryUrl: string): str
 export function getCLIChangePassword2(command: string, registryUrl: string): string {
   return `${command} profile set password --registry ${registryUrl}`;
 }
+
+export function getCLIChangePassword3(command: string, registryUrl: string): string {
+  return `${command} profile set password --registry ${registryUrl}`;
+}
+
+export function getCLIChangePassword4(command: string, registryUrl: string): string {
+  return `${command} profile set password --registry ${registryUrl}`;
+}
