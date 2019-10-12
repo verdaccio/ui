@@ -4,6 +4,7 @@ import { UpLinks } from '@verdaccio/types';
 import isString from 'lodash/isString';
 import format from 'date-fns/format';
 import distanceInWordsToNow from 'date-fns/distance_in_words_to_now';
+import { Time } from 'types/packageMeta';
 
 export const TIMEFORMAT = 'DD.MM.YYYY, HH:mm:ss';
 
@@ -82,8 +83,8 @@ export function getLastUpdatedPackageTime(uplinks: UpLinks = {}): string {
  * @param {Object} time
  * @returns {Array} last 3 releases
  */
-export function getRecentReleases(time = {}): unknown {
-  const recent = Object.keys(time).map((version): unknown => ({
+export function getRecentReleases(time: Time = {}): Time[] {
+  const recent = Object.keys(time).map(version => ({
     version,
     time: formatDate(time[version]),
   }));
