@@ -2,6 +2,8 @@ npm-debug.log
 verdaccio-*.tgz
 .DS_Store
 build/
+doc 
+
 ###
 node_modules
 package-lock.json

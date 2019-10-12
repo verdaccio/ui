@@ -1,6 +1,6 @@
 import React from 'react';
-import { render } from '@testing-library/react';
 import { MemoryRouter } from 'react-router';
+import { render } from '@testing-library/react';
 import { waitForElement } from '@testing-library/dom';
 
 import { NOT_FOUND_TEXT } from '../../components/NotFound';

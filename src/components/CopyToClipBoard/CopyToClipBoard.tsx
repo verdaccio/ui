@@ -12,7 +12,7 @@ interface Props {
   children?: React.ReactNode;
 }
 
-const renderText = (text, children): JSX.Element => {
+const renderText = (text: string, children: React.ReactNode): JSX.Element => {
   if (children) {
     return <ClipBoardCopyText>{children}</ClipBoardCopyText>;
   }

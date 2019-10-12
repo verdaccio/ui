@@ -14,21 +14,30 @@ import '../utils/styles/global';
 import 'normalize.css';
 import Footer from '../components/Footer';
 import { FormError } from '../components/Login/Login';
+import { PackageInterface } from '../components/Package/Package';
 
-export const AppContext = React.createContext<{}>({});
-export const AppContextProvider = AppContext.Provider;
-export const AppContextConsumer = AppContext.Consumer;
-
-export interface AppStateInterface {
-  error?: FormError;
+interface AppContextData {
   logoUrl: string;
+  scope: string;
+  isUserLoggedIn: boolean;
+  packages: PackageInterface[];
   user: {
     username?: string;
   };
-  scope: string;
+}
+export const AppContext = React.createContext<AppContextData>({
+  logoUrl: window.VERDACCIO_LOGO,
+  user: {},
+  scope: window.VERDACCIO_SCOPE || '',
+  isUserLoggedIn: false,
+  packages: [],
+});
+const AppContextProvider = AppContext.Provider;
+export const AppContextConsumer = AppContext.Consumer;
+
+export interface AppStateInterface extends AppContextData {
+  error?: FormError;
   showLoginModal: boolean;
-  isUserLoggedIn: boolean;
-  packages: any[];
   isLoading: boolean;
 }
 export default class App extends Component<{}, AppStateInterface> {
@@ -48,7 +57,7 @@ export default class App extends Component<{}, AppStateInterface> {
   }
 
   // eslint-disable-next-line no-unused-vars
-  public componentDidUpdate(_, prevState): void {
+  public componentDidUpdate(_: AppStateInterface, prevState: AppStateInterface): void {
     const { isUserLoggedIn } = this.state;
     if (prevState.isUserLoggedIn !== isUserLoggedIn) {
       this.loadOnHandler();
@@ -99,7 +108,7 @@ export default class App extends Component<{}, AppStateInterface> {
     }
   };
 
-  public setLoading = isLoading =>
+  public setLoading = (isLoading: boolean) =>
     this.setState({
       isLoading,
     });
@@ -118,7 +127,7 @@ export default class App extends Component<{}, AppStateInterface> {
    * handles login
    * Required by: <Header />
    */
-  public handleDoLogin = async (usernameValue, passwordValue) => {
+  public handleDoLogin = async (usernameValue: string, passwordValue: string) => {
     const { username, token, error } = await makeLogin(usernameValue, passwordValue);
 
     if (username && token) {
@@ -135,7 +144,7 @@ export default class App extends Component<{}, AppStateInterface> {
     }
   };
 
-  public setLoggedUser = username => {
+  public setLoggedUser = (username: string) => {
     this.setState({
       user: {
         username,
