@@ -7,7 +7,11 @@ coverage:
   range: "80...90"
 
   status:
-    project: yes
+    project:
+      default:
+        target: auto
+        threshold: 1%
+        base: auto
     patch: yes
     changes: no
 
@@ -20,6 +24,6 @@ parsers:
       macro: no
 
 comment:
-  layout: "reach,diff,flags,tree"
+  layout: "diff,flags,tree"
   behavior: default
   require_changes: no
