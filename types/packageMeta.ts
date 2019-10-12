@@ -1,6 +1,6 @@
 export interface PackageMetaInterface {
   versions?: Versions;
-  distTags?: DistTags;
+  'dist-tags'?: DistTags;
   time?: Time;
   latest: {
     author?: Author;
