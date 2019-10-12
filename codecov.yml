@@ -12,7 +12,12 @@ coverage:
         target: auto
         threshold: 1%
         base: auto
-    patch: yes
+    patch:
+      default:
+        # basic
+        target: auto
+        threshold: 1%
+        base: auto
     changes: no
 
 parsers:
