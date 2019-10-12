@@ -1,9 +1,7 @@
 import styled from 'react-emotion';
 import { Link } from 'react-router-dom';
 import Grid from '@material-ui/core/Grid';
-import List from '@material-ui/core/List';
 import ListItemText from '@material-ui/core/ListItemText';
-import Typography from '@material-ui/core/Typography';
 
 import { breakpoints } from '../../utils/styles/media';
 import Ico from '../Icon';
@@ -12,6 +10,8 @@ import colors from '../../utils/styles/colors';
 import { fontWeight } from '../../utils/styles/sizes';
 import { default as MuiIconButton } from '../../muiComponents/IconButton';
 import { default as Photo } from '../../muiComponents/Avatar';
+import List from '../../muiComponents/List';
+import { default as Typography } from '../../muiComponents/Heading';
 
 export const OverviewItem = styled('span')`
   && {

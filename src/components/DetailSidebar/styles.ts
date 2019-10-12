@@ -1,13 +1,12 @@
 import styled from 'react-emotion';
-import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
 
+import ListItem from '../../muiComponents/ListItem';
+
 export const TitleListItem = styled(ListItem)({
-  '&&': {
-    paddingLeft: 0,
-    paddingRight: 0,
-    paddingBottom: 0,
-  },
+  paddingLeft: 0,
+  paddingRight: 0,
+  paddingBottom: 0,
 });
 
 export const TitleListItemText = styled(ListItemText)({

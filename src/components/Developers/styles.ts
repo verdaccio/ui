@@ -1,9 +1,9 @@
 import styled from 'react-emotion';
-import Typography from '@material-ui/core/Typography';
 import { default as MuiFab } from '@material-ui/core/Fab';
 
 import colors from '../../utils/styles/colors';
 import { fontWeight } from '../../utils/styles/sizes';
+import Text from '../../muiComponents/Text';
 
 export const Details = styled('span')({
   display: 'flex',
@@ -20,12 +20,10 @@ export const Content = styled('div')({
   },
 });
 
-export const Heading = styled(Typography)({
-  '&&': {
-    fontWeight: fontWeight.bold,
-    marginBottom: '10px',
-    textTransform: 'capitalize',
-  },
+export const StyledText = styled(Text)({
+  fontWeight: fontWeight.bold,
+  marginBottom: '10px',
+  textTransform: 'capitalize',
 });
 
 export const Fab = styled(MuiFab)({

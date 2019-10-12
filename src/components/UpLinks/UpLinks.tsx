@@ -1,12 +1,12 @@
 import React, { useContext } from 'react';
-import List from '@material-ui/core/List';
-import ListItem from '@material-ui/core/ListItem';
 
 import { DetailContext } from '../../pages/Version';
 import NoItems from '../NoItems';
 import { formatDateDistance } from '../../utils/package';
+import List from '../../muiComponents/List';
+import ListItem from '../../muiComponents/ListItem';
 
-import { Heading, Spacer, ListItemText } from './styles';
+import { StyledText, Spacer, ListItemText } from './styles';
 
 const UpLinks: React.FC = () => {
   const { packageMeta } = useContext(DetailContext);
@@ -23,7 +23,7 @@ const UpLinks: React.FC = () => {
 
   return (
     <>
-      <Heading variant="subtitle1">{'Uplinks'}</Heading>
+      <StyledText variant="subtitle1">{'Uplinks'}</StyledText>
       <List>
         {Object.keys(uplinks)
           .reverse()
