@@ -1,7 +1,7 @@
-import CircularProgress from '@material-ui/core/CircularProgress';
 import styled, { css } from 'react-emotion';
 
 import colors from '../../utils/styles/colors';
+import CircularProgress from '../../muiComponents/CircularProgress';
 
 interface WrapperProps {
   centered: boolean;
