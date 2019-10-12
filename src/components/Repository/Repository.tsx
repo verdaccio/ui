@@ -9,7 +9,7 @@ import CopyToClipBoard from '../CopyToClipBoard';
 import List from '../../muiComponents/List';
 
 import git from './img/git.png';
-import { GithubLink, Heading, RepositoryListItem, RepositoryListItemText } from './styles';
+import { GithubLink, StyledText, RepositoryListItem, RepositoryListItemText } from './styles';
 
 class Repository extends Component {
   public render(): ReactElement<HTMLElement> {
@@ -39,7 +39,7 @@ class Repository extends Component {
 
     return (
       <Fragment>
-        <List dense={true} subheader={<Heading variant="subtitle1">{'Repository'}</Heading>}>
+        <List dense={true} subheader={<StyledText variant="subtitle1">{'Repository'}</StyledText>}>
           <RepositoryListItem button={true}>
             <Avatar src={git} />
             <RepositoryListItemText primary={this.renderContent(url)} />

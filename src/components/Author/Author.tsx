@@ -5,7 +5,7 @@ import { isEmail } from '../../utils/url';
 import Avatar from '../../muiComponents/Avatar';
 import List from '../../muiComponents/List';
 
-import { Heading, AuthorListItem, AuthorListItemText } from './styles';
+import { StyledText, AuthorListItem, AuthorListItemText } from './styles';
 
 const Author: FC = () => {
   const { packageMeta } = useContext(DetailContext);
@@ -25,7 +25,7 @@ const Author: FC = () => {
   const avatarComponent = <Avatar alt={author.name} src={author.avatar} />;
 
   return (
-    <List subheader={<Heading variant={'subtitle1'}>{'Author'}</Heading>}>
+    <List subheader={<StyledText variant={'subtitle1'}>{'Author'}</StyledText>}>
       <AuthorListItem button={true}>
         {!email || !isEmail(email) ? (
           avatarComponent

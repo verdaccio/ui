@@ -5,7 +5,7 @@ import fileSizeSI from '../../utils/file-size';
 import { formatLicense } from '../../utils/package';
 import List from '../../muiComponents/List';
 
-import { Heading, DistListItem, DistChips } from './styles';
+import { StyledText, DistListItem, DistChips } from './styles';
 
 const DistChip: FC<{ name: string }> = ({ name, children }) =>
   children ? (
@@ -33,7 +33,7 @@ const Dist: FC = () => {
   const { dist, license } = packageMeta && packageMeta.latest;
 
   return (
-    <List subheader={<Heading variant="subtitle1">{'Latest Distribution'}</Heading>}>
+    <List subheader={<StyledText variant="subtitle1">{'Latest Distribution'}</StyledText>}>
       <DistListItem button={true}>
         <DistChip name="file count">{dist.fileCount}</DistChip>
         <DistChip name="size">{dist.unpackedSize && fileSizeSI(dist.unpackedSize)}</DistChip>
