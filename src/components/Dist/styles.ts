@@ -1,10 +1,10 @@
 import styled from 'react-emotion';
 import { default as MuiFab } from '@material-ui/core/Fab';
 import Chip from '@material-ui/core/Chip';
-import ListItem from '@material-ui/core/ListItem';
 
 import colors from '../../utils/styles/colors';
 import { fontWeight } from '../../utils/styles/sizes';
+import ListItem from '../../muiComponents/ListItem';
 import Text from '../../muiComponents/Text';
 
 export const StyledText = styled(Text)({

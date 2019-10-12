@@ -1,8 +1,8 @@
 import styled from 'react-emotion';
-import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
 
 import { fontWeight } from '../../utils/styles/sizes';
+import ListItem from '../../muiComponents/ListItem';
 import Text from '../../muiComponents/Text';
 
 export const StyledText = styled(Text)({

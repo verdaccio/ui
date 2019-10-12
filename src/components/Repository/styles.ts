@@ -1,12 +1,12 @@
 import styled from 'react-emotion';
 import Grid from '@material-ui/core/Grid';
-import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
 
 import Github from '../../icons/GitHub';
 import colors from '../../utils/styles/colors';
 import { fontWeight } from '../../utils/styles/sizes';
 import Text from '../../muiComponents/Text';
+import ListItem from '../../muiComponents/ListItem';
 
 export const StyledText = styled(Text)({
   fontWeight: fontWeight.bold,

@@ -1,7 +1,7 @@
 import styled from 'react-emotion';
-import ListItem from '@material-ui/core/ListItem';
 
 import { fontWeight } from '../../utils/styles/sizes';
+import ListItem from '../../muiComponents/ListItem';
 import Text from '../../muiComponents/Text';
 
 export const StyledText = styled(Text)({
@@ -10,7 +10,5 @@ export const StyledText = styled(Text)({
 });
 
 export const EngineListItem = styled(ListItem)({
-  '&&': {
-    paddingLeft: 0,
-  },
+  paddingLeft: 0,
 });

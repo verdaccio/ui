@@ -1,10 +1,10 @@
 import React, { useContext } from 'react';
 import List from '@material-ui/core/List';
-import ListItem from '@material-ui/core/ListItem';
 
 import { DetailContext } from '../../pages/Version';
 import NoItems from '../NoItems';
 import { formatDateDistance } from '../../utils/package';
+import ListItem from '../../muiComponents/ListItem';
 
 import { StyledText, Spacer, ListItemText } from './styles';
 
