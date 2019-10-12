@@ -2,7 +2,8 @@
 /* eslint-disable react/jsx-curly-brace-presence */
 
 import React from 'react';
-import SvgIcon from '@material-ui/core/SvgIcon';
+
+import SvgIcon from '../muiComponents/SvgIcon';
 
 const GitHub: React.FC = props => (
   <SvgIcon {...props}>

@@ -2,9 +2,9 @@ import React, { forwardRef } from 'react';
 import { default as MaterialUITextField, TextFieldProps } from '@material-ui/core/TextField';
 
 // The default element type of MUI's TextField is 'div'
-type TextFieldRef = HTMLElementTagNameMap['div'];
+type TextFieldRef = HTMLDivElement;
 
-const TextField = forwardRef<TextFieldRef, TextFieldProps>(function ToolTip({ InputProps, classes, ...props }, ref) {
+const TextField = forwardRef<TextFieldRef, TextFieldProps>(function TextField({ InputProps, classes, ...props }, ref) {
   return (
     <MaterialUITextField
       {...props}
