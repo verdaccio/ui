@@ -14,21 +14,30 @@ import '../utils/styles/global';
 import 'normalize.css';
 import Footer from '../components/Footer';
 import { FormError } from '../components/Login/Login';
+import { PackageInterface } from '../components/Package/Package';
 
-export const AppContext = React.createContext<{}>({});
-export const AppContextProvider = AppContext.Provider;
-export const AppContextConsumer = AppContext.Consumer;
-
-export interface AppStateInterface {
-  error?: FormError;
+interface AppContextData {
   logoUrl: string;
+  scope: string;
+  isUserLoggedIn: boolean;
+  packages: PackageInterface[];
   user: {
     username?: string;
   };
-  scope: string;
+}
+export const AppContext = React.createContext<AppContextData>({
+  logoUrl: window.VERDACCIO_LOGO,
+  user: {},
+  scope: window.VERDACCIO_SCOPE || '',
+  isUserLoggedIn: false,
+  packages: [],
+});
+const AppContextProvider = AppContext.Provider;
+export const AppContextConsumer = AppContext.Consumer;
+
+export interface AppStateInterface extends AppContextData {
+  error?: FormError;
   showLoginModal: boolean;
-  isUserLoggedIn: boolean;
-  packages: any[];
   isLoading: boolean;
 }
 export default class App extends Component<{}, AppStateInterface> {
