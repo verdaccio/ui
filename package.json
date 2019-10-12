@@ -18,6 +18,9 @@
     "@material-ui/core": "4.4.3",
     "@material-ui/icons": "4.4.3",
     "@octokit/rest": "16.28.7",
+    "@storybook/addon-actions": "5.2.3",
+    "@storybook/addon-knobs": "5.2.3",
+    "@storybook/react": "5.2.3",
     "@testing-library/react": "9.2.0",
     "@types/autosuggest-highlight": "3.1.0",
     "@types/enzyme": "3.10.3",
@@ -28,6 +31,7 @@
     "@types/react": "16.9.2",
     "@types/react-dom": "16.9.0",
     "@types/react-router-dom": "5.1.0",
+    "@types/storybook__react": "4.0.2",
     "@types/validator": "10.11.3",
     "@types/webpack-env": "1.14.0",
     "@typescript-eslint/parser": "2.3.2",
@@ -170,7 +174,8 @@
     "build": "npm run pre:webpack && cross-env BABEL_ENV=ui webpack --config tools/webpack.prod.config.babel.js",
     "build:stats": "cross-env BABEL_ENV=ui webpack --config tools/webpack.prod.config.babel.js --json > stats.json",
     "build:size": "cross-env BABEL_ENV=ui webpack --config tools/webpack.prod.config.babel.js --json | webpack-bundle-size-analyzer",
-    "dev": "concurrently --kill-others \"npm run dev:web\" \"npm run verdaccio:server\""
+    "dev": "concurrently --kill-others \"npm run dev:web\" \"npm run verdaccio:server\"",
+    "storybook": "start-storybook -p 9009"
   },
   "engines": {
     "node": ">=8",

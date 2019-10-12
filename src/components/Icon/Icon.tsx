@@ -1,6 +1,5 @@
 import React, { MouseEvent } from 'react';
 import capitalize from 'lodash/capitalize';
-import { Breakpoint } from '@material-ui/core/styles/createBreakpoints';
 
 import { Svg, Img, ImgWrapper } from './styles';
 import brazil from './img/brazil.svg';
@@ -57,7 +56,7 @@ export interface Props {
   name: keyof IconsMap;
   className?: string;
   onClick?: (event: MouseEvent<SVGElement | HTMLSpanElement>) => void;
-  size?: Breakpoint;
+  size?: 'sm' | 'md';
   pointer?: boolean;
   img?: boolean;
   modifiers?: null | undefined;
