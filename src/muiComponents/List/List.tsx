@@ -1,0 +1,10 @@
+import React, { forwardRef } from 'react';
+import { default as MaterialUIList, ListProps } from '@material-ui/core/List';
+
+type ListRef = HTMLUListElement;
+
+const List = forwardRef<ListRef, ListProps>(function List(props, ref) {
+  return <MaterialUIList {...props} ref={ref} />;
+});
+
+export default List;

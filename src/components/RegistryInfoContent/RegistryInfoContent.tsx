@@ -2,11 +2,11 @@ import React, { Component } from 'react';
 import { css } from 'emotion';
 import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
-import Typography from '@material-ui/core/Typography';
 
 import CopyToClipBoard from '../CopyToClipBoard';
 import { getCLISetRegistry, getCLIChangePassword, getCLISetConfigRegistry } from '../../utils/cli-utils';
 import { NODE_MANAGER } from '../../utils/constants';
+import { default as Typography } from '../../muiComponents/Heading';
 
 import { CommandContainer } from './styles';
 import { Props, State } from './types';
