@@ -1,6 +1,6 @@
 import React from 'react';
 import { mount } from 'enzyme';
-import { MemoryRouter } from 'react-router';
+import { MemoryRouter } from 'react-router-dom';
 import { render, cleanup } from '@testing-library/react';
 
 import { DetailContext, DetailContextProps } from '../../pages/Version';
