@@ -7,7 +7,7 @@ exports[`test Developers should render the component for contributors with items
   <Styled(Component)
     variant="subtitle1"
   >
-    <ForwardRef(Heading)
+    <ForwardRef(Text)
       className="css-48zeoi emotion-0"
       variant="subtitle1"
     >
@@ -60,7 +60,7 @@ exports[`test Developers should render the component for contributors with items
           </h6>
         </ForwardRef(Typography)>
       </WithStyles(ForwardRef(Typography))>
-    </ForwardRef(Heading)>
+    </ForwardRef(Text)>
   </Styled(Component)>
   <Styled(div)>
     <div
@@ -270,7 +270,7 @@ exports[`test Developers should render the component for maintainers with items 
   <Styled(Component)
     variant="subtitle1"
   >
-    <ForwardRef(Heading)
+    <ForwardRef(Text)
       className="css-48zeoi emotion-0"
       variant="subtitle1"
     >
@@ -323,7 +323,7 @@ exports[`test Developers should render the component for maintainers with items 
           </h6>
         </ForwardRef(Typography)>
       </WithStyles(ForwardRef(Typography))>
-    </ForwardRef(Heading)>
+    </ForwardRef(Text)>
   </Styled(Component)>
   <Styled(div)>
     <div
