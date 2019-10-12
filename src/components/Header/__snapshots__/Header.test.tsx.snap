@@ -346,7 +346,7 @@ exports[`<Header /> component with logged in state should load the component in 
         />
       </button>
       <button
-        class="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-colorInherit"
+        class="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-text MuiButton-colorInherit"
         data-testid="header--button-login"
         tabindex="0"
         type="button"
