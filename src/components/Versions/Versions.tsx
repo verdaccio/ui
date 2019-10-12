@@ -20,7 +20,6 @@ const Versions: React.FC = () => {
     return null;
   }
 
-  // @ts-ignore - Property 'dist-tags' does not exist on type 'PackageMetaInterface'
   const { versions = {}, time = {}, [DIST_TAGS]: distTags = {} } = packageMeta;
 
   return (
