@@ -49,11 +49,11 @@ export function formatRepository(repository: any): string | null {
   return null;
 }
 
-export function formatDate(lastUpdate): string {
+export function formatDate(lastUpdate: string | number): string {
   return format(new Date(lastUpdate), TIMEFORMAT);
 }
 
-export function formatDateDistance(lastUpdate): string {
+export function formatDateDistance(lastUpdate: Date | string | number): string {
   return distanceInWordsToNow(new Date(lastUpdate));
 }
 
