@@ -4,7 +4,7 @@ import Add from '@material-ui/icons/Add';
 import { DetailContext } from '../../pages/Version';
 import { AvatarTooltip } from '../AvatarTooltip';
 
-import { Details, Heading, Content, Fab } from './styles';
+import { Details, StyledText, Content, Fab } from './styles';
 
 export type DevelopersType = 'contributors' | 'maintainers';
 
@@ -34,7 +34,7 @@ const Developers: FC<Props> = ({ type, visibleMax }) => {
 
     return (
       <Fragment>
-        <Heading variant={'subtitle1'}>{type}</Heading>
+        <StyledText variant={'subtitle1'}>{type}</StyledText>
         <Content>
           {listVisibleDevelopers.map(developer => (
             <Details key={developer.email}>{renderDeveloperDetails(developer, packageMeta)}</Details>

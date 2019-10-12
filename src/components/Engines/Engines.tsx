@@ -7,7 +7,7 @@ import { VersionPageConsumerProps, DetailContextConsumer } from '../../pages/Ver
 import Avatar from '../../muiComponents/Avatar';
 import npm from '../Install/img/npm.svg';
 
-import { Heading, EngineListItem } from './styles';
+import { StyledText, EngineListItem } from './styles';
 // @ts-ignore
 import node from './img/node.png';
 
@@ -60,7 +60,7 @@ class Engine extends Component {
 
   private renderListItems = (heading: string, text: string) => {
     return (
-      <List subheader={<Heading variant={'subtitle1'}>{text.split('-').join(' ')}</Heading>}>
+      <List subheader={<StyledText variant={'subtitle1'}>{text.split('-').join(' ')}</StyledText>}>
         <EngineListItem button={true}>
           {ICONS[text]}
           <ListItemText primary={heading} />
