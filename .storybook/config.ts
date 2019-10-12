@@ -1,6 +1,13 @@
-import { configure, addDecorator } from '@storybook/react';
+import { configure, addDecorator, addParameters } from '@storybook/react';
 import { withKnobs } from '@storybook/addon-knobs';
 
+import theme from './theme';
+
+addParameters({
+  options: {
+    theme,
+  },
+});
+
 addDecorator(withKnobs);
-// automatically import all files ending in *.stories.tsx
 configure(require.context('../src', true, /\.stories\.tsx?$/), module);
