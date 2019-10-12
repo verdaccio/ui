@@ -1,8 +1,9 @@
 import React from 'react';
-import IconButton from '@material-ui/core/IconButton';
 import Info from '@material-ui/icons/Info';
 import Help from '@material-ui/icons/Help';
 import Search from '@material-ui/icons/Search';
+
+import IconButton from '../../muiComponents/IconButton';
 
 import { IconSearchButton, StyledExternalLink } from './styles';
 
