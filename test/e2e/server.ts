@@ -30,7 +30,6 @@ export interface ServerBridge {
   authstr: string;
   request(options: any): typeof PromiseAssert;
   auth(name: string, password: string): RequestPromise;
-  // pragma: allowlist secret
   auth(name: string, password: string): RequestPromise;
   logout(token: string): Promise<any>;
   getPackage(name: string): Promise<any>;
@@ -86,8 +85,7 @@ export default class Server implements ServerBridge {
     });
   }
 
-  // pragma: allowlist secret
-  public auth(name: string, password: string) {
+  public auth(name: string, password: string) { // pragma: allowlist secret
     this.authstr = buildAuthHeader(name, password);
     return this.request({
       uri: `/-/user/org.couchdb.user:${encodeURIComponent(name)}/-rev/undefined`,
