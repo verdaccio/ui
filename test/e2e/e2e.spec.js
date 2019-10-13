@@ -13,7 +13,8 @@ describe('/ (Verdaccio Page)', () => {
   };
 
   const evaluateSignIn = async function() {
-    const text = await page.evaluate(() => document.querySelector('#header--button-login').textContent);
+    const text = await page.evaluate(() => document.querySelector('button[data-testid="header--button-login"]').textContent);
+
     expect(text).toMatch('Login');
   };
 
@@ -22,7 +23,7 @@ describe('/ (Verdaccio Page)', () => {
   };
 
   const logIn = async function() {
-    await clickElement('#header--button-login');
+    await clickElement('button[data-testid="header--button-login"]');
     await page.waitFor(500);
     // we fill the sign in form
     const signInDialog = await page.$('#login--form-container');
@@ -78,7 +79,7 @@ describe('/ (Verdaccio Page)', () => {
   });
 
   test('should click on sign in button', async () => {
-    const signInButton = await page.$('#header--button-login');
+    const signInButton = await page.$('button[data-testid="header--button-login"]');
     await signInButton.click();
     await page.waitFor(1000);
     const signInDialog = await page.$('#login--form-container');
