@@ -21,6 +21,10 @@ packages:
     access: $authenticated
     publish: $authenticated
 
+theme:
+  ../plugins/theme:
+    prop: dummy
+
 listen: 0.0.0.0:55552
 
 # expose internal methods
