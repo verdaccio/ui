@@ -16,7 +16,9 @@ export const ClipBoardCopyText = styled('span')({
     textOverflow: 'ellipsis',
     overflow: 'hidden',
     whiteSpace: 'nowrap',
-    height: '21px',
+    height: 'auto',
+    maxHeight: '30px',
+    fontWeight: 'normal',
   },
 });
 
