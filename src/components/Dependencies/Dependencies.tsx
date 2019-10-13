@@ -6,7 +6,7 @@ import { PackageDependencies } from '../../../types/packageMeta';
 import { DetailContext } from '../../pages/Version';
 import NoItems from '../NoItems';
 
-import { CardWrap, Heading, Tags, Tag } from './styles';
+import { CardWrap, StyledText, Tags, Tag } from './styles';
 
 interface DependencyBlockProps {
   title: string;
@@ -28,7 +28,7 @@ const DependencyBlock: React.FC<DependencyBlockProps> = ({ title, dependencies }
   return (
     <CardWrap>
       <CardContent>
-        <Heading variant="subtitle1">{`${title} (${deps.length})`}</Heading>
+        <StyledText variant="subtitle1">{`${title} (${deps.length})`}</StyledText>
         <Tags>
           {deps.map(([name, version]) => (
             // eslint-disable-next-line
