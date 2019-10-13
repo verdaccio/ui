@@ -4,7 +4,8 @@ import { UpLinks } from '@verdaccio/types';
 import isString from 'lodash/isString';
 import format from 'date-fns/format';
 import distanceInWordsToNow from 'date-fns/distance_in_words_to_now';
-import { Time } from 'types/packageMeta';
+
+import { Time } from '../../types/packageMeta';
 
 export const TIMEFORMAT = 'DD.MM.YYYY, HH:mm:ss';
 
