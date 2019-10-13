@@ -5,6 +5,9 @@ aliases:
     ~/ui-theme
   - &defaults
     working_directory: *repo_path
+  - &node_latest_browser:
+    docker:
+      - image: circleci/node:latest-browsers
   - &node_latest_executor
     docker:
       - image: circleci/node:latest
@@ -92,6 +95,15 @@ jobs:
           paths:
           - coverage
 
+  test_e2e:
+    <<: *defaults
+    executor: node_latest_browser
+    steps:
+      - *restore_repo
+      - run:
+          name: Test End-to-End
+          command: yarn run test:e2e
+
   test_node_lts:
     <<: *defaults
     <<: *node_lts_executor
@@ -151,6 +163,10 @@ workflows:
             - prepare
           <<: *ignore_non_dev_branches
       - test_node_lts:
+          requires:
+            - prepare
+          <<: *ignore_non_dev_branches
+      - test_e2e:
           requires:
             - prepare
           <<: *ignore_non_dev_branches
