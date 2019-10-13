@@ -97,7 +97,7 @@ jobs:
 
   test_e2e:
     <<: *defaults
-    <<: *node_latest_executor
+    <<: *node_latest_browser
     steps:
       - *restore_repo
       - run:
