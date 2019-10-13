@@ -5,6 +5,9 @@ aliases:
     ~/ui-theme
   - &defaults
     working_directory: *repo_path
+  - &node_latest_browser
+    docker:
+      - image: circleci/node:latest-browsers
   - &node_latest_executor
     docker:
       - image: circleci/node:latest
@@ -48,8 +51,11 @@ jobs:
           name: Install dependencies
           command: yarn install --frozen-lockfile
       - run:
+          name: Lint code
+          command: yarn lint
+      - run:
           name: Build project
-          command: yarn run build
+          command: yarn build
       - save_cache:
           key: *yarn_cache_key
           paths:
@@ -60,15 +66,6 @@ jobs:
           root: *repo_path
           paths:
             - ./*
-
-  lint:
-    <<: *defaults
-    <<: *default_executor
-    steps:
-      - *restore_repo
-      - run:
-          name: Lint code
-          command: yarn lint
 
   test_bundlesize:
     <<: *defaults
@@ -91,6 +88,15 @@ jobs:
           key: *coverage_key
           paths:
           - coverage
+
+  test_e2e:
+    <<: *defaults
+    <<: *node_latest_browser
+    steps:
+      - *restore_repo
+      - run:
+          name: Test E2E Node (LTS)
+          command: yarn test:e2e
 
   test_node_lts:
     <<: *defaults
@@ -138,10 +144,6 @@ workflows:
     jobs:
       - prepare:
           <<: *ignore_non_dev_branches
-      - lint:
-          requires:
-            - prepare
-          <<: *ignore_non_dev_branches
       - test_bundlesize:
           requires:
             - prepare
@@ -154,15 +156,19 @@ workflows:
           requires:
             - prepare
           <<: *ignore_non_dev_branches
+      - test_e2e:
+          requires:
+            - prepare
+          <<: *ignore_non_dev_branches
       - coverage:
           requires:
             - test_node_latest
           <<: *ignore_non_dev_branches
       - publish_package:
           requires:
-            - lint
             - test_bundlesize
             - test_node_latest
             - test_node_lts
+            - test_e2e
             - coverage
           <<: *execute_on_release
