@@ -51,6 +51,9 @@ jobs:
           name: Install dependencies
           command: yarn install --frozen-lockfile
       - run:
+          name: Lint code
+          command: yarn lint
+      - run:
           name: Build project
           command: yarn build
       - save_cache:
@@ -63,15 +66,6 @@ jobs:
           root: *repo_path
           paths:
             - ./*
-
-  lint:
-    <<: *defaults
-    <<: *default_executor
-    steps:
-      - *restore_repo
-      - run:
-          name: Lint code
-          command: yarn lint
 
   test_bundlesize:
     <<: *defaults
@@ -150,10 +144,6 @@ workflows:
     jobs:
       - prepare:
           <<: *ignore_non_dev_branches
-      - lint:
-          requires:
-            - prepare
-          <<: *ignore_non_dev_branches
       - test_bundlesize:
           requires:
             - prepare
@@ -176,9 +166,9 @@ workflows:
           <<: *ignore_non_dev_branches
       - publish_package:
           requires:
-            - lint
             - test_bundlesize
             - test_node_latest
             - test_node_lts
+            - test_e2e
             - coverage
           <<: *execute_on_release
