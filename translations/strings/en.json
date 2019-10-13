@@ -1,0 +1,19 @@
+{
+  "buttons": {
+    "login": "Login",
+    "cancel": "Cancel"
+  },
+  "pages": {
+    "uplinks": "Uplinks"
+  },
+  "titles": {
+    "registry_info_title": "Registry Information",
+    "documentation": "Documentation",
+    "not_found": "404 - Page not found"
+  },
+  "messages": {
+    "not_found": "Sorry, we couldn't find it...",
+    "label_not_found": "The page you're looking for doesn't exist.",
+    "go_to_home": "Go to the home page"
+  }
+}

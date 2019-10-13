@@ -2,7 +2,9 @@ npm-debug.log
 verdaccio-*.tgz
 .DS_Store
 build/
-doc 
+doc
+translations.zip
+translations/translations_unziped/*
 
 ###
 node_modules
