@@ -85,7 +85,8 @@ export default class Server implements ServerBridge {
     });
   }
 
-  public auth(name: string, password: string) { // pragma: allowlist secret
+  public auth(name: string, password: string) {
+    // pragma: allowlist secret
     this.authstr = buildAuthHeader(name, password);
     return this.request({
       uri: `/-/user/org.couchdb.user:${encodeURIComponent(name)}/-rev/undefined`,
