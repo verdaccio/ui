@@ -52,7 +52,7 @@ jobs:
           command: yarn install --frozen-lockfile
       - run:
           name: Build project
-          command: yarn run build
+          command: yarn build
       - save_cache:
           key: *yarn_cache_key
           paths:
