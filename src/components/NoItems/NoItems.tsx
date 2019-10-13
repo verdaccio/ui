@@ -1,5 +1,6 @@
 import React from 'react';
-import Typography from '@material-ui/core/Typography';
+
+import Text from '../../muiComponents/Text';
 
 interface Props {
   text: string;
@@ -7,9 +8,9 @@ interface Props {
 }
 
 const NoItems: React.FC<Props> = ({ className, text }) => (
-  <Typography className={className} gutterBottom={true} variant="subtitle1">
+  <Text className={className} gutterBottom={true} variant="subtitle1">
     {text}
-  </Typography>
+  </Text>
 );
 
 export default NoItems;
