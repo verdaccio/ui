@@ -1,14 +1,14 @@
 import React, { useContext } from 'react';
 import styled from 'react-emotion';
-import Typography from '@material-ui/core/Typography';
-import List from '@material-ui/core/List';
 
 import { DetailContext } from '../../pages/Version';
 import { fontWeight } from '../../utils/styles/sizes';
+import Text from '../../muiComponents/Text';
+import List from '../../muiComponents/List';
 
 import InstallListItem, { DependencyManager } from './InstallListItem';
 
-const Heading = styled(Typography)({
+const StyledText = styled(Text)({
   fontWeight: fontWeight.bold,
   textTransform: 'capitalize',
 });
@@ -23,7 +23,7 @@ const Install: React.FC = () => {
   }
 
   return (
-    <List data-testid={'installList'} subheader={<Heading variant={'subtitle1'}>{'Installation'}</Heading>}>
+    <List data-testid={'installList'} subheader={<StyledText variant={'subtitle1'}>{'Installation'}</StyledText>}>
       <InstallListItem dependencyManager={DependencyManager.NPM} packageName={packageName} />
       <InstallListItem dependencyManager={DependencyManager.YARN} packageName={packageName} />
       <InstallListItem dependencyManager={DependencyManager.PNPM} packageName={packageName} />
