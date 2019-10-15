@@ -1,5 +1,6 @@
 import React, { KeyboardEvent, Component, ReactElement } from 'react';
 import { withRouter, RouteComponentProps } from 'react-router-dom';
+import { SuggestionSelectedEventData, ChangeEvent } from 'react-autosuggest';
 import { css } from 'emotion';
 import { default as IconSearch } from '@material-ui/icons/Search';
 import InputAdornment from '@material-ui/core/InputAdornment';
@@ -19,10 +20,10 @@ export interface State {
 
 export type cancelAllSearchRequests = () => void;
 export type handlePackagesClearRequested = () => void;
-export type handleSearch = (event: KeyboardEvent<HTMLInputElement>, { newValue, method }: { newValue: string; method: string }) => void;
+export type handleSearch = (event: React.FormEvent<HTMLInputElement>, { newValue, method }: ChangeEvent) => void;
 export type handleClickSearch = (event: KeyboardEvent<HTMLInputElement>, { suggestionValue, method }: { suggestionValue: object[]; method: string }) => void;
 export type handleFetchPackages = ({ value: string }) => Promise<void>;
-export type onBlur = (event: KeyboardEvent<HTMLInputElement>) => void;
+export type onBlur = (event: React.FormEvent<HTMLInputElement>) => void;
 
 const CONSTANTS = {
   API_DELAY: 300,
@@ -117,8 +118,8 @@ export class Search extends Component<RouteComponentProps<{}>, State> {
    * When an user select any package by clicking or pressing return key.
    */
   private handleClickSearch = (
-    event: React.KeyboardEvent<HTMLInputElement>,
-    { suggestionValue, method }: { suggestionValue: string[]; method: string }
+    event: React.FormEvent<HTMLInputElement>,
+    { suggestionValue, method }: SuggestionSelectedEventData<unknown>
   ): void | undefined => {
     const { history } = this.props;
     // stops event bubbling
