@@ -36,7 +36,7 @@ exports[`<Install /> renders correctly 1`] = `
           class="css-1mta3t8 emotion-4"
         >
           <span
-            class="css-1m8aenu emotion-2"
+            class="css-lh0wgu emotion-2"
           >
             npm install foo
           </span>
@@ -103,7 +103,7 @@ exports[`<Install /> renders correctly 1`] = `
           class="css-1mta3t8 emotion-4"
         >
           <span
-            class="css-1m8aenu emotion-2"
+            class="css-lh0wgu emotion-2"
           >
             yarn add foo
           </span>
@@ -170,7 +170,7 @@ exports[`<Install /> renders correctly 1`] = `
           class="css-1mta3t8 emotion-4"
         >
           <span
-            class="css-1m8aenu emotion-2"
+            class="css-lh0wgu emotion-2"
           >
             pnpm install foo
           </span>
