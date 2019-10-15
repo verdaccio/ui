@@ -26,6 +26,7 @@
     "@types/lodash": "4.14.141",
     "@types/node": "12.7.8",
     "@types/react": "16.9.2",
+    "@types/react-autosuggest": "9.3.11",
     "@types/react-dom": "16.9.0",
     "@types/react-router-dom": "5.1.0",
     "@types/request": "2.48.3",

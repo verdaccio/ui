@@ -12,7 +12,6 @@
     "resolveJsonModule": true,
     "checkJs": false,
     "esModuleInterop": true,
-    "baseUrl": "."
   },
   "include": [
     "src",
