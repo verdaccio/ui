@@ -19,8 +19,7 @@ describe('test Version page', () => {
   jest.setTimeout(40000000);
   beforeAll(() => {
     // FIXME: a better way to mock this
-    // @ts-ignore
-    global.window.VERDACCIO_API_URL = 'http://test';
+    window.VERDACCIO_API_URL = 'http://test';
   });
 
   afterEach(() => {
