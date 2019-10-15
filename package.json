@@ -213,5 +213,8 @@
     "type": "opencollective",
     "url": "https://opencollective.com/verdaccio",
     "logo": "https://opencollective.com/verdaccio/logo.txt"
+  },
+  "dependencies": {
+    "@types/react-autosuggest": "9.3.11"
   }
 }
