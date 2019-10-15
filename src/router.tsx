@@ -3,18 +3,17 @@
 import React, { Component, ReactElement } from 'react';
 import { Router, Route, Switch } from 'react-router-dom';
 import { createBrowserHistory } from 'history';
-import { AppContextConsumer, AppStateInterface } from './App/App';
 
-import { asyncComponent } from './utils/asyncComponent';
+import { AppContextConsumer } from './App/App';
 import Header from './components/Header';
 
 const history = createBrowserHistory({
   basename: window.__VERDACCIO_BASENAME_UI_OPTIONS && window.__VERDACCIO_BASENAME_UI_OPTIONS.url_prefix,
 });
 
-const NotFound = asyncComponent(() => import('./components/NotFound'));
-const VersionPackage = asyncComponent(() => import('./pages/Version'));
-const HomePage = asyncComponent(() => import('./pages/home'));
+const NotFound = React.lazy(() => import('./components/NotFound'));
+const VersionPackage = React.lazy(() => import('./pages/Version'));
+const HomePage = React.lazy(() => import('./pages/home'));
 
 interface RouterAppProps {
   onLogout: () => void;
@@ -25,7 +24,7 @@ class RouterApp extends Component<RouterAppProps> {
   public render(): ReactElement<HTMLDivElement> {
     return (
       <Router history={history}>
-        <>
+        <React.Suspense fallback={null}>
           {this.renderHeader()}
           <Switch>
             <Route exact={true} path={'/'} render={this.renderHomePage} />
@@ -35,7 +34,7 @@ class RouterApp extends Component<RouterAppProps> {
             <Route exact={true} path={'/-/web/detail/@:scope/:package/v/:version'} render={this.renderVersionPage} />
             <Route component={NotFound} />
           </Switch>
-        </>
+        </React.Suspense>
       </Router>
     );
   }
@@ -45,7 +44,7 @@ class RouterApp extends Component<RouterAppProps> {
 
     return (
       <AppContextConsumer>
-        {function renderConsumerVersionPage({ logoUrl, scope = '', user }: Partial<AppStateInterface>) {
+        {function renderConsumerVersionPage({ logoUrl, scope = '', user }) {
           return <Header logo={logoUrl} onLogout={onLogout} onToggleLoginModal={onToggleLoginModal} scope={scope} username={user && user.username} />;
         }}
       </AppContextConsumer>
@@ -55,8 +54,7 @@ class RouterApp extends Component<RouterAppProps> {
   public renderHomePage = (): ReactElement<HTMLDivElement> => {
     return (
       <AppContextConsumer>
-        {function renderConsumerVersionPage({ isUserLoggedIn, packages }: Partial<AppStateInterface>) {
-          // @ts-ignore
+        {function renderConsumerVersionPage({ isUserLoggedIn, packages }) {
           return <HomePage isUserLoggedIn={isUserLoggedIn} packages={packages} />;
         }}
       </AppContextConsumer>
@@ -66,7 +64,7 @@ class RouterApp extends Component<RouterAppProps> {
   public renderVersionPage = (routerProps): ReactElement<HTMLDivElement> => {
     return (
       <AppContextConsumer>
-        {function renderConsumerVersionPage({ isUserLoggedIn }: Partial<AppStateInterface>) {
+        {function renderConsumerVersionPage({ isUserLoggedIn }) {
           return <VersionPackage {...routerProps} isUserLoggedIn={isUserLoggedIn} />;
         }}
       </AppContextConsumer>

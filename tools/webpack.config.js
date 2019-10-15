@@ -1,5 +1,6 @@
-const env = require('../config/env');
 const StyleLintPlugin = require('stylelint-webpack-plugin');
+
+const env = require('../config/env');
 
 module.exports = {
   entry: `${env.SRC_ROOT}/index.tsx`,

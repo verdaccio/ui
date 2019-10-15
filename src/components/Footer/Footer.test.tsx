@@ -1,5 +1,5 @@
 import React from 'react';
-import { mount } from 'enzyme';
+import { mount, ReactWrapper } from 'enzyme';
 
 import Footer from './Footer';
 
@@ -8,12 +8,10 @@ jest.mock('../../../package.json', () => ({
 }));
 
 describe('<Footer /> component', () => {
-  let wrapper;
+  let wrapper: ReactWrapper;
   beforeEach(() => {
-    // Property 'VERDACCIO_VERSION' does not exist on type 'Window'
     window.VERDACCIO_VERSION = 'v.1.0.0';
     wrapper = mount(<Footer />);
-    // Property 'VERDACCIO_VERSION' does not exist on type 'Window'
     delete window.VERDACCIO_VERSION;
   });
 

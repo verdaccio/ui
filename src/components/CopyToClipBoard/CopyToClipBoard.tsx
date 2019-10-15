@@ -1,9 +1,9 @@
-import Tooltip from '@material-ui/core/Tooltip';
 import FileCopy from '@material-ui/icons/FileCopy';
 import React from 'react';
 
 import { copyToClipBoardUtility } from '../../utils/cli-utils';
 import { TEXT } from '../../utils/constants';
+import Tooltip from '../../muiComponents/Tooltip';
 
 import { ClipBoardCopy, ClipBoardCopyText, CopyIcon } from './styles';
 
@@ -12,7 +12,7 @@ interface Props {
   children?: React.ReactNode;
 }
 
-const renderText = (text, children): JSX.Element => {
+const renderText = (text: string, children: React.ReactNode): JSX.Element => {
   if (children) {
     return <ClipBoardCopyText>{children}</ClipBoardCopyText>;
   }

@@ -1,14 +1,16 @@
 export interface PackageMetaInterface {
   versions?: Versions;
-  distTags?: DistTags;
+  'dist-tags'?: DistTags;
   time?: Time;
   latest: {
+    author?: Author;
     name: string;
     dist: {
       fileCount: number;
       unpackedSize: number;
     };
     license?: Partial<LicenseInterface> | string;
+    version: string;
   };
   _uplinks: {};
 }
@@ -34,20 +36,19 @@ export interface Version {
   name: string;
   version: string;
   author?: string | Author;
-  maintainers?: Maintainer[];
   description?: string;
   license?: string;
   main?: string;
   keywords?: string[];
 }
 
-interface Author {
+export interface Author {
   name?: string;
   email?: string;
   url?: string;
+  avatar?: string;
 }
 
-interface Maintainer {
-  email?: string;
-  name?: string;
+export interface PackageDependencies {
+  [key: string]: string;
 }

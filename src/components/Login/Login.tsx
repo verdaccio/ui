@@ -1,9 +1,4 @@
 import React, { Component } from 'react';
-import Button from '@material-ui/core/Button';
-import DialogTitle from '@material-ui/core/DialogTitle';
-import Dialog from '@material-ui/core/Dialog';
-import DialogActions from '@material-ui/core/DialogActions';
-import DialogContent from '@material-ui/core/DialogContent';
 import SnackbarContent from '@material-ui/core/SnackbarContent';
 import ErrorIcon from '@material-ui/icons/Error';
 import InputLabel from '@material-ui/core/InputLabel';
@@ -11,6 +6,12 @@ import Input from '@material-ui/core/Input';
 import FormControl from '@material-ui/core/FormControl';
 import FormHelperText from '@material-ui/core/FormHelperText';
 import { css } from 'emotion';
+
+import Button from '../../muiComponents/Button';
+import Dialog from '../../muiComponents/Dialog';
+import DialogTitle from '../../muiComponents/DialogTitle';
+import DialogContent from '../../muiComponents/DialogContent';
+import DialogActions from '../../muiComponents/DialogActions';
 
 import * as classes from './styles';
 
@@ -150,7 +151,7 @@ export default class LoginModal extends Component<Partial<LoginModalProps>, Logi
     });
   };
 
-  public renderErrorMessage(title, description): JSX.Element {
+  public renderErrorMessage(title: string, description: string): JSX.Element {
     return (
       <span>
         <div>
@@ -161,7 +162,7 @@ export default class LoginModal extends Component<Partial<LoginModalProps>, Logi
     );
   }
 
-  public renderMessage(title, description): JSX.Element {
+  public renderMessage(title: string, description: string): JSX.Element {
     return (
       <div className={classes.loginErrorMsg} id={'client-snackbar'}>
         <ErrorIcon className={classes.loginIcon} />

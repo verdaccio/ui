@@ -1,11 +1,12 @@
 import React, { KeyboardEvent } from 'react';
 import { css } from 'emotion';
-import Autosuggest from 'react-autosuggest';
+import Autosuggest, { SuggestionSelectedEventData, InputProps, ChangeEvent } from 'react-autosuggest';
 import match from 'autosuggest-highlight/match';
 import parse from 'autosuggest-highlight/parse';
 import MenuItem from '@material-ui/core/MenuItem';
 
 import { fontWeight } from '../../utils/styles/sizes';
+
 import { Wrapper, InputField, SuggestionContainer } from './styles';
 
 interface Props {
@@ -19,18 +20,21 @@ interface Props {
   placeholder?: string;
   startAdornment?: JSX.Element;
   disableUnderline?: boolean;
-  onChange?: (event: KeyboardEvent<HTMLInputElement>, { newValue, method }: { newValue: string; method: string }) => void;
-  onSuggestionsFetch?: ({ value: string }) => Promise<void>;
+  onChange: (event: React.FormEvent<HTMLInputElement>, params: ChangeEvent) => void;
+  onSuggestionsFetch: ({ value: string }) => Promise<void>;
   onCleanSuggestions?: () => void;
-  onClick?: (event: KeyboardEvent<HTMLInputElement>, { suggestionValue, method }: { suggestionValue: string[]; method: string }) => void;
+  onClick?: (event: React.FormEvent<HTMLInputElement>, data: SuggestionSelectedEventData<unknown>) => void;
   onKeyDown?: (event: KeyboardEvent<HTMLInputElement>) => void;
-  onBlur?: (event: KeyboardEvent<HTMLInputElement>) => void;
+  onBlur?: (event: React.FormEvent<HTMLInputElement>) => void;
 }
 
+/* eslint-disable react/jsx-sort-props  */
+/* eslint-disable verdaccio/jsx-spread */
 const renderInputComponent = (inputProps): JSX.Element => {
   const { ref, startAdornment, disableUnderline, onKeyDown, ...others } = inputProps;
   return (
     <InputField
+      fullWidth={true}
       InputProps={{
         inputRef: node => {
           ref(node);
@@ -39,7 +43,6 @@ const renderInputComponent = (inputProps): JSX.Element => {
         disableUnderline,
         onKeyDown,
       }}
-      fullWidth={true}
       {...others}
     />
   );
@@ -110,7 +113,7 @@ const AutoComplete = ({
     onSuggestionsFetchRequested: onSuggestionsFetch,
     onSuggestionsClearRequested: onCleanSuggestions,
   };
-  const inputProps = {
+  const inputProps: InputProps<unknown> = {
     value,
     onChange,
     placeholder,

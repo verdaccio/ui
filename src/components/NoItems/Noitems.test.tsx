@@ -1,5 +1,6 @@
 import React from 'react';
 import { shallow, mount } from 'enzyme';
+
 import NoItems from './NoItems';
 
 console.error = jest.fn();

@@ -1,5 +1,6 @@
-import IconButton from '@material-ui/core/IconButton';
 import styled from 'react-emotion';
+
+import IconButton from '../../muiComponents/IconButton';
 
 export const ClipBoardCopy = styled('div')({
   '&&': {
@@ -16,6 +17,7 @@ export const ClipBoardCopyText = styled('span')({
     overflow: 'hidden',
     whiteSpace: 'nowrap',
     height: '21px',
+    fontSize: '1rem',
   },
 });
 

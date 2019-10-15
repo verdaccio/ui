@@ -1,16 +1,15 @@
 import React from 'react';
 import { render, cleanup } from '@testing-library/react';
-
 import { MemoryRouter } from 'react-router';
+import { waitForElement } from '@testing-library/dom';
 
 import vueMetadata from '../../../test/fixtures/metadata/vue.json';
-
-import Version from './Version';
-import { waitForElement } from '@testing-library/dom';
 import ErrorBoundary from '../../App/AppError';
 
+import Version from './Version';
+
 // :-) we mock this otherways fails on render, some weird issue on material-ui
-jest.mock('@material-ui/core/Avatar');
+jest.mock('../../muiComponents/Avatar');
 
 // eslint-disable-next-line react/display-name
 jest.mock('../../components/NotFound', () => () => <div>{'Not found'}</div>);

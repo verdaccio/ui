@@ -1,8 +1,6 @@
 import React, { ReactElement } from 'react';
-
 import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
-import List from '@material-ui/core/List';
 
 import { ActionBar } from '../ActionBar/ActionBar';
 import Author from '../Author';
@@ -11,17 +9,21 @@ import Dist from '../Dist/Dist';
 import Engine from '../Engines/Engines';
 import Install from '../Install';
 import Repository from '../Repository/Repository';
-
 import { DetailContext } from '../../pages/Version';
+import List from '../../muiComponents/List';
 
-import { TitleListItem, TitleListItemText } from './styles';
+import { TitleListItem, TitleListItemText, PackageDescription, PackageVersion } from './styles';
 
 const renderLatestDescription = (description, version, isLatest: boolean = true): JSX.Element => {
   return (
-    <span>
-      <div>{description}</div>
-      {version ? <small>{`${isLatest ? 'Latest v' : 'v'}${version}`}</small> : null}
-    </span>
+    <>
+      <PackageDescription>{description}</PackageDescription>
+      {version ? (
+        <PackageVersion>
+          <small>{`${isLatest ? 'Latest v' : 'v'}${version}`}</small>
+        </PackageVersion>
+      ) : null}
+    </>
   );
 };
 

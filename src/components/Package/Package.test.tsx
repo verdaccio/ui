@@ -1,7 +1,9 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import Package from './Package';
+
 import Tag from '../Tag';
+
+import Package from './Package';
 import { WrapperLink, Description, OverviewItem } from './styles';
 
 /**

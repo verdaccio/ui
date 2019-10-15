@@ -1,10 +1,11 @@
 import React from 'react';
 import { mount } from 'enzyme';
+
 import Repository from './Repository';
 
 jest.mock('./img/git.png', () => '');
 
-const mockPackageMeta = jest.fn(() => ({
+const mockPackageMeta: jest.Mock = jest.fn(() => ({
   latest: {
     homepage: 'https://verdaccio.tld',
     bugs: {
@@ -37,7 +38,6 @@ describe('<Repository /> component', () => {
       },
     };
 
-    // @ts-ignore
     mockPackageMeta.mockImplementation(() => packageMeta);
 
     const wrapper = mount(<Repository />);
@@ -49,7 +49,6 @@ describe('<Repository /> component', () => {
       latest: {},
     };
 
-    // @ts-ignore
     mockPackageMeta.mockImplementation(() => packageMeta);
 
     const wrapper = mount(<Repository />);
@@ -66,7 +65,6 @@ describe('<Repository /> component', () => {
       },
     };
 
-    // @ts-ignore
     mockPackageMeta.mockImplementation(() => packageMeta);
 
     const wrapper = mount(<Repository />);

@@ -1,7 +1,8 @@
-import API from './api';
-import { PackageMetaInterface } from 'types/packageMeta';
+import { PackageMetaInterface } from '../../types/packageMeta';
 
-export async function callReadme(packageName, packageVersion?: string): Promise<string | {}> {
+import API from './api';
+
+export async function callReadme(packageName: string, packageVersion?: string): Promise<string | {}> {
   return await API.request<string | {}>(`package/readme/${packageName}${packageVersion ? `?v=${packageVersion}` : ''}`, 'GET');
 }
 

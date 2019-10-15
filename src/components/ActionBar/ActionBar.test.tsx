@@ -1,8 +1,9 @@
 import React from 'react';
 import { mount } from 'enzyme';
+
 import { ActionBar } from './ActionBar';
 
-const mockPackageMeta = jest.fn(() => ({
+const mockPackageMeta: jest.Mock = jest.fn(() => ({
   latest: {
     homepage: 'https://verdaccio.tld',
     bugs: {
@@ -32,7 +33,6 @@ describe('<ActionBar /> component', () => {
   });
 
   test('when there is no action bar data', () => {
-    // @ts-ignore
     mockPackageMeta.mockImplementation(() => ({
       latest: {},
     }));
@@ -44,7 +44,6 @@ describe('<ActionBar /> component', () => {
   });
 
   test('when there is a button to download a tarball', () => {
-    // @ts-ignore
     mockPackageMeta.mockImplementation(() => ({
       latest: {
         dist: {

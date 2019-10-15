@@ -2,7 +2,7 @@ import React from 'react';
 import styled, { css } from 'react-emotion';
 import Paper from '@material-ui/core/Paper';
 
-import TextField from '../TextField';
+import TextField from '../../muiComponents/TextField';
 
 export interface InputFieldProps {
   color: string;
@@ -17,6 +17,7 @@ export const Wrapper = styled('div')({
   },
 });
 
+/* eslint-disable verdaccio/jsx-spread */
 export const InputField: React.FC<InputFieldProps> = ({ color, ...others }) => (
   <TextField
     {...others}
