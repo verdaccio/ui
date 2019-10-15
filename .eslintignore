@@ -3,6 +3,7 @@ coverage/
 static/
 .github/
 .circleci/
+build
 *.md
 *.lock
 *.yaml
@@ -10,3 +11,4 @@ Dockerfile
 *.html
 *.scss
 *.png
+doc

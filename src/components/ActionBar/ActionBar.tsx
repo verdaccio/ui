@@ -1,15 +1,15 @@
 import React, { Component, ReactElement } from 'react';
-
 import BugReportIcon from '@material-ui/icons/BugReport';
 import DownloadIcon from '@material-ui/icons/CloudDownload';
 import HomeIcon from '@material-ui/icons/Home';
-import List from '@material-ui/core/List';
-import Tooltip from '@material-ui/core/Tooltip';
 
 import { DetailContextConsumer, VersionPageConsumerProps } from '../../pages/Version';
-import { Fab, ActionListItem } from './styles';
 import { isURL, extractFileName, downloadFile } from '../../utils/url';
 import api from '../../utils/api';
+import Tooltip from '../../muiComponents/Tooltip';
+import List from '../../muiComponents/List';
+
+import { Fab, ActionListItem } from './styles';
 
 export interface Action {
   icon: string;
@@ -70,7 +70,6 @@ class ActionBar extends Component {
   }
 
   private renderActionBar = ({ packageMeta }) => {
-    // @ts-ignore
     const { latest } = packageMeta;
 
     if (!latest) {
@@ -107,7 +106,6 @@ class ActionBar extends Component {
         } else {
           const fab = <Fab size={'small'}>{actionItem['icon']}</Fab>;
           component.push(
-            // @ts-ignore
             <Tooltip key={key} title={actionItem['title']}>
               <>{this.renderIconsWithLink(link, fab)}</>
             </Tooltip>

@@ -1,15 +1,15 @@
 import React, { Component, ReactElement } from 'react';
-
-import Avatar from '@material-ui/core/Avatar';
 import Grid from '@material-ui/core/Grid';
-import List from '@material-ui/core/List';
 import ListItemText from '@material-ui/core/ListItemText';
 
 import { VersionPageConsumerProps, DetailContextConsumer } from '../../pages/Version';
-import { Heading, EngineListItem } from './styles';
+import Avatar from '../../muiComponents/Avatar';
+import List from '../../muiComponents/List';
+import npm from '../Install/img/npm.svg';
+
+import { StyledText, EngineListItem } from './styles';
 // @ts-ignore
 import node from './img/node.png';
-import npm from '../Install/img/npm.svg';
 
 const ICONS = {
   'node-JS': <Avatar src={node} />,
@@ -58,9 +58,9 @@ class Engine extends Component {
     return <Grid container={true}>{items}</Grid>;
   };
 
-  private renderListItems = (heading, text) => {
+  private renderListItems = (heading: string, text: string) => {
     return (
-      <List subheader={<Heading variant={'subtitle1'}>{text.split('-').join(' ')}</Heading>}>
+      <List subheader={<StyledText variant={'subtitle1'}>{text.split('-').join(' ')}</StyledText>}>
         <EngineListItem button={true}>
           {ICONS[text]}
           <ListItemText primary={heading} />

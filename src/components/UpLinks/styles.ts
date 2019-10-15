@@ -1,12 +1,11 @@
 import styled from 'react-emotion';
-import Typography from '@material-ui/core/Typography';
 import { default as MuiListItemText } from '@material-ui/core/ListItemText';
+
+import Text from '../../muiComponents/Text';
 import { fontWeight } from '../../utils/styles/sizes';
 
-export const Heading = styled(Typography)({
-  '&&': {
-    fontWeight: fontWeight.bold,
-  },
+export const StyledText = styled(Text)({
+  fontWeight: fontWeight.bold,
 });
 
 export const Spacer = styled('div')({

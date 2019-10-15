@@ -1,58 +1,42 @@
-import React, { ReactElement } from 'react';
-import List from '@material-ui/core/List';
-import ListItem from '@material-ui/core/ListItem';
+import React, { useContext } from 'react';
 
-import { DetailContextConsumer } from '../../pages/Version';
+import { DetailContext } from '../../pages/Version';
 import NoItems from '../NoItems';
 import { formatDateDistance } from '../../utils/package';
+import List from '../../muiComponents/List';
+import ListItem from '../../muiComponents/ListItem';
 
-import { Heading, Spacer, ListItemText } from './styles';
+import { StyledText, Spacer, ListItemText } from './styles';
 
-class UpLinks extends React.PureComponent<{}> {
-  public render(): ReactElement<HTMLElement> {
-    return (
-      <DetailContextConsumer>
-        {context => {
-          return (
-            context &&
-            context.packageMeta &&
-            context.packageMeta &&
-            context.packageMeta._uplinks &&
-            context.packageMeta.latest &&
-            this.renderContent(context.packageMeta._uplinks, context.packageMeta.latest)
-          );
-        }}
-      </DetailContextConsumer>
-    );
+const UpLinks: React.FC = () => {
+  const { packageMeta } = useContext(DetailContext);
+
+  if (!packageMeta || !packageMeta._uplinks || !packageMeta.latest) {
+    return null;
   }
 
-  public renderUpLinksList = uplinks => (
-    <List>
-      {Object.keys(uplinks)
-        .reverse()
-        .map(name => (
-          <ListItem key={name}>
-            <ListItemText>{name}</ListItemText>
-            <Spacer />
-            <ListItemText>{`${formatDateDistance(uplinks[name].fetched)} ago`}</ListItemText>
-          </ListItem>
-        ))}
-    </List>
+  const { _uplinks: uplinks, latest } = packageMeta;
+
+  if (Object.keys(uplinks).length === 0) {
+    return <NoItems text={`${latest.name} has no uplinks.`} />;
+  }
+
+  return (
+    <>
+      <StyledText variant="subtitle1">{'Uplinks'}</StyledText>
+      <List>
+        {Object.keys(uplinks)
+          .reverse()
+          .map(name => (
+            <ListItem key={name}>
+              <ListItemText>{name}</ListItemText>
+              <Spacer />
+              <ListItemText>{`${formatDateDistance(uplinks[name].fetched)} ago`}</ListItemText>
+            </ListItem>
+          ))}
+      </List>
+    </>
   );
-
-  public renderContent(uplinks, { name }): ReactElement<HTMLElement> {
-    if (Object.keys(uplinks).length > 0) {
-      return (
-        uplinks && (
-          <>
-            <Heading variant="subtitle1">{'Uplinks'}</Heading>
-            {this.renderUpLinksList(uplinks)}
-          </>
-        )
-      );
-    }
-    return <NoItems text={`${name} has no uplinks.`} />;
-  }
-}
+};
 
 export default UpLinks;

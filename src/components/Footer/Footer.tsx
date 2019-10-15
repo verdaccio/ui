@@ -1,7 +1,8 @@
 import React from 'react';
 
-import { Wrapper, Left, Right, Earth, Flags, Love, Flag, Logo, Inner, ToolTip } from './styles';
 import { goToVerdaccioWebsite } from '../../utils/windows';
+
+import { Wrapper, Left, Right, Earth, Flags, Love, Flag, Logo, Inner, ToolTip } from './styles';
 
 const renderTooltip = (): JSX.Element => (
   <ToolTip>

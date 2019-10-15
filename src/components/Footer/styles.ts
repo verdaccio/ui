@@ -1,4 +1,5 @@
 import styled, { css } from 'react-emotion';
+
 import mq from '../../utils/styles/media';
 import Icon from '../Icon/Icon';
 import colors from '../../utils/styles/colors';
@@ -20,7 +21,6 @@ export const Inner = styled('div')`
     justify-content: flex-end;
     width: 100%;
     ${() => {
-      // @ts-ignore
       return mq.medium(css`
         min-width: 400px;
         max-width: 800px;
@@ -29,7 +29,6 @@ export const Inner = styled('div')`
       `);
     }};
     ${() => {
-      // @ts-ignore
       return mq.large(css`
         max-width: 1240px;
       `);
@@ -42,7 +41,6 @@ export const Left = styled('div')`
     align-items: center;
     display: none;
     ${() => {
-      // @ts-ignore
       return mq.medium(css`
         display: flex;
       `);
@@ -90,7 +88,7 @@ export const Flags = styled('span')`
       border-color: ${colors.greyAthens} transparent transparent transparent;
       transform: rotate(90deg);
     }
-    ${ToolTip}:hover & {
+    ${/* sc-selector */ ToolTip}:hover & {
       visibility: visible;
     }
   }

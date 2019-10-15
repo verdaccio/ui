@@ -1,12 +1,13 @@
 import React from 'react';
-import List from '@material-ui/core/List';
 import Link from '@material-ui/core/Link';
-import ListItem from '@material-ui/core/ListItem';
 import { Link as RouterLink } from 'react-router-dom';
-import { Spacer, ListItemText } from './styles';
 
 import { Versions, Time } from '../../../types/packageMeta';
 import { formatDateDistance } from '../../utils/package';
+import List from '../../muiComponents/List';
+import ListItem from '../../muiComponents/ListItem';
+
+import { Spacer, ListItemText } from './styles';
 
 export const NOT_AVAILABLE = 'Not available';
 

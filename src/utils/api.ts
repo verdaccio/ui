@@ -43,7 +43,6 @@ class API {
     }
 
     if (!['http://', 'https://', '//'].some(prefix => url.startsWith(prefix))) {
-      // @ts-ignore
       url = window.VERDACCIO_API_URL + url;
     }
 

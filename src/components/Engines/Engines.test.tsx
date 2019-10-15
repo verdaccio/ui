@@ -1,11 +1,12 @@
 import React from 'react';
 import { mount } from 'enzyme';
+
 import Engine from './Engines';
 
 jest.mock('./img/node.png', () => '');
 jest.mock('../Install/img/npm.svg', () => '');
 
-const mockPackageMeta = jest.fn(() => ({
+const mockPackageMeta: jest.Mock = jest.fn(() => ({
   latest: {
     homepage: 'https://verdaccio.tld',
     bugs: {
@@ -38,7 +39,6 @@ describe('<Engines /> component', () => {
       },
     };
 
-    // @ts-ignore
     mockPackageMeta.mockImplementation(() => packageMeta);
 
     const wrapper = mount(<Engine />);
@@ -50,7 +50,6 @@ describe('<Engines /> component', () => {
       latest: {},
     };
 
-    // @ts-ignore
     mockPackageMeta.mockImplementation(() => packageMeta);
 
     const wrapper = mount(<Engine />);
@@ -64,7 +63,6 @@ describe('<Engines /> component', () => {
       },
     };
 
-    // @ts-ignore
     mockPackageMeta.mockImplementation(() => packageMeta);
 
     const wrapper = mount(<Engine />);

@@ -1,10 +1,11 @@
 import styled, { css } from 'react-emotion';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
-import IconButton from '@material-ui/core/IconButton';
 
 import colors from '../../utils/styles/colors';
 import mq from '../../utils/styles/media';
+import IconButton from '../../muiComponents/IconButton';
+import ExternalLink from '../Link';
 
 export const InnerNavBar = styled(Toolbar)({
   '&&': {
@@ -74,9 +75,8 @@ export const NavBar = styled(AppBar)`
     min-height: 60px;
     display: flex;
     justify-content: center;
-    ${() => {
-      // @ts-ignore
-      return mq.medium(css`
+    ${() =>
+      mq.medium(css`
         ${SearchWrapper} {
           display: flex;
         }
@@ -86,25 +86,26 @@ export const NavBar = styled(AppBar)`
         ${MobileNavBar} {
           display: none;
         }
-      `);
-    }};
-    ${() => {
-      // @ts-ignore
-      return mq.large(css`
+      `)};
+    ${() =>
+      mq.large(css`
         ${InnerNavBar} {
           padding: 0 20px;
         }
-      `);
-    }};
-    ${() => {
-      // @ts-ignore
-      return mq.xlarge(css`
+      `)};
+    ${() =>
+      mq.xlarge(css`
         ${InnerNavBar} {
           max-width: 1240px;
           width: 100%;
           margin: 0 auto;
         }
-      `);
-    }};
+      `)};
   }
 `;
+
+export const StyledExternalLink = styled(ExternalLink)({
+  '&&': {
+    color: 'white',
+  },
+});

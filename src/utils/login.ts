@@ -2,14 +2,16 @@ import isString from 'lodash/isString';
 import isNumber from 'lodash/isNumber';
 import isEmpty from 'lodash/isEmpty';
 import { Base64 } from 'js-base64';
-import API from './api';
+
 import { HEADERS } from '../../lib/constants';
+
+import API from './api';
 
 interface PayloadInterface {
   exp: number;
 }
 
-export function isTokenExpire(token?: string): boolean {
+export function isTokenExpire(token: string | null): boolean {
   if (!isString(token)) {
     return true;
   }

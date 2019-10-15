@@ -1,12 +1,12 @@
 import React from 'react';
 import { mount } from 'enzyme';
-import { MemoryRouter } from 'react-router';
+import { MemoryRouter } from 'react-router-dom';
+import { render, cleanup } from '@testing-library/react';
+
 import { DetailContext, DetailContextProps } from '../../pages/Version';
 
 import Versions, { LABEL_CURRENT_TAGS, LABEL_VERSION_HISTORY } from './Versions';
 import data from './__partials__/data.json';
-
-import { render, cleanup } from '@testing-library/react';
 
 const detailContextValue: Partial<DetailContextProps> = {
   packageName: 'foo',

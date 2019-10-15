@@ -3,7 +3,6 @@ import isNil from 'lodash/isNil';
 
 import storage from '../utils/storage';
 import { makeLogin, isTokenExpire } from '../utils/login';
-
 import Loading from '../components/Loading';
 import LoginModal from '../components/Login';
 import Header from '../components/Header';
@@ -14,29 +13,38 @@ import 'typeface-roboto/index.css';
 import '../utils/styles/global';
 import 'normalize.css';
 import Footer from '../components/Footer';
-import { FormError } from 'src/components/Login/Login';
+import { FormError } from '../components/Login/Login';
+import { PackageInterface } from '../components/Package/Package';
 
-export const AppContext = React.createContext<{}>({});
-export const AppContextProvider = AppContext.Provider;
-export const AppContextConsumer = AppContext.Consumer;
-
-export interface AppStateInterface {
-  error?: FormError;
+interface AppContextData {
   logoUrl: string;
+  scope: string;
+  isUserLoggedIn: boolean;
+  packages: PackageInterface[];
   user: {
     username?: string;
   };
-  scope: string;
+}
+export const AppContext = React.createContext<AppContextData>({
+  logoUrl: window.VERDACCIO_LOGO,
+  user: {},
+  scope: window.VERDACCIO_SCOPE || '',
+  isUserLoggedIn: false,
+  packages: [],
+});
+const AppContextProvider = AppContext.Provider;
+export const AppContextConsumer = AppContext.Consumer;
+
+export interface AppStateInterface extends AppContextData {
+  error?: FormError;
   showLoginModal: boolean;
-  isUserLoggedIn: boolean;
-  packages: [];
   isLoading: boolean;
 }
 export default class App extends Component<{}, AppStateInterface> {
   public state: AppStateInterface = {
     logoUrl: window.VERDACCIO_LOGO,
     user: {},
-    scope: window.VERDACCIO_SCOPE ? `${window.VERDACCIO_SCOPE}:` : '',
+    scope: window.VERDACCIO_SCOPE || '',
     showLoginModal: false,
     isUserLoggedIn: false,
     packages: [],
@@ -49,7 +57,7 @@ export default class App extends Component<{}, AppStateInterface> {
   }
 
   // eslint-disable-next-line no-unused-vars
-  public componentDidUpdate(_, prevState): void {
+  public componentDidUpdate(_: AppStateInterface, prevState: AppStateInterface): void {
     const { isUserLoggedIn } = this.state;
     if (prevState.isUserLoggedIn !== isUserLoggedIn) {
       this.loadOnHandler();
@@ -62,7 +70,6 @@ export default class App extends Component<{}, AppStateInterface> {
     const context = { isUserLoggedIn, packages, logoUrl, user, scope };
 
     return (
-      // @ts-ignore
       <Container isLoading={isLoading}>
         {isLoading ? <Loading /> : <AppContextProvider value={context}>{this.renderContent()}</AppContextProvider>}
         {this.renderLoginModal()}
@@ -86,11 +93,9 @@ export default class App extends Component<{}, AppStateInterface> {
 
   public loadOnHandler = async () => {
     try {
-      // @ts-ignore
-      this.req = await API.request<[]>('packages', 'GET');
+      const packages = await API.request<any[]>('packages', 'GET');
       this.setState({
-        // @ts-ignore
-        packages: this.req,
+        packages,
         isLoading: false,
       });
     } catch (error) {
@@ -103,7 +108,7 @@ export default class App extends Component<{}, AppStateInterface> {
     }
   };
 
-  public setLoading = isLoading =>
+  public setLoading = (isLoading: boolean) =>
     this.setState({
       isLoading,
     });
@@ -122,7 +127,7 @@ export default class App extends Component<{}, AppStateInterface> {
    * handles login
    * Required by: <Header />
    */
-  public handleDoLogin = async (usernameValue, passwordValue) => {
+  public handleDoLogin = async (usernameValue: string, passwordValue: string) => {
     const { username, token, error } = await makeLogin(usernameValue, passwordValue);
 
     if (username && token) {
@@ -139,7 +144,7 @@ export default class App extends Component<{}, AppStateInterface> {
     }
   };
 
-  public setLoggedUser = username => {
+  public setLoggedUser = (username: string) => {
     this.setState({
       user: {
         username,
