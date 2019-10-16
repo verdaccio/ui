@@ -33,13 +33,33 @@ The configuration file is located on `tools/_config.yaml`.
 
 Run linting tooling and test to check your code is clean before commit.
 
+> ⚠️ The development mode just emulate interaction of the UI development with a real verdaccio server, but it is not the real integration. UI is just a theme plugin dependency in the [Verdaccio project](https://github.com/verdaccio/verdaccio).
+
+### Before commit
+
+Don't forget run the following commands before commit and push your code, it will save you time.
+
 ```bash
 yarn lint && yarn test
 ```
 
+#### Commits
+
 Remember we follow the [the Conventional Commits specification](https://www.conventionalcommits.org/en/v1.0.0-beta.4/).
 
+> Please use `fix(module): xxxx` rather `refactor` or `chore`, any change in this repo is either a `fix` or `feat`. Otherwise your contributions won't appear in the Changelog file. Furthermore, we git squash your PR and we do it for you in any case.
+
 🤓 Feel free to participate in code reviews, let us know if you want to participate in this plugin.
+
+### End to End Testing
+
+Additionally, we recommend run E2E testing before push and verify your changes do not break anything. These command will run in our CI anyway.
+
+```bash
+yarn build && yarn test:e2e
+```
+
+> `yarn build` will build with webpack the production files.
 
 
 ## Open Collective Sponsors
