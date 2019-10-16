@@ -1,38 +1,27 @@
 import React from 'react';
 import { mount, ReactWrapper } from 'enzyme';
 
+import { copyToClipBoardUtility } from '../../utils/cli-utils';
+
 import CopyToClipBoard from './CopyToClipBoard';
 import { CopyIcon } from './styles';
 
+jest.mock('../../utils/cli-utils');
+
 describe('<CopyToClipBoard /> component', () => {
   let wrapper: ReactWrapper;
+  const copyText = 'copy text';
 
   beforeEach(() => {
-    wrapper = mount(<CopyToClipBoard text={'copy text'} />);
+    wrapper = mount(<CopyToClipBoard text={copyText} />);
   });
 
   test('render the component', () => {
     expect(wrapper.html()).toMatchSnapshot();
   });
 
-  test('should call the DOM APIs for copy to clipboard utility', () => {
-    const event = {
-      preventDefault: jest.fn(),
-    };
-
-    // @ts-ignore: Property 'getSelection' does not exist on type 'Global'.
-    global.getSelection = jest.fn(() => ({
-      removeAllRanges: () => {},
-      addRange: () => {},
-    }));
-
-    // @ts-ignore: Property 'document/getSelection' does not exist on type 'Global'.
-    const { document, getSelection } = global;
-
-    wrapper.find(CopyIcon).simulate('click', event);
-    expect(event.preventDefault).toHaveBeenCalled();
-    expect(document.createRange).toHaveBeenCalled();
-    expect(getSelection).toHaveBeenCalled();
-    expect(document.execCommand).toHaveBeenCalledWith('copy');
+  test('should call the copyToClipBoardUtility for copy to clipboard utility', () => {
+    wrapper.find(CopyIcon).simulate('click');
+    expect(copyToClipBoardUtility).toHaveBeenCalledWith(copyText);
   });
 });
