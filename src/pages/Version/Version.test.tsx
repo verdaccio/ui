@@ -2,6 +2,7 @@ import React from 'react';
 import { render, cleanup } from '@testing-library/react';
 import { MemoryRouter } from 'react-router';
 import { waitForElement } from '@testing-library/dom';
+import { FetchMock } from 'jest-fetch-mock';
 
 import vueMetadata from '../../../test/fixtures/metadata/vue.json';
 import ErrorBoundary from '../../App/AppError';
@@ -28,16 +29,14 @@ describe('test Version page', () => {
 
   beforeEach(() => {
     jest.resetAllMocks();
-    // @ts-ignore
-    fetch.resetMocks();
+    (fetch as FetchMock).resetMocks();
   });
 
   test('should render the version page', async () => {
     const readmeText = 'test';
-    // @ts-ignore
-    fetch.mockResponses(
-      [[JSON.stringify(vueMetadata)], { status: 200, headers: { 'content-type': 'application/json' } }],
-      [[`<p align="center">${readmeText}</p>`], { status: 200, headers: { 'content-type': 'text/html' } }]
+    (fetch as FetchMock).mockResponses(
+      [JSON.stringify(vueMetadata), { status: 200, headers: { 'content-type': 'application/json' } }],
+      [`<p align="center">${readmeText}</p>`, { status: 200, headers: { 'content-type': 'text/html' } }]
     );
 
     const { getByTestId, getByText } = render(
@@ -62,10 +61,9 @@ describe('test Version page', () => {
   });
 
   test('should render 404 page if the resources are not found', async () => {
-    // @ts-ignore
-    fetch.mockResponses(
-      [[JSON.stringify({})], { status: 404, headers: { 'content-type': 'application/json' } }],
-      [[``], { status: 404, headers: { 'content-type': 'text/html' } }]
+    (fetch as FetchMock).mockResponses(
+      [JSON.stringify({}), { status: 404, headers: { 'content-type': 'application/json' } }],
+      [``, { status: 404, headers: { 'content-type': 'text/html' } }]
     );
 
     const { getByTestId, getByText } = render(

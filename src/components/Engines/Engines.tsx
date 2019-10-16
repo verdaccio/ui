@@ -8,7 +8,6 @@ import List from '../../muiComponents/List';
 import npm from '../Install/img/npm.svg';
 
 import { StyledText, EngineListItem } from './styles';
-// @ts-ignore
 import node from './img/node.png';
 
 const ICONS = {

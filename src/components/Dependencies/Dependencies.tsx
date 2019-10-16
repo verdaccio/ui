@@ -52,8 +52,6 @@ const Dependencies: React.FC<{}> = () => {
   }
 
   const { latest } = packageMeta;
-  // FIXME: add dependencies to package meta type
-  // @ts-ignore
   const { dependencies, devDependencies, peerDependencies, name } = latest;
   const dependencyMap = { dependencies, devDependencies, peerDependencies };
   const hasDependencies = hasKeys(dependencies) || hasKeys(devDependencies) || hasKeys(peerDependencies);
