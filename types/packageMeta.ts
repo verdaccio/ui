@@ -11,9 +11,9 @@ export interface PackageMetaInterface {
     };
     license?: Partial<LicenseInterface> | string;
     version: string;
-    dependencies: PackageDependencies;
-    devDependencies: PackageDependencies;
-    peerDependencies: PackageDependencies;
+    dependencies?: PackageDependencies;
+    devDependencies?: PackageDependencies;
+    peerDependencies?: PackageDependencies;
   };
   _uplinks: {};
 }
