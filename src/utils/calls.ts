@@ -1,4 +1,4 @@
-import { PackageMetaInterface } from 'types/packageMeta';
+import { PackageMetaInterface } from '../../types/packageMeta';
 
 import API from './api';
 
