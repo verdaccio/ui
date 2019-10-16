@@ -6,9 +6,9 @@ import { DetailContext } from '../../pages/Version';
 import UpLinks from './UpLinks';
 
 describe('<UpLinks /> component', () => {
-  test('should render the component in default state', () => {
+  test('should return null without packageMeta', () => {
     const wrapper = shallow(<UpLinks />);
-    expect(wrapper.html()).toMatchSnapshot();
+    expect(wrapper.html()).toBeNull();
   });
 
   test('should render the component with uplinks', () => {
