@@ -43,7 +43,11 @@ Don't forget run the following commands before commit and push your code, it wil
 yarn lint && yarn test
 ```
 
+#### Commits
+
 Remember we follow the [the Conventional Commits specification](https://www.conventionalcommits.org/en/v1.0.0-beta.4/).
+
+> Please use `fix(module): xxxx` rather `refactor` or `chore`, any change in this repo is either a `fix` or `feat`. Otherwise your contributions won't appear in the Changelog file. Furthermore, we git squash your PR and we do it for you in any case.
 
 🤓 Feel free to participate in code reviews, let us know if you want to participate in this plugin.
 
