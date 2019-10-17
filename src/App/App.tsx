@@ -1,5 +1,7 @@
 import React, { Component, ReactElement } from 'react';
 import isNil from 'lodash/isNil';
+import 'normalize.css';
+import 'typeface-roboto/index.css';
 
 import storage from '../utils/storage';
 import { makeLogin, isTokenExpire } from '../utils/login';
@@ -7,41 +9,15 @@ import Loading from '../components/Loading';
 import LoginModal from '../components/Login';
 import Header from '../components/Header';
 import { Container, Content } from '../components/Layout';
-import RouterApp from '../router';
 import API from '../utils/api';
-import 'typeface-roboto/index.css';
 import '../utils/styles/global';
-import 'normalize.css';
 import Footer from '../components/Footer';
-import { FormError } from '../components/Login/Login';
-import { PackageInterface } from '../components/Package/Package';
 
-interface AppContextData {
-  logoUrl: string;
-  scope: string;
-  isUserLoggedIn: boolean;
-  packages: PackageInterface[];
-  user: {
-    username?: string;
-  };
-}
-export const AppContext = React.createContext<AppContextData>({
-  logoUrl: window.VERDACCIO_LOGO,
-  user: {},
-  scope: window.VERDACCIO_SCOPE || '',
-  isUserLoggedIn: false,
-  packages: [],
-});
-const AppContextProvider = AppContext.Provider;
-export const AppContextConsumer = AppContext.Consumer;
+import AppRoute from './AppRoute';
+import { AppProps, AppContextProvider } from './AppContext';
 
-export interface AppStateInterface extends AppContextData {
-  error?: FormError;
-  showLoginModal: boolean;
-  isLoading: boolean;
-}
-export default class App extends Component<{}, AppStateInterface> {
-  public state: AppStateInterface = {
+export default class App extends Component<{}, AppProps> {
+  public state: AppProps = {
     logoUrl: window.VERDACCIO_LOGO,
     user: {},
     scope: window.VERDACCIO_SCOPE || '',
@@ -57,7 +33,7 @@ export default class App extends Component<{}, AppStateInterface> {
   }
 
   // eslint-disable-next-line no-unused-vars
-  public componentDidUpdate(_: AppStateInterface, prevState: AppStateInterface): void {
+  public componentDidUpdate(_: AppProps, prevState: AppProps): void {
     const { isUserLoggedIn } = this.state;
     if (prevState.isUserLoggedIn !== isUserLoggedIn) {
       this.loadOnHandler();
@@ -177,9 +153,7 @@ export default class App extends Component<{}, AppStateInterface> {
     return (
       <>
         <Content>
-          <RouterApp onLogout={this.handleLogout} onToggleLoginModal={this.handleToggleLoginModal}>
-            {this.renderHeader()}
-          </RouterApp>
+          <AppRoute>{this.renderHeader()}</AppRoute>
         </Content>
         <Footer />
       </>

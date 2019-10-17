@@ -1,7 +1,7 @@
 import React, { lazy, useContext, Suspense } from 'react';
-import { Route, Switch } from 'react-router-dom';
+import { Route as ReactRouterDomRoute, Switch, Router } from 'react-router-dom';
+import { createBrowserHistory } from 'history';
 
-import { Route as Routes } from '../routers';
 import Loading from '../components/Loading';
 
 import { AppContext } from './AppContext';
@@ -11,42 +11,57 @@ const VersionContextProvider = lazy(() => import('../pages/Version/VersionContex
 const VersionPage = lazy(() => import('../pages/Version'));
 const HomePage = lazy(() => import('../pages/home'));
 
+enum Route {
+  ROOT = '/',
+  SCOPE_PACKAGE = '/-/web/detail/@:scope/:package',
+  SCOPE_PACKAGE_VERSION = '/-/web/detail/@:scope/:package/v/:version',
+  PACKAGE = '/-/web/detail/:package',
+  PACKAGE_VERSION = '/-/web/detail/:package/v/:version',
+}
+
+const history = createBrowserHistory({
+  basename: window.__VERDACCIO_BASENAME_UI_OPTIONS && window.__VERDACCIO_BASENAME_UI_OPTIONS.url_prefix,
+});
+
 /* eslint react/jsx-max-depth: 0 */
-const AppRoute: React.FC = () => {
+const AppRoute: React.FC = ({ children }) => {
   const appContext = useContext(AppContext);
   const { isUserLoggedIn, packages } = appContext;
 
   return (
-    <Suspense fallback={<Loading />}>
-      <Switch>
-        <Route exact={true} path={Routes.ROOT}>
-          <HomePage isUserLoggedIn={!!isUserLoggedIn} packages={packages || []} />
-        </Route>
-        <Route exact={true} path={Routes.PACKAGE}>
-          <VersionContextProvider>
-            <VersionPage />
-          </VersionContextProvider>
-        </Route>
-        <Route exact={true} path={Routes.PACKAGE_VERSION}>
-          <VersionContextProvider>
-            <VersionPage />
-          </VersionContextProvider>
-        </Route>
-        <Route exact={true} path={Routes.SCOPE_PACKAGE_VERSION}>
-          <VersionContextProvider>
-            <VersionPage />
-          </VersionContextProvider>
-        </Route>
-        <Route exact={true} path={Routes.SCOPE_PACKAGE}>
-          <VersionContextProvider>
-            <VersionPage />
-          </VersionContextProvider>
-        </Route>
-        <Route>
-          <NotFound />
-        </Route>
-      </Switch>
-    </Suspense>
+    <Router history={history}>
+      <Suspense fallback={<Loading />}>
+        {children}
+        <Switch>
+          <ReactRouterDomRoute exact={true} path={Route.ROOT}>
+            <HomePage isUserLoggedIn={!!isUserLoggedIn} packages={packages || []} />
+          </ReactRouterDomRoute>
+          <ReactRouterDomRoute exact={true} path={Route.PACKAGE}>
+            <VersionContextProvider>
+              <VersionPage />
+            </VersionContextProvider>
+          </ReactRouterDomRoute>
+          <ReactRouterDomRoute exact={true} path={Route.PACKAGE_VERSION}>
+            <VersionContextProvider>
+              <VersionPage />
+            </VersionContextProvider>
+          </ReactRouterDomRoute>
+          <ReactRouterDomRoute exact={true} path={Route.SCOPE_PACKAGE_VERSION}>
+            <VersionContextProvider>
+              <VersionPage />
+            </VersionContextProvider>
+          </ReactRouterDomRoute>
+          <ReactRouterDomRoute exact={true} path={Route.SCOPE_PACKAGE}>
+            <VersionContextProvider>
+              <VersionPage />
+            </VersionContextProvider>
+          </ReactRouterDomRoute>
+          <ReactRouterDomRoute>
+            <NotFound />
+          </ReactRouterDomRoute>
+        </Switch>
+      </Suspense>
+    </Router>
   );
 };
 
