@@ -35,6 +35,7 @@ export function downloadFile(fileStream: Blob, fileName: string): void {
   let file: File;
   // File constructor is not supported by Edge
   // https://developer.mozilla.org/en-US/docs/Web/API/File#Browser_compatibility
+  // @ts-ignore. Please see: https://github.com/microsoft/TypeScript/issues/33792
   if (navigator.msSaveBlob) {
     // Detect if Edge
     file = blobToFile(new Blob([fileStream], { type: 'application/octet-stream' }), fileName);

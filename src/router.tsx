@@ -12,6 +12,7 @@ const history = createBrowserHistory({
 });
 
 const NotFound = React.lazy(() => import('./components/NotFound'));
+const VersionContextProvider = React.lazy(() => import('./pages/Version/VersionContextProvider'));
 const VersionPackage = React.lazy(() => import('./pages/Version'));
 const HomePage = React.lazy(() => import('./pages/home'));
 
@@ -61,13 +62,11 @@ class RouterApp extends Component<RouterAppProps> {
     );
   };
 
-  public renderVersionPage = (routerProps): ReactElement<HTMLDivElement> => {
+  public renderVersionPage = (): ReactElement<HTMLDivElement> => {
     return (
-      <AppContextConsumer>
-        {function renderConsumerVersionPage({ isUserLoggedIn }) {
-          return <VersionPackage {...routerProps} isUserLoggedIn={isUserLoggedIn} />;
-        }}
-      </AppContextConsumer>
+      <VersionContextProvider>
+        <VersionPackage />
+      </VersionContextProvider>
     );
   };
 }

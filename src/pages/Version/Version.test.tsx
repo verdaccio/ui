@@ -1,22 +1,29 @@
 import React from 'react';
-import { render, cleanup } from '@testing-library/react';
 import { MemoryRouter } from 'react-router';
+import { render } from '@testing-library/react';
 import { waitForElement } from '@testing-library/dom';
 import { FetchMock } from 'jest-fetch-mock';
 
-import vueMetadata from '../../../test/fixtures/metadata/vue.json';
-import ErrorBoundary from '../../App/AppError';
+import { NOT_FOUND_TEXT } from '../../components/NotFound';
 
 import Version from './Version';
+import { DetailContext } from './context';
+import data from './__partials__/data.json';
 
 // :-) we mock this otherways fails on render, some weird issue on material-ui
 jest.mock('../../muiComponents/Avatar');
 
-// eslint-disable-next-line react/display-name
-jest.mock('../../components/NotFound', () => () => <div>{'Not found'}</div>);
+const detailContextValue = {
+  packageName: 'foo',
+  packageMeta: data,
+  readMe: 'Read me!',
+  enableLoading: jest.fn(),
+  isLoading: false,
+  hasNotBeenFound: false,
+  version: '1.0.0',
+};
 
 describe('test Version page', () => {
-  jest.setTimeout(40000000);
   beforeAll(() => {
     // FIXME: a better way to mock this
     // @ts-ignore
@@ -39,24 +46,19 @@ describe('test Version page', () => {
       [`<p align="center">${readmeText}</p>`, { status: 200, headers: { 'content-type': 'text/html' } }]
     );
 
+  /* eslint-disable react/jsx-max-depth */
+  test('should render the version page', async () => {
     const { getByTestId, getByText } = render(
-      <ErrorBoundary>
-        <MemoryRouter>
-          <Version match={{ params: { ['package']: 'vue' } }}></Version>
-        </MemoryRouter>
-      </ErrorBoundary>
+      <MemoryRouter>
+        <DetailContext.Provider value={detailContextValue}>
+          <Version />
+        </DetailContext.Provider>
+      </MemoryRouter>
     );
-
-    // first it display loading
-    const hasLoading = getByTestId('loading');
-    expect(hasLoading).toBeTruthy();
-
     // we wait fetch response (mocked above)
     await waitForElement(() => getByTestId('version-layout'));
-
     // check whether readme was loaded
-    const hasReadme = getByText(readmeText);
-
+    const hasReadme = getByText(detailContextValue.readMe);
     expect(hasReadme).toBeTruthy();
   });
 
@@ -64,27 +66,20 @@ describe('test Version page', () => {
     (fetch as FetchMock).mockResponses(
       [JSON.stringify({}), { status: 404, headers: { 'content-type': 'application/json' } }],
       [``, { status: 404, headers: { 'content-type': 'text/html' } }]
+    const { getByText } = render(
+      <MemoryRouter>
+        <DetailContext.Provider
+          value={{
+            ...detailContextValue,
+            hasNotBeenFound: true,
+          }}>
+          <Version />
+        </DetailContext.Provider>
+      </MemoryRouter>
     );
-
-    const { getByTestId, getByText } = render(
-      <ErrorBoundary>
-        <MemoryRouter>
-          <Version match={{ params: { ['package']: 'vue' } }}></Version>
-        </MemoryRouter>
-      </ErrorBoundary>
-    );
-
-    // first it display loading
-    const hasLoading = getByTestId('loading');
-    expect(hasLoading).toBeTruthy();
-
     // we wait fetch response (mocked above)
-    await waitForElement(() => getByText('Not found'));
-
-    // check whether readme was loaded
-    const hasReadme = getByText('Not found');
-
-    expect(hasReadme).toBeTruthy();
+    const notFoundElement = await waitForElement(() => getByText(NOT_FOUND_TEXT));
+    expect(notFoundElement).toBeTruthy();
   });
 
   // Wanna contribute? Here we some scenarios we need to test
