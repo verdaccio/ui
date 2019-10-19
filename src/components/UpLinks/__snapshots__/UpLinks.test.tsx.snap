@@ -1,5 +1,3 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<UpLinks /> component should render the component in default state 1`] = `null`;
-
 exports[`<UpLinks /> component should render the component with uplinks 1`] = `"<h6 class=\\"MuiTypography-root css-1vg6q84 e14i1sy10 MuiTypography-subtitle1\\">Uplinks</h6><ul class=\\"MuiList-root MuiList-padding\\"><li class=\\"MuiListItem-root MuiListItem-gutters\\"><div class=\\"MuiListItemText-root css-5tz9yo e14i1sy12\\"><span class=\\"MuiTypography-root MuiListItemText-primary MuiTypography-body1\\">npmjs</span></div><div class=\\"css-1l1cv61 e14i1sy11\\"></div><div class=\\"MuiListItemText-root css-5tz9yo e14i1sy12\\"><span class=\\"MuiTypography-root MuiListItemText-primary MuiTypography-body1\\">over 1 year ago</span></div></li></ul>"`;
