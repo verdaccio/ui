@@ -4,7 +4,8 @@ import { mount, ReactWrapper } from 'enzyme';
 import storage from '../utils/storage';
 import { generateTokenWithTimeRange } from '../../jest/unit/components/__mocks__/token';
 
-import App, { AppStateInterface } from './App';
+import App from './App';
+import { AppProps } from './AppContext';
 
 jest.mock('../utils/storage', () => {
   class LocalStorageMock {
@@ -33,7 +34,7 @@ jest.mock('../utils/api', () => ({
 }));
 
 describe('App', () => {
-  let wrapper: ReactWrapper<{}, AppStateInterface, App>;
+  let wrapper: ReactWrapper<{}, AppProps, App>;
 
   beforeEach(() => {
     wrapper = mount(<App />);
