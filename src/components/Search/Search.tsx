@@ -65,6 +65,11 @@ export class Search extends Component<RouteComponentProps<{}>, State> {
         suggestionsLoaded={loaded}
         suggestionsLoading={loading}
         value={search}
+        wrapperClassName={css`
+          background: #718466;
+          padding: 0.2rem 0.4rem;
+          border-radius: 4px;
+        `}
       />
     );
   }

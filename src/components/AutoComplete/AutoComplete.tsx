@@ -10,6 +10,7 @@ import { fontWeight } from '../../utils/styles/sizes';
 import { Wrapper, InputField, SuggestionContainer } from './styles';
 
 interface Props {
+  wrapperClassName: string;
   suggestions: unknown[];
   suggestionsLoading?: boolean;
   suggestionsLoaded?: boolean;
@@ -89,6 +90,7 @@ const SUGGESTIONS_RESPONSE = {
 };
 
 const AutoComplete = ({
+  wrapperClassName = '',
   suggestions,
   startAdornment,
   onChange,
@@ -137,7 +139,7 @@ const AutoComplete = ({
   }
 
   return (
-    <Wrapper>
+    <Wrapper className={wrapperClassName}>
       <Autosuggest {...autosuggestProps} inputProps={inputProps} onSuggestionSelected={onClick} renderSuggestionsContainer={renderSuggestionsContainer} />
     </Wrapper>
   );
