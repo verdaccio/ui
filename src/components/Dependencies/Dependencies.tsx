@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import { useHistory } from 'react-router-dom';
-import CardContent from '@material-ui/core/CardContent';
 
+import CardContent from '../../muiComponents/CardContent';
 import { PackageDependencies } from '../../../types/packageMeta';
 import { DetailContext } from '../../pages/Version';
 import NoItems from '../NoItems';

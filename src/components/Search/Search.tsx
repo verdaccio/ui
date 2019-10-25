@@ -3,9 +3,9 @@ import { withRouter, RouteComponentProps } from 'react-router-dom';
 import { SuggestionSelectedEventData, ChangeEvent } from 'react-autosuggest';
 import { css } from 'emotion';
 import { default as IconSearch } from '@material-ui/icons/Search';
-import InputAdornment from '@material-ui/core/InputAdornment';
 import debounce from 'lodash/debounce';
 
+import InputAdornment from '../../muiComponents/InputAdornment';
 import AutoComplete from '../AutoComplete';
 import colors from '../../utils/styles/colors';
 import { callSearch } from '../../utils/calls';

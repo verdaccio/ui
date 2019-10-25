@@ -1,10 +1,5 @@
 import React, { Component } from 'react';
-import SnackbarContent from '@material-ui/core/SnackbarContent';
 import ErrorIcon from '@material-ui/icons/Error';
-import InputLabel from '@material-ui/core/InputLabel';
-import Input from '@material-ui/core/Input';
-import FormControl from '@material-ui/core/FormControl';
-import FormHelperText from '@material-ui/core/FormHelperText';
 import { css } from 'emotion';
 
 import Button from '../../muiComponents/Button';
@@ -12,6 +7,11 @@ import Dialog from '../../muiComponents/Dialog';
 import DialogTitle from '../../muiComponents/DialogTitle';
 import DialogContent from '../../muiComponents/DialogContent';
 import DialogActions from '../../muiComponents/DialogActions';
+import FormControl from '../../muiComponents/FormControl';
+import FormHelperText from '../../muiComponents/FormHelperText';
+import Input from '../../muiComponents/Input';
+import InputLabel from '../../muiComponents/InputLabel';
+import SnackbarContent from '../../muiComponents/SnackbarContent';
 
 import * as classes from './styles';
 

@@ -1,11 +1,11 @@
-import CardActions from '@material-ui/core/CardActions';
-import CardContent from '@material-ui/core/CardContent';
 import React, { Fragment } from 'react';
 
 import { getRegistryURL } from '../../utils/url';
 import CopyToClipBoard from '../CopyToClipBoard';
 import Button from '../../muiComponents/Button';
+import CardContent from '../../muiComponents/CardContent';
 import { default as Typography } from '../../muiComponents/Heading';
+import CardActions from '../../muiComponents/CardActions';
 import Text from '../../muiComponents/Text';
 
 import { CardStyled as Card, HelpTitle } from './styles';
