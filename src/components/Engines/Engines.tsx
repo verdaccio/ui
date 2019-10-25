@@ -1,11 +1,11 @@
 import React, { Component, ReactElement } from 'react';
-import Grid from '@material-ui/core/Grid';
 
 import { VersionPageConsumerProps, DetailContextConsumer } from '../../pages/Version';
 import Avatar from '../../muiComponents/Avatar';
 import List from '../../muiComponents/List';
 import npm from '../Install/img/npm.svg';
 import ListItemText from '../../muiComponents/ListItemText';
+import Grid from '../../muiComponents/Grid';
 
 import { StyledText, EngineListItem } from './styles';
 // @ts-ignore

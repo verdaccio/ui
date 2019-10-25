@@ -1,5 +1,4 @@
 import styled from 'react-emotion';
-import Grid from '@material-ui/core/Grid';
 
 import Github from '../../icons/GitHub';
 import colors from '../../utils/styles/colors';
@@ -7,6 +6,7 @@ import { fontWeight } from '../../utils/styles/sizes';
 import Text from '../../muiComponents/Text';
 import ListItem from '../../muiComponents/ListItem';
 import ListItemText from '../../muiComponents/ListItemText';
+import Grid from '../../muiComponents/Grid';
 
 export const StyledText = styled(Text)({
   fontWeight: fontWeight.bold,
@@ -14,9 +14,7 @@ export const StyledText = styled(Text)({
 });
 
 export const GridRepo = styled(Grid)({
-  '&&': {
-    alignItems: 'center',
-  },
+  alignItems: 'center',
 });
 
 export const GithubLink = styled('a')({

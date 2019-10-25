@@ -1,11 +1,11 @@
 import React from 'react';
-import Link from '@material-ui/core/Link';
 import { Link as RouterLink } from 'react-router-dom';
 
 import { Versions, Time } from '../../../types/packageMeta';
 import { formatDateDistance } from '../../utils/package';
 import List from '../../muiComponents/List';
 import ListItem from '../../muiComponents/ListItem';
+import Link from '../../muiComponents/Link';
 
 import { Spacer, ListItemText } from './styles';
 
