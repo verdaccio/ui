@@ -1,9 +1,9 @@
 import styled from 'react-emotion';
 import Card from '@material-ui/core/Card';
-import Chip from '@material-ui/core/Chip';
 
 import { fontWeight } from '../../utils/styles/sizes';
 import Text from '../../muiComponents/Text';
+import Chip from '../../muiComponents/Chip';
 
 export const CardWrap = styled(Card)({
   '&&': {
@@ -26,7 +26,5 @@ export const Tags = styled('div')({
 });
 
 export const Tag = styled(Chip)({
-  '&&': {
-    margin: '5px',
-  },
+  margin: '5px',
 });

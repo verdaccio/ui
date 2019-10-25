@@ -1,8 +1,8 @@
 import styled from 'react-emotion';
-import { default as MuiListItemText } from '@material-ui/core/ListItemText';
 
 import { fontWeight } from '../../utils/styles/sizes';
 import Text from '../../muiComponents/Text';
+import { default as MuiListItemText } from '../../muiComponents/ListItemText';
 
 export const StyledText = styled(Text)({
   fontWeight: fontWeight.bold,
@@ -17,9 +17,7 @@ export const Spacer = styled('div')({
 });
 
 export const ListItemText = styled(MuiListItemText)({
-  '&&': {
-    flex: 'none',
-    color: 'black',
-    opacity: 0.6,
-  },
+  flex: 'none',
+  color: 'black',
+  opacity: 0.6,
 });

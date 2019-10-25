@@ -1,9 +1,9 @@
 import React, { MouseEvent } from 'react';
-import MenuItem from '@material-ui/core/MenuItem';
-import Menu from '@material-ui/core/Menu';
 import AccountCircle from '@material-ui/icons/AccountCircle';
 
 import IconButton from '../../muiComponents/IconButton';
+import MenuItem from '../../muiComponents/MenuItem';
+import Menu from '../../muiComponents/Menu';
 
 import HeaderGreetings from './HeaderGreetings';
 
