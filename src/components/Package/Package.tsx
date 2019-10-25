@@ -1,5 +1,6 @@
 import React from 'react';
 import BugReport from '@material-ui/icons/BugReport';
+import DownloadIcon from '@material-ui/icons/CloudDownload';
 import Grid from '@material-ui/core/Grid';
 import HomeIcon from '@material-ui/icons/Home';
 
@@ -9,6 +10,7 @@ import fileSizeSI from '../../utils/file-size';
 import { formatDate, formatDateDistance } from '../../utils/package';
 import Tooltip from '../../muiComponents/Tooltip';
 import { isURL } from '../../utils/url';
+import { downloadHandler } from '../ActionBar/ActionBar';
 import ListItem from '../../muiComponents/ListItem';
 
 import {
@@ -34,6 +36,7 @@ interface Bugs {
 }
 interface Dist {
   unpackedSize: number;
+  tarball: string;
 }
 
 export interface PackageInterface {
@@ -132,6 +135,21 @@ const Package: React.FC<PackageInterface> = ({
       </a>
     );
 
+  const renderDownloadLink = (): React.ReactNode =>
+    dist &&
+    dist.tarball &&
+    isURL(dist.tarball) && (
+      // eslint-disable-next-line
+      <a onClick={() => downloadHandler(dist.tarball)} target={'_blank'}>
+        <Tooltip aria-label={'Download the tar file'} title={'Download tarball'}>
+          <IconButton aria-label={'Download'}>
+            {/* eslint-disable-next-line react/jsx-max-depth */}
+            <DownloadIcon />
+          </IconButton>
+        </Tooltip>
+      </a>
+    );
+
   const renderPrimaryComponent = (): React.ReactNode => {
     return (
       <Grid container={true} item={true} xs={12}>
@@ -144,6 +162,7 @@ const Package: React.FC<PackageInterface> = ({
         <GridRightAligned item={true} xs={true}>
           {renderHomePageLink()}
           {renderBugsLink()}
+          {renderDownloadLink()}
         </GridRightAligned>
       </Grid>
     );
