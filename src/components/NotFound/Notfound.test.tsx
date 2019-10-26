@@ -13,7 +13,7 @@ describe('<NotFound /> component', () => {
     );
     expect(container.firstChild).toMatchSnapshot();
   });
-  test('the button click', () => {
+  test('go to Home Page button click', () => {
     const spy = jest.spyOn(React, 'useCallback');
     const { getByText } = render(
       <Router>
