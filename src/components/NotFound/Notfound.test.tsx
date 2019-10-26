@@ -1,8 +1,8 @@
 import React from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
-import { render } from '@testing-library/react';
+import { render, fireEvent } from '@testing-library/react';
 
-import NotFound from './NotFound';
+import NotFound, { GO_TO_HOME_PAGE } from './NotFound';
 
 describe('<NotFound /> component', () => {
   test('should load the component in default state', () => {
@@ -13,5 +13,17 @@ describe('<NotFound /> component', () => {
     );
     expect(container.firstChild).toMatchSnapshot();
   });
-  test.todo('Test Button Click');
+  test('the button click', () => {
+    const spy = jest.spyOn(React, 'useCallback');
+    const { getByText } = render(
+      <Router>
+        <NotFound />
+      </Router>
+    );
+
+    const node = getByText(GO_TO_HOME_PAGE);
+    fireEvent.click(node);
+
+    expect(spy).toHaveBeenCalled();
+  });
 });
