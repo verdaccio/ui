@@ -1,6 +1,6 @@
 import React from 'react';
 
-import PackageList from '../../components/PackageList';
+import { PackageList } from '../../components/PackageList';
 import { PackageInterface } from '../../components/Package/Package';
 
 interface Props {
