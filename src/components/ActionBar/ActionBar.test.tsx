@@ -1,6 +1,8 @@
 import React from 'react';
 import { mount } from 'enzyme';
 
+import api from '../../utils/api';
+
 import { ActionBar } from './ActionBar';
 
 const mockPackageMeta: jest.Mock = jest.fn(() => ({
@@ -43,11 +45,38 @@ describe('<ActionBar /> component', () => {
     expect(wrapper.html()).toEqual('');
   });
 
+  test('when there is no latest property in package meta', () => {
+    mockPackageMeta.mockImplementation(() => ({}));
+    const wrapper = mount(<ActionBar />);
+
+    expect(wrapper.html()).toEqual('');
+  });
+
   test('when there is a button to download a tarball', () => {
     mockPackageMeta.mockImplementation(() => ({
       latest: {
         dist: {
           tarball: 'http://localhost:8080/bootstrap/-/bootstrap-4.3.1.tgz',
+        },
+      },
+    }));
+
+    const wrapper = mount(<ActionBar />);
+    expect(wrapper.html()).toMatchSnapshot();
+
+    const button = wrapper.find('button');
+    expect(button).toHaveLength(1);
+
+    const spy = jest.spyOn(api, 'request');
+    button.simulate('click');
+    expect(spy).toHaveBeenCalled();
+  });
+
+  test('when there is a button to open an issue', () => {
+    mockPackageMeta.mockImplementation(() => ({
+      latest: {
+        bugs: {
+          url: 'https://verdaccio.tld/bugs',
         },
       },
     }));
