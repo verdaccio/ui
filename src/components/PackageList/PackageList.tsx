@@ -12,27 +12,9 @@ interface Props {
   packages: PackageInterface[];
 }
 
-export default class PackageList extends React.Component<Props, {}> {
-  public render(): ReactElement<HTMLElement> {
-    return (
-      <div className={'package-list-items'}>
-        <div className={classes.pkgContainer}>{this.hasPackages() ? this.renderPackages() : <Help />}</div>
-      </div>
-    );
-  }
-
-  private hasPackages(): boolean {
-    const { packages } = this.props;
-    return packages.length > 0;
-  }
-
-  private renderPackages = () => {
-    return <>{this.renderList()}</>;
-  };
-
-  private renderList = () => {
-    const { packages } = this.props;
-    return packages.map((pkg, i) => {
+export const PackageList: React.FC<Props> = props => {
+  const renderPackages: () => ReactElement<HTMLElement>[] = () => {
+    return props.packages.map((pkg, i) => {
       const { name, version, description, time, keywords, dist, homepage, bugs, author } = pkg;
       // TODO: move format license to API side.
       const license = formatLicense(pkg.license);
@@ -44,4 +26,12 @@ export default class PackageList extends React.Component<Props, {}> {
       );
     });
   };
-}
+
+  const hasPackages: () => boolean = () => props.packages.length > 0;
+
+  return (
+    <div className={'package-list-items'}>
+      <div className={classes.pkgContainer}>{hasPackages() ? renderPackages() : <Help />}</div>
+    </div>
+  );
+};

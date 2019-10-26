@@ -27,7 +27,7 @@ const StyledHeading = styled(Heading)({
 const NotFound: React.FC = () => {
   const history = useHistory();
 
-  const handleGomHome = useCallback(() => {
+  const handleGoHome = useCallback(() => {
     history.push('/');
   }, [history]);
 
@@ -37,7 +37,7 @@ const NotFound: React.FC = () => {
       <StyledHeading className="not-found-text" variant="h4">
         {NOT_FOUND_TEXT}
       </StyledHeading>
-      <Button onClick={handleGomHome} variant="contained">
+      <Button onClick={handleGoHome} variant="contained">
         {GO_TO_HOME_PAGE}
       </Button>
     </Box>
