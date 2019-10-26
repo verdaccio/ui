@@ -40,7 +40,11 @@ describe('isTokenExpire', (): void => {
 
   test('isTokenExpire - token is not a valid json token', (): void => {
     const token = generateInvalidToken();
-    const result = ['Invalid token:', new SyntaxError('Unexpected token i in JSON at position 0'), 'xxxxxx.aW52YWxpZHRva2Vu.xxxxxx'];
+    const result = [
+      'Invalid token:',
+      new SyntaxError('Unexpected token i in JSON at position 0'),
+      'xxxxxx.aW52YWxpZHRva2Vu.xxxxxx',
+    ];
     expect(isTokenExpire(token)).toBeTruthy();
     expect(console.error).toHaveBeenCalledWith(...result);
   });

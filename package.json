@@ -193,7 +193,7 @@
     "relative": true,
     "linters": {
       "*.{js,tsx,ts}": [
-        "eslint .",
+        "eslint . --ext .js,.ts,.tsx",
         "prettier --write"
       ],
       "*": [
