@@ -1,10 +1,10 @@
 import * as React from 'react';
-import Divider from '@material-ui/core/Divider';
 
 import Package from '../Package';
 import Help from '../Help';
 import { formatLicense } from '../../utils/package';
 import { PackageInterface } from '../Package/Package';
+import Divider from '../../muiComponents/Divider';
 
 import * as classes from './styles';
 
