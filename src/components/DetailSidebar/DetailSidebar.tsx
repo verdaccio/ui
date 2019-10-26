@@ -14,7 +14,7 @@ import Card from '../../muiComponents/Card';
 
 import { TitleListItem, TitleListItemText, PackageDescription, PackageVersion } from './styles';
 
-const renderLatestDescription = (description, version, isLatest: boolean = true): JSX.Element => {
+const renderLatestDescription = (description, version, isLatest = true): JSX.Element => {
   return (
     <>
       <PackageDescription>{description}</PackageDescription>

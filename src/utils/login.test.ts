@@ -66,7 +66,7 @@ describe('makeLogin', (): void => {
 
   test('makeLogin - should login successfully', async (): Promise<void> => {
     const { username, password } = { username: 'sam', password: '1234' };
-    const result = { token: 'TEST_TOKEN', username: 'sam' };
+    const result = { token: 'TEST_TOKEN', username: 'sam' }; // pragma: allowlist secret
     const login = await makeLogin(username, password);
     expect(login).toEqual(result);
   });
