@@ -1,9 +1,9 @@
 import styled from 'react-emotion';
-import Card from '@material-ui/core/Card';
 import Chip from '@material-ui/core/Chip';
 
 import { fontWeight } from '../../utils/styles/sizes';
 import Text from '../../muiComponents/Text';
+import Card from '../../muiComponents/Card';
 
 export const CardWrap = styled(Card)({
   '&&': {
