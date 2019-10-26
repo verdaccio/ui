@@ -48,7 +48,6 @@ describe('<ActionBar /> component', () => {
   test('when there is no latest property in package meta', () => {
     mockPackageMeta.mockImplementation(() => ({}));
     const wrapper = mount(<ActionBar />);
-
     expect(wrapper.html()).toEqual('');
   });
 
