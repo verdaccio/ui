@@ -1,7 +1,7 @@
-import Card from '@material-ui/core/Card';
 import styled from 'react-emotion';
 
 import { default as Typography } from '../../muiComponents/Heading';
+import Card from '../../muiComponents/Card';
 
 export const CardStyled = styled(Card)({
   '&&': {

@@ -11,6 +11,24 @@ describe('<UpLinks /> component', () => {
     expect(wrapper.html()).toBeNull();
   });
 
+  test('should render the component when there is no uplink', () => {
+    const packageMeta = {
+      latest: {
+        name: 'verdaccio',
+        version: '4.0.0',
+        dist: { fileCount: 0, unpackedSize: 0 },
+      },
+      _uplinks: {},
+    };
+
+    const wrapper = mount(
+      <DetailContext.Provider value={{ packageMeta }}>
+        <UpLinks />
+      </DetailContext.Provider>
+    );
+    expect(wrapper.html()).toMatchSnapshot();
+  });
+
   test('should render the component with uplinks', () => {
     const packageMeta = {
       latest: {
