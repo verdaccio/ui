@@ -5,7 +5,7 @@ import mq from '../../utils/styles/media';
 import IconButton from '../../muiComponents/IconButton';
 import AppBar from '../../muiComponents/AppBar';
 import Toolbar from '../../muiComponents/Toolbar';
-import ExternalLink from '../Link';
+import Link from '../Link';
 
 export const InnerNavBar = styled(Toolbar)({
   justifyContent: 'space-between',
@@ -88,6 +88,6 @@ export const NavBar = styled(AppBar)`
   }
 `;
 
-export const StyledExternalLink = styled(ExternalLink)({
+export const StyledLink = styled(Link)({
   color: 'white',
 });
