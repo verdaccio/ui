@@ -1,8 +1,8 @@
-import { default as MuiCard } from '@material-ui/core/Card';
 import styled from 'react-emotion';
 
 import { default as Typography } from '../../muiComponents/Heading';
 import List from '../../muiComponents/List';
+import { default as MuiCard } from '../../muiComponents/Card';
 
 export const Wrapper = styled('div')({
   display: 'flex',

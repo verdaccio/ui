@@ -51,14 +51,14 @@ const InstallListItem: React.FC<Interface> = ({ packageName, dependencyManager }
     case DependencyManager.YARN:
       return (
         <InstallItem button={true} data-testid={'installListItem-yarn'}>
-          <PackageMangerAvatar alt="yarn" src={pnpmLogo} />
+          <PackageMangerAvatar alt="yarn" src={yarnLogo} />
           <InstallListItemText primary={<CopyToClipBoard text={`yarn add ${packageName}`} />} secondary={'Install using yarn'} />
         </InstallItem>
       );
     case DependencyManager.PNPM:
       return (
         <InstallItem button={true} data-testid={'installListItem-pnpm'}>
-          <PackageMangerAvatar alt={'pnpm'} src={yarnLogo} />
+          <PackageMangerAvatar alt={'pnpm'} src={pnpmLogo} />
           <InstallListItemText primary={<CopyToClipBoard text={`pnpm install ${packageName}`} />} secondary={'Install using pnpm'} />
         </InstallItem>
       );
