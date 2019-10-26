@@ -1,3 +1,0 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`<Link /> component should render the component in default state 1`] = `"<a href=\\"https://github.com/verdaccio/ui\\" target=\\"_blank\\"></a>"`;

@@ -5,7 +5,6 @@ import { Versions, Time } from '../../../types/packageMeta';
 import { formatDateDistance } from '../../utils/package';
 import List from '../../muiComponents/List';
 import ListItem from '../../muiComponents/ListItem';
-import Link from '../../muiComponents/Link';
 
 import { Spacer, ListItemText } from './styles';
 
@@ -23,9 +22,9 @@ const VersionsHistoryList: React.FC<Props> = ({ versions, packageName, time }) =
       .reverse()
       .map(version => (
         <ListItem className="version-item" key={version}>
-          <Link component={RouterLink} to={`/-/web/detail/${packageName}/v/${version}`}>
+          <RouterLink to={`/-/web/detail/${packageName}/v/${version}`}>
             <ListItemText>{version}</ListItemText>
-          </Link>
+          </RouterLink>
           <Spacer />
           <ListItemText>{time[version] ? `${formatDateDistance(time[version])} ago` : NOT_AVAILABLE}</ListItemText>
         </ListItem>

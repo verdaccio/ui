@@ -2,7 +2,7 @@ import React, { forwardRef } from 'react';
 import { default as MaterialUITypography, TypographyProps } from '@material-ui/core/Typography';
 
 type TextType = 'subtitle1' | 'subtitle2' | 'body1' | 'body2';
-type TextRef = keyof HTMLElementTagNameMap;
+type TextRef = HTMLElementTagNameMap[keyof HTMLElementTagNameMap];
 
 interface Props extends Omit<TypographyProps, 'variant'> {
   variant?: TextType;

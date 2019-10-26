@@ -1,9 +1,13 @@
 import React, { forwardRef } from 'react';
 import { default as MaterialUITabs, TabsProps } from '@material-ui/core/Tabs';
 
-type TabsRef = keyof HTMLElementTagNameMap;
+type TabsRef = HTMLElementTagNameMap[keyof HTMLElementTagNameMap];
 
-const Tabs = forwardRef<TabsRef, TabsProps>(function Tabs(props, ref) {
+interface Props extends Omit<TabsProps, 'onChange'> {
+  onChange: (event: React.ChangeEvent<{}>, value: number) => void;
+}
+
+const Tabs = forwardRef<TabsRef, Props>(function Tabs(props, ref) {
   return <MaterialUITabs {...props} innerRef={ref} />;
 });
 

@@ -5,10 +5,10 @@ exports[`<Header /> component with logged in state should load the component in 
   class="MuiPaper-root MuiPaper-elevation4 MuiAppBar-root MuiAppBar-positionStatic css-rfunvc emotion-9 MuiAppBar-colorPrimary"
 >
   <div
-    class="MuiToolbar-root MuiToolbar-regular css-1pwdmmq emotion-8 MuiToolbar-gutters"
+    class="MuiToolbar-root MuiToolbar-regular css-1bjere7 emotion-8 MuiToolbar-gutters"
   >
     <div
-      class="MuiToolbar-root MuiToolbar-regular css-1vacr9s emotion-4 MuiToolbar-gutters"
+      class="MuiToolbar-root MuiToolbar-regular css-i5xjw9 emotion-4 MuiToolbar-gutters"
     >
       <a
         class="css-1dk30lc"
@@ -19,7 +19,7 @@ exports[`<Header /> component with logged in state should load the component in 
         />
       </a>
       <div
-        class="css-13zpdre emotion-3"
+        class="css-12prohx emotion-3"
       >
         <div
           class="css-1crzyyo emotion-2"
@@ -74,10 +74,10 @@ exports[`<Header /> component with logged in state should load the component in 
       </div>
     </div>
     <div
-      class="MuiToolbar-root MuiToolbar-regular css-m61s5i emotion-7 MuiToolbar-gutters"
+      class="MuiToolbar-root MuiToolbar-regular css-1qii1b7 emotion-7 MuiToolbar-gutters"
     >
       <button
-        class="MuiButtonBase-root MuiIconButton-root css-1y1xi9f emotion-5 MuiIconButton-colorInherit"
+        class="MuiButtonBase-root MuiIconButton-root css-13o7eu2 emotion-5 MuiIconButton-colorInherit"
         tabindex="0"
         type="button"
       >
@@ -101,7 +101,7 @@ exports[`<Header /> component with logged in state should load the component in 
         />
       </button>
       <a
-        class="css-1aacqdd emotion-6"
+        class="css-kbn7if emotion-6"
         data-testid="header--tooltip-documentation"
         href="https://verdaccio.org/docs/en/installation"
         target="_blank"
@@ -193,10 +193,10 @@ exports[`<Header /> component with logged in state should load the component in 
   class="MuiPaper-root MuiPaper-elevation4 MuiAppBar-root MuiAppBar-positionStatic css-rfunvc emotion-9 MuiAppBar-colorPrimary"
 >
   <div
-    class="MuiToolbar-root MuiToolbar-regular css-1pwdmmq emotion-8 MuiToolbar-gutters"
+    class="MuiToolbar-root MuiToolbar-regular css-1bjere7 emotion-8 MuiToolbar-gutters"
   >
     <div
-      class="MuiToolbar-root MuiToolbar-regular css-1vacr9s emotion-4 MuiToolbar-gutters"
+      class="MuiToolbar-root MuiToolbar-regular css-i5xjw9 emotion-4 MuiToolbar-gutters"
     >
       <a
         class="css-1dk30lc"
@@ -207,7 +207,7 @@ exports[`<Header /> component with logged in state should load the component in 
         />
       </a>
       <div
-        class="css-13zpdre emotion-3"
+        class="css-12prohx emotion-3"
       >
         <div
           class="css-1crzyyo emotion-2"
@@ -262,10 +262,10 @@ exports[`<Header /> component with logged in state should load the component in 
       </div>
     </div>
     <div
-      class="MuiToolbar-root MuiToolbar-regular css-m61s5i emotion-7 MuiToolbar-gutters"
+      class="MuiToolbar-root MuiToolbar-regular css-1qii1b7 emotion-7 MuiToolbar-gutters"
     >
       <button
-        class="MuiButtonBase-root MuiIconButton-root css-1y1xi9f emotion-5 MuiIconButton-colorInherit"
+        class="MuiButtonBase-root MuiIconButton-root css-13o7eu2 emotion-5 MuiIconButton-colorInherit"
         tabindex="0"
         type="button"
       >
@@ -289,7 +289,7 @@ exports[`<Header /> component with logged in state should load the component in 
         />
       </button>
       <a
-        class="css-1aacqdd emotion-6"
+        class="css-kbn7if emotion-6"
         data-testid="header--tooltip-documentation"
         href="https://verdaccio.org/docs/en/installation"
         target="_blank"
