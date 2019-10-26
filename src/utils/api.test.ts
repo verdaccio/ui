@@ -3,22 +3,12 @@
 import { handleResponseType } from '../../src/utils/api';
 
 describe('api', () => {
-  // no the best mock, but I'd look for a mock library to work with fetch in the future
-  // @ts-ignore
-  const headers: Headers = {
-    // @ts-ignore
-    get: () => [],
-  };
-
   describe('handleResponseType', () => {
     test('should handle missing Content-Type', async () => {
       const response: Response = {
         url: 'http://localhost:8080/-/packages',
         ok: false,
-        // @ts-ignore
-        headers: {
-          get: () => null,
-        } as Headers,
+        headers: new Headers(),
       } as Response;
 
       const handled = await handleResponseType(response);
@@ -34,7 +24,7 @@ describe('api', () => {
         url: 'http://localhost:8080/bootstrap/-/bootstrap-4.3.1.tgz',
         blob: () => blobPromise,
         ok: true,
-        headers,
+        headers: new Headers(),
       } as Response;
       const handled = await handleResponseType(response);
 

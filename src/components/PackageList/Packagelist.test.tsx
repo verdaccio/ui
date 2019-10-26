@@ -4,7 +4,7 @@ import { BrowserRouter } from 'react-router-dom';
 
 import Help from '../Help';
 
-import PackageList from './PackageList';
+import { PackageList } from './PackageList';
 
 describe('<PackageList /> component', () => {
   test('should load the component with no packages', () => {

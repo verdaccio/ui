@@ -139,7 +139,6 @@ export class Search extends Component<RouteComponentProps<{}>, State> {
    */
   private handleFetchPackages: handleFetchPackages = async ({ value }) => {
     try {
-      // @ts-ignore
       const controller = new window.AbortController();
       const signal = controller.signal;
       // Keep track of search requests.
