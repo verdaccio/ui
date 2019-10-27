@@ -21,7 +21,10 @@ export interface State {
 export type cancelAllSearchRequests = () => void;
 export type handlePackagesClearRequested = () => void;
 export type handleSearch = (event: React.FormEvent<HTMLInputElement>, { newValue, method }: ChangeEvent) => void;
-export type handleClickSearch = (event: KeyboardEvent<HTMLInputElement>, { suggestionValue, method }: { suggestionValue: object[]; method: string }) => void;
+export type handleClickSearch = (
+  event: KeyboardEvent<HTMLInputElement>,
+  { suggestionValue, method }: { suggestionValue: object[]; method: string }
+) => void;
 export type handleFetchPackages = ({ value: string }) => Promise<void>;
 export type onBlur = (event: React.FormEvent<HTMLInputElement>) => void;
 
@@ -139,7 +142,6 @@ export class Search extends Component<RouteComponentProps<{}>, State> {
    */
   private handleFetchPackages: handleFetchPackages = async ({ value }) => {
     try {
-      // @ts-ignore
       const controller = new window.AbortController();
       const signal = controller.signal;
       // Keep track of search requests.

@@ -15,7 +15,14 @@ interface Props {
   onLogout: () => void;
 }
 
-const HeaderRight: React.FC<Props> = ({ withoutSearch = false, username, onToggleLogin, onLogout, onToggleMobileNav, onOpenRegistryInfoDialog }) => {
+const HeaderRight: React.FC<Props> = ({
+  withoutSearch = false,
+  username,
+  onToggleLogin,
+  onLogout,
+  onToggleMobileNav,
+  onOpenRegistryInfoDialog,
+}) => {
   const [anchorEl, setAnchorEl] = useState();
   const [isMenuOpen, setIsMenuOpen] = useState();
 
@@ -47,7 +54,9 @@ const HeaderRight: React.FC<Props> = ({ withoutSearch = false, username, onToggl
 
   return (
     <RightSide>
-      {!withoutSearch && <HeaderToolTip onClick={onToggleMobileNav} title={'Search packages'} tooltipIconType={'search'} />}
+      {!withoutSearch && (
+        <HeaderToolTip onClick={onToggleMobileNav} title={'Search packages'} tooltipIconType={'search'} />
+      )}
       <HeaderToolTip title={'Documentation'} tooltipIconType={'help'} />
       <HeaderToolTip onClick={onOpenRegistryInfoDialog} title={'Registry Information'} tooltipIconType={'info'} />
       {username ? (
