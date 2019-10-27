@@ -14,7 +14,7 @@ import Card from '../../muiComponents/Card';
 
 import { TitleListItem, TitleListItemText, PackageDescription, PackageVersion } from './styles';
 
-const renderLatestDescription = (description, version, isLatest: boolean = true): JSX.Element => {
+const renderLatestDescription = (description, version, isLatest = true): JSX.Element => {
   return (
     <>
       <PackageDescription>{description}</PackageDescription>
@@ -42,7 +42,10 @@ const renderTitle = (packageName, packageVersion, packageMeta): JSX.Element => {
   return (
     <List className="detail-info">
       <TitleListItem alignItems="flex-start" button={true}>
-        <TitleListItemText primary={<b>{packageName}</b>} secondary={renderLatestDescription(packageMeta.latest.description, version, isLatest)} />
+        <TitleListItemText
+          primary={<b>{packageName}</b>}
+          secondary={renderLatestDescription(packageMeta.latest.description, version, isLatest)}
+        />
       </TitleListItem>
     </List>
   );
