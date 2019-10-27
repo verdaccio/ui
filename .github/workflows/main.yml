@@ -3,25 +3,18 @@ name: CI Canary
 on: [pull_request]
 
 jobs:
-  build_test_lint:
-    name: Node Smoke Test Befor Canary
-
-    runs-on: ubuntu-latest
-
-    steps:
-    - uses: actions/checkout@v1
-    - uses: actions/setup-node@v1
-      with:
-        node-version: '12.x'
-        registry-url: 'https://registry.verdaccio.org'
-    - name: Install
-      run: yarn install --frozen-lockfile
-    - name: Lint
-      run: yarn lint
   canary:
     name: Publish Canary Version of a PR
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/setup-node@v1
+        with:
+          node-version: '12.x'
+          registry-url: 'https://registry.verdaccio.org'
+          - name: Install
+            run: yarn install --frozen-lockfile
+          - name: Lint
+            run: yarn lint
       - uses: verdaccio/github-actions/canary@v0.4.0
         with:
           message: 'Thanks for your PR, the @verdaccio/ui package will be accessible from here for testing purposes:'
@@ -37,4 +30,3 @@ jobs:
       - run: npm publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.VERDACCIO_TOKEN }}
-    needs: build_test_lint
