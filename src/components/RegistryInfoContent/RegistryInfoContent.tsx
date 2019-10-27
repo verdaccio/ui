@@ -58,7 +58,7 @@ export const RegistryInfoContent: React.FC<Props> = props => {
           textColor="primary"
           value={tabPosition}
           variant="fullWidth">
-          <Tab data-testid={'npm-tab'} label={NODE_MANAGER.npm} /> 
+          <Tab data-testid={'npm-tab'} label={NODE_MANAGER.npm} />
           <Tab data-testid={'pnpm-tab'} label={NODE_MANAGER.pnpm} />
           <Tab data-testid={'yarn-tab'} label={NODE_MANAGER.yarn} />
         </Tabs>
