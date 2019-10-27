@@ -51,8 +51,14 @@ export const RegistryInfoContent: React.FC<Props> = props => {
 
     return (
       <React.Fragment>
-        <Tabs data-testid={'tabs-el'} indicatorColor="primary" onChange={handleChange} textColor="primary" value={tabPosition} variant="fullWidth">
-          <Tab data-testid={'npm-tab'} label={NODE_MANAGER.npm} />
+        <Tabs
+          data-testid={'tabs-el'}
+          indicatorColor="primary"
+          onChange={this.handleChange}
+          textColor="primary"
+          value={tabPosition}
+          variant="fullWidth">
+          <Tab data-testid={'npm-tab'} label={NODE_MANAGER.npm} /> 
           <Tab data-testid={'pnpm-tab'} label={NODE_MANAGER.pnpm} />
           <Tab data-testid={'yarn-tab'} label={NODE_MANAGER.yarn} />
         </Tabs>
