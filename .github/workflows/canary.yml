@@ -7,6 +7,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
+      - uses: actions/setup-node@v1
+          with:
+            node-version: '12.x'
+            - run: npm install -g in-publish@2.0.0
       - uses: verdaccio/github-actions/canary@v0.4.0
         with:
           message: 'Thanks for your PR, the @verdaccio/ui package will be accessible from here for testing purposes:'
