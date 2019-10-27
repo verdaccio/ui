@@ -1,7 +1,7 @@
 import React from 'react';
 
 import RegistryInfoDialog from '../RegistryInfoDialog';
-import RegistryInfoContent from '../RegistryInfoContent';
+import { RegistryInfoContent } from '../RegistryInfoContent';
 
 interface Props {
   isOpen: boolean;
