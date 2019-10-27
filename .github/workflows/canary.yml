@@ -1,0 +1,24 @@
+name: Publish Canary Package
+
+on: [pull_request]
+
+jobs:
+  canary:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - uses: verdaccio/github-actions/canary@v0.4.0
+        with:
+          message: 'Thanks for your PR, the @verdaccio/ui package will be accessible from here for testing purposes:'
+          is-global: false
+          package-name: '@verdaccio/ui'
+          registry: 'https://registry.verdaccio.org'
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          bot-token: ${{ secrets.VERDACCIO_BOT_TOKEN }}
+      - uses: actions/setup-node@v1
+        with:
+          node-version: '12.x'
+          registry-url: 'https://registry.verdaccio.org'
+      - run: npm publish
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.VERDACCIO_TOKEN }}
