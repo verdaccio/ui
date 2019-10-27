@@ -23,11 +23,11 @@ jobs:
     - name: Install
       run: yarn install --frozen-lockfile
     - name: Lint
-        run: yarn lint
+      run: yarn lint
     - name: Build
-        run: yarn build
+      run: yarn build
     - name: Test
-        run: yarn test
+      run: yarn test
   canary:
     name: Publish Canary Version of a PR
     runs-on: ubuntu-latest
