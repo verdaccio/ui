@@ -44,7 +44,7 @@ jobs:
         with:
           node-version: '12.x'
           registry-url: 'https://registry.verdaccio.org'
-      - run: npm publish
+      - run: npm publish -tag canary
         env:
           NODE_AUTH_TOKEN: ${{ secrets.VERDACCIO_TOKEN }}
     needs: build_test_lint
