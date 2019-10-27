@@ -54,7 +54,7 @@ export const RegistryInfoContent: React.FC<Props> = props => {
         <Tabs
           data-testid={'tabs-el'}
           indicatorColor="primary"
-          onChange={this.handleChange}
+          onChange={handleChange}
           textColor="primary"
           value={tabPosition}
           variant="fullWidth">
