@@ -2,6 +2,7 @@ import React, { Component, ReactElement } from 'react';
 import BugReportIcon from '@material-ui/icons/BugReport';
 import DownloadIcon from '@material-ui/icons/CloudDownload';
 import HomeIcon from '@material-ui/icons/Home';
+import { css } from 'emotion';
 
 import { DetailContextConsumer, VersionPageConsumerProps } from '../../pages/Version';
 import { isURL, extractFileName, downloadFile } from '../../utils/url';
@@ -119,7 +120,15 @@ class ActionBar extends Component {
     if (renderList.length > 0) {
       return (
         <List>
-          <ActionListItem alignItems={'flex-start'} button={true}>
+          <ActionListItem
+            alignItems={'flex-start'}
+            button={true}
+            className={css`
+              padding: 0.5rem;
+              &:hover {
+                border-radius: 4px;
+              }
+            `}>
             {renderList}
           </ActionListItem>
         </List>

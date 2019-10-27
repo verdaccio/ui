@@ -41,11 +41,16 @@ const renderTitle = (packageName, packageVersion, packageMeta): JSX.Element => {
 
   return (
     <List className="detail-info">
-      <TitleListItem alignItems="flex-start" button={true}>
-        <TitleListItemText
-          primary={<b>{packageName}</b>}
-          secondary={renderLatestDescription(packageMeta.latest.description, version, isLatest)}
-        />
+      <TitleListItem
+        alignItems="flex-start"
+        button={true}
+        className={css`
+          padding: 0 0.5rem;
+          &:hover {
+            border-radius: 4px;
+          }
+        `}>
+        <TitleListItemText primary={<b>{packageName}</b>} secondary={renderLatestDescription(packageMeta.latest.description, version, isLatest)} />
       </TitleListItem>
     </List>
   );
