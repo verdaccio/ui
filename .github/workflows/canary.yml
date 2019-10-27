@@ -15,7 +15,7 @@ jobs:
         with:
           message: 'Thanks for your PR, the @verdaccio/ui package will be accessible from here for testing purposes:'
           is-global: false
-          package-name: '@verdaccio/ui'
+          package-name: '@verdaccio/ui-theme'
           registry: 'https://registry.verdaccio.org'
           repo-token: ${{ secrets.GITHUB_TOKEN }}
           bot-token: ${{ secrets.VERDACCIO_BOT_TOKEN }}
