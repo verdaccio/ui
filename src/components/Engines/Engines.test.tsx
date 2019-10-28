@@ -8,21 +8,6 @@ import Engine from './Engines';
 jest.mock('./img/node.png', () => '');
 jest.mock('../Install/img/npm.svg', () => '');
 
-const mockPackageMeta = {
-  latest: {
-    name: 'verdaccio',
-    version: '0.0.0',
-    homepage: 'https://verdaccio.tld',
-    bugs: {
-      url: 'https://verdaccio.tld/bugs',
-    },
-    dist: {
-      fileCount: 1,
-      unpackedSize: 1,
-    },
-  },
-};
-
 const withEngineComponent = (packageMeta: React.ContextType<typeof DetailContext>['packageMeta']): JSX.Element => (
   <DetailContext.Provider value={{ packageMeta }}>
     <Engine />
@@ -33,7 +18,16 @@ describe('<Engines /> component', () => {
   test('should render the component in default state', () => {
     const packageMeta = {
       latest: {
-        ...mockPackageMeta.latest,
+        name: 'verdaccio',
+        version: '0.0.0',
+        homepage: 'https://verdaccio.tld',
+        bugs: {
+          url: 'https://verdaccio.tld/bugs',
+        },
+        dist: {
+          fileCount: 1,
+          unpackedSize: 1,
+        },
         engines: {
           node: '>= 0.1.98',
           npm: '>3',
