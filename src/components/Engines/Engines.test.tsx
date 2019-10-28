@@ -1,47 +1,48 @@
 import React from 'react';
 import { mount } from 'enzyme';
 
+import { DetailContext } from '../../pages/Version';
+
 import Engine from './Engines';
 
 jest.mock('./img/node.png', () => '');
 jest.mock('../Install/img/npm.svg', () => '');
 
-const mockPackageMeta: jest.Mock = jest.fn(() => ({
+const mockPackageMeta = {
   latest: {
+    name: 'verdaccio',
+    version: '0.0.0',
     homepage: 'https://verdaccio.tld',
     bugs: {
       url: 'https://verdaccio.tld/bugs',
     },
     dist: {
-      tarball: 'https://verdaccio.tld/download',
+      fileCount: 1,
+      unpackedSize: 1,
     },
   },
-}));
+};
 
-jest.mock('../../pages/Version', () => ({
-  DetailContextConsumer: component => {
-    return component.children({ packageMeta: mockPackageMeta() });
-  },
-}));
+const withEngineComponent = (packageMeta: React.ContextType<typeof DetailContext>['packageMeta']): JSX.Element => (
+  <DetailContext.Provider value={{ packageMeta }}>
+    <Engine />
+  </DetailContext.Provider>
+);
 
 describe('<Engines /> component', () => {
-  beforeEach(() => {
-    jest.resetAllMocks();
-  });
-
   test('should render the component in default state', () => {
     const packageMeta = {
       latest: {
+        ...mockPackageMeta.latest,
         engines: {
           node: '>= 0.1.98',
           npm: '>3',
         },
       },
+      _uplinks: {},
     };
 
-    mockPackageMeta.mockImplementation(() => packageMeta);
-
-    const wrapper = mount(<Engine />);
+    const wrapper = mount(withEngineComponent(packageMeta));
     expect(wrapper.html()).toMatchSnapshot();
   });
 
@@ -50,10 +51,9 @@ describe('<Engines /> component', () => {
       latest: {},
     };
 
-    mockPackageMeta.mockImplementation(() => packageMeta);
-
-    const wrapper = mount(<Engine />);
-    expect(wrapper.html()).toEqual('');
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const wrapper = mount(withEngineComponent(packageMeta as any));
+    expect(wrapper.html()).toBeNull();
   });
 
   test('should render the component when there is no keys in engine in package meta', () => {
@@ -63,9 +63,8 @@ describe('<Engines /> component', () => {
       },
     };
 
-    mockPackageMeta.mockImplementation(() => packageMeta);
-
-    const wrapper = mount(<Engine />);
-    expect(wrapper.html()).toEqual('');
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const wrapper = mount(withEngineComponent(packageMeta as any));
+    expect(wrapper.html()).toBeNull();
   });
 });
