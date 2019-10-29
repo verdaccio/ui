@@ -20,37 +20,33 @@ export const RegistryInfoContent: React.FC<Props> = props => {
 
   const renderNpmTab = (scope: string, registryUrl: string): JSX.Element => {
     return (
-      <React.Fragment>
+      <>
         <CopyToClipBoard text={getCLISetConfigRegistry(`${NODE_MANAGER.npm} set`, scope, registryUrl)} />
         <CopyToClipBoard text={getCLISetRegistry(`${NODE_MANAGER.npm} adduser`, registryUrl)} />
         <CopyToClipBoard text={getCLIChangePassword(NODE_MANAGER.npm, registryUrl)} />
-      </React.Fragment>
+      </>
     );
   };
 
-  const renderPNpmTab = (scope: string, registryUrl: string): JSX.Element => {
+  const renderPnpmTab = (scope: string, registryUrl: string): JSX.Element => {
     return (
-      <React.Fragment>
+      <>
         <CopyToClipBoard text={getCLISetConfigRegistry(`${NODE_MANAGER.pnpm} set`, scope, registryUrl)} />
         <CopyToClipBoard text={getCLISetRegistry(`${NODE_MANAGER.pnpm} adduser`, registryUrl)} />
         <CopyToClipBoard text={getCLIChangePassword(NODE_MANAGER.pnpm, registryUrl)} />
-      </React.Fragment>
+      </>
     );
   };
 
   const renderYarnTab = (scope: string, registryUrl: string): JSX.Element => {
-    return (
-      <React.Fragment>
-        <CopyToClipBoard text={getCLISetConfigRegistry(`${NODE_MANAGER.yarn} config set`, scope, registryUrl)} />
-      </React.Fragment>
-    );
+    return <CopyToClipBoard text={getCLISetConfigRegistry(`${NODE_MANAGER.yarn} config set`, scope, registryUrl)} />;
   };
 
   const renderTabs = (): JSX.Element => {
     const { scope, registryUrl } = props;
 
     return (
-      <React.Fragment>
+      <>
         <Tabs
           data-testid={'tabs-el'}
           indicatorColor="primary"
@@ -63,9 +59,9 @@ export const RegistryInfoContent: React.FC<Props> = props => {
           <Tab data-testid={'yarn-tab'} label={NODE_MANAGER.yarn} />
         </Tabs>
         {tabPosition === 0 && <TabContainer>{renderNpmTab(scope, registryUrl)}</TabContainer>}
-        {tabPosition === 1 && <TabContainer>{renderPNpmTab(scope, registryUrl)}</TabContainer>}
+        {tabPosition === 1 && <TabContainer>{renderPnpmTab(scope, registryUrl)}</TabContainer>}
         {tabPosition === 2 && <TabContainer>{renderYarnTab(scope, registryUrl)}</TabContainer>}
-      </React.Fragment>
+      </>
     );
   };
 

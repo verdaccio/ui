@@ -15,10 +15,19 @@ describe('<RegistryInfoContent /> component', () => {
   });
 
   test('should load the appropiate tab content when the tab is clicked', () => {
-    const { container, getByTestId } = render(<RegistryInfoContent registryUrl={'http://localhost:4872'} scope={''} />);
-    expect(container.textContent).not.toContain('pnpm adduser --registry http://localhost:4872');
+    const props = { registryUrl: 'http://localhost:4872', scope: '@' };
+    const pnpmTabTextContent = `pnpm adduser --registry ${props.registryUrl}`;
+
+    // Render the component.
+    const { container, getByTestId } = render(<RegistryInfoContent registryUrl={props.registryUrl} scope={props.scope} />);
+
+    // Assert the text content for pnpm tab is not present intially
+    expect(container.textContent).not.toContain(pnpmTabTextContent);
+
     const pnpmTab = getByTestId('pnpm-tab');
     fireEvent.click(pnpmTab);
-    expect(container.textContent).toContain('pnpm adduser --registry http://localhost:4872');
+
+    // Assert the text content is correct after clicking on the tab.
+    expect(container.textContent).toContain(pnpmTabTextContent);
   });
 });

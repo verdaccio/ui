@@ -1,4 +1,4 @@
-import React, { Fragment, ReactElement } from 'react';
+import React, { Fragment, ReactNode } from 'react';
 
 import Package from '../Package';
 import Help from '../Help';
@@ -13,8 +13,9 @@ interface Props {
 }
 
 export const PackageList: React.FC<Props> = props => {
-  const renderPackages: () => ReactElement<HTMLElement>[] = () => {
-    return props.packages.map((pkg, i) => {
+  const { packages } = props;
+  const renderPackages: () => ReactNode[] = () => {
+    return packages.map((pkg, i) => {
       const { name, version, description, time, keywords, dist, homepage, bugs, author } = pkg;
       // TODO: move format license to API side.
       const license = formatLicense(pkg.license);
@@ -27,7 +28,7 @@ export const PackageList: React.FC<Props> = props => {
     });
   };
 
-  const hasPackages: () => boolean = () => props.packages.length > 0;
+  const hasPackages: () => boolean = () => packages.length > 0;
 
   return (
     <div className={'package-list-items'}>
