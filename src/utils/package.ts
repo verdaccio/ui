@@ -7,7 +7,7 @@ import formatDistanceToNow from 'date-fns/formatDistanceToNow';
 
 import { Time } from '../../types/packageMeta';
 
-export const TIMEFORMAT = 'DD.MM.YYYY, HH:mm:ss';
+export const TIMEFORMAT = 'dd.MM.yyyy, HH:mm:ss';
 
 /**
  * Formats license field for webui.
