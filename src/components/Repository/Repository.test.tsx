@@ -1,5 +1,5 @@
 import React from 'react';
-import { mount } from 'enzyme';
+import { render } from '@testing-library/react';
 
 import Repository from './Repository';
 
@@ -40,8 +40,8 @@ describe('<Repository /> component', () => {
 
     mockPackageMeta.mockImplementation(() => packageMeta);
 
-    const wrapper = mount(<Repository />);
-    expect(wrapper.html()).toMatchSnapshot();
+    const { container } = render(<Repository />);
+    expect(container.innerHTML).toMatchSnapshot();
   });
 
   test('should render the component in with no repository data', () => {
@@ -51,8 +51,8 @@ describe('<Repository /> component', () => {
 
     mockPackageMeta.mockImplementation(() => packageMeta);
 
-    const wrapper = mount(<Repository />);
-    expect(wrapper.html()).toEqual('');
+    const { container } = render(<Repository />);
+    expect(container.innerHTML).toEqual('');
   });
 
   test('should render the component in with invalid url', () => {
@@ -67,7 +67,7 @@ describe('<Repository /> component', () => {
 
     mockPackageMeta.mockImplementation(() => packageMeta);
 
-    const wrapper = mount(<Repository />);
-    expect(wrapper.html()).toEqual('');
+    const { container } = render(<Repository />);
+    expect(container.innerHTML).toEqual('');
   });
 });

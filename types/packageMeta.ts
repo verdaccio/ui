@@ -11,6 +11,10 @@ export interface PackageMetaInterface {
     };
     license?: Partial<LicenseInterface> | string;
     version: string;
+    repository?: {
+      type: string; // Should this be 'git' | 'svn' | etc...?
+      url: string;
+    };
   };
   _uplinks: {};
 }
