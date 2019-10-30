@@ -21,7 +21,7 @@ const HeaderToolTipIcon = forwardRef<HeaderToolTipIconRef, Props>(function Heade
   switch (tooltipIconType) {
     case 'help':
       return (
-        <StyledLink blank={true} data-testid={'header--tooltip-documentation'} to={'https://verdaccio.org/docs/en/installation'}>
+        <StyledLink data-testid={'header--tooltip-documentation'} external={true} to={'https://verdaccio.org/docs/en/installation'}>
           <IconButton color={'inherit'}>
             <Help />
           </IconButton>
