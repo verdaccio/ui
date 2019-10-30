@@ -9,12 +9,6 @@ import Engine from './Engines';
 jest.mock('./img/node.png', () => '');
 jest.mock('../Install/img/npm.svg', () => '');
 
-const withEngineComponent = (packageMeta: PackageMetaInterface): JSX.Element => (
-  <DetailContext.Provider value={{ packageMeta }}>
-    <Engine />
-  </DetailContext.Provider>
-);
-
 const mockPackageMeta = (): PackageMetaInterface => ({
   latest: {
     name: 'verdaccio',
@@ -36,7 +30,11 @@ describe('<Engines /> component', () => {
       npm: '>3',
     };
 
-    const wrapper = mount(withEngineComponent(packageMeta));
+    const wrapper = mount(
+      <DetailContext.Provider value={{ packageMeta }}>
+        <Engine />
+      </DetailContext.Provider>
+    );
     expect(wrapper.html()).toMatchSnapshot();
   });
 
@@ -45,7 +43,11 @@ describe('<Engines /> component', () => {
 
     delete packageMeta.latest.engines;
 
-    const wrapper = mount(withEngineComponent(packageMeta));
+    const wrapper = mount(
+      <DetailContext.Provider value={{ packageMeta }}>
+        <Engine />
+      </DetailContext.Provider>
+    );
     expect(wrapper.html()).toBeNull();
   });
 
@@ -54,7 +56,11 @@ describe('<Engines /> component', () => {
 
     packageMeta.latest.engines = {};
 
-    const wrapper = mount(withEngineComponent(packageMeta));
+    const wrapper = mount(
+      <DetailContext.Provider value={{ packageMeta }}>
+        <Engine />
+      </DetailContext.Provider>
+    );
     expect(wrapper.html()).toBeNull();
   });
 });
