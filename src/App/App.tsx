@@ -56,7 +56,7 @@ export default class App extends Component<{}, AppProps> {
   public isUserAlreadyLoggedIn = () => {
     // checks for token validity
     const token = storage.getItem('token');
-    const username = storage.getItem('username');
+    const username: string = storage.getItem('username') as string;
     if (isTokenExpire(token) || isNil(username)) {
       this.handleLogout();
     } else {

@@ -28,7 +28,6 @@ const HeaderMenu: React.FC<Props> = ({ onLogout, username, isMenuOpen = false, a
         vertical: 'top',
         horizontal: 'right',
       }}
-      id="header--button-account"
       onClose={onLoggedInMenuClose}
       open={isMenuOpen}
       transformOrigin={{
