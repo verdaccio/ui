@@ -3,7 +3,7 @@
  */
 
 import { Base64 } from 'js-base64';
-import addHours from 'date-fns/add_hours';
+import addHours from 'date-fns/addHours';
 
 export function generateTokenWithTimeRange(limit = 0) {
   const payload = {
