@@ -17,11 +17,17 @@ type HeaderToolTipIconRef = HTMLButtonElement;
 
 /* eslint-disable react/jsx-no-undef */
 /* eslint-disable react/display-name */
-const HeaderToolTipIcon = forwardRef<HeaderToolTipIconRef, Props>(function HeaderToolTipIcon({ tooltipIconType, onClick }, ref) {
+const HeaderToolTipIcon = forwardRef<HeaderToolTipIconRef, Props>(function HeaderToolTipIcon(
+  { tooltipIconType, onClick },
+  ref
+) {
   switch (tooltipIconType) {
     case 'help':
       return (
-        <StyledLink data-testid={'header--tooltip-documentation'} external={true} to={'https://verdaccio.org/docs/en/installation'}>
+        <StyledLink
+          data-testid={'header--tooltip-documentation'}
+          external={true}
+          to={'https://verdaccio.org/docs/en/installation'}>
           <IconButton color={'inherit'}>
             <Help />
           </IconButton>
@@ -29,7 +35,12 @@ const HeaderToolTipIcon = forwardRef<HeaderToolTipIconRef, Props>(function Heade
       );
     case 'info':
       return (
-        <IconButton color="inherit" data-testid={'header--tooltip-info'} id="header--button-registryInfo" onClick={onClick} ref={ref}>
+        <IconButton
+          color="inherit"
+          data-testid={'header--tooltip-info'}
+          id="header--button-registryInfo"
+          onClick={onClick}
+          ref={ref}>
           <Info />
         </IconButton>
       );
