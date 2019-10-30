@@ -8,20 +8,20 @@ import IconButton from '../../muiComponents/IconButton';
 import { IconSearchButton, StyledLink } from './styles';
 
 export type TooltipIconType = 'search' | 'help' | 'info';
-
 interface Props {
   tooltipIconType: TooltipIconType;
   onClick?: () => void;
 }
 
+type HeaderToolTipIconRef = HTMLButtonElement;
+
+/* eslint-disable react/jsx-no-undef */
 /* eslint-disable react/display-name */
-// FIXME any
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-const HeaderToolTipIcon = forwardRef<any, Props>(function HeaderToolTipIcon({ tooltipIconType, onClick }, ref) {
+const HeaderToolTipIcon = forwardRef<HeaderToolTipIconRef, Props>(function HeaderToolTipIcon({ tooltipIconType, onClick }, ref) {
   switch (tooltipIconType) {
     case 'help':
       return (
-        <StyledLink data-testid={'header--tooltip-documentation'} external={true} to={'https://verdaccio.org/docs/en/installation'}>
+        <StyledLink blank={true} data-testid={'header--tooltip-documentation'} to={'https://verdaccio.org/docs/en/installation'}>
           <IconButton color={'inherit'}>
             <Help />
           </IconButton>
@@ -35,7 +35,7 @@ const HeaderToolTipIcon = forwardRef<any, Props>(function HeaderToolTipIcon({ to
       );
     case 'search':
       return (
-        <IconSearchButton color="inherit" onClick={onClick} ref={ref}>
+        <IconSearchButton color="inherit" onClick={onClick}>
           <Search />
         </IconSearchButton>
       );

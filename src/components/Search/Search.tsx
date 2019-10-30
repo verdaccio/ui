@@ -174,6 +174,7 @@ export class Search extends Component<RouteComponentProps<{}>, State> {
       <InputAdornment
         className={css`
           color: ${colors.white};
+          }
         `}
         position={'start'}>
         <IconSearch />

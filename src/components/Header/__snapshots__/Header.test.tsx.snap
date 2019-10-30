@@ -40,7 +40,7 @@ exports[`<Header /> component with logged in state should load the component in 
                 class="MuiInputBase-root MuiInput-root css-n9ojyg MuiInput-underline MuiInputBase-fullWidth MuiInput-fullWidth MuiInputBase-formControl MuiInput-formControl MuiInputBase-adornedStart"
               >
                 <div
-                  class="MuiInputAdornment-root css-16qv2i2 MuiInputAdornment-positionStart"
+                  class="MuiInputAdornment-root css-fvu7gn MuiInputAdornment-positionStart"
                 >
                   <svg
                     aria-hidden="true"
@@ -233,7 +233,7 @@ exports[`<Header /> component with logged in state should load the component in 
                 class="MuiInputBase-root MuiInput-root css-n9ojyg MuiInput-underline MuiInputBase-fullWidth MuiInput-fullWidth MuiInputBase-formControl MuiInput-formControl MuiInputBase-adornedStart"
               >
                 <div
-                  class="MuiInputAdornment-root css-16qv2i2 MuiInputAdornment-positionStart"
+                  class="MuiInputAdornment-root css-fvu7gn MuiInputAdornment-positionStart"
                 >
                   <svg
                     aria-hidden="true"
