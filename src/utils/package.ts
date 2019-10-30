@@ -3,11 +3,11 @@ import { isObject } from 'util';
 import { UpLinks } from '@verdaccio/types';
 import isString from 'lodash/isString';
 import format from 'date-fns/format';
-import distanceInWordsToNow from 'date-fns/distance_in_words_to_now';
+import formatDistanceToNow from 'date-fns/formatDistanceToNow';
 
 import { Time } from '../../types/packageMeta';
 
-export const TIMEFORMAT = 'DD.MM.YYYY, HH:mm:ss';
+export const TIMEFORMAT = 'dd.MM.yyyy, HH:mm:ss';
 
 /**
  * Formats license field for webui.
@@ -56,7 +56,7 @@ export function formatDate(lastUpdate: string | number): string {
 }
 
 export function formatDateDistance(lastUpdate: Date | string | number): string {
-  return distanceInWordsToNow(new Date(lastUpdate));
+  return formatDistanceToNow(new Date(lastUpdate));
 }
 
 /**
