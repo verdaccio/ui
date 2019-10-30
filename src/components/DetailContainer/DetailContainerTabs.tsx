@@ -15,7 +15,8 @@ const Tabs = styled(MuiTabs)({
   marginBottom: 16,
 });
 
-const getTabIndex = (tabPosition: TabPosition): number => Object.keys(TabPosition).findIndex(position => position === String(tabPosition).toUpperCase());
+const getTabIndex = (tabPosition: TabPosition): number =>
+  Object.keys(TabPosition).findIndex(position => position === String(tabPosition).toUpperCase());
 
 const DetailContainerTabs: React.FC<Props> = ({ tabPosition, onChangeTabPosition }) => {
   const [tabPositionIndex, setTabPositionIndex] = useState(0);
@@ -26,7 +27,12 @@ const DetailContainerTabs: React.FC<Props> = ({ tabPosition, onChangeTabPosition
   }, [tabPosition]);
 
   return (
-    <Tabs indicatorColor={'primary'} onChange={onChangeTabPosition} textColor={'primary'} value={tabPositionIndex} variant={'fullWidth'}>
+    <Tabs
+      indicatorColor={'primary'}
+      onChange={onChangeTabPosition}
+      textColor={'primary'}
+      value={tabPositionIndex}
+      variant={'fullWidth'}>
       <Tab data-testid={'readme-tab'} id={'readme-tab'} label={TabPosition.README} />
       <Tab data-testid={'dependencies-tab'} id={'dependencies-tab'} label={TabPosition.DEPENDENCIES} />
       <Tab data-testid={'versions-tab'} id={'versions-tab'} label={TabPosition.VERSIONS} />

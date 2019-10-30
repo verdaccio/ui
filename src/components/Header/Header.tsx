@@ -38,7 +38,12 @@ const Header: React.FC<Props> = ({ logo, withoutSearch, username, onLogout, onTo
             withoutSearch={withoutSearch}
           />
         </InnerNavBar>
-        <HeaderInfoDialog isOpen={isInfoDialogOpen} onCloseDialog={() => setOpenInfoDialog(false)} registryUrl={getRegistryURL()} scope={scope} />
+        <HeaderInfoDialog
+          isOpen={isInfoDialogOpen}
+          onCloseDialog={() => setOpenInfoDialog(false)}
+          registryUrl={getRegistryURL()}
+          scope={scope}
+        />
       </NavBar>
       {showMobileNavBar && !withoutSearch && (
         <MobileNavBar>

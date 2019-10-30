@@ -32,7 +32,14 @@ const NotFound: React.FC = () => {
   }, [history]);
 
   return (
-    <Box alignItems="center" data-testid="404" display="flex" flexDirection="column" flexGrow={1} justifyContent="center" p={2}>
+    <Box
+      alignItems="center"
+      data-testid="404"
+      display="flex"
+      flexDirection="column"
+      flexGrow={1}
+      justifyContent="center"
+      p={2}>
       <EmptyPackage alt="404 - Page not found" src={PackageImg} />
       <StyledHeading className="not-found-text" variant="h4">
         {NOT_FOUND_TEXT}

@@ -47,7 +47,12 @@ class RegistryInfoContent extends Component<Props, State> {
 
     return (
       <React.Fragment>
-        <Tabs indicatorColor="primary" onChange={this.handleChange} textColor="primary" value={tabPosition} variant="fullWidth">
+        <Tabs
+          indicatorColor="primary"
+          onChange={this.handleChange}
+          textColor="primary"
+          value={tabPosition}
+          variant="fullWidth">
           <Tab label={NODE_MANAGER.npm} />
           <Tab label={NODE_MANAGER.pnpm} />
           <Tab label={NODE_MANAGER.yarn} />

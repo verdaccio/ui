@@ -21,7 +21,10 @@ export interface State {
 export type cancelAllSearchRequests = () => void;
 export type handlePackagesClearRequested = () => void;
 export type handleSearch = (event: React.FormEvent<HTMLInputElement>, { newValue, method }: ChangeEvent) => void;
-export type handleClickSearch = (event: KeyboardEvent<HTMLInputElement>, { suggestionValue, method }: { suggestionValue: object[]; method: string }) => void;
+export type handleClickSearch = (
+  event: KeyboardEvent<HTMLInputElement>,
+  { suggestionValue, method }: { suggestionValue: object[]; method: string }
+) => void;
 export type handleFetchPackages = ({ value: string }) => Promise<void>;
 export type onBlur = (event: React.FormEvent<HTMLInputElement>) => void;
 

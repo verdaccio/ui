@@ -40,7 +40,11 @@ describe('isTokenExpire', (): void => {
 
   test('isTokenExpire - token is not a valid json token', (): void => {
     const token = generateInvalidToken();
-    const result = ['Invalid token:', new SyntaxError('Unexpected token i in JSON at position 0'), 'xxxxxx.aW52YWxpZHRva2Vu.xxxxxx'];
+    const result = [
+      'Invalid token:',
+      new SyntaxError('Unexpected token i in JSON at position 0'),
+      'xxxxxx.aW52YWxpZHRva2Vu.xxxxxx',
+    ];
     expect(isTokenExpire(token)).toBeTruthy();
     expect(console.error).toHaveBeenCalledWith(...result);
   });
@@ -66,7 +70,7 @@ describe('makeLogin', (): void => {
 
   test('makeLogin - should login successfully', async (): Promise<void> => {
     const { username, password } = { username: 'sam', password: '1234' };
-    const result = { token: 'TEST_TOKEN', username: 'sam' };
+    const result = { token: 'TEST_TOKEN', username: 'sam' }; // pragma: allowlist secret
     const login = await makeLogin(username, password);
     expect(login).toEqual(result);
   });

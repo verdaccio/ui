@@ -160,8 +160,13 @@ const Package: React.FC<PackageInterface> = ({
   };
 
   const renderPackageListItemText = (): React.ReactNode => (
-    // @ts-ignore
-    <PackageListItemText className="package-link" component="div" primary={renderPrimaryComponent()} secondary={renderSecondaryComponent()} />
+    <PackageListItemText
+      className="package-link"
+      // @ts-ignore
+      component="div"
+      primary={renderPrimaryComponent()}
+      secondary={renderSecondaryComponent()}
+    />
   );
 
   return (

@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.3.4](https://github.com/verdaccio/ui/compare/v0.3.3...v0.3.4) (2019-10-26)
+
+
+### Bug Fixes
+
+* adds no uplink spec ([#213](https://github.com/verdaccio/ui/issues/213)) ([ade548a](https://github.com/verdaccio/ui/commit/ade548a))
+* api typings ([#210](https://github.com/verdaccio/ui/issues/210)) ([5d6ad3d](https://github.com/verdaccio/ui/commit/5d6ad3d))
+* PackageList component is converted to functional ([#219](https://github.com/verdaccio/ui/issues/219)) [#116](https://github.com/verdaccio/ui/issues/116) ([ae0222c](https://github.com/verdaccio/ui/commit/ae0222c))
+* routes - Replaced class by func. comp ([#159](https://github.com/verdaccio/ui/issues/159)) ([5c06ace](https://github.com/verdaccio/ui/commit/5c06ace))
+* version Page - Replaces class by func. ([#171](https://github.com/verdaccio/ui/issues/171)) ([f5c77ff](https://github.com/verdaccio/ui/commit/f5c77ff))
+* **162:** added forwardRef Card ([#216](https://github.com/verdaccio/ui/issues/216)) ([2bc49f3](https://github.com/verdaccio/ui/commit/2bc49f3))
+* **installlistitem:** changed the wrong icon ([#211](https://github.com/verdaccio/ui/issues/211)) ([4498aad](https://github.com/verdaccio/ui/commit/4498aad))
+
 ### [0.3.3](https://github.com/verdaccio/ui/compare/v0.3.2...v0.3.3) (2019-10-16)
 
 

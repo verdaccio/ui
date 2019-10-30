@@ -140,7 +140,12 @@ const AutoComplete = ({
 
   return (
     <Wrapper>
-      <Autosuggest {...autosuggestProps} inputProps={inputProps} onSuggestionSelected={onClick} renderSuggestionsContainer={renderSuggestionsContainer} />
+      <Autosuggest
+        {...autosuggestProps}
+        inputProps={inputProps}
+        onSuggestionSelected={onClick}
+        renderSuggestionsContainer={renderSuggestionsContainer}
+      />
     </Wrapper>
   );
 };
