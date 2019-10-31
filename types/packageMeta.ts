@@ -9,6 +9,10 @@ export interface PackageMetaInterface {
       fileCount: number;
       unpackedSize: number;
     };
+    engines?: {
+      node?: string;
+      npm?: string;
+    };
     license?: Partial<LicenseInterface> | string;
     version: string;
   };
