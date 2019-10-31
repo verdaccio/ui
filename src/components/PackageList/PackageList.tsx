@@ -14,15 +14,15 @@ interface Props {
 
 export const PackageList: React.FC<Props> = ({ packages }) => {
   const renderPackages: () => ReactNode[] = () => {
-    return packages.map((
-      { name, version, description, time, keywords, dist, homepage, bugs, author, license }
-      , i) => {
+    return packages.map(({ name, version, description, time, keywords, dist, homepage, bugs, author, license }, i) => {
       // TODO: move format license to API side.
       const _license = formatLicense(license);
       return (
         <Fragment key={i}>
           {i !== 0 && <Divider />}
-          <Package {...{ name, dist, version, author, description, license: _license, time, keywords, homepage, bugs }} />
+          <Package
+            {...{ name, dist, version, author, description, license: _license, time, keywords, homepage, bugs }} 
+            />
         </Fragment>
       );
     });
