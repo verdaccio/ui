@@ -21,7 +21,7 @@ export const PackageList: React.FC<Props> = ({ packages }) => {
         <Fragment key={i}>
           {i !== 0 && <Divider />}
           <Package
-            {...{ name, dist, version, author, description, license: _license, time, keywords, homepage, bugs }} 
+            {...{ name, dist, version, author, description, license: _license, time, keywords, homepage, bugs }}
           />
         </Fragment>
       );
