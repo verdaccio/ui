@@ -1,7 +1,7 @@
 import React, { useCallback, useState, ChangeEvent, useContext } from 'react';
-import Box from '@material-ui/core/Box';
 
 import { DetailContext } from '../../pages/Version';
+import Box from '../../muiComponents/Box';
 
 import DetailContainerTabs from './DetailContainerTabs';
 import DetailContainerContent from './DetailContainerContent';

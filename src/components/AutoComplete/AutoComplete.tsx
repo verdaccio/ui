@@ -3,9 +3,9 @@ import { css } from 'emotion';
 import Autosuggest, { SuggestionSelectedEventData, InputProps, ChangeEvent } from 'react-autosuggest';
 import match from 'autosuggest-highlight/match';
 import parse from 'autosuggest-highlight/parse';
-import MenuItem from '@material-ui/core/MenuItem';
 
 import { fontWeight } from '../../utils/styles/sizes';
+import MenuItem from '../../muiComponents/MenuItem';
 
 import { Wrapper, InputField, SuggestionContainer } from './styles';
 
