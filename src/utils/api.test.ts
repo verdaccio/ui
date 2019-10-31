@@ -48,7 +48,7 @@ describe('api', () => {
       window.VERDACCIO_API_URL = undefined;
 
       expect(() => {
-        api.request('http://example.com');
+        api.request('https://verdaccio.tld');
       }).toThrow(new Error('VERDACCIO_API_URL is not defined!'));
 
       window.VERDACCIO_API_URL = VERDACCIO_API_URL;
