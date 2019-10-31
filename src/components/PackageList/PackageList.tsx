@@ -14,7 +14,9 @@ interface Props {
 
 export const PackageList: React.FC<Props> = ({ packages }) => {
   const renderPackages: () => ReactNode[] = () => {
-    return packages.map(({ name, version, description, time, keywords, dist, homepage, bugs, author, license }, i) => {
+    return packages.map((
+      { name, version, description, time, keywords, dist, homepage, bugs, author, license }
+      , i) => {
       // TODO: move format license to API side.
       const _license = formatLicense(license);
       return (
