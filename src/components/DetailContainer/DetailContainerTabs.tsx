@@ -1,7 +1,8 @@
 import React, { ChangeEvent, useState, useEffect } from 'react';
-import { default as MuiTabs } from '@material-ui/core/Tabs';
-import Tab from '@material-ui/core/Tab';
 import styled from 'react-emotion';
+
+import { default as MuiTabs } from '../../muiComponents/Tabs';
+import Tab from '../../muiComponents/Tab';
 
 import { TabPosition } from './tabs';
 

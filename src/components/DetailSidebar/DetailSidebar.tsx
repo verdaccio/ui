@@ -1,5 +1,4 @@
 import React, { ReactElement } from 'react';
-import CardContent from '@material-ui/core/CardContent';
 
 import { ActionBar } from '../ActionBar/ActionBar';
 import Author from '../Author';
@@ -11,6 +10,7 @@ import Repository from '../Repository/Repository';
 import { DetailContext } from '../../pages/Version';
 import List from '../../muiComponents/List';
 import Card from '../../muiComponents/Card';
+import CardContent from '../../muiComponents/CardContent';
 
 import { TitleListItem, TitleListItemText, PackageDescription, PackageVersion } from './styles';
 
