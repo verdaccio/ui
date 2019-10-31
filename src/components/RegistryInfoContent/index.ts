@@ -1,1 +1,1 @@
-export { RegistryInfoContent } from './RegistryInfoContent';
+export { default } from './RegistryInfoContent';
