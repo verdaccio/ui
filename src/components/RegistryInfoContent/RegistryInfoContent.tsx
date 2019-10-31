@@ -11,7 +11,7 @@ import { default as Typography } from '../../muiComponents/Heading';
 import { CommandContainer } from './styles';
 import { Props, State } from './types';
 
-export const RegistryInfoContent: React.FC<Props> = props => {
+const RegistryInfoContent: React.FC<Props> = props => {
   const [tabPosition, setTabPosition] = useState<State['tabPosition']>(0);
   const handleChange = (event: React.ChangeEvent<{}>, tabPosition: number): void => {
     event.preventDefault();
@@ -83,3 +83,5 @@ export const RegistryInfoContent: React.FC<Props> = props => {
 
   return <div>{renderTabs()}</div>;
 };
+
+export default RegistryInfoContent;

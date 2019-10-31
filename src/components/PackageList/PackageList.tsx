@@ -12,17 +12,15 @@ interface Props {
   packages: PackageInterface[];
 }
 
-export const PackageList: React.FC<Props> = props => {
-  const { packages } = props;
+export const PackageList: React.FC<Props> = ({ packages }) => {
   const renderPackages: () => ReactNode[] = () => {
-    return packages.map((pkg, i) => {
-      const { name, version, description, time, keywords, dist, homepage, bugs, author } = pkg;
+    return packages.map(({ name, version, description, time, keywords, dist, homepage, bugs, author, license }, i) => {
       // TODO: move format license to API side.
-      const license = formatLicense(pkg.license);
+      const _license = formatLicense(license);
       return (
         <Fragment key={i}>
           {i !== 0 && <Divider />}
-          <Package {...{ name, dist, version, author, description, license, time, keywords, homepage, bugs }} />
+          <Package {...{ name, dist, version, author, description, license: _license, time, keywords, homepage, bugs }} />
         </Fragment>
       );
     });

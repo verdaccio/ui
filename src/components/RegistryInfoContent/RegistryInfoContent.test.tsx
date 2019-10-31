@@ -1,7 +1,7 @@
 import React from 'react';
 import { render, cleanup, fireEvent } from '@testing-library/react';
 
-import { RegistryInfoContent } from './RegistryInfoContent';
+import RegistryInfoContent from './RegistryInfoContent';
 
 describe('<RegistryInfoContent /> component', () => {
   afterEach(() => {
