@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React, { Fragment, ReactElement } from 'react';
 
 import Package from '../Package';
 import Help from '../Help';
@@ -13,16 +13,16 @@ interface Props {
 }
 
 export const PackageList: React.FC<Props> = props => {
-  const renderPackages: () => React.ReactElement<HTMLElement>[] = () => {
+  const renderPackages: () => ReactElement<HTMLElement>[] = () => {
     return props.packages.map((pkg, i) => {
       const { name, version, description, time, keywords, dist, homepage, bugs, author } = pkg;
       // TODO: move format license to API side.
       const license = formatLicense(pkg.license);
       return (
-        <React.Fragment key={i}>
+        <Fragment key={i}>
           {i !== 0 && <Divider />}
           <Package {...{ name, dist, version, author, description, license, time, keywords, homepage, bugs }} />
-        </React.Fragment>
+        </Fragment>
       );
     });
   };

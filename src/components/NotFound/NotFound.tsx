@@ -1,10 +1,10 @@
-import Box from '@material-ui/core/Box';
-import Typography from '@material-ui/core/Typography';
 import styled from 'react-emotion';
 import React, { useCallback } from 'react';
 import { useHistory } from 'react-router-dom';
 
+import Box from '../../muiComponents/Box';
 import Button from '../../muiComponents/Button';
+import Heading from '../../muiComponents/Heading';
 import colors from '../../utils/styles/colors';
 import { spacings } from '../../utils/styles/spacings';
 
@@ -19,7 +19,7 @@ const EmptyPackage = styled('img')({
   margin: '0 auto',
 });
 
-const StyledHeading = styled(Typography)({
+const StyledHeading = styled(Heading)({
   color: colors.primary,
   marginBottom: spacings.sm,
 });
