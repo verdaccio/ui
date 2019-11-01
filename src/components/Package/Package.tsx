@@ -1,6 +1,5 @@
 import React from 'react';
 import BugReport from '@material-ui/icons/BugReport';
-import Grid from '@material-ui/core/Grid';
 import HomeIcon from '@material-ui/icons/Home';
 
 import { PackageMetaInterface, Author as PackageAuthor } from '../../../types/packageMeta';
@@ -10,6 +9,7 @@ import { formatDate, formatDateDistance } from '../../utils/package';
 import Tooltip from '../../muiComponents/Tooltip';
 import { isURL } from '../../utils/url';
 import ListItem from '../../muiComponents/ListItem';
+import Grid from '../../muiComponents/Grid';
 
 import {
   Author,

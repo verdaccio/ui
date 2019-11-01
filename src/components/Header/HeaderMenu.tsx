@@ -1,9 +1,9 @@
 import React, { MouseEvent } from 'react';
-import MenuItem from '@material-ui/core/MenuItem';
-import Menu from '@material-ui/core/Menu';
 import AccountCircle from '@material-ui/icons/AccountCircle';
 
 import IconButton from '../../muiComponents/IconButton';
+import MenuItem from '../../muiComponents/MenuItem';
+import Menu from '../../muiComponents/Menu';
 
 import HeaderGreetings from './HeaderGreetings';
 
@@ -39,7 +39,6 @@ const HeaderMenu: React.FC<Props> = ({
         vertical: 'top',
         horizontal: 'right',
       }}
-      id="header--button-account"
       onClose={onLoggedInMenuClose}
       open={isMenuOpen}
       transformOrigin={{
@@ -49,7 +48,7 @@ const HeaderMenu: React.FC<Props> = ({
       <MenuItem disabled={true}>
         <HeaderGreetings username={username} />
       </MenuItem>
-      <MenuItem id="header--button-logout" onClick={onLogout}>
+      <MenuItem button={true} id="header--button-logout" onClick={onLogout}>
         {'Logout'}
       </MenuItem>
     </Menu>

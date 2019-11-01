@@ -1,8 +1,8 @@
 import React from 'react';
 import styled, { css } from 'react-emotion';
-import Paper from '@material-ui/core/Paper';
 
 import TextField from '../../muiComponents/TextField';
+import Paper from '../../muiComponents/Paper';
 
 export interface InputFieldProps {
   color: string;

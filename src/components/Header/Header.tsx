@@ -50,7 +50,9 @@ const Header: React.FC<Props> = ({ logo, withoutSearch, username, onLogout, onTo
           <InnerMobileNavBar>
             <Search />
           </InnerMobileNavBar>
-          <Button color="inherit">{'Cancel'}</Button>
+          <Button color="inherit" onClick={() => setShowMobileNavBar(false)}>
+            {'Cancel'}
+          </Button>
         </MobileNavBar>
       )}
     </>

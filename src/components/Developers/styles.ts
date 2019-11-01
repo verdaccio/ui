@@ -1,9 +1,9 @@
 import styled from 'react-emotion';
-import { default as MuiFab } from '@material-ui/core/Fab';
 
 import colors from '../../utils/styles/colors';
 import { fontWeight } from '../../utils/styles/sizes';
 import Text from '../../muiComponents/Text';
+import FloatingActionButton from '../../muiComponents/FloatingActionButton';
 
 export const Details = styled('span')({
   display: 'flex',
@@ -26,9 +26,7 @@ export const StyledText = styled(Text)({
   textTransform: 'capitalize',
 });
 
-export const Fab = styled(MuiFab)({
-  '&&': {
-    backgroundColor: colors.primary,
-    color: colors.white,
-  },
+export const Fab = styled(FloatingActionButton)({
+  backgroundColor: colors.primary,
+  color: colors.white,
 });
