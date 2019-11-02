@@ -3,12 +3,11 @@ import styled from 'react-emotion';
 import ListItem from '../../muiComponents/ListItem';
 import ListItemText from '../../muiComponents/ListItemText';
 
-export const TitleListItem = styled(ListItem)(`
-padding: 0 0.5rem;
-&:hover {
-  border-radius: 4px;
-}
-`);
+export const TitleListItem = styled(ListItem)({
+  paddingLeft: 0,
+  paddingRight: 0,
+  paddingBottom: 0,
+});
 
 export const TitleListItemText = styled(ListItemText)({
   paddingLeft: 0,

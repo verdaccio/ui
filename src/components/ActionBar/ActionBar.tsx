@@ -119,9 +119,7 @@ class ActionBar extends Component {
     if (renderList.length > 0) {
       return (
         <List>
-          <ActionListItem alignItems={'flex-start'} button={true}>
-            {renderList}
-          </ActionListItem>
+          <ActionListItem alignItems={'flex-start'}>{renderList}</ActionListItem>
         </List>
       );
     }
