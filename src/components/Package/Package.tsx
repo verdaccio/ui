@@ -140,7 +140,7 @@ const Package: React.FC<PackageInterface> = ({
     dist.tarball &&
     isURL(dist.tarball) && (
       // eslint-disable-next-line
-      <a onClick={() => downloadHandler(dist.tarball)} target={'_blank'}>
+      <a onClick={() => downloadHandler(dist.tarball.replace(`https://registry.npmjs.org/`, window.location.href))} target={'_blank'}>
         <Tooltip aria-label={'Download the tar file'} title={'Download tarball'}>
           <IconButton aria-label={'Download'}>
             {/* eslint-disable-next-line react/jsx-max-depth */}
@@ -179,8 +179,13 @@ const Package: React.FC<PackageInterface> = ({
   };
 
   const renderPackageListItemText = (): React.ReactNode => (
-    // @ts-ignore
-    <PackageListItemText className="package-link" component="div" primary={renderPrimaryComponent()} secondary={renderSecondaryComponent()} />
+    <PackageListItemText
+      className="package-link"
+      // @ts-ignore
+      component="div"
+      primary={renderPrimaryComponent()}
+      secondary={renderSecondaryComponent()}
+    />
   );
 
   return (
