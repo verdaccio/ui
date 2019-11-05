@@ -44,7 +44,9 @@ describe('<Version /> component', () => {
   });
 
   test('should not render versions', () => {
-    const { queryByText } = render(<ComponentToBeRendered contextValue={{ packageName: detailContextValue.packageName }} />);
+    const { queryByText } = render(
+      <ComponentToBeRendered contextValue={{ packageName: detailContextValue.packageName }} />
+    );
 
     expect(queryByText(LABEL_VERSION_HISTORY)).toBeFalsy();
     expect(queryByText(LABEL_CURRENT_TAGS)).toBeFalsy();

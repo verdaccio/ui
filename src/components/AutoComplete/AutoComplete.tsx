@@ -3,9 +3,9 @@ import { css } from 'emotion';
 import Autosuggest, { SuggestionSelectedEventData, InputProps, ChangeEvent } from 'react-autosuggest';
 import match from 'autosuggest-highlight/match';
 import parse from 'autosuggest-highlight/parse';
-import MenuItem from '@material-ui/core/MenuItem';
 
 import { fontWeight } from '../../utils/styles/sizes';
+import MenuItem from '../../muiComponents/MenuItem';
 
 import { Wrapper, InputField, SuggestionContainer } from './styles';
 
@@ -117,6 +117,8 @@ const AutoComplete = ({
     value,
     onChange,
     placeholder,
+    // material-ui@4.5.1 introduce better types for TextInput, check readme
+    // @ts-ignore
     startAdornment,
     disableUnderline,
     color,
@@ -138,7 +140,12 @@ const AutoComplete = ({
 
   return (
     <Wrapper>
-      <Autosuggest {...autosuggestProps} inputProps={inputProps} onSuggestionSelected={onClick} renderSuggestionsContainer={renderSuggestionsContainer} />
+      <Autosuggest
+        {...autosuggestProps}
+        inputProps={inputProps}
+        onSuggestionSelected={onClick}
+        renderSuggestionsContainer={renderSuggestionsContainer}
+      />
     </Wrapper>
   );
 };

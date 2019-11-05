@@ -1,10 +1,10 @@
-import Box from '@material-ui/core/Box';
-import Typography from '@material-ui/core/Typography';
 import styled from 'react-emotion';
 import React, { useCallback } from 'react';
 import { useHistory } from 'react-router-dom';
 
+import Box from '../../muiComponents/Box';
 import Button from '../../muiComponents/Button';
+import Heading from '../../muiComponents/Heading';
 import colors from '../../utils/styles/colors';
 import { spacings } from '../../utils/styles/spacings';
 
@@ -19,7 +19,7 @@ const EmptyPackage = styled('img')({
   margin: '0 auto',
 });
 
-const StyledHeading = styled(Typography)({
+const StyledHeading = styled(Heading)({
   color: colors.primary,
   marginBottom: spacings.sm,
 });
@@ -27,17 +27,24 @@ const StyledHeading = styled(Typography)({
 const NotFound: React.FC = () => {
   const history = useHistory();
 
-  const handleGomHome = useCallback(() => {
+  const handleGoHome = useCallback(() => {
     history.push('/');
   }, [history]);
 
   return (
-    <Box alignItems="center" data-testid="404" display="flex" flexDirection="column" flexGrow={1} justifyContent="center" p={2}>
+    <Box
+      alignItems="center"
+      data-testid="404"
+      display="flex"
+      flexDirection="column"
+      flexGrow={1}
+      justifyContent="center"
+      p={2}>
       <EmptyPackage alt="404 - Page not found" src={PackageImg} />
       <StyledHeading className="not-found-text" variant="h4">
         {NOT_FOUND_TEXT}
       </StyledHeading>
-      <Button onClick={handleGomHome} variant="contained">
+      <Button onClick={handleGoHome} variant="contained">
         {GO_TO_HOME_PAGE}
       </Button>
     </Box>

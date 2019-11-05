@@ -1,7 +1,6 @@
 import React from 'react';
 import BugReport from '@material-ui/icons/BugReport';
 import DownloadIcon from '@material-ui/icons/CloudDownload';
-import Grid from '@material-ui/core/Grid';
 import HomeIcon from '@material-ui/icons/Home';
 
 import { PackageMetaInterface, Author as PackageAuthor } from '../../../types/packageMeta';
@@ -12,6 +11,7 @@ import Tooltip from '../../muiComponents/Tooltip';
 import { isURL } from '../../utils/url';
 import { downloadHandler } from '../ActionBar/ActionBar';
 import ListItem from '../../muiComponents/ListItem';
+import Grid from '../../muiComponents/Grid';
 
 import {
   Author,

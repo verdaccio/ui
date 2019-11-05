@@ -1,10 +1,10 @@
 import React from 'react';
 import styled from 'react-emotion';
-import ListItemText from '@material-ui/core/ListItemText';
 
 import CopyToClipBoard from '../CopyToClipBoard';
 import Avatar from '../../muiComponents/Avatar';
 import ListItem from '../../muiComponents/ListItem';
+import ListItemText from '../../muiComponents/ListItemText';
 
 // logos of package managers
 import npmLogo from './img/npm.svg';
@@ -45,21 +45,30 @@ const InstallListItem: React.FC<Interface> = ({ packageName, dependencyManager }
       return (
         <InstallItem button={true} data-testid={'installListItem-npm'}>
           <PackageMangerAvatar alt="npm" src={npmLogo} />
-          <InstallListItemText primary={<CopyToClipBoard text={`npm install ${packageName}`} />} secondary={'Install using npm'} />
+          <InstallListItemText
+            primary={<CopyToClipBoard text={`npm install ${packageName}`} />}
+            secondary={'Install using npm'}
+          />
         </InstallItem>
       );
     case DependencyManager.YARN:
       return (
         <InstallItem button={true} data-testid={'installListItem-yarn'}>
           <PackageMangerAvatar alt="yarn" src={yarnLogo} />
-          <InstallListItemText primary={<CopyToClipBoard text={`yarn add ${packageName}`} />} secondary={'Install using yarn'} />
+          <InstallListItemText
+            primary={<CopyToClipBoard text={`yarn add ${packageName}`} />}
+            secondary={'Install using yarn'}
+          />
         </InstallItem>
       );
     case DependencyManager.PNPM:
       return (
         <InstallItem button={true} data-testid={'installListItem-pnpm'}>
           <PackageMangerAvatar alt={'pnpm'} src={pnpmLogo} />
-          <InstallListItemText primary={<CopyToClipBoard text={`pnpm install ${packageName}`} />} secondary={'Install using pnpm'} />
+          <InstallListItemText
+            primary={<CopyToClipBoard text={`pnpm install ${packageName}`} />}
+            secondary={'Install using pnpm'}
+          />
         </InstallItem>
       );
     default:

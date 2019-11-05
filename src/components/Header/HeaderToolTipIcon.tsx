@@ -1,32 +1,46 @@
-import React from 'react';
+import React, { forwardRef } from 'react';
 import Info from '@material-ui/icons/Info';
 import Help from '@material-ui/icons/Help';
 import Search from '@material-ui/icons/Search';
 
 import IconButton from '../../muiComponents/IconButton';
 
-import { IconSearchButton, StyledExternalLink } from './styles';
+import { IconSearchButton, StyledLink } from './styles';
 
 export type TooltipIconType = 'search' | 'help' | 'info';
-
 interface Props {
   tooltipIconType: TooltipIconType;
   onClick?: () => void;
 }
 
-const HeaderToolTipIcon: React.FC<Props> = ({ tooltipIconType, onClick }) => {
+type HeaderToolTipIconRef = HTMLButtonElement;
+
+/* eslint-disable react/jsx-no-undef */
+/* eslint-disable react/display-name */
+const HeaderToolTipIcon = forwardRef<HeaderToolTipIconRef, Props>(function HeaderToolTipIcon(
+  { tooltipIconType, onClick },
+  ref
+) {
   switch (tooltipIconType) {
     case 'help':
       return (
-        <StyledExternalLink blank={true} data-testid={'header--tooltip-documentation'} to={'https://verdaccio.org/docs/en/installation'}>
+        <StyledLink
+          data-testid={'header--tooltip-documentation'}
+          external={true}
+          to={'https://verdaccio.org/docs/en/installation'}>
           <IconButton color={'inherit'}>
             <Help />
           </IconButton>
-        </StyledExternalLink>
+        </StyledLink>
       );
     case 'info':
       return (
-        <IconButton color="inherit" data-testid={'header--tooltip-info'} id="header--button-registryInfo" onClick={onClick}>
+        <IconButton
+          color="inherit"
+          data-testid={'header--tooltip-info'}
+          id="header--button-registryInfo"
+          onClick={onClick}
+          ref={ref}>
           <Info />
         </IconButton>
       );
@@ -39,6 +53,6 @@ const HeaderToolTipIcon: React.FC<Props> = ({ tooltipIconType, onClick }) => {
     default:
       return null;
   }
-};
+});
 
 export default HeaderToolTipIcon;

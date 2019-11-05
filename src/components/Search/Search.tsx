@@ -3,9 +3,9 @@ import { withRouter, RouteComponentProps } from 'react-router-dom';
 import { SuggestionSelectedEventData, ChangeEvent } from 'react-autosuggest';
 import { css } from 'emotion';
 import { default as IconSearch } from '@material-ui/icons/Search';
-import InputAdornment from '@material-ui/core/InputAdornment';
 import debounce from 'lodash/debounce';
 
+import InputAdornment from '../../muiComponents/InputAdornment';
 import AutoComplete from '../AutoComplete';
 import colors from '../../utils/styles/colors';
 import { callSearch } from '../../utils/calls';
@@ -21,7 +21,10 @@ export interface State {
 export type cancelAllSearchRequests = () => void;
 export type handlePackagesClearRequested = () => void;
 export type handleSearch = (event: React.FormEvent<HTMLInputElement>, { newValue, method }: ChangeEvent) => void;
-export type handleClickSearch = (event: KeyboardEvent<HTMLInputElement>, { suggestionValue, method }: { suggestionValue: object[]; method: string }) => void;
+export type handleClickSearch = (
+  event: KeyboardEvent<HTMLInputElement>,
+  { suggestionValue, method }: { suggestionValue: object[]; method: string }
+) => void;
 export type handleFetchPackages = ({ value: string }) => Promise<void>;
 export type onBlur = (event: React.FormEvent<HTMLInputElement>) => void;
 
@@ -171,6 +174,7 @@ export class Search extends Component<RouteComponentProps<{}>, State> {
       <InputAdornment
         className={css`
           color: ${colors.white};
+          }
         `}
         position={'start'}>
         <IconSearch />

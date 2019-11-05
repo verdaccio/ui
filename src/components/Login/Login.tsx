@@ -1,10 +1,5 @@
 import React, { Component } from 'react';
-import SnackbarContent from '@material-ui/core/SnackbarContent';
 import ErrorIcon from '@material-ui/icons/Error';
-import InputLabel from '@material-ui/core/InputLabel';
-import Input from '@material-ui/core/Input';
-import FormControl from '@material-ui/core/FormControl';
-import FormHelperText from '@material-ui/core/FormHelperText';
 import { css } from 'emotion';
 
 import Button from '../../muiComponents/Button';
@@ -12,6 +7,11 @@ import Dialog from '../../muiComponents/Dialog';
 import DialogTitle from '../../muiComponents/DialogTitle';
 import DialogContent from '../../muiComponents/DialogContent';
 import DialogActions from '../../muiComponents/DialogActions';
+import FormControl from '../../muiComponents/FormControl';
+import FormHelperText from '../../muiComponents/FormHelperText';
+import Input from '../../muiComponents/Input';
+import InputLabel from '../../muiComponents/InputLabel';
+import SnackbarContent from '../../muiComponents/SnackbarContent';
 
 import * as classes from './styles';
 
@@ -172,7 +172,11 @@ export default class LoginModal extends Component<Partial<LoginModalProps>, Logi
   }
 
   public renderLoginError({ type, title, description }: FormError): JSX.Element | false {
-    return type === 'error' && <SnackbarContent className={classes.loginError} message={this.renderMessage(title, description)} />;
+    return (
+      type === 'error' && (
+        <SnackbarContent className={classes.loginError} message={this.renderMessage(title, description)} />
+      )
+    );
   }
 
   public renderNameField = () => {
@@ -182,8 +186,15 @@ export default class LoginModal extends Component<Partial<LoginModalProps>, Logi
     return (
       <FormControl error={!username.value && !username.pristine} fullWidth={true} required={username.required}>
         <InputLabel htmlFor={'username'}>{'Username'}</InputLabel>
-        <Input id={'login--form-username'} onChange={this.handleUsernameChange} placeholder={'Your username'} value={username.value} />
-        {!username.value && !username.pristine && <FormHelperText id={'username-error'}>{username.helperText}</FormHelperText>}
+        <Input
+          id={'login--form-username'}
+          onChange={this.handleUsernameChange}
+          placeholder={'Your username'}
+          value={username.value}
+        />
+        {!username.value && !username.pristine && (
+          <FormHelperText id={'username-error'}>{username.helperText}</FormHelperText>
+        )}
       </FormControl>
     );
   };
@@ -201,8 +212,16 @@ export default class LoginModal extends Component<Partial<LoginModalProps>, Logi
         fullWidth={true}
         required={password.required}>
         <InputLabel htmlFor={'password'}>{'Password'}</InputLabel>
-        <Input id={'login--form-password'} onChange={this.handlePasswordChange} placeholder={'Your strong password'} type={'password'} value={password.value} />
-        {!password.value && !password.pristine && <FormHelperText id={'password-error'}>{password.helperText}</FormHelperText>}
+        <Input
+          id={'login--form-password'}
+          onChange={this.handlePasswordChange}
+          placeholder={'Your strong password'}
+          type={'password'}
+          value={password.value}
+        />
+        {!password.value && !password.pristine && (
+          <FormHelperText id={'password-error'}>{password.helperText}</FormHelperText>
+        )}
       </FormControl>
     );
   };
@@ -217,7 +236,11 @@ export default class LoginModal extends Component<Partial<LoginModalProps>, Logi
         <Button color={'inherit'} id={'login--form-cancel'} onClick={onCancel} type={'button'}>
           {'Cancel'}
         </Button>
-        <Button color={'inherit'} disabled={!password.value || !username.value} id={'login--form-submit'} type={'submit'}>
+        <Button
+          color={'inherit'}
+          disabled={!password.value || !username.value}
+          id={'login--form-submit'}
+          type={'submit'}>
           {'Login'}
         </Button>
       </DialogActions>
