@@ -1,7 +1,5 @@
 import React, { Component, ReactElement } from 'react';
 import isNil from 'lodash/isNil';
-import 'normalize.css';
-import 'typeface-roboto/index.css';
 
 import storage from '../utils/storage';
 import { makeLogin, isTokenExpire } from '../utils/login';
@@ -10,8 +8,8 @@ import LoginModal from '../components/Login';
 import Header from '../components/Header';
 import { Container, Content } from '../components/Layout';
 import API from '../utils/api';
-import '../utils/styles/global';
 import Footer from '../components/Footer';
+import StyleBaseline from '../design-tokens/StyleBaseline';
 
 import AppRoute from './AppRoute';
 import { AppProps, AppContextProvider } from './AppContext';
@@ -46,10 +44,13 @@ export default class App extends Component<{}, AppProps> {
     const context = { isUserLoggedIn, packages, logoUrl, user, scope };
 
     return (
-      <Container isLoading={isLoading}>
-        {isLoading ? <Loading /> : <AppContextProvider value={context}>{this.renderContent()}</AppContextProvider>}
-        {this.renderLoginModal()}
-      </Container>
+      <>
+        <StyleBaseline />
+        <Container isLoading={isLoading}>
+          {isLoading ? <Loading /> : <AppContextProvider value={context}>{this.renderContent()}</AppContextProvider>}
+          {this.renderLoginModal()}
+        </Container>
+      </>
     );
   }
 
@@ -146,14 +147,7 @@ export default class App extends Component<{}, AppProps> {
 
   public renderLoginModal = (): ReactElement<HTMLElement> => {
     const { error, showLoginModal } = this.state;
-    return (
-      <LoginModal
-        error={error}
-        onCancel={this.handleToggleLoginModal}
-        onSubmit={this.handleDoLogin}
-        visibility={showLoginModal}
-      />
-    );
+    return <LoginModal error={error} onCancel={this.handleToggleLoginModal} onSubmit={this.handleDoLogin} visibility={showLoginModal} />;
   };
 
   public renderContent = (): ReactElement<HTMLElement> => {
@@ -174,14 +168,6 @@ export default class App extends Component<{}, AppProps> {
       scope,
     } = this.state;
 
-    return (
-      <Header
-        logo={logoUrl}
-        onLogout={this.handleLogout}
-        onToggleLoginModal={this.handleToggleLoginModal}
-        scope={scope}
-        username={username}
-      />
-    );
+    return <Header logo={logoUrl} onLogout={this.handleLogout} onToggleLoginModal={this.handleToggleLoginModal} scope={scope} username={username} />;
   };
 }
