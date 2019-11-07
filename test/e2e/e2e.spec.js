@@ -21,7 +21,7 @@ describe('/ (Verdaccio Page)', () => {
   };
 
   const getPackages = async function() {
-    return await page.$$('.package-list-items .package-link a');
+    return await page.$$('.package-list-items .package-link');
   };
 
   const logIn = async function() {
