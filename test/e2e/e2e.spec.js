@@ -1,5 +1,9 @@
+import { HELP_TITLE } from '../../src/components/Help/Help';
+
 const scopedPackageMetadata = require('./partials/pkg-scoped');
 const protectedPackageMetadata = require('./partials/pkg-protected');
+
+const getId = id => `#${id}`;
 
 describe('/ (Verdaccio Page)', () => {
   let page;
@@ -12,16 +16,16 @@ describe('/ (Verdaccio Page)', () => {
     await button.click(options);
   };
 
-  const evaluateSignIn = async function() {
+  const evaluateSignIn = async function(matchText = 'Login') {
     const text = await page.evaluate(() => {
       return document.querySelector('button[data-testid="header--button-login"]').textContent;
     });
 
-    expect(text).toMatch('Login');
+    expect(text).toMatch(matchText);
   };
 
   const getPackages = async function() {
-    return await page.$$('.package-list-items .package-link');
+    return await page.$$('.package-title');
   };
 
   const logIn = async function() {
@@ -54,31 +58,34 @@ describe('/ (Verdaccio Page)', () => {
     await page.close();
   });
 
-  test('should load without error', async () => {
-    const text = await page.evaluate(() => document.body.textContent);
+  test('should display title', async () => {
+    const text = await page.title();
+    await page.waitFor(1000);
 
-    // FIXME: perhaps it is not the best approach
-    expect(text).toContain('Powered by');
+    expect(text).toContain('verdaccio-server-e2e');
   });
 
   test('should match title with no packages published', async () => {
     const text = await page.evaluate(() => document.querySelector('#help-card__title').textContent);
-    expect(text).toMatch('No Package Published Yet');
+    expect(text).toMatch(HELP_TITLE);
   });
+  //
 
   test('should match title with first step', async () => {
     const text = await page.evaluate(() => document.querySelector('#help-card').textContent);
     expect(text).toContain('npm adduser --registry http://0.0.0.0:55558');
   });
+  //
 
   test('should match title with second step', async () => {
     const text = await page.evaluate(() => document.querySelector('#help-card').textContent);
     expect(text).toContain('npm publish --registry http://0.0.0.0:55558');
   });
-
+  //
   test('should match button Login to sign in', async () => {
     await evaluateSignIn();
   });
+  //
 
   test('should click on sign in button', async () => {
     const signInButton = await page.$('button[data-testid="header--button-login"]');
@@ -88,6 +95,7 @@ describe('/ (Verdaccio Page)', () => {
 
     expect(signInDialog).not.toBeNull();
   });
+  //
 
   test('should log in an user', async () => {
     // we open the dialog
@@ -96,6 +104,7 @@ describe('/ (Verdaccio Page)', () => {
     const buttonLogout = await page.$('#header--button-logout');
     expect(buttonLogout).toBeDefined();
   });
+  //
 
   test('should logout an user', async () => {
     // we assume the user is logged already
@@ -105,6 +114,7 @@ describe('/ (Verdaccio Page)', () => {
     await page.waitFor(1000);
     await evaluateSignIn();
   });
+  //
 
   test('should check registry info dialog', async () => {
     const registryInfoButton = await page.$('#header--button-registryInfo');
@@ -117,6 +127,7 @@ describe('/ (Verdaccio Page)', () => {
     const closeButton = await page.$('#registryInfo--dialog-close');
     closeButton.click();
   });
+  //
 
   test('should publish a package', async () => {
     await global.__SERVER__.putPackage(scopedPackageMetadata.name, scopedPackageMetadata);
@@ -126,13 +137,16 @@ describe('/ (Verdaccio Page)', () => {
     const packagesList = await getPackages();
     expect(packagesList).toHaveLength(1);
   });
+  //
 
   test('should navigate to the package detail', async () => {
     const packagesList = await getPackages();
+    // console.log("-->packagesList:", packagesList);
     const firstPackage = packagesList[0];
     await firstPackage.click({ clickCount: 1, delay: 200 });
     await page.waitFor(1000);
     const readmeText = await page.evaluate(() => document.querySelector('.markdown-body').textContent);
+
     expect(readmeText).toMatch('test');
   });
 
@@ -140,7 +154,7 @@ describe('/ (Verdaccio Page)', () => {
     const versionList = await page.$$('.sidebar-info .detail-info');
     expect(versionList).toHaveLength(1);
   });
-
+  //
   test('should display dependencies tab', async () => {
     const dependenciesTab = await page.$$('#dependencies-tab');
     expect(dependenciesTab).toHaveLength(1);

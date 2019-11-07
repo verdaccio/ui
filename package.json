@@ -86,7 +86,7 @@
     "ora": "4.0.2",
     "prettier": "1.18.2",
     "prop-types": "15.7.2",
-    "puppeteer": "1.8.0",
+    "puppeteer": "2.0.0",
     "react": "16.11.0",
     "react-autosuggest": "9.4.3",
     "react-dom": "16.11.0",
