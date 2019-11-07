@@ -13,7 +13,7 @@ describe('/ (Verdaccio Page)', () => {
   };
 
   const evaluateSignIn = async function() {
-    const text = await page.evaluate(function() {
+    const text = await page.evaluate(() => {
       document.querySelector('button[data-testid="header--button-login"]').textContent;
     });
 
