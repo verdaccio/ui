@@ -13,9 +13,9 @@ describe('/ (Verdaccio Page)', () => {
   };
 
   const evaluateSignIn = async function() {
-    const text = await page.evaluate(
-      () => document.querySelector('button[data-testid="header--button-login"]').textContent
-    );
+    const text = await page.evaluate(function() {
+      document.querySelector('button[data-testid="header--button-login"]').textContent;
+    });
 
     expect(text).toMatch('Login');
   };
