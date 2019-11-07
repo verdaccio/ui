@@ -3,8 +3,6 @@ import { HELP_TITLE } from '../../src/components/Help/Help';
 const scopedPackageMetadata = require('./partials/pkg-scoped');
 const protectedPackageMetadata = require('./partials/pkg-protected');
 
-const getId = id => `#${id}`;
-
 describe('/ (Verdaccio Page)', () => {
   let page;
   // this might be increased based on the delays included in all test
