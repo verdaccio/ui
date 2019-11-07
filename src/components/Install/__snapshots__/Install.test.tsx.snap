@@ -18,7 +18,7 @@ exports[`<Install /> renders correctly 1`] = `
     tabindex="0"
   >
     <div
-      class="MuiAvatar-root css-19top7x emotion-1"
+      class="MuiAvatar-root MuiAvatar-circle css-19top7x emotion-1"
     >
       <img
         alt="npm"
@@ -85,7 +85,7 @@ exports[`<Install /> renders correctly 1`] = `
     tabindex="0"
   >
     <div
-      class="MuiAvatar-root css-19top7x emotion-1"
+      class="MuiAvatar-root MuiAvatar-circle css-19top7x emotion-1"
     >
       <img
         alt="yarn"
@@ -152,7 +152,7 @@ exports[`<Install /> renders correctly 1`] = `
     tabindex="0"
   >
     <div
-      class="MuiAvatar-root css-19top7x emotion-1"
+      class="MuiAvatar-root MuiAvatar-circle css-19top7x emotion-1"
     >
       <img
         alt="pnpm"
