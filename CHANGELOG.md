@@ -2,6 +2,22 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.3.5](https://github.com/verdaccio/ui/compare/v0.3.4...v0.3.5) (2019-11-07)
+
+
+### Bug Fixes
+
+* adds unit tests for api service ([#235](https://github.com/verdaccio/ui/issues/235)) ([803da1c](https://github.com/verdaccio/ui/commit/803da1c))
+* convert Engine component to hooks ([#233](https://github.com/verdaccio/ui/issues/233)) ([5cb47ed](https://github.com/verdaccio/ui/commit/5cb47ed))
+* refactor/116 RegistryInfoContent is converted to functional component ([#229](https://github.com/verdaccio/ui/issues/229)) ([b74ca22](https://github.com/verdaccio/ui/commit/b74ca22)), closes [#116](https://github.com/verdaccio/ui/issues/116) [#116](https://github.com/verdaccio/ui/issues/116)
+* rest MUI components -  Introduced ForwardRef ([#224](https://github.com/verdaccio/ui/issues/224)) ([b56e438](https://github.com/verdaccio/ui/commit/b56e438))
+
+
+### Features
+
+* added download tarball button at list ([#237](https://github.com/verdaccio/ui/issues/237)) ([bdef686](https://github.com/verdaccio/ui/commit/bdef686))
+* update date fns to v2 ([#232](https://github.com/verdaccio/ui/issues/232)) ([a4cdd14](https://github.com/verdaccio/ui/commit/a4cdd14))
+
 ### [0.3.4](https://github.com/verdaccio/ui/compare/v0.3.3...v0.3.4) (2019-10-26)
 
 
