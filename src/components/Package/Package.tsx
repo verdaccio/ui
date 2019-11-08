@@ -156,7 +156,7 @@ const Package: React.FC<PackageInterface> = ({
         <Grid item={true} xs={true}>
           <WrapperLink to={`/-/web/detail/${packageName}`}>
             {/* eslint-disable-next-line react/jsx-max-depth */}
-            <PackageTitle>{packageName}</PackageTitle>
+            <PackageTitle className="package-title">{packageName}</PackageTitle>
           </WrapperLink>
         </Grid>
         <GridRightAligned item={true} xs={true}>
