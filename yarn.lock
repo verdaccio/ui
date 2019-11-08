@@ -1952,12 +1952,20 @@
     babel-plugin-dynamic-import-node "2.3.0"
     babel-plugin-emotion "10.0.21"
 
-"@verdaccio/commons-api@8.2.0", "@verdaccio/commons-api@^8.2.0":
+"@verdaccio/commons-api@8.2.0":
   version "8.2.0"
   resolved "https://registry.verdaccio.org/@verdaccio%2fcommons-api/-/commons-api-8.2.0.tgz#0ed20a7feba6af02bc525f36c46834971b9fd0a7"
   integrity sha512-dypbrd/3gmuAfLW3cUdkQ0NwQdtrGfEjv4qJ+Qw6/jnNf7goGmI/94XwqgIAZdmPN+JH99r7kwa9qHtfUyYWvA==
   dependencies:
     http-errors "1.7.3"
+
+"@verdaccio/commons-api@^8.2.0", "@verdaccio/commons-api@^8.3.0":
+  version "8.3.0"
+  resolved "https://registry.verdaccio.org/@verdaccio%2fcommons-api/-/commons-api-8.3.0.tgz#3a4b07b63561b21bfc8242330da528e12788635e"
+  integrity sha512-MfXwbPa41mjkjCOFr6QOgThBzmtL1cuQuViurPQXpLsNeTC1EuZ1BkNjbrnOfEQuFKWsWmtLd8tEUP0hNcLMcg==
+  dependencies:
+    http-errors "1.7.3"
+    http-status-codes "1.3.2"
 
 "@verdaccio/eslint-config@8.2.0":
   version "8.2.0"
@@ -2011,10 +2019,15 @@
     jsdom "15.2.0"
     marked "0.7.0"
 
-"@verdaccio/streams@8.2.0", "@verdaccio/streams@^8.2.0":
+"@verdaccio/streams@8.2.0":
   version "8.2.0"
   resolved "https://registry.verdaccio.org/@verdaccio%2fstreams/-/streams-8.2.0.tgz#3135945bd8445b2af27ea888eb9989071df9afa9"
   integrity sha512-gwMHKVoJMWuI6dMxrekiv1gcNEpll/K6uj4juOjTwhp6IULUDbza7T6FHj3I5p5zxREEkiNGnCWmZki0437qEQ==
+
+"@verdaccio/streams@^8.2.0", "@verdaccio/streams@^8.3.0":
+  version "8.3.0"
+  resolved "https://registry.verdaccio.org/@verdaccio%2fstreams/-/streams-8.3.0.tgz#d779d9d3e74d0248c463ac9bd7f43a6f42ef42eb"
+  integrity sha512-OxCUeUPi32WS6TwWB9sbhguKCG5rZ4AXzop5PgEYsKghzAVKXbYHn8y2QRa7QU7JE7xEFD+kXonBKjGp6bc1KQ==
 
 "@verdaccio/types@8.3.0":
   version "8.3.0"
@@ -6818,6 +6831,11 @@ http-signature@~1.2.0:
     assert-plus "^1.0.0"
     jsprim "^1.2.2"
     sshpk "^1.7.0"
+
+http-status-codes@1.3.2:
+  version "1.3.2"
+  resolved "https://registry.verdaccio.org/http-status-codes/-/http-status-codes-1.3.2.tgz#181dfa4455ef454e5e4d827718fca3936680d10d"
+  integrity sha512-nDUtj0ltIt08tGi2VWSpSzNNFye0v3YSe9lX3lIqLTuVvvRiYCvs4QQBSHo0eomFYw1wlUuofurUAlTm+vHnXg==
 
 https-browserify@^1.0.0:
   version "1.0.0"
@@ -13741,13 +13759,13 @@ verdaccio-htpasswd@8.2.0:
     http-errors "1.7.3"
     unix-crypt-td-js "1.0.0"
 
-verdaccio-memory@8.2.0:
-  version "8.2.0"
-  resolved "https://registry.verdaccio.org/verdaccio-memory/-/verdaccio-memory-8.2.0.tgz#f7ae7292d643f7a22d7e22a9bcce65c3c5ffc21f"
-  integrity sha512-XRUyuHCgnPJUQFuZsy8YC62v0LgMp+OlOpqyfl6DSzmD1bEUgLWXqHpkOthBht7wIhjhzkZe/W46u0uIjUzOzw==
+verdaccio-memory@8.3.0:
+  version "8.3.0"
+  resolved "https://registry.verdaccio.org/verdaccio-memory/-/verdaccio-memory-8.3.0.tgz#9594a2db3095e33a10bb072bb9d0a8518ff8cfc6"
+  integrity sha512-D3/uJTPwOil5T8vaP0ztEBVTCX8+kMdehpxI3xggJDJcB9JCKDUlvNzJwm9sojGeO1PYTbtY5Tt4r5Lvf7+fag==
   dependencies:
-    "@verdaccio/commons-api" "^8.2.0"
-    "@verdaccio/streams" "^8.2.0"
+    "@verdaccio/commons-api" "^8.3.0"
+    "@verdaccio/streams" "^8.3.0"
     http-errors "1.7.3"
     memory-fs "0.5.0"
 
