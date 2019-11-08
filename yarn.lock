@@ -2031,10 +2031,10 @@
   resolved "https://registry.verdaccio.org/@verdaccio%2fstreams/-/streams-8.2.0.tgz#3135945bd8445b2af27ea888eb9989071df9afa9"
   integrity sha512-gwMHKVoJMWuI6dMxrekiv1gcNEpll/K6uj4juOjTwhp6IULUDbza7T6FHj3I5p5zxREEkiNGnCWmZki0437qEQ==
 
-"@verdaccio/types@8.1.0":
-  version "8.1.0"
-  resolved "https://registry.verdaccio.org/@verdaccio%2ftypes/-/types-8.1.0.tgz#298baa1c0bffd340022537a1d9b064b82b4ae497"
-  integrity sha512-wc0SaH25ioT6xt4HtlFzvmNSjZXQOddJLDuI1VN4/8nHAIlrUdlQ0sGnmky4+bJOuTL3eqbaqx4nHMKep5+lDg==
+"@verdaccio/types@8.3.0":
+  version "8.3.0"
+  resolved "https://registry.verdaccio.org/@verdaccio%2ftypes/-/types-8.3.0.tgz#496417d926316024afa3ce775dba9840cf2e8328"
+  integrity sha512-MBMlmRX7V/HG3derldU1xj5bPA+OtHqX/7pSvnT+6vAIbqEkmwaXNFW13coxJ+0fq2ly5QEmRxxs4pGyNHqoFQ==
 
 "@verdaccio/ui-theme@0.3.2":
   version "0.3.2"
