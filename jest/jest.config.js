@@ -26,6 +26,6 @@ module.exports = {
     'github-markdown-css': '<rootDir>/node_modules/identity-obj-proxy',
     '\\.(png)$': '<rootDir>/node_modules/identity-obj-proxy',
     '\\.(svg)$': '<rootDir>/jest/unit/empty.ts',
-    '\\.(woff|woff2)$': '<rootDir>/node_modules/identity-obj-proxy',
+    '\\.(woff|woff2)$': '<rootDir>/jest/unit/fileMock.ts',
   },
 };
