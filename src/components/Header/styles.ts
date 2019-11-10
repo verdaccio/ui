@@ -1,72 +1,56 @@
 import styled, { css } from 'react-emotion';
-import AppBar from '@material-ui/core/AppBar';
-import Toolbar from '@material-ui/core/Toolbar';
 
 import colors from '../../utils/styles/colors';
 import mq from '../../utils/styles/media';
 import IconButton from '../../muiComponents/IconButton';
-import ExternalLink from '../Link';
+import AppBar from '../../muiComponents/AppBar';
+import Toolbar from '../../muiComponents/Toolbar';
+import Link from '../Link';
 
 export const InnerNavBar = styled(Toolbar)({
-  '&&': {
-    justifyContent: 'space-between',
-    alignItems: 'center',
-    padding: '0 15px',
-  },
+  justifyContent: 'space-between',
+  alignItems: 'center',
+  padding: '0 15px',
 });
 
 export const Greetings = styled('span')({
-  '&&': {
-    margin: '0 5px 0 0',
-  },
+  margin: '0 5px 0 0',
 });
 
 export const RightSide = styled(Toolbar)({
-  '&&': {
-    display: 'flex',
-    padding: 0,
-  },
+  display: 'flex',
+  padding: 0,
 });
 
 export const LeftSide = styled(RightSide)({
-  '&&': {
-    flex: 1,
-  },
+  flex: 1,
 });
 
 export const MobileNavBar = styled('div')({
-  '&&': {
-    alignItems: 'center',
-    display: 'flex',
-    borderBottom: `1px solid ${colors.greyLight}`,
-    padding: '8px',
-    position: 'relative',
-  },
+  alignItems: 'center',
+  display: 'flex',
+  borderBottom: `1px solid ${colors.greyLight}`,
+  padding: '8px',
+  position: 'relative',
 });
 
 export const InnerMobileNavBar = styled('div')({
-  '&&': {
-    borderRadius: '4px',
-    backgroundColor: colors.greyLight,
-    color: colors.white,
-    width: '100%',
-    padding: '0 5px',
-    margin: '0 10px 0 0',
-  },
+  borderRadius: '4px',
+  backgroundColor: colors.greyLight,
+  color: colors.white,
+  width: '100%',
+  padding: '0 5px',
+  margin: '0 10px 0 0',
 });
 
 export const IconSearchButton = styled(IconButton)({
-  '&&': {
-    display: 'block',
-  },
+  display: 'block',
 });
 
 export const SearchWrapper = styled('div')({
-  '&&': {
-    display: 'none',
-    maxWidth: '393px',
-    width: '100%',
-  },
+  display: 'none',
+  maxWidth: '393px',
+  width: '100%',
 });
 
 export const NavBar = styled(AppBar)`
@@ -104,8 +88,6 @@ export const NavBar = styled(AppBar)`
   }
 `;
 
-export const StyledExternalLink = styled(ExternalLink)({
-  '&&': {
-    color: 'white',
-  },
+export const StyledLink = styled(Link)({
+  color: 'white',
 });
