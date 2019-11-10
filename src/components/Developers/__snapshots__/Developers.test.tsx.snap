@@ -122,15 +122,18 @@ exports[`test Developers should render the component for contributors with items
                           aria-label="dmethvin"
                           classes={
                             Object {
+                              "circle": "MuiAvatar-circle",
                               "colorDefault": "MuiAvatar-colorDefault",
                               "img": "MuiAvatar-img",
                               "root": "MuiAvatar-root",
+                              "rounded": "MuiAvatar-rounded",
+                              "square": "MuiAvatar-square",
                             }
                           }
                         >
                           <div
                             aria-label="dmethvin"
-                            className="MuiAvatar-root MuiAvatar-colorDefault"
+                            className="MuiAvatar-root MuiAvatar-circle MuiAvatar-colorDefault"
                           />
                         </ForwardRef(Avatar)>
                       </WithStyles(ForwardRef(Avatar))>
@@ -146,7 +149,7 @@ exports[`test Developers should render the component for contributors with items
                       >
                         <div
                           aria-label="dmethvin"
-                          class="MuiAvatar-root MuiAvatar-colorDefault"
+                          class="MuiAvatar-root MuiAvatar-circle MuiAvatar-colorDefault"
                         />
                       </a>
                     }
@@ -218,15 +221,18 @@ exports[`test Developers should render the component for contributors with items
                           aria-label="mgol"
                           classes={
                             Object {
+                              "circle": "MuiAvatar-circle",
                               "colorDefault": "MuiAvatar-colorDefault",
                               "img": "MuiAvatar-img",
                               "root": "MuiAvatar-root",
+                              "rounded": "MuiAvatar-rounded",
+                              "square": "MuiAvatar-square",
                             }
                           }
                         >
                           <div
                             aria-label="mgol"
-                            className="MuiAvatar-root MuiAvatar-colorDefault"
+                            className="MuiAvatar-root MuiAvatar-circle MuiAvatar-colorDefault"
                           />
                         </ForwardRef(Avatar)>
                       </WithStyles(ForwardRef(Avatar))>
@@ -242,7 +248,7 @@ exports[`test Developers should render the component for contributors with items
                       >
                         <div
                           aria-label="mgol"
-                          class="MuiAvatar-root MuiAvatar-colorDefault"
+                          class="MuiAvatar-root MuiAvatar-circle MuiAvatar-colorDefault"
                         />
                       </a>
                     }
@@ -385,15 +391,18 @@ exports[`test Developers should render the component for maintainers with items 
                           aria-label="dmethvin"
                           classes={
                             Object {
+                              "circle": "MuiAvatar-circle",
                               "colorDefault": "MuiAvatar-colorDefault",
                               "img": "MuiAvatar-img",
                               "root": "MuiAvatar-root",
+                              "rounded": "MuiAvatar-rounded",
+                              "square": "MuiAvatar-square",
                             }
                           }
                         >
                           <div
                             aria-label="dmethvin"
-                            className="MuiAvatar-root MuiAvatar-colorDefault"
+                            className="MuiAvatar-root MuiAvatar-circle MuiAvatar-colorDefault"
                           />
                         </ForwardRef(Avatar)>
                       </WithStyles(ForwardRef(Avatar))>
@@ -409,7 +418,7 @@ exports[`test Developers should render the component for maintainers with items 
                       >
                         <div
                           aria-label="dmethvin"
-                          class="MuiAvatar-root MuiAvatar-colorDefault"
+                          class="MuiAvatar-root MuiAvatar-circle MuiAvatar-colorDefault"
                         />
                       </a>
                     }
@@ -481,15 +490,18 @@ exports[`test Developers should render the component for maintainers with items 
                           aria-label="mgol"
                           classes={
                             Object {
+                              "circle": "MuiAvatar-circle",
                               "colorDefault": "MuiAvatar-colorDefault",
                               "img": "MuiAvatar-img",
                               "root": "MuiAvatar-root",
+                              "rounded": "MuiAvatar-rounded",
+                              "square": "MuiAvatar-square",
                             }
                           }
                         >
                           <div
                             aria-label="mgol"
-                            className="MuiAvatar-root MuiAvatar-colorDefault"
+                            className="MuiAvatar-root MuiAvatar-circle MuiAvatar-colorDefault"
                           />
                         </ForwardRef(Avatar)>
                       </WithStyles(ForwardRef(Avatar))>
@@ -505,7 +517,7 @@ exports[`test Developers should render the component for maintainers with items 
                       >
                         <div
                           aria-label="mgol"
-                          class="MuiAvatar-root MuiAvatar-colorDefault"
+                          class="MuiAvatar-root MuiAvatar-circle MuiAvatar-colorDefault"
                         />
                       </a>
                     }
