@@ -164,7 +164,7 @@
     "test": "cross-env NODE_ENV=test BABEL_ENV=test TZ=UTC jest --config ./jest/jest.config.js --maxWorkers 2 --passWithNoTests",
     "test:size": "bundlesize",
     "lint": "npm run lint:js && npm run lint:css && npm run lint:lockfile",
-    "lint:js": "npm run type-check && eslint . --ext .js,.ts,.tsx --fix",
+    "lint:js": "npm run type-check && eslint . --ext .js,.ts,.tsx",
     "lint:css": "stylelint \"src/**/styles.ts\"",
     "lint:lockfile": "lockfile-lint --path yarn.lock --type yarn --validate-https --allowed-hosts verdaccio npm yarn",
     "coverage:publish": "codecov",
