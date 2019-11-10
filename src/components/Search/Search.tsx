@@ -3,10 +3,10 @@ import { withRouter, RouteComponentProps } from 'react-router-dom';
 import { SuggestionSelectedEventData, ChangeEvent } from 'react-autosuggest';
 import { css } from 'emotion';
 import { default as IconSearch } from '@material-ui/icons/Search';
-import debounce from 'lodash/debounce';
+// import debounce from 'lodash/debounce';
 
 import InputAdornment from '../../muiComponents/InputAdornment';
-import AutoComplete from '../AutoComplete';
+import AutoComplete from '../../muiComponents/AutoComplete';
 import colors from '../../utils/styles/colors';
 import { callSearch } from '../../utils/calls';
 
@@ -21,10 +21,7 @@ export interface State {
 export type cancelAllSearchRequests = () => void;
 export type handlePackagesClearRequested = () => void;
 export type handleSearch = (event: React.FormEvent<HTMLInputElement>, { newValue, method }: ChangeEvent) => void;
-export type handleClickSearch = (
-  event: KeyboardEvent<HTMLInputElement>,
-  { suggestionValue, method }: { suggestionValue: object[]; method: string }
-) => void;
+export type handleClickSearch = (event: KeyboardEvent<HTMLInputElement>, { suggestionValue, method }: { suggestionValue: object[]; method: string }) => void;
 export type handleFetchPackages = ({ value: string }) => Promise<void>;
 export type onBlur = (event: React.FormEvent<HTMLInputElement>) => void;
 
@@ -55,19 +52,19 @@ export class Search extends Component<RouteComponentProps<{}>, State> {
 
     return (
       <AutoComplete
-        color={colors.white}
-        onBlur={this.handleOnBlur}
+        // color={colors.white}
+        // onBlur={this.handleOnBlur}
         onChange={this.handleSearch}
-        onCleanSuggestions={this.handlePackagesClearRequested}
-        onClick={this.handleClickSearch}
-        onSuggestionsFetch={debounce(this.handleFetchPackages, CONSTANTS.API_DELAY)}
+        // onCleanSuggestions={this.handlePackagesClearRequested}
+        // onClick={this.handleClickSearch}
+        // onSuggestionsFetch={debounce(this.handleFetchPackages, CONSTANTS.API_DELAY)}
+        options={suggestions}
         placeholder={CONSTANTS.PLACEHOLDER_TEXT}
-        startAdornment={this.getAdorment()}
-        suggestions={suggestions}
-        suggestionsError={error}
-        suggestionsLoaded={loaded}
-        suggestionsLoading={loading}
-        value={search}
+        // startAdornment={this.getAdorment()}
+        // suggestionsError={error}
+        // suggestionsLoaded={loaded}
+        // suggestionsLoading={loading}
+        // value={search}
       />
     );
   }
@@ -92,7 +89,7 @@ export class Search extends Component<RouteComponentProps<{}>, State> {
   /**
    * onChange method for the input element.
    */
-  private handleSearch: handleSearch = (event, { newValue, method }) => {
+  private handleSearch: handleSearch = (event: ChangeEvent<HTMLInputElement>) => {
     // stops event bubbling
     event.stopPropagation();
     if (method === 'type') {

@@ -214,5 +214,8 @@
     "type": "opencollective",
     "url": "https://opencollective.com/verdaccio",
     "logo": "https://opencollective.com/verdaccio/logo.txt"
+  },
+  "dependencies": {
+    "@material-ui/lab": "4.0.0-alpha.31"
   }
 }
