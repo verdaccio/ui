@@ -13741,12 +13741,12 @@ verdaccio-audit@8.1.4:
     express "4.17.1"
     request "2.88.0"
 
-verdaccio-auth-memory@8.2.0:
-  version "8.2.0"
-  resolved "https://registry.verdaccio.org/verdaccio-auth-memory/-/verdaccio-auth-memory-8.2.0.tgz#55168967947abff6ead8ea34dfbaa17b626183a1"
-  integrity sha512-fMr6u0vEnbFQT2CemVJbOB0H1lPdDu1R/jsNsoHH+BZIohTlvCU9ZT9ePRSRHvrwb2qCd5iJZpPwH98uCH3GAQ==
+verdaccio-auth-memory@8.3.0:
+  version "8.3.0"
+  resolved "https://registry.verdaccio.org/verdaccio-auth-memory/-/verdaccio-auth-memory-8.3.0.tgz#608f7722a24bb92aae7fe03394d1f24f5ed9f530"
+  integrity sha512-0/LyKpNvE7KVP+MuTi75hWE0XIz/bzDHmeuUajr4Uaa8GBeGeAjEWZdvPt51nXblyEnDcHclNKj5ZC55i5GIHg==
   dependencies:
-    "@verdaccio/commons-api" "^8.2.0"
+    "@verdaccio/commons-api" "^8.3.0"
 
 verdaccio-htpasswd@8.2.0:
   version "8.2.0"
