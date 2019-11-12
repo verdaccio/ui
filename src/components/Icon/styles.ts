@@ -28,9 +28,8 @@ const commonStyle = ({ size = 'sm' as Breakpoint, pointer, modifiers = null }): 
 `;
 
 export const Svg = styled('svg')`
-  && {
-    ${commonStyle};
-  }
+  ${commonStyle};
+  box-sizing: initial;
 `;
 
 export const ImgWrapper: StyledOtherComponent<
@@ -43,9 +42,8 @@ export const ImgWrapper: StyledOtherComponent<
   DetailedHTMLProps<HTMLAttributes<HTMLSpanElement>, HTMLSpanElement>,
   {}
 > = styled('span')`
-  && {
-    ${commonStyle};
-  }
+  ${commonStyle};
+  box-sizing: initial;
 `;
 
 export const Img = styled('img')({
