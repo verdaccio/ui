@@ -1973,7 +1973,7 @@
   dependencies:
     http-errors "1.7.3"
 
-"@verdaccio/commons-api@^8.2.0", "@verdaccio/commons-api@^8.3.0":
+"@verdaccio/commons-api@8.3.0", "@verdaccio/commons-api@^8.2.0", "@verdaccio/commons-api@^8.3.0":
   version "8.3.0"
   resolved "https://registry.verdaccio.org/@verdaccio%2fcommons-api/-/commons-api-8.3.0.tgz#3a4b07b63561b21bfc8242330da528e12788635e"
   integrity sha512-MfXwbPa41mjkjCOFr6QOgThBzmtL1cuQuViurPQXpLsNeTC1EuZ1BkNjbrnOfEQuFKWsWmtLd8tEUP0hNcLMcg==

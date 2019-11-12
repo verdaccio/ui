@@ -34,7 +34,7 @@
     "@types/webpack-env": "1.14.1",
     "@typescript-eslint/parser": "2.5.0",
     "@verdaccio/babel-preset": "8.2.0",
-    "@verdaccio/commons-api": "8.2.0",
+    "@verdaccio/commons-api": "8.3.0",
     "@verdaccio/eslint-config": "8.2.0",
     "@verdaccio/types": "8.3.0",
     "autosuggest-highlight": "3.1.1",
