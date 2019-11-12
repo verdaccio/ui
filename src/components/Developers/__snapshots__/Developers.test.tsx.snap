@@ -1,22 +1,57 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`test Developers should render the component for contributors with items 1`] = `
+.emotion-0 {
+  font-weight: 700;
+  margin-bottom: 10px;
+  text-transform: capitalize;
+}
+
+.emotion-12 {
+  margin: 10px 0 10px 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
+.emotion-12 > * {
+  margin: 5px;
+}
+
+.emotion-8 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
 <Developers
   type="contributors"
 >
-  <Styled(Component)
+  <StyledText
     variant="subtitle1"
   >
     <ForwardRef(Text)
-      className="css-48zeoi emotion-0"
+      className="emotion-0 emotion-1"
       variant="subtitle1"
     >
       <WithStyles(ForwardRef(Typography))
-        className="css-48zeoi emotion-0"
+        className="emotion-0 emotion-1"
         variant="subtitle1"
       >
         <ForwardRef(Typography)
-          className="css-48zeoi emotion-0"
+          className="emotion-0 emotion-1"
           classes={
             Object {
               "alignCenter": "MuiTypography-alignCenter",
@@ -54,23 +89,23 @@ exports[`test Developers should render the component for contributors with items
           variant="subtitle1"
         >
           <h6
-            className="MuiTypography-root css-48zeoi emotion-0 MuiTypography-subtitle1"
+            className="MuiTypography-root emotion-0 emotion-1 MuiTypography-subtitle1"
           >
             contributors
           </h6>
         </ForwardRef(Typography)>
       </WithStyles(ForwardRef(Typography))>
     </ForwardRef(Text)>
-  </Styled(Component)>
-  <Styled(div)>
+  </StyledText>
+  <Content>
     <div
-      className="css-mkcn9c emotion-6"
+      className="emotion-12 emotion-13"
     >
-      <Styled(span)
+      <Details
         key="dave.methvin@gmail.com"
       >
         <span
-          className="css-dvxtzn emotion-4"
+          className="emotion-8 emotion-9"
         >
           <AvatarTooltip
             email="dave.methvin@gmail.com"
@@ -164,12 +199,12 @@ exports[`test Developers should render the component for contributors with items
             </ForwardRef(ToolTip)>
           </AvatarTooltip>
         </span>
-      </Styled(span)>
-      <Styled(span)
+      </Details>
+      <Details
         key="m.goleb@gmail.com"
       >
         <span
-          className="css-dvxtzn emotion-4"
+          className="emotion-8 emotion-9"
         >
           <AvatarTooltip
             email="m.goleb@gmail.com"
@@ -263,29 +298,64 @@ exports[`test Developers should render the component for contributors with items
             </ForwardRef(ToolTip)>
           </AvatarTooltip>
         </span>
-      </Styled(span)>
+      </Details>
     </div>
-  </Styled(div)>
+  </Content>
 </Developers>
 `;
 
 exports[`test Developers should render the component for maintainers with items 1`] = `
+.emotion-0 {
+  font-weight: 700;
+  margin-bottom: 10px;
+  text-transform: capitalize;
+}
+
+.emotion-12 {
+  margin: 10px 0 10px 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
+.emotion-12 > * {
+  margin: 5px;
+}
+
+.emotion-8 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
 <Developers
   type="maintainers"
 >
-  <Styled(Component)
+  <StyledText
     variant="subtitle1"
   >
     <ForwardRef(Text)
-      className="css-48zeoi emotion-0"
+      className="emotion-0 emotion-1"
       variant="subtitle1"
     >
       <WithStyles(ForwardRef(Typography))
-        className="css-48zeoi emotion-0"
+        className="emotion-0 emotion-1"
         variant="subtitle1"
       >
         <ForwardRef(Typography)
-          className="css-48zeoi emotion-0"
+          className="emotion-0 emotion-1"
           classes={
             Object {
               "alignCenter": "MuiTypography-alignCenter",
@@ -323,23 +393,23 @@ exports[`test Developers should render the component for maintainers with items 
           variant="subtitle1"
         >
           <h6
-            className="MuiTypography-root css-48zeoi emotion-0 MuiTypography-subtitle1"
+            className="MuiTypography-root emotion-0 emotion-1 MuiTypography-subtitle1"
           >
             maintainers
           </h6>
         </ForwardRef(Typography)>
       </WithStyles(ForwardRef(Typography))>
     </ForwardRef(Text)>
-  </Styled(Component)>
-  <Styled(div)>
+  </StyledText>
+  <Content>
     <div
-      className="css-mkcn9c emotion-6"
+      className="emotion-12 emotion-13"
     >
-      <Styled(span)
+      <Details
         key="dave.methvin@gmail.com"
       >
         <span
-          className="css-dvxtzn emotion-4"
+          className="emotion-8 emotion-9"
         >
           <AvatarTooltip
             email="dave.methvin@gmail.com"
@@ -433,12 +503,12 @@ exports[`test Developers should render the component for maintainers with items 
             </ForwardRef(ToolTip)>
           </AvatarTooltip>
         </span>
-      </Styled(span)>
-      <Styled(span)
+      </Details>
+      <Details
         key="m.goleb@gmail.com"
       >
         <span
-          className="css-dvxtzn emotion-4"
+          className="emotion-8 emotion-9"
         >
           <AvatarTooltip
             email="m.goleb@gmail.com"
@@ -532,9 +602,9 @@ exports[`test Developers should render the component for maintainers with items 
             </ForwardRef(ToolTip)>
           </AvatarTooltip>
         </span>
-      </Styled(span)>
+      </Details>
     </div>
-  </Styled(div)>
+  </Content>
 </Developers>
 `;
 

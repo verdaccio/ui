@@ -1,5 +1,5 @@
 import React from 'react';
-import styled from 'react-emotion';
+import styled from '@emotion/styled';
 
 import logo from './img/logo.svg';
 
@@ -13,18 +13,17 @@ interface Props {
 }
 
 const StyledLogo = styled('div')<Props>`
-  && {
-    display: inline-block;
-    vertical-align: middle;
-    box-sizing: border-box;
-    background-position: center;
-    background-size: contain;
-    background-image: url(${logo});
-    background-repeat: no-repeat;
-    width: ${({ size }) => size};
-    height: ${({ size }) => size};
-  }
+  display: inline-block;
+  vertical-align: middle;
+  box-sizing: border-box;
+  background-position: center;
+  background-size: contain;
+  background-image: url(${logo});
+  background-repeat: no-repeat;
+  width: ${({ size }) => size};
+  height: ${({ size }) => size};
 `;
+
 const Logo: React.FC<Props> = ({ size = Size.Small }) => {
   return <StyledLogo size={size} />;
 };

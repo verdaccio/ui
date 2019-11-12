@@ -1,5 +1,6 @@
 import React from 'react';
-import styled, { css } from 'react-emotion';
+import styled from '@emotion/styled';
+import { css } from '@emotion/core';
 
 import TextField from '../../muiComponents/TextField';
 import Paper from '../../muiComponents/Paper';

@@ -1,5 +1,5 @@
 import React, { ChangeEvent, useState, useEffect } from 'react';
-import styled from 'react-emotion';
+import styled from '@emotion/styled';
 
 import { default as MuiTabs } from '../../muiComponents/Tabs';
 import Tab from '../../muiComponents/Tab';

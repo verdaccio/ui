@@ -1,7 +1,5 @@
-import styled from 'react-emotion';
+import styled from '@emotion/styled';
 
 export const CommandContainer = styled('div')({
-  '&&': {
-    paddingTop: '20px',
-  },
+  paddingTop: 20,
 });

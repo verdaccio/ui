@@ -1,4 +1,4 @@
-import styled from 'react-emotion';
+import styled from '@emotion/styled';
 
 import ListItem from '../../muiComponents/ListItem';
 import ListItemText from '../../muiComponents/ListItemText';

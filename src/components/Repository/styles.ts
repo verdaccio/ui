@@ -1,4 +1,4 @@
-import styled from 'react-emotion';
+import styled from '@emotion/styled';
 
 import Github from '../../icons/GitHub';
 import colors from '../../utils/styles/colors';
@@ -18,31 +18,23 @@ export const GridRepo = styled(Grid)({
 });
 
 export const GithubLink = styled('a')({
-  '&&': {
-    color: colors.primary,
-  },
+  color: colors.primary,
 });
 
 export const GithubLogo = styled(Github)({
-  '&&': {
-    fontSize: '40px',
-    color: colors.primary,
-    backgroundColor: colors.greySuperLight,
-  },
+  fontSize: '40px',
+  color: colors.primary,
+  backgroundColor: colors.greySuperLight,
 });
 
 export const RepositoryListItem = styled(ListItem)({
-  '&&': {
-    padding: 0,
-  },
-  '&&:hover': {
+  padding: 0,
+  ':hover': {
     backgroundColor: 'transparent',
   },
 });
 
 export const RepositoryListItemText = styled(ListItemText)({
-  '&&': {
-    padding: '0 10px',
-    margin: 0,
-  },
+  padding: '0 10px',
+  margin: 0,
 });
