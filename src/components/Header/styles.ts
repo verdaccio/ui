@@ -1,4 +1,5 @@
-import styled, { css } from 'react-emotion';
+import styled from '@emotion/styled';
+import { css } from '@emotion/core';
 
 import colors from '../../utils/styles/colors';
 import mq from '../../utils/styles/media';
@@ -48,7 +49,7 @@ export const IconSearchButton = styled(IconButton)({
 });
 
 export const SearchWrapper = styled('div')({
-  display: 'none',
+  // display: 'none',
   maxWidth: '393px',
   width: '100%',
 });

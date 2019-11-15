@@ -1,93 +1,93 @@
-import React, { FC, ChangeEvent, useState } from 'react';
+import React, { forwardRef, ChangeEvent, useState } from 'react';
 import { default as MuiAutoComplete, AutocompleteProps } from '@material-ui/lab/Autocomplete';
-import styled from 'react-emotion';
+import TextField from '@material-ui/core/TextField';
+import styled from '@emotion/styled';
+import Search from '@material-ui/icons/Search';
 
 import CircularProgress from '../CircularProgress';
-import TextField from '../TextField';
+
+import AutoCompleteTextField from './AutoCompleteTextField';
 
 const StyledAutoComplete = styled(MuiAutoComplete)({
   width: '100%',
+  color: 'white',
 });
 
-interface Props extends Pick<AutocompleteProps, 'options'> {
+const StyledSearch = styled(Search)({
+  color: 'white',
+  marginRight: 10,
+});
+
+const StyledTextField = styled(TextField)({
+  '& .MuiInputBase-root': {
+    color: 'white',
+  },
+  '& .MuiInput-underline': {
+    ':before': {
+      content: "''",
+      border: 'none',
+    },
+    ':after': {
+      borderColor: 'white',
+    },
+    ':hover:before': {
+      content: 'none',
+    },
+  },
+});
+
+interface Props {
   placeholder?: string;
   onChange: (event: ChangeEvent<HTMLInputElement>) => void;
+  options: Array<Option>;
 }
 
-// function sleep(delay = 0) {
-//   return new Promise(resolve => {
-//     setTimeout(resolve, delay);
-//   });
-// }
+interface Option {
+  id: string;
+  label: string;
+}
+
+type AutoCompleteRef = HTMLDivElement;
 
 /* eslint-disable react/jsx-no-bind */
-const AutoComplete: FC<Props> = ({ placeholder, options = [], onChange }) => {
+
+const AutoComplete = forwardRef<AutoCompleteRef, Props>(function AutoComplete({ placeholder, options = [], onChange }, ref) {
   const [open, setOpen] = useState(false);
   const isLoading = open && options.length === 0;
 
   console.log('options', options);
 
-  //   useEffect(() => {
-  //     let active = true;
-
-  //     if (!loading) {
-  //       return undefined;
-  //     }
-
-  //     (async () => {
-  //       const response = await fetch('https://country.register.gov.uk/records.json?page-size=5000');
-  //       await sleep(1e3); // For demo purposes.
-  //       const countries = await response.json();
-
-  //       if (active) {
-  //         setOptions(Object.keys(countries).map(key => countries[key].item[0]));
-  //       }
-  //     })();
-
-  //     return () => {
-  //       active = false;
-  //     };
-  //   }, [loading]);
-
-  // useEffect(() => {
-  //   if (!open) {
-  //     setOptions([]);
-  //   }
-  // }, [open]);
-
   return (
     <StyledAutoComplete
       autoHighlight={true}
-      // open={open}
-      // onOpen={() => {
-      //   setOpen(true);
-      // }}
-      // onClose={() => {
-      //   setOpen(false);
-      // }}
-      // getOptionLabel={option => option.name}
+      freeSolo={true}
       options={options}
       loading={isLoading}
+      innerRef={ref}
+      open={open}
+      onOpen={() => {
+        setOpen(true);
+      }}
+      onClose={() => {
+        setOpen(false);
+      }}
+      getOptionLabel={option => option.label}
       renderInput={params => (
-        <TextField
+        <StyledTextField
           {...params}
           onChange={onChange}
-          label={placeholder}
           fullWidth={true}
+          variant="standard"
+          placeholder={placeholder}
           InputProps={{
             ...params.InputProps,
-            endAdornment: (
-              <>
-                {isLoading ? <CircularProgress color="inherit" size={20} /> : null}
-                {params.InputProps.endAdornment}
-              </>
-            ),
-            type: 'search',
+            startAdornment: <StyledSearch />,
+            endAdornment: isLoading ? <CircularProgress color="inherit" size={20} /> : null,
           }}
         />
       )}
     />
   );
-};
+});
 
 export default AutoComplete;

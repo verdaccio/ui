@@ -1,5 +1,5 @@
 import React from 'react';
-import styled from 'react-emotion';
+import styled from '@emotion/styled';
 
 import { fontWeight } from '../../utils/styles/sizes';
 
@@ -15,7 +15,6 @@ interface WrapperProps {
   weight: string;
   modifiers?: null;
 }
-
 const Wrapper = styled('div')`
   font-weight: ${({ weight }: WrapperProps) => fontWeight[weight]};
   text-transform: ${({ capitalize }: WrapperProps) => (capitalize ? 'capitalize' : 'none')};

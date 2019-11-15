@@ -1,5 +1,4 @@
 import React, { KeyboardEvent } from 'react';
-import { css } from 'emotion';
 import Autosuggest, { SuggestionSelectedEventData, InputProps, ChangeEvent } from 'react-autosuggest';
 import match from 'autosuggest-highlight/match';
 import parse from 'autosuggest-highlight/parse';
@@ -140,12 +139,7 @@ const AutoComplete = ({
 
   return (
     <Wrapper>
-      <Autosuggest
-        {...autosuggestProps}
-        inputProps={inputProps}
-        onSuggestionSelected={onClick}
-        renderSuggestionsContainer={renderSuggestionsContainer}
-      />
+      <Autosuggest {...autosuggestProps} inputProps={inputProps} onSuggestionSelected={onClick} renderSuggestionsContainer={renderSuggestionsContainer} />
     </Wrapper>
   );
 };

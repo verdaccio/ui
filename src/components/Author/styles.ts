@@ -1,4 +1,4 @@
-import styled from 'react-emotion';
+import styled from '@emotion/styled';
 
 import { fontWeight } from '../../utils/styles/sizes';
 import ListItem from '../../muiComponents/ListItem';

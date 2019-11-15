@@ -17,4 +17,5 @@ const TextField = forwardRef<TextFieldRef, TextFieldProps>(function TextField({ 
   );
 });
 
+export { TextFieldProps };
 export default TextField;

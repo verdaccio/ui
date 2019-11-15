@@ -1,4 +1,4 @@
-import styled from 'react-emotion';
+import styled from '@emotion/styled';
 
 import Github from '../../icons/GitHub';
 import colors from '../../utils/styles/colors';
