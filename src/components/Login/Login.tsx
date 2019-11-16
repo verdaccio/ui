@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 import ErrorIcon from '@material-ui/icons/Error';
 import { css } from 'emotion';
 
@@ -13,81 +13,36 @@ import Input from '../../muiComponents/Input';
 import InputLabel from '../../muiComponents/InputLabel';
 import SnackbarContent from '../../muiComponents/SnackbarContent';
 
+import { LoginModalProps, LoginModalState, FormError } from './LoginOptions';
 import * as classes from './styles';
 
-interface FormFields {
-  required: boolean;
-  pristine: boolean;
-  helperText: string;
-  value: string;
-}
-export interface FormError {
-  type: string;
-  title: string;
-  description: string;
-}
-
-interface LoginModalProps {
-  visibility: boolean;
-  error?: FormError;
-  onCancel: () => void;
-  onSubmit: (username: string, password: string) => void;
-}
-
-interface LoginModalState {
-  form: {
-    username: Partial<FormFields>;
-    password: Partial<FormFields>;
-  };
-  error?: FormError;
-}
-
-export default class LoginModal extends Component<Partial<LoginModalProps>, LoginModalState> {
-  constructor(props: LoginModalProps) {
-    super(props);
-    this.state = {
-      form: {
-        username: {
-          required: true,
-          pristine: true,
-          helperText: 'Field required',
-          value: '',
-        },
-        password: {
-          required: true,
-          pristine: true,
-          helperText: 'Field required',
-          value: '',
-        },
+const LoginModal: React.FC<LoginModalProps> = props => {
+  const { visibility = true, onCancel = () => null, error } = props as LoginModalProps;
+  const [errorState, setError] = useState(props.error);
+  const [form, setValues] = useState({
+    form: {
+      username: {
+        required: true,
+        pristine: true,
+        helperText: 'Field required',
+        value: '',
       },
-      error: props.error,
-    };
-  }
-
-  public render(): JSX.Element {
-    const { visibility = true, onCancel = () => null, error } = this.props as LoginModalProps;
-    return (
-      <Dialog fullWidth={true} id={'login--form-container'} maxWidth={'xs'} onClose={onCancel} open={visibility}>
-        <form noValidate={true} onSubmit={this.handleValidateCredentials}>
-          <DialogTitle>{'Login'}</DialogTitle>
-          <DialogContent>
-            {error && this.renderLoginError(error)}
-            {this.renderNameField()}
-            {this.renderPasswordField()}
-          </DialogContent>
-          {this.renderActions()}
-        </form>
-      </Dialog>
-    );
-  }
+      password: {
+        required: true,
+        pristine: true,
+        helperText: 'Field required',
+        value: '',
+      },
+    },
+  });
 
   /**
    * set login modal's username and password to current state
    * Required to login
    */
-  public setCredentials = (name, e) => {
-    const { form } = this.state;
-    this.setState({
+  const setCredentials = (name, e) => {
+    //@ts-ignore
+    setValues({
       form: {
         ...form,
         [name]: {
@@ -97,22 +52,37 @@ export default class LoginModal extends Component<Partial<LoginModalProps>, Logi
         },
       },
     });
+    // setValues({
+    //   form: {
+    //     username: {
+    //       required: false,
+    //       pristine: false,
+    //       helperText: 'test',
+    //       value: 'l'
+    //     },
+    //     password: {
+    //       required: false,
+    //       pristine: true,
+    //       helperText: 'test',
+    //       value: 'k'
+    //     }
+    //   }
+    // })
   };
 
-  public handleUsernameChange = event => {
-    this.setCredentials('username', event);
+  const handleUsernameChange = event => {
+    setCredentials('username', event);
   };
 
-  public handlePasswordChange = event => {
-    this.setCredentials('password', event);
+  const handlePasswordChange = event => {
+    setCredentials('password', event);
   };
 
-  public handleValidateCredentials = event => {
-    const { form } = this.state;
+  const handleValidateCredentials = event => {
     // prevents default submit behavior
     event.preventDefault();
 
-    this.setState(
+    setValues(
       {
         form: Object.keys(form).reduce(
           (acc, key) => ({
@@ -124,23 +94,22 @@ export default class LoginModal extends Component<Partial<LoginModalProps>, Logi
       },
       () => {
         if (!Object.keys(form).some(id => !form[id])) {
-          this.submitCredentials();
+          submitCredentials();
         }
       }
     );
   };
 
-  public submitCredentials = async () => {
-    const { form } = this.state;
-    const username = (form.username && form.username.value) || '';
-    const password = (form.password && form.password.value) || '';
-    const { onSubmit } = this.props;
+  const submitCredentials = async () => {
+    const username = (form.form.username && form.form.username.value) || '';
+    const password = (form.form.password && form.form.password.value) || '';
+    const { onSubmit } = props;
     if (onSubmit) {
       await onSubmit(username, password);
     }
     // let's wait for API response and then set
     // username and password filed to empty state
-    this.setState({
+    setValues({
       form: Object.keys(form).reduce(
         (acc, key) => ({
           ...acc,
@@ -151,7 +120,7 @@ export default class LoginModal extends Component<Partial<LoginModalProps>, Logi
     });
   };
 
-  public renderErrorMessage(title: string, description: string): JSX.Element {
+  const renderErrorMessage = (title: string, description: string): JSX.Element => {
     return (
       <span>
         <div>
@@ -160,49 +129,38 @@ export default class LoginModal extends Component<Partial<LoginModalProps>, Logi
         <div>{description}</div>
       </span>
     );
-  }
+  };
 
-  public renderMessage(title: string, description: string): JSX.Element {
+  const renderMessage = (title: string, description: string): JSX.Element => {
     return (
       <div className={classes.loginErrorMsg} id={'client-snackbar'}>
         <ErrorIcon className={classes.loginIcon} />
-        {this.renderErrorMessage(title, description)}
+        {renderErrorMessage(title, description)}
       </div>
     );
-  }
+  };
 
-  public renderLoginError({ type, title, description }: FormError): JSX.Element | false {
-    return (
-      type === 'error' && (
-        <SnackbarContent className={classes.loginError} message={this.renderMessage(title, description)} />
-      )
-    );
-  }
+  const renderLoginError = ({ type, title, description }: FormError): JSX.Element | false => {
+    return type === 'error' && <SnackbarContent className={classes.loginError} message={renderMessage(title, description)} />;
+  };
 
-  public renderNameField = () => {
+  const renderNameField = () => {
     const {
       form: { username },
-    } = this.state;
+    } = form;
     return (
       <FormControl error={!username.value && !username.pristine} fullWidth={true} required={username.required}>
         <InputLabel htmlFor={'username'}>{'Username'}</InputLabel>
-        <Input
-          id={'login--form-username'}
-          onChange={this.handleUsernameChange}
-          placeholder={'Your username'}
-          value={username.value}
-        />
-        {!username.value && !username.pristine && (
-          <FormHelperText id={'username-error'}>{username.helperText}</FormHelperText>
-        )}
+        <Input id={'login--form-username'} onChange={handleUsernameChange} placeholder={'Your username'} value={username.value} />
+        {!username.value && !username.pristine && <FormHelperText id={'username-error'}>{username.helperText}</FormHelperText>}
       </FormControl>
     );
   };
 
-  public renderPasswordField = () => {
+  const renderPasswordField = () => {
     const {
       form: { password },
-    } = this.state;
+    } = form;
     return (
       <FormControl
         className={css`
@@ -212,38 +170,42 @@ export default class LoginModal extends Component<Partial<LoginModalProps>, Logi
         fullWidth={true}
         required={password.required}>
         <InputLabel htmlFor={'password'}>{'Password'}</InputLabel>
-        <Input
-          id={'login--form-password'}
-          onChange={this.handlePasswordChange}
-          placeholder={'Your strong password'}
-          type={'password'}
-          value={password.value}
-        />
-        {!password.value && !password.pristine && (
-          <FormHelperText id={'password-error'}>{password.helperText}</FormHelperText>
-        )}
+        <Input id={'login--form-password'} onChange={handlePasswordChange} placeholder={'Your strong password'} type={'password'} value={password.value} />
+        {!password.value && !password.pristine && <FormHelperText id={'password-error'}>{password.helperText}</FormHelperText>}
       </FormControl>
     );
   };
 
-  public renderActions = () => {
+  const renderActions = () => {
     const {
       form: { username, password },
-    } = this.state;
-    const { onCancel } = this.props;
+    } = form;
+    const { onCancel } = props;
     return (
       <DialogActions className={'dialog-footer'}>
         <Button color={'inherit'} id={'login--form-cancel'} onClick={onCancel} type={'button'}>
           {'Cancel'}
         </Button>
-        <Button
-          color={'inherit'}
-          disabled={!password.value || !username.value}
-          id={'login--form-submit'}
-          type={'submit'}>
+        <Button color={'inherit'} disabled={!password.value || !username.value} id={'login--form-submit'} type={'submit'}>
           {'Login'}
         </Button>
       </DialogActions>
     );
   };
-}
+
+  return (
+    <Dialog fullWidth={true} id={'login--form-container'} maxWidth={'xs'} onClose={onCancel} open={visibility}>
+      <form noValidate={true} onSubmit={handleValidateCredentials}>
+        <DialogTitle>{'Login!'}</DialogTitle>
+        <DialogContent>
+          {error && renderLoginError(error)}
+          {renderNameField()}
+          {renderPasswordField()}
+        </DialogContent>
+        {renderActions()}
+      </form>
+    </Dialog>
+  );
+};
+
+export default LoginModal;
