@@ -1,17 +1,27 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<NotFound /> component should load the component in default state 1`] = `
+.emotion-0 {
+  width: 150px;
+  margin: 0 auto;
+}
+
+.emotion-2 {
+  color: #4b5e40;
+  margin-bottom: 16px;
+}
+
 <div
   class="MuiBox-root MuiBox-root-2"
   data-testid="404"
 >
   <img
     alt="404 - Page not found"
-    class="css-17y48z2"
+    class="emotion-0 emotion-1"
     src="[object Object]"
   />
   <h4
-    class="MuiTypography-root not-found-text css-7pe7kh MuiTypography-h4"
+    class="MuiTypography-root not-found-text emotion-2 emotion-3 MuiTypography-h4"
   >
     Sorry, we couldn't find it...
   </h4>

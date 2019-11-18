@@ -1,5 +1,6 @@
 import React from 'react';
-import { render, cleanup, fireEvent } from '@testing-library/react';
+
+import { render, cleanup, fireEvent } from '../../utils/test-react-testing-library';
 
 import RegistryInfoContent from './RegistryInfoContent';
 
@@ -19,9 +20,7 @@ describe('<RegistryInfoContent /> component', () => {
     const pnpmTabTextContent = `pnpm adduser --registry ${props.registryUrl}`;
 
     // Render the component.
-    const { container, getByTestId } = render(
-      <RegistryInfoContent registryUrl={props.registryUrl} scope={props.scope} />
-    );
+    const { container, getByTestId } = render(<RegistryInfoContent registryUrl={props.registryUrl} scope={props.scope} />);
 
     // Assert the text content for pnpm tab is not present intially
     expect(container.textContent).not.toContain(pnpmTabTextContent);

@@ -1,3 +1,14 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<Label /> component should render the component in default state 1`] = `"<div class=\\"css-11t6ejc\\">test</div>"`;
+exports[`<Label /> component should render the component in default state 1`] = `
+.emotion-0 {
+  font-weight: 400;
+  text-transform: none;
+}
+
+<div
+  class="emotion-0 emotion-1"
+>
+  test
+</div>
+`;

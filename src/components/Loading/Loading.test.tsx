@@ -1,11 +1,12 @@
 import React from 'react';
-import { shallow } from 'enzyme';
+
+import { render } from '../../utils/test-react-testing-library';
 
 import Loading from './Loading';
 
 describe('<Loading /> component', () => {
   test('should render the component in default state', () => {
-    const wrapper = shallow(<Loading />);
-    expect(wrapper.html()).toMatchSnapshot();
+    const { container } = render(<Loading />);
+    expect(container.firstChild).toMatchSnapshot();
   });
 });

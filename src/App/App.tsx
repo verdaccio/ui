@@ -44,13 +44,10 @@ export default class App extends Component<{}, AppProps> {
     const context = { isUserLoggedIn, packages, logoUrl, user, scope };
 
     return (
-      <>
-        <StyleBaseline />
-        <Container isLoading={isLoading}>
-          {isLoading ? <Loading /> : <AppContextProvider value={context}>{this.renderContent()}</AppContextProvider>}
-          {this.renderLoginModal()}
-        </Container>
-      </>
+      <Container isLoading={isLoading}>
+        {isLoading ? <Loading /> : <AppContextProvider value={context}>{this.renderContent()}</AppContextProvider>}
+        {this.renderLoginModal()}
+      </Container>
     );
   }
 
@@ -147,14 +144,7 @@ export default class App extends Component<{}, AppProps> {
 
   public renderLoginModal = (): ReactElement<HTMLElement> => {
     const { error, showLoginModal } = this.state;
-    return (
-      <LoginModal
-        error={error}
-        onCancel={this.handleToggleLoginModal}
-        onSubmit={this.handleDoLogin}
-        visibility={showLoginModal}
-      />
-    );
+    return <LoginModal error={error} onCancel={this.handleToggleLoginModal} onSubmit={this.handleDoLogin} visibility={showLoginModal} />;
   };
 
   public renderContent = (): ReactElement<HTMLElement> => {
@@ -175,14 +165,6 @@ export default class App extends Component<{}, AppProps> {
       scope,
     } = this.state;
 
-    return (
-      <Header
-        logo={logoUrl}
-        onLogout={this.handleLogout}
-        onToggleLoginModal={this.handleToggleLoginModal}
-        scope={scope}
-        username={username}
-      />
-    );
+    return <Header logo={logoUrl} onLogout={this.handleLogout} onToggleLoginModal={this.handleToggleLoginModal} scope={scope} username={username} />;
   };
 }

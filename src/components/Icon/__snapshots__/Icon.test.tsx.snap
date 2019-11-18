@@ -1,3 +1,22 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<Icon /> component should render the component in default state 1`] = `"<svg class=\\"css-1v5qx5f\\"><title>Austria</title><use xlink:href=\\"[object Object]#austria\\"></use></svg>"`;
+exports[`<Icon /> component should render the component in default state 1`] = `
+.emotion-0 {
+  box-sizing: initial;
+  display: inline-block;
+  cursor: default;
+  width: 14px;
+  height: 16px;
+}
+
+<svg
+  class="emotion-0 emotion-1"
+>
+  <title>
+    Austria
+  </title>
+  <use
+    xlink:href="[object Object]#austria"
+  />
+</svg>
+`;

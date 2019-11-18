@@ -1,24 +1,71 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<Install /> renders correctly 1`] = `
+.emotion-0 {
+  font-weight: 700;
+  text-transform: capitalize;
+}
+
+.emotion-12 {
+  padding: 0;
+}
+
+.emotion-12:hover {
+  background-color: transparent;
+}
+
+.emotion-2 {
+  border-radius: 0px;
+  padding: 0;
+}
+
+.emotion-10 {
+  padding: 0 10px;
+  margin: 0;
+}
+
+.emotion-8 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.emotion-4 {
+  display: inline-block;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  height: 21px;
+  font-size: 1rem;
+}
+
 <ul
   class="MuiList-root MuiList-padding MuiList-subheader"
   data-testid="installList"
 >
   <h6
-    class="MuiTypography-root css-b8upko emotion-0 MuiTypography-subtitle1"
+    class="MuiTypography-root emotion-0 emotion-1 MuiTypography-subtitle1"
   >
     Installation
   </h6>
   <div
     aria-disabled="false"
-    class="MuiButtonBase-root MuiListItem-root css-zw46c6 emotion-3 MuiListItem-gutters MuiListItem-button"
+    class="MuiButtonBase-root MuiListItem-root emotion-12 emotion-13 MuiListItem-gutters MuiListItem-button"
     data-testid="installListItem-npm"
     role="button"
     tabindex="0"
   >
     <div
-      class="MuiAvatar-root MuiAvatar-circle css-19top7x emotion-1"
+      class="MuiAvatar-root MuiAvatar-circle emotion-2 emotion-3"
     >
       <img
         alt="npm"
@@ -27,21 +74,21 @@ exports[`<Install /> renders correctly 1`] = `
       />
     </div>
     <div
-      class="MuiListItemText-root css-fipixf emotion-2 MuiListItemText-multiline"
+      class="MuiListItemText-root emotion-10 emotion-11 MuiListItemText-multiline"
     >
       <span
         class="MuiTypography-root MuiListItemText-primary MuiTypography-body1"
       >
         <div
-          class="css-1mta3t8"
+          class="emotion-8 emotion-9"
         >
           <span
-            class="css-lh0wgu"
+            class="emotion-4 emotion-5"
           >
             npm install foo
           </span>
           <button
-            class="MuiButtonBase-root MuiIconButton-root css-0"
+            class="MuiButtonBase-root MuiIconButton-root  emotion-6 emotion-7"
             tabindex="0"
             title="Copy to Clipboard"
             type="button"
@@ -79,13 +126,13 @@ exports[`<Install /> renders correctly 1`] = `
   </div>
   <div
     aria-disabled="false"
-    class="MuiButtonBase-root MuiListItem-root css-zw46c6 emotion-3 MuiListItem-gutters MuiListItem-button"
+    class="MuiButtonBase-root MuiListItem-root emotion-12 emotion-13 MuiListItem-gutters MuiListItem-button"
     data-testid="installListItem-yarn"
     role="button"
     tabindex="0"
   >
     <div
-      class="MuiAvatar-root MuiAvatar-circle css-19top7x emotion-1"
+      class="MuiAvatar-root MuiAvatar-circle emotion-2 emotion-3"
     >
       <img
         alt="yarn"
@@ -94,21 +141,21 @@ exports[`<Install /> renders correctly 1`] = `
       />
     </div>
     <div
-      class="MuiListItemText-root css-fipixf emotion-2 MuiListItemText-multiline"
+      class="MuiListItemText-root emotion-10 emotion-11 MuiListItemText-multiline"
     >
       <span
         class="MuiTypography-root MuiListItemText-primary MuiTypography-body1"
       >
         <div
-          class="css-1mta3t8"
+          class="emotion-8 emotion-9"
         >
           <span
-            class="css-lh0wgu"
+            class="emotion-4 emotion-5"
           >
             yarn add foo
           </span>
           <button
-            class="MuiButtonBase-root MuiIconButton-root css-0"
+            class="MuiButtonBase-root MuiIconButton-root  emotion-6 emotion-7"
             tabindex="0"
             title="Copy to Clipboard"
             type="button"
@@ -146,13 +193,13 @@ exports[`<Install /> renders correctly 1`] = `
   </div>
   <div
     aria-disabled="false"
-    class="MuiButtonBase-root MuiListItem-root css-zw46c6 emotion-3 MuiListItem-gutters MuiListItem-button"
+    class="MuiButtonBase-root MuiListItem-root emotion-12 emotion-13 MuiListItem-gutters MuiListItem-button"
     data-testid="installListItem-pnpm"
     role="button"
     tabindex="0"
   >
     <div
-      class="MuiAvatar-root MuiAvatar-circle css-19top7x emotion-1"
+      class="MuiAvatar-root MuiAvatar-circle emotion-2 emotion-3"
     >
       <img
         alt="pnpm"
@@ -161,21 +208,21 @@ exports[`<Install /> renders correctly 1`] = `
       />
     </div>
     <div
-      class="MuiListItemText-root css-fipixf emotion-2 MuiListItemText-multiline"
+      class="MuiListItemText-root emotion-10 emotion-11 MuiListItemText-multiline"
     >
       <span
         class="MuiTypography-root MuiListItemText-primary MuiTypography-body1"
       >
         <div
-          class="css-1mta3t8"
+          class="emotion-8 emotion-9"
         >
           <span
-            class="css-lh0wgu"
+            class="emotion-4 emotion-5"
           >
             pnpm install foo
           </span>
           <button
-            class="MuiButtonBase-root MuiIconButton-root css-0"
+            class="MuiButtonBase-root MuiIconButton-root  emotion-6 emotion-7"
             tabindex="0"
             title="Copy to Clipboard"
             type="button"

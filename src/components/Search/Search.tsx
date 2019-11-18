@@ -1,14 +1,14 @@
 import React, { KeyboardEvent, Component, ReactElement } from 'react';
 import { withRouter, RouteComponentProps } from 'react-router-dom';
 import { SuggestionSelectedEventData, ChangeEvent } from 'react-autosuggest';
-import { css } from 'emotion';
+import styled from '@emotion/styled';
 import { default as IconSearch } from '@material-ui/icons/Search';
 import debounce from 'lodash/debounce';
 
 import InputAdornment from '../../muiComponents/InputAdornment';
 import AutoComplete from '../AutoComplete';
-import colors from '../../utils/styles/colors';
 import { callSearch } from '../../utils/calls';
+import { Theme } from '../../design-tokens/theme';
 
 export interface State {
   search: string;
@@ -21,10 +21,7 @@ export interface State {
 export type cancelAllSearchRequests = () => void;
 export type handlePackagesClearRequested = () => void;
 export type handleSearch = (event: React.FormEvent<HTMLInputElement>, { newValue, method }: ChangeEvent) => void;
-export type handleClickSearch = (
-  event: KeyboardEvent<HTMLInputElement>,
-  { suggestionValue, method }: { suggestionValue: object[]; method: string }
-) => void;
+export type handleClickSearch = (event: KeyboardEvent<HTMLInputElement>, { suggestionValue, method }: { suggestionValue: object[]; method: string }) => void;
 export type handleFetchPackages = ({ value: string }) => Promise<void>;
 export type onBlur = (event: React.FormEvent<HTMLInputElement>) => void;
 
@@ -33,6 +30,10 @@ const CONSTANTS = {
   PLACEHOLDER_TEXT: 'Search Packages',
   ABORT_ERROR: 'AbortError',
 };
+
+const StyledInputAdornment = styled(InputAdornment)<{ theme: Theme }>(props => ({
+  color: props.theme.palette.white,
+}));
 
 export class Search extends Component<RouteComponentProps<{}>, State> {
   constructor(props: RouteComponentProps<{}>) {
@@ -55,7 +56,6 @@ export class Search extends Component<RouteComponentProps<{}>, State> {
 
     return (
       <AutoComplete
-        color={colors.white}
         onBlur={this.handleOnBlur}
         onChange={this.handleSearch}
         onCleanSuggestions={this.handlePackagesClearRequested}
@@ -171,14 +171,9 @@ export class Search extends Component<RouteComponentProps<{}>, State> {
 
   public getAdorment(): JSX.Element {
     return (
-      <InputAdornment
-        className={css`
-          color: ${colors.white};
-          }
-        `}
-        position={'start'}>
+      <StyledInputAdornment position={'start'}>
         <IconSearch />
-      </InputAdornment>
+      </StyledInputAdornment>
     );
   }
 

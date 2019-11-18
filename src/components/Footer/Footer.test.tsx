@@ -1,21 +1,20 @@
 import React from 'react';
-import { mount, ReactWrapper } from 'enzyme';
+
+import { render } from '../../utils/test-react-testing-library';
 
 import Footer from './Footer';
 
-jest.mock('../../../package.json', () => ({
-  version: '4.0.0-alpha.3',
-}));
-
 describe('<Footer /> component', () => {
-  let wrapper: ReactWrapper;
-  beforeEach(() => {
+  beforeAll(() => {
     window.VERDACCIO_VERSION = 'v.1.0.0';
-    wrapper = mount(<Footer />);
+  });
+
+  afterAll(() => {
     delete window.VERDACCIO_VERSION;
   });
 
   test('should load the initial state of Footer component', () => {
-    expect(wrapper.html()).toMatchSnapshot();
+    const { container } = render(<Footer />);
+    expect(container.firstChild).toMatchSnapshot();
   });
 });

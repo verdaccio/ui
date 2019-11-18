@@ -1,13 +1,13 @@
-import { css } from 'emotion';
+import { css } from '@emotion/core';
 
-import colors from '../../utils/styles/colors';
+import { theme } from '../../design-tokens/theme';
 
 export const loginDialog = css({
   minWidth: '300px',
 });
 
 export const loginError = css({
-  backgroundColor: `${colors.red} !important`,
+  backgroundColor: `${theme.palette.red} !important`,
   minWidth: 'inherit !important',
   marginBottom: '10px !important',
 });

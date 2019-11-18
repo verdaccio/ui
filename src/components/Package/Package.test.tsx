@@ -1,6 +1,6 @@
 import React from 'react';
-import { shallow } from 'enzyme';
 
+import { shallow } from '../../utils/test-enzyme';
 import Tag from '../Tag';
 
 import Package from './Package';
@@ -27,14 +27,7 @@ describe('<Package /> component', () => {
     };
 
     const wrapper = shallow(
-      <Package
-        author={props.author}
-        description={props.description}
-        license={props.license}
-        name={props.name}
-        time={props.time}
-        version={props.version}
-      />
+      <Package author={props.author} description={props.description} license={props.license} name={props.name} time={props.time} version={props.version} />
     );
 
     // integration expectations
@@ -72,14 +65,7 @@ describe('<Package /> component', () => {
       description: 'Private NPM repository',
     };
     const wrapper = shallow(
-      <Package
-        author={props.author}
-        description={props.description}
-        license={props.license}
-        name={props.name}
-        time={props.time}
-        version={props.version}
-      />
+      <Package author={props.author} description={props.description} license={props.license} name={props.name} time={props.time} version={props.version} />
     );
 
     // integration expectations

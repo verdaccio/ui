@@ -1,5 +1,6 @@
 import React from 'react';
-import { shallow } from 'enzyme';
+
+import { render } from '../../utils/test-react-testing-library';
 
 import Icon from './Icon';
 
@@ -8,7 +9,7 @@ describe('<Icon /> component', () => {
     name: 'austria',
   };
   test('should render the component in default state', () => {
-    const wrapper = shallow(<Icon name={props.name} />);
-    expect(wrapper.html()).toMatchSnapshot();
+    const { container } = render(<Icon name={props.name} />);
+    expect(container.firstChild).toMatchSnapshot();
   });
 });

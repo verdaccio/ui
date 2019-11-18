@@ -1,15 +1,16 @@
 import React from 'react';
-import { shallow } from 'enzyme';
+
+import { render } from '../../utils/test-react-testing-library';
 
 import Tag from './Tag';
 
 describe('<Tag /> component', () => {
-  test('should render the component in default state', () => {
-    const wrapper = shallow(
+  test('should load the component in default state', () => {
+    const { container } = render(
       <Tag>
         <span>{'I am a child'}</span>
       </Tag>
     );
-    expect(wrapper.html()).toMatchSnapshot();
+    expect(container.firstChild).toMatchSnapshot();
   });
 });

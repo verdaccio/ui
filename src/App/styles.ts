@@ -1,9 +1,9 @@
-import { css } from 'emotion';
+import { css } from '@emotion/core';
 
-import colors from '../utils/styles/colors';
+import { theme } from '../design-tokens/theme';
 
 export const alertError = css({
-  backgroundColor: `${colors.red} !important`,
+  backgroundColor: `${theme.palette.red} !important`,
   minWidth: 'inherit !important',
 });
 

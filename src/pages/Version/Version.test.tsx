@@ -1,8 +1,8 @@
 import React from 'react';
 import { MemoryRouter } from 'react-router';
-import { render } from '@testing-library/react';
 import { waitForElement } from '@testing-library/dom';
 
+import { render } from '../../utils/test-react-testing-library';
 import { NOT_FOUND_TEXT } from '../../components/NotFound';
 
 import Version from './Version';

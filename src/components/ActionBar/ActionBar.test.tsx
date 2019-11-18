@@ -1,6 +1,6 @@
 import React from 'react';
-import { mount } from 'enzyme';
 
+import { mount } from '../../utils/test-enzyme';
 import api from '../../utils/api';
 
 import { ActionBar } from './ActionBar';
