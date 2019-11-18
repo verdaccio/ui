@@ -1,3 +1,3 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<Tag /> component should render the component in default state 1`] = `"<span class=\\"css-le0azu e1q9boj50\\"><span>I am a child</span></span>"`;
+exports[`<Tag /> component should render the component in default state 1`] = `"<span class=\\"css-le0azu\\"><span>I am a child</span></span>"`;
