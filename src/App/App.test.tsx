@@ -35,7 +35,7 @@ jest.mock('../utils/api', () => ({
 }));
 
 describe('App', () => {
-  let wrapper: ReactWrapper<{}, AppProps, App>;
+  let wrapper;
 
   beforeEach(() => {
     wrapper = mount(<App />);

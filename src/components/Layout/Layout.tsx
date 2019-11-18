@@ -3,8 +3,8 @@ import { css } from '@emotion/core';
 
 import { Theme } from '../../design-tokens/theme';
 
-export const Content = styled('div')<{ theme: Theme }>(props => ({
-  backgroundColor: props.theme.palette.white,
+export const Content = styled('div')<{ theme?: Theme }>(props => ({
+  backgroundColor: props.theme && props.theme.palette.white,
   flex: 1,
   display: 'flex',
   position: 'relative',

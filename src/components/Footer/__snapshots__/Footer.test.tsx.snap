@@ -259,7 +259,6 @@ exports[`<Footer /> component should load the initial state of Footer component 
       Powered by
       <span
         class="emotion-5 emotion-32 emotion-33"
-        name="verdaccio"
         title="Verdaccio"
       >
         <img

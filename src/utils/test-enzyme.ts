@@ -4,14 +4,16 @@ import ThemeProvider from '../design-tokens/ThemeProvider';
 
 /* eslint-disable @typescript-eslint/explicit-function-return-type */
 
-const shallowWithTheme = (element: React.ReactElement<any>) =>
+const shallowWithTheme = (element: React.ReactElement<any>, ...props): any =>
   shallow(element, {
     wrappingComponent: ThemeProvider,
+    ...props,
   });
 
-const mountWithTheme = (element: React.ReactElement<any>) =>
+const mountWithTheme = (element: React.ReactElement<any>, ...props): any =>
   mount(element, {
     wrappingComponent: ThemeProvider,
+    ...props,
   });
 
 export { mountWithTheme as mount, shallowWithTheme as shallow };

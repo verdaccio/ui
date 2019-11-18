@@ -47,7 +47,13 @@ const RegistryInfoContent: React.FC<Props> = props => {
 
     return (
       <>
-        <Tabs data-testid={'tabs-el'} indicatorColor="primary" onChange={handleChange} textColor="primary" value={tabPosition} variant="fullWidth">
+        <Tabs
+          data-testid={'tabs-el'}
+          indicatorColor="primary"
+          onChange={handleChange}
+          textColor="primary"
+          value={tabPosition}
+          variant="fullWidth">
           <Tab data-testid={'npm-tab'} label={NODE_MANAGER.npm} />
           <Tab data-testid={'pnpm-tab'} label={NODE_MANAGER.pnpm} />
           <Tab data-testid={'yarn-tab'} label={NODE_MANAGER.yarn} />

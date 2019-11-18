@@ -18,7 +18,11 @@ describe('<Header /> component with logged in state', () => {
   test('should load the component in logged out state', () => {
     const { container, queryByTestId, getByText } = render(
       <Router>
-        <Header onLogout={headerProps.handleLogout} onToggleLoginModal={headerProps.handleToggleLoginModal} scope={headerProps.scope} />
+        <Header
+          onLogout={headerProps.handleLogout}
+          onToggleLoginModal={headerProps.handleToggleLoginModal}
+          scope={headerProps.scope}
+        />
       </Router>
     );
 
@@ -47,7 +51,11 @@ describe('<Header /> component with logged in state', () => {
   test('should open login dialog', async () => {
     const { getByText } = render(
       <Router>
-        <Header onLogout={headerProps.handleLogout} onToggleLoginModal={headerProps.handleToggleLoginModal} scope={headerProps.scope} />
+        <Header
+          onLogout={headerProps.handleLogout}
+          onToggleLoginModal={headerProps.handleToggleLoginModal}
+          scope={headerProps.scope}
+        />
       </Router>
     );
 
@@ -132,7 +140,9 @@ describe('<Header /> component with logged in state', () => {
     const closeBtn = await waitForElement(() => getByText('CLOSE'));
     fireEvent.click(closeBtn);
 
-    const hasRegistrationInfoModalBeenRemoved = await waitForElementToBeRemoved(() => queryByTestId('registryInfo--dialog'));
+    const hasRegistrationInfoModalBeenRemoved = await waitForElementToBeRemoved(() =>
+      queryByTestId('registryInfo--dialog')
+    );
     expect(hasRegistrationInfoModalBeenRemoved).toBeTruthy();
   });
   test.todo('autocompletion should display suggestions according to the type value');

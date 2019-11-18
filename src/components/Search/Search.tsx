@@ -21,7 +21,10 @@ export interface State {
 export type cancelAllSearchRequests = () => void;
 export type handlePackagesClearRequested = () => void;
 export type handleSearch = (event: React.FormEvent<HTMLInputElement>, { newValue, method }: ChangeEvent) => void;
-export type handleClickSearch = (event: KeyboardEvent<HTMLInputElement>, { suggestionValue, method }: { suggestionValue: object[]; method: string }) => void;
+export type handleClickSearch = (
+  event: KeyboardEvent<HTMLInputElement>,
+  { suggestionValue, method }: { suggestionValue: object[]; method: string }
+) => void;
 export type handleFetchPackages = ({ value: string }) => Promise<void>;
 export type onBlur = (event: React.FormEvent<HTMLInputElement>) => void;
 
@@ -31,8 +34,8 @@ const CONSTANTS = {
   ABORT_ERROR: 'AbortError',
 };
 
-const StyledInputAdornment = styled(InputAdornment)<{ theme: Theme }>(props => ({
-  color: props.theme.palette.white,
+const StyledInputAdornment = styled(InputAdornment)<{ theme?: Theme }>(props => ({
+  color: props.theme && props.theme.palette.white,
 }));
 
 export class Search extends Component<RouteComponentProps<{}>, State> {

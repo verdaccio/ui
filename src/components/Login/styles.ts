@@ -1,4 +1,4 @@
-import { css } from '@emotion/core';
+import { css } from 'emotion';
 
 import { theme } from '../../design-tokens/theme';
 

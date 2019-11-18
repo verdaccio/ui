@@ -4,10 +4,10 @@ import { breakpoints } from '../../utils/styles/media';
 import Icon from '../Icon/Icon';
 import { Theme } from '../../design-tokens/theme';
 
-export const Wrapper = styled('div')<{ theme: Theme }>(props => ({
-  background: props.theme.palette.snow,
-  borderTop: `1px solid ${props.theme.palette.greyGainsboro}`,
-  color: props.theme.palette.nobel01,
+export const Wrapper = styled('div')<{ theme?: Theme }>(props => ({
+  background: props.theme && props.theme.palette.snow,
+  borderTop: `1px solid ${props.theme && props.theme.palette.greyGainsboro}`,
+  color: props.theme && props.theme.palette.nobel01,
   fontSize: '14px',
   padding: '20px',
 }));
@@ -44,9 +44,9 @@ export const Earth = styled(Icon)({
   padding: '0 10px',
 });
 
-export const Flags = styled('span')<{ theme: Theme }>(props => ({
+export const Flags = styled('span')<{ theme?: Theme }>(props => ({
   position: 'absolute',
-  background: props.theme.palette.greyAthens,
+  background: props.theme && props.theme.palette.greyAthens,
   padding: '1px 4px',
   borderRadius: 3,
   height: 20,
@@ -61,7 +61,7 @@ export const Flags = styled('span')<{ theme: Theme }>(props => ({
     left: -4,
     marginLeft: -5,
     border: '5px solid',
-    borderColor: `${props.theme.palette.greyAthens} transparent transparent transparent`,
+    borderColor: `${props.theme && props.theme.palette.greyAthens} transparent transparent transparent`,
     transform: 'rotate(90deg)',
   },
 }));
@@ -76,8 +76,8 @@ export const ToolTip = styled('span')({
   },
 });
 
-export const Love = styled('span')<{ theme: Theme }>(props => ({
-  color: props.theme.palette.love,
+export const Love = styled('span')<{ theme?: Theme }>(props => ({
+  color: props.theme && props.theme.palette.love,
   padding: '0 5px',
 }));
 

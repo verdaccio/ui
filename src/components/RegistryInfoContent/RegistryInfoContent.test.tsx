@@ -20,7 +20,9 @@ describe('<RegistryInfoContent /> component', () => {
     const pnpmTabTextContent = `pnpm adduser --registry ${props.registryUrl}`;
 
     // Render the component.
-    const { container, getByTestId } = render(<RegistryInfoContent registryUrl={props.registryUrl} scope={props.scope} />);
+    const { container, getByTestId } = render(
+      <RegistryInfoContent registryUrl={props.registryUrl} scope={props.scope} />
+    );
 
     // Assert the text content for pnpm tab is not present intially
     expect(container.textContent).not.toContain(pnpmTabTextContent);

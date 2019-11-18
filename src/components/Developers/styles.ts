@@ -26,7 +26,7 @@ export const StyledText = styled(Text)({
   textTransform: 'capitalize',
 });
 
-export const Fab = styled(FloatingActionButton)<{ theme: Theme }>(props => ({
-  backgroundColor: props.theme.palette.primary.main,
-  color: props.theme.palette.white,
+export const Fab = styled(FloatingActionButton)<{ theme?: Theme }>(props => ({
+  backgroundColor: props.theme && props.theme.palette.primary.main,
+  color: props.theme && props.theme.palette.white,
 }));

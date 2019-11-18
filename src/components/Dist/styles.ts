@@ -22,7 +22,7 @@ export const DistChips = styled(Chip)({
   textTransform: 'capitalize',
 });
 
-export const DownloadButton = styled(FloatingActionButton)<{ theme: Theme }>(props => ({
-  backgroundColor: props.theme.palette.primary.main,
-  color: props.theme.palette.white,
+export const DownloadButton = styled(FloatingActionButton)<{ theme?: Theme }>(props => ({
+  backgroundColor: props.theme && props.theme.palette.primary.main,
+  color: props.theme && props.theme.palette.white,
 }));

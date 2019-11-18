@@ -16,21 +16,21 @@ export const Wrapper = styled('div')({
   zIndex: 1,
 });
 
-export const StyledTextField = styled(TextField)<{ theme: Theme }>(props => ({
+export const StyledTextField = styled(TextField)<{ theme?: Theme }>(props => ({
   '& .MuiInputBase-root': {
     ':before': {
       content: "''",
       border: 'none',
     },
     ':after': {
-      borderColor: props.theme.palette.white,
+      borderColor: props.theme && props.theme.palette.white,
     },
     ':hover:before': {
       content: 'none',
     },
   },
   '& .MuiInputBase-input': {
-    color: props.theme.palette.white,
+    color: props.theme && props.theme.palette.white,
   },
 }));
 

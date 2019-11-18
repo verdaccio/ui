@@ -9,7 +9,6 @@ import Header from '../components/Header';
 import { Container, Content } from '../components/Layout';
 import API from '../utils/api';
 import Footer from '../components/Footer';
-import StyleBaseline from '../design-tokens/StyleBaseline';
 
 import AppRoute from './AppRoute';
 import { AppProps, AppContextProvider } from './AppContext';
@@ -144,7 +143,14 @@ export default class App extends Component<{}, AppProps> {
 
   public renderLoginModal = (): ReactElement<HTMLElement> => {
     const { error, showLoginModal } = this.state;
-    return <LoginModal error={error} onCancel={this.handleToggleLoginModal} onSubmit={this.handleDoLogin} visibility={showLoginModal} />;
+    return (
+      <LoginModal
+        error={error}
+        onCancel={this.handleToggleLoginModal}
+        onSubmit={this.handleDoLogin}
+        visibility={showLoginModal}
+      />
+    );
   };
 
   public renderContent = (): ReactElement<HTMLElement> => {
@@ -165,6 +171,14 @@ export default class App extends Component<{}, AppProps> {
       scope,
     } = this.state;
 
-    return <Header logo={logoUrl} onLogout={this.handleLogout} onToggleLoginModal={this.handleToggleLoginModal} scope={scope} username={username} />;
+    return (
+      <Header
+        logo={logoUrl}
+        onLogout={this.handleLogout}
+        onToggleLoginModal={this.handleToggleLoginModal}
+        scope={scope}
+        username={username}
+      />
+    );
   };
 }

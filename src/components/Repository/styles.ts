@@ -17,14 +17,14 @@ export const GridRepo = styled(Grid)({
   alignItems: 'center',
 });
 
-export const GithubLink = styled('a')<{ theme: Theme }>(props => ({
-  color: props.theme.palette.primary.main,
+export const GithubLink = styled('a')<{ theme?: Theme }>(props => ({
+  color: props.theme && props.theme.palette.primary.main,
 }));
 
-export const GithubLogo = styled(Github)<{ theme: Theme }>(props => ({
+export const GithubLogo = styled(Github)<{ theme?: Theme }>(props => ({
   fontSize: 40,
-  color: props.theme.palette.primary.main,
-  backgroundColor: props.theme.palette.greySuperLight,
+  color: props.theme && props.theme.palette.primary.main,
+  backgroundColor: props.theme && props.theme.palette.greySuperLight,
 }));
 
 export const RepositoryListItem = styled(ListItem)({

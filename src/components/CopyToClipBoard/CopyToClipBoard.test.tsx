@@ -1,5 +1,4 @@
 import React from 'react';
-import { ReactWrapper } from 'enzyme';
 
 import { copyToClipBoardUtility } from '../../utils/cli-utils';
 import { mount } from '../../utils/test-enzyme';
@@ -10,7 +9,7 @@ import { CopyIcon } from './styles';
 jest.mock('../../utils/cli-utils');
 
 describe('<CopyToClipBoard /> component', () => {
-  let wrapper: ReactWrapper;
+  let wrapper;
   const copyText = 'copy text';
 
   beforeEach(() => {
