@@ -2,27 +2,27 @@
 
 exports[`<Header /> component with logged in state should load the component in logged in state 1`] = `
 <header
-  class="MuiPaper-root MuiPaper-elevation4 MuiAppBar-root MuiAppBar-positionStatic css-rfunvc emotion-6 MuiAppBar-colorPrimary"
+  class="MuiPaper-root MuiPaper-elevation4 MuiAppBar-root MuiAppBar-positionStatic css-rfunvc emotion-9 MuiAppBar-colorPrimary"
 >
   <div
-    class="MuiToolbar-root MuiToolbar-regular css-1bjere7 emotion-5 MuiToolbar-gutters"
+    class="MuiToolbar-root MuiToolbar-regular css-1bjere7 emotion-8 MuiToolbar-gutters"
   >
     <div
-      class="MuiToolbar-root MuiToolbar-regular css-i5xjw9 emotion-1 MuiToolbar-gutters"
+      class="MuiToolbar-root MuiToolbar-regular css-i5xjw9 emotion-4 MuiToolbar-gutters"
     >
       <a
         class="css-1dk30lc"
         href="/"
       >
         <div
-          class="css-1i3i165"
+          class="css-1sifsqk emotion-0"
         />
       </a>
       <div
-        class="css-12prohx emotion-0"
+        class="css-12prohx emotion-3"
       >
         <div
-          class="css-1crzyyo"
+          class="css-1crzyyo emotion-2"
         >
           <div
             aria-expanded="false"
@@ -37,10 +37,10 @@ exports[`<Header /> component with logged in state should load the component in 
               class="MuiFormControl-root MuiTextField-root react-autosuggest__input MuiFormControl-fullWidth"
             >
               <div
-                class="MuiInputBase-root MuiInput-root css-ehp1z0 MuiInput-underline MuiInputBase-fullWidth MuiInput-fullWidth MuiInputBase-formControl MuiInput-formControl MuiInputBase-adornedStart"
+                class="MuiInputBase-root MuiInput-root css-n9ojyg MuiInput-underline MuiInputBase-fullWidth MuiInput-fullWidth MuiInputBase-formControl MuiInput-formControl MuiInputBase-adornedStart"
               >
                 <div
-                  class="MuiInputAdornment-root css-1uxnr2w-Search MuiInputAdornment-positionStart"
+                  class="MuiInputAdornment-root css-fvu7gn MuiInputAdornment-positionStart"
                 >
                   <svg
                     aria-hidden="true"
@@ -57,7 +57,7 @@ exports[`<Header /> component with logged in state should load the component in 
                 <input
                   aria-invalid="false"
                   autocomplete="off"
-                  class="MuiInputBase-input MuiInput-input css-1kdxj4z MuiInputBase-inputAdornedStart"
+                  class="MuiInputBase-input MuiInput-input css-hodoyq MuiInputBase-inputAdornedStart"
                   placeholder="Search Packages"
                   type="text"
                   value=""
@@ -65,7 +65,7 @@ exports[`<Header /> component with logged in state should load the component in 
               </div>
             </div>
             <div
-              class="MuiPaper-root MuiPaper-elevation1 react-autosuggest__suggestions-container css-cfo6a"
+              class="MuiPaper-root MuiPaper-elevation1 react-autosuggest__suggestions-container css-cfo6a emotion-1"
               id="react-autowhatever-1"
               role="listbox"
             />
@@ -74,10 +74,10 @@ exports[`<Header /> component with logged in state should load the component in 
       </div>
     </div>
     <div
-      class="MuiToolbar-root MuiToolbar-regular css-1qii1b7 emotion-4 MuiToolbar-gutters"
+      class="MuiToolbar-root MuiToolbar-regular css-1qii1b7 emotion-7 MuiToolbar-gutters"
     >
       <button
-        class="MuiButtonBase-root MuiIconButton-root css-13o7eu2 emotion-2 MuiIconButton-colorInherit"
+        class="MuiButtonBase-root MuiIconButton-root css-13o7eu2 emotion-5 MuiIconButton-colorInherit"
         tabindex="0"
         type="button"
       >
@@ -101,7 +101,7 @@ exports[`<Header /> component with logged in state should load the component in 
         />
       </button>
       <a
-        class="css-kbn7if emotion-3"
+        class="css-kbn7if emotion-6"
         data-testid="header--tooltip-documentation"
         href="https://verdaccio.org/docs/en/installation"
         rel="noopener noreferrer"
@@ -195,27 +195,27 @@ exports[`<Header /> component with logged in state should load the component in 
 
 exports[`<Header /> component with logged in state should load the component in logged out state 1`] = `
 <header
-  class="MuiPaper-root MuiPaper-elevation4 MuiAppBar-root MuiAppBar-positionStatic css-rfunvc emotion-6 MuiAppBar-colorPrimary"
+  class="MuiPaper-root MuiPaper-elevation4 MuiAppBar-root MuiAppBar-positionStatic css-rfunvc emotion-9 MuiAppBar-colorPrimary"
 >
   <div
-    class="MuiToolbar-root MuiToolbar-regular css-1bjere7 emotion-5 MuiToolbar-gutters"
+    class="MuiToolbar-root MuiToolbar-regular css-1bjere7 emotion-8 MuiToolbar-gutters"
   >
     <div
-      class="MuiToolbar-root MuiToolbar-regular css-i5xjw9 emotion-1 MuiToolbar-gutters"
+      class="MuiToolbar-root MuiToolbar-regular css-i5xjw9 emotion-4 MuiToolbar-gutters"
     >
       <a
         class="css-1dk30lc"
         href="/"
       >
         <div
-          class="css-1i3i165"
+          class="css-1sifsqk emotion-0"
         />
       </a>
       <div
-        class="css-12prohx emotion-0"
+        class="css-12prohx emotion-3"
       >
         <div
-          class="css-1crzyyo"
+          class="css-1crzyyo emotion-2"
         >
           <div
             aria-expanded="false"
@@ -230,10 +230,10 @@ exports[`<Header /> component with logged in state should load the component in 
               class="MuiFormControl-root MuiTextField-root react-autosuggest__input MuiFormControl-fullWidth"
             >
               <div
-                class="MuiInputBase-root MuiInput-root css-ehp1z0 MuiInput-underline MuiInputBase-fullWidth MuiInput-fullWidth MuiInputBase-formControl MuiInput-formControl MuiInputBase-adornedStart"
+                class="MuiInputBase-root MuiInput-root css-n9ojyg MuiInput-underline MuiInputBase-fullWidth MuiInput-fullWidth MuiInputBase-formControl MuiInput-formControl MuiInputBase-adornedStart"
               >
                 <div
-                  class="MuiInputAdornment-root css-1uxnr2w-Search MuiInputAdornment-positionStart"
+                  class="MuiInputAdornment-root css-fvu7gn MuiInputAdornment-positionStart"
                 >
                   <svg
                     aria-hidden="true"
@@ -250,7 +250,7 @@ exports[`<Header /> component with logged in state should load the component in 
                 <input
                   aria-invalid="false"
                   autocomplete="off"
-                  class="MuiInputBase-input MuiInput-input css-1kdxj4z MuiInputBase-inputAdornedStart"
+                  class="MuiInputBase-input MuiInput-input css-hodoyq MuiInputBase-inputAdornedStart"
                   placeholder="Search Packages"
                   type="text"
                   value=""
@@ -258,7 +258,7 @@ exports[`<Header /> component with logged in state should load the component in 
               </div>
             </div>
             <div
-              class="MuiPaper-root MuiPaper-elevation1 react-autosuggest__suggestions-container css-cfo6a"
+              class="MuiPaper-root MuiPaper-elevation1 react-autosuggest__suggestions-container css-cfo6a emotion-1"
               id="react-autowhatever-1"
               role="listbox"
             />
@@ -267,10 +267,10 @@ exports[`<Header /> component with logged in state should load the component in 
       </div>
     </div>
     <div
-      class="MuiToolbar-root MuiToolbar-regular css-1qii1b7 emotion-4 MuiToolbar-gutters"
+      class="MuiToolbar-root MuiToolbar-regular css-1qii1b7 emotion-7 MuiToolbar-gutters"
     >
       <button
-        class="MuiButtonBase-root MuiIconButton-root css-13o7eu2 emotion-2 MuiIconButton-colorInherit"
+        class="MuiButtonBase-root MuiIconButton-root css-13o7eu2 emotion-5 MuiIconButton-colorInherit"
         tabindex="0"
         type="button"
       >
@@ -294,7 +294,7 @@ exports[`<Header /> component with logged in state should load the component in 
         />
       </button>
       <a
-        class="css-kbn7if emotion-3"
+        class="css-kbn7if emotion-6"
         data-testid="header--tooltip-documentation"
         href="https://verdaccio.org/docs/en/installation"
         rel="noopener noreferrer"
