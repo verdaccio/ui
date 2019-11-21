@@ -5385,10 +5385,10 @@ eslint-plugin-babel@5.3.0:
   dependencies:
     eslint-rule-composer "^0.3.0"
 
-eslint-plugin-codeceptjs@1.1.0:
-  version "1.1.0"
-  resolved "https://registry.verdaccio.org/eslint-plugin-codeceptjs/-/eslint-plugin-codeceptjs-1.1.0.tgz#08a6ca615fa3963b15f218ca8f1473b3084975e5"
-  integrity sha512-ggOYiUNRFWr22uCXBKAaPzam0JDUoh8SFI25X9d4aESVIXaiOvdBYKuxQR4lVcWuiRdVurtIMcnPxP3RI94hkw==
+eslint-plugin-codeceptjs@1.2.0:
+  version "1.2.0"
+  resolved "https://registry.verdaccio.org/eslint-plugin-codeceptjs/-/eslint-plugin-codeceptjs-1.2.0.tgz#87aa11326195f733ef04e5eb6cf4bef876801b48"
+  integrity sha512-bg6bTY98rVJqQUdhQPFeBylg6wII1lN/DC9xZPCn2QA/vJrg4Pi/Ac3itSCUqLPSgG03yLJoi+QX4wxjeMpJQw==
   dependencies:
     requireindex "~1.1.0"
 
