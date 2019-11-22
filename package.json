@@ -108,7 +108,7 @@
     "typeface-roboto": "0.0.75",
     "typescript": "3.7.2",
     "uglifyjs-webpack-plugin": "2.2.0",
-    "url-loader": "2.2.0",
+    "url-loader": "2.3.0",
     "validator": "12.1.0",
     "verdaccio": "4.3.4",
     "verdaccio-auth-memory": "8.3.0",
