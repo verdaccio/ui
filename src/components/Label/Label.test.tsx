@@ -1,5 +1,6 @@
 import React from 'react';
-import { mount } from 'enzyme';
+
+import { render } from '../../utils/test-react-testing-library';
 
 import Label from './Label';
 
@@ -8,7 +9,7 @@ describe('<Label /> component', () => {
     text: 'test',
   };
   test('should render the component in default state', () => {
-    const wrapper = mount(<Label text={props.text} />);
-    expect(wrapper.html()).toMatchSnapshot();
+    const { container } = render(<Label text={props.text} />);
+    expect(container.firstChild).toMatchSnapshot();
   });
 });

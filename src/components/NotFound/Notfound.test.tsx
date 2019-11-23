@@ -1,6 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
-import { render, fireEvent } from '@testing-library/react';
+
+import { render, fireEvent } from '../../utils/test-react-testing-library';
 
 import NotFound, { GO_TO_HOME_PAGE } from './NotFound';
 

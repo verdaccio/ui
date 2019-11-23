@@ -1,5 +1,5 @@
 import React, { KeyboardEvent } from 'react';
-import { css } from 'emotion';
+import styled from '@emotion/styled';
 import Autosuggest, { SuggestionSelectedEventData, InputProps, ChangeEvent } from 'react-autosuggest';
 import match from 'autosuggest-highlight/match';
 import parse from 'autosuggest-highlight/parse';
@@ -9,13 +9,20 @@ import MenuItem from '../../muiComponents/MenuItem';
 
 import { Wrapper, InputField, SuggestionContainer } from './styles';
 
+const StyledAnchor = styled('a')<{ fw: number }>(props => ({
+  fontWeight: props.fw,
+}));
+
+const StyledMenuItem = styled(MenuItem)({
+  cursor: 'pointer',
+});
+
 interface Props {
   suggestions: unknown[];
   suggestionsLoading?: boolean;
   suggestionsLoaded?: boolean;
   suggestionsError?: boolean;
   apiLoading?: boolean;
-  color?: string;
   value?: string;
   placeholder?: string;
   startAdornment?: JSX.Element;
@@ -54,23 +61,18 @@ const renderSuggestion = (suggestion, { query, isHighlighted }): JSX.Element => 
   const matches = match(suggestion.name, query);
   const parts = parse(suggestion.name, matches);
   return (
-    <MenuItem component="div" selected={isHighlighted}>
+    <StyledMenuItem component="div" selected={isHighlighted}>
       <div>
         {parts.map((part, index) => {
           const fw = part.highlight ? fontWeight.semiBold : fontWeight.light;
           return (
-            <a
-              className={css`
-                font-weight: ${fw};
-              `}
-              href={suggestion.link}
-              key={String(index)}>
+            <StyledAnchor fw={fw} key={String(index)}>
               {part.text}
-            </a>
+            </StyledAnchor>
           );
         })}
       </div>
-    </MenuItem>
+    </StyledMenuItem>
   );
 };
 
@@ -97,7 +99,6 @@ const AutoComplete = ({
   value = '',
   placeholder = '',
   disableUnderline = false,
-  color,
   onClick,
   onKeyDown,
   onBlur,
@@ -121,7 +122,6 @@ const AutoComplete = ({
     // @ts-ignore
     startAdornment,
     disableUnderline,
-    color,
     onKeyDown,
     onBlur,
   };

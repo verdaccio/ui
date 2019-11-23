@@ -1,14 +1,14 @@
 import React, { KeyboardEvent, Component, ReactElement } from 'react';
 import { withRouter, RouteComponentProps } from 'react-router-dom';
 import { SuggestionSelectedEventData, ChangeEvent } from 'react-autosuggest';
-import { css } from 'emotion';
+import styled from '@emotion/styled';
 import { default as IconSearch } from '@material-ui/icons/Search';
 import debounce from 'lodash/debounce';
 
 import InputAdornment from '../../muiComponents/InputAdornment';
 import AutoComplete from '../AutoComplete';
-import colors from '../../utils/styles/colors';
 import { callSearch } from '../../utils/calls';
+import { Theme } from '../../design-tokens/theme';
 
 export interface State {
   search: string;
@@ -34,6 +34,10 @@ const CONSTANTS = {
   ABORT_ERROR: 'AbortError',
 };
 
+const StyledInputAdornment = styled(InputAdornment)<{ theme?: Theme }>(props => ({
+  color: props.theme && props.theme.palette.white,
+}));
+
 export class Search extends Component<RouteComponentProps<{}>, State> {
   constructor(props: RouteComponentProps<{}>) {
     super(props);
@@ -55,7 +59,6 @@ export class Search extends Component<RouteComponentProps<{}>, State> {
 
     return (
       <AutoComplete
-        color={colors.white}
         onBlur={this.handleOnBlur}
         onChange={this.handleSearch}
         onCleanSuggestions={this.handlePackagesClearRequested}
@@ -171,14 +174,9 @@ export class Search extends Component<RouteComponentProps<{}>, State> {
 
   public getAdorment(): JSX.Element {
     return (
-      <InputAdornment
-        className={css`
-          color: ${colors.white};
-          }
-        `}
-        position={'start'}>
+      <StyledInputAdornment position={'start'}>
         <IconSearch />
-      </InputAdornment>
+      </StyledInputAdornment>
     );
   }
 

@@ -1,6 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
-import { render, fireEvent, waitForElementToBeRemoved, waitForElement } from '@testing-library/react';
+
+import { render, fireEvent, waitForElementToBeRemoved, waitForElement } from '../../utils/test-react-testing-library';
 
 import Header from './Header';
 

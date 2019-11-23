@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import ErrorIcon from '@material-ui/icons/Error';
-import { css } from 'emotion';
 
 import Button from '../../muiComponents/Button';
 import Dialog from '../../muiComponents/Dialog';
@@ -205,9 +204,9 @@ export default class LoginModal extends Component<Partial<LoginModalProps>, Logi
     } = this.state;
     return (
       <FormControl
-        className={css`
-          margin-top: 8px;
-        `}
+        // className={css`
+        //   margin-top: 8px;
+        // `}
         error={!password.value && !password.pristine}
         fullWidth={true}
         required={password.required}>

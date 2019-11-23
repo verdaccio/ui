@@ -1,8 +1,8 @@
 import React from 'react';
-import { mount } from 'enzyme';
 import { MemoryRouter } from 'react-router-dom';
-import { render, cleanup } from '@testing-library/react';
 
+import { render, cleanup } from '../../utils/test-react-testing-library';
+import { mount } from '../../utils/test-enzyme';
 import { DetailContext, DetailContextProps } from '../../pages/Version';
 
 import Versions, { LABEL_CURRENT_TAGS, LABEL_VERSION_HISTORY } from './Versions';
