@@ -1,11 +1,6 @@
 import React from 'react';
 
-import {
-  render,
-  waitForElement,
-  fireEvent,
-  queryByText as reactTestingLibraryQueryByText,
-} from '../utils/test-react-testing-library';
+import { render, waitForElement, fireEvent } from '../utils/test-react-testing-library';
 import storage from '../utils/storage';
 // eslint-disable-next-line jest/no-mocks-import
 import { generateTokenWithTimeRange } from '../../jest/unit/components/__mocks__/token';
@@ -32,11 +27,36 @@ describe('<App />', () => {
     expect(headerElement).toBeTruthy();
   });
 
-  test('isUserAlreadyLoggedIn: token already available in storage', async () => {
+  test('handleLogout - logouts the user and clear localstorage', async () => {
     storage.setItem('username', 'verdaccio');
     storage.setItem('token', generateTokenWithTimeRange(24));
 
     const { queryByTestId } = render(<App />);
+
+    // wait for the Account's circle element component appearance and return the element
+    const accountCircleElement = await waitForElement(() => queryByTestId('header--menu-accountcircle'));
+    expect(accountCircleElement).toBeTruthy();
+
+    if (accountCircleElement) {
+      fireEvent.click(accountCircleElement);
+
+      // wait for the Button's logout element component appearance and return the element
+      const buttonLogoutElement = await waitForElement(() => queryByTestId('header--button-logout'));
+      expect(buttonLogoutElement).toBeTruthy();
+
+      if (buttonLogoutElement) {
+        fireEvent.click(buttonLogoutElement);
+
+        expect(queryByTestId('greetings-label')).toBeFalsy();
+      }
+    }
+  });
+
+  test('isUserAlreadyLoggedIn: token already available in storage', async () => {
+    storage.setItem('username', 'verdaccio');
+    storage.setItem('token', generateTokenWithTimeRange(24));
+
+    const { queryByTestId, queryAllByText } = render(<App />);
 
     // wait for the Account's circle element component appearance and return the element
     const accountCircleElement = await waitForElement(() => queryByTestId('header--menu-accountcircle'));
@@ -50,7 +70,7 @@ describe('<App />', () => {
       expect(greetingsLabelElement).toBeTruthy();
 
       if (greetingsLabelElement) {
-        expect(reactTestingLibraryQueryByText(greetingsLabelElement, 'verdaccio')).toBeTruthy();
+        expect(queryAllByText('verdaccio')).toBeTruthy();
       }
     }
   });
