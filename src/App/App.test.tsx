@@ -3,6 +3,7 @@ import { ReactWrapper } from 'enzyme';
 
 import { mount } from '../utils/test-enzyme';
 import storage from '../utils/storage';
+// eslint-disable-next-line jest/no-mocks-import
 import { generateTokenWithTimeRange } from '../../jest/unit/components/__mocks__/token';
 
 import App from './App';
@@ -31,6 +32,7 @@ jest.mock('../utils/storage', () => {
 });
 
 jest.mock('../utils/api', () => ({
+  // eslint-disable-next-line jest/no-mocks-import
   request: require('../../jest/unit/components/__mocks__/api').default.request,
 }));
 
