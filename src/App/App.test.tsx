@@ -1,11 +1,6 @@
 import React from 'react';
 
-import {
-  render,
-  waitForElement,
-  fireEvent,
-  queryByText as reactTestingLibraryQueryByText,
-} from '../utils/test-react-testing-library';
+import { render, waitForElement, fireEvent, queryByText as reactTestingLibraryQueryByText } from '../utils/test-react-testing-library';
 import storage from '../utils/storage';
 // eslint-disable-next-line jest/no-mocks-import
 import { generateTokenWithTimeRange } from '../../jest/unit/components/__mocks__/token';
@@ -17,16 +12,9 @@ describe('<App />', () => {
   test('should display the Loading component at the beginning ', () => {
     const { container, queryByTestId } = render(<App />);
 
-<<<<<<< HEAD
     expect(container.firstChild).toMatchSnapshot();
     expect(queryByTestId('loading')).toBeTruthy();
   });
-=======
-jest.mock('../utils/api', () => ({
-  // eslint-disable-next-line jest/no-mocks-import
-  request: require('../../jest/unit/components/__mocks__/api').default.request,
-}));
->>>>>>> master
 
   test('should display the Header component ', async () => {
     const { container, queryByTestId } = render(<App />);
