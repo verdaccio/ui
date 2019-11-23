@@ -1,6 +1,11 @@
 import React from 'react';
 
-import { render, waitForElement, fireEvent, queryByText as reactTestingLibraryQueryByText } from '../utils/test-react-testing-library';
+import {
+  render,
+  waitForElement,
+  fireEvent,
+  queryByText as reactTestingLibraryQueryByText,
+} from '../utils/test-react-testing-library';
 import storage from '../utils/storage';
 // eslint-disable-next-line jest/no-mocks-import
 import { generateTokenWithTimeRange } from '../../jest/unit/components/__mocks__/token';
