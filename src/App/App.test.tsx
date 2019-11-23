@@ -7,6 +7,33 @@ import { generateTokenWithTimeRange } from '../../jest/unit/components/__mocks__
 
 import App from './App';
 
+jest.mock('../utils/storage', () => {
+  class LocalStorageMock {
+    private store: Record<string, string>;
+    public constructor() {
+      this.store = {};
+    }
+    public clear(): void {
+      this.store = {};
+    }
+    public getItem(key: string): unknown {
+      return this.store[key] || null;
+    }
+    public setItem(key: string, value: string): void {
+      this.store[key] = value.toString();
+    }
+    public removeItem(key: string): void {
+      delete this.store[key];
+    }
+  }
+  return new LocalStorageMock();
+});
+
+jest.mock('../utils/api', () => ({
+  // eslint-disable-next-line jest/no-mocks-import
+  request: require('../../jest/unit/components/__mocks__/api').default.request,
+}));
+
 /* eslint-disable react/jsx-no-bind*/
 describe('<App />', () => {
   test('should display the Loading component at the beginning ', () => {
