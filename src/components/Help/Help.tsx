@@ -1,18 +1,22 @@
-import Button from '@material-ui/core/Button';
-import CardActions from '@material-ui/core/CardActions';
-import CardContent from '@material-ui/core/CardContent';
-import Typography from '@material-ui/core/Typography';
 import React, { Fragment } from 'react';
 
 import { getRegistryURL } from '../../utils/url';
 import CopyToClipBoard from '../CopyToClipBoard';
+import Button from '../../muiComponents/Button';
+import CardContent from '../../muiComponents/CardContent';
+import { default as Typography } from '../../muiComponents/Heading';
+import CardActions from '../../muiComponents/CardActions';
+import Text from '../../muiComponents/Text';
 
 import { CardStyled as Card, HelpTitle } from './styles';
+
+export const HELP_TITLE = 'No Package Published Yet.';
+export const COMPONENT_HELP_ID = 'help-card__title';
 
 function renderHeadingClipboardSegments(title: string, text: string): React.ReactNode {
   return (
     <Fragment>
-      <Typography variant={'body1'}>{title}</Typography>
+      <Text variant={'body1'}>{title}</Text>
       <CopyToClipBoard text={text} />
     </Fragment>
   );
@@ -24,18 +28,18 @@ const Help: React.FC = () => {
   return (
     <Card id="help-card">
       <CardContent>
-        <Typography component="h2" gutterBottom={true} id="help-card__title" variant="h5">
-          {'No Package Published Yet.'}
+        <Typography component="h2" gutterBottom={true} id={COMPONENT_HELP_ID} variant="h5">
+          {HELP_TITLE}
         </Typography>
         <HelpTitle color="textSecondary" gutterBottom={true}>
           {'To publish your first package just:'}
         </HelpTitle>
         {renderHeadingClipboardSegments('1. Login', `npm adduser --registry ${registryUrl}`)}
         {renderHeadingClipboardSegments('2. Publish', `npm publish --registry ${registryUrl}`)}
-        <Typography variant="body2">{'3. Refresh this page.'}</Typography>
+        <Text variant="body2">{'3. Refresh this page.'}</Text>
       </CardContent>
       <CardActions>
-        <Button color="primary" href="https://verdaccio.org/docs/en/installation" size="small" target="_blank">
+        <Button color="primary" href="https://verdaccio.org/docs/en/installation" size="small">
           {'Learn More'}
         </Button>
       </CardActions>

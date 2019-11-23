@@ -1,5 +1,7 @@
 import React from 'react';
-import { mount } from 'enzyme';
+
+import { mount } from '../../utils/test-enzyme';
+
 import Readme from './Readme';
 
 describe('<Readme /> component', () => {

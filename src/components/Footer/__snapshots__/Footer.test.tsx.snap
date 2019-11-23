@@ -1,3 +1,274 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<Footer /> component should load the initial state of Footer component 1`] = `"<div class=\\"css-i0nj2g ezbsl480\\"><div class=\\"css-hzfs9b ezbsl481\\"><div class=\\"css-d8nsp7 ezbsl482\\"> Made with<span class=\\"css-1so4oe0 ezbsl487\\">♥</span>on<span class=\\"css-1ie354y ezbsl484\\"><svg class=\\"ezbsl485 css-tsfgle ek145dl0\\"><title>Earth</title><use xlink:href=\\"[object Object]#earth\\"></use></svg><span class=\\"css-8631ip ezbsl486\\"><svg class=\\"ezbsl488 css-13b76ay ek145dl0\\"><title>Spain</title><use xlink:href=\\"[object Object]#spain\\"></use></svg><svg class=\\"ezbsl488 css-13b76ay ek145dl0\\"><title>Nicaragua</title><use xlink:href=\\"[object Object]#nicaragua\\"></use></svg><svg class=\\"ezbsl488 css-13b76ay ek145dl0\\"><title>India</title><use xlink:href=\\"[object Object]#india\\"></use></svg><svg class=\\"ezbsl488 css-13b76ay ek145dl0\\"><title>Brazil</title><use xlink:href=\\"[object Object]#brazil\\"></use></svg><svg class=\\"ezbsl488 css-13b76ay ek145dl0\\"><title>China</title><use xlink:href=\\"[object Object]#china\\"></use></svg><svg class=\\"ezbsl488 css-13b76ay ek145dl0\\"><title>Austria</title><use xlink:href=\\"[object Object]#austria\\"></use></svg></span></span></div><div class=\\"css-1wbzdyy ezbsl483\\">Powered by<span class=\\"ezbsl488 css-i15wza ek145dl1\\" name=\\"verdaccio\\" title=\\"Verdaccio\\"><img alt=\\"Verdaccio\\" src=\\"[object Object]\\" class=\\"css-1ncdhax ek145dl2\\"></span>/ v.1.0.0</div></div></div>"`;
+exports[`<Footer /> component should load the initial state of Footer component 1`] = `
+.emotion-38 {
+  background: #f9f9f9;
+  border-top: 1px solid #e3e3e3;
+  color: #999999;
+  font-size: 14px;
+  padding: 20px;
+}
+
+.emotion-36 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: end;
+  -webkit-justify-content: flex-end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+  width: 100%;
+}
+
+@media (min-width:768px) {
+  .emotion-36 {
+    min-width: 400px;
+    max-width: 800px;
+    margin: auto;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+  }
+}
+
+@media (min-width:1024px) {
+  .emotion-36 {
+    max-width: 1240px;
+  }
+}
+
+.emotion-27 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: none;
+}
+
+@media (min-width:768px) {
+  .emotion-27 {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+  }
+}
+
+.emotion-0 {
+  color: #e25555;
+  padding: 0 5px;
+}
+
+.emotion-25 {
+  position: relative;
+  height: 18px;
+}
+
+.emotion-25:hover .emotion-24 {
+  visibility: visible;
+}
+
+.emotion-3 {
+  box-sizing: initial;
+  display: inline-block;
+  cursor: default;
+  width: 18px;
+  height: 18px;
+  padding: 0 10px;
+}
+
+.emotion-23 {
+  position: absolute;
+  background: #d3dddd;
+  padding: 1px 4px;
+  border-radius: 3px;
+  height: 20px;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  visibility: hidden;
+  top: -2px;
+}
+
+.emotion-23:before {
+  content: '';
+  position: absolute;
+  top: 29%;
+  left: -4px;
+  margin-left: -5px;
+  border: 5px solid;
+  border-color: #d3dddd transparent transparent transparent;
+  -webkit-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  transform: rotate(90deg);
+}
+
+.emotion-6 {
+  box-sizing: initial;
+  display: inline-block;
+  cursor: default;
+  width: 18px;
+  height: 18px;
+  padding: 0 5px;
+}
+
+.emotion-34 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: none;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+@media (min-width:768px) {
+  .emotion-34 {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+  }
+}
+
+.emotion-32 {
+  box-sizing: initial;
+  display: inline-block;
+  cursor: pointer;
+  width: 18px;
+  height: 18px;
+  padding: 0 5px;
+}
+
+.emotion-29 {
+  width: 100%;
+  height: auto;
+}
+
+<div
+  class="emotion-38 emotion-39"
+>
+  <div
+    class="emotion-36 emotion-37"
+  >
+    <div
+      class="emotion-27 emotion-28"
+    >
+       Made with
+      <span
+        class="emotion-0 emotion-1"
+      >
+        ♥
+      </span>
+      on
+      <span
+        class="emotion-25 emotion-26"
+      >
+        <svg
+          class="emotion-2 emotion-3 emotion-4"
+        >
+          <title>
+            Earth
+          </title>
+          <use
+            xlink:href="[object Object]#earth"
+          />
+        </svg>
+        <span
+          class="emotion-23 emotion-24"
+        >
+          <svg
+            class="emotion-5 emotion-6 emotion-4"
+          >
+            <title>
+              Spain
+            </title>
+            <use
+              xlink:href="[object Object]#spain"
+            />
+          </svg>
+          <svg
+            class="emotion-5 emotion-6 emotion-4"
+          >
+            <title>
+              Nicaragua
+            </title>
+            <use
+              xlink:href="[object Object]#nicaragua"
+            />
+          </svg>
+          <svg
+            class="emotion-5 emotion-6 emotion-4"
+          >
+            <title>
+              India
+            </title>
+            <use
+              xlink:href="[object Object]#india"
+            />
+          </svg>
+          <svg
+            class="emotion-5 emotion-6 emotion-4"
+          >
+            <title>
+              Brazil
+            </title>
+            <use
+              xlink:href="[object Object]#brazil"
+            />
+          </svg>
+          <svg
+            class="emotion-5 emotion-6 emotion-4"
+          >
+            <title>
+              China
+            </title>
+            <use
+              xlink:href="[object Object]#china"
+            />
+          </svg>
+          <svg
+            class="emotion-5 emotion-6 emotion-4"
+          >
+            <title>
+              Austria
+            </title>
+            <use
+              xlink:href="[object Object]#austria"
+            />
+          </svg>
+        </span>
+      </span>
+    </div>
+    <div
+      class="emotion-34 emotion-35"
+    >
+      Powered by
+      <span
+        class="emotion-5 emotion-32 emotion-33"
+        title="Verdaccio"
+      >
+        <img
+          alt="Verdaccio"
+          class="emotion-29 emotion-30"
+          src="[object Object]"
+        />
+      </span>
+      / v.1.0.0
+    </div>
+  </div>
+</div>
+`;

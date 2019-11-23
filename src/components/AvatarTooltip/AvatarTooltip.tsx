@@ -1,8 +1,8 @@
 import React, { FC } from 'react';
 
-import Avatar from '@material-ui/core/Avatar';
-import Tooltip from '@material-ui/core/Tooltip';
 import { isEmail } from '../../utils/url';
+import Tooltip from '../../muiComponents/Tooltip';
+import Avatar from '../../muiComponents/Avatar';
 
 export interface AvatarDeveloper {
   name: string;
@@ -14,7 +14,12 @@ export interface AvatarDeveloper {
 
 const AvatarTooltip: FC<AvatarDeveloper> = ({ name, packageName, version, avatar, email }) => {
   const avatarComponent = <Avatar aria-label={name} src={avatar} />;
-  function renderLinkForMail(email, avatarComponent, packageName, version): JSX.Element {
+  function renderLinkForMail(
+    email: string,
+    avatarComponent: JSX.Element,
+    packageName: string,
+    version: string
+  ): JSX.Element {
     if (!email || isEmail(email) === false) {
       return avatarComponent;
     }

@@ -1,12 +1,12 @@
-import styled from 'react-emotion';
-import Typography from '@material-ui/core/Typography';
-import { default as MuiListItemText } from '@material-ui/core/ListItemText';
-import { fontWeight } from '../../utils/styles/sizes';
+import styled from '@emotion/styled';
 
-export const Heading = styled(Typography)({
-  '&&': {
-    fontWeight: fontWeight.bold,
-  },
+import { fontWeight } from '../../utils/styles/sizes';
+import Text from '../../muiComponents/Text';
+import { default as MuiListItemText } from '../../muiComponents/ListItemText';
+import Link from '../Link';
+
+export const StyledText = styled(Text)({
+  fontWeight: fontWeight.bold,
 });
 
 export const Spacer = styled('div')({
@@ -14,12 +14,15 @@ export const Spacer = styled('div')({
   borderBottom: '1px dotted rgba(0, 0, 0, 0.2)',
   whiteSpace: 'nowrap',
   height: '0.5em',
+  margin: '0 16px',
 });
 
 export const ListItemText = styled(MuiListItemText)({
-  '&&': {
-    flex: 'none',
-    color: 'black',
-    opacity: 0.6,
-  },
+  flex: 'none',
+  color: 'black',
+  opacity: 0.6,
+});
+
+export const StyledLink = styled(Link)({
+  textDecoration: 'none',
 });

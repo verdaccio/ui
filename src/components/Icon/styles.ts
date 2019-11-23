@@ -1,56 +1,42 @@
-import styled, { css } from 'react-emotion';
+import styled from '@emotion/styled';
 import { Breakpoint } from '@material-ui/core/styles/createBreakpoints';
-import { StyledOtherComponent } from 'create-emotion-styled';
-import { DetailedHTMLProps, HTMLAttributes } from 'react';
 
-const getSize = (size: Breakpoint): string => {
+const getSize = (size: Breakpoint): { width: number; height: number } => {
   switch (size) {
     case 'md':
-      return `
-        width: 18px;
-        height: 18px;
-      `;
+      return {
+        width: 18,
+        height: 18,
+      };
     default:
-      return `
-        width: 14px;
-        height: 16px;
-      `;
+      return {
+        width: 14,
+        height: 16,
+      };
   }
 };
 
-const commonStyle = ({ size = 'sm' as Breakpoint, pointer, modifiers = null }): string => css`
-  && {
-    display: inline-block;
-    cursor: ${pointer ? 'pointer' : 'Developers'};
-    ${getSize(size)};
-    ${modifiers && modifiers};
-  }
-`;
+interface CommonStyleProps {
+  size: Breakpoint;
+  pointer?: boolean;
+}
+const commonStyle = ({ size = 'sm', pointer }: CommonStyleProps): object => ({
+  display: 'inline-block',
+  cursor: pointer ? 'pointer' : 'default',
+  ...getSize(size),
+});
 
-export const Svg = styled('svg')`
-  && {
-    ${commonStyle};
-  }
-`;
+export const Svg = styled('svg')<CommonStyleProps>(props => ({
+  boxSizing: 'initial',
+  ...commonStyle(props),
+}));
 
-export const ImgWrapper: StyledOtherComponent<
-  {
-    size?: Breakpoint;
-    pointer: boolean;
-    modifiers?: null | undefined;
-    name?: string | unknown;
-  },
-  DetailedHTMLProps<HTMLAttributes<HTMLSpanElement>, HTMLSpanElement>,
-  {}
-> = styled('span')`
-  && {
-    ${commonStyle};
-  }
-`;
+export const ImgWrapper = styled('span')<CommonStyleProps>(props => ({
+  boxSizing: 'initial',
+  ...commonStyle(props),
+}));
 
 export const Img = styled('img')({
-  '&&': {
-    width: '100%',
-    height: 'auto',
-  },
+  width: '100%',
+  height: 'auto',
 });

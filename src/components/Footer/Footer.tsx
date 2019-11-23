@@ -1,7 +1,8 @@
 import React from 'react';
 
-import { Wrapper, Left, Right, Earth, Flags, Love, Flag, Logo, Inner, ToolTip } from './styles';
 import { goToVerdaccioWebsite } from '../../utils/windows';
+
+import { Wrapper, Left, Right, Earth, Flags, Love, Flag, Logo, Inner, ToolTip } from './styles';
 
 const renderTooltip = (): JSX.Element => (
   <ToolTip>
@@ -21,7 +22,6 @@ const MADEWITH_LABEL = ' Made with';
 const ON_LABEL = 'on';
 const HEARTH_EMOJI = '♥';
 
-// @ts-ignore
 const renderRight = (version = window.VERDACCIO_VERSION): JSX.Element => {
   return (
     <Right>

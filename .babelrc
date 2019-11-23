@@ -1,5 +1,4 @@
 {
-  "presets": [
-    ["@verdaccio", { "typescript": true }]
-  ]
+  "presets": [["@verdaccio"]],
+  "plugins": ["emotion"]
 }

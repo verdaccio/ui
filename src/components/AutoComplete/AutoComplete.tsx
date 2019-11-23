@@ -1,12 +1,21 @@
 import React, { KeyboardEvent } from 'react';
-import { css } from 'emotion';
-import Autosuggest from 'react-autosuggest';
+import styled from '@emotion/styled';
+import Autosuggest, { SuggestionSelectedEventData, InputProps, ChangeEvent } from 'react-autosuggest';
 import match from 'autosuggest-highlight/match';
 import parse from 'autosuggest-highlight/parse';
-import MenuItem from '@material-ui/core/MenuItem';
 
 import { fontWeight } from '../../utils/styles/sizes';
+import MenuItem from '../../muiComponents/MenuItem';
+
 import { Wrapper, InputField, SuggestionContainer } from './styles';
+
+const StyledAnchor = styled('a')<{ fw: number }>(props => ({
+  fontWeight: props.fw,
+}));
+
+const StyledMenuItem = styled(MenuItem)({
+  cursor: 'pointer',
+});
 
 interface Props {
   suggestions: unknown[];
@@ -14,23 +23,25 @@ interface Props {
   suggestionsLoaded?: boolean;
   suggestionsError?: boolean;
   apiLoading?: boolean;
-  color?: string;
   value?: string;
   placeholder?: string;
   startAdornment?: JSX.Element;
   disableUnderline?: boolean;
-  onChange?: (event: KeyboardEvent<HTMLInputElement>, { newValue, method }: { newValue: string; method: string }) => void;
-  onSuggestionsFetch?: ({ value: string }) => Promise<void>;
+  onChange: (event: React.FormEvent<HTMLInputElement>, params: ChangeEvent) => void;
+  onSuggestionsFetch: ({ value: string }) => Promise<void>;
   onCleanSuggestions?: () => void;
-  onClick?: (event: KeyboardEvent<HTMLInputElement>, { suggestionValue, method }: { suggestionValue: string[]; method: string }) => void;
+  onClick?: (event: React.FormEvent<HTMLInputElement>, data: SuggestionSelectedEventData<unknown>) => void;
   onKeyDown?: (event: KeyboardEvent<HTMLInputElement>) => void;
-  onBlur?: (event: KeyboardEvent<HTMLInputElement>) => void;
+  onBlur?: (event: React.FormEvent<HTMLInputElement>) => void;
 }
 
+/* eslint-disable react/jsx-sort-props  */
+/* eslint-disable verdaccio/jsx-spread */
 const renderInputComponent = (inputProps): JSX.Element => {
   const { ref, startAdornment, disableUnderline, onKeyDown, ...others } = inputProps;
   return (
     <InputField
+      fullWidth={true}
       InputProps={{
         inputRef: node => {
           ref(node);
@@ -39,7 +50,6 @@ const renderInputComponent = (inputProps): JSX.Element => {
         disableUnderline,
         onKeyDown,
       }}
-      fullWidth={true}
       {...others}
     />
   );
@@ -51,23 +61,18 @@ const renderSuggestion = (suggestion, { query, isHighlighted }): JSX.Element => 
   const matches = match(suggestion.name, query);
   const parts = parse(suggestion.name, matches);
   return (
-    <MenuItem component="div" selected={isHighlighted}>
+    <StyledMenuItem component="div" selected={isHighlighted}>
       <div>
         {parts.map((part, index) => {
           const fw = part.highlight ? fontWeight.semiBold : fontWeight.light;
           return (
-            <a
-              className={css`
-                font-weight: ${fw};
-              `}
-              href={suggestion.link}
-              key={String(index)}>
+            <StyledAnchor fw={fw} key={String(index)}>
               {part.text}
-            </a>
+            </StyledAnchor>
           );
         })}
       </div>
-    </MenuItem>
+    </StyledMenuItem>
   );
 };
 
@@ -94,7 +99,6 @@ const AutoComplete = ({
   value = '',
   placeholder = '',
   disableUnderline = false,
-  color,
   onClick,
   onKeyDown,
   onBlur,
@@ -110,13 +114,14 @@ const AutoComplete = ({
     onSuggestionsFetchRequested: onSuggestionsFetch,
     onSuggestionsClearRequested: onCleanSuggestions,
   };
-  const inputProps = {
+  const inputProps: InputProps<unknown> = {
     value,
     onChange,
     placeholder,
+    // material-ui@4.5.1 introduce better types for TextInput, check readme
+    // @ts-ignore
     startAdornment,
     disableUnderline,
-    color,
     onKeyDown,
     onBlur,
   };
@@ -135,7 +140,12 @@ const AutoComplete = ({
 
   return (
     <Wrapper>
-      <Autosuggest {...autosuggestProps} inputProps={inputProps} onSuggestionSelected={onClick} renderSuggestionsContainer={renderSuggestionsContainer} />
+      <Autosuggest
+        {...autosuggestProps}
+        inputProps={inputProps}
+        onSuggestionSelected={onClick}
+        renderSuggestionsContainer={renderSuggestionsContainer}
+      />
     </Wrapper>
   );
 };

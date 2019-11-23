@@ -1,8 +1,10 @@
 import React from 'react';
-import { mount } from 'enzyme';
-import PackageList from './PackageList';
-import Help from '../Help';
 import { BrowserRouter } from 'react-router-dom';
+
+import { mount } from '../../utils/test-enzyme';
+import Help from '../Help';
+
+import { PackageList } from './PackageList';
 
 describe('<PackageList /> component', () => {
   test('should load the component with no packages', () => {

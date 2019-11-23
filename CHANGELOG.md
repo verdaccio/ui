@@ -2,6 +2,106 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.3.6](https://github.com/verdaccio/ui/compare/v0.3.5...v0.3.6) (2019-11-08)
+
+### [0.3.5](https://github.com/verdaccio/ui/compare/v0.3.4...v0.3.5) (2019-11-07)
+
+
+### Bug Fixes
+
+* adds unit tests for api service ([#235](https://github.com/verdaccio/ui/issues/235)) ([803da1c](https://github.com/verdaccio/ui/commit/803da1c))
+* convert Engine component to hooks ([#233](https://github.com/verdaccio/ui/issues/233)) ([5cb47ed](https://github.com/verdaccio/ui/commit/5cb47ed))
+* refactor/116 RegistryInfoContent is converted to functional component ([#229](https://github.com/verdaccio/ui/issues/229)) ([b74ca22](https://github.com/verdaccio/ui/commit/b74ca22)), closes [#116](https://github.com/verdaccio/ui/issues/116) [#116](https://github.com/verdaccio/ui/issues/116)
+* rest MUI components -  Introduced ForwardRef ([#224](https://github.com/verdaccio/ui/issues/224)) ([b56e438](https://github.com/verdaccio/ui/commit/b56e438))
+
+
+### Features
+
+* added download tarball button at list ([#237](https://github.com/verdaccio/ui/issues/237)) ([bdef686](https://github.com/verdaccio/ui/commit/bdef686))
+* update date fns to v2 ([#232](https://github.com/verdaccio/ui/issues/232)) ([a4cdd14](https://github.com/verdaccio/ui/commit/a4cdd14))
+
+### [0.3.4](https://github.com/verdaccio/ui/compare/v0.3.3...v0.3.4) (2019-10-26)
+
+
+### Bug Fixes
+
+* adds no uplink spec ([#213](https://github.com/verdaccio/ui/issues/213)) ([ade548a](https://github.com/verdaccio/ui/commit/ade548a))
+* api typings ([#210](https://github.com/verdaccio/ui/issues/210)) ([5d6ad3d](https://github.com/verdaccio/ui/commit/5d6ad3d))
+* PackageList component is converted to functional ([#219](https://github.com/verdaccio/ui/issues/219)) [#116](https://github.com/verdaccio/ui/issues/116) ([ae0222c](https://github.com/verdaccio/ui/commit/ae0222c))
+* routes - Replaced class by func. comp ([#159](https://github.com/verdaccio/ui/issues/159)) ([5c06ace](https://github.com/verdaccio/ui/commit/5c06ace))
+* version Page - Replaces class by func. ([#171](https://github.com/verdaccio/ui/issues/171)) ([f5c77ff](https://github.com/verdaccio/ui/commit/f5c77ff))
+* **162:** added forwardRef Card ([#216](https://github.com/verdaccio/ui/issues/216)) ([2bc49f3](https://github.com/verdaccio/ui/commit/2bc49f3))
+* **installlistitem:** changed the wrong icon ([#211](https://github.com/verdaccio/ui/issues/211)) ([4498aad](https://github.com/verdaccio/ui/commit/4498aad))
+
+### [0.3.3](https://github.com/verdaccio/ui/compare/v0.3.2...v0.3.3) (2019-10-16)
+
+
+### Bug Fixes
+
+* **deps:** remove types from dependencies ([#201](https://github.com/verdaccio/ui/issues/201)) ([48c03fe](https://github.com/verdaccio/ui/commit/48c03fe))
+* add new window property to interface definition ([b35baa0](https://github.com/verdaccio/ui/commit/b35baa0))
+* added typings for react-autosuggest ([#200](https://github.com/verdaccio/ui/issues/200)) ([cfb29ce](https://github.com/verdaccio/ui/commit/cfb29ce))
+* better type inference for MediaQuery ([#180](https://github.com/verdaccio/ui/issues/180)) ([e0e7c07](https://github.com/verdaccio/ui/commit/e0e7c07))
+* changes font size for items of the register-info component ([#196](https://github.com/verdaccio/ui/issues/196)) ([6f87be6](https://github.com/verdaccio/ui/commit/6f87be6)), closes [#193](https://github.com/verdaccio/ui/issues/193)
+* convert Dist component to hooks ([#156](https://github.com/verdaccio/ui/issues/156)) ([f1f8f8a](https://github.com/verdaccio/ui/commit/f1f8f8a))
+* detailContainer Component - Replaced class by func. comp  ([#130](https://github.com/verdaccio/ui/issues/130)) ([f84fd79](https://github.com/verdaccio/ui/commit/f84fd79))
+* dist-tags attribute [#175](https://github.com/verdaccio/ui/issues/175) ([#178](https://github.com/verdaccio/ui/issues/178)) ([752e2b9](https://github.com/verdaccio/ui/commit/752e2b9))
+* fix DependencyBlock props interface ([35d691c](https://github.com/verdaccio/ui/commit/35d691c))
+* fixed import ([#176](https://github.com/verdaccio/ui/issues/176)) ([d0d4139](https://github.com/verdaccio/ui/commit/d0d4139))
+* fixed imports & func's name ([#182](https://github.com/verdaccio/ui/issues/182)) ([3888736](https://github.com/verdaccio/ui/commit/3888736))
+* Header Component - Replaced class by func. comp ([#142](https://github.com/verdaccio/ui/issues/142)) ([d1ce828](https://github.com/verdaccio/ui/commit/d1ce828))
+* improve jest mock typings ([852f6ee](https://github.com/verdaccio/ui/commit/852f6ee))
+* improved typing ([#174](https://github.com/verdaccio/ui/issues/174)) ([e0642a9](https://github.com/verdaccio/ui/commit/e0642a9))
+* incorrect Tooltip import in avatar component ([#160](https://github.com/verdaccio/ui/issues/160)) ([43a9628](https://github.com/verdaccio/ui/commit/43a9628))
+* install Component - Replaced class by func. comp ([#152](https://github.com/verdaccio/ui/issues/152)) ([9eb698f](https://github.com/verdaccio/ui/commit/9eb698f))
+* introduced forwardRef ([#163](https://github.com/verdaccio/ui/issues/163)) ([626bcce](https://github.com/verdaccio/ui/commit/626bcce))
+* introduced forwardRef ([#164](https://github.com/verdaccio/ui/issues/164)) ([909a8d9](https://github.com/verdaccio/ui/commit/909a8d9))
+* introduced ForwardRef ([#177](https://github.com/verdaccio/ui/issues/177)) ([af8ed8b](https://github.com/verdaccio/ui/commit/af8ed8b))
+* introduced forwardRef ([#181](https://github.com/verdaccio/ui/issues/181)) ([0c4fb7d](https://github.com/verdaccio/ui/commit/0c4fb7d))
+* introduced forwardRef ([#185](https://github.com/verdaccio/ui/issues/185)) ([7548c89](https://github.com/verdaccio/ui/commit/7548c89))
+* introduced SvgIcon ([#184](https://github.com/verdaccio/ui/issues/184)) ([8b86ded](https://github.com/verdaccio/ui/commit/8b86ded))
+* linter error fixed ([#143](https://github.com/verdaccio/ui/issues/143)) ([74576bd](https://github.com/verdaccio/ui/commit/74576bd))
+* listItem Component - Introduced ForwardRef ([#183](https://github.com/verdaccio/ui/issues/183)) ([82d7107](https://github.com/verdaccio/ui/commit/82d7107))
+* lock file was corrupted ([7bd9eb7](https://github.com/verdaccio/ui/commit/7bd9eb7))
+* media query ts ignore ([6f52838](https://github.com/verdaccio/ui/commit/6f52838))
+* remove ts ignore from some components ([b1804d7](https://github.com/verdaccio/ui/commit/b1804d7))
+* remove unnecessary ts ignore ([7a8b158](https://github.com/verdaccio/ui/commit/7a8b158))
+* remove unnecessary ts ignore ([32f4389](https://github.com/verdaccio/ui/commit/32f4389))
+* removed tsignore for AppContext ([#188](https://github.com/verdaccio/ui/issues/188)) ([d2c1130](https://github.com/verdaccio/ui/commit/d2c1130))
+* typography Component - Introduced ForwardRef ([#179](https://github.com/verdaccio/ui/issues/179)) ([a8deeb9](https://github.com/verdaccio/ui/commit/a8deeb9))
+* **api:** remove unnecessary ts ignore ([a8eb1f3](https://github.com/verdaccio/ui/commit/a8eb1f3))
+* **App:** ts ignore ([f6eb747](https://github.com/verdaccio/ui/commit/f6eb747))
+* **Developers:** remove compilation warnings ([f4da5e6](https://github.com/verdaccio/ui/commit/f4da5e6))
+* **Footer:** remove unnecessary ts ignore ([1fb0bf9](https://github.com/verdaccio/ui/commit/1fb0bf9))
+* some warnings in console ([#155](https://github.com/verdaccio/ui/issues/155)) ([583ddd5](https://github.com/verdaccio/ui/commit/583ddd5))
+* spinner typings ([3166673](https://github.com/verdaccio/ui/commit/3166673))
+* tarball download not working on Firefox and Edge ([#144](https://github.com/verdaccio/ui/issues/144)) ([f8e3013](https://github.com/verdaccio/ui/commit/f8e3013))
+* warning about modules with names differing in casing ([#148](https://github.com/verdaccio/ui/issues/148)) ([e147290](https://github.com/verdaccio/ui/commit/e147290))
+
+
+### Features
+
+* new not found component ([#170](https://github.com/verdaccio/ui/issues/170)) ([fdbdb63](https://github.com/verdaccio/ui/commit/fdbdb63))
+* **eslint-config:** add order rule in import ([ae73772](https://github.com/verdaccio/ui/commit/ae73772))
+* upgraded typescript to 3.6.3 ([#145](https://github.com/verdaccio/ui/issues/145)) ([f8a1f2c](https://github.com/verdaccio/ui/commit/f8a1f2c))
+* use React.lazy for loading components ([#158](https://github.com/verdaccio/ui/issues/158)) ([a365ec5](https://github.com/verdaccio/ui/commit/a365ec5))
+* version Component - Replaced classes by func. comp ([#129](https://github.com/verdaccio/ui/issues/129)) ([1d705da](https://github.com/verdaccio/ui/commit/1d705da))
+
+### [0.3.2](https://github.com/verdaccio/ui/compare/v0.3.1...v0.3.2) (2019-09-30)
+
+
+### Bug Fixes
+
+* sidebar view on small screens ([#136](https://github.com/verdaccio/ui/issues/136)) ([91d818c](https://github.com/verdaccio/ui/commit/91d818c))
+
+### [0.3.1](https://github.com/verdaccio/ui/compare/v0.3.0...v0.3.1) (2019-09-29)
+
+
+### Bug Fixes
+
+* **ui:**  fix the hover effect on the packageItem's author area ([#137](https://github.com/verdaccio/ui/issues/137)) ([2e50981](https://github.com/verdaccio/ui/commit/2e50981))
+* correctly load font files - closes [#128](https://github.com/verdaccio/ui/issues/128) ([#134](https://github.com/verdaccio/ui/issues/134)) ([f61913c](https://github.com/verdaccio/ui/commit/f61913c))
+
 ## [0.3.0](https://github.com/verdaccio/ui/compare/v0.2.4...v0.3.0) (2019-09-01)
 
 

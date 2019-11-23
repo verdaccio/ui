@@ -6,21 +6,21 @@ export interface ErrorProps {
 
 export interface ErrorAppState {
   hasError: boolean;
-  error: any;
-  info: any;
+  error: Error | null;
+  info: object | null;
 }
 
 export default class ErrorBoundary extends Component<ErrorProps, ErrorAppState> {
-  constructor(props) {
+  constructor(props: ErrorProps) {
     super(props);
     this.state = { hasError: false, error: null, info: null };
   }
 
-  componentDidCatch(error, info) {
+  public componentDidCatch(error: Error, info: object) {
     this.setState({ hasError: true, error, info });
   }
 
-  render() {
+  public render(): JSX.Element {
     const { hasError, error, info } = this.state;
     const { children } = this.props;
 

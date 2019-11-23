@@ -6,7 +6,7 @@ import '../../types';
  * @param {object} response
  * @returns {promise}
  */
-export function handleResponseType(response: Response): Promise<[boolean, Blob | string]> | Promise<void> {
+export function handleResponseType(response: Response): Promise<[boolean, Blob | string] | void> {
   if (response.headers) {
     const contentType = response.headers.get('Content-Type');
     if (contentType && contentType.includes('application/pdf')) {
@@ -43,7 +43,6 @@ class API {
     }
 
     if (!['http://', 'https://', '//'].some(prefix => url.startsWith(prefix))) {
-      // @ts-ignore
       url = window.VERDACCIO_API_URL + url;
     }
 
@@ -53,7 +52,6 @@ class API {
         credentials: 'same-origin',
         ...options,
       })
-        // @ts-ignore
         .then(handleResponseType)
         .then(response => {
           if (response[0]) {

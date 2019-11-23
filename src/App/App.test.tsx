@@ -1,26 +1,29 @@
 import React from 'react';
-import { mount } from 'enzyme';
-import storage from '../utils/storage';
-import App from './App';
+import { ReactWrapper } from 'enzyme';
 
+import { mount } from '../utils/test-enzyme';
+import storage from '../utils/storage';
 import { generateTokenWithTimeRange } from '../../jest/unit/components/__mocks__/token';
+
+import App from './App';
+import { AppProps } from './AppContext';
 
 jest.mock('../utils/storage', () => {
   class LocalStorageMock {
-    private store: object;
+    private store: Record<string, string>;
     public constructor() {
       this.store = {};
     }
     public clear(): void {
       this.store = {};
     }
-    public getItem(key): unknown {
+    public getItem(key: string): unknown {
       return this.store[key] || null;
     }
-    public setItem(key, value): void {
+    public setItem(key: string, value: string): void {
       this.store[key] = value.toString();
     }
-    public removeItem(key): void {
+    public removeItem(key: string): void {
       delete this.store[key];
     }
   }
@@ -32,7 +35,7 @@ jest.mock('../utils/api', () => ({
 }));
 
 describe('App', () => {
-  let wrapper;
+  let wrapper: ReactWrapper<{}, AppProps, App>;
 
   beforeEach(() => {
     wrapper = mount(<App />);

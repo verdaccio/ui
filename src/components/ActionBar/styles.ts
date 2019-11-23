@@ -1,21 +1,17 @@
-import styled from 'react-emotion';
-import { default as MuiFab } from '@material-ui/core/Fab';
-import ListItem from '@material-ui/core/ListItem';
+import styled from '@emotion/styled';
 
-import colors from '../../utils/styles/colors';
+import ListItem from '../../muiComponents/ListItem';
+import FloatingActionButton from '../../muiComponents/FloatingActionButton';
+import { Theme } from '../../design-tokens/theme';
 
 export const ActionListItem = styled(ListItem)({
-  '&&': {
-    paddingTop: 0,
-    paddingLeft: 0,
-    paddingRight: 0,
-  },
+  paddingTop: 0,
+  paddingLeft: 0,
+  paddingRight: 0,
 });
 
-export const Fab = styled(MuiFab)({
-  '&&': {
-    backgroundColor: colors.primary,
-    color: colors.white,
-    marginRight: '10px',
-  },
-});
+export const Fab = styled(FloatingActionButton)<{ theme?: Theme }>(props => ({
+  backgroundColor: props.theme && props.theme.palette.primary.main,
+  color: props.theme && props.theme.palette.white,
+  marginRight: '10px',
+}));

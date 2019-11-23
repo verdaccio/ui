@@ -3,7 +3,8 @@
  */
 
 import React from 'react';
-import { mount } from 'enzyme';
+
+import { mount } from '../../utils/test-enzyme';
 
 import LoginModal from './Login';
 
@@ -66,7 +67,7 @@ describe('<LoginModal />', () => {
       onCancel: () => {},
       onSubmit: () => {},
     };
-    const wrapper = mount<LoginModal>(<LoginModal {...props} />);
+    const wrapper = mount(<LoginModal {...props} />);
     const { setCredentials } = wrapper.instance();
 
     expect(setCredentials('username', eventUsername)).toBeUndefined();
@@ -83,7 +84,7 @@ describe('<LoginModal />', () => {
       onSubmit: jest.fn(),
     };
 
-    const wrapper = mount<LoginModal>(<LoginModal {...props} />);
+    const wrapper = mount(<LoginModal {...props} />);
     const instance = wrapper.instance();
 
     instance.submitCredentials = jest.fn();
@@ -108,7 +109,7 @@ describe('<LoginModal />', () => {
       onSubmit: jest.fn(),
     };
 
-    const wrapper = mount<LoginModal>(<LoginModal {...props} />);
+    const wrapper = mount(<LoginModal {...props} />);
     const { setCredentials, submitCredentials } = wrapper.instance();
     expect(setCredentials('username', eventUsername)).toBeUndefined();
     expect(wrapper.state('form').username.value).toEqual('xyz');

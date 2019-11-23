@@ -5,13 +5,18 @@ import ReactDOM from 'react-dom';
 import { AppContainer } from 'react-hot-loader';
 
 import App from './App';
+import ThemeProvider from './design-tokens/ThemeProvider';
+import StyleBaseline from './design-tokens/StyleBaseline';
 
 const rootNode = document.getElementById('root');
 
-const renderApp = (Component): void => {
+const renderApp = (Component: React.ElementType): void => {
   ReactDOM.render(
     <AppContainer>
-      <Component />
+      <ThemeProvider>
+        <StyleBaseline />
+        <Component />
+      </ThemeProvider>
     </AppContainer>,
     rootNode
   );
@@ -19,10 +24,8 @@ const renderApp = (Component): void => {
 
 renderApp(App);
 
-// @ts-ignore
 if (module.hot) {
-  // @ts-ignore
-  module.hot.accept('./app', () => {
+  module.hot.accept('./App', () => {
     renderApp(App);
   });
 }

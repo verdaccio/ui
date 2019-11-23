@@ -1,119 +1,78 @@
-import React, { Component, Fragment, ReactElement } from 'react';
-import { withRouter, RouteComponentProps } from 'react-router-dom';
-import CardContent from '@material-ui/core/CardContent';
+import React, { useContext } from 'react';
+import { useHistory } from 'react-router-dom';
 
-import { DetailContextConsumer, VersionPageConsumerProps } from '../../pages/Version';
-
-import { CardWrap, Heading, Tags, Tag } from './styles';
+import CardContent from '../../muiComponents/CardContent';
+import { PackageDependencies } from '../../../types/packageMeta';
+import { DetailContext } from '../../pages/Version';
 import NoItems from '../NoItems';
 
-type DepDetailProps = {
-  name: string;
-  version: string;
-  onLoading?: () => void;
-} & RouteComponentProps;
+import { CardWrap, StyledText, Tags, Tag } from './styles';
 
-interface DepDetailState {
-  name: string;
-  version: string;
+interface DependencyBlockProps {
+  title: string;
+  dependencies: PackageDependencies;
 }
 
-class DepDetail extends Component<DepDetailProps, DepDetailState> {
-  constructor(props: DepDetailProps) {
-    super(props);
-    const { name, version } = this.props;
+const DependencyBlock: React.FC<DependencyBlockProps> = ({ title, dependencies }) => {
+  const { enableLoading } = useContext(DetailContext);
+  const history = useHistory();
 
-    this.state = {
-      name,
-      version,
-    };
-  }
+  const deps = Object.entries(dependencies);
 
-  public render(): ReactElement<HTMLElement> {
-    const { name, version } = this.state;
-    const tagText = `${name}@${version}`;
-    return <Tag className={'dep-tag'} clickable={true} label={tagText} onClick={this.handleOnClick} />;
-  }
+  function handleClick(name: string): void {
+    enableLoading && enableLoading();
 
-  private handleOnClick = () => {
-    const { name } = this.state;
-    const { onLoading, history } = this.props;
-
-    onLoading && onLoading();
     history.push(`/-/web/detail/${name}`);
-  };
+  }
+
+  return (
+    <CardWrap>
+      <CardContent>
+        <StyledText variant="subtitle1">{`${title} (${deps.length})`}</StyledText>
+        <Tags>
+          {deps.map(([name, version]) => (
+            // eslint-disable-next-line
+            <Tag className={'dep-tag'} clickable={true} key={name} label={`${name}@${version}`} onClick={() => handleClick(name)} />
+          ))}
+        </Tags>
+      </CardContent>
+    </CardWrap>
+  );
+};
+
+function hasKeys(object?: { [key: string]: any }): boolean {
+  return !!object && Object.keys(object).length > 0;
 }
 
-const WrapperDependencyDetail = withRouter(DepDetail);
+const Dependencies: React.FC<{}> = () => {
+  const { packageMeta } = useContext(DetailContext);
 
-class DependencyBlock extends Component<{ title: string; dependencies: [] }> {
-  public render(): ReactElement<HTMLElement> {
-    const { dependencies, title } = this.props;
-    const deps = Object.entries(dependencies) as [];
+  if (!packageMeta) {
+    throw new Error('packageMeta is required at DetailContext');
+  }
 
+  const { latest } = packageMeta;
+  // FIXME: add dependencies to package meta type
+  // @ts-ignore
+  const { dependencies, devDependencies, peerDependencies, name } = latest;
+  const dependencyMap = { dependencies, devDependencies, peerDependencies };
+  const hasDependencies = hasKeys(dependencies) || hasKeys(devDependencies) || hasKeys(peerDependencies);
+
+  if (hasDependencies) {
     return (
-      <DetailContextConsumer>
-        {({ enableLoading }) => {
-          return (
-            <CardWrap>
-              <CardContent>
-                <Heading variant="subtitle1">{`${title} (${deps.length})`}</Heading>
-                <Tags>{this.renderTags(deps, enableLoading)}</Tags>
-              </CardContent>
-            </CardWrap>
-          );
-        }}
-      </DetailContextConsumer>
+      <>
+        {Object.entries(dependencyMap).map(([dependencyType, dependencies]) => {
+          if (!dependencies || Object.keys(dependencies).length === 0) {
+            return null;
+          }
+
+          return <DependencyBlock dependencies={dependencies} key={dependencyType} title={dependencyType} />;
+        })}
+      </>
     );
   }
 
-  private renderTags = (deps: [], enableLoading?: () => void) =>
-    deps.map(dep => {
-      const [name, version] = dep as [string, string];
-
-      return <WrapperDependencyDetail key={name} name={name} onLoading={enableLoading} version={version} />;
-    });
-}
-
-class Dependencies extends Component {
-  public state = {
-    tabPosition: 0,
-  };
-
-  public render(): ReactElement<HTMLElement> {
-    return (
-      <DetailContextConsumer>
-        {packageMeta => {
-          return this.renderDependencies(packageMeta as VersionPageConsumerProps);
-        }}
-      </DetailContextConsumer>
-    );
-  }
-
-  private checkDependencyLength<T>(dependency: Record<string, T> = {}): boolean {
-    return Object.keys(dependency).length > 0;
-  }
-
-  private renderDependencies({ packageMeta }): ReactElement<HTMLElement> {
-    const { latest } = packageMeta;
-    const { dependencies, devDependencies, peerDependencies, name } = latest;
-
-    const dependencyMap = { dependencies, devDependencies, peerDependencies };
-
-    const dependencyList = Object.keys(dependencyMap).reduce((result, value, key) => {
-      const selectedDepndency = dependencyMap[value];
-      if (selectedDepndency && this.checkDependencyLength(selectedDepndency)) {
-        // @ts-ignore
-        result.push(<DependencyBlock className="dependency-block" dependencies={selectedDepndency} key={key} title={value} />);
-      }
-      return result;
-    }, []);
-
-    if (dependencyList.length) {
-      return <Fragment>{dependencyList}</Fragment>;
-    }
-    return <NoItems className="no-dependencies" text={`${name} has no dependencies.`} />;
-  }
-}
+  return <NoItems className="no-dependencies" text={`${name} has no dependencies.`} />;
+};
 
 export default Dependencies;

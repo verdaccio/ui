@@ -1,6 +1,7 @@
 import React from 'react';
-import { mount, shallow } from 'enzyme';
 import { BrowserRouter } from 'react-router-dom';
+
+import { mount, shallow } from '../../utils/test-enzyme';
 
 import Search from './Search';
 

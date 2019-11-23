@@ -11,7 +11,15 @@ module.exports = {
   rootDir: '..',
   setupFiles: ['<rootDir>/jest/setup.ts'],
   transformIgnorePatterns: ['<rootDir>/node_modules/(?!react-syntax-highlighter)'],
-  modulePathIgnorePatterns: ['<rootDir>/coverage', '<rootDir>/scripts', '<rootDir>/.circleci', '<rootDir>/tools', '<rootDir>/build', '<rootDir>/.vscode/'],
+  modulePathIgnorePatterns: [
+    '<rootDir>/coverage',
+    '<rootDir>/scripts',
+    '<rootDir>/.circleci',
+    '<rootDir>/tools',
+    '<rootDir>/build',
+    '<rootDir>/.vscode/',
+    '<rootDir>/test/e2e/',
+  ],
   snapshotSerializers: ['enzyme-to-json/serializer', 'jest-emotion'],
   moduleNameMapper: {
     '\\.(s?css)$': '<rootDir>/node_modules/identity-obj-proxy',

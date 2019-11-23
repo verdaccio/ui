@@ -1,16 +1,13 @@
-import Card from '@material-ui/core/Card';
-import Typography from '@material-ui/core/Typography';
-import styled from 'react-emotion';
+import styled from '@emotion/styled';
+
+import { default as Typography } from '../../muiComponents/Heading';
+import Card from '../../muiComponents/Card';
 
 export const CardStyled = styled(Card)({
-  '&&': {
-    width: '600px',
-    margin: 'auto',
-  },
+  width: 600,
+  margin: 'auto',
 });
 
 export const HelpTitle = styled(Typography)({
-  '&&': {
-    marginBottom: '20px',
-  },
+  marginBottom: 20,
 });

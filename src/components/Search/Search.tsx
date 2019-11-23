@@ -1,14 +1,14 @@
 import React, { KeyboardEvent, Component, ReactElement } from 'react';
 import { withRouter, RouteComponentProps } from 'react-router-dom';
-import { css } from 'emotion';
-
+import { SuggestionSelectedEventData, ChangeEvent } from 'react-autosuggest';
+import styled from '@emotion/styled';
 import { default as IconSearch } from '@material-ui/icons/Search';
-import InputAdornment from '@material-ui/core/InputAdornment';
 import debounce from 'lodash/debounce';
 
+import InputAdornment from '../../muiComponents/InputAdornment';
 import AutoComplete from '../AutoComplete';
-import colors from '../../utils/styles/colors';
 import { callSearch } from '../../utils/calls';
+import { Theme } from '../../design-tokens/theme';
 
 export interface State {
   search: string;
@@ -17,23 +17,26 @@ export interface State {
   loaded: boolean;
   error: boolean;
 }
-interface AbortControllerInterface {
-  signal: () => void;
-  abort: () => void;
-}
 
 export type cancelAllSearchRequests = () => void;
 export type handlePackagesClearRequested = () => void;
-export type handleSearch = (event: KeyboardEvent<HTMLInputElement>, { newValue, method }: { newValue: string; method: string }) => void;
-export type handleClickSearch = (event: KeyboardEvent<HTMLInputElement>, { suggestionValue, method }: { suggestionValue: object[]; method: string }) => void;
+export type handleSearch = (event: React.FormEvent<HTMLInputElement>, { newValue, method }: ChangeEvent) => void;
+export type handleClickSearch = (
+  event: KeyboardEvent<HTMLInputElement>,
+  { suggestionValue, method }: { suggestionValue: object[]; method: string }
+) => void;
 export type handleFetchPackages = ({ value: string }) => Promise<void>;
-export type onBlur = (event: KeyboardEvent<HTMLInputElement>) => void;
+export type onBlur = (event: React.FormEvent<HTMLInputElement>) => void;
 
 const CONSTANTS = {
   API_DELAY: 300,
   PLACEHOLDER_TEXT: 'Search Packages',
   ABORT_ERROR: 'AbortError',
 };
+
+const StyledInputAdornment = styled(InputAdornment)<{ theme?: Theme }>(props => ({
+  color: props.theme && props.theme.palette.white,
+}));
 
 export class Search extends Component<RouteComponentProps<{}>, State> {
   constructor(props: RouteComponentProps<{}>) {
@@ -56,7 +59,6 @@ export class Search extends Component<RouteComponentProps<{}>, State> {
 
     return (
       <AutoComplete
-        color={colors.white}
         onBlur={this.handleOnBlur}
         onChange={this.handleSearch}
         onCleanSuggestions={this.handlePackagesClearRequested}
@@ -122,8 +124,8 @@ export class Search extends Component<RouteComponentProps<{}>, State> {
    * When an user select any package by clicking or pressing return key.
    */
   private handleClickSearch = (
-    event: React.KeyboardEvent<HTMLInputElement>,
-    { suggestionValue, method }: { suggestionValue: string[]; method: string }
+    event: React.FormEvent<HTMLInputElement>,
+    { suggestionValue, method }: SuggestionSelectedEventData<unknown>
   ): void | undefined => {
     const { history } = this.props;
     // stops event bubbling
@@ -143,7 +145,6 @@ export class Search extends Component<RouteComponentProps<{}>, State> {
    */
   private handleFetchPackages: handleFetchPackages = async ({ value }) => {
     try {
-      // @ts-ignore
       const controller = new window.AbortController();
       const signal = controller.signal;
       // Keep track of search requests.
@@ -169,17 +170,13 @@ export class Search extends Component<RouteComponentProps<{}>, State> {
     }
   };
 
-  private requestList: AbortControllerInterface[];
+  private requestList: AbortController[];
 
   public getAdorment(): JSX.Element {
     return (
-      <InputAdornment
-        className={css`
-          color: ${colors.white};
-        `}
-        position={'start'}>
+      <StyledInputAdornment position={'start'}>
         <IconSearch />
-      </InputAdornment>
+      </StyledInputAdornment>
     );
   }
 

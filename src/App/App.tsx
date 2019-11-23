@@ -3,42 +3,21 @@ import isNil from 'lodash/isNil';
 
 import storage from '../utils/storage';
 import { makeLogin, isTokenExpire } from '../utils/login';
-
 import Loading from '../components/Loading';
 import LoginModal from '../components/Login';
 import Header from '../components/Header';
 import { Container, Content } from '../components/Layout';
-import RouterApp from '../router';
 import API from '../utils/api';
-import '../styles/typeface-roboto.css';
-import '../utils/styles/global';
-import 'normalize.css';
 import Footer from '../components/Footer';
-import { FormError } from 'src/components/Login/Login';
 
-export const AppContext = React.createContext<{}>({});
-export const AppContextProvider = AppContext.Provider;
-export const AppContextConsumer = AppContext.Consumer;
+import AppRoute from './AppRoute';
+import { AppProps, AppContextProvider } from './AppContext';
 
-export interface AppStateInterface {
-  error?: FormError;
-  logoUrl: string;
-  user: {
-    username?: string;
-  };
-  scope: string;
-  showLoginModal: boolean;
-  isUserLoggedIn: boolean;
-  packages: [];
-  isLoading: boolean;
-}
-export default class App extends Component<{}, AppStateInterface> {
-  public state: AppStateInterface = {
-    // @ts-ignore
+export default class App extends Component<{}, AppProps> {
+  public state: AppProps = {
     logoUrl: window.VERDACCIO_LOGO,
     user: {},
-    // @ts-ignore
-    scope: window.VERDACCIO_SCOPE ? `${window.VERDACCIO_SCOPE}:` : '',
+    scope: window.VERDACCIO_SCOPE || '',
     showLoginModal: false,
     isUserLoggedIn: false,
     packages: [],
@@ -51,7 +30,7 @@ export default class App extends Component<{}, AppStateInterface> {
   }
 
   // eslint-disable-next-line no-unused-vars
-  public componentDidUpdate(_, prevState): void {
+  public componentDidUpdate(_: AppProps, prevState: AppProps): void {
     const { isUserLoggedIn } = this.state;
     if (prevState.isUserLoggedIn !== isUserLoggedIn) {
       this.loadOnHandler();
@@ -64,7 +43,6 @@ export default class App extends Component<{}, AppStateInterface> {
     const context = { isUserLoggedIn, packages, logoUrl, user, scope };
 
     return (
-      // @ts-ignore
       <Container isLoading={isLoading}>
         {isLoading ? <Loading /> : <AppContextProvider value={context}>{this.renderContent()}</AppContextProvider>}
         {this.renderLoginModal()}
@@ -75,7 +53,7 @@ export default class App extends Component<{}, AppStateInterface> {
   public isUserAlreadyLoggedIn = () => {
     // checks for token validity
     const token = storage.getItem('token');
-    const username = storage.getItem('username');
+    const username: string = storage.getItem('username') as string;
     if (isTokenExpire(token) || isNil(username)) {
       this.handleLogout();
     } else {
@@ -88,11 +66,10 @@ export default class App extends Component<{}, AppStateInterface> {
 
   public loadOnHandler = async () => {
     try {
-      // @ts-ignore
-      this.req = await API.request('packages', 'GET');
+      const packages = await API.request<any[]>('packages', 'GET');
+      // @ts-ignore: FIX THIS TYPE:  Type 'any[]' is not assignable to type '[]'
       this.setState({
-        // @ts-ignore
-        packages: this.req,
+        packages,
         isLoading: false,
       });
     } catch (error) {
@@ -105,7 +82,7 @@ export default class App extends Component<{}, AppStateInterface> {
     }
   };
 
-  public setLoading = isLoading =>
+  public setLoading = (isLoading: boolean) =>
     this.setState({
       isLoading,
     });
@@ -116,7 +93,6 @@ export default class App extends Component<{}, AppStateInterface> {
    */
   public handleToggleLoginModal = () => {
     this.setState(prevState => ({
-      // @ts-ignore
       showLoginModal: !prevState.showLoginModal,
     }));
   };
@@ -125,8 +101,7 @@ export default class App extends Component<{}, AppStateInterface> {
    * handles login
    * Required by: <Header />
    */
-  public handleDoLogin = async (usernameValue, passwordValue) => {
-    // @ts-ignore
+  public handleDoLogin = async (usernameValue: string, passwordValue: string) => {
     const { username, token, error } = await makeLogin(usernameValue, passwordValue);
 
     if (username && token) {
@@ -143,7 +118,7 @@ export default class App extends Component<{}, AppStateInterface> {
     }
   };
 
-  public setLoggedUser = username => {
+  public setLoggedUser = (username: string) => {
     this.setState({
       user: {
         username,
@@ -168,16 +143,21 @@ export default class App extends Component<{}, AppStateInterface> {
 
   public renderLoginModal = (): ReactElement<HTMLElement> => {
     const { error, showLoginModal } = this.state;
-    return <LoginModal error={error} onCancel={this.handleToggleLoginModal} onSubmit={this.handleDoLogin} visibility={showLoginModal} />;
+    return (
+      <LoginModal
+        error={error}
+        onCancel={this.handleToggleLoginModal}
+        onSubmit={this.handleDoLogin}
+        visibility={showLoginModal}
+      />
+    );
   };
 
   public renderContent = (): ReactElement<HTMLElement> => {
     return (
       <>
         <Content>
-          <RouterApp onLogout={this.handleLogout} onToggleLoginModal={this.handleToggleLoginModal}>
-            {this.renderHeader()}
-          </RouterApp>
+          <AppRoute>{this.renderHeader()}</AppRoute>
         </Content>
         <Footer />
       </>
@@ -187,11 +167,18 @@ export default class App extends Component<{}, AppStateInterface> {
   public renderHeader = (): ReactElement<HTMLElement> => {
     const {
       logoUrl,
-      // @ts-ignore
       user: { username },
       scope,
     } = this.state;
 
-    return <Header logo={logoUrl} onLogout={this.handleLogout} onToggleLoginModal={this.handleToggleLoginModal} scope={scope} username={username} />;
+    return (
+      <Header
+        logo={logoUrl}
+        onLogout={this.handleLogout}
+        onToggleLoginModal={this.handleToggleLoginModal}
+        scope={scope}
+        username={username}
+      />
+    );
   };
 }

@@ -3,7 +3,7 @@
  */
 
 import { Base64 } from 'js-base64';
-import addHours from 'date-fns/add_hours';
+import addHours from 'date-fns/addHours';
 
 export function generateTokenWithTimeRange(limit = 0) {
   const payload = {
@@ -15,6 +15,11 @@ export function generateTokenWithTimeRange(limit = 0) {
 
 export function generateTokenWithExpirationAsString() {
   const payload = { username: 'verdaccio', exp: 'I am not a number' };
+  return `xxxxxx.${Base64.encode(JSON.stringify(payload))}.xxxxxx`;
+}
+
+export function generateInvalidToken() {
+  const payload = `invalidtoken`;
   return `xxxxxx.${Base64.encode(payload)}.xxxxxx`;
 }
 

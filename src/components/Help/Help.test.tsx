@@ -1,10 +1,12 @@
 import React from 'react';
-import { mount } from 'enzyme';
+
+import { render } from '../../utils/test-react-testing-library';
+
 import Help from './Help';
 
 describe('<Help /> component', () => {
-  test('should render the component in default state', () => {
-    const wrapper = mount(<Help />);
-    expect(wrapper.html()).toMatchSnapshot();
+  test('should load the component in default state', () => {
+    const { container } = render(<Help />);
+    expect(container.firstChild).toMatchSnapshot();
   });
 });

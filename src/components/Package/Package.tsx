@@ -1,15 +1,18 @@
 import React from 'react';
-
 import BugReport from '@material-ui/icons/BugReport';
-import Grid from '@material-ui/core/Grid';
+import DownloadIcon from '@material-ui/icons/CloudDownload';
 import HomeIcon from '@material-ui/icons/Home';
-import ListItem from '@material-ui/core/ListItem';
-import Tooltip from '@material-ui/core/Tooltip';
 
-import { PackageMetaInterface } from 'types/packageMeta';
+import { PackageMetaInterface, Author as PackageAuthor } from '../../../types/packageMeta';
 import Tag from '../Tag';
 import fileSizeSI from '../../utils/file-size';
 import { formatDate, formatDateDistance } from '../../utils/package';
+import Tooltip from '../../muiComponents/Tooltip';
+import { isURL } from '../../utils/url';
+import { downloadHandler } from '../ActionBar/ActionBar';
+import ListItem from '../../muiComponents/ListItem';
+import Grid from '../../muiComponents/Grid';
+
 import {
   Author,
   Avatar,
@@ -20,7 +23,6 @@ import {
   IconButton,
   OverviewItem,
   PackageList,
-  PackageListItem,
   PackageListItemText,
   PackageTitle,
   Published,
@@ -28,25 +30,20 @@ import {
   Text,
   WrapperLink,
 } from './styles';
-import { isURL } from '../../utils/url';
-interface Author {
-  name: string;
-  avatar?: string;
-  email?: string;
-}
 
 interface Bugs {
   url: string;
 }
 interface Dist {
   unpackedSize: number;
+  tarball: string;
 }
 
 export interface PackageInterface {
   name: string;
   version: string;
   time?: number | string;
-  author: Author;
+  author: PackageAuthor;
   description?: string;
   keywords?: string[];
   license?: PackageMetaInterface['latest']['license'];
@@ -138,25 +135,40 @@ const Package: React.FC<PackageInterface> = ({
       </a>
     );
 
+  const renderDownloadLink = (): React.ReactNode =>
+    dist &&
+    dist.tarball &&
+    isURL(dist.tarball) && (
+      // eslint-disable-next-line
+      <a onClick={() => downloadHandler(dist.tarball.replace(`https://registry.npmjs.org/`, window.location.href))} target={'_blank'}>
+        <Tooltip aria-label={'Download the tar file'} title={'Download tarball'}>
+          <IconButton aria-label={'Download'}>
+            {/* eslint-disable-next-line react/jsx-max-depth */}
+            <DownloadIcon />
+          </IconButton>
+        </Tooltip>
+      </a>
+    );
+
   const renderPrimaryComponent = (): React.ReactNode => {
     return (
       <Grid container={true} item={true} xs={12}>
         <Grid item={true} xs={true}>
           <WrapperLink to={`/-/web/detail/${packageName}`}>
             {/* eslint-disable-next-line react/jsx-max-depth */}
-            <PackageTitle>{packageName}</PackageTitle>
+            <PackageTitle className="package-title">{packageName}</PackageTitle>
           </WrapperLink>
         </Grid>
         <GridRightAligned item={true} xs={true}>
           {renderHomePageLink()}
           {renderBugsLink()}
+          {renderDownloadLink()}
         </GridRightAligned>
       </Grid>
     );
   };
 
   const renderSecondaryComponent = (): React.ReactNode => {
-    // @ts-ignore
     const tags = keywords.sort().map((keyword, index) => <Tag key={index}>{keyword}</Tag>);
     return (
       <>
@@ -167,20 +179,25 @@ const Package: React.FC<PackageInterface> = ({
   };
 
   const renderPackageListItemText = (): React.ReactNode => (
-    // @ts-ignore
-    <PackageListItemText className="package-link" component="div" primary={renderPrimaryComponent()} secondary={renderSecondaryComponent()} />
+    <PackageListItemText
+      className="package-link"
+      // @ts-ignore
+      component="div"
+      primary={renderPrimaryComponent()}
+      secondary={renderSecondaryComponent()}
+    />
   );
 
   return (
     <PackageList className={'package'}>
       <ListItem alignItems={'flex-start'}>{renderPackageListItemText()}</ListItem>
-      <PackageListItem alignItems={'flex-start'} button={true}>
+      <ListItem alignItems={'flex-start'}>
         {renderAuthorInfo()}
         {renderVersionInfo()}
         {renderPublishedInfo()}
         {renderFileSize()}
         {renderLicenseInfo()}
-      </PackageListItem>
+      </ListItem>
     </PackageList>
   );
 };

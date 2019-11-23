@@ -1,8 +1,10 @@
 import React from 'react';
-import { mount } from 'enzyme';
+
+import { mount } from '../../utils/test-enzyme';
+import { DetailContextProvider } from '../../pages/Version';
+
 import Developers, { DevelopersType } from './Developers';
 import { Fab } from './styles';
-import { DetailContextProvider } from '../../pages/Version';
 
 describe('test Developers', () => {
   const packageMeta = {

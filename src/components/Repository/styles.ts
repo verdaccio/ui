@@ -1,52 +1,40 @@
-import styled from 'react-emotion';
-import Grid from '@material-ui/core/Grid';
-import ListItem from '@material-ui/core/ListItem';
-import Typography from '@material-ui/core/Typography';
+import styled from '@emotion/styled';
 
 import Github from '../../icons/GitHub';
-import colors from '../../utils/styles/colors';
 import { fontWeight } from '../../utils/styles/sizes';
-import ListItemText from '@material-ui/core/ListItemText';
+import Text from '../../muiComponents/Text';
+import ListItem from '../../muiComponents/ListItem';
+import ListItemText from '../../muiComponents/ListItemText';
+import Grid from '../../muiComponents/Grid';
+import { Theme } from '../../design-tokens/theme';
 
-export const Heading = styled(Typography)({
-  '&&': {
-    fontWeight: fontWeight.bold,
-    textTransform: 'capitalize',
-  },
+export const StyledText = styled(Text)({
+  fontWeight: fontWeight.bold,
+  textTransform: 'capitalize',
 });
 
 export const GridRepo = styled(Grid)({
-  '&&': {
-    alignItems: 'center',
-  },
+  alignItems: 'center',
 });
 
-export const GithubLink = styled('a')({
-  '&&': {
-    color: colors.primary,
-  },
-});
+export const GithubLink = styled('a')<{ theme?: Theme }>(props => ({
+  color: props.theme && props.theme.palette.primary.main,
+}));
 
-export const GithubLogo = styled(Github)({
-  '&&': {
-    fontSize: '40px',
-    color: colors.primary,
-    backgroundColor: colors.greySuperLight,
-  },
-});
+export const GithubLogo = styled(Github)<{ theme?: Theme }>(props => ({
+  fontSize: 40,
+  color: props.theme && props.theme.palette.primary.main,
+  backgroundColor: props.theme && props.theme.palette.greySuperLight,
+}));
 
 export const RepositoryListItem = styled(ListItem)({
-  '&&': {
-    padding: 0,
-  },
-  '&&:hover': {
+  padding: 0,
+  ':hover': {
     backgroundColor: 'transparent',
   },
 });
 
 export const RepositoryListItemText = styled(ListItemText)({
-  '&&': {
-    padding: '0 10px',
-    margin: 0,
-  },
+  padding: '0 10px',
+  margin: 0,
 });

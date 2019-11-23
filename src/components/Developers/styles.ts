@@ -1,9 +1,9 @@
-import styled from 'react-emotion';
-import Typography from '@material-ui/core/Typography';
-import { default as MuiFab } from '@material-ui/core/Fab';
+import styled from '@emotion/styled';
 
-import colors from '../../utils/styles/colors';
 import { fontWeight } from '../../utils/styles/sizes';
+import Text from '../../muiComponents/Text';
+import FloatingActionButton from '../../muiComponents/FloatingActionButton';
+import { Theme } from '../../design-tokens/theme';
 
 export const Details = styled('span')({
   display: 'flex',
@@ -20,17 +20,13 @@ export const Content = styled('div')({
   },
 });
 
-export const Heading = styled(Typography)({
-  '&&': {
-    fontWeight: fontWeight.bold,
-    marginBottom: '10px',
-    textTransform: 'capitalize',
-  },
+export const StyledText = styled(Text)({
+  fontWeight: fontWeight.bold,
+  marginBottom: '10px',
+  textTransform: 'capitalize',
 });
 
-export const Fab = styled(MuiFab)({
-  '&&': {
-    backgroundColor: colors.primary,
-    color: colors.white,
-  },
-});
+export const Fab = styled(FloatingActionButton)<{ theme?: Theme }>(props => ({
+  backgroundColor: props.theme && props.theme.palette.primary.main,
+  color: props.theme && props.theme.palette.white,
+}));

@@ -1,90 +1,43 @@
-import React, { ReactElement } from 'react';
-import List from '@material-ui/core/List';
-import { Link as RouterLink } from 'react-router-dom';
-import Link from '@material-ui/core/Link';
-import ListItem from '@material-ui/core/ListItem';
+import React, { useContext } from 'react';
 
-import { DetailContextConsumer } from '../../pages/Version';
-import { formatDateDistance } from '../../utils/package';
+import { DetailContext } from '../../pages/Version';
 import { DIST_TAGS } from '../../../lib/constants';
 
-import { Heading, Spacer, ListItemText } from './styles';
+import { StyledText } from './styles';
+import VersionsTagList from './VersionsTagList';
+import VersionsHistoryList from './VersionsHistoryList';
 
 export const NOT_AVAILABLE = 'Not available';
 export const LABEL_CURRENT_TAGS = 'Current Tags';
 export const LABEL_VERSION_HISTORY = 'Version History';
 
-class Versions extends React.PureComponent {
-  public render(): ReactElement<HTMLDivElement> {
-    return (
-      <DetailContextConsumer>
-        {context => {
-          const { packageMeta, packageName } = context;
+const Versions: React.FC = () => {
+  const detailContext = useContext(DetailContext);
 
-          if (!packageMeta) {
-            return null;
-          }
+  const { packageMeta, packageName } = detailContext;
 
-          return this.renderContent(packageMeta, packageName);
-        }}
-      </DetailContextConsumer>
-    );
+  if (!packageMeta) {
+    return null;
   }
 
-  public renderPackageList = (packages: {}, timeMap: Record<string, {}>, packageName): ReactElement<HTMLDivElement> => {
-    return (
-      <List dense={true}>
-        {Object.keys(packages)
-          .reverse()
-          .map(version => (
-            <ListItem className="version-item" key={version}>
-              <Link component={RouterLink} to={`/-/web/detail/${packageName}/v/${version}`}>
-                <ListItemText>{version}</ListItemText>
-              </Link>
-              <Spacer />
-              <ListItemText>{timeMap[version] ? `${formatDateDistance(timeMap[version])} ago` : NOT_AVAILABLE}</ListItemText>
-            </ListItem>
-          ))}
-      </List>
-    );
-  };
+  const { versions = {}, time = {}, [DIST_TAGS]: distTags = {} } = packageMeta;
 
-  public renderTagList = (packages: {}): ReactElement<HTMLDivElement> => {
-    return (
-      <List dense={true}>
-        {Object.keys(packages)
-          .reverse()
-          .map(tag => (
-            <ListItem className="version-item" key={tag}>
-              <ListItemText>{tag}</ListItemText>
-              <Spacer />
-              <ListItemText>{packages[tag]}</ListItemText>
-            </ListItem>
-          ))}
-      </List>
-    );
-  };
-
-  public renderContent(packageMeta, packageName): ReactElement<HTMLDivElement> {
-    const { versions = {}, time: timeMap = {}, [DIST_TAGS]: distTags = {} } = packageMeta;
-
-    return (
-      <>
-        {distTags && (
-          <>
-            <Heading variant="subtitle1">{LABEL_CURRENT_TAGS}</Heading>
-            {this.renderTagList(distTags)}
-          </>
-        )}
-        {versions && (
-          <>
-            <Heading variant="subtitle1">{LABEL_VERSION_HISTORY}</Heading>
-            {this.renderPackageList(versions, timeMap, packageName)}
-          </>
-        )}
-      </>
-    );
-  }
-}
+  return (
+    <>
+      {distTags && Object.keys(distTags).length > 0 && (
+        <>
+          <StyledText variant="subtitle1">{LABEL_CURRENT_TAGS}</StyledText>
+          <VersionsTagList tags={distTags} />
+        </>
+      )}
+      {versions && Object.keys(versions).length > 0 && packageName && (
+        <>
+          <StyledText variant="subtitle1">{LABEL_VERSION_HISTORY}</StyledText>
+          <VersionsHistoryList packageName={packageName} time={time} versions={versions} />
+        </>
+      )}
+    </>
+  );
+};
 
 export default Versions;

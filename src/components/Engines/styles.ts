@@ -1,17 +1,14 @@
-import styled from 'react-emotion';
-import ListItem from '@material-ui/core/ListItem';
-import Typography from '@material-ui/core/Typography';
-import { fontWeight } from '../../utils/styles/sizes';
+import styled from '@emotion/styled';
 
-export const Heading = styled(Typography)({
-  '&&': {
-    fontWeight: fontWeight.bold,
-    textTransform: 'capitalize',
-  },
+import { fontWeight } from '../../utils/styles/sizes';
+import ListItem from '../../muiComponents/ListItem';
+import Text from '../../muiComponents/Text';
+
+export const StyledText = styled(Text)({
+  fontWeight: fontWeight.bold,
+  textTransform: 'capitalize',
 });
 
 export const EngineListItem = styled(ListItem)({
-  '&&': {
-    paddingLeft: 0,
-  },
+  paddingLeft: 0,
 });

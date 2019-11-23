@@ -1,19 +1,16 @@
-import styled from 'react-emotion';
-import DialogTitle from '@material-ui/core/DialogTitle';
-import DialogContent from '@material-ui/core/DialogContent';
-import colors from '../../utils/styles/colors';
-import { fontSize } from '../../utils/styles/sizes';
+import styled from '@emotion/styled';
 
-export const Title = styled(DialogTitle)({
-  '&&': {
-    backgroundColor: colors.primary,
-    color: colors.white,
-    fontSize: fontSize.lg,
-  },
-});
+import { fontSize } from '../../utils/styles/sizes';
+import DialogTitle from '../../muiComponents/DialogTitle';
+import DialogContent from '../../muiComponents/DialogContent';
+import { Theme } from '../../design-tokens/theme';
+
+export const Title = styled(DialogTitle)<{ theme?: Theme }>(props => ({
+  backgroundColor: props.theme && props.theme.palette.primary.main,
+  color: props.theme && props.theme.palette.white,
+  fontSize: fontSize.lg,
+}));
 
 export const Content = styled(DialogContent)({
-  '&&': {
-    padding: '0 24px',
-  },
+  padding: '0 24px',
 });
