@@ -1,16 +1,16 @@
 import React from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
 
-import { render, fireEvent, waitForElementToBeRemoved, waitForElement } from '../../utils/test-react-testing-library';
+import { render, fireEvent, waitForElement, waitForElementToBeRemoved } from '../../utils/test-react-testing-library';
+import { AppContextProvider } from '../../App';
 
 import Header from './Header';
 
-const headerProps = {
-  username: 'verddacio-user',
-  scope: 'test scope',
-  withoutSearch: true,
-  handleToggleLoginModal: jest.fn(),
-  handleLogout: jest.fn(),
+const props = {
+  user: {
+    username: 'verddacio-user',
+  },
+  packages: [],
 };
 
 /* eslint-disable react/jsx-no-bind*/
@@ -18,11 +18,9 @@ describe('<Header /> component with logged in state', () => {
   test('should load the component in logged out state', () => {
     const { container, queryByTestId, getByText } = render(
       <Router>
-        <Header
-          onLogout={headerProps.handleLogout}
-          onToggleLoginModal={headerProps.handleToggleLoginModal}
-          scope={headerProps.scope}
-        />
+        <AppContextProvider packages={props.packages}>
+          <Header />
+        </AppContextProvider>
       </Router>
     );
 
@@ -34,12 +32,9 @@ describe('<Header /> component with logged in state', () => {
   test('should load the component in logged in state', () => {
     const { container, getByTestId, queryByText } = render(
       <Router>
-        <Header
-          onLogout={headerProps.handleLogout}
-          onToggleLoginModal={headerProps.handleToggleLoginModal}
-          scope={headerProps.scope}
-          username={headerProps.username}
-        />
+        <AppContextProvider packages={props.packages} user={props.user}>
+          <Header />
+        </AppContextProvider>
       </Router>
     );
 
@@ -49,30 +44,27 @@ describe('<Header /> component with logged in state', () => {
   });
 
   test('should open login dialog', async () => {
-    const { getByText } = render(
+    const { getByText, getByTestId } = render(
       <Router>
-        <Header
-          onLogout={headerProps.handleLogout}
-          onToggleLoginModal={headerProps.handleToggleLoginModal}
-          scope={headerProps.scope}
-        />
+        <AppContextProvider packages={props.packages}>
+          <Header />
+        </AppContextProvider>
       </Router>
     );
 
     const loginBtn = getByText('Login');
     fireEvent.click(loginBtn);
-    expect(headerProps.handleToggleLoginModal).toHaveBeenCalled();
+    // wait for login modal appearance and return the element
+    const registrationInfoModal = await waitForElement(() => getByTestId('login--form-container'));
+    expect(registrationInfoModal).toBeTruthy();
   });
 
   test('should logout the user', async () => {
     const { getByText, getByTestId } = render(
       <Router>
-        <Header
-          onLogout={headerProps.handleLogout}
-          onToggleLoginModal={headerProps.handleToggleLoginModal}
-          scope={headerProps.scope}
-          username={headerProps.username}
-        />
+        <AppContextProvider packages={props.packages} user={props.user}>
+          <Header />
+        </AppContextProvider>
       </Router>
     );
 
@@ -82,18 +74,15 @@ describe('<Header /> component with logged in state', () => {
     // wait for button Logout's appearance and return the element
     const logoutBtn = await waitForElement(() => getByText('Logout'));
     fireEvent.click(logoutBtn);
-    expect(headerProps.handleLogout).toHaveBeenCalled();
+    expect(getByText('Login')).toBeTruthy();
   });
 
-  test("The question icon should open a new tab of verdaccio's website - installation doc", async () => {
+  test("The question icon should open a new tab of verdaccio's website - installation doc", () => {
     const { getByTestId } = render(
       <Router>
-        <Header
-          onLogout={headerProps.handleLogout}
-          onToggleLoginModal={headerProps.handleToggleLoginModal}
-          scope={headerProps.scope}
-          username={headerProps.username}
-        />
+        <AppContextProvider packages={props.packages} user={props.user}>
+          <Header />
+        </AppContextProvider>
       </Router>
     );
 
@@ -104,12 +93,9 @@ describe('<Header /> component with logged in state', () => {
   test('should open the registrationInfo modal when clicking on the info icon', async () => {
     const { getByTestId } = render(
       <Router>
-        <Header
-          onLogout={headerProps.handleLogout}
-          onToggleLoginModal={headerProps.handleToggleLoginModal}
-          scope={headerProps.scope}
-          username={headerProps.username}
-        />
+        <AppContextProvider packages={props.packages} user={props.user}>
+          <Header />
+        </AppContextProvider>
       </Router>
     );
 
@@ -124,12 +110,9 @@ describe('<Header /> component with logged in state', () => {
   test('should close the registrationInfo modal when clicking on the button close', async () => {
     const { getByTestId, getByText, queryByTestId } = render(
       <Router>
-        <Header
-          onLogout={headerProps.handleLogout}
-          onToggleLoginModal={headerProps.handleToggleLoginModal}
-          scope={headerProps.scope}
-          username={headerProps.username}
-        />
+        <AppContextProvider packages={props.packages} user={props.user}>
+          <Header />
+        </AppContextProvider>
       </Router>
     );
 
@@ -144,6 +127,6 @@ describe('<Header /> component with logged in state', () => {
       queryByTestId('registryInfo--dialog')
     );
     expect(hasRegistrationInfoModalBeenRemoved).toBeTruthy();
+    test.todo('autocompletion should display suggestions according to the type value');
   });
-  test.todo('autocompletion should display suggestions according to the type value');
 });

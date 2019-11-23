@@ -141,6 +141,7 @@ exports[`<Header /> component with logged in state should load the component in 
 
 <header
   class="MuiPaper-root MuiPaper-elevation4 MuiAppBar-root MuiAppBar-positionStatic emotion-24 emotion-25 MuiAppBar-colorPrimary"
+  data-testid="header"
 >
   <div
     class="MuiToolbar-root MuiToolbar-regular emotion-22 emotion-23 MuiToolbar-gutters"
@@ -472,6 +473,7 @@ exports[`<Header /> component with logged in state should load the component in 
 
 <header
   class="MuiPaper-root MuiPaper-elevation4 MuiAppBar-root MuiAppBar-positionStatic emotion-24 emotion-25 MuiAppBar-colorPrimary"
+  data-testid="header"
 >
   <div
     class="MuiToolbar-root MuiToolbar-regular emotion-22 emotion-23 MuiToolbar-gutters"
