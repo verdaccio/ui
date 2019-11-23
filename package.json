@@ -186,24 +186,18 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged",
+      "pre-commit": "lint-staged --relative",
       "commit-msg": "commitlint -e $GIT_PARAMS"
     }
   },
   "lint-staged": {
-    "relative": true,
-    "linters": {
-      "*.{js,tsx,ts}": [
-        "eslint . --ext .js,.ts,.tsx",
-        "prettier --write"
-      ],
-      "*": [
-        "detect-secrets-launcher --baseline .secrets-baseline",
-        "git add"
-      ]
-    },
-    "ignore": [
-      "*.json"
+    "*.{js,tsx,ts}": [
+      "eslint . --ext .js,.ts,.tsx",
+      "prettier --write"
+    ],
+    "*": [
+      "detect-secrets-launcher --baseline .secrets-baseline",
+      "git add"
     ]
   },
   "license": "MIT",
