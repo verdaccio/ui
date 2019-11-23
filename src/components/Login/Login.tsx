@@ -116,8 +116,8 @@ export default class LoginModal extends Component<Partial<LoginModalProps>, Logi
     this.setState(
       {
         form: {
-          username: { ...form.username, pristine: true },
-          password: { ...form.password, pristine: true },
+          username: { ...form.username, pristine: false },
+          password: { ...form.password, pristine: false },
         },
       },
       () => {
