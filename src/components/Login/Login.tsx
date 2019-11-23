@@ -41,6 +41,8 @@ interface LoginModalState {
   error?: FormError;
 }
 
+type CredentialKey = keyof LoginModalState['form'];
+
 export default class LoginModal extends Component<Partial<LoginModalProps>, LoginModalState> {
   constructor(props: LoginModalProps) {
     super(props);
@@ -84,7 +86,7 @@ export default class LoginModal extends Component<Partial<LoginModalProps>, Logi
    * set login modal's username and password to current state
    * Required to login
    */
-  public setCredentials = (name, e) => {
+  public setCredentials = (name: CredentialKey, e: React.ChangeEvent<HTMLInputElement>) => {
     const { form } = this.state;
     this.setState({
       form: {
@@ -98,31 +100,28 @@ export default class LoginModal extends Component<Partial<LoginModalProps>, Logi
     });
   };
 
-  public handleUsernameChange = event => {
+  public handleUsernameChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     this.setCredentials('username', event);
   };
 
-  public handlePasswordChange = event => {
+  public handlePasswordChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     this.setCredentials('password', event);
   };
 
-  public handleValidateCredentials = event => {
+  public handleValidateCredentials = (event: React.FormEvent<HTMLFormElement>) => {
     const { form } = this.state;
     // prevents default submit behavior
     event.preventDefault();
 
     this.setState(
       {
-        form: Object.keys(form).reduce(
-          (acc, key) => ({
-            ...acc,
-            ...{ [key]: { ...form[key], pristine: false } },
-          }),
-          { username: {}, password: {} }
-        ),
+        form: {
+          username: { ...form.username, pristine: true },
+          password: { ...form.password, pristine: true },
+        },
       },
       () => {
-        if (!Object.keys(form).some(id => !form[id])) {
+        if (form.username && form.username) {
           this.submitCredentials();
         }
       }
@@ -131,8 +130,8 @@ export default class LoginModal extends Component<Partial<LoginModalProps>, Logi
 
   public submitCredentials = async () => {
     const { form } = this.state;
-    const username = (form.username && form.username.value) || '';
-    const password = (form.password && form.password.value) || '';
+    const username = form.username?.value ?? '';
+    const password = form.password?.value ?? '';
     const { onSubmit } = this.props;
     if (onSubmit) {
       await onSubmit(username, password);
@@ -140,13 +139,10 @@ export default class LoginModal extends Component<Partial<LoginModalProps>, Logi
     // let's wait for API response and then set
     // username and password filed to empty state
     this.setState({
-      form: Object.keys(form).reduce(
-        (acc, key) => ({
-          ...acc,
-          ...{ [key]: { ...form[key], value: '', pristine: true } },
-        }),
-        { username: {}, password: {} }
-      ),
+      form: {
+        username: { ...form.username, value: '', pristine: true },
+        password: { ...form.password, value: '', pristine: true },
+      },
     });
   };
 

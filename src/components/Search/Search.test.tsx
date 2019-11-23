@@ -155,7 +155,7 @@ describe('<Search /> component test', () => {
     beforeEach(() => {
       jest.resetModules();
       jest.doMock('lodash/debounce', () => {
-        return function debounceMock(fn) {
+        return function debounceMock(fn: unknown) {
           return fn;
         };
       });
@@ -219,7 +219,7 @@ describe('<Search /> component test', () => {
       const apiResponse = { name: 'BAD_REQUEST' };
 
       jest.doMock(API_FILE_PATH, () => ({
-        callSearch(url) {
+        callSearch() {
           return Promise.reject(apiResponse);
         },
       }));
@@ -246,7 +246,7 @@ describe('<Search /> component test', () => {
       const getDetailPageURL = jest.fn(() => 'detail/page/url');
       jest.doMock(URL_FILE_PATH, () => ({ getDetailPageURL }));
 
-      const suggestionValue = [];
+      const suggestionValue: unknown[] = [];
       const Search = require(SEARCH_FILE_PATH).Search;
       const pushHandler = jest.fn();
       const routerWrapper = shallow(

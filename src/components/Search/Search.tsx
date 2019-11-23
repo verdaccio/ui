@@ -25,7 +25,7 @@ export type handleClickSearch = (
   event: KeyboardEvent<HTMLInputElement>,
   { suggestionValue, method }: { suggestionValue: object[]; method: string }
 ) => void;
-export type handleFetchPackages = ({ value: string }) => Promise<void>;
+export type handleFetchPackages = (arg: { value: string }) => Promise<void>;
 export type onBlur = (event: React.FormEvent<HTMLInputElement>) => void;
 
 const CONSTANTS = {

@@ -1,6 +1,7 @@
 import React from 'react';
 
 import { mount } from '../../utils/test-enzyme';
+import { PackageMetaInterface } from '../../../types/packageMeta';
 
 import Repository from './Repository';
 
@@ -19,7 +20,7 @@ const mockPackageMeta: jest.Mock = jest.fn(() => ({
 }));
 
 jest.mock('../../pages/Version', () => ({
-  DetailContextConsumer: component => {
+  DetailContextConsumer: (component: { children: (arg0: { packageMeta: PackageMetaInterface }) => void }) => {
     return component.children({ packageMeta: mockPackageMeta() });
   },
 }));

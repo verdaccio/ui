@@ -16,7 +16,11 @@ export interface PackageMetaInterface {
     license?: Partial<LicenseInterface> | string;
     version: string;
   };
-  _uplinks: {};
+  _uplinks: Record<string, UplinkInterface>;
+}
+
+interface UplinkInterface {
+  fetched: string | number;
 }
 
 interface LicenseInterface {
