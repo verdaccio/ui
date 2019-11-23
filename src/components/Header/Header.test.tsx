@@ -25,7 +25,7 @@ describe('<Header /> component with logged in state', () => {
     );
 
     expect(container.firstChild).toMatchSnapshot();
-    expect(queryByTestId('header--menu-acountcircle')).toBeNull();
+    expect(queryByTestId('header--menu-accountcircle')).toBeNull();
     expect(getByText('Login')).toBeTruthy();
   });
 
@@ -39,7 +39,7 @@ describe('<Header /> component with logged in state', () => {
     );
 
     expect(container.firstChild).toMatchSnapshot();
-    expect(getByTestId('header--menu-acountcircle')).toBeTruthy();
+    expect(getByTestId('header--menu-accountcircle')).toBeTruthy();
     expect(queryByText('Login')).toBeNull();
   });
 
@@ -68,7 +68,7 @@ describe('<Header /> component with logged in state', () => {
       </Router>
     );
 
-    const headerMenuAccountCircle = getByTestId('header--menu-acountcircle');
+    const headerMenuAccountCircle = getByTestId('header--menu-accountcircle');
     fireEvent.click(headerMenuAccountCircle);
 
     // wait for button Logout's appearance and return the element

@@ -28,7 +28,7 @@ const HeaderMenu: React.FC<Props> = ({
   <>
     <IconButton
       color="inherit"
-      data-testid="header--menu-acountcircle"
+      data-testid="header--menu-accountcircle"
       id="header--button-account"
       onClick={onLoggedInMenu}>
       <AccountCircle />
