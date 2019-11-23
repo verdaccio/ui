@@ -1,12 +1,13 @@
 import React from 'react';
-import { shallow } from 'enzyme';
+
+import { mount } from '../../utils/test-enzyme';
 
 import Spinner from './Spinner';
 import { Circular, Wrapper } from './styles';
 
 describe('<Spinner /> component', () => {
   test('should render the component in default state', () => {
-    const wrapper = shallow(<Spinner />);
+    const wrapper = mount(<Spinner />);
     const wrapperComponent = wrapper.find(Wrapper);
     const circular = wrapper.find(Circular);
 
@@ -15,7 +16,7 @@ describe('<Spinner /> component', () => {
   });
 
   test('should render the component in custom state', () => {
-    const wrapper = shallow(<Spinner centered={true} size={10} />);
+    const wrapper = mount(<Spinner centered={true} size={10} />);
     const wrapperComponent = wrapper.find(Wrapper);
     const circular = wrapper.find(Circular);
 

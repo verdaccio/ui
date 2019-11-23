@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { css } from 'emotion';
+import { css } from '@emotion/core';
 
 import CopyToClipBoard from '../CopyToClipBoard';
 import { getCLISetRegistry, getCLIChangePassword, getCLISetConfigRegistry } from '../../utils/cli-utils';
@@ -70,10 +70,10 @@ const RegistryInfoContent: React.FC<Props> = props => {
     return (
       <CommandContainer>
         <Typography
-          className={css`
-            padding: 0;
-            min-height: 170;
-          `}
+          // className={css`
+          //   padding: 0;
+          //   min-height: 170;
+          // `}
           component="div">
           {children}
         </Typography>

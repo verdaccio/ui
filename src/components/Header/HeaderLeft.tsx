@@ -1,5 +1,5 @@
 import React from 'react';
-import { css } from 'emotion';
+import styled from '@emotion/styled';
 import { Link } from 'react-router-dom';
 
 import Search from '../Search/';
@@ -12,15 +12,15 @@ interface Props {
   logo?: string;
 }
 
+const StyledLink = styled(Link)({
+  marginRight: '1em',
+});
+
 const HeaderLeft: React.FC<Props> = ({ withoutSearch = false, logo }) => (
   <LeftSide>
-    <Link
-      className={css`
-        margin-right: 1em;
-      `}
-      to={'/'}>
+    <StyledLink to={'/'}>
       <HeaderLogo logo={logo} />
-    </Link>
+    </StyledLink>
     {!withoutSearch && (
       <SearchWrapper>
         <Search />

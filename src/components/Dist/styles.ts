@@ -1,6 +1,6 @@
-import styled from 'react-emotion';
+import styled from '@emotion/styled';
 
-import colors from '../../utils/styles/colors';
+import { Theme } from '../../design-tokens/theme';
 import { fontWeight } from '../../utils/styles/sizes';
 import ListItem from '../../muiComponents/ListItem';
 import Text from '../../muiComponents/Text';
@@ -18,11 +18,11 @@ export const DistListItem = styled(ListItem)({
 });
 
 export const DistChips = styled(Chip)({
-  marginRight: '5px',
+  marginRight: 5,
   textTransform: 'capitalize',
 });
 
-export const DownloadButton = styled(FloatingActionButton)({
-  backgroundColor: colors.primary,
-  color: colors.white,
-});
+export const DownloadButton = styled(FloatingActionButton)<{ theme?: Theme }>(props => ({
+  backgroundColor: props.theme && props.theme.palette.primary.main,
+  color: props.theme && props.theme.palette.white,
+}));

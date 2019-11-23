@@ -1,6 +1,7 @@
 import React from 'react';
-import { mount, ReactWrapper } from 'enzyme';
+import { ReactWrapper } from 'enzyme';
 
+import { mount } from '../utils/test-enzyme';
 import storage from '../utils/storage';
 import { generateTokenWithTimeRange } from '../../jest/unit/components/__mocks__/token';
 

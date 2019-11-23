@@ -9,7 +9,6 @@ import Header from '../components/Header';
 import { Container, Content } from '../components/Layout';
 import API from '../utils/api';
 import Footer from '../components/Footer';
-import StyleBaseline from '../design-tokens/StyleBaseline';
 
 import AppRoute from './AppRoute';
 import { AppProps, AppContextProvider } from './AppContext';
@@ -44,13 +43,10 @@ export default class App extends Component<{}, AppProps> {
     const context = { isUserLoggedIn, packages, logoUrl, user, scope };
 
     return (
-      <>
-        <StyleBaseline />
-        <Container isLoading={isLoading}>
-          {isLoading ? <Loading /> : <AppContextProvider value={context}>{this.renderContent()}</AppContextProvider>}
-          {this.renderLoginModal()}
-        </Container>
-      </>
+      <Container isLoading={isLoading}>
+        {isLoading ? <Loading /> : <AppContextProvider value={context}>{this.renderContent()}</AppContextProvider>}
+        {this.renderLoginModal()}
+      </Container>
     );
   }
 

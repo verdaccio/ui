@@ -16,6 +16,11 @@ const resetStyles = makeStyles(() => ({
     'html, body, #root': {
       height: '100%',
     },
+    ul: {
+      margin: 0,
+      padding: 0,
+      listStyle: 'none',
+    },
     '.container': {
       padding: 15,
       flex: 1,

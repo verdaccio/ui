@@ -1,7 +1,8 @@
 import React from 'react';
-import { mount, ReactWrapper } from 'enzyme';
+import { ReactWrapper } from 'enzyme';
 
 import { copyToClipBoardUtility } from '../../utils/cli-utils';
+import { mount } from '../../utils/test-enzyme';
 
 import CopyToClipBoard from './CopyToClipBoard';
 import { CopyIcon } from './styles';
@@ -16,7 +17,7 @@ describe('<CopyToClipBoard /> component', () => {
     wrapper = mount(<CopyToClipBoard text={copyText} />);
   });
 
-  test('render the component', () => {
+  test('should load the component in default state', () => {
     expect(wrapper.html()).toMatchSnapshot();
   });
 

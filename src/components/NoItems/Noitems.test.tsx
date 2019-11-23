@@ -1,9 +1,8 @@
 import React from 'react';
-import { shallow, mount } from 'enzyme';
+
+import { render } from '../../utils/test-react-testing-library';
 
 import NoItems from './NoItems';
-
-console.error = jest.fn();
 
 describe('<NoItem /> component', () => {
   const props = {
@@ -11,15 +10,7 @@ describe('<NoItem /> component', () => {
   };
 
   test('should load the component in default state', () => {
-    const wrapper = shallow(<NoItems text={props.text} />);
-    expect(wrapper.html()).toMatchSnapshot();
-  });
-
-  test('should set html from props', () => {
-    const props = {
-      text: 'This is a test string',
-    };
-    const wrapper = mount(<NoItems text={props.text} />);
-    expect(wrapper.html()).toMatchSnapshot();
+    const { container } = render(<NoItems text={props.text} />);
+    expect(container.firstChild).toMatchSnapshot();
   });
 });

@@ -1,7 +1,7 @@
 import React from 'react';
-import { mount } from 'enzyme';
 import { BrowserRouter } from 'react-router-dom';
 
+import { mount } from '../../utils/test-enzyme';
 import Help from '../Help';
 
 import { PackageList } from './PackageList';

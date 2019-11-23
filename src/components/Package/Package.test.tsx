@@ -1,6 +1,6 @@
 import React from 'react';
-import { shallow } from 'enzyme';
 
+import { shallow } from '../../utils/test-enzyme';
 import Tag from '../Tag';
 
 import Package from './Package';
