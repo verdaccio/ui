@@ -30,7 +30,7 @@ interface LoginModalProps {
   visibility: boolean;
   error?: FormError;
   onCancel: () => void;
-  onSubmit: (username: string, password: string) => void;
+  onSubmit: (username: string, password: string) => Promise<void>;
 }
 
 interface LoginModalState {

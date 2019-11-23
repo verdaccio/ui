@@ -39,7 +39,7 @@ describe('<LoginModal />', () => {
         description: 'Error Description',
       },
       onCancel: () => {},
-      onSubmit: () => {},
+      onSubmit: () => Promise.resolve(),
     };
     const wrapper = mount(<LoginModal {...props} />);
     expect(wrapper.html()).toMatchSnapshot();
@@ -54,7 +54,7 @@ describe('<LoginModal />', () => {
         description: 'Error Description',
       },
       onCancel: jest.fn(),
-      onSubmit: () => {},
+      onSubmit: () => Promise.resolve(),
     };
     const wrapper = mount(<LoginModal {...props} />);
     wrapper.find('button[id="login--form-cancel"]').simulate('click');
@@ -65,7 +65,7 @@ describe('<LoginModal />', () => {
     const props = {
       visibility: true,
       onCancel: () => {},
-      onSubmit: () => {},
+      onSubmit: () => Promise.resolve(),
     };
     const wrapper = mount(<LoginModal {...props} />);
     const { setCredentials } = wrapper.instance();
