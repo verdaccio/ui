@@ -11,7 +11,7 @@ interface Props {
 const HeaderGreetings: React.FC<Props> = ({ username }) => (
   <>
     <Greetings>{'Hi,'}</Greetings>
-    <Label capitalize={true} text={username} weight="bold" />
+    <Label capitalize={true} data-testid="greetings-label" text={username} weight="bold" />
   </>
 );
 
