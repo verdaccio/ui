@@ -52,7 +52,9 @@ export function formatRepository(repository: any): string | null {
 }
 
 export function formatDate(lastUpdate: string | number): string {
-  return format(new Date(lastUpdate), TIMEFORMAT);
+  const dt = new Date(lastUpdate);
+
+  return format(new Date(dt.valueOf() + dt.getTimezoneOffset() * 60 * 1000), TIMEFORMAT);
 }
 
 export function formatDateDistance(lastUpdate: Date | string | number): string {
