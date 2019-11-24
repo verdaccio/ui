@@ -68,7 +68,13 @@ export default class LoginModal extends Component<Partial<LoginModalProps>, Logi
   public render(): JSX.Element {
     const { visibility = true, onCancel = () => null, error } = this.props as LoginModalProps;
     return (
-      <Dialog fullWidth={true} id={'login--form-container'} maxWidth={'xs'} onClose={onCancel} open={visibility}>
+      <Dialog
+        data-testid={'login--form-container'}
+        fullWidth={true}
+        id={'login--form-container'}
+        maxWidth={'xs'}
+        onClose={onCancel}
+        open={visibility}>
         <form noValidate={true} onSubmit={this.handleValidateCredentials}>
           <DialogTitle>{'Login'}</DialogTitle>
           <DialogContent>

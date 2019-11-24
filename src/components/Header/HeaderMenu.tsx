@@ -28,7 +28,7 @@ const HeaderMenu: React.FC<Props> = ({
   <>
     <IconButton
       color="inherit"
-      data-testid="header--menu-acountcircle"
+      data-testid="header--menu-accountcircle"
       id="header--button-account"
       onClick={onLoggedInMenu}>
       <AccountCircle />
@@ -48,7 +48,7 @@ const HeaderMenu: React.FC<Props> = ({
       <MenuItem disabled={true}>
         <HeaderGreetings username={username} />
       </MenuItem>
-      <MenuItem button={true} id="header--button-logout" onClick={onLogout}>
+      <MenuItem button={true} data-testid="header--button-logout" id="header--button-logout" onClick={onLogout}>
         {'Logout'}
       </MenuItem>
     </Menu>
