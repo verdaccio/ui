@@ -13,7 +13,7 @@ import node from './img/node.png';
 const Engine: React.FC = () => {
   const { packageMeta } = useContext(DetailContext);
 
-  const engines = packageMeta && packageMeta.latest && packageMeta.latest.engines;
+  const engines = packageMeta?.latest?.engines;
 
   if (!engines || (!engines.node && !engines.npm)) {
     return null;

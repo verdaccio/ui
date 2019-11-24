@@ -4,7 +4,7 @@ import { createBrowserHistory } from 'history';
 
 import Loading from '../components/Loading';
 
-import { AppContext } from './AppContext';
+import AppContext from './AppContext';
 
 const NotFound = lazy(() => import('../components/NotFound'));
 const VersionContextProvider = lazy(() => import('../pages/Version/VersionContextProvider'));
@@ -19,19 +19,25 @@ enum Route {
   PACKAGE_VERSION = '/-/web/detail/:package/v/:version',
 }
 
-const history = createBrowserHistory({
+export const history = createBrowserHistory({
   basename: window.__VERDACCIO_BASENAME_UI_OPTIONS && window.__VERDACCIO_BASENAME_UI_OPTIONS.url_prefix,
 });
 
 /* eslint react/jsx-max-depth: 0 */
-const AppRoute: React.FC = ({ children }) => {
+const AppRoute: React.FC = () => {
   const appContext = useContext(AppContext);
-  const { isUserLoggedIn, packages } = appContext;
+
+  if (!appContext) {
+    throw Error('The app Context was not correct used');
+  }
+
+  const { user, packages } = appContext;
+
+  const isUserLoggedIn = user && user.username;
 
   return (
     <Router history={history}>
       <Suspense fallback={<Loading />}>
-        {children}
         <Switch>
           <ReactRouterDomRoute exact={true} path={Route.ROOT}>
             <HomePage isUserLoggedIn={!!isUserLoggedIn} packages={packages || []} />

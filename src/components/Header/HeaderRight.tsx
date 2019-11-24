@@ -53,7 +53,7 @@ const HeaderRight: React.FC<Props> = ({
   };
 
   return (
-    <RightSide>
+    <RightSide data-testid="header-right">
       {!withoutSearch && (
         <HeaderToolTip onClick={onToggleMobileNav} title={'Search packages'} tooltipIconType={'search'} />
       )}

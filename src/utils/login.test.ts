@@ -1,3 +1,4 @@
+// eslint-disable-next-line jest/no-mocks-import
 import {
   generateTokenWithTimeRange,
   generateTokenWithExpirationAsString,
@@ -11,6 +12,7 @@ import { isTokenExpire, makeLogin } from './login';
 console.error = jest.fn();
 
 jest.mock('./api', () => ({
+  // eslint-disable-next-line jest/no-mocks-import
   request: require('../../jest/unit/components/__mocks__/api').default.request,
 }));
 
@@ -40,11 +42,8 @@ describe('isTokenExpire', (): void => {
 
   test('isTokenExpire - token is not a valid json token', (): void => {
     const token = generateInvalidToken();
-    const result = [
-      'Invalid token:',
-      new SyntaxError('Unexpected token i in JSON at position 0'),
-      'xxxxxx.aW52YWxpZHRva2Vu.xxxxxx',
-    ];
+    const errorToken = new SyntaxError('Unexpected token i in JSON at position 0');
+    const result = ['Invalid token:', errorToken, 'xxxxxx.aW52YWxpZHRva2Vu.xxxxxx'];
     expect(isTokenExpire(token)).toBeTruthy();
     expect(console.error).toHaveBeenCalledWith(...result);
   });
