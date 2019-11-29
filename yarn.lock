@@ -8908,10 +8908,10 @@ lockfile-lint-api@^2.0.0:
     "@yarnpkg/lockfile" "^1.1.0"
     debug "^4.1.0"
 
-lockfile-lint-api@^5.0.0:
-  version "5.0.0"
-  resolved "https://registry.verdaccio.org/lockfile-lint-api/-/lockfile-lint-api-5.0.0.tgz#7fcff896fe2b9a9308f887043d448ce088749ff5"
-  integrity sha512-BG48jnnr2cBWF+oYYoHpQJSLmCnOrYcj4dKmeGhT1ieP3REx4yfCkuZuu78R1v8xZTUaxfYaZK4VKmdmNTVuBA==
+lockfile-lint-api@^5.0.2:
+  version "5.0.2"
+  resolved "https://registry.verdaccio.org/lockfile-lint-api/-/lockfile-lint-api-5.0.2.tgz#82a6565c22f8e6eb2a8342759adb0989c7ba7c83"
+  integrity sha512-b7CaULcs83kk30fQ//BFsKMgfCqPMjtENsdxurJJhdS1Etcmni5W3eAlBKr3+IS93sfnLfvGU3h9neay0R1umw==
   dependencies:
     "@yarnpkg/lockfile" "^1.1.0"
     debug "^4.1.0"
@@ -8925,13 +8925,13 @@ lockfile-lint@2.0.1:
     lockfile-lint-api "^2.0.0"
     yargs "^13.2.4"
 
-lockfile-lint@3.0.1:
-  version "3.0.1"
-  resolved "https://registry.verdaccio.org/lockfile-lint/-/lockfile-lint-3.0.1.tgz#5e5f8f36851a69029fc418f73e2dd11e478a7463"
-  integrity sha512-vLD1HR3sAfYCzWPmahwD5uu9G9tiHlcddK5Vj7aihJ7FTWFCWg7kIkmK2grUGOrCXOBqXSmGKBT+4QyOVVL8nw==
+lockfile-lint@3.0.3:
+  version "3.0.3"
+  resolved "https://registry.verdaccio.org/lockfile-lint/-/lockfile-lint-3.0.3.tgz#e4d93bf2eab08dcba037fc312c86afcffc0a87fb"
+  integrity sha512-9P/BlLKs4y5LkKzRay7wPHbtTYeXvzf8kh36z4pv24kcYtuTDY10gOWZwkoO/3mCSVh4Yk9QwIEUdYkjPLGPdw==
   dependencies:
     debug "^4.1.0"
-    lockfile-lint-api "^5.0.0"
+    lockfile-lint-api "^5.0.2"
     yargs "^13.2.4"
 
 lockfile@1.0.4:
