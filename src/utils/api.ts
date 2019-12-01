@@ -54,10 +54,13 @@ class API {
       })
         .then(handleResponseType)
         .then(response => {
-          if (response[0]) {
-            resolve(response[1]);
-          } else {
-            reject(new Error('something went wrong'));
+          if (response) {
+            if (response[0]) {
+              // @ts-ignore FIXME: Type 'string' is not assignable to type 'T | PromiseLike<T> | undefined'
+              resolve(response[1]);
+            } else {
+              reject(new Error('something went wrong'));
+            }
           }
         })
         .catch(error => {
