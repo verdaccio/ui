@@ -9,7 +9,7 @@ import fileSizeSI from '../../utils/file-size';
 import { formatDate, formatDateDistance } from '../../utils/package';
 import Tooltip from '../../muiComponents/Tooltip';
 import { isURL } from '../../utils/url';
-import { downloadHandler } from '../ActionBar/ActionBar';
+import { downloadHandler } from '../ActionBar';
 import ListItem from '../../muiComponents/ListItem';
 import Grid from '../../muiComponents/Grid';
 

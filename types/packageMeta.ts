@@ -8,7 +8,7 @@ export interface PackageMetaInterface {
     dist: {
       fileCount: number;
       unpackedSize: number;
-      tarball: string;
+      tarball?: string;
     };
     engines?: {
       node?: string;
@@ -16,6 +16,10 @@ export interface PackageMetaInterface {
     };
     license?: Partial<LicenseInterface> | string;
     version: string;
+    homepage?: string;
+    bugs?: {
+      url: string;
+    };
     repository?: {
       type?: string;
       url?: string;
