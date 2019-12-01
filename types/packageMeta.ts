@@ -16,9 +16,9 @@ export interface PackageMetaInterface {
     };
     license?: Partial<LicenseInterface> | string;
     version: string;
-    homepage?: string;
-    bugs?: {
-      url: string;
+    repository?: {
+      type?: string;
+      url?: string;
     };
   };
   _uplinks: {};
