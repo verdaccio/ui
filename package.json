@@ -82,7 +82,7 @@
     "js-yaml": "3.13.1",
     "lint-staged": "9.5.0",
     "localstorage-memory": "1.0.3",
-    "lockfile-lint": "3.0.1",
+    "lockfile-lint": "3.0.3",
     "lodash": "^4.17.15",
     "mini-css-extract-plugin": "0.8.0",
     "node-mocks-http": "1.8.0",
