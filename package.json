@@ -183,7 +183,7 @@
     "dev": "concurrently --kill-others \"npm run dev:web\" \"npm run verdaccio:server\""
   },
   "engines": {
-    "node": ">=8",
+    "node": ">= 10.13.0",
     "npm": ">=5"
   },
   "husky": {
