@@ -122,9 +122,12 @@ exports[`test Developers should render the component for contributors with items
                 <ForwardRef(Tooltip)
                   classes={
                     Object {
+                      "arrow": "MuiTooltip-arrow",
                       "popper": "MuiTooltip-popper",
+                      "popperArrow": "MuiTooltip-popperArrow",
                       "popperInteractive": "MuiTooltip-popperInteractive",
                       "tooltip": "MuiTooltip-tooltip",
+                      "tooltipArrow": "MuiTooltip-tooltipArrow",
                       "tooltipPlacementBottom": "MuiTooltip-tooltipPlacementBottom",
                       "tooltipPlacementLeft": "MuiTooltip-tooltipPlacementLeft",
                       "tooltipPlacementRight": "MuiTooltip-tooltipPlacementRight",
@@ -192,6 +195,16 @@ exports[`test Developers should render the component for contributors with items
                     id={null}
                     open={false}
                     placement="bottom"
+                    popperOptions={
+                      Object {
+                        "modifiers": Object {
+                          "arrow": Object {
+                            "element": null,
+                            "enabled": false,
+                          },
+                        },
+                      }
+                    }
                     transition={true}
                   />
                 </ForwardRef(Tooltip)>
@@ -221,9 +234,12 @@ exports[`test Developers should render the component for contributors with items
                 <ForwardRef(Tooltip)
                   classes={
                     Object {
+                      "arrow": "MuiTooltip-arrow",
                       "popper": "MuiTooltip-popper",
+                      "popperArrow": "MuiTooltip-popperArrow",
                       "popperInteractive": "MuiTooltip-popperInteractive",
                       "tooltip": "MuiTooltip-tooltip",
+                      "tooltipArrow": "MuiTooltip-tooltipArrow",
                       "tooltipPlacementBottom": "MuiTooltip-tooltipPlacementBottom",
                       "tooltipPlacementLeft": "MuiTooltip-tooltipPlacementLeft",
                       "tooltipPlacementRight": "MuiTooltip-tooltipPlacementRight",
@@ -291,6 +307,16 @@ exports[`test Developers should render the component for contributors with items
                     id={null}
                     open={false}
                     placement="bottom"
+                    popperOptions={
+                      Object {
+                        "modifiers": Object {
+                          "arrow": Object {
+                            "element": null,
+                            "enabled": false,
+                          },
+                        },
+                      }
+                    }
                     transition={true}
                   />
                 </ForwardRef(Tooltip)>
@@ -426,9 +452,12 @@ exports[`test Developers should render the component for maintainers with items 
                 <ForwardRef(Tooltip)
                   classes={
                     Object {
+                      "arrow": "MuiTooltip-arrow",
                       "popper": "MuiTooltip-popper",
+                      "popperArrow": "MuiTooltip-popperArrow",
                       "popperInteractive": "MuiTooltip-popperInteractive",
                       "tooltip": "MuiTooltip-tooltip",
+                      "tooltipArrow": "MuiTooltip-tooltipArrow",
                       "tooltipPlacementBottom": "MuiTooltip-tooltipPlacementBottom",
                       "tooltipPlacementLeft": "MuiTooltip-tooltipPlacementLeft",
                       "tooltipPlacementRight": "MuiTooltip-tooltipPlacementRight",
@@ -496,6 +525,16 @@ exports[`test Developers should render the component for maintainers with items 
                     id={null}
                     open={false}
                     placement="bottom"
+                    popperOptions={
+                      Object {
+                        "modifiers": Object {
+                          "arrow": Object {
+                            "element": null,
+                            "enabled": false,
+                          },
+                        },
+                      }
+                    }
                     transition={true}
                   />
                 </ForwardRef(Tooltip)>
@@ -525,9 +564,12 @@ exports[`test Developers should render the component for maintainers with items 
                 <ForwardRef(Tooltip)
                   classes={
                     Object {
+                      "arrow": "MuiTooltip-arrow",
                       "popper": "MuiTooltip-popper",
+                      "popperArrow": "MuiTooltip-popperArrow",
                       "popperInteractive": "MuiTooltip-popperInteractive",
                       "tooltip": "MuiTooltip-tooltip",
+                      "tooltipArrow": "MuiTooltip-tooltipArrow",
                       "tooltipPlacementBottom": "MuiTooltip-tooltipPlacementBottom",
                       "tooltipPlacementLeft": "MuiTooltip-tooltipPlacementLeft",
                       "tooltipPlacementRight": "MuiTooltip-tooltipPlacementRight",
@@ -595,6 +637,16 @@ exports[`test Developers should render the component for maintainers with items 
                     id={null}
                     open={false}
                     placement="bottom"
+                    popperOptions={
+                      Object {
+                        "modifiers": Object {
+                          "arrow": Object {
+                            "element": null,
+                            "enabled": false,
+                          },
+                        },
+                      }
+                    }
                     transition={true}
                   />
                 </ForwardRef(Tooltip)>
