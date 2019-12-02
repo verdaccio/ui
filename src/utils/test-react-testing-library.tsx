@@ -3,7 +3,6 @@ import React from 'react';
 
 import ThemeProvider from '../design-tokens/ThemeProvider';
 
-/* eslint-disable @typescript-eslint/explicit-function-return-type */
 const customRender = (node: React.ReactElement<any>, ...options: Array<any>) => {
   return render(<ThemeProvider>{node}</ThemeProvider>, ...options);
 };

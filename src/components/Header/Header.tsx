@@ -19,7 +19,6 @@ interface Props {
 
 /* eslint-disable react/jsx-max-depth */
 /* eslint-disable react/jsx-no-bind*/
-/* eslint-disable @typescript-eslint/explicit-function-return-type */
 const Header: React.FC<Props> = ({ withoutSearch }) => {
   const appContext = useContext(AppContext);
   const [isInfoDialogOpen, setOpenInfoDialog] = useState();
