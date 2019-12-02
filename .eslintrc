@@ -45,11 +45,7 @@
         }
       }
     ],
-    "@typescript-eslint/explicit-function-return-type": ["warn",
-      {
-          "allowExpressions": true,
-          "allowTypedFunctionExpressions": true
-    }],
+    "@typescript-eslint/explicit-function-return-type": 0,
     "react/no-deprecated": 1,
     "react/jsx-no-target-blank": 1,
     "react/destructuring-assignment": ["error", "always"],
