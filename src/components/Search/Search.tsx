@@ -76,10 +76,7 @@ const Search: React.FC<RouteComponentProps> = ({ history }) => {
   /**
    * When an user select any package by clicking or pressing return key.
    */
-  const handleClickSearch = (
-    event: React.FormEvent<HTMLInputElement>,
-    { suggestionValue, method }: SuggestionSelectedEventData<unknown>
-  ): void | undefined => {
+  const handleClickSearch = (event: React.FormEvent<HTMLInputElement>, { suggestionValue, method }: SuggestionSelectedEventData<unknown>): void | undefined => {
     // stops event bubbling
     event.stopPropagation();
     switch (method) {

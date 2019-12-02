@@ -128,6 +128,7 @@ const AutoComplete = ({
 
   // this format avoid arrow function eslint rule
   function renderSuggestionsContainer({ containerProps, children, query }): JSX.Element {
+    console.log('children', children);
     return (
       <SuggestionContainer {...containerProps} square={true}>
         {suggestionsLoaded && children === null && query && renderMessage(SUGGESTIONS_RESPONSE.NO_RESULT)}
@@ -140,12 +141,7 @@ const AutoComplete = ({
 
   return (
     <Wrapper>
-      <Autosuggest
-        {...autosuggestProps}
-        inputProps={inputProps}
-        onSuggestionSelected={onClick}
-        renderSuggestionsContainer={renderSuggestionsContainer}
-      />
+      <Autosuggest {...autosuggestProps} inputProps={inputProps} onSuggestionSelected={onClick} renderSuggestionsContainer={renderSuggestionsContainer} />
     </Wrapper>
   );
 };
