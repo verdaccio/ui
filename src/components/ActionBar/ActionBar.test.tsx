@@ -16,7 +16,7 @@ const detailContextValue: DetailContextProps = {
     latest: {
       name: '@verdaccio/local-storage',
       version: '8.0.1-next.1',
-      dist: { fileCount: 0, unpackedSize: 0, tarball: 'http://localhost:4873/bootstrap/-/bootstrap-4.3.1.tgz' },
+      dist: { fileCount: 0, unpackedSize: 0, tarball: 'http://localhost:8080/bootstrap/-/bootstrap-4.3.1.tgz' },
       homepage: 'https://verdaccio.org',
       bugs: {
         url: 'https://github.com/verdaccio/monorepo/issues',
