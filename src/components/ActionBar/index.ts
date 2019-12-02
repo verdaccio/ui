@@ -1,2 +1,2 @@
 export { default } from './ActionBar';
-export { default as downloadHandler } from './download-handler';
+export { default as downloadTarball } from './download-tarball';

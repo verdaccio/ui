@@ -1,8 +1,7 @@
 import React from 'react';
 
-import { render, cleanup, fireEvent } from '../../utils/test-react-testing-library';
+import { render, cleanup } from '../../utils/test-react-testing-library';
 import { DetailContext, DetailContextProps } from '../../pages/Version';
-import api from '../../utils/api';
 
 import ActionBar from './ActionBar';
 
@@ -62,13 +61,7 @@ describe('<ActionBar /> component', () => {
 
   test('when there is a button to download a tarball', () => {
     const { getByTitle } = render(<ComponentToBeRendered contextValue={{ ...detailContextValue }} />);
-
     expect(getByTitle('Download tarball')).toBeTruthy();
-    const downloadTarballBtn = getByTitle('Download tarball');
-
-    const downloadTarballAPIRequest = jest.spyOn(api, 'request');
-    fireEvent.click(downloadTarballBtn);
-    expect(downloadTarballAPIRequest).toHaveBeenCalled();
   });
 
   test('when there is a button to open an issue', () => {

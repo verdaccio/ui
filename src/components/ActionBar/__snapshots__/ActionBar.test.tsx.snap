@@ -84,6 +84,7 @@ exports[`<ActionBar /> component should render the component in default state 1`
   </a>
   <button
     class="MuiButtonBase-root MuiFab-root  emotion-0 emotion-1 MuiFab-sizeSmall"
+    data-testid="download-tarball-btn"
     tabindex="0"
     title="Download tarball"
     type="button"

@@ -9,7 +9,7 @@ import fileSizeSI from '../../utils/file-size';
 import { formatDate, formatDateDistance } from '../../utils/package';
 import Tooltip from '../../muiComponents/Tooltip';
 import { isURL } from '../../utils/url';
-import { downloadHandler } from '../ActionBar';
+import { downloadTarball } from '../ActionBar';
 import ListItem from '../../muiComponents/ListItem';
 import Grid from '../../muiComponents/Grid';
 
@@ -140,7 +140,7 @@ const Package: React.FC<PackageInterface> = ({
     dist.tarball &&
     isURL(dist.tarball) && (
       // eslint-disable-next-line
-      <a onClick={() => downloadHandler(dist.tarball.replace(`https://registry.npmjs.org/`, window.location.href))} target={'_blank'}>
+      <a onClick={downloadTarball(dist.tarball.replace(`https://registry.npmjs.org/`, window.location.href))} target={'_blank'}>
         <Tooltip aria-label={'Download the tar file'} title={'Download tarball'}>
           <IconButton aria-label={'Download'}>
             {/* eslint-disable-next-line react/jsx-max-depth */}

@@ -9,9 +9,9 @@ import Link from '../Link';
 import FloatingActionButton from '../../muiComponents/FloatingActionButton';
 import { Theme } from '../../design-tokens/theme';
 
-import downloadHandler from './download-handler';
+import downloadTarball from './download-tarball';
 
-const Fab = styled(FloatingActionButton)<{ theme?: Theme }>(props => ({
+export const Fab = styled(FloatingActionButton)<{ theme?: Theme }>(props => ({
   backgroundColor: props.theme && props.theme.palette.primary.main,
   color: props.theme && props.theme.palette.white,
   marginRight: 10,
@@ -51,7 +51,7 @@ const ActionBarAction: React.FC<ActionBarActionProps> = ({ type, link }) => {
     case 'DOWNLOAD_TARBALL':
       return (
         <Tooltip title="Download tarball">
-          <Fab onClick={() => downloadHandler(link)} size="small">
+          <Fab data-testid="download-tarball-btn" onClick={downloadTarball(link)} size="small">
             <DownloadIcon />
           </Fab>
         </Tooltip>
