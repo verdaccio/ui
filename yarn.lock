@@ -1073,7 +1073,7 @@
 
 "@babel/runtime@^7.5.1":
   version "7.7.4"
-  resolved "http://localhost:4873/@babel%2fruntime/-/runtime-7.7.4.tgz#b23a856751e4bf099262f867767889c0e3fe175b"
+  resolved "ttps://registry.verdaccio.org/@babel%2fruntime/-/runtime-7.7.4.tgz#b23a856751e4bf099262f867767889c0e3fe175b"
   integrity sha512-r24eVUUr0QqNZa+qrImUk8fn5SPhHq+IfYvIoIMg0do3GdK9sMdiLKP3GYVVaxpPKORgm8KRKaNTEhAjgIpLMw==
   dependencies:
     regenerator-runtime "^0.13.2"
@@ -1748,7 +1748,7 @@
 
 "@testing-library/jest-dom@4.2.4":
   version "4.2.4"
-  resolved "http://localhost:4873/@testing-library%2fjest-dom/-/jest-dom-4.2.4.tgz#00dfa0cbdd837d9a3c2a7f3f0a248ea6e7b89742"
+  resolved "https://registry.verdaccio.org/@testing-library%2fjest-dom/-/jest-dom-4.2.4.tgz#00dfa0cbdd837d9a3c2a7f3f0a248ea6e7b89742"
   integrity sha512-j31Bn0rQo12fhCWOUWy9fl7wtqkp7In/YP2p5ZFyRuiiB9Qs3g+hS4gAmDWONbAHcRmVooNJ5eOHQDCOmUFXHg==
   dependencies:
     "@babel/runtime" "^7.5.1"
@@ -4573,7 +4573,7 @@ css-what@2.1, css-what@^2.1.2:
 
 css.escape@^1.5.1:
   version "1.5.1"
-  resolved "http://localhost:4873/css.escape/-/css.escape-1.5.1.tgz#42e27d4fa04ae32f931a4b4d4191fa9cddee97cb"
+  resolved "ttps://registry.verdaccio.org/css.escape/-/css.escape-1.5.1.tgz#42e27d4fa04ae32f931a4b4d4191fa9cddee97cb"
   integrity sha1-QuJ9T6BK4y+TGktNQZH6nN3ul8s=
 
 css@^2.0.0, css@^2.2.1, css@^2.2.3:
@@ -9463,7 +9463,7 @@ min-document@^2.19.0:
 
 min-indent@^1.0.0:
   version "1.0.0"
-  resolved "http://localhost:4873/min-indent/-/min-indent-1.0.0.tgz#cfc45c37e9ec0d8f0a0ec3dd4ef7f7c3abe39256"
+  resolved "ttps://registry.verdaccio.org/min-indent/-/min-indent-1.0.0.tgz#cfc45c37e9ec0d8f0a0ec3dd4ef7f7c3abe39256"
   integrity sha1-z8RcN+nsDY8KDsPdTvf3w6vjklY=
 
 mini-create-react-context@^0.3.0:
@@ -11749,7 +11749,7 @@ redent@^2.0.0:
 
 redent@^3.0.0:
   version "3.0.0"
-  resolved "http://localhost:4873/redent/-/redent-3.0.0.tgz#e557b7998316bb53c9f1f56fa626352c6963059f"
+  resolved "ttps://registry.verdaccio.org/redent/-/redent-3.0.0.tgz#e557b7998316bb53c9f1f56fa626352c6963059f"
   integrity sha512-6tDA8g98We0zd0GvVeMT9arEOnTw9qM03L9cJXaCjrip1OO764RDBLBfrB4cwzNGDj5OA5ioymC9GkizgWJDUg==
   dependencies:
     indent-string "^4.0.0"
@@ -13071,7 +13071,7 @@ strip-indent@^2.0.0:
 
 strip-indent@^3.0.0:
   version "3.0.0"
-  resolved "http://localhost:4873/strip-indent/-/strip-indent-3.0.0.tgz#c32e1cee940b6b3432c771bc2c54bcce73cd3001"
+  resolved "ttps://registry.verdaccio.org/strip-indent/-/strip-indent-3.0.0.tgz#c32e1cee940b6b3432c771bc2c54bcce73cd3001"
   integrity sha512-laJTa3Jb+VQpaC6DseHhF7dXVqHTfJPCRDaEbid/drOhgitgYku/letMUqOXFoWV0zIIUbjpdH2t+tYj4bQMRQ==
   dependencies:
     min-indent "^1.0.0"
