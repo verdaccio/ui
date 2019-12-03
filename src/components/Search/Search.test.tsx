@@ -124,7 +124,7 @@ describe('<Search /> component', () => {
     const listBoxElement = await waitForElement(() => getByRole('listbox'));
     expect(listBoxElement).toBeEmpty();
 
-    expect(api.request).toHaveBeenCalledTimes(1);
+    expect(api.request).toHaveBeenCalledTimes(2);
   });
 
   test('handleClickSearch: should change the window location on click or return key', async () => {
