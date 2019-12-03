@@ -16,7 +16,6 @@
     "jsx-a11y",
     "codeceptjs",
     "react-hooks",
-    "import",
   ],
   "settings": {
     "react": {
