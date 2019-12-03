@@ -1,6 +1,6 @@
 import React, { ReactElement } from 'react';
 
-import { ActionBar } from '../ActionBar/ActionBar';
+import ActionBar from '../ActionBar';
 import Author from '../Author';
 import Developers from '../Developers';
 import Dist from '../Dist/Dist';

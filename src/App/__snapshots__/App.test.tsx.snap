@@ -49,7 +49,7 @@ exports[`<App /> should display the Header component  1`] = `
 }
 
 <div
-  class="MuiBox-root MuiBox-root-215"
+  class="MuiBox-root MuiBox-root-217"
 >
   <div
     class="emotion-8 emotion-9"
