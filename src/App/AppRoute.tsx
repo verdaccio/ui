@@ -23,7 +23,6 @@ export const history = createBrowserHistory({
   basename: window.__VERDACCIO_BASENAME_UI_OPTIONS && window.__VERDACCIO_BASENAME_UI_OPTIONS.url_prefix,
 });
 
-/* eslint react/jsx-max-depth: 0 */
 const AppRoute: React.FC = () => {
   const appContext = useContext(AppContext);
 

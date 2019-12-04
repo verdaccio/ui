@@ -5,7 +5,7 @@ import { getRegistryURL } from '../../utils/url';
 import { makeLogin } from '../../utils/login';
 import Button from '../../muiComponents/Button';
 import AppContext from '../../App/AppContext';
-import LoginModal from '../Login';
+import LoginDialog from '../LoginDialog';
 import Search from '../Search';
 
 import { NavBar, InnerNavBar, MobileNavBar, InnerMobileNavBar } from './styles';
@@ -17,7 +17,6 @@ interface Props {
   withoutSearch?: boolean;
 }
 
-/* eslint-disable react/jsx-max-depth */
 /* eslint-disable react/jsx-no-bind*/
 const Header: React.FC<Props> = ({ withoutSearch }) => {
   const appContext = useContext(AppContext);
@@ -93,12 +92,7 @@ const Header: React.FC<Props> = ({ withoutSearch }) => {
           </Button>
         </MobileNavBar>
       )}
-      <LoginModal
-        error={error}
-        onCancel={() => setShowLoginModal(false)}
-        onSubmit={handleDoLogin}
-        visibility={showLoginModal}
-      />
+      <LoginDialog error={error} onClose={() => setShowLoginModal(false)} open={showLoginModal} />
     </>
   );
 };

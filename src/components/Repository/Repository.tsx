@@ -1,5 +1,3 @@
-/* eslint react/jsx-max-depth: 0 */
-
 import React from 'react';
 import styled from '@emotion/styled';
 

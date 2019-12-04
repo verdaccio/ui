@@ -16,7 +16,6 @@ interface Props {
   onLoggedInMenuClose: () => void;
 }
 
-/* eslint-disable react/jsx-max-depth */
 const HeaderMenu: React.FC<Props> = ({
   onLogout,
   username,

@@ -25,7 +25,6 @@ export interface ActionBarActionProps {
 }
 
 /* eslint-disable react/jsx-no-bind */
-/* eslint-disable react/jsx-max-depth */
 const ActionBarAction: React.FC<ActionBarActionProps> = ({ type, link }) => {
   switch (type) {
     case 'VISIT_HOMEPAGE':

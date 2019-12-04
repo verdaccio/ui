@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-import { FormError } from '../components/Login/Login';
+import { FormError } from '../components/LoginDialog/Login';
 
 import AppContext, { AppProps, User } from './AppContext';
 

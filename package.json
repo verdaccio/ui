@@ -214,5 +214,7 @@
     "url": "https://opencollective.com/verdaccio",
     "logo": "https://opencollective.com/verdaccio/logo.txt"
   },
-  "dependencies": {}
+  "dependencies": {
+    "react-hook-form": "3.28.11"
+  }
 }

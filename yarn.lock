@@ -11526,6 +11526,11 @@ react-dom@16.12.0:
     prop-types "^15.6.2"
     scheduler "^0.18.0"
 
+react-hook-form@3.28.11:
+  version "3.28.11"
+  resolved "https://registry.verdaccio.org/react-hook-form/-/react-hook-form-3.28.11.tgz#1b291ccf26e0596bcb7ca60ad30f6f6559c4d5f2"
+  integrity sha512-laAE0w40+q5fq/Dz/F2LFLbjl8vd1cpkeLu6s3VwbJ7TJ+D02VZPaN0PHnXp59dlu6+SiTkshPDqa7GKWkD0gQ==
+
 react-hot-loader@4.12.18:
   version "4.12.18"
   resolved "https://registry.verdaccio.org/react-hot-loader/-/react-hot-loader-4.12.18.tgz#a9029e34af2690d76208f9a35189d73c2dfea6a7"
