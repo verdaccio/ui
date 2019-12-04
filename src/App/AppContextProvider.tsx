@@ -9,7 +9,6 @@ interface Props {
   user?: User;
 }
 
-/* eslint-disable @typescript-eslint/explicit-function-return-type */
 /* eslint-disable react-hooks/exhaustive-deps */
 const AppContextProvider: React.FC<Props> = ({ children, packages, user }) => {
   const [state, setState] = useState<AppProps>({

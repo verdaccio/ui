@@ -17,7 +17,7 @@
     "src",
     "types/*.d.ts",
     "scripts/lib",
-    "node_modules/config"
+    "node_modules/config",
   ],
   "exclude": [
     "node_modules"

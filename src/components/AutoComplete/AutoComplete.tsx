@@ -1,4 +1,4 @@
-import React, { KeyboardEvent } from 'react';
+import React, { KeyboardEvent, memo } from 'react';
 import styled from '@emotion/styled';
 import Autosuggest, { SuggestionSelectedEventData, InputProps, ChangeEvent } from 'react-autosuggest';
 import match from 'autosuggest-highlight/match';
@@ -90,64 +90,66 @@ const SUGGESTIONS_RESPONSE = {
   NO_RESULT: 'No results found.',
 };
 
-const AutoComplete = ({
-  suggestions,
-  startAdornment,
-  onChange,
-  onSuggestionsFetch,
-  onCleanSuggestions,
-  value = '',
-  placeholder = '',
-  disableUnderline = false,
-  onClick,
-  onKeyDown,
-  onBlur,
-  suggestionsLoading = false,
-  suggestionsLoaded = false,
-  suggestionsError = false,
-}: Props): JSX.Element => {
-  const autosuggestProps = {
-    renderInputComponent,
+const AutoComplete = memo(
+  ({
     suggestions,
-    getSuggestionValue,
-    renderSuggestion,
-    onSuggestionsFetchRequested: onSuggestionsFetch,
-    onSuggestionsClearRequested: onCleanSuggestions,
-  };
-  const inputProps: InputProps<unknown> = {
-    value,
-    onChange,
-    placeholder,
-    // material-ui@4.5.1 introduce better types for TextInput, check readme
-    // @ts-ignore
     startAdornment,
-    disableUnderline,
+    onChange,
+    onSuggestionsFetch,
+    onCleanSuggestions,
+    value = '',
+    placeholder = '',
+    disableUnderline = false,
+    onClick,
     onKeyDown,
     onBlur,
-  };
+    suggestionsLoading = false,
+    suggestionsLoaded = false,
+    suggestionsError = false,
+  }: Props) => {
+    const autosuggestProps = {
+      renderInputComponent,
+      suggestions,
+      getSuggestionValue,
+      renderSuggestion,
+      onSuggestionsFetchRequested: onSuggestionsFetch,
+      onSuggestionsClearRequested: onCleanSuggestions,
+    };
+    const inputProps: InputProps<unknown> = {
+      value,
+      onChange,
+      placeholder,
+      // material-ui@4.5.1 introduce better types for TextInput, check readme
+      // @ts-ignore
+      startAdornment,
+      disableUnderline,
+      onKeyDown,
+      onBlur,
+    };
 
-  // this format avoid arrow function eslint rule
-  function renderSuggestionsContainer({ containerProps, children, query }): JSX.Element {
+    // this format avoid arrow function eslint rule
+    function renderSuggestionsContainer({ containerProps, children, query }): JSX.Element {
+      return (
+        <SuggestionContainer {...containerProps} square={true}>
+          {suggestionsLoaded && children === null && query && renderMessage(SUGGESTIONS_RESPONSE.NO_RESULT)}
+          {suggestionsLoading && query && renderMessage(SUGGESTIONS_RESPONSE.LOADING)}
+          {suggestionsError && renderMessage(SUGGESTIONS_RESPONSE.FAILURE)}
+          {children}
+        </SuggestionContainer>
+      );
+    }
+
     return (
-      <SuggestionContainer {...containerProps} square={true}>
-        {suggestionsLoaded && children === null && query && renderMessage(SUGGESTIONS_RESPONSE.NO_RESULT)}
-        {suggestionsLoading && query && renderMessage(SUGGESTIONS_RESPONSE.LOADING)}
-        {suggestionsError && renderMessage(SUGGESTIONS_RESPONSE.FAILURE)}
-        {children}
-      </SuggestionContainer>
+      <Wrapper>
+        <Autosuggest
+          {...autosuggestProps}
+          inputProps={inputProps}
+          onSuggestionSelected={onClick}
+          renderSuggestionsContainer={renderSuggestionsContainer}
+        />
+      </Wrapper>
     );
   }
-
-  return (
-    <Wrapper>
-      <Autosuggest
-        {...autosuggestProps}
-        inputProps={inputProps}
-        onSuggestionSelected={onClick}
-        renderSuggestionsContainer={renderSuggestionsContainer}
-      />
-    </Wrapper>
-  );
-};
+);
 
 export default AutoComplete;

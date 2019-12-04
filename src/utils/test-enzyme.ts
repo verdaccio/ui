@@ -2,8 +2,6 @@ import { mount, shallow } from 'enzyme';
 
 import ThemeProvider from '../design-tokens/ThemeProvider';
 
-/* eslint-disable @typescript-eslint/explicit-function-return-type */
-
 const shallowWithTheme = (element: React.ReactElement<any>, ...props): any =>
   shallow(element, {
     wrappingComponent: ThemeProvider,
