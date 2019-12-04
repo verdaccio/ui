@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, FormEvent, useCallback } from 'react';
 import debounce from 'lodash/debounce';
 import { RouteComponentProps, withRouter } from 'react-router';
 import { SuggestionSelectedEventData } from 'react-autosuggest';
@@ -15,112 +15,124 @@ const CONSTANTS = {
 };
 
 const Search: React.FC<RouteComponentProps> = ({ history }) => {
-  const [suggestions, setSuggestions] = React.useState([]);
-  const [loaded, setLoaded] = React.useState(false);
-  const [search, setSearch] = React.useState('');
-  const [error, setError] = React.useState(false);
-  const [loading, setLoading] = React.useState(false);
-  const [requestList, setRequestList] = React.useState<Array<{ abort: () => void }>>([]);
+  const [suggestions, setSuggestions] = useState([]);
+  const [loaded, setLoaded] = useState(false);
+  const [search, setSearch] = useState('');
+  const [error, setError] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [requestList, setRequestList] = useState<Array<{ abort: () => void }>>([]);
 
   /**
    * Cancel all the requests which are in pending state.
    */
-  const cancelAllSearchRequests = () => {
+  const cancelAllSearchRequests = useCallback(() => {
     requestList.forEach(request => request.abort());
     setRequestList([]);
-  };
+  }, [requestList, setRequestList]);
 
   /**
    * As user focuses out from input, we cancel all the request from requestList
    * and set the API state parameters to default boolean values.
    */
-  const handleOnBlur = (event: React.FormEvent<HTMLInputElement>) => {
-    // stops event bubbling
-    event.stopPropagation();
-    setLoaded(false);
-    setLoading(false);
-    setError(false);
-    cancelAllSearchRequests();
-  };
+  const handleOnBlur = useCallback(
+    (event: FormEvent<HTMLInputElement>) => {
+      // stops event bubbling
+      event.stopPropagation();
+      setLoaded(false);
+      setLoading(false);
+      setError(false);
+      cancelAllSearchRequests();
+    },
+    [setLoaded, setLoading, cancelAllSearchRequests, setError]
+  );
 
   /**
    * onChange method for the input element.
    */
-  const handleSearch = (event: React.FormEvent<HTMLInputElement>, { newValue, method }) => {
-    // stops event bubbling
-    event.stopPropagation();
-    if (method === 'type') {
-      const value = newValue.trim();
+  const handleSearch = useCallback(
+    (event: FormEvent<HTMLInputElement>, { newValue, method }) => {
+      // stops event bubbling
+      event.stopPropagation();
+      if (method === 'type') {
+        const value = newValue.trim();
 
-      setLoading(true);
-      setError(false);
-      setSearch(value);
-      setLoaded(false);
-      /**
-       * A use case where User keeps adding and removing value in input field,
-       * so we cancel all the existing requests when input is empty.
-       */
-      if (value.length === 0) {
-        cancelAllSearchRequests();
+        setLoading(true);
+        setError(false);
+        setSearch(value);
+        setLoaded(false);
+        /**
+         * A use case where User keeps adding and removing value in input field,
+         * so we cancel all the existing requests when input is empty.
+         */
+        if (value.length === 0) {
+          cancelAllSearchRequests();
+        }
       }
-    }
-  };
+    },
+    [cancelAllSearchRequests]
+  );
 
   /**
    * Cancel all the request from list and make request list empty.
    */
-  const handlePackagesClearRequested = () => {
+  const handlePackagesClearRequested = useCallback(() => {
     setSuggestions([]);
-  };
+  }, [setSuggestions]);
 
   /**
    * When an user select any package by clicking or pressing return key.
    */
-  const handleClickSearch = (
-    event: React.FormEvent<HTMLInputElement>,
-    { suggestionValue, method }: SuggestionSelectedEventData<unknown>
-  ): void | undefined => {
-    // stops event bubbling
-    event.stopPropagation();
-    switch (method) {
-      case 'click':
-      case 'enter':
-        setSearch('');
-        history.push(`/-/web/detail/${suggestionValue}`);
-        break;
-    }
-  };
+  const handleClickSearch = useCallback(
+    (
+      event: FormEvent<HTMLInputElement>,
+      { suggestionValue, method }: SuggestionSelectedEventData<unknown>
+    ): void | undefined => {
+      // stops event bubbling
+      event.stopPropagation();
+      switch (method) {
+        case 'click':
+        case 'enter':
+          setSearch('');
+          history.push(`/-/web/detail/${suggestionValue}`);
+          break;
+      }
+    },
+    [history]
+  );
 
   /**
    * Fetch packages from API.
    * For AbortController see: https://developer.mozilla.org/en-US/docs/Web/API/AbortController
    */
-  const handleFetchPackages = async ({ value }: { value: string }) => {
-    try {
-      const controller = new window.AbortController();
-      const signal = controller.signal;
-      // Keep track of search requests.
-      setRequestList([...requestList, controller]);
-      const suggestions = await callSearch(value, signal);
-      // @ts-ignore FIXME: Argument of type 'unknown' is not assignable to parameter of type 'SetStateAction<never[]>'
-      setSuggestions(suggestions);
-      setLoaded(true);
-    } catch (error) {
-      /**
-       * AbortError is not the API error.
-       * It means browser has cancelled the API request.
-       */
-      if (error.name === CONSTANTS.ABORT_ERROR) {
-        setError(false);
-        setLoaded(false);
-      } else {
-        setError(true);
-        setLoaded(false);
+  const handleFetchPackages = useCallback(
+    async ({ value }: { value: string }) => {
+      try {
+        const controller = new window.AbortController();
+        const signal = controller.signal;
+        // Keep track of search requests.
+        setRequestList([...requestList, controller]);
+        const suggestions = await callSearch(value, signal);
+        // @ts-ignore FIXME: Argument of type 'unknown' is not assignable to parameter of type 'SetStateAction<never[]>'
+        setSuggestions(suggestions);
+        setLoaded(true);
+      } catch (error) {
+        /**
+         * AbortError is not the API error.
+         * It means browser has cancelled the API request.
+         */
+        if (error.name === CONSTANTS.ABORT_ERROR) {
+          setError(false);
+          setLoaded(false);
+        } else {
+          setError(true);
+          setLoaded(false);
+        }
+      } finally {
+        setLoading(false);
       }
-    } finally {
-      setLoading(false);
-    }
-  };
+    },
+    [requestList, setRequestList, setSuggestions, setLoaded, setError, setLoading]
+  );
 
   return (
     <AutoComplete
