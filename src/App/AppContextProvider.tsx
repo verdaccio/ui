@@ -1,7 +1,5 @@
 import React, { useState, useEffect } from 'react';
 
-import { FormError } from '../components/LoginDialog/Login';
-
 import AppContext, { AppProps, User } from './AppContext';
 
 interface Props {
@@ -38,19 +36,11 @@ const AppContextProvider: React.FC<Props> = ({ children, packages, user }) => {
     });
   };
 
-  const setError = (error?: FormError) => {
-    setState({
-      ...state,
-      error,
-    });
-  };
-
   return (
     <AppContext.Provider
       value={{
         ...state,
         setUser,
-        setError,
       }}>
       {children}
     </AppContext.Provider>

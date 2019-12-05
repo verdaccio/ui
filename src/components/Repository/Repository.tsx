@@ -35,7 +35,6 @@ const RepositoryListItemText = styled(ListItemText)({
   margin: 0,
 });
 
-/* eslint-disable react/jsx-wrap-multilines */
 const Repository: React.FC = () => {
   const detailContext = React.useContext(DetailContext);
 

@@ -72,7 +72,7 @@
       "arrow": "parens",
       "condition": "parens",
       "logical": "parens",
-      "prop": "parens"
+      "prop": "ignore"
     }],
     "react/jsx-boolean-value": ["error", "always"],
     "react/jsx-closing-tag-location": ["error"],
