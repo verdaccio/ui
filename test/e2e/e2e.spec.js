@@ -98,7 +98,7 @@ describe('/ (Verdaccio Page)', () => {
     // we open the dialog
     await logIn();
     // check whether user is logged
-    const buttonLogout = await page.$('#  ');
+    const buttonLogout = await page.$('#header--button-logout');
     expect(buttonLogout).toBeDefined();
   });
   //
