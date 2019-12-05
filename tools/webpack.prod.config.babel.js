@@ -1,7 +1,7 @@
 const webpack = require('webpack');
 const HTMLWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const UglifyJsWebpackPlugin = require('uglifyjs-webpack-plugin');
+const TerserPlugin = require('terser-webpack-plugin');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const _ = require('lodash');
 const merge = require('webpack-merge');
@@ -23,7 +23,7 @@ const banner = `
 
 const prodConf = {
   mode: 'production',
-
+  devtool: 'source-map',
   entry: {
     main: ['babel-polyfill', 'whatwg-fetch', `${env.SRC_ROOT}/index.tsx`],
   },
@@ -60,9 +60,16 @@ const prodConf = {
   ],
 
   optimization: {
+    minimize: true,
     minimizer: [
-      new UglifyJsWebpackPlugin({
+      new TerserPlugin({
+        parallel: true,
         sourceMap: true,
+        terserOptions: {
+          output: {
+            comments: false,
+          },
+        },
       }),
       new OptimizeCSSAssetsPlugin({}),
     ],
