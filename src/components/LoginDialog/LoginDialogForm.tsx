@@ -1,6 +1,6 @@
 import React, { memo } from 'react';
 import styled from '@emotion/styled';
-import useForm from 'react-hook-form';
+import useForm from 'react-hook-form/dist/react-hook-form.ie11';
 
 import TextField from '../../muiComponents/TextField';
 import Button from '../../muiComponents/Button';
