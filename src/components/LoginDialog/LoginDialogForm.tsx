@@ -46,6 +46,7 @@ const LoginDialogForm = memo(({ onSubmit, error }: Props) => {
         error={!!errors.username}
         fullWidth={true}
         helperText={errors.username?.message}
+        id="login--dialog-username"
         inputRef={register({
           required: { value: true, message: 'This field is required' },
           minLength: { value: 2, message: 'This field required the min length of 2' },
@@ -62,6 +63,7 @@ const LoginDialogForm = memo(({ onSubmit, error }: Props) => {
         error={!!errors.password}
         fullWidth={true}
         helperText={errors.password?.message}
+        id="login--dialog-password"
         inputRef={register({
           required: { value: true, message: 'This field is required' },
           minLength: { value: 2, message: 'This field required the min length of 2' },
@@ -75,7 +77,14 @@ const LoginDialogForm = memo(({ onSubmit, error }: Props) => {
         variant="outlined"
       />
       {error && <LoginDialogFormError error={error} />}
-      <StyledButton color="primary" disabled={!isValid} fullWidth={true} size="large" type="submit" variant="contained">
+      <StyledButton
+        color="primary"
+        disabled={!isValid}
+        fullWidth={true}
+        id="login--dialog-button-submit"
+        size="large"
+        type="submit"
+        variant="contained">
         {'Sign In'}
       </StyledButton>
     </StyledForm>
