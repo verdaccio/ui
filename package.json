@@ -86,6 +86,7 @@
     "lockfile-lint": "3.0.3",
     "lodash": "^4.17.15",
     "mini-css-extract-plugin": "0.8.0",
+    "mutationobserver-shim": "0.3.3",
     "node-mocks-http": "1.8.0",
     "normalize.css": "8.0.1",
     "optimize-css-assets-webpack-plugin": "5.0.3",

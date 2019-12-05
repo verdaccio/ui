@@ -19,8 +19,8 @@ interface Props {
 
 const LoginDialogCloseButton: React.FC<Props> = ({ onClose }) => (
   <DialogTitle>
-    <StyledIconButton aria-label="Close" onClick={onClose}>
-      <CloseIcon />
+    <StyledIconButton data-testid="close-login-dialog-button" onClick={onClose}>
+      <CloseIcon titleAccess="Close Dialog" />
     </StyledIconButton>
   </DialogTitle>
 );

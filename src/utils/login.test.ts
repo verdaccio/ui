@@ -59,7 +59,6 @@ describe('makeLogin', (): void => {
     const result = {
       error: {
         description: "Username or password can't be empty!",
-        title: 'Unable to login',
         type: 'error',
       },
     };
@@ -77,8 +76,7 @@ describe('makeLogin', (): void => {
   test('makeLogin - login should failed with 401', async () => {
     const result = {
       error: {
-        description: 'bad username/password, access denied',
-        title: 'Unable to login',
+        description: 'Unable to sign in',
         type: 'error',
       },
     };
@@ -91,7 +89,6 @@ describe('makeLogin', (): void => {
   test('makeLogin - login should failed with when no data is sent', async () => {
     const result = {
       error: {
-        title: 'Unable to login',
         type: 'error',
         description: "Username or password can't be empty!",
       },
