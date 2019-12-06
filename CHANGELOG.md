@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.3.7](https://github.com/verdaccio/ui/compare/v0.3.6...v0.3.7) (2019-11-24)
+
+
+### Features
+
+* Added Theme and migrate to emotion@10.x 🚀 ([#286](https://github.com/verdaccio/ui/issues/286)) ([111f0c5](https://github.com/verdaccio/ui/commit/111f0c50e5053202ca55fe4f3f28dd30e4932240))
+
+
+### Bug Fixes
+
+* **#300:** correctly reference registry url from options  ([ee74474](https://github.com/verdaccio/ui/commit/ee74474811eb609072e1678bcb90db33756dcf38)), closes [#300](https://github.com/verdaccio/ui/issues/300)
+* restore lint-staged@8.2.1 ([dbaa0c4](https://github.com/verdaccio/ui/commit/dbaa0c43b8104b350e4907387f89d4e9e719741f))
+* update snapshots ([fd306de](https://github.com/verdaccio/ui/commit/fd306def9535d9168dc79ab020ec288a4d5df1a8))
+
 ### [0.3.6](https://github.com/verdaccio/ui/compare/v0.3.5...v0.3.6) (2019-11-08)
 
 ### [0.3.5](https://github.com/verdaccio/ui/compare/v0.3.4...v0.3.5) (2019-11-07)

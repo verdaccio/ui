@@ -7,20 +7,26 @@ interface Props extends Pick<TextProps, 'variant'> {
   external?: boolean;
   className?: string;
   to: string;
+  children?: React.ReactNode;
 }
 
+type LinkRef = HTMLAnchorElement;
+
 /* eslint-disable verdaccio/jsx-spread */
-const Link: React.FC<Props> = ({ external, to, children, variant, className, ...props }) => {
+const Link = React.forwardRef<LinkRef, Props>(function Link(
+  { external, to, children, variant, className, ...props },
+  ref
+) {
   const LinkTextContent = <Text variant={variant}>{children}</Text>;
   return external ? (
-    <a className={className} href={to} rel="noopener noreferrer" target="_blank" {...props}>
+    <a className={className} href={to} ref={ref} rel="noopener noreferrer" target="_blank" {...props}>
       {LinkTextContent}
     </a>
   ) : (
-    <RouterLink className={className} to={to} {...props}>
+    <RouterLink className={className} innerRef={ref} to={to} {...props}>
       {LinkTextContent}
     </RouterLink>
   );
-};
+});
 
 export default Link;
