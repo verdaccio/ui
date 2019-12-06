@@ -55,7 +55,7 @@ export function formatRepository(repository: any): string | null {
 }
 
 export function formatDate(lastUpdate: string | number): string {
-  return dayjs(new Date(lastUpdate)).format('DD.MM.YYYY, HH:mm:ss');
+  return dayjs(new Date(lastUpdate)).format(TIMEFORMAT);
 }
 
 export function formatDateDistance(lastUpdate: Date | string | number): string {
