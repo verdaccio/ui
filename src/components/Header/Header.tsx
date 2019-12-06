@@ -2,10 +2,9 @@ import React, { useState, useContext } from 'react';
 
 import storage from '../../utils/storage';
 import { getRegistryURL } from '../../utils/url';
-import { makeLogin } from '../../utils/login';
 import Button from '../../muiComponents/Button';
 import AppContext from '../../App/AppContext';
-import LoginModal from '../Login';
+import LoginDialog from '../LoginDialog';
 import Search from '../Search';
 
 import { NavBar, InnerNavBar, MobileNavBar, InnerMobileNavBar } from './styles';
@@ -17,7 +16,6 @@ interface Props {
   withoutSearch?: boolean;
 }
 
-/* eslint-disable react/jsx-max-depth */
 /* eslint-disable react/jsx-no-bind*/
 const Header: React.FC<Props> = ({ withoutSearch }) => {
   const appContext = useContext(AppContext);
@@ -29,28 +27,8 @@ const Header: React.FC<Props> = ({ withoutSearch }) => {
     throw Error('The app Context was not correct used');
   }
 
-  const { user, scope, error, setUser, setError } = appContext;
+  const { user, scope, setUser } = appContext;
   const logo = window.VERDACCIO_LOGO;
-
-  /**
-   * handles login
-   * Required by: <Header />
-   */
-  const handleDoLogin = async (usernameValue: string, passwordValue: string) => {
-    const { username, token, error } = await makeLogin(usernameValue, passwordValue);
-
-    if (username && token) {
-      storage.setItem('username', username);
-      storage.setItem('token', token);
-      setUser({ username });
-      setShowLoginModal(false);
-    }
-
-    if (error) {
-      setUser(undefined);
-      setError(error);
-    }
-  };
 
   /**
    * Logouts user
@@ -93,12 +71,7 @@ const Header: React.FC<Props> = ({ withoutSearch }) => {
           </Button>
         </MobileNavBar>
       )}
-      <LoginModal
-        error={error}
-        onCancel={() => setShowLoginModal(false)}
-        onSubmit={handleDoLogin}
-        visibility={showLoginModal}
-      />
+      {!user && <LoginDialog onClose={() => setShowLoginModal(false)} open={showLoginModal} />}
     </>
   );
 };

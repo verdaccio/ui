@@ -26,7 +26,6 @@ const StyledBoxContent = styled(Box)({
   },
 });
 
-/* eslint-disable react/jsx-max-depth */
 /* eslint-disable react/jsx-no-bind */
 /* eslint-disable react-hooks/exhaustive-deps */
 const App: React.FC = () => {

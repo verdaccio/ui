@@ -19,7 +19,6 @@ const Engine: React.FC = () => {
     return null;
   }
 
-  /* eslint-disable react/jsx-max-depth */
   return (
     <Grid container={true}>
       {engines.node && (
@@ -45,7 +44,6 @@ const Engine: React.FC = () => {
       )}
     </Grid>
   );
-  /* eslint-enable react/jsx-max-depth */
 };
 
 export default Engine;

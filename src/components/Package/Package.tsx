@@ -114,7 +114,6 @@ const Package: React.FC<PackageInterface> = ({
       <a href={homepage} target={'_blank'}>
         <Tooltip aria-label={'Homepage'} title={'Visit homepage'}>
           <IconButton aria-label={'Homepage'}>
-            {/* eslint-disable-next-line react/jsx-max-depth */}
             <HomeIcon />
           </IconButton>
         </Tooltip>
@@ -128,7 +127,6 @@ const Package: React.FC<PackageInterface> = ({
       <a href={bugs.url} target={'_blank'}>
         <Tooltip aria-label={'Bugs'} title={'Open an issue'}>
           <IconButton aria-label={'Bugs'}>
-            {/* eslint-disable-next-line react/jsx-max-depth */}
             <BugReport />
           </IconButton>
         </Tooltip>
@@ -143,7 +141,6 @@ const Package: React.FC<PackageInterface> = ({
       <a onClick={downloadTarball(dist.tarball.replace(`https://registry.npmjs.org/`, window.location.href))} target={'_blank'}>
         <Tooltip aria-label={'Download the tar file'} title={'Download tarball'}>
           <IconButton aria-label={'Download'}>
-            {/* eslint-disable-next-line react/jsx-max-depth */}
             <DownloadIcon />
           </IconButton>
         </Tooltip>
@@ -155,7 +152,6 @@ const Package: React.FC<PackageInterface> = ({
       <Grid container={true} item={true} xs={12}>
         <Grid item={true} xs={true}>
           <WrapperLink to={`/-/web/detail/${packageName}`}>
-            {/* eslint-disable-next-line react/jsx-max-depth */}
             <PackageTitle className="package-title">{packageName}</PackageTitle>
           </WrapperLink>
         </Grid>

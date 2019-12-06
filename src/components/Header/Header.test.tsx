@@ -44,7 +44,7 @@ describe('<Header /> component with logged in state', () => {
   });
 
   test('should open login dialog', async () => {
-    const { getByText, getByTestId } = render(
+    const { getByText } = render(
       <Router>
         <AppContextProvider packages={props.packages}>
           <Header />
@@ -54,9 +54,8 @@ describe('<Header /> component with logged in state', () => {
 
     const loginBtn = getByText('Login');
     fireEvent.click(loginBtn);
-    // wait for login modal appearance and return the element
-    const registrationInfoModal = await waitForElement(() => getByTestId('login--form-container'));
-    expect(registrationInfoModal).toBeTruthy();
+    const loginDialog = await waitForElement(() => getByText('Sign in'));
+    expect(loginDialog).toBeTruthy();
   });
 
   test('should logout the user', async () => {

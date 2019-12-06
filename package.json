@@ -86,6 +86,7 @@
     "lockfile-lint": "3.0.3",
     "lodash": "^4.17.15",
     "mini-css-extract-plugin": "0.8.0",
+    "mutationobserver-shim": "0.3.3",
     "node-mocks-http": "1.8.0",
     "normalize.css": "8.0.1",
     "optimize-css-assets-webpack-plugin": "5.0.3",
@@ -96,6 +97,7 @@
     "react": "16.12.0",
     "react-autosuggest": "9.4.3",
     "react-dom": "16.12.0",
+    "react-hook-form": "3.28.12",
     "react-hot-loader": "4.12.18",
     "react-router-dom": "5.1.2",
     "request": "2.88.0",
@@ -136,7 +138,7 @@
   "bundlesize": [
     {
       "path": "./static/vendors.*.js",
-      "maxSize": "180 kB"
+      "maxSize": "185 kB"
     },
     {
       "path": "./static/main.*.js",
@@ -213,6 +215,5 @@
     "type": "opencollective",
     "url": "https://opencollective.com/verdaccio",
     "logo": "https://opencollective.com/verdaccio/logo.txt"
-  },
-  "dependencies": {}
+  }
 }

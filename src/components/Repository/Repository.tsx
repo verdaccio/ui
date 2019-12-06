@@ -1,5 +1,3 @@
-/* eslint react/jsx-max-depth: 0 */
-
 import React from 'react';
 import styled from '@emotion/styled';
 
@@ -37,7 +35,6 @@ const RepositoryListItemText = styled(ListItemText)({
   margin: 0,
 });
 
-/* eslint-disable react/jsx-wrap-multilines */
 const Repository: React.FC = () => {
   const detailContext = React.useContext(DetailContext);
 

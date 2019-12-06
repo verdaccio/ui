@@ -47,7 +47,6 @@ export interface LoginBody {
 }
 
 export interface LoginError {
-  title: string;
   type: string;
   description: string;
 }
@@ -56,7 +55,6 @@ export async function makeLogin(username?: string, password?: string): Promise<L
   // checks isEmpty
   if (isEmpty(username) || isEmpty(password)) {
     const error = {
-      title: 'Unable to login',
       type: 'error',
       description: "Username or password can't be empty!",
     };
@@ -77,10 +75,10 @@ export async function makeLogin(username?: string, password?: string): Promise<L
     };
     return result;
   } catch (e) {
+    console.error('login error', e.message);
     const error = {
-      title: 'Unable to login',
       type: 'error',
-      description: e.error,
+      description: 'Unable to sign in',
     };
     return { error };
   }

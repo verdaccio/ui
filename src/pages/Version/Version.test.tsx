@@ -23,7 +23,6 @@ const detailContextValue = {
 };
 
 describe('test Version page', () => {
-  /* eslint-disable react/jsx-max-depth */
   test('should render the version page', async () => {
     const { getByTestId, getByText } = render(
       <MemoryRouter>

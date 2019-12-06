@@ -6,6 +6,7 @@ import 'raf/polyfill';
 import { configure } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
 import { GlobalWithFetchMock } from 'jest-fetch-mock';
+import 'mutationobserver-shim';
 
 // @ts-ignore : Only a void function can be called with the 'new' keyword
 configure({ adapter: new Adapter() });
