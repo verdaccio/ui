@@ -25,7 +25,7 @@ const VersionsHistoryList: React.FC<Props> = ({ versions, packageName, time }) =
             <ListItemText>{version}</ListItemText>
           </StyledLink>
           <Spacer />
-          <ListItemText>{time[version] ? `${formatDateDistance(time[version])} ago` : NOT_AVAILABLE}</ListItemText>
+          <ListItemText>{time[version] ? formatDateDistance(time[version]) : NOT_AVAILABLE}</ListItemText>
         </ListItem>
       ))}
   </List>
