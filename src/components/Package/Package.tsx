@@ -104,7 +104,7 @@ const Package: React.FC<PackageInterface> = ({
       <OverviewItem>
         <Icon name="time" />
         <Published>{`Published on ${formatDate(time)} •`}</Published>
-        {`${formatDateDistance(time)} ago`}
+        {formatDateDistance(time)}
       </OverviewItem>
     );
 
