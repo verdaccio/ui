@@ -2,7 +2,6 @@ import styled from '@emotion/styled';
 import { css } from '@emotion/core';
 
 import { Theme } from '../../design-tokens/theme';
-import { breakpoints } from '../../utils/styles/media';
 import IconButton from '../../muiComponents/IconButton';
 import AppBar from '../../muiComponents/AppBar';
 import Toolbar from '../../muiComponents/Toolbar';
@@ -54,12 +53,12 @@ export const SearchWrapper = styled('div')({
   width: '100%',
 });
 
-export const NavBar = styled(AppBar)<{ theme?: Theme }>(props => ({
-  backgroundColor: props.theme && props.theme.palette.primary.main,
+export const NavBar = styled(AppBar)<{ theme?: Theme }>(({ theme }) => ({
+  backgroundColor: theme && theme.palette.primary.main,
   minHeight: 60,
   display: 'flex',
   justifyContent: 'center',
-  [`@media (min-width: ${breakpoints.medium}px)`]: css`
+  [`@media (min-width: ${theme && theme.breakPoints.medium}px)`]: css`
     ${SearchWrapper} {
       display: flex;
     }
@@ -70,12 +69,12 @@ export const NavBar = styled(AppBar)<{ theme?: Theme }>(props => ({
       display: none;
     }
   `,
-  [`@media (min-width: ${breakpoints.large}px)`]: css`
+  [`@media (min-width: ${theme && theme.breakPoints.large}px)`]: css`
     ${InnerNavBar} {
       padding: 0 20px;
     }
   `,
-  [`@media (min-width: ${breakpoints.xlarge}px)`]: css`
+  [`@media (min-width: ${theme && theme.breakPoints.xlarge}px)`]: css`
     ${InnerNavBar} {
       max-width: 1240px;
       width: 100%;

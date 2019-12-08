@@ -1,6 +1,5 @@
 import styled from '@emotion/styled';
 
-import { breakpoints } from '../../utils/styles/media';
 import Icon from '../Icon/Icon';
 import { Theme } from '../../design-tokens/theme';
 
@@ -12,29 +11,29 @@ export const Wrapper = styled('div')<{ theme?: Theme }>(props => ({
   padding: '20px',
 }));
 
-export const Inner = styled('div')({
+export const Inner = styled('div')<{ theme?: Theme }>(({ theme }) => ({
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'flex-end',
   width: '100%',
-  [`@media (min-width: ${breakpoints.medium}px)`]: {
+  [`@media (min-width: ${theme && theme.breakPoints.medium}px)`]: {
     minWidth: 400,
     maxWidth: 800,
     margin: 'auto',
     justifyContent: 'space-between',
   },
-  [`@media (min-width: ${breakpoints.large}px)`]: {
+  [`@media (min-width: ${theme && theme.breakPoints.large}px)`]: {
     maxWidth: 1240,
   },
-});
+}));
 
-export const Left = styled('div')({
+export const Left = styled('div')<{ theme?: Theme }>(({ theme }) => ({
   alignItems: 'center',
   display: 'none',
-  [`@media (min-width: ${breakpoints.medium}px)`]: {
+  [`@media (min-width: ${theme && theme.breakPoints.medium}px)`]: {
     display: 'flex',
   },
-});
+}));
 
 export const Right = styled(Left)({
   display: 'flex',

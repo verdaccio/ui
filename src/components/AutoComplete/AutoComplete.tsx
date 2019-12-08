@@ -4,13 +4,13 @@ import Autosuggest, { SuggestionSelectedEventData, InputProps, ChangeEvent } fro
 import match from 'autosuggest-highlight/match';
 import parse from 'autosuggest-highlight/parse';
 
-import { fontWeight } from '../../utils/styles/sizes';
 import MenuItem from '../../muiComponents/MenuItem';
+import { Theme } from '../../design-tokens/theme';
 
 import { Wrapper, InputField, SuggestionContainer } from './styles';
 
-const StyledAnchor = styled('a')<{ fw: number }>(props => ({
-  fontWeight: props.fw,
+const StyledAnchor = styled('a')<{ highlight: boolean; theme?: Theme }>(props => ({
+  fontWeight: props.theme && props.highlight ? props.theme.fontWeight.semiBold : props.theme.fontWeight.light,
 }));
 
 const StyledMenuItem = styled(MenuItem)({
@@ -64,9 +64,8 @@ const renderSuggestion = (suggestion, { query, isHighlighted }): JSX.Element => 
     <StyledMenuItem component="div" selected={isHighlighted}>
       <div>
         {parts.map((part, index) => {
-          const fw = part.highlight ? fontWeight.semiBold : fontWeight.light;
           return (
-            <StyledAnchor fw={fw} key={String(index)}>
+            <StyledAnchor highlight={part.highlight} key={String(index)}>
               {part.text}
             </StyledAnchor>
           );
