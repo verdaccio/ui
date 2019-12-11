@@ -24,8 +24,15 @@ export interface PackageMetaInterface {
       type?: string;
       url?: string;
     };
+    maintainers?: Array<Developer>;
+    contributors?: Array<Developer>;
   };
   _uplinks: {};
+}
+export interface Developer {
+  name: string;
+  email: string;
+  avatar: string;
 }
 
 interface LicenseInterface {

@@ -7,33 +7,8 @@ exports[`test Developers should render the component for contributors with items
   text-transform: capitalize;
 }
 
-.emotion-12 {
-  margin: 10px 0 10px 0;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-wrap: wrap;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
-}
-
-.emotion-12 > * {
+.emotion-8 > * {
   margin: 5px;
-}
-
-.emotion-8 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
 }
 
 <Developers
@@ -97,236 +72,254 @@ exports[`test Developers should render the component for contributors with items
       </WithStyles(ForwardRef(Typography))>
     </ForwardRef(Text)>
   </StyledText>
-  <Content>
-    <div
-      className="emotion-12 emotion-13"
+  <StyledBox
+    display="flex"
+    flexWrap="wrap"
+    margin="10px 0 10px 0"
+  >
+    <Box
+      className="emotion-8 emotion-9"
+      display="flex"
+      flexWrap="wrap"
+      margin="10px 0 10px 0"
     >
-      <Details
-        key="dave.methvin@gmail.com"
+      <Styled(MuiBox)
+        className="emotion-8 emotion-9"
+        display="flex"
+        flexWrap="wrap"
+        margin="10px 0 10px 0"
       >
-        <span
-          className="emotion-8 emotion-9"
+        <div
+          className="MuiBox-root MuiBox-root-50 emotion-8 emotion-9"
         >
-          <AvatarTooltip
-            email="dave.methvin@gmail.com"
-            name="dmethvin"
-            version="1.0.0"
+          <ForwardRef(ToolTip)
+            key="dave.methvin@gmail.com"
+            title="dmethvin"
           >
-            <ForwardRef(ToolTip)
+            <WithStyles(ForwardRef(Tooltip))
+              innerRef={null}
               title="dmethvin"
             >
-              <WithStyles(ForwardRef(Tooltip))
-                innerRef={null}
+              <ForwardRef(Tooltip)
+                classes={
+                  Object {
+                    "arrow": "MuiTooltip-arrow",
+                    "popper": "MuiTooltip-popper",
+                    "popperArrow": "MuiTooltip-popperArrow",
+                    "popperInteractive": "MuiTooltip-popperInteractive",
+                    "tooltip": "MuiTooltip-tooltip",
+                    "tooltipArrow": "MuiTooltip-tooltipArrow",
+                    "tooltipPlacementBottom": "MuiTooltip-tooltipPlacementBottom",
+                    "tooltipPlacementLeft": "MuiTooltip-tooltipPlacementLeft",
+                    "tooltipPlacementRight": "MuiTooltip-tooltipPlacementRight",
+                    "tooltipPlacementTop": "MuiTooltip-tooltipPlacementTop",
+                    "touch": "MuiTooltip-touch",
+                  }
+                }
                 title="dmethvin"
               >
-                <ForwardRef(Tooltip)
-                  classes={
-                    Object {
-                      "arrow": "MuiTooltip-arrow",
-                      "popper": "MuiTooltip-popper",
-                      "popperArrow": "MuiTooltip-popperArrow",
-                      "popperInteractive": "MuiTooltip-popperInteractive",
-                      "tooltip": "MuiTooltip-tooltip",
-                      "tooltipArrow": "MuiTooltip-tooltipArrow",
-                      "tooltipPlacementBottom": "MuiTooltip-tooltipPlacementBottom",
-                      "tooltipPlacementLeft": "MuiTooltip-tooltipPlacementLeft",
-                      "tooltipPlacementRight": "MuiTooltip-tooltipPlacementRight",
-                      "tooltipPlacementTop": "MuiTooltip-tooltipPlacementTop",
-                      "touch": "MuiTooltip-touch",
-                    }
-                  }
+                <ForwardRef(Avatar)
+                  alt="dmethvin"
+                  aria-describedby={null}
+                  className=""
+                  onBlur={[Function]}
+                  onFocus={[Function]}
+                  onMouseLeave={[Function]}
+                  onMouseOver={[Function]}
+                  onTouchEnd={[Function]}
+                  onTouchStart={[Function]}
                   title="dmethvin"
                 >
-                  <a
+                  <WithStyles(ForwardRef(Avatar))
+                    alt="dmethvin"
                     aria-describedby={null}
                     className=""
-                    href="mailto:dave.methvin@gmail.com?subject=undefined@1.0.0"
                     onBlur={[Function]}
                     onFocus={[Function]}
                     onMouseLeave={[Function]}
                     onMouseOver={[Function]}
                     onTouchEnd={[Function]}
                     onTouchStart={[Function]}
-                    target="_top"
                     title="dmethvin"
                   >
                     <ForwardRef(Avatar)
-                      aria-label="dmethvin"
-                    >
-                      <WithStyles(ForwardRef(Avatar))
-                        aria-label="dmethvin"
-                      >
-                        <ForwardRef(Avatar)
-                          aria-label="dmethvin"
-                          classes={
-                            Object {
-                              "circle": "MuiAvatar-circle",
-                              "colorDefault": "MuiAvatar-colorDefault",
-                              "img": "MuiAvatar-img",
-                              "root": "MuiAvatar-root",
-                              "rounded": "MuiAvatar-rounded",
-                              "square": "MuiAvatar-square",
-                            }
-                          }
-                        >
-                          <div
-                            aria-label="dmethvin"
-                            className="MuiAvatar-root MuiAvatar-circle MuiAvatar-colorDefault"
-                          />
-                        </ForwardRef(Avatar)>
-                      </WithStyles(ForwardRef(Avatar))>
-                    </ForwardRef(Avatar)>
-                  </a>
-                  <ForwardRef(Popper)
-                    anchorEl={
-                      <a
-                        class=""
-                        href="mailto:dave.methvin@gmail.com?subject=undefined@1.0.0"
-                        target="_top"
-                        title="dmethvin"
-                      >
-                        <div
-                          aria-label="dmethvin"
-                          class="MuiAvatar-root MuiAvatar-circle MuiAvatar-colorDefault"
-                        />
-                      </a>
-                    }
-                    className="MuiTooltip-popper"
-                    id={null}
-                    open={false}
-                    placement="bottom"
-                    popperOptions={
-                      Object {
-                        "modifiers": Object {
-                          "arrow": Object {
-                            "element": null,
-                            "enabled": false,
-                          },
-                        },
+                      alt="dmethvin"
+                      aria-describedby={null}
+                      className=""
+                      classes={
+                        Object {
+                          "circle": "MuiAvatar-circle",
+                          "colorDefault": "MuiAvatar-colorDefault",
+                          "img": "MuiAvatar-img",
+                          "root": "MuiAvatar-root",
+                          "rounded": "MuiAvatar-rounded",
+                          "square": "MuiAvatar-square",
+                        }
                       }
-                    }
-                    transition={true}
-                  />
-                </ForwardRef(Tooltip)>
-              </WithStyles(ForwardRef(Tooltip))>
-            </ForwardRef(ToolTip)>
-          </AvatarTooltip>
-        </span>
-      </Details>
-      <Details
-        key="m.goleb@gmail.com"
-      >
-        <span
-          className="emotion-8 emotion-9"
-        >
-          <AvatarTooltip
-            email="m.goleb@gmail.com"
-            name="mgol"
-            version="1.0.0"
-          >
-            <ForwardRef(ToolTip)
-              title="mgol"
-            >
-              <WithStyles(ForwardRef(Tooltip))
-                innerRef={null}
-                title="mgol"
-              >
-                <ForwardRef(Tooltip)
-                  classes={
+                      onBlur={[Function]}
+                      onFocus={[Function]}
+                      onMouseLeave={[Function]}
+                      onMouseOver={[Function]}
+                      onTouchEnd={[Function]}
+                      onTouchStart={[Function]}
+                      title="dmethvin"
+                    >
+                      <div
+                        aria-describedby={null}
+                        className="MuiAvatar-root MuiAvatar-circle MuiAvatar-colorDefault"
+                        onBlur={[Function]}
+                        onFocus={[Function]}
+                        onMouseLeave={[Function]}
+                        onMouseOver={[Function]}
+                        onTouchEnd={[Function]}
+                        onTouchStart={[Function]}
+                        title="dmethvin"
+                      />
+                    </ForwardRef(Avatar)>
+                  </WithStyles(ForwardRef(Avatar))>
+                </ForwardRef(Avatar)>
+                <ForwardRef(Popper)
+                  anchorEl={
+                    <div
+                      class="MuiAvatar-root MuiAvatar-circle MuiAvatar-colorDefault"
+                      title="dmethvin"
+                    />
+                  }
+                  className="MuiTooltip-popper"
+                  id={null}
+                  open={false}
+                  placement="bottom"
+                  popperOptions={
                     Object {
-                      "arrow": "MuiTooltip-arrow",
-                      "popper": "MuiTooltip-popper",
-                      "popperArrow": "MuiTooltip-popperArrow",
-                      "popperInteractive": "MuiTooltip-popperInteractive",
-                      "tooltip": "MuiTooltip-tooltip",
-                      "tooltipArrow": "MuiTooltip-tooltipArrow",
-                      "tooltipPlacementBottom": "MuiTooltip-tooltipPlacementBottom",
-                      "tooltipPlacementLeft": "MuiTooltip-tooltipPlacementLeft",
-                      "tooltipPlacementRight": "MuiTooltip-tooltipPlacementRight",
-                      "tooltipPlacementTop": "MuiTooltip-tooltipPlacementTop",
-                      "touch": "MuiTooltip-touch",
+                      "modifiers": Object {
+                        "arrow": Object {
+                          "element": null,
+                          "enabled": false,
+                        },
+                      },
                     }
                   }
+                  transition={true}
+                />
+              </ForwardRef(Tooltip)>
+            </WithStyles(ForwardRef(Tooltip))>
+          </ForwardRef(ToolTip)>
+          <ForwardRef(ToolTip)
+            key="m.goleb@gmail.com"
+            title="mgol"
+          >
+            <WithStyles(ForwardRef(Tooltip))
+              innerRef={null}
+              title="mgol"
+            >
+              <ForwardRef(Tooltip)
+                classes={
+                  Object {
+                    "arrow": "MuiTooltip-arrow",
+                    "popper": "MuiTooltip-popper",
+                    "popperArrow": "MuiTooltip-popperArrow",
+                    "popperInteractive": "MuiTooltip-popperInteractive",
+                    "tooltip": "MuiTooltip-tooltip",
+                    "tooltipArrow": "MuiTooltip-tooltipArrow",
+                    "tooltipPlacementBottom": "MuiTooltip-tooltipPlacementBottom",
+                    "tooltipPlacementLeft": "MuiTooltip-tooltipPlacementLeft",
+                    "tooltipPlacementRight": "MuiTooltip-tooltipPlacementRight",
+                    "tooltipPlacementTop": "MuiTooltip-tooltipPlacementTop",
+                    "touch": "MuiTooltip-touch",
+                  }
+                }
+                title="mgol"
+              >
+                <ForwardRef(Avatar)
+                  alt="mgol"
+                  aria-describedby={null}
+                  className=""
+                  onBlur={[Function]}
+                  onFocus={[Function]}
+                  onMouseLeave={[Function]}
+                  onMouseOver={[Function]}
+                  onTouchEnd={[Function]}
+                  onTouchStart={[Function]}
                   title="mgol"
                 >
-                  <a
+                  <WithStyles(ForwardRef(Avatar))
+                    alt="mgol"
                     aria-describedby={null}
                     className=""
-                    href="mailto:m.goleb@gmail.com?subject=undefined@1.0.0"
                     onBlur={[Function]}
                     onFocus={[Function]}
                     onMouseLeave={[Function]}
                     onMouseOver={[Function]}
                     onTouchEnd={[Function]}
                     onTouchStart={[Function]}
-                    target="_top"
                     title="mgol"
                   >
                     <ForwardRef(Avatar)
-                      aria-label="mgol"
-                    >
-                      <WithStyles(ForwardRef(Avatar))
-                        aria-label="mgol"
-                      >
-                        <ForwardRef(Avatar)
-                          aria-label="mgol"
-                          classes={
-                            Object {
-                              "circle": "MuiAvatar-circle",
-                              "colorDefault": "MuiAvatar-colorDefault",
-                              "img": "MuiAvatar-img",
-                              "root": "MuiAvatar-root",
-                              "rounded": "MuiAvatar-rounded",
-                              "square": "MuiAvatar-square",
-                            }
-                          }
-                        >
-                          <div
-                            aria-label="mgol"
-                            className="MuiAvatar-root MuiAvatar-circle MuiAvatar-colorDefault"
-                          />
-                        </ForwardRef(Avatar)>
-                      </WithStyles(ForwardRef(Avatar))>
-                    </ForwardRef(Avatar)>
-                  </a>
-                  <ForwardRef(Popper)
-                    anchorEl={
-                      <a
-                        class=""
-                        href="mailto:m.goleb@gmail.com?subject=undefined@1.0.0"
-                        target="_top"
-                        title="mgol"
-                      >
-                        <div
-                          aria-label="mgol"
-                          class="MuiAvatar-root MuiAvatar-circle MuiAvatar-colorDefault"
-                        />
-                      </a>
-                    }
-                    className="MuiTooltip-popper"
-                    id={null}
-                    open={false}
-                    placement="bottom"
-                    popperOptions={
-                      Object {
-                        "modifiers": Object {
-                          "arrow": Object {
-                            "element": null,
-                            "enabled": false,
-                          },
-                        },
+                      alt="mgol"
+                      aria-describedby={null}
+                      className=""
+                      classes={
+                        Object {
+                          "circle": "MuiAvatar-circle",
+                          "colorDefault": "MuiAvatar-colorDefault",
+                          "img": "MuiAvatar-img",
+                          "root": "MuiAvatar-root",
+                          "rounded": "MuiAvatar-rounded",
+                          "square": "MuiAvatar-square",
+                        }
                       }
+                      onBlur={[Function]}
+                      onFocus={[Function]}
+                      onMouseLeave={[Function]}
+                      onMouseOver={[Function]}
+                      onTouchEnd={[Function]}
+                      onTouchStart={[Function]}
+                      title="mgol"
+                    >
+                      <div
+                        aria-describedby={null}
+                        className="MuiAvatar-root MuiAvatar-circle MuiAvatar-colorDefault"
+                        onBlur={[Function]}
+                        onFocus={[Function]}
+                        onMouseLeave={[Function]}
+                        onMouseOver={[Function]}
+                        onTouchEnd={[Function]}
+                        onTouchStart={[Function]}
+                        title="mgol"
+                      />
+                    </ForwardRef(Avatar)>
+                  </WithStyles(ForwardRef(Avatar))>
+                </ForwardRef(Avatar)>
+                <ForwardRef(Popper)
+                  anchorEl={
+                    <div
+                      class="MuiAvatar-root MuiAvatar-circle MuiAvatar-colorDefault"
+                      title="mgol"
+                    />
+                  }
+                  className="MuiTooltip-popper"
+                  id={null}
+                  open={false}
+                  placement="bottom"
+                  popperOptions={
+                    Object {
+                      "modifiers": Object {
+                        "arrow": Object {
+                          "element": null,
+                          "enabled": false,
+                        },
+                      },
                     }
-                    transition={true}
-                  />
-                </ForwardRef(Tooltip)>
-              </WithStyles(ForwardRef(Tooltip))>
-            </ForwardRef(ToolTip)>
-          </AvatarTooltip>
-        </span>
-      </Details>
-    </div>
-  </Content>
+                  }
+                  transition={true}
+                />
+              </ForwardRef(Tooltip)>
+            </WithStyles(ForwardRef(Tooltip))>
+          </ForwardRef(ToolTip)>
+        </div>
+      </Styled(MuiBox)>
+    </Box>
+  </StyledBox>
 </Developers>
 `;
 
@@ -337,33 +330,8 @@ exports[`test Developers should render the component for maintainers with items 
   text-transform: capitalize;
 }
 
-.emotion-12 {
-  margin: 10px 0 10px 0;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-wrap: wrap;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
-}
-
-.emotion-12 > * {
+.emotion-8 > * {
   margin: 5px;
-}
-
-.emotion-8 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
 }
 
 <Developers
@@ -427,236 +395,254 @@ exports[`test Developers should render the component for maintainers with items 
       </WithStyles(ForwardRef(Typography))>
     </ForwardRef(Text)>
   </StyledText>
-  <Content>
-    <div
-      className="emotion-12 emotion-13"
+  <StyledBox
+    display="flex"
+    flexWrap="wrap"
+    margin="10px 0 10px 0"
+  >
+    <Box
+      className="emotion-8 emotion-9"
+      display="flex"
+      flexWrap="wrap"
+      margin="10px 0 10px 0"
     >
-      <Details
-        key="dave.methvin@gmail.com"
+      <Styled(MuiBox)
+        className="emotion-8 emotion-9"
+        display="flex"
+        flexWrap="wrap"
+        margin="10px 0 10px 0"
       >
-        <span
-          className="emotion-8 emotion-9"
+        <div
+          className="MuiBox-root MuiBox-root-32 emotion-8 emotion-9"
         >
-          <AvatarTooltip
-            email="dave.methvin@gmail.com"
-            name="dmethvin"
-            version="1.0.0"
+          <ForwardRef(ToolTip)
+            key="dave.methvin@gmail.com"
+            title="dmethvin"
           >
-            <ForwardRef(ToolTip)
+            <WithStyles(ForwardRef(Tooltip))
+              innerRef={null}
               title="dmethvin"
             >
-              <WithStyles(ForwardRef(Tooltip))
-                innerRef={null}
+              <ForwardRef(Tooltip)
+                classes={
+                  Object {
+                    "arrow": "MuiTooltip-arrow",
+                    "popper": "MuiTooltip-popper",
+                    "popperArrow": "MuiTooltip-popperArrow",
+                    "popperInteractive": "MuiTooltip-popperInteractive",
+                    "tooltip": "MuiTooltip-tooltip",
+                    "tooltipArrow": "MuiTooltip-tooltipArrow",
+                    "tooltipPlacementBottom": "MuiTooltip-tooltipPlacementBottom",
+                    "tooltipPlacementLeft": "MuiTooltip-tooltipPlacementLeft",
+                    "tooltipPlacementRight": "MuiTooltip-tooltipPlacementRight",
+                    "tooltipPlacementTop": "MuiTooltip-tooltipPlacementTop",
+                    "touch": "MuiTooltip-touch",
+                  }
+                }
                 title="dmethvin"
               >
-                <ForwardRef(Tooltip)
-                  classes={
-                    Object {
-                      "arrow": "MuiTooltip-arrow",
-                      "popper": "MuiTooltip-popper",
-                      "popperArrow": "MuiTooltip-popperArrow",
-                      "popperInteractive": "MuiTooltip-popperInteractive",
-                      "tooltip": "MuiTooltip-tooltip",
-                      "tooltipArrow": "MuiTooltip-tooltipArrow",
-                      "tooltipPlacementBottom": "MuiTooltip-tooltipPlacementBottom",
-                      "tooltipPlacementLeft": "MuiTooltip-tooltipPlacementLeft",
-                      "tooltipPlacementRight": "MuiTooltip-tooltipPlacementRight",
-                      "tooltipPlacementTop": "MuiTooltip-tooltipPlacementTop",
-                      "touch": "MuiTooltip-touch",
-                    }
-                  }
+                <ForwardRef(Avatar)
+                  alt="dmethvin"
+                  aria-describedby={null}
+                  className=""
+                  onBlur={[Function]}
+                  onFocus={[Function]}
+                  onMouseLeave={[Function]}
+                  onMouseOver={[Function]}
+                  onTouchEnd={[Function]}
+                  onTouchStart={[Function]}
                   title="dmethvin"
                 >
-                  <a
+                  <WithStyles(ForwardRef(Avatar))
+                    alt="dmethvin"
                     aria-describedby={null}
                     className=""
-                    href="mailto:dave.methvin@gmail.com?subject=undefined@1.0.0"
                     onBlur={[Function]}
                     onFocus={[Function]}
                     onMouseLeave={[Function]}
                     onMouseOver={[Function]}
                     onTouchEnd={[Function]}
                     onTouchStart={[Function]}
-                    target="_top"
                     title="dmethvin"
                   >
                     <ForwardRef(Avatar)
-                      aria-label="dmethvin"
-                    >
-                      <WithStyles(ForwardRef(Avatar))
-                        aria-label="dmethvin"
-                      >
-                        <ForwardRef(Avatar)
-                          aria-label="dmethvin"
-                          classes={
-                            Object {
-                              "circle": "MuiAvatar-circle",
-                              "colorDefault": "MuiAvatar-colorDefault",
-                              "img": "MuiAvatar-img",
-                              "root": "MuiAvatar-root",
-                              "rounded": "MuiAvatar-rounded",
-                              "square": "MuiAvatar-square",
-                            }
-                          }
-                        >
-                          <div
-                            aria-label="dmethvin"
-                            className="MuiAvatar-root MuiAvatar-circle MuiAvatar-colorDefault"
-                          />
-                        </ForwardRef(Avatar)>
-                      </WithStyles(ForwardRef(Avatar))>
-                    </ForwardRef(Avatar)>
-                  </a>
-                  <ForwardRef(Popper)
-                    anchorEl={
-                      <a
-                        class=""
-                        href="mailto:dave.methvin@gmail.com?subject=undefined@1.0.0"
-                        target="_top"
-                        title="dmethvin"
-                      >
-                        <div
-                          aria-label="dmethvin"
-                          class="MuiAvatar-root MuiAvatar-circle MuiAvatar-colorDefault"
-                        />
-                      </a>
-                    }
-                    className="MuiTooltip-popper"
-                    id={null}
-                    open={false}
-                    placement="bottom"
-                    popperOptions={
-                      Object {
-                        "modifiers": Object {
-                          "arrow": Object {
-                            "element": null,
-                            "enabled": false,
-                          },
-                        },
+                      alt="dmethvin"
+                      aria-describedby={null}
+                      className=""
+                      classes={
+                        Object {
+                          "circle": "MuiAvatar-circle",
+                          "colorDefault": "MuiAvatar-colorDefault",
+                          "img": "MuiAvatar-img",
+                          "root": "MuiAvatar-root",
+                          "rounded": "MuiAvatar-rounded",
+                          "square": "MuiAvatar-square",
+                        }
                       }
-                    }
-                    transition={true}
-                  />
-                </ForwardRef(Tooltip)>
-              </WithStyles(ForwardRef(Tooltip))>
-            </ForwardRef(ToolTip)>
-          </AvatarTooltip>
-        </span>
-      </Details>
-      <Details
-        key="m.goleb@gmail.com"
-      >
-        <span
-          className="emotion-8 emotion-9"
-        >
-          <AvatarTooltip
-            email="m.goleb@gmail.com"
-            name="mgol"
-            version="1.0.0"
-          >
-            <ForwardRef(ToolTip)
-              title="mgol"
-            >
-              <WithStyles(ForwardRef(Tooltip))
-                innerRef={null}
-                title="mgol"
-              >
-                <ForwardRef(Tooltip)
-                  classes={
+                      onBlur={[Function]}
+                      onFocus={[Function]}
+                      onMouseLeave={[Function]}
+                      onMouseOver={[Function]}
+                      onTouchEnd={[Function]}
+                      onTouchStart={[Function]}
+                      title="dmethvin"
+                    >
+                      <div
+                        aria-describedby={null}
+                        className="MuiAvatar-root MuiAvatar-circle MuiAvatar-colorDefault"
+                        onBlur={[Function]}
+                        onFocus={[Function]}
+                        onMouseLeave={[Function]}
+                        onMouseOver={[Function]}
+                        onTouchEnd={[Function]}
+                        onTouchStart={[Function]}
+                        title="dmethvin"
+                      />
+                    </ForwardRef(Avatar)>
+                  </WithStyles(ForwardRef(Avatar))>
+                </ForwardRef(Avatar)>
+                <ForwardRef(Popper)
+                  anchorEl={
+                    <div
+                      class="MuiAvatar-root MuiAvatar-circle MuiAvatar-colorDefault"
+                      title="dmethvin"
+                    />
+                  }
+                  className="MuiTooltip-popper"
+                  id={null}
+                  open={false}
+                  placement="bottom"
+                  popperOptions={
                     Object {
-                      "arrow": "MuiTooltip-arrow",
-                      "popper": "MuiTooltip-popper",
-                      "popperArrow": "MuiTooltip-popperArrow",
-                      "popperInteractive": "MuiTooltip-popperInteractive",
-                      "tooltip": "MuiTooltip-tooltip",
-                      "tooltipArrow": "MuiTooltip-tooltipArrow",
-                      "tooltipPlacementBottom": "MuiTooltip-tooltipPlacementBottom",
-                      "tooltipPlacementLeft": "MuiTooltip-tooltipPlacementLeft",
-                      "tooltipPlacementRight": "MuiTooltip-tooltipPlacementRight",
-                      "tooltipPlacementTop": "MuiTooltip-tooltipPlacementTop",
-                      "touch": "MuiTooltip-touch",
+                      "modifiers": Object {
+                        "arrow": Object {
+                          "element": null,
+                          "enabled": false,
+                        },
+                      },
                     }
                   }
+                  transition={true}
+                />
+              </ForwardRef(Tooltip)>
+            </WithStyles(ForwardRef(Tooltip))>
+          </ForwardRef(ToolTip)>
+          <ForwardRef(ToolTip)
+            key="m.goleb@gmail.com"
+            title="mgol"
+          >
+            <WithStyles(ForwardRef(Tooltip))
+              innerRef={null}
+              title="mgol"
+            >
+              <ForwardRef(Tooltip)
+                classes={
+                  Object {
+                    "arrow": "MuiTooltip-arrow",
+                    "popper": "MuiTooltip-popper",
+                    "popperArrow": "MuiTooltip-popperArrow",
+                    "popperInteractive": "MuiTooltip-popperInteractive",
+                    "tooltip": "MuiTooltip-tooltip",
+                    "tooltipArrow": "MuiTooltip-tooltipArrow",
+                    "tooltipPlacementBottom": "MuiTooltip-tooltipPlacementBottom",
+                    "tooltipPlacementLeft": "MuiTooltip-tooltipPlacementLeft",
+                    "tooltipPlacementRight": "MuiTooltip-tooltipPlacementRight",
+                    "tooltipPlacementTop": "MuiTooltip-tooltipPlacementTop",
+                    "touch": "MuiTooltip-touch",
+                  }
+                }
+                title="mgol"
+              >
+                <ForwardRef(Avatar)
+                  alt="mgol"
+                  aria-describedby={null}
+                  className=""
+                  onBlur={[Function]}
+                  onFocus={[Function]}
+                  onMouseLeave={[Function]}
+                  onMouseOver={[Function]}
+                  onTouchEnd={[Function]}
+                  onTouchStart={[Function]}
                   title="mgol"
                 >
-                  <a
+                  <WithStyles(ForwardRef(Avatar))
+                    alt="mgol"
                     aria-describedby={null}
                     className=""
-                    href="mailto:m.goleb@gmail.com?subject=undefined@1.0.0"
                     onBlur={[Function]}
                     onFocus={[Function]}
                     onMouseLeave={[Function]}
                     onMouseOver={[Function]}
                     onTouchEnd={[Function]}
                     onTouchStart={[Function]}
-                    target="_top"
                     title="mgol"
                   >
                     <ForwardRef(Avatar)
-                      aria-label="mgol"
-                    >
-                      <WithStyles(ForwardRef(Avatar))
-                        aria-label="mgol"
-                      >
-                        <ForwardRef(Avatar)
-                          aria-label="mgol"
-                          classes={
-                            Object {
-                              "circle": "MuiAvatar-circle",
-                              "colorDefault": "MuiAvatar-colorDefault",
-                              "img": "MuiAvatar-img",
-                              "root": "MuiAvatar-root",
-                              "rounded": "MuiAvatar-rounded",
-                              "square": "MuiAvatar-square",
-                            }
-                          }
-                        >
-                          <div
-                            aria-label="mgol"
-                            className="MuiAvatar-root MuiAvatar-circle MuiAvatar-colorDefault"
-                          />
-                        </ForwardRef(Avatar)>
-                      </WithStyles(ForwardRef(Avatar))>
-                    </ForwardRef(Avatar)>
-                  </a>
-                  <ForwardRef(Popper)
-                    anchorEl={
-                      <a
-                        class=""
-                        href="mailto:m.goleb@gmail.com?subject=undefined@1.0.0"
-                        target="_top"
-                        title="mgol"
-                      >
-                        <div
-                          aria-label="mgol"
-                          class="MuiAvatar-root MuiAvatar-circle MuiAvatar-colorDefault"
-                        />
-                      </a>
-                    }
-                    className="MuiTooltip-popper"
-                    id={null}
-                    open={false}
-                    placement="bottom"
-                    popperOptions={
-                      Object {
-                        "modifiers": Object {
-                          "arrow": Object {
-                            "element": null,
-                            "enabled": false,
-                          },
-                        },
+                      alt="mgol"
+                      aria-describedby={null}
+                      className=""
+                      classes={
+                        Object {
+                          "circle": "MuiAvatar-circle",
+                          "colorDefault": "MuiAvatar-colorDefault",
+                          "img": "MuiAvatar-img",
+                          "root": "MuiAvatar-root",
+                          "rounded": "MuiAvatar-rounded",
+                          "square": "MuiAvatar-square",
+                        }
                       }
+                      onBlur={[Function]}
+                      onFocus={[Function]}
+                      onMouseLeave={[Function]}
+                      onMouseOver={[Function]}
+                      onTouchEnd={[Function]}
+                      onTouchStart={[Function]}
+                      title="mgol"
+                    >
+                      <div
+                        aria-describedby={null}
+                        className="MuiAvatar-root MuiAvatar-circle MuiAvatar-colorDefault"
+                        onBlur={[Function]}
+                        onFocus={[Function]}
+                        onMouseLeave={[Function]}
+                        onMouseOver={[Function]}
+                        onTouchEnd={[Function]}
+                        onTouchStart={[Function]}
+                        title="mgol"
+                      />
+                    </ForwardRef(Avatar)>
+                  </WithStyles(ForwardRef(Avatar))>
+                </ForwardRef(Avatar)>
+                <ForwardRef(Popper)
+                  anchorEl={
+                    <div
+                      class="MuiAvatar-root MuiAvatar-circle MuiAvatar-colorDefault"
+                      title="mgol"
+                    />
+                  }
+                  className="MuiTooltip-popper"
+                  id={null}
+                  open={false}
+                  placement="bottom"
+                  popperOptions={
+                    Object {
+                      "modifiers": Object {
+                        "arrow": Object {
+                          "element": null,
+                          "enabled": false,
+                        },
+                      },
                     }
-                    transition={true}
-                  />
-                </ForwardRef(Tooltip)>
-              </WithStyles(ForwardRef(Tooltip))>
-            </ForwardRef(ToolTip)>
-          </AvatarTooltip>
-        </span>
-      </Details>
-    </div>
-  </Content>
+                  }
+                  transition={true}
+                />
+              </ForwardRef(Tooltip)>
+            </WithStyles(ForwardRef(Tooltip))>
+          </ForwardRef(ToolTip)>
+        </div>
+      </Styled(MuiBox)>
+    </Box>
+  </StyledBox>
 </Developers>
 `;
 

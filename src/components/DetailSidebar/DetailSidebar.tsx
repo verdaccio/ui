@@ -2,7 +2,7 @@ import React, { ReactElement } from 'react';
 
 import ActionBar from '../ActionBar';
 import Author from '../Author';
-import Developers from '../Developers';
+import Developers, { DeveloperType } from '../Developers';
 import Dist from '../Dist/Dist';
 import Engine from '../Engines/Engines';
 import Install from '../Install';
@@ -28,8 +28,6 @@ const renderLatestDescription = (description, version, isLatest = true): JSX.Ele
 };
 
 const renderCopyCLI = (): JSX.Element => <Install />;
-const renderMaintainers = (): JSX.Element => <Developers type="maintainers" />;
-const renderContributors = (): JSX.Element => <Developers type="contributors" />;
 const renderRepository = (): JSX.Element => <Repository />;
 const renderAuthor = (): JSX.Element => <Author />;
 const renderEngine = (): JSX.Element => <Engine />;
@@ -63,8 +61,8 @@ function renderSideBar(packageName, packageVersion, packageMeta): ReactElement<H
           {renderEngine()}
           {renderDist()}
           {renderAuthor()}
-          {renderMaintainers()}
-          {renderContributors()}
+          <Developers type={DeveloperType.MAINTAINERS} />
+          {/* <Developers type={DeveloperType.CONTRIBUTORS} /> */}
         </CardContent>
       </Card>
     </div>
