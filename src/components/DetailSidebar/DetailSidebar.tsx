@@ -62,7 +62,7 @@ function renderSideBar(packageName, packageVersion, packageMeta): ReactElement<H
           {renderDist()}
           {renderAuthor()}
           <Developers type={DeveloperType.MAINTAINERS} />
-          {/* <Developers type={DeveloperType.CONTRIBUTORS} /> */}
+          <Developers type={DeveloperType.CONTRIBUTORS} />
         </CardContent>
       </Card>
     </div>
