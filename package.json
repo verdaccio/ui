@@ -23,7 +23,7 @@
     "@material-ui/icons": "4.5.1",
     "@octokit/rest": "16.35.0",
     "@testing-library/jest-dom": "4.2.4",
-    "@testing-library/react": "9.3.2",
+    "@testing-library/react": "9.3.3",
     "@types/autosuggest-highlight": "3.1.0",
     "@types/enzyme": "3.10.3",
     "@types/jest": "24.0.23",
