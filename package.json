@@ -47,7 +47,7 @@
     "bundlesize": "0.18.0",
     "codeceptjs": "2.3.6",
     "codecov": "3.6.1",
-    "concurrently": "5.0.0",
+    "concurrently": "5.0.1",
     "cross-env": "6.0.3",
     "css-loader": "3.3.0",
     "dayjs": "1.8.17",
