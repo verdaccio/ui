@@ -2,7 +2,6 @@ import { isObject } from 'util';
 
 import { UpLinks } from '@verdaccio/types';
 import isString from 'lodash/isString';
-import formatDistanceToNow from 'date-fns/formatDistanceToNow';
 import dayjs from 'dayjs';
 import relativeTime from 'dayjs/plugin/relativeTime';
 
