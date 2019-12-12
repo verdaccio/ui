@@ -2,16 +2,16 @@ import React, { useContext } from 'react';
 import styled from '@emotion/styled';
 
 import { DetailContext } from '../../pages/Version';
-import { fontWeight } from '../../utils/styles/sizes';
 import Text from '../../muiComponents/Text';
 import List from '../../muiComponents/List';
+import { Theme } from '../../design-tokens/theme';
 
 import InstallListItem, { DependencyManager } from './InstallListItem';
 
-const StyledText = styled(Text)({
-  fontWeight: fontWeight.bold,
+const StyledText = styled(Text)<{ theme?: Theme }>(props => ({
+  fontWeight: props.theme && props.theme.fontWeight.bold,
   textTransform: 'capitalize',
-});
+}));
 
 const Install: React.FC = () => {
   const detailContext = useContext(DetailContext);

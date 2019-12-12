@@ -1,16 +1,15 @@
 import styled from '@emotion/styled';
 
-import { Theme } from '../../design-tokens/theme';
-import { fontWeight } from '../../utils/styles/sizes';
 import ListItem from '../../muiComponents/ListItem';
 import Text from '../../muiComponents/Text';
 import FloatingActionButton from '../../muiComponents/FloatingActionButton';
 import Chip from '../../muiComponents/Chip';
+import { Theme } from '../../design-tokens/theme';
 
-export const StyledText = styled(Text)({
-  fontWeight: fontWeight.bold,
+export const StyledText = styled(Text)<{ theme?: Theme }>(props => ({
+  fontWeight: props.theme && props.theme.fontWeight.bold,
   textTransform: 'capitalize',
-});
+}));
 
 export const DistListItem = styled(ListItem)({
   paddingLeft: 0,

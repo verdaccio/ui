@@ -5,7 +5,6 @@ import { useHistory } from 'react-router-dom';
 import Box from '../../muiComponents/Box';
 import Button from '../../muiComponents/Button';
 import Heading from '../../muiComponents/Heading';
-import { spacings } from '../../utils/styles/spacings';
 import { Theme } from '../../design-tokens/theme';
 
 import PackageImg from './img/package.svg';
@@ -21,7 +20,7 @@ const EmptyPackage = styled('img')({
 
 const StyledHeading = styled(Heading)<{ theme?: Theme }>(props => ({
   color: props.theme && props.theme.palette.primary.main,
-  marginBottom: spacings.sm,
+  marginBottom: 16,
 }));
 
 const NotFound: React.FC = () => {

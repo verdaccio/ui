@@ -10,14 +10,13 @@ import CopyToClipBoard from '../CopyToClipBoard';
 import List from '../../muiComponents/List';
 import { DetailContext } from '../../pages/Version';
 import { Theme } from '../../design-tokens/theme';
-import { fontWeight } from '../../utils/styles/sizes';
 
 import git from './img/git.png';
 
-const StyledText = styled(Text)({
-  fontWeight: fontWeight.bold,
+const StyledText = styled(Text)<{ theme?: Theme }>(props => ({
+  fontWeight: props.theme && props.theme.fontWeight.bold,
   textTransform: 'capitalize',
-});
+}));
 
 const GithubLink = styled('a')<{ theme?: Theme }>(props => ({
   color: props.theme && props.theme.palette.primary.main,
