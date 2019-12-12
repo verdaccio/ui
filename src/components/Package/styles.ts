@@ -1,10 +1,8 @@
 import styled from '@emotion/styled';
 import { Link } from 'react-router-dom';
 
-import { breakpoints } from '../../utils/styles/media';
 import Ico from '../Icon';
 import Label from '../Label';
-import { fontWeight } from '../../utils/styles/sizes';
 import { default as MuiIconButton } from '../../muiComponents/IconButton';
 import { default as Photo } from '../../muiComponents/Avatar';
 import List from '../../muiComponents/List';
@@ -13,18 +11,18 @@ import Grid from '../../muiComponents/Grid';
 import ListItemText from '../../muiComponents/ListItemText';
 import { Theme } from '../../design-tokens/theme';
 
-export const OverviewItem = styled('span')<{ theme?: Theme }>(props => ({
+export const OverviewItem = styled('span')<{ theme?: Theme }>(({ theme }) => ({
   display: 'flex',
   alignItems: 'center',
   margin: '0 0 0 16px',
-  color: props.theme && props.theme.palette.greyLight2,
+  color: theme && theme.palette.greyLight2,
   fontSize: 12,
-  [`@media (max-width: ${breakpoints.medium}px)`]: {
+  [`@media (max-width: ${theme && theme.breakPoints.medium}px)`]: {
     ':nth-of-type(3)': {
       display: 'none',
     },
   },
-  [`@media (max-width: ${breakpoints.small}px)`]: {
+  [`@media (max-width: ${theme && theme.breakPoints.small}px)`]: {
     ':nth-of-type(4)': {
       display: 'none',
     },
@@ -43,7 +41,7 @@ export const Published = styled('span')<{ theme?: Theme }>(props => ({
 
 export const Text = styled(Label)<{ theme?: Theme }>(props => ({
   fontSize: '12px',
-  fontWeight: fontWeight.semiBold,
+  fontWeight: props.theme && props.theme.fontWeight.semiBold,
   color: props.theme && props.theme.palette.greyLight2,
 }));
 
@@ -68,17 +66,17 @@ export const WrapperLink = styled(Link)({
   textDecoration: 'none',
 });
 
-export const PackageTitle = styled('span')<{ theme?: Theme }>(props => ({
-  fontWeight: 600,
+export const PackageTitle = styled('span')<{ theme?: Theme }>(({ theme }) => ({
+  fontWeight: theme && theme.fontWeight.bold,
   fontSize: 20,
   display: 'block',
   marginBottom: 12,
-  color: props.theme && props.theme.palette.eclipse,
+  color: theme && theme.palette.eclipse,
   cursor: 'pointer',
   ':hover': {
-    color: props.theme && props.theme.palette.black,
+    color: theme && theme.palette.black,
   },
-  [`@media (max-width: ${breakpoints.small}px)`]: {
+  [`@media (max-width: ${theme && theme.breakPoints.small}px)`]: {
     fontSize: 14,
     marginBottom: 8,
   },
@@ -105,14 +103,14 @@ export const IconButton = styled(MuiIconButton)({
   },
 });
 
-export const TagContainer = styled('span')({
+export const TagContainer = styled('span')<{ theme?: Theme }>(({ theme }) => ({
   marginTop: 8,
   marginBottom: 12,
   display: 'block',
-  [`@media (max-width: ${breakpoints.medium}px)`]: {
+  [`@media (max-width: ${theme && theme.breakPoints.medium}px)`]: {
     display: 'none',
   },
-});
+}));
 
 export const PackageListItemText = styled(ListItemText)({
   paddingRight: 0,

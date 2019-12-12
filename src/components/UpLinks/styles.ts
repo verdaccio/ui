@@ -2,11 +2,11 @@ import styled from '@emotion/styled';
 
 import Text from '../../muiComponents/Text';
 import { default as MuiListItemText } from '../../muiComponents/ListItemText';
-import { fontWeight } from '../../utils/styles/sizes';
+import { Theme } from '../../design-tokens/theme';
 
-export const StyledText = styled(Text)({
-  fontWeight: fontWeight.bold,
-});
+export const StyledText = styled(Text)<{ theme?: Theme }>(props => ({
+  fontWeight: props.theme && props.theme.fontWeight.bold,
+}));
 
 export const Spacer = styled('div')({
   flex: '1 1 auto',

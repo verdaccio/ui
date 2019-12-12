@@ -11,20 +11,20 @@ import Footer from '../components/Footer';
 import Box from '../muiComponents/Box';
 import Loading from '../components/Loading';
 import StyleBaseline from '../design-tokens/StyleBaseline';
-import { breakpoints } from '../utils/styles/media';
+import { Theme } from '../design-tokens/theme';
 
 import AppContextProvider from './AppContextProvider';
 import AppRoute, { history } from './AppRoute';
 
-const StyledBoxContent = styled(Box)({
+const StyledBoxContent = styled(Box)<{ theme?: Theme }>(({ theme }) => ({
   padding: 15,
-  [`@media screen and (min-width: ${breakpoints.container}px)`]: {
-    maxWidth: breakpoints.container,
+  [`@media screen and (min-width: ${theme && theme.breakPoints.container}px)`]: {
+    maxWidth: theme && theme.breakPoints.container,
     width: '100%',
     marginLeft: 'auto',
     marginRight: 'auto',
   },
-});
+}));
 
 /* eslint-disable react/jsx-no-bind */
 /* eslint-disable react-hooks/exhaustive-deps */

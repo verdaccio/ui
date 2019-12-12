@@ -1,6 +1,5 @@
 import styled from '@emotion/styled';
 
-import { fontWeight } from '../../utils/styles/sizes';
 import Text from '../../muiComponents/Text';
 import FloatingActionButton from '../../muiComponents/FloatingActionButton';
 import { Theme } from '../../design-tokens/theme';
@@ -20,11 +19,11 @@ export const Content = styled('div')({
   },
 });
 
-export const StyledText = styled(Text)({
-  fontWeight: fontWeight.bold,
+export const StyledText = styled(Text)<{ theme?: Theme }>(props => ({
+  fontWeight: props.theme && props.theme.fontWeight.bold,
   marginBottom: '10px',
   textTransform: 'capitalize',
-});
+}));
 
 export const Fab = styled(FloatingActionButton)<{ theme?: Theme }>(props => ({
   backgroundColor: props.theme && props.theme.palette.primary.main,

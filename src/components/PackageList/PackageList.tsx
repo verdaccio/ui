@@ -1,4 +1,5 @@
 import React, { Fragment, ReactNode } from 'react';
+import styled from '@emotion/styled';
 
 import Package from '../Package';
 import Help from '../Help';
@@ -6,7 +7,10 @@ import { formatLicense } from '../../utils/package';
 import { PackageInterface } from '../Package/Package';
 import Divider from '../../muiComponents/Divider';
 
-import * as classes from './styles';
+const PkgContainer = styled('div')({
+  margin: 0,
+  padding: 0,
+});
 
 interface Props {
   packages: PackageInterface[];
@@ -32,7 +36,7 @@ export const PackageList: React.FC<Props> = ({ packages }) => {
 
   return (
     <div className={'package-list-items'}>
-      <div className={classes.pkgContainer}>{hasPackages() ? renderPackages() : <Help />}</div>
+      <PkgContainer>{hasPackages() ? renderPackages() : <Help />}</PkgContainer>
     </div>
   );
 };
