@@ -8,7 +8,6 @@ import Avatar from '../../muiComponents/Avatar';
 import Box from '../../muiComponents/Box';
 import Text from '../../muiComponents/Text';
 import FloatingActionButton from '../../muiComponents/FloatingActionButton';
-import { fontWeight } from '../../utils/styles/sizes';
 import { Theme } from '../../design-tokens/theme';
 
 import getUniqueDeveloperValues from './get-unique-developer-values';
@@ -28,11 +27,11 @@ interface Props {
   visibleMax?: number;
 }
 
-export const StyledText = styled(Text)({
-  fontWeight: fontWeight.bold,
+export const StyledText = styled(Text)<{ theme?: Theme }>(({ theme }) => ({
+  fontWeight: theme && theme.fontWeight.bold,
   marginBottom: '10px',
   textTransform: 'capitalize',
-});
+}));
 
 const StyledBox = styled(Box)({
   '> *': {
