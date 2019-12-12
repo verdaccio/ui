@@ -162,6 +162,7 @@ exports[`test Developers should render the component for contributors with items
                             Object {
                               "circle": "MuiAvatar-circle",
                               "colorDefault": "MuiAvatar-colorDefault",
+                              "fallback": "MuiAvatar-fallback",
                               "img": "MuiAvatar-img",
                               "root": "MuiAvatar-root",
                               "rounded": "MuiAvatar-rounded",
@@ -172,7 +173,44 @@ exports[`test Developers should render the component for contributors with items
                           <div
                             aria-label="dmethvin"
                             className="MuiAvatar-root MuiAvatar-circle MuiAvatar-colorDefault"
-                          />
+                          >
+                            <ForwardRef
+                              className="MuiAvatar-fallback"
+                            >
+                              <WithStyles(ForwardRef(SvgIcon))
+                                className="MuiAvatar-fallback"
+                              >
+                                <ForwardRef(SvgIcon)
+                                  className="MuiAvatar-fallback"
+                                  classes={
+                                    Object {
+                                      "colorAction": "MuiSvgIcon-colorAction",
+                                      "colorDisabled": "MuiSvgIcon-colorDisabled",
+                                      "colorError": "MuiSvgIcon-colorError",
+                                      "colorPrimary": "MuiSvgIcon-colorPrimary",
+                                      "colorSecondary": "MuiSvgIcon-colorSecondary",
+                                      "fontSizeInherit": "MuiSvgIcon-fontSizeInherit",
+                                      "fontSizeLarge": "MuiSvgIcon-fontSizeLarge",
+                                      "fontSizeSmall": "MuiSvgIcon-fontSizeSmall",
+                                      "root": "MuiSvgIcon-root",
+                                    }
+                                  }
+                                >
+                                  <svg
+                                    aria-hidden="true"
+                                    className="MuiSvgIcon-root MuiAvatar-fallback"
+                                    focusable="false"
+                                    role="presentation"
+                                    viewBox="0 0 24 24"
+                                  >
+                                    <path
+                                      d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"
+                                    />
+                                  </svg>
+                                </ForwardRef(SvgIcon)>
+                              </WithStyles(ForwardRef(SvgIcon))>
+                            </ForwardRef>
+                          </div>
                         </ForwardRef(Avatar)>
                       </WithStyles(ForwardRef(Avatar))>
                     </ForwardRef(Avatar)>
@@ -188,7 +226,19 @@ exports[`test Developers should render the component for contributors with items
                         <div
                           aria-label="dmethvin"
                           class="MuiAvatar-root MuiAvatar-circle MuiAvatar-colorDefault"
-                        />
+                        >
+                          <svg
+                            aria-hidden="true"
+                            class="MuiSvgIcon-root MuiAvatar-fallback"
+                            focusable="false"
+                            role="presentation"
+                            viewBox="0 0 24 24"
+                          >
+                            <path
+                              d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"
+                            />
+                          </svg>
+                        </div>
                       </a>
                     }
                     className="MuiTooltip-popper"
@@ -274,6 +324,7 @@ exports[`test Developers should render the component for contributors with items
                             Object {
                               "circle": "MuiAvatar-circle",
                               "colorDefault": "MuiAvatar-colorDefault",
+                              "fallback": "MuiAvatar-fallback",
                               "img": "MuiAvatar-img",
                               "root": "MuiAvatar-root",
                               "rounded": "MuiAvatar-rounded",
@@ -284,7 +335,44 @@ exports[`test Developers should render the component for contributors with items
                           <div
                             aria-label="mgol"
                             className="MuiAvatar-root MuiAvatar-circle MuiAvatar-colorDefault"
-                          />
+                          >
+                            <ForwardRef
+                              className="MuiAvatar-fallback"
+                            >
+                              <WithStyles(ForwardRef(SvgIcon))
+                                className="MuiAvatar-fallback"
+                              >
+                                <ForwardRef(SvgIcon)
+                                  className="MuiAvatar-fallback"
+                                  classes={
+                                    Object {
+                                      "colorAction": "MuiSvgIcon-colorAction",
+                                      "colorDisabled": "MuiSvgIcon-colorDisabled",
+                                      "colorError": "MuiSvgIcon-colorError",
+                                      "colorPrimary": "MuiSvgIcon-colorPrimary",
+                                      "colorSecondary": "MuiSvgIcon-colorSecondary",
+                                      "fontSizeInherit": "MuiSvgIcon-fontSizeInherit",
+                                      "fontSizeLarge": "MuiSvgIcon-fontSizeLarge",
+                                      "fontSizeSmall": "MuiSvgIcon-fontSizeSmall",
+                                      "root": "MuiSvgIcon-root",
+                                    }
+                                  }
+                                >
+                                  <svg
+                                    aria-hidden="true"
+                                    className="MuiSvgIcon-root MuiAvatar-fallback"
+                                    focusable="false"
+                                    role="presentation"
+                                    viewBox="0 0 24 24"
+                                  >
+                                    <path
+                                      d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"
+                                    />
+                                  </svg>
+                                </ForwardRef(SvgIcon)>
+                              </WithStyles(ForwardRef(SvgIcon))>
+                            </ForwardRef>
+                          </div>
                         </ForwardRef(Avatar)>
                       </WithStyles(ForwardRef(Avatar))>
                     </ForwardRef(Avatar)>
@@ -300,7 +388,19 @@ exports[`test Developers should render the component for contributors with items
                         <div
                           aria-label="mgol"
                           class="MuiAvatar-root MuiAvatar-circle MuiAvatar-colorDefault"
-                        />
+                        >
+                          <svg
+                            aria-hidden="true"
+                            class="MuiSvgIcon-root MuiAvatar-fallback"
+                            focusable="false"
+                            role="presentation"
+                            viewBox="0 0 24 24"
+                          >
+                            <path
+                              d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"
+                            />
+                          </svg>
+                        </div>
                       </a>
                     }
                     className="MuiTooltip-popper"
@@ -492,6 +592,7 @@ exports[`test Developers should render the component for maintainers with items 
                             Object {
                               "circle": "MuiAvatar-circle",
                               "colorDefault": "MuiAvatar-colorDefault",
+                              "fallback": "MuiAvatar-fallback",
                               "img": "MuiAvatar-img",
                               "root": "MuiAvatar-root",
                               "rounded": "MuiAvatar-rounded",
@@ -502,7 +603,44 @@ exports[`test Developers should render the component for maintainers with items 
                           <div
                             aria-label="dmethvin"
                             className="MuiAvatar-root MuiAvatar-circle MuiAvatar-colorDefault"
-                          />
+                          >
+                            <ForwardRef
+                              className="MuiAvatar-fallback"
+                            >
+                              <WithStyles(ForwardRef(SvgIcon))
+                                className="MuiAvatar-fallback"
+                              >
+                                <ForwardRef(SvgIcon)
+                                  className="MuiAvatar-fallback"
+                                  classes={
+                                    Object {
+                                      "colorAction": "MuiSvgIcon-colorAction",
+                                      "colorDisabled": "MuiSvgIcon-colorDisabled",
+                                      "colorError": "MuiSvgIcon-colorError",
+                                      "colorPrimary": "MuiSvgIcon-colorPrimary",
+                                      "colorSecondary": "MuiSvgIcon-colorSecondary",
+                                      "fontSizeInherit": "MuiSvgIcon-fontSizeInherit",
+                                      "fontSizeLarge": "MuiSvgIcon-fontSizeLarge",
+                                      "fontSizeSmall": "MuiSvgIcon-fontSizeSmall",
+                                      "root": "MuiSvgIcon-root",
+                                    }
+                                  }
+                                >
+                                  <svg
+                                    aria-hidden="true"
+                                    className="MuiSvgIcon-root MuiAvatar-fallback"
+                                    focusable="false"
+                                    role="presentation"
+                                    viewBox="0 0 24 24"
+                                  >
+                                    <path
+                                      d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"
+                                    />
+                                  </svg>
+                                </ForwardRef(SvgIcon)>
+                              </WithStyles(ForwardRef(SvgIcon))>
+                            </ForwardRef>
+                          </div>
                         </ForwardRef(Avatar)>
                       </WithStyles(ForwardRef(Avatar))>
                     </ForwardRef(Avatar)>
@@ -518,7 +656,19 @@ exports[`test Developers should render the component for maintainers with items 
                         <div
                           aria-label="dmethvin"
                           class="MuiAvatar-root MuiAvatar-circle MuiAvatar-colorDefault"
-                        />
+                        >
+                          <svg
+                            aria-hidden="true"
+                            class="MuiSvgIcon-root MuiAvatar-fallback"
+                            focusable="false"
+                            role="presentation"
+                            viewBox="0 0 24 24"
+                          >
+                            <path
+                              d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"
+                            />
+                          </svg>
+                        </div>
                       </a>
                     }
                     className="MuiTooltip-popper"
@@ -604,6 +754,7 @@ exports[`test Developers should render the component for maintainers with items 
                             Object {
                               "circle": "MuiAvatar-circle",
                               "colorDefault": "MuiAvatar-colorDefault",
+                              "fallback": "MuiAvatar-fallback",
                               "img": "MuiAvatar-img",
                               "root": "MuiAvatar-root",
                               "rounded": "MuiAvatar-rounded",
@@ -614,7 +765,44 @@ exports[`test Developers should render the component for maintainers with items 
                           <div
                             aria-label="mgol"
                             className="MuiAvatar-root MuiAvatar-circle MuiAvatar-colorDefault"
-                          />
+                          >
+                            <ForwardRef
+                              className="MuiAvatar-fallback"
+                            >
+                              <WithStyles(ForwardRef(SvgIcon))
+                                className="MuiAvatar-fallback"
+                              >
+                                <ForwardRef(SvgIcon)
+                                  className="MuiAvatar-fallback"
+                                  classes={
+                                    Object {
+                                      "colorAction": "MuiSvgIcon-colorAction",
+                                      "colorDisabled": "MuiSvgIcon-colorDisabled",
+                                      "colorError": "MuiSvgIcon-colorError",
+                                      "colorPrimary": "MuiSvgIcon-colorPrimary",
+                                      "colorSecondary": "MuiSvgIcon-colorSecondary",
+                                      "fontSizeInherit": "MuiSvgIcon-fontSizeInherit",
+                                      "fontSizeLarge": "MuiSvgIcon-fontSizeLarge",
+                                      "fontSizeSmall": "MuiSvgIcon-fontSizeSmall",
+                                      "root": "MuiSvgIcon-root",
+                                    }
+                                  }
+                                >
+                                  <svg
+                                    aria-hidden="true"
+                                    className="MuiSvgIcon-root MuiAvatar-fallback"
+                                    focusable="false"
+                                    role="presentation"
+                                    viewBox="0 0 24 24"
+                                  >
+                                    <path
+                                      d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"
+                                    />
+                                  </svg>
+                                </ForwardRef(SvgIcon)>
+                              </WithStyles(ForwardRef(SvgIcon))>
+                            </ForwardRef>
+                          </div>
                         </ForwardRef(Avatar)>
                       </WithStyles(ForwardRef(Avatar))>
                     </ForwardRef(Avatar)>
@@ -630,7 +818,19 @@ exports[`test Developers should render the component for maintainers with items 
                         <div
                           aria-label="mgol"
                           class="MuiAvatar-root MuiAvatar-circle MuiAvatar-colorDefault"
-                        />
+                        >
+                          <svg
+                            aria-hidden="true"
+                            class="MuiSvgIcon-root MuiAvatar-fallback"
+                            focusable="false"
+                            role="presentation"
+                            viewBox="0 0 24 24"
+                          >
+                            <path
+                              d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"
+                            />
+                          </svg>
+                        </div>
                       </a>
                     }
                     className="MuiTooltip-popper"
