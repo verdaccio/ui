@@ -9884,10 +9884,10 @@ node-libs-browser@^2.2.1:
     util "^0.11.0"
     vm-browserify "^1.0.1"
 
-node-mocks-http@1.8.0:
-  version "1.8.0"
-  resolved "https://registry.verdaccio.org/node-mocks-http/-/node-mocks-http-1.8.0.tgz#201a882bd1f8473de6a14bf41850d373404fde32"
-  integrity sha512-A6YB8+sTiHZPTPf1KfwZ3sAQYSSNJTWd762IOptAmM2d6XUQ9Q1wMh+uJ7a7n2Vy6NKmODfZArqX6Rbmlg+8Fw==
+node-mocks-http@1.8.1:
+  version "1.8.1"
+  resolved "https://registry.verdaccio.org/node-mocks-http/-/node-mocks-http-1.8.1.tgz#f149345992618e4d631dfdf77546025d8526b2bb"
+  integrity sha512-qtd9YwXzCTdLfqjP7XSOtFei3TggwnjFIppmYEneQBaDIuknwgJTpItLskC5/pWOpU3lsK5aqdo+5CfIKHkXLg==
   dependencies:
     accepts "^1.3.7"
     depd "^1.1.0"
