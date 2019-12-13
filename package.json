@@ -49,7 +49,7 @@
     "codecov": "3.6.1",
     "concurrently": "5.0.1",
     "cross-env": "6.0.3",
-    "css-loader": "3.3.0",
+    "css-loader": "3.3.2",
     "dayjs": "1.8.17",
     "detect-secrets": "1.0.5",
     "emotion": "10.0.23",
