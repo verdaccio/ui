@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.3.8](https://github.com/verdaccio/ui/compare/v0.3.7...v0.3.8) (2019-12-14)
+
+
+### Features
+
+* login Dialog Component - Replaced class by func. comp + added react-hook-form ([#341](https://github.com/verdaccio/ui/issues/341)) ([42d3bb8](https://github.com/verdaccio/ui/commit/42d3bb8508c666c28250432ada734d58ccb0eca8))
+
+
+### Bug Fixes
+
+* formatDate ([#308](https://github.com/verdaccio/ui/issues/308)) ([33f873a](https://github.com/verdaccio/ui/commit/33f873a8c78e419a36e3a29f7ea216714172b174))
+* removed deade import ([#346](https://github.com/verdaccio/ui/issues/346)) ([ae617a5](https://github.com/verdaccio/ui/commit/ae617a5c04ad1b82309d36d3bdcf6b6b6fd925d0))
+* updated actionbar snap ([#340](https://github.com/verdaccio/ui/issues/340)) ([09b831a](https://github.com/verdaccio/ui/commit/09b831a40d4e82a122f8fae3e45bdd161a3281bb))
+
 ### [0.3.7](https://github.com/verdaccio/ui/compare/v0.3.6...v0.3.7) (2019-11-24)
 
 
