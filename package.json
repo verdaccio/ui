@@ -117,7 +117,7 @@
     "uglifyjs-webpack-plugin": "2.2.0",
     "url-loader": "3.0.0",
     "validator": "12.1.0",
-    "verdaccio": "4.3.5",
+    "verdaccio": "4.4.0",
     "verdaccio-auth-memory": "8.4.2",
     "verdaccio-memory": "8.4.2",
     "wait-on": "3.3.0",
