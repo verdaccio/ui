@@ -24,8 +24,15 @@ export interface PackageMetaInterface {
       type?: string;
       url?: string;
     };
+    description?: string;
+    funding?: Funding;
   };
   _uplinks: {};
+}
+
+interface Funding {
+  type: string;
+  url: string;
 }
 
 interface LicenseInterface {
