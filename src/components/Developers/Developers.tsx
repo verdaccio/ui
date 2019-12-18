@@ -1,4 +1,4 @@
-import React, { useState, useContext, useEffect, useMemo } from 'react';
+import React, { useState, useCallback, useContext, useEffect, useMemo } from 'react';
 import Add from '@material-ui/icons/Add';
 import styled from '@emotion/styled';
 
@@ -41,7 +41,6 @@ const StyledBox = styled(Box)({
 
 export const VISIBLE_MAX = 2;
 
-/* eslint-disable react/jsx-no-bind */
 const Developers: React.FC<Props> = ({ type, visibleMax = VISIBLE_MAX }) => {
   const detailContext = useContext(DetailContext);
 
@@ -53,6 +52,7 @@ const Developers: React.FC<Props> = ({ type, visibleMax = VISIBLE_MAX }) => {
     detailContext.packageMeta,
     type,
   ]);
+
   const [visibleDevelopersMax, setVisibleDevelopersMax] = useState(visibleMax);
   const [visibleDevelopers, setVisibleDevelopers] = useState(developers);
 
@@ -60,6 +60,10 @@ const Developers: React.FC<Props> = ({ type, visibleMax = VISIBLE_MAX }) => {
     if (!developers) return;
     setVisibleDevelopers(developers.slice(0, visibleDevelopersMax));
   }, [developers, visibleDevelopersMax]);
+
+  const handleSetVisibleDevelopersMax = useCallback(() => {
+    setVisibleDevelopersMax(visibleDevelopersMax + VISIBLE_MAX);
+  }, [visibleDevelopersMax]);
 
   if (!visibleDevelopers || !developers) return null;
 
@@ -73,7 +77,7 @@ const Developers: React.FC<Props> = ({ type, visibleMax = VISIBLE_MAX }) => {
           </Tooltip>
         ))}
         {visibleDevelopersMax < developers.length && (
-          <Fab onClick={() => setVisibleDevelopersMax(visibleDevelopersMax + VISIBLE_MAX)} size="small">
+          <Fab onClick={handleSetVisibleDevelopersMax} size="small">
             <Add />
           </Fab>
         )}
