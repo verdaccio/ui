@@ -9,7 +9,7 @@ import Engines from '../Engines';
 import Dist from '../Dist';
 import Install from '../Install';
 import Author from '../Author';
-import Developers from '../Developers';
+import Developers, { DeveloperType } from '../Developers';
 import { Theme } from '../../design-tokens/theme';
 
 import DetailSidebarTitle from './DetailSidebarTitle';
@@ -43,8 +43,8 @@ const DetailSidebar: React.FC = () => {
       <Engines />
       <Dist />
       <Author />
-      <Developers type="maintainers" />
-      <Developers type="contributors" />
+      <Developers type={DeveloperType.MAINTAINERS} />
+      <Developers type={DeveloperType.CONTRIBUTORS} />
     </StyledPaper>
   );
 };

@@ -24,10 +24,20 @@ export interface PackageMetaInterface {
       type?: string;
       url?: string;
     };
+<<<<<<< HEAD
     description?: string;
     funding?: Funding;
+=======
+    maintainers?: Array<Developer>;
+    contributors?: Array<Developer>;
+>>>>>>> master
   };
   _uplinks: {};
+}
+export interface Developer {
+  name: string;
+  email: string;
+  avatar: string;
 }
 
 interface Funding {
