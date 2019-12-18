@@ -23,7 +23,7 @@ const StyledBoxVersion = styled(Box)<{ theme?: Theme }>(({ theme }) => ({
 }));
 
 const DetailSidebarTitle: React.FC<Props> = ({ description, packageName, version, isLatest }) => (
-  <Box display="flex" flexDirection="column" marginBottom="8px">
+  <Box className={'detail-info'} display="flex" flexDirection="column" marginBottom="8px">
     <StyledHeading>{packageName}</StyledHeading>
     {description && <div>{description}</div>}
     <StyledBoxVersion>{`${isLatest ? 'Latest v' : 'v'}${version}`}</StyledBoxVersion>
