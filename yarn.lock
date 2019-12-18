@@ -1914,10 +1914,10 @@
   resolved "https://registry.verdaccio.org/@types%2fmocha/-/mocha-5.2.7.tgz#315d570ccb56c53452ff8638738df60726d5b6ea"
   integrity sha512-NYrtPht0wGzhwe9+/idPaBB+TqkY9AhTvOLMkThm0IoEfLaiVQZwBwyJ5puCkO3AUCWrmcoePjp2mbFocKy4SQ==
 
-"@types/node@*", "@types/node@12.12.20", "@types/node@^12.0.2", "@types/node@^12.11.1":
-  version "12.12.20"
-  resolved "https://registry.verdaccio.org/@types%2fnode/-/node-12.12.20.tgz#7b693038ce661fe57a7ffa4679440b5e7c5e8b99"
-  integrity sha512-VAe+DiwpnC/g448uN+/3gRl4th0BTdrR9gSLIOHA+SUQskaYZQDOHG7xmjiE7JUhjbXnbXytf6Ih+/pA6CtMFQ==
+"@types/node@*", "@types/node@12.12.21", "@types/node@^12.0.2", "@types/node@^12.11.1":
+  version "12.12.21"
+  resolved "https://registry.verdaccio.org/@types%2fnode/-/node-12.12.21.tgz#aa44a6363291c7037111c47e4661ad210aded23f"
+  integrity sha512-8sRGhbpU+ck1n0PGAUgVrWrWdjSW2aqNeyC15W88GRsMpSwzv6RJGlLhE7s2RhVSOdyDmxbqlWSeThq4/7xqlA==
 
 "@types/normalize-package-data@^2.4.0":
   version "2.4.0"
@@ -4014,10 +4014,10 @@ concat-stream@^2.0.0:
     readable-stream "^3.0.2"
     typedarray "^0.0.6"
 
-concurrently@5.0.1:
-  version "5.0.1"
-  resolved "https://registry.verdaccio.org/concurrently/-/concurrently-5.0.1.tgz#9d15e0e7bb7ebe5c3bcd86deb8393501c35dd003"
-  integrity sha512-fPKUlOAXEXpktp3z7RqIvzTSCowfDo8oQbdKoGKGZVm+G2hGFbIIAFm4qwWcGl/sIHmpMSgPqeCbjld3kdPXvA==
+concurrently@5.0.2:
+  version "5.0.2"
+  resolved "https://registry.verdaccio.org/concurrently/-/concurrently-5.0.2.tgz#4d2911018c0f15ddec34a8e668fc48dced7f3b1e"
+  integrity sha512-iUNVI6PzKO0RVXV9pHWM0khvEbELxf3XLIoChaV6hHyoIaJuxQWZiOwlNysnJX5khsfvIK66+OJqRdbYrdsR1g==
   dependencies:
     chalk "^2.4.2"
     date-fns "^2.0.1"
@@ -4026,7 +4026,7 @@ concurrently@5.0.1:
     rxjs "^6.5.2"
     spawn-command "^0.0.2-1"
     supports-color "^6.1.0"
-    tree-kill "^1.2.1"
+    tree-kill "^1.2.2"
     yargs "^13.3.0"
 
 config-chain@^1.1.12:
@@ -5654,6 +5654,13 @@ eslint-plugin-prettier@3.1.1:
   version "3.1.1"
   resolved "https://registry.verdaccio.org/eslint-plugin-prettier/-/eslint-plugin-prettier-3.1.1.tgz#507b8562410d02a03f0ddc949c616f877852f2ba"
   integrity sha512-A+TZuHZ0KU0cnn56/9mfR7/KjUJ9QNVXUhwvRFSR7PGPe0zQR6PTkmyqg1AtUUEOzTqeRsUwyKFh0oVZKVCrtA==
+  dependencies:
+    prettier-linter-helpers "^1.0.0"
+
+eslint-plugin-prettier@3.1.2:
+  version "3.1.2"
+  resolved "https://registry.verdaccio.org/eslint-plugin-prettier/-/eslint-plugin-prettier-3.1.2.tgz#432e5a667666ab84ce72f945c72f77d996a5c9ba"
+  integrity sha512-GlolCC9y3XZfv3RQfwGew7NnuFDKsfI4lbvRK+PIIo23SFH+LemGs4cKwzAaRa+Mdb+lQO/STaIayno8T5sJJA==
   dependencies:
     prettier-linter-helpers "^1.0.0"
 
@@ -13586,10 +13593,10 @@ tr46@^1.0.1:
   dependencies:
     punycode "^2.1.0"
 
-tree-kill@^1.2.1:
-  version "1.2.1"
-  resolved "https://registry.verdaccio.org/tree-kill/-/tree-kill-1.2.1.tgz#5398f374e2f292b9dcc7b2e71e30a5c3bb6c743a"
-  integrity sha512-4hjqbObwlh2dLyW4tcz0Ymw0ggoaVDMveUB9w8kFSQScdRLo0gxO9J7WFcUBo+W3C1TLdFIEwNOWebgZZ0RH9Q==
+tree-kill@^1.2.2:
+  version "1.2.2"
+  resolved "https://registry.verdaccio.org/tree-kill/-/tree-kill-1.2.2.tgz#4ca09a9092c88b73a7cdc5e8a01b507b0790a0cc"
+  integrity sha512-L0Orpi8qGpRG//Nd+H90vFB+3iHnue1zSSGmNOOCh1GLJ7rUKVwV2HvijphGQS2UmhUZewS9VgvxYIdgr+fG1A==
 
 trim-newlines@^1.0.0:
   version "1.0.0"
