@@ -1,78 +1,52 @@
-import React, { ReactElement } from 'react';
+import React, { useContext } from 'react';
+import styled from '@emotion/styled';
 
+import { DetailContext } from '../../pages/Version';
+import Paper from '../../muiComponents/Paper';
 import ActionBar from '../ActionBar';
+import Repository from '../Repository';
+import Engines from '../Engines';
+import Dist from '../Dist';
+import Install from '../Install';
 import Author from '../Author';
 import Developers, { DeveloperType } from '../Developers';
-import Dist from '../Dist/Dist';
-import Engine from '../Engines/Engines';
-import Install from '../Install';
-import Repository from '../Repository/Repository';
-import { DetailContext } from '../../pages/Version';
-import List from '../../muiComponents/List';
-import Card from '../../muiComponents/Card';
-import CardContent from '../../muiComponents/CardContent';
+import { Theme } from '../../design-tokens/theme';
 
-import { TitleListItem, TitleListItemText, PackageDescription, PackageVersion } from './styles';
+import DetailSidebarTitle from './DetailSidebarTitle';
+import DetailSidebarFundButton from './DetailSidebarFundButton';
 
-const renderLatestDescription = (description, version, isLatest = true): JSX.Element => {
-  return (
-    <>
-      <PackageDescription>{description}</PackageDescription>
-      {version ? (
-        <PackageVersion>
-          <small>{`${isLatest ? 'Latest v' : 'v'}${version}`}</small>
-        </PackageVersion>
-      ) : null}
-    </>
-  );
-};
+const StyledPaper = styled(Paper)<{ theme?: Theme }>(({ theme }) => ({
+  padding: theme.spacing(3, 2),
+}));
 
-const renderCopyCLI = (): JSX.Element => <Install />;
-const renderRepository = (): JSX.Element => <Repository />;
-const renderAuthor = (): JSX.Element => <Author />;
-const renderEngine = (): JSX.Element => <Engine />;
-const renderDist = (): JSX.Element => <Dist />;
-const renderActionBar = (): JSX.Element => <ActionBar />;
-const renderTitle = (packageName, packageVersion, packageMeta): JSX.Element => {
-  const version = packageVersion ? packageVersion : packageMeta.latest.version;
-  const isLatest = typeof packageVersion === 'undefined';
+const DetailSidebar: React.FC = () => {
+  const detailContext = useContext(DetailContext);
+
+  const { packageMeta, packageName, packageVersion } = detailContext;
+
+  if (!packageMeta || !packageName) {
+    return null;
+  }
 
   return (
-    <List className="detail-info">
-      <TitleListItem alignItems="flex-start" button={true}>
-        <TitleListItemText
-          primary={<b>{packageName}</b>}
-          secondary={renderLatestDescription(packageMeta.latest.description, version, isLatest)}
-        />
-      </TitleListItem>
-    </List>
+    <StyledPaper className={'sidebar-info'}>
+      <DetailSidebarTitle
+        description={packageMeta.latest?.description}
+        isLatest={typeof packageVersion === 'undefined'}
+        packageName={packageName}
+        version={packageVersion || packageMeta.latest.version}
+      />
+      <ActionBar />
+      <Install />
+      {packageMeta?.latest?.funding && <DetailSidebarFundButton to={packageMeta.latest.funding.url} />}
+      <Repository />
+      <Engines />
+      <Dist />
+      <Author />
+      <Developers type={DeveloperType.MAINTAINERS} />
+      <Developers type={DeveloperType.CONTRIBUTORS} />
+    </StyledPaper>
   );
-};
-
-function renderSideBar(packageName, packageVersion, packageMeta): ReactElement<HTMLElement> {
-  return (
-    <div className={'sidebar-info'}>
-      <Card>
-        <CardContent>
-          {renderTitle(packageName, packageVersion, packageMeta)}
-          {renderActionBar()}
-          {renderCopyCLI()}
-          {renderRepository()}
-          {renderEngine()}
-          {renderDist()}
-          {renderAuthor()}
-          <Developers type={DeveloperType.MAINTAINERS} />
-          <Developers type={DeveloperType.CONTRIBUTORS} />
-        </CardContent>
-      </Card>
-    </div>
-  );
-}
-
-const DetailSidebar = (): JSX.Element => {
-  const { packageName, packageMeta, packageVersion } = React.useContext(DetailContext);
-
-  return renderSideBar(packageName, packageVersion, packageMeta);
 };
 
 export default DetailSidebar;

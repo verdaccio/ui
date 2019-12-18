@@ -6,6 +6,7 @@ const colors = {
   black: '#000',
   white: '#fff',
   red: '#d32f2f',
+  orange: '#CD4000',
   greySuperLight: '#f5f5f5',
   greyLight: '#d3d3d3',
   greyLight2: '#908ba1',
@@ -93,6 +94,7 @@ declare module '@material-ui/core/styles/createPalette' {
     black: string;
     white: string;
     red: string;
+    orange: string;
     greySuperLight: string;
     greyLight: string;
     greyLight2: string;
