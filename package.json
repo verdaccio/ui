@@ -19,7 +19,7 @@
     "@commitlint/config-conventional": "8.2.0",
     "@emotion/core": "10.0.22",
     "@emotion/styled": "10.0.23",
-    "@material-ui/core": "4.7.2",
+    "@material-ui/core": "4.8.0",
     "@material-ui/icons": "4.5.1",
     "@octokit/rest": "16.35.2",
     "@testing-library/jest-dom": "4.2.4",
