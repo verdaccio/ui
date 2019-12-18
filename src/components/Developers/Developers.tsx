@@ -39,7 +39,7 @@ const StyledBox = styled(Box)({
   },
 });
 
-export const VISIBLE_MAX = 2;
+export const VISIBLE_MAX = 6;
 
 const Developers: React.FC<Props> = ({ type, visibleMax = VISIBLE_MAX }) => {
   const detailContext = useContext(DetailContext);
