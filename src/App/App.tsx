@@ -17,7 +17,6 @@ import AppContextProvider from './AppContextProvider';
 import AppRoute, { history } from './AppRoute';
 
 const StyledBoxContent = styled(Box)<{ theme?: Theme }>(({ theme }) => ({
-  padding: 15,
   [`@media screen and (min-width: ${theme && theme.breakPoints.container}px)`]: {
     maxWidth: theme && theme.breakPoints.container,
     width: '100%',
