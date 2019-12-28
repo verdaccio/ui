@@ -34,6 +34,14 @@ const RepositoryListItemText = styled(ListItemText)({
   margin: 0,
 });
 
+const RepositoryAvatar = styled(Avatar)({
+  borderRadius: '0px',
+  padding: '0',
+  img: {
+    backgroundColor: 'transparent',
+  },
+});
+
 const Repository: React.FC = () => {
   const detailContext = React.useContext(DetailContext);
 
@@ -58,7 +66,7 @@ const Repository: React.FC = () => {
   return (
     <List dense={true} subheader={<StyledText variant="subtitle1">{'Repository'}</StyledText>}>
       <RepositoryListItem button={true}>
-        <Avatar src={git} />
+        <RepositoryAvatar src={git} />
         <RepositoryListItemText
           primary={
             <CopyToClipBoard text={repositoryURL}>
