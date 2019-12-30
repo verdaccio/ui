@@ -2,6 +2,22 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.3.10](https://github.com/verdaccio/ui/compare/v0.3.9...v0.3.10) (2019-12-30)
+
+
+### Features
+
+* added "Fund this package" button ([#375](https://github.com/verdaccio/ui/issues/375)) ([bf093cc](https://github.com/verdaccio/ui/commit/bf093cc27b8625cdc50dbfc9b8dd7e37f4e24da9))
+
+
+### Bug Fixes
+
+* add missing trailing slash to publicPath - closes [#395](https://github.com/verdaccio/ui/issues/395) ([#396](https://github.com/verdaccio/ui/issues/396)) ([bae9638](https://github.com/verdaccio/ui/commit/bae9638b23b70eff78b78b8ca52ff40162333354))
+* engine warning on console for ui ([#403](https://github.com/verdaccio/ui/issues/403)) ([d554049](https://github.com/verdaccio/ui/commit/d554049699494e946f4caf345177839b4f0cba8b))
+* remove background from styled Avatar components - closes [#371](https://github.com/verdaccio/ui/issues/371) ([#398](https://github.com/verdaccio/ui/issues/398)) ([787dda4](https://github.com/verdaccio/ui/commit/787dda4a016a1fcd1142bd4b705e2c71e232d13e))
+* remove double padding and add missing background color - closes [#373](https://github.com/verdaccio/ui/issues/373) ([#399](https://github.com/verdaccio/ui/issues/399)) ([797c238](https://github.com/verdaccio/ui/commit/797c2381e453d4f40e1703402f192eb7675d6fbe))
+* remove whitespace from logo image - closes [#374](https://github.com/verdaccio/ui/issues/374) ([#400](https://github.com/verdaccio/ui/issues/400)) ([544b999](https://github.com/verdaccio/ui/commit/544b999f81e39557e0fc002d21b24c512cfebc54))
+
 ### [0.3.9](https://github.com/verdaccio/ui/compare/v0.3.8...v0.3.9) (2019-12-14)
 
 ### [0.3.8](https://github.com/verdaccio/ui/compare/v0.3.7...v0.3.8) (2019-12-14)
