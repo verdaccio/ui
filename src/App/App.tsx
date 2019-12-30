@@ -16,8 +16,11 @@ import { Theme } from '../design-tokens/theme';
 import AppContextProvider from './AppContextProvider';
 import AppRoute, { history } from './AppRoute';
 
+const StyledBox = styled(Box)<{ theme?: Theme }>(({ theme }) => ({
+  backgroundColor: theme && theme.palette.white,
+}));
+
 const StyledBoxContent = styled(Box)<{ theme?: Theme }>(({ theme }) => ({
-  padding: 15,
   [`@media screen and (min-width: ${theme && theme.breakPoints.container}px)`]: {
     maxWidth: theme && theme.breakPoints.container,
     width: '100%',
@@ -80,7 +83,7 @@ const App: React.FC = () => {
   return (
     <>
       <StyleBaseline />
-      <Box display="flex" flexDirection="column" height="100%">
+      <StyledBox display="flex" flexDirection="column" height="100%">
         {isLoading ? (
           <Loading />
         ) : (
@@ -96,7 +99,7 @@ const App: React.FC = () => {
             <Footer />
           </>
         )}
-      </Box>
+      </StyledBox>
     </>
   );
 };
