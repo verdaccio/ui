@@ -1,6 +1,10 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<App /> should display the Header component  1`] = `
+.emotion-10 {
+  background-color: #fff;
+}
+
 .emotion-8 {
   -webkit-transform: translate(-50%,-50%);
   -ms-transform: translate(-50%,-50%);
@@ -49,7 +53,7 @@ exports[`<App /> should display the Header component  1`] = `
 }
 
 <div
-  class="MuiBox-root MuiBox-root-219"
+  class="MuiBox-root MuiBox-root-219 emotion-10 emotion-11"
 >
   <div
     class="emotion-8 emotion-9"
@@ -90,6 +94,10 @@ exports[`<App /> should display the Header component  1`] = `
 `;
 
 exports[`<App /> should display the Loading component at the beginning  1`] = `
+.emotion-10 {
+  background-color: #fff;
+}
+
 .emotion-8 {
   -webkit-transform: translate(-50%,-50%);
   -ms-transform: translate(-50%,-50%);
@@ -138,7 +146,7 @@ exports[`<App /> should display the Loading component at the beginning  1`] = `
 }
 
 <div
-  class="MuiBox-root MuiBox-root-2"
+  class="MuiBox-root MuiBox-root-2 emotion-10 emotion-11"
 >
   <div
     class="emotion-8 emotion-9"
