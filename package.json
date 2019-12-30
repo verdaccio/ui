@@ -170,7 +170,7 @@
     "test:acceptance": "codeceptjs run --steps",
     "test:acceptance:server": "concurrently --kill-others \"npm run verdaccio:server\" \"npm run test:acceptance\"",
     "test:e2e": "cross-env BABEL_ENV=test jest --config ./test/jest.config.e2e.js",
-    "test": "cross-env NODE_ENV=test BABEL_ENV=test TZ=UTC jest --config ./jest/jest.config.js --maxWorkers 2 --passWithNoTests -u",
+    "test": "cross-env NODE_ENV=test BABEL_ENV=test TZ=UTC jest --config ./jest/jest.config.js --maxWorkers 2 --passWithNoTests",
     "test:size": "bundlesize",
     "lint": "npm run lint:js && npm run lint:css && npm run lint:lockfile",
     "lint:js": "npm run type-check && eslint . --ext .js,.ts,.tsx",
