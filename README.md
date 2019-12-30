@@ -22,7 +22,7 @@
 
 ## Contributing
 
-We use `>=yarn@1.13.0`, keep on mind we use lock file.
+We use `>=yarn@1.13.0`, keep in mind that we use lockfiles and use at least Node `v10.13.0` to be able to build the project.
 
 For development run the following command, it will execute `webpack` and `verdaccio` to
 
