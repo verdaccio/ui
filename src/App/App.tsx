@@ -91,7 +91,7 @@ const App: React.FC = () => {
             <Router history={history}>
               <AppContextProvider packages={packages} user={user}>
                 <Header />
-                <StyledBoxContent flexGrow={1}>
+                <StyledBoxContent flexGrow={2}>
                   <AppRoute />
                 </StyledBoxContent>
               </AppContextProvider>
