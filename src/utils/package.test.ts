@@ -71,7 +71,7 @@ describe('formatDateDistance', (): void => {
     const date2 = dateTwoMonthsAgo();
     // FIXME: we need to review this expect, fails every x time.
     // expect(formatDateDistance(date1)).toEqual('about 2 months');
-    expect(formatDateDistance(date2)).toEqual('2 months');
+    expect(formatDateDistance(date2)).toEqual('2 months ago');
   });
 });
 

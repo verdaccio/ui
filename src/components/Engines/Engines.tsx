@@ -13,13 +13,12 @@ import node from './img/node.png';
 const Engine: React.FC = () => {
   const { packageMeta } = useContext(DetailContext);
 
-  const engines = packageMeta && packageMeta.latest && packageMeta.latest.engines;
+  const engines = packageMeta?.latest?.engines;
 
   if (!engines || (!engines.node && !engines.npm)) {
     return null;
   }
 
-  /* eslint-disable react/jsx-max-depth */
   return (
     <Grid container={true}>
       {engines.node && (
@@ -45,7 +44,6 @@ const Engine: React.FC = () => {
       )}
     </Grid>
   );
-  /* eslint-enable react/jsx-max-depth */
 };
 
 export default Engine;

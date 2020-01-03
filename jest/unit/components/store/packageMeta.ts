@@ -192,7 +192,7 @@ export const packageMeta = {
     jest: { snapshotSerializers: ['jest-serializer-enzyme'] },
     engines: { node: '>=4.6.1', npm: '>=2.15.9' },
     preferGlobal: true,
-    publishConfig: { registry: 'http://localhost:4873/' },
+    publishConfig: { registry: 'https://registry.verdaccio.org' },
     license: 'WTFPL',
     contributors: [
       {
@@ -578,7 +578,7 @@ export const packageMeta = {
     _npmUser: {},
     dist: {
       shasum: '958c919180e7f2ed6775f48d4ec64bd8de2a14df',
-      tarball: 'http://localhost:4873/verdaccio/-/verdaccio-2.7.1.tgz',
+      tarball: 'https://registry.verdaccio.org/verdaccio/-/verdaccio-2.7.1.tgz',
     },
   },
 };

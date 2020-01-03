@@ -6,6 +6,7 @@ const colors = {
   black: '#000',
   white: '#fff',
   red: '#d32f2f',
+  orange: '#CD4000',
   greySuperLight: '#f5f5f5',
   greyLight: '#d3d3d3',
   greyLight2: '#908ba1',
@@ -28,6 +29,44 @@ const colors = {
 
 export type Colors = keyof typeof colors;
 
+const fontSize = {
+  xxl: 26,
+  xl: 24,
+  lg: 21,
+  md: 18,
+  default: 16,
+  sm: 14,
+};
+
+export type FontSize = keyof typeof fontSize;
+
+const fontWeight = {
+  light: 300,
+  regular: 400,
+  semiBold: 500,
+  bold: 700,
+};
+
+export type FontWeight = keyof typeof fontWeight;
+
+export const breakPoints = {
+  small: 576,
+  medium: 768,
+  large: 1024,
+  container: 1240,
+  xlarge: 1275,
+};
+
+export type BreakPoints = typeof breakPoints;
+
+const customizedTheme = {
+  fontSize,
+  fontWeight,
+  breakPoints,
+};
+
+type CustomizedTheme = typeof customizedTheme;
+
 export const theme = createMuiTheme({
   typography: {
     fontFamily: 'inherit',
@@ -38,15 +77,24 @@ export const theme = createMuiTheme({
     secondary: { main: colors.secondary },
     error: { main: colors.red },
   },
+  ...customizedTheme,
 });
 
 export type Theme = typeof theme;
+
+declare module '@material-ui/core/styles/createMuiTheme' {
+  /* eslint-disable-next-line @typescript-eslint/no-empty-interface */
+  interface Theme extends CustomizedTheme {}
+  /* eslint-disable-next-line @typescript-eslint/no-empty-interface */
+  interface ThemeOptions extends CustomizedTheme {}
+}
 
 declare module '@material-ui/core/styles/createPalette' {
   interface CustomPalette {
     black: string;
     white: string;
     red: string;
+    orange: string;
     greySuperLight: string;
     greyLight: string;
     greyLight2: string;

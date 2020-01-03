@@ -31,7 +31,7 @@ const UpLinks: React.FC = () => {
             <ListItem key={name}>
               <ListItemText>{name}</ListItemText>
               <Spacer />
-              <ListItemText>{`${formatDateDistance(uplinks[name].fetched)} ago`}</ListItemText>
+              <ListItemText>{formatDateDistance(uplinks[name].fetched)}</ListItemText>
             </ListItem>
           ))}
       </List>

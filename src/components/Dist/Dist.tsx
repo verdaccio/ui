@@ -10,8 +10,6 @@ import { StyledText, DistListItem, DistChips } from './styles';
 const DistChip: FC<{ name: string }> = ({ name, children }) =>
   children ? (
     <DistChips
-      // lint rule conflicting with prettier
-      /* eslint-disable react/jsx-wrap-multilines */
       label={
         <>
           <b>{name}</b>
@@ -19,7 +17,6 @@ const DistChip: FC<{ name: string }> = ({ name, children }) =>
           {children}
         </>
       }
-      /* eslint-enable */
     />
   ) : null;
 

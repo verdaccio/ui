@@ -26,6 +26,9 @@ const InstallListItemText = styled(ListItemText)({
 const PackageMangerAvatar = styled(Avatar)({
   borderRadius: '0px',
   padding: '0',
+  img: {
+    backgroundColor: 'transparent',
+  },
 });
 
 export enum DependencyManager {
