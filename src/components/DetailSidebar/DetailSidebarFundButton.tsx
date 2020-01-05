@@ -31,7 +31,7 @@ const DetailSidebarFundButton: React.FC = () => {
 
   const fundingUrl = packageMeta?.latest?.funding?.url as string;
 
-  if (typeof fundingUrl !== 'string' || !isURL(fundingUrl)) {
+  if (!isURL(fundingUrl)) {
     return null;
   }
 
