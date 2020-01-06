@@ -57,7 +57,7 @@ describe('<Repository /> component', () => {
         ...detailContextValue.packageMeta?.latest,
         repository: {
           type: 'git',
-          url: 'git://github.com/verdaccio/ui.git',
+          url: 'invalid://github.com/verdaccio/ui.git',
         },
       },
     };
