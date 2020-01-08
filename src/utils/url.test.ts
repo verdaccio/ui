@@ -17,14 +17,18 @@ describe('utils', () => {
       expect(isEmail('')).toBeFalsy();
     });
 
-    test('getRegistryURL() - should keep slash if location is a sub directory', () => {
+    test('getRegistryURL() - should not change when location change', () => {
+      expect(getRegistryURL()).toBe('http://localhost');
       history.pushState({}, 'page title', '/-/web/detail');
-      expect(getRegistryURL()).toBe('http://localhost/-/web/detail');
+      expect(getRegistryURL()).toBe('http://localhost');
       history.pushState({}, 'page title', '/');
     });
 
-    test('getRegistryURL() - should not add slash if location is not a sub directory', () => {
+    test('getRegistryURL() - should change when UI options change', () => {
       expect(getRegistryURL()).toBe('http://localhost');
+      window.__VERDACCIO_BASENAME_UI_OPTIONS.base = 'http://localhost/test';
+      expect(getRegistryURL()).toBe('http://localhost/test');
+      window.__VERDACCIO_BASENAME_UI_OPTIONS.base = 'http://localhost';
     });
   });
 
