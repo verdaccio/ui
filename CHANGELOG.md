@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.3.11](https://github.com/verdaccio/ui/compare/v0.3.10...v0.3.11) (2020-01-08)
+
+
+### Bug Fixes
+
+* remove prevent default and use react context ([#411](https://github.com/verdaccio/ui/issues/411)) ([6bd38b8](https://github.com/verdaccio/ui/commit/6bd38b812032857bb19af8978d48f6f8969af6cf))
+* removed unused style file ([#406](https://github.com/verdaccio/ui/issues/406)) ([6eeae63](https://github.com/verdaccio/ui/commit/6eeae630ef441a871d06b888b6a21178e36e0db7))
+
 ### [0.3.10](https://github.com/verdaccio/ui/compare/v0.3.9...v0.3.10) (2019-12-30)
 
 
