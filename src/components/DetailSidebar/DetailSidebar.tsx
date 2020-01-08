@@ -38,7 +38,7 @@ const DetailSidebar: React.FC = () => {
       />
       <ActionBar />
       <Install />
-      {packageMeta?.latest?.funding && <DetailSidebarFundButton to={packageMeta.latest.funding.url} />}
+      <DetailSidebarFundButton />
       <Repository />
       <Engines />
       <Dist />

@@ -1,10 +1,12 @@
-import React, { MouseEvent } from 'react';
+import React, { useContext } from 'react';
 import styled from '@emotion/styled';
 import Favorite from '@material-ui/icons/Favorite';
 
 import Button from '../../muiComponents/Button';
 import Link from '../Link';
+import { isURL } from '../../utils/url';
 import { Theme } from '../../design-tokens/theme';
+import { DetailContext } from '../../pages/Version';
 
 const StyledLink = styled(Link)<{ theme?: Theme }>(({ theme }) => ({
   marginTop: theme && theme.spacing(1),
@@ -21,21 +23,21 @@ const StyledFundStrong = styled('strong')({
   marginRight: 3,
 });
 
-interface Props {
-  to: string;
-}
-
 /* eslint-disable react/jsx-no-bind */
-const DetailSidebarFundButton: React.FC<Props> = ({ to }) => {
-  const preventDefault = (event: MouseEvent<HTMLButtonElement>) => event.preventDefault();
+const DetailSidebarFundButton: React.FC = () => {
+  const detailContext = useContext(DetailContext);
+
+  const { packageMeta } = detailContext;
+
+  const fundingUrl = packageMeta?.latest?.funding?.url as string;
+
+  if (!isURL(fundingUrl)) {
+    return null;
+  }
+
   return (
-    <StyledLink external={true} to={to}>
-      <Button
-        color="primary"
-        fullWidth={true}
-        onClick={preventDefault}
-        startIcon={<StyledFavoriteIcon />}
-        variant="outlined">
+    <StyledLink external={true} to={fundingUrl}>
+      <Button color="primary" fullWidth={true} startIcon={<StyledFavoriteIcon />} variant="outlined">
         <StyledFundStrong>{'Fund'}</StyledFundStrong>
         {'this package'}
       </Button>
