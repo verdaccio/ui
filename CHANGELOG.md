@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.3.12](https://github.com/verdaccio/ui/compare/v0.3.11...v0.3.12) (2020-01-09)
+
+
+### Bug Fixes
+
+* generate correct registry URL ([#413](https://github.com/verdaccio/ui/issues/413)) ([6b322ad](https://github.com/verdaccio/ui/commit/6b322ad553e9fb3ee65b2968dcfe856ba42a0bfb)), closes [#300](https://github.com/verdaccio/ui/issues/300) [#311](https://github.com/verdaccio/ui/issues/311)
+
 ### [0.3.11](https://github.com/verdaccio/ui/compare/v0.3.10...v0.3.11) (2020-01-08)
 
 
