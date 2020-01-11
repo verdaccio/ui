@@ -1,24 +1,6 @@
 import { createContext, Consumer, Provider } from 'react';
 
-import { PackageMetaInterface } from '../../../types/packageMeta';
-export interface DetailContextProps {
-  packageMeta: PackageMetaInterface;
-  packageVersion?: string;
-  readMe: string;
-  packageName: string;
-  enableLoading: () => void;
-  isLoading: boolean;
-  hasNotBeenFound: boolean;
-}
-
-export interface VersionPageConsumerProps {
-  packageMeta: PackageMetaInterface;
-  readMe: string;
-  packageName: string;
-  packageVersion?: string;
-  // FIXME: looking for the appropiated type here
-  enableLoading: any;
-}
+import { DetailContextProps, VersionPageConsumerProps } from './version-config';
 
 export const DetailContext = createContext<Partial<DetailContextProps>>({});
 
