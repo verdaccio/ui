@@ -8,7 +8,6 @@ import LoginDialog from './LoginDialog';
 
 const appContextValue: AppContextProps = {
   scope: '',
-  packages: [],
   setUser: jest.fn(),
 };
 

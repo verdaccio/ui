@@ -5,11 +5,9 @@ import { Router } from 'react-router-dom';
 
 import storage from '../utils/storage';
 import { isTokenExpire } from '../utils/login';
-import API from '../utils/api';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import Box from '../muiComponents/Box';
-import Loading from '../components/Loading';
 import StyleBaseline from '../design-tokens/StyleBaseline';
 import { Theme } from '../design-tokens/theme';
 
@@ -33,11 +31,9 @@ const StyledBoxContent = styled(Box)<{ theme?: Theme }>(({ theme }) => ({
 /* eslint-disable react-hooks/exhaustive-deps */
 const App: React.FC = () => {
   const [user, setUser] = useState();
-  const [packages, setPackages] = useState([]);
-  const [isLoading, setIsLoading] = useState(true);
 
   /**
-   * Logouts user
+   * Logout user
    * Required by: <Header />
    */
   const logout = () => {
@@ -59,46 +55,26 @@ const App: React.FC = () => {
     setUser({ username });
   };
 
-  const loadOnHandler = async () => {
-    try {
-      const packages = await API.request('packages', 'GET');
-      // FIXME add correct type for package
-      setPackages(packages as never[]);
-    } catch (error) {
-      // FIXME: add dialog
-      console.error({
-        title: 'Warning',
-        message: `Unable to load package list: ${error.message}`,
-      });
-    }
-
-    setIsLoading(false);
-  };
-
   useEffect(() => {
     checkUserAlreadyLoggedIn();
-    loadOnHandler();
   }, []);
 
   return (
     <>
       <StyleBaseline />
       <StyledBox display="flex" flexDirection="column" height="100%">
-        {isLoading ? (
-          <Loading />
-        ) : (
-          <>
-            <Router history={history}>
-              <AppContextProvider packages={packages} user={user}>
-                <Header />
-                <StyledBoxContent flexGrow={1}>
-                  <AppRoute />
-                </StyledBoxContent>
-              </AppContextProvider>
-            </Router>
-            <Footer />
-          </>
-        )}
+        <>
+          <Router history={history}>
+            <AppContextProvider user={user}>
+              <Header />
+              <StyledBoxContent flexGrow={1}>
+                {/* eslint-disable-next-line react/jsx-max-depth */}
+                <AppRoute />
+              </StyledBoxContent>
+            </AppContextProvider>
+          </Router>
+          <Footer />
+        </>
       </StyledBox>
     </>
   );

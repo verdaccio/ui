@@ -3,7 +3,6 @@ import { createContext } from 'react';
 export interface AppProps {
   user?: User;
   scope: string;
-  packages: any[];
 }
 
 export interface User {
