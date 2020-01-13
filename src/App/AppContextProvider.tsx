@@ -3,15 +3,13 @@ import React, { useState, useEffect } from 'react';
 import AppContext, { AppProps, User } from './AppContext';
 
 interface Props {
-  packages: any[];
   user?: User;
 }
 
 /* eslint-disable react-hooks/exhaustive-deps */
-const AppContextProvider: React.FC<Props> = ({ children, packages, user }) => {
+const AppContextProvider: React.FC<Props> = ({ children, user }) => {
   const [state, setState] = useState<AppProps>({
     scope: window.VERDACCIO_SCOPE || '',
-    packages,
     user,
   });
 
@@ -21,13 +19,6 @@ const AppContextProvider: React.FC<Props> = ({ children, packages, user }) => {
       user,
     });
   }, [user]);
-
-  useEffect(() => {
-    setState({
-      ...state,
-      packages,
-    });
-  }, [packages]);
 
   const setUser = (user?: User) => {
     setState({

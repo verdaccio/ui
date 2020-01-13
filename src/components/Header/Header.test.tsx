@@ -18,7 +18,7 @@ describe('<Header /> component with logged in state', () => {
   test('should load the component in logged out state', () => {
     const { container, queryByTestId, getByText } = render(
       <Router>
-        <AppContextProvider packages={props.packages}>
+        <AppContextProvider>
           <Header />
         </AppContextProvider>
       </Router>
@@ -32,7 +32,7 @@ describe('<Header /> component with logged in state', () => {
   test('should load the component in logged in state', () => {
     const { container, getByTestId, queryByText } = render(
       <Router>
-        <AppContextProvider packages={props.packages} user={props.user}>
+        <AppContextProvider user={props.user}>
           <Header />
         </AppContextProvider>
       </Router>
@@ -46,7 +46,7 @@ describe('<Header /> component with logged in state', () => {
   test('should open login dialog', async () => {
     const { getByText } = render(
       <Router>
-        <AppContextProvider packages={props.packages}>
+        <AppContextProvider>
           <Header />
         </AppContextProvider>
       </Router>
@@ -61,7 +61,7 @@ describe('<Header /> component with logged in state', () => {
   test('should logout the user', async () => {
     const { getByText, getByTestId } = render(
       <Router>
-        <AppContextProvider packages={props.packages} user={props.user}>
+        <AppContextProvider user={props.user}>
           <Header />
         </AppContextProvider>
       </Router>
@@ -79,7 +79,7 @@ describe('<Header /> component with logged in state', () => {
   test("The question icon should open a new tab of verdaccio's website - installation doc", () => {
     const { getByTestId } = render(
       <Router>
-        <AppContextProvider packages={props.packages} user={props.user}>
+        <AppContextProvider user={props.user}>
           <Header />
         </AppContextProvider>
       </Router>
@@ -92,7 +92,7 @@ describe('<Header /> component with logged in state', () => {
   test('should open the registrationInfo modal when clicking on the info icon', async () => {
     const { getByTestId } = render(
       <Router>
-        <AppContextProvider packages={props.packages} user={props.user}>
+        <AppContextProvider user={props.user}>
           <Header />
         </AppContextProvider>
       </Router>
@@ -109,7 +109,7 @@ describe('<Header /> component with logged in state', () => {
   test('should close the registrationInfo modal when clicking on the button close', async () => {
     const { getByTestId, getByText, queryByTestId } = render(
       <Router>
-        <AppContextProvider packages={props.packages} user={props.user}>
+        <AppContextProvider user={props.user}>
           <Header />
         </AppContextProvider>
       </Router>

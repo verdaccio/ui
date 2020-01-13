@@ -30,7 +30,7 @@ const AppRoute: React.FC = () => {
     throw Error('The app Context was not correct used');
   }
 
-  const { user, packages } = appContext;
+  const { user } = appContext;
 
   const isUserLoggedIn = user && user.username;
 
@@ -39,7 +39,7 @@ const AppRoute: React.FC = () => {
       <Suspense fallback={<Loading />}>
         <Switch>
           <ReactRouterDomRoute exact={true} path={Route.ROOT}>
-            <HomePage isUserLoggedIn={!!isUserLoggedIn} packages={packages || []} />
+            <HomePage isUserLoggedIn={!!isUserLoggedIn} />
           </ReactRouterDomRoute>
           <ReactRouterDomRoute exact={true} path={Route.PACKAGE}>
             <VersionContextProvider>
