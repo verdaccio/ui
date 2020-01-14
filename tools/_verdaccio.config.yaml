@@ -10,10 +10,10 @@ auth:
     users:
       foo:
         name: test
-        password: test
+        password: test #pragma: allowlist secret
       bar:
         name: bar
-        password: test
+        password: test #pragma: allowlist secret
 security:
   api:
     jwt:
@@ -23,7 +23,7 @@ security:
   web:
     sign:
       expiresIn: 100d
-      notBefore: 1
+      notBefore: 0
 
 uplinks:
   npmjs:
