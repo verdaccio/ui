@@ -40,7 +40,7 @@ const DependencyBlock: React.FC<DependencyBlockProps> = ({ title, dependencies }
   );
 };
 
-function hasKeys(object?: { [key: string]: any }): boolean {
+function hasKeys(object?: { [key: string]: string }): boolean {
   return !!object && Object.keys(object).length > 0;
 }
 

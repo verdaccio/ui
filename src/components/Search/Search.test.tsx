@@ -98,7 +98,7 @@ describe('<Search /> component', () => {
   });
 
   test('handleSearch: loading is been displayed', async () => {
-    const { getByPlaceholderText, getByRole, getByText } = render(<ComponentToBeRendered />);
+    const { getByPlaceholderText, getByText } = render(<ComponentToBeRendered />);
     const autoCompleteInput = getByPlaceholderText('Search Packages');
 
     fireEvent.focus(autoCompleteInput);

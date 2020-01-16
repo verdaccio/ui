@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { render, waitForElement, fireEvent, waitForElementToBeRemoved } from '../../utils/test-react-testing-library';
+import { render, waitForElement, fireEvent } from '../../utils/test-react-testing-library';
 import AppContext, { AppContextProps } from '../../App/AppContext';
 import api from '../../utils/api';
 

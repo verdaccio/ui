@@ -92,13 +92,11 @@ const SUGGESTIONS_RESPONSE = {
 const AutoComplete = memo(
   ({
     suggestions,
-    startAdornment,
     onChange,
     onSuggestionsFetch,
     onCleanSuggestions,
     value = '',
     placeholder = '',
-    disableUnderline = false,
     onClick,
     onKeyDown,
     onBlur,
