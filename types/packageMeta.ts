@@ -28,6 +28,9 @@ export interface PackageMetaInterface {
     funding?: Funding;
     maintainers?: Array<Developer>;
     contributors?: Array<Developer>;
+    dependencies: { [name: string]: string };
+    devDependencies: { [name: string]: string };
+    peerDependencies: { [name: string]: string };
   };
   _uplinks: {};
 }

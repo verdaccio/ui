@@ -111,8 +111,7 @@ const Search: React.FC<RouteComponentProps> = ({ history }) => {
         const signal = controller.signal;
         // Keep track of search requests.
         setRequestList([...requestList, controller]);
-        const suggestions = await callSearch(value, signal);
-        // @ts-ignore FIXME: Argument of type 'unknown' is not assignable to parameter of type 'SetStateAction<never[]>'
+        const suggestions: never[] = (await callSearch(value, signal)) as never[];
         setSuggestions(suggestions);
         setLoaded(true);
       } catch (error) {

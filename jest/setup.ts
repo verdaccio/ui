@@ -8,13 +8,23 @@ import Adapter from 'enzyme-adapter-react-16';
 import { GlobalWithFetchMock } from 'jest-fetch-mock';
 import 'mutationobserver-shim';
 
+declare global {
+  namespace NodeJS {
+    interface Global {
+      document: Document;
+      __APP_VERSION__: string;
+      window: Window;
+      navigator: Navigator;
+      __VERDACCIO_BASENAME_UI_OPTIONS: { [base: string]: string };
+      VERDACCIO_API_URL: string;
+    }
+  }
+}
+
 configure({ adapter: new Adapter() });
 
-// @ts-ignore : Property '__APP_VERSION__' does not exist on type 'Global'.
 global.__APP_VERSION__ = '1.0.0';
-// @ts-ignore : Property '__VERDACCIO_BASENAME_UI_OPTIONS' does not exist on type 'Global'.
 global.__VERDACCIO_BASENAME_UI_OPTIONS = { base: 'http://localhost' };
-// @ts-ignore : Property 'VERDACCIO_API_URL' does not exist on type 'Global'.
 global.VERDACCIO_API_URL = 'https://verdaccio.tld';
 
 const customGlobal: GlobalWithFetchMock = global as GlobalWithFetchMock;
@@ -22,10 +32,9 @@ customGlobal.fetch = require('jest-fetch-mock');
 customGlobal.fetchMock = customGlobal.fetch;
 
 // mocking few DOM methods
-// @ts-ignore : Property 'document' does not exist on type 'Global'.
 if (global.document) {
-  // @ts-ignore : Type 'Mock<{ selectNodeContents: () => void; }, []>' is not assignable to type '() => Range'.
-  document.createRange = jest.fn((): void => ({
+  // TODO: can we remove the use of document here?
+  document.createRange = jest.fn((): any => ({
     selectNodeContents: (): void => {},
   }));
   document.execCommand = jest.fn();

@@ -44,7 +44,6 @@ describe('api', () => {
     test('when there is no VERDACCIO_URL is defined', () => {
       const { VERDACCIO_API_URL } = window;
       delete window.VERDACCIO_API_URL;
-      // @ts-ignore
       window.VERDACCIO_API_URL = undefined;
 
       expect(() => {

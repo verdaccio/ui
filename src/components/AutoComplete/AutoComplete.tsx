@@ -118,10 +118,6 @@ const AutoComplete = memo(
       value,
       onChange,
       placeholder,
-      // material-ui@4.5.1 introduce better types for TextInput, check readme
-      // @ts-ignore
-      startAdornment,
-      disableUnderline,
       onKeyDown,
       onBlur,
     };
