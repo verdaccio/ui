@@ -2,12 +2,14 @@ import { isObject } from 'util';
 
 import { UpLinks } from '@verdaccio/types';
 import isString from 'lodash/isString';
-import format from 'date-fns/format';
-import distanceInWordsToNow from 'date-fns/distance_in_words_to_now';
+import dayjs from 'dayjs';
+import relativeTime from 'dayjs/plugin/relativeTime';
 
 import { Time } from '../../types/packageMeta';
 
 export const TIMEFORMAT = 'DD.MM.YYYY, HH:mm:ss';
+
+dayjs.extend(relativeTime);
 
 /**
  * Formats license field for webui.
@@ -52,11 +54,11 @@ export function formatRepository(repository: any): string | null {
 }
 
 export function formatDate(lastUpdate: string | number): string {
-  return format(new Date(lastUpdate), TIMEFORMAT);
+  return dayjs(new Date(lastUpdate)).format(TIMEFORMAT);
 }
 
 export function formatDateDistance(lastUpdate: Date | string | number): string {
-  return distanceInWordsToNow(new Date(lastUpdate));
+  return dayjs(new Date(lastUpdate)).fromNow();
 }
 
 /**

@@ -1,63 +1,58 @@
 import React from 'react';
-import { mount } from 'enzyme';
+
+import { render } from '../../utils/test-react-testing-library';
+import { DetailContext, DetailContextProps } from '../../pages/Version';
 
 import Repository from './Repository';
+import data from './__partials__/data.json';
 
-jest.mock('./img/git.png', () => '');
+const detailContextValue: DetailContextProps = {
+  packageName: 'foo',
+  readMe: 'readMe',
+  enableLoading: () => {},
+  isLoading: false,
+  hasNotBeenFound: false,
+  packageMeta: data,
+};
 
-const mockPackageMeta: jest.Mock = jest.fn(() => ({
-  latest: {
-    homepage: 'https://verdaccio.tld',
-    bugs: {
-      url: 'https://verdaccio.tld/bugs',
-    },
-    dist: {
-      tarball: 'https://verdaccio.tld/download',
-    },
-  },
-}));
-
-jest.mock('../../pages/Version', () => ({
-  DetailContextConsumer: component => {
-    return component.children({ packageMeta: mockPackageMeta() });
-  },
-}));
+const ComponentToBeRendered: React.FC<{ contextValue: DetailContextProps }> = ({ contextValue }) => (
+  <DetailContext.Provider value={contextValue}>
+    <Repository />
+  </DetailContext.Provider>
+);
 
 describe('<Repository /> component', () => {
-  beforeEach(() => {
-    jest.resetAllMocks();
-  });
-
-  test('should render the component in default state', () => {
-    const packageMeta = {
-      latest: {
-        repository: {
-          type: 'git',
-          url: 'git+https://github.com/verdaccio/ui.git',
-        },
-      },
-    };
-
-    mockPackageMeta.mockImplementation(() => packageMeta);
-
-    const wrapper = mount(<Repository />);
-    expect(wrapper.html()).toMatchSnapshot();
+  test('should load the component in default state', () => {
+    const { container } = render(<ComponentToBeRendered contextValue={detailContextValue} />);
+    expect(container.firstChild).toMatchSnapshot();
   });
 
   test('should render the component in with no repository data', () => {
     const packageMeta = {
-      latest: {},
+      ...detailContextValue.packageMeta,
+      latest: {
+        ...detailContextValue.packageMeta?.latest,
+        repository: undefined,
+      },
     };
 
-    mockPackageMeta.mockImplementation(() => packageMeta);
+    const { queryByText } = render(
+      <ComponentToBeRendered
+        contextValue={{
+          ...detailContextValue,
+          packageMeta,
+        }}
+      />
+    );
 
-    const wrapper = mount(<Repository />);
-    expect(wrapper.html()).toEqual('');
+    expect(queryByText('Repository')).toBeFalsy();
   });
 
   test('should render the component in with invalid url', () => {
     const packageMeta = {
+      ...detailContextValue.packageMeta,
       latest: {
+        ...detailContextValue.packageMeta?.latest,
         repository: {
           type: 'git',
           url: 'git://github.com/verdaccio/ui.git',
@@ -65,9 +60,15 @@ describe('<Repository /> component', () => {
       },
     };
 
-    mockPackageMeta.mockImplementation(() => packageMeta);
+    const { queryByText } = render(
+      <ComponentToBeRendered
+        contextValue={{
+          ...detailContextValue,
+          packageMeta,
+        }}
+      />
+    );
 
-    const wrapper = mount(<Repository />);
-    expect(wrapper.html()).toEqual('');
+    expect(queryByText('Repository')).toBeFalsy();
   });
 });

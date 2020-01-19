@@ -1,4 +1,4 @@
-import styled from 'react-emotion';
+import styled from '@emotion/styled';
 
 import { default as Typography } from '../../muiComponents/Heading';
 import List from '../../muiComponents/List';

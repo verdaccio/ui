@@ -1,11 +1,15 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`DetailContainer renders correctly 1`] = `
+.emotion-0 {
+  margin-bottom: 16px;
+}
+
 <div
   class="MuiBox-root MuiBox-root-2"
 >
   <div
-    class="MuiTabs-root css-1qm1lh emotion-0"
+    class="MuiTabs-root emotion-0 emotion-1"
   >
     <div
       class="MuiTabs-scroller MuiTabs-fixed"

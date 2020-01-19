@@ -1,6 +1,6 @@
 import React from 'react';
-import { shallow, mount } from 'enzyme';
 
+import { mount, shallow } from '../../utils/test-enzyme';
 import { DetailContext } from '../../pages/Version';
 
 import UpLinks from './UpLinks';

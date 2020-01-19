@@ -1,10 +1,9 @@
 import React from 'react';
-import { mount } from 'enzyme';
 
+import { mount } from '../../utils/test-enzyme';
 import { DetailContextProvider } from '../../pages/Version';
 
-import Developers, { DevelopersType } from './Developers';
-import { Fab } from './styles';
+import Developers, { DeveloperType, Fab } from './Developers';
 
 describe('test Developers', () => {
   const packageMeta = {
@@ -35,14 +34,13 @@ describe('test Developers', () => {
   };
 
   test('should render the component with no items', () => {
-    const type: DevelopersType = 'maintainers';
     const packageMeta = {
       latest: {},
     };
     const wrapper = mount(
       // @ts-ignore
       <DetailContextProvider value={{ packageMeta }}>
-        <Developers type={type} />
+        <Developers type={DeveloperType.MAINTAINERS} />
       </DetailContextProvider>
     );
 
@@ -50,11 +48,10 @@ describe('test Developers', () => {
   });
 
   test('should render the component for maintainers with items', () => {
-    const type: DevelopersType = 'maintainers';
     const wrapper = mount(
       // @ts-ignore
       <DetailContextProvider value={{ packageMeta }}>
-        <Developers type={type} />
+        <Developers type={DeveloperType.MAINTAINERS} />
       </DetailContextProvider>
     );
 
@@ -62,11 +59,10 @@ describe('test Developers', () => {
   });
 
   test('should render the component for contributors with items', () => {
-    const type: DevelopersType = 'contributors';
     const wrapper = mount(
       // @ts-ignore
       <DetailContextProvider value={{ packageMeta }}>
-        <Developers type={type} />
+        <Developers type={DeveloperType.CONTRIBUTORS} />
       </DetailContextProvider>
     );
 
@@ -74,7 +70,6 @@ describe('test Developers', () => {
   });
 
   test('should test onClick the component avatar', () => {
-    const type: DevelopersType = 'contributors';
     const packageMeta = {
       latest: {
         packageName: 'foo',
@@ -95,7 +90,7 @@ describe('test Developers', () => {
     const wrapper = mount(
       // @ts-ignore
       <DetailContextProvider value={{ packageMeta }}>
-        <Developers type={type} visibleMax={1} />
+        <Developers type={DeveloperType.CONTRIBUTORS} visibleMax={1} />
       </DetailContextProvider>
     );
 

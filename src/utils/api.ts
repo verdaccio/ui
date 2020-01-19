@@ -20,7 +20,7 @@ export function handleResponseType(response: Response): Promise<[boolean, Blob |
       return Promise.all([response.ok, response.text()]);
     }
 
-    // unfortunatelly on download files there is no header available
+    // unfortunately on download files there is no header available
     if (response.url && response.url.endsWith('.tgz') === true) {
       return Promise.all([response.ok, response.blob()]);
     }

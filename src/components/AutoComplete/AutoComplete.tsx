@@ -1,13 +1,21 @@
-import React, { KeyboardEvent } from 'react';
-import { css } from 'emotion';
+import React, { KeyboardEvent, memo } from 'react';
+import styled from '@emotion/styled';
 import Autosuggest, { SuggestionSelectedEventData, InputProps, ChangeEvent } from 'react-autosuggest';
 import match from 'autosuggest-highlight/match';
 import parse from 'autosuggest-highlight/parse';
-import MenuItem from '@material-ui/core/MenuItem';
 
-import { fontWeight } from '../../utils/styles/sizes';
+import MenuItem from '../../muiComponents/MenuItem';
+import { Theme } from '../../design-tokens/theme';
 
 import { Wrapper, InputField, SuggestionContainer } from './styles';
+
+const StyledAnchor = styled('a')<{ highlight: boolean; theme?: Theme }>(props => ({
+  fontWeight: props.theme && props.highlight ? props.theme.fontWeight.semiBold : props.theme.fontWeight.light,
+}));
+
+const StyledMenuItem = styled(MenuItem)({
+  cursor: 'pointer',
+});
 
 interface Props {
   suggestions: unknown[];
@@ -15,7 +23,6 @@ interface Props {
   suggestionsLoaded?: boolean;
   suggestionsError?: boolean;
   apiLoading?: boolean;
-  color?: string;
   value?: string;
   placeholder?: string;
   startAdornment?: JSX.Element;
@@ -54,23 +61,17 @@ const renderSuggestion = (suggestion, { query, isHighlighted }): JSX.Element => 
   const matches = match(suggestion.name, query);
   const parts = parse(suggestion.name, matches);
   return (
-    <MenuItem component="div" selected={isHighlighted}>
+    <StyledMenuItem component="div" selected={isHighlighted}>
       <div>
         {parts.map((part, index) => {
-          const fw = part.highlight ? fontWeight.semiBold : fontWeight.light;
           return (
-            <a
-              className={css`
-                font-weight: ${fw};
-              `}
-              href={suggestion.link}
-              key={String(index)}>
+            <StyledAnchor highlight={part.highlight} key={String(index)}>
               {part.text}
-            </a>
+            </StyledAnchor>
           );
         })}
       </div>
-    </MenuItem>
+    </StyledMenuItem>
   );
 };
 
@@ -88,66 +89,66 @@ const SUGGESTIONS_RESPONSE = {
   NO_RESULT: 'No results found.',
 };
 
-const AutoComplete = ({
-  suggestions,
-  startAdornment,
-  onChange,
-  onSuggestionsFetch,
-  onCleanSuggestions,
-  value = '',
-  placeholder = '',
-  disableUnderline = false,
-  color,
-  onClick,
-  onKeyDown,
-  onBlur,
-  suggestionsLoading = false,
-  suggestionsLoaded = false,
-  suggestionsError = false,
-}: Props): JSX.Element => {
-  const autosuggestProps = {
-    renderInputComponent,
+const AutoComplete = memo(
+  ({
     suggestions,
-    getSuggestionValue,
-    renderSuggestion,
-    onSuggestionsFetchRequested: onSuggestionsFetch,
-    onSuggestionsClearRequested: onCleanSuggestions,
-  };
-  const inputProps: InputProps<unknown> = {
-    value,
-    onChange,
-    placeholder,
-    // material-ui@4.5.1 introduce better types for TextInput, check readme
-    // @ts-ignore
     startAdornment,
-    disableUnderline,
-    color,
+    onChange,
+    onSuggestionsFetch,
+    onCleanSuggestions,
+    value = '',
+    placeholder = '',
+    disableUnderline = false,
+    onClick,
     onKeyDown,
     onBlur,
-  };
+    suggestionsLoading = false,
+    suggestionsLoaded = false,
+    suggestionsError = false,
+  }: Props) => {
+    const autosuggestProps = {
+      renderInputComponent,
+      suggestions,
+      getSuggestionValue,
+      renderSuggestion,
+      onSuggestionsFetchRequested: onSuggestionsFetch,
+      onSuggestionsClearRequested: onCleanSuggestions,
+    };
+    const inputProps: InputProps<unknown> = {
+      value,
+      onChange,
+      placeholder,
+      // material-ui@4.5.1 introduce better types for TextInput, check readme
+      // @ts-ignore
+      startAdornment,
+      disableUnderline,
+      onKeyDown,
+      onBlur,
+    };
 
-  // this format avoid arrow function eslint rule
-  function renderSuggestionsContainer({ containerProps, children, query }): JSX.Element {
+    // this format avoid arrow function eslint rule
+    function renderSuggestionsContainer({ containerProps, children, query }): JSX.Element {
+      return (
+        <SuggestionContainer {...containerProps} square={true}>
+          {suggestionsLoaded && children === null && query && renderMessage(SUGGESTIONS_RESPONSE.NO_RESULT)}
+          {suggestionsLoading && query && renderMessage(SUGGESTIONS_RESPONSE.LOADING)}
+          {suggestionsError && renderMessage(SUGGESTIONS_RESPONSE.FAILURE)}
+          {children}
+        </SuggestionContainer>
+      );
+    }
+
     return (
-      <SuggestionContainer {...containerProps} square={true}>
-        {suggestionsLoaded && children === null && query && renderMessage(SUGGESTIONS_RESPONSE.NO_RESULT)}
-        {suggestionsLoading && query && renderMessage(SUGGESTIONS_RESPONSE.LOADING)}
-        {suggestionsError && renderMessage(SUGGESTIONS_RESPONSE.FAILURE)}
-        {children}
-      </SuggestionContainer>
+      <Wrapper>
+        <Autosuggest
+          {...autosuggestProps}
+          inputProps={inputProps}
+          onSuggestionSelected={onClick}
+          renderSuggestionsContainer={renderSuggestionsContainer}
+        />
+      </Wrapper>
     );
   }
-
-  return (
-    <Wrapper>
-      <Autosuggest
-        {...autosuggestProps}
-        inputProps={inputProps}
-        onSuggestionSelected={onClick}
-        renderSuggestionsContainer={renderSuggestionsContainer}
-      />
-    </Wrapper>
-  );
-};
+);
 
 export default AutoComplete;

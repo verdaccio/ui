@@ -1,6 +1,6 @@
 import React from 'react';
 import BugReport from '@material-ui/icons/BugReport';
-import Grid from '@material-ui/core/Grid';
+import DownloadIcon from '@material-ui/icons/CloudDownload';
 import HomeIcon from '@material-ui/icons/Home';
 
 import { PackageMetaInterface, Author as PackageAuthor } from '../../../types/packageMeta';
@@ -9,7 +9,9 @@ import fileSizeSI from '../../utils/file-size';
 import { formatDate, formatDateDistance } from '../../utils/package';
 import Tooltip from '../../muiComponents/Tooltip';
 import { isURL } from '../../utils/url';
+import { downloadTarball } from '../ActionBar';
 import ListItem from '../../muiComponents/ListItem';
+import Grid from '../../muiComponents/Grid';
 
 import {
   Author,
@@ -34,6 +36,7 @@ interface Bugs {
 }
 interface Dist {
   unpackedSize: number;
+  tarball: string;
 }
 
 export interface PackageInterface {
@@ -101,7 +104,7 @@ const Package: React.FC<PackageInterface> = ({
       <OverviewItem>
         <Icon name="time" />
         <Published>{`Published on ${formatDate(time)} •`}</Published>
-        {`${formatDateDistance(time)} ago`}
+        {formatDateDistance(time)}
       </OverviewItem>
     );
 
@@ -111,7 +114,6 @@ const Package: React.FC<PackageInterface> = ({
       <a href={homepage} target={'_blank'}>
         <Tooltip aria-label={'Homepage'} title={'Visit homepage'}>
           <IconButton aria-label={'Homepage'}>
-            {/* eslint-disable-next-line react/jsx-max-depth */}
             <HomeIcon />
           </IconButton>
         </Tooltip>
@@ -125,8 +127,21 @@ const Package: React.FC<PackageInterface> = ({
       <a href={bugs.url} target={'_blank'}>
         <Tooltip aria-label={'Bugs'} title={'Open an issue'}>
           <IconButton aria-label={'Bugs'}>
-            {/* eslint-disable-next-line react/jsx-max-depth */}
             <BugReport />
+          </IconButton>
+        </Tooltip>
+      </a>
+    );
+
+  const renderDownloadLink = (): React.ReactNode =>
+    dist &&
+    dist.tarball &&
+    isURL(dist.tarball) && (
+      // eslint-disable-next-line
+      <a onClick={downloadTarball(dist.tarball.replace(`https://registry.npmjs.org/`, window.location.href))} target={'_blank'}>
+        <Tooltip aria-label={'Download the tar file'} title={'Download tarball'}>
+          <IconButton aria-label={'Download'}>
+            <DownloadIcon />
           </IconButton>
         </Tooltip>
       </a>
@@ -137,13 +152,13 @@ const Package: React.FC<PackageInterface> = ({
       <Grid container={true} item={true} xs={12}>
         <Grid item={true} xs={true}>
           <WrapperLink to={`/-/web/detail/${packageName}`}>
-            {/* eslint-disable-next-line react/jsx-max-depth */}
-            <PackageTitle>{packageName}</PackageTitle>
+            <PackageTitle className="package-title">{packageName}</PackageTitle>
           </WrapperLink>
         </Grid>
         <GridRightAligned item={true} xs={true}>
           {renderHomePageLink()}
           {renderBugsLink()}
+          {renderDownloadLink()}
         </GridRightAligned>
       </Grid>
     );

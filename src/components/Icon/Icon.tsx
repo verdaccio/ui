@@ -63,10 +63,11 @@ export interface Props {
   modifiers?: null | undefined;
 }
 
+/* eslint-disable verdaccio/jsx-spread */
 const Icon: React.FC<Props> = ({ className, name, size = 'sm', img = false, pointer = false, ...props }) => {
   const title = capitalize(name.toString());
   return img ? (
-    <ImgWrapper className={className} name={name} pointer={pointer} size={size} title={title} {...props}>
+    <ImgWrapper className={className} pointer={pointer} size={size} title={title} {...props}>
       <Img alt={title} src={Icons[name]} />
     </ImgWrapper>
   ) : (

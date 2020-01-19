@@ -1,34 +1,27 @@
-import styled from 'react-emotion';
-import { default as MuiFab } from '@material-ui/core/Fab';
-import Chip from '@material-ui/core/Chip';
+import styled from '@emotion/styled';
 
-import colors from '../../utils/styles/colors';
-import { fontWeight } from '../../utils/styles/sizes';
 import ListItem from '../../muiComponents/ListItem';
 import Text from '../../muiComponents/Text';
+import FloatingActionButton from '../../muiComponents/FloatingActionButton';
+import Chip from '../../muiComponents/Chip';
+import { Theme } from '../../design-tokens/theme';
 
-export const StyledText = styled(Text)({
-  fontWeight: fontWeight.bold,
+export const StyledText = styled(Text)<{ theme?: Theme }>(props => ({
+  fontWeight: props.theme && props.theme.fontWeight.bold,
   textTransform: 'capitalize',
-});
+}));
 
 export const DistListItem = styled(ListItem)({
-  '&&': {
-    paddingLeft: 0,
-    paddingRight: 0,
-  },
+  paddingLeft: 0,
+  paddingRight: 0,
 });
 
 export const DistChips = styled(Chip)({
-  '&&': {
-    marginRight: '5px',
-    textTransform: 'capitalize',
-  },
+  marginRight: 5,
+  textTransform: 'capitalize',
 });
 
-export const DownloadButton = styled(MuiFab)({
-  '&&': {
-    backgroundColor: colors.primary,
-    color: colors.white,
-  },
-});
+export const DownloadButton = styled(FloatingActionButton)<{ theme?: Theme }>(props => ({
+  backgroundColor: props.theme && props.theme.palette.primary.main,
+  color: props.theme && props.theme.palette.white,
+}));

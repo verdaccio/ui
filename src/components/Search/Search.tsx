@@ -1,32 +1,12 @@
-import React, { KeyboardEvent, Component, ReactElement } from 'react';
-import { withRouter, RouteComponentProps } from 'react-router-dom';
-import { SuggestionSelectedEventData, ChangeEvent } from 'react-autosuggest';
-import { css } from 'emotion';
-import { default as IconSearch } from '@material-ui/icons/Search';
-import InputAdornment from '@material-ui/core/InputAdornment';
+import React, { useState, FormEvent, useCallback } from 'react';
 import debounce from 'lodash/debounce';
+import { RouteComponentProps, withRouter } from 'react-router';
+import { SuggestionSelectedEventData } from 'react-autosuggest';
 
 import AutoComplete from '../AutoComplete';
-import colors from '../../utils/styles/colors';
 import { callSearch } from '../../utils/calls';
 
-export interface State {
-  search: string;
-  suggestions: unknown[];
-  loading: boolean;
-  loaded: boolean;
-  error: boolean;
-}
-
-export type cancelAllSearchRequests = () => void;
-export type handlePackagesClearRequested = () => void;
-export type handleSearch = (event: React.FormEvent<HTMLInputElement>, { newValue, method }: ChangeEvent) => void;
-export type handleClickSearch = (
-  event: KeyboardEvent<HTMLInputElement>,
-  { suggestionValue, method }: { suggestionValue: object[]; method: string }
-) => void;
-export type handleFetchPackages = ({ value: string }) => Promise<void>;
-export type onBlur = (event: React.FormEvent<HTMLInputElement>) => void;
+import SearchAdornment from './SearchAdornment';
 
 const CONSTANTS = {
   API_DELAY: 300,
@@ -34,169 +14,142 @@ const CONSTANTS = {
   ABORT_ERROR: 'AbortError',
 };
 
-export class Search extends Component<RouteComponentProps<{}>, State> {
-  constructor(props: RouteComponentProps<{}>) {
-    super(props);
-    this.state = {
-      search: '',
-      suggestions: [],
-      // loading: A boolean value to indicate that request is in pending state.
-      loading: false,
-      // loaded: A boolean value to indicate that result has been loaded.
-      loaded: false,
-      // error: A boolean value to indicate API error.
-      error: false,
-    };
-    this.requestList = [];
-  }
-
-  public render(): ReactElement<HTMLElement> {
-    const { suggestions, search, loaded, loading, error } = this.state;
-
-    return (
-      <AutoComplete
-        color={colors.white}
-        onBlur={this.handleOnBlur}
-        onChange={this.handleSearch}
-        onCleanSuggestions={this.handlePackagesClearRequested}
-        onClick={this.handleClickSearch}
-        onSuggestionsFetch={debounce(this.handleFetchPackages, CONSTANTS.API_DELAY)}
-        placeholder={CONSTANTS.PLACEHOLDER_TEXT}
-        startAdornment={this.getAdorment()}
-        suggestions={suggestions}
-        suggestionsError={error}
-        suggestionsLoaded={loaded}
-        suggestionsLoading={loading}
-        value={search}
-      />
-    );
-  }
+const Search: React.FC<RouteComponentProps> = ({ history }) => {
+  const [suggestions, setSuggestions] = useState([]);
+  const [loaded, setLoaded] = useState(false);
+  const [search, setSearch] = useState('');
+  const [error, setError] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [requestList, setRequestList] = useState<Array<{ abort: () => void }>>([]);
 
   /**
    * Cancel all the requests which are in pending state.
    */
-  private cancelAllSearchRequests: cancelAllSearchRequests = () => {
-    this.requestList.forEach(request => request.abort());
-    this.requestList = [];
-  };
-
-  /**
-   * Cancel all the request from list and make request list empty.
-   */
-  private handlePackagesClearRequested: handlePackagesClearRequested = () => {
-    this.setState({
-      suggestions: [],
-    });
-  };
-
-  /**
-   * onChange method for the input element.
-   */
-  private handleSearch: handleSearch = (event, { newValue, method }) => {
-    // stops event bubbling
-    event.stopPropagation();
-    if (method === 'type') {
-      const value = newValue.trim();
-      this.setState(
-        {
-          search: value,
-          loading: true,
-          loaded: false,
-          error: false,
-        },
-        () => {
-          /**
-           * A use case where User keeps adding and removing value in input field,
-           * so we cancel all the existing requests when input is empty.
-           */
-          if (value.length === 0) {
-            this.cancelAllSearchRequests();
-          }
-        }
-      );
-    }
-  };
-
-  /**
-   * When an user select any package by clicking or pressing return key.
-   */
-  private handleClickSearch = (
-    event: React.FormEvent<HTMLInputElement>,
-    { suggestionValue, method }: SuggestionSelectedEventData<unknown>
-  ): void | undefined => {
-    const { history } = this.props;
-    // stops event bubbling
-    event.stopPropagation();
-    switch (method) {
-      case 'click':
-      case 'enter':
-        this.setState({ search: '' });
-        history.push(`/-/web/detail/${suggestionValue}`);
-        break;
-    }
-  };
-
-  /**
-   * Fetch packages from API.
-   * For AbortController see: https://developer.mozilla.org/en-US/docs/Web/API/AbortController
-   */
-  private handleFetchPackages: handleFetchPackages = async ({ value }) => {
-    try {
-      const controller = new window.AbortController();
-      const signal = controller.signal;
-      // Keep track of search requests.
-      this.requestList.push(controller);
-      const suggestions = await callSearch(value, signal);
-      // @ts-ignore
-      this.setState({
-        suggestions,
-        loaded: true,
-      });
-    } catch (error) {
-      /**
-       * AbortError is not the API error.
-       * It means browser has cancelled the API request.
-       */
-      if (error.name === CONSTANTS.ABORT_ERROR) {
-        this.setState({ error: false, loaded: false });
-      } else {
-        this.setState({ error: true, loaded: false });
-      }
-    } finally {
-      this.setState({ loading: false });
-    }
-  };
-
-  private requestList: AbortController[];
-
-  public getAdorment(): JSX.Element {
-    return (
-      <InputAdornment
-        className={css`
-          color: ${colors.white};
-        `}
-        position={'start'}>
-        <IconSearch />
-      </InputAdornment>
-    );
-  }
+  const cancelAllSearchRequests = useCallback(() => {
+    requestList.forEach(request => request.abort());
+    setRequestList([]);
+  }, [requestList, setRequestList]);
 
   /**
    * As user focuses out from input, we cancel all the request from requestList
    * and set the API state parameters to default boolean values.
    */
-  private handleOnBlur: onBlur = event => {
-    // stops event bubbling
-    event.stopPropagation();
-    this.setState(
-      {
-        loaded: false,
-        loading: false,
-        error: false,
-      },
-      () => this.cancelAllSearchRequests()
-    );
-  };
-}
+  const handleOnBlur = useCallback(
+    (event: FormEvent<HTMLInputElement>) => {
+      // stops event bubbling
+      event.stopPropagation();
+      setLoaded(false);
+      setLoading(false);
+      setError(false);
+      cancelAllSearchRequests();
+    },
+    [setLoaded, setLoading, cancelAllSearchRequests, setError]
+  );
+
+  /**
+   * onChange method for the input element.
+   */
+  const handleSearch = useCallback(
+    (event: FormEvent<HTMLInputElement>, { newValue, method }) => {
+      // stops event bubbling
+      event.stopPropagation();
+      if (method === 'type') {
+        const value = newValue.trim();
+
+        setLoading(true);
+        setError(false);
+        setSearch(value);
+        setLoaded(false);
+        /**
+         * A use case where User keeps adding and removing value in input field,
+         * so we cancel all the existing requests when input is empty.
+         */
+        if (value.length === 0) {
+          cancelAllSearchRequests();
+        }
+      }
+    },
+    [cancelAllSearchRequests]
+  );
+
+  /**
+   * Cancel all the request from list and make request list empty.
+   */
+  const handlePackagesClearRequested = useCallback(() => {
+    setSuggestions([]);
+  }, [setSuggestions]);
+
+  /**
+   * When an user select any package by clicking or pressing return key.
+   */
+  const handleClickSearch = useCallback(
+    (
+      event: FormEvent<HTMLInputElement>,
+      { suggestionValue, method }: SuggestionSelectedEventData<unknown>
+    ): void | undefined => {
+      // stops event bubbling
+      event.stopPropagation();
+      switch (method) {
+        case 'click':
+        case 'enter':
+          setSearch('');
+          history.push(`/-/web/detail/${suggestionValue}`);
+          break;
+      }
+    },
+    [history]
+  );
+
+  /**
+   * Fetch packages from API.
+   * For AbortController see: https://developer.mozilla.org/en-US/docs/Web/API/AbortController
+   */
+  const handleFetchPackages = useCallback(
+    async ({ value }: { value: string }) => {
+      try {
+        const controller = new window.AbortController();
+        const signal = controller.signal;
+        // Keep track of search requests.
+        setRequestList([...requestList, controller]);
+        const suggestions = await callSearch(value, signal);
+        // @ts-ignore FIXME: Argument of type 'unknown' is not assignable to parameter of type 'SetStateAction<never[]>'
+        setSuggestions(suggestions);
+        setLoaded(true);
+      } catch (error) {
+        /**
+         * AbortError is not the API error.
+         * It means browser has cancelled the API request.
+         */
+        if (error.name === CONSTANTS.ABORT_ERROR) {
+          setError(false);
+          setLoaded(false);
+        } else {
+          setError(true);
+          setLoaded(false);
+        }
+      } finally {
+        setLoading(false);
+      }
+    },
+    [requestList, setRequestList, setSuggestions, setLoaded, setError, setLoading]
+  );
+
+  return (
+    <AutoComplete
+      onBlur={handleOnBlur}
+      onChange={handleSearch}
+      onCleanSuggestions={handlePackagesClearRequested}
+      onClick={handleClickSearch}
+      onSuggestionsFetch={debounce(handleFetchPackages, CONSTANTS.API_DELAY)}
+      placeholder={CONSTANTS.PLACEHOLDER_TEXT}
+      startAdornment={<SearchAdornment />}
+      suggestions={suggestions}
+      suggestionsError={error}
+      suggestionsLoaded={loaded}
+      suggestionsLoading={loading}
+      value={search}
+    />
+  );
+};
 
 export default withRouter(Search);

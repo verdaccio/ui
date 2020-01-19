@@ -1,9 +1,9 @@
 import React, { MouseEvent } from 'react';
-import MenuItem from '@material-ui/core/MenuItem';
-import Menu from '@material-ui/core/Menu';
 import AccountCircle from '@material-ui/icons/AccountCircle';
 
 import IconButton from '../../muiComponents/IconButton';
+import MenuItem from '../../muiComponents/MenuItem';
+import Menu from '../../muiComponents/Menu';
 
 import HeaderGreetings from './HeaderGreetings';
 
@@ -16,7 +16,6 @@ interface Props {
   onLoggedInMenuClose: () => void;
 }
 
-/* eslint-disable react/jsx-max-depth */
 const HeaderMenu: React.FC<Props> = ({
   onLogout,
   username,
@@ -28,7 +27,7 @@ const HeaderMenu: React.FC<Props> = ({
   <>
     <IconButton
       color="inherit"
-      data-testid="header--menu-acountcircle"
+      data-testid="header--menu-accountcircle"
       id="header--button-account"
       onClick={onLoggedInMenu}>
       <AccountCircle />
@@ -39,7 +38,6 @@ const HeaderMenu: React.FC<Props> = ({
         vertical: 'top',
         horizontal: 'right',
       }}
-      id="header--button-account"
       onClose={onLoggedInMenuClose}
       open={isMenuOpen}
       transformOrigin={{
@@ -49,7 +47,7 @@ const HeaderMenu: React.FC<Props> = ({
       <MenuItem disabled={true}>
         <HeaderGreetings username={username} />
       </MenuItem>
-      <MenuItem id="header--button-logout" onClick={onLogout}>
+      <MenuItem button={true} data-testid="header--button-logout" id="header--button-logout" onClick={onLogout}>
         {'Logout'}
       </MenuItem>
     </Menu>

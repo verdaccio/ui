@@ -1,10 +1,10 @@
 import React from 'react';
-import styled from 'react-emotion';
-import ListItemText from '@material-ui/core/ListItemText';
+import styled from '@emotion/styled';
 
 import CopyToClipBoard from '../CopyToClipBoard';
 import Avatar from '../../muiComponents/Avatar';
 import ListItem from '../../muiComponents/ListItem';
+import ListItemText from '../../muiComponents/ListItemText';
 
 // logos of package managers
 import npmLogo from './img/npm.svg';
@@ -26,6 +26,9 @@ const InstallListItemText = styled(ListItemText)({
 const PackageMangerAvatar = styled(Avatar)({
   borderRadius: '0px',
   padding: '0',
+  img: {
+    backgroundColor: 'transparent',
+  },
 });
 
 export enum DependencyManager {

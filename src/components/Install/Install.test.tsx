@@ -1,6 +1,6 @@
 import React from 'react';
-import { render } from '@testing-library/react';
 
+import { render } from '../../utils/test-react-testing-library';
 import { DetailContext, DetailContextProps } from '../../pages/Version';
 
 import data from './__partials__/data.json';

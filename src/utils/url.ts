@@ -15,8 +15,7 @@ export function isEmail(email: string): boolean {
 }
 
 export function getRegistryURL(): string {
-  // Don't add slash if it's not a sub directory
-  return `${location.origin}${location.pathname === '/' ? '' : location.pathname}`;
+  return window.__VERDACCIO_BASENAME_UI_OPTIONS.base;
 }
 
 export function extractFileName(url: string): string {

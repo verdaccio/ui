@@ -1,71 +1,61 @@
 import React from 'react';
-import { mount } from 'enzyme';
+
+import { mount } from '../../utils/test-enzyme';
+import { DetailContext } from '../../pages/Version';
+import { PackageMetaInterface } from '../../../types/packageMeta';
 
 import Engine from './Engines';
 
 jest.mock('./img/node.png', () => '');
 jest.mock('../Install/img/npm.svg', () => '');
 
-const mockPackageMeta: jest.Mock = jest.fn(() => ({
+const mockPackageMeta = (engines?: PackageMetaInterface['latest']['engines']): PackageMetaInterface => ({
   latest: {
-    homepage: 'https://verdaccio.tld',
-    bugs: {
-      url: 'https://verdaccio.tld/bugs',
-    },
+    name: 'verdaccio',
+    version: '0.0.0',
     dist: {
-      tarball: 'https://verdaccio.tld/download',
+      fileCount: 1,
+      unpackedSize: 1,
     },
+    ...(engines && { engines }),
   },
-}));
-
-jest.mock('../../pages/Version', () => ({
-  DetailContextConsumer: component => {
-    return component.children({ packageMeta: mockPackageMeta() });
-  },
-}));
+  _uplinks: {},
+});
 
 describe('<Engines /> component', () => {
-  beforeEach(() => {
-    jest.resetAllMocks();
-  });
-
   test('should render the component in default state', () => {
-    const packageMeta = {
-      latest: {
-        engines: {
-          node: '>= 0.1.98',
-          npm: '>3',
-        },
-      },
-    };
+    const packageMeta = mockPackageMeta({
+      node: '>= 0.1.98',
+      npm: '>3',
+    });
 
-    mockPackageMeta.mockImplementation(() => packageMeta);
-
-    const wrapper = mount(<Engine />);
+    const wrapper = mount(
+      <DetailContext.Provider value={{ packageMeta }}>
+        <Engine />
+      </DetailContext.Provider>
+    );
     expect(wrapper.html()).toMatchSnapshot();
   });
 
   test('should render the component when there is no engine key in package meta', () => {
-    const packageMeta = {
-      latest: {},
-    };
+    const packageMeta = mockPackageMeta();
 
-    mockPackageMeta.mockImplementation(() => packageMeta);
-
-    const wrapper = mount(<Engine />);
-    expect(wrapper.html()).toEqual('');
+    const wrapper = mount(
+      <DetailContext.Provider value={{ packageMeta }}>
+        <Engine />
+      </DetailContext.Provider>
+    );
+    expect(wrapper.html()).toBeNull();
   });
 
   test('should render the component when there is no keys in engine in package meta', () => {
-    const packageMeta = {
-      latest: {
-        engines: {},
-      },
-    };
+    const packageMeta = mockPackageMeta({});
 
-    mockPackageMeta.mockImplementation(() => packageMeta);
-
-    const wrapper = mount(<Engine />);
-    expect(wrapper.html()).toEqual('');
+    const wrapper = mount(
+      <DetailContext.Provider value={{ packageMeta }}>
+        <Engine />
+      </DetailContext.Provider>
+    );
+    expect(wrapper.html()).toBeNull();
   });
 });

@@ -8,11 +8,38 @@ export interface PackageMetaInterface {
     dist: {
       fileCount: number;
       unpackedSize: number;
+      tarball?: string;
+    };
+    engines?: {
+      node?: string;
+      npm?: string;
     };
     license?: Partial<LicenseInterface> | string;
     version: string;
+    homepage?: string;
+    bugs?: {
+      url: string;
+    };
+    repository?: {
+      type?: string;
+      url?: string;
+    };
+    description?: string;
+    funding?: Funding;
+    maintainers?: Array<Developer>;
+    contributors?: Array<Developer>;
   };
   _uplinks: {};
+}
+export interface Developer {
+  name: string;
+  email: string;
+  avatar: string;
+}
+
+interface Funding {
+  type?: string;
+  url: string;
 }
 
 interface LicenseInterface {

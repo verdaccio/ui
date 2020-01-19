@@ -2,6 +2,85 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.3.12](https://github.com/verdaccio/ui/compare/v0.3.11...v0.3.12) (2020-01-09)
+
+
+### Bug Fixes
+
+* generate correct registry URL ([#413](https://github.com/verdaccio/ui/issues/413)) ([6b322ad](https://github.com/verdaccio/ui/commit/6b322ad553e9fb3ee65b2968dcfe856ba42a0bfb)), closes [#300](https://github.com/verdaccio/ui/issues/300) [#311](https://github.com/verdaccio/ui/issues/311)
+
+### [0.3.11](https://github.com/verdaccio/ui/compare/v0.3.10...v0.3.11) (2020-01-08)
+
+
+### Bug Fixes
+
+* remove prevent default and use react context ([#411](https://github.com/verdaccio/ui/issues/411)) ([6bd38b8](https://github.com/verdaccio/ui/commit/6bd38b812032857bb19af8978d48f6f8969af6cf))
+* removed unused style file ([#406](https://github.com/verdaccio/ui/issues/406)) ([6eeae63](https://github.com/verdaccio/ui/commit/6eeae630ef441a871d06b888b6a21178e36e0db7))
+
+### [0.3.10](https://github.com/verdaccio/ui/compare/v0.3.9...v0.3.10) (2019-12-30)
+
+
+### Features
+
+* added "Fund this package" button ([#375](https://github.com/verdaccio/ui/issues/375)) ([bf093cc](https://github.com/verdaccio/ui/commit/bf093cc27b8625cdc50dbfc9b8dd7e37f4e24da9))
+
+
+### Bug Fixes
+
+* add missing trailing slash to publicPath - closes [#395](https://github.com/verdaccio/ui/issues/395) ([#396](https://github.com/verdaccio/ui/issues/396)) ([bae9638](https://github.com/verdaccio/ui/commit/bae9638b23b70eff78b78b8ca52ff40162333354))
+* engine warning on console for ui ([#403](https://github.com/verdaccio/ui/issues/403)) ([d554049](https://github.com/verdaccio/ui/commit/d554049699494e946f4caf345177839b4f0cba8b))
+* remove background from styled Avatar components - closes [#371](https://github.com/verdaccio/ui/issues/371) ([#398](https://github.com/verdaccio/ui/issues/398)) ([787dda4](https://github.com/verdaccio/ui/commit/787dda4a016a1fcd1142bd4b705e2c71e232d13e))
+* remove double padding and add missing background color - closes [#373](https://github.com/verdaccio/ui/issues/373) ([#399](https://github.com/verdaccio/ui/issues/399)) ([797c238](https://github.com/verdaccio/ui/commit/797c2381e453d4f40e1703402f192eb7675d6fbe))
+* remove whitespace from logo image - closes [#374](https://github.com/verdaccio/ui/issues/374) ([#400](https://github.com/verdaccio/ui/issues/400)) ([544b999](https://github.com/verdaccio/ui/commit/544b999f81e39557e0fc002d21b24c512cfebc54))
+
+### [0.3.9](https://github.com/verdaccio/ui/compare/v0.3.8...v0.3.9) (2019-12-14)
+
+### [0.3.8](https://github.com/verdaccio/ui/compare/v0.3.7...v0.3.8) (2019-12-14)
+
+
+### Features
+
+* login Dialog Component - Replaced class by func. comp + added react-hook-form ([#341](https://github.com/verdaccio/ui/issues/341)) ([42d3bb8](https://github.com/verdaccio/ui/commit/42d3bb8508c666c28250432ada734d58ccb0eca8))
+
+
+### Bug Fixes
+
+* formatDate ([#308](https://github.com/verdaccio/ui/issues/308)) ([33f873a](https://github.com/verdaccio/ui/commit/33f873a8c78e419a36e3a29f7ea216714172b174))
+* removed deade import ([#346](https://github.com/verdaccio/ui/issues/346)) ([ae617a5](https://github.com/verdaccio/ui/commit/ae617a5c04ad1b82309d36d3bdcf6b6b6fd925d0))
+* updated actionbar snap ([#340](https://github.com/verdaccio/ui/issues/340)) ([09b831a](https://github.com/verdaccio/ui/commit/09b831a40d4e82a122f8fae3e45bdd161a3281bb))
+
+### [0.3.7](https://github.com/verdaccio/ui/compare/v0.3.6...v0.3.7) (2019-11-24)
+
+
+### Features
+
+* Added Theme and migrate to emotion@10.x 🚀 ([#286](https://github.com/verdaccio/ui/issues/286)) ([111f0c5](https://github.com/verdaccio/ui/commit/111f0c50e5053202ca55fe4f3f28dd30e4932240))
+
+
+### Bug Fixes
+
+* **#300:** correctly reference registry url from options  ([ee74474](https://github.com/verdaccio/ui/commit/ee74474811eb609072e1678bcb90db33756dcf38)), closes [#300](https://github.com/verdaccio/ui/issues/300)
+* restore lint-staged@8.2.1 ([dbaa0c4](https://github.com/verdaccio/ui/commit/dbaa0c43b8104b350e4907387f89d4e9e719741f))
+* update snapshots ([fd306de](https://github.com/verdaccio/ui/commit/fd306def9535d9168dc79ab020ec288a4d5df1a8))
+
+### [0.3.6](https://github.com/verdaccio/ui/compare/v0.3.5...v0.3.6) (2019-11-08)
+
+### [0.3.5](https://github.com/verdaccio/ui/compare/v0.3.4...v0.3.5) (2019-11-07)
+
+
+### Bug Fixes
+
+* adds unit tests for api service ([#235](https://github.com/verdaccio/ui/issues/235)) ([803da1c](https://github.com/verdaccio/ui/commit/803da1c))
+* convert Engine component to hooks ([#233](https://github.com/verdaccio/ui/issues/233)) ([5cb47ed](https://github.com/verdaccio/ui/commit/5cb47ed))
+* refactor/116 RegistryInfoContent is converted to functional component ([#229](https://github.com/verdaccio/ui/issues/229)) ([b74ca22](https://github.com/verdaccio/ui/commit/b74ca22)), closes [#116](https://github.com/verdaccio/ui/issues/116) [#116](https://github.com/verdaccio/ui/issues/116)
+* rest MUI components -  Introduced ForwardRef ([#224](https://github.com/verdaccio/ui/issues/224)) ([b56e438](https://github.com/verdaccio/ui/commit/b56e438))
+
+
+### Features
+
+* added download tarball button at list ([#237](https://github.com/verdaccio/ui/issues/237)) ([bdef686](https://github.com/verdaccio/ui/commit/bdef686))
+* update date fns to v2 ([#232](https://github.com/verdaccio/ui/issues/232)) ([a4cdd14](https://github.com/verdaccio/ui/commit/a4cdd14))
+
 ### [0.3.4](https://github.com/verdaccio/ui/compare/v0.3.3...v0.3.4) (2019-10-26)
 
 

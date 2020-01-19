@@ -1,13 +1,11 @@
 import React from 'react';
-import Link from '@material-ui/core/Link';
-import { Link as RouterLink } from 'react-router-dom';
 
 import { Versions, Time } from '../../../types/packageMeta';
 import { formatDateDistance } from '../../utils/package';
 import List from '../../muiComponents/List';
 import ListItem from '../../muiComponents/ListItem';
 
-import { Spacer, ListItemText } from './styles';
+import { Spacer, ListItemText, StyledLink } from './styles';
 
 export const NOT_AVAILABLE = 'Not available';
 
@@ -23,11 +21,11 @@ const VersionsHistoryList: React.FC<Props> = ({ versions, packageName, time }) =
       .reverse()
       .map(version => (
         <ListItem className="version-item" key={version}>
-          <Link component={RouterLink} to={`/-/web/detail/${packageName}/v/${version}`}>
+          <StyledLink to={`/-/web/detail/${packageName}/v/${version}`}>
             <ListItemText>{version}</ListItemText>
-          </Link>
+          </StyledLink>
           <Spacer />
-          <ListItemText>{time[version] ? `${formatDateDistance(time[version])} ago` : NOT_AVAILABLE}</ListItemText>
+          <ListItemText>{time[version] ? formatDateDistance(time[version]) : NOT_AVAILABLE}</ListItemText>
         </ListItem>
       ))}
   </List>

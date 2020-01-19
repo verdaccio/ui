@@ -1,0 +1,1395 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<App /> should display the Header component  1`] = `
+.emotion-78 {
+  background-color: #fff;
+}
+
+.emotion-24 {
+  background-color: #4b5e40;
+  min-height: 60px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+@media (min-width:768px) {
+  .emotion-24 .emotion-13 {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+  }
+
+  .emotion-24 .emotion-17 {
+    display: none;
+  }
+
+  .emotion-24 .e1jf5lit4 {
+    display: none;
+  }
+}
+
+@media (min-width:1024px) {
+  .emotion-24 .emotion-23 {
+    padding: 0 20px;
+  }
+
+@media (min-width:1275px) {
+    .emotion-24 .emotion-23 {
+      max-width: 1240px;
+      width: 100%;
+      margin: 0 auto;
+    }
+}
+}
+
+.emotion-22 {
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding: 0 15px;
+}
+
+.emotion-14 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 0;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+}
+
+.emotion-2 {
+  margin-right: 1em;
+}
+
+.emotion-0 {
+  display: inline-block;
+  vertical-align: middle;
+  box-sizing: border-box;
+  background-position: center;
+  background-size: contain;
+  background-image: url([object Object]);
+  background-repeat: no-repeat;
+  width: 40px;
+  height: 40px;
+}
+
+.emotion-12 {
+  display: none;
+  max-width: 393px;
+  width: 100%;
+}
+
+.emotion-10 {
+  width: 100%;
+  height: 32px;
+  position: relative;
+  z-index: 1;
+}
+
+.emotion-6 .MuiInputBase-root:before {
+  content: '';
+  border: none;
+}
+
+.emotion-6 .MuiInputBase-root:after {
+  border-color: #fff;
+}
+
+.emotion-6 .MuiInputBase-root:hover:before {
+  content: none;
+}
+
+.emotion-6 .MuiInputBase-input {
+  color: #fff;
+}
+
+.emotion-4 {
+  color: #fff;
+}
+
+.emotion-8 {
+  max-height: 500px;
+  overflow-y: auto;
+}
+
+.emotion-20 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 0;
+}
+
+.emotion-16 {
+  display: block;
+}
+
+.emotion-18 {
+  color: #fff;
+}
+
+@media screen and (min-width:1240px) {
+  .emotion-36 {
+    max-width: 1240px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+.emotion-34 {
+  -webkit-transform: translate(-50%,-50%);
+  -ms-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
+  top: 50%;
+  left: 50%;
+  position: absolute;
+}
+
+.emotion-28 {
+  margin: 0 0 30px 0;
+  border-radius: 25px;
+  box-shadow: 0 10px 20px 0 rgba(69,58,100,0.2);
+  background: #f7f8f6;
+}
+
+.emotion-26 {
+  display: inline-block;
+  vertical-align: middle;
+  box-sizing: border-box;
+  background-position: center;
+  background-size: contain;
+  background-image: url([object Object]);
+  background-repeat: no-repeat;
+  width: 90px;
+  height: 90px;
+}
+
+.emotion-32 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.emotion-30 {
+  color: #4b5e40;
+}
+
+.emotion-76 {
+  background: #f9f9f9;
+  border-top: 1px solid #e3e3e3;
+  color: #999999;
+  font-size: 14px;
+  padding: 20px;
+}
+
+.emotion-74 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: end;
+  -webkit-justify-content: flex-end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+  width: 100%;
+}
+
+@media (min-width:768px) {
+  .emotion-74 {
+    min-width: 400px;
+    max-width: 800px;
+    margin: auto;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+  }
+}
+
+@media (min-width:1024px) {
+  .emotion-74 {
+    max-width: 1240px;
+  }
+}
+
+.emotion-65 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: none;
+}
+
+@media (min-width:768px) {
+  .emotion-65 {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+  }
+}
+
+.emotion-38 {
+  color: #e25555;
+  padding: 0 5px;
+}
+
+.emotion-63 {
+  position: relative;
+  height: 18px;
+}
+
+.emotion-63:hover .emotion-62 {
+  visibility: visible;
+}
+
+.emotion-41 {
+  box-sizing: initial;
+  display: inline-block;
+  cursor: default;
+  width: 18px;
+  height: 18px;
+  padding: 0 10px;
+}
+
+.emotion-61 {
+  position: absolute;
+  background: #d3dddd;
+  padding: 1px 4px;
+  border-radius: 3px;
+  height: 20px;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  visibility: hidden;
+  top: -2px;
+}
+
+.emotion-61:before {
+  content: '';
+  position: absolute;
+  top: 29%;
+  left: -4px;
+  margin-left: -5px;
+  border: 5px solid;
+  border-color: #d3dddd transparent transparent transparent;
+  -webkit-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  transform: rotate(90deg);
+}
+
+.emotion-44 {
+  box-sizing: initial;
+  display: inline-block;
+  cursor: default;
+  width: 18px;
+  height: 18px;
+  padding: 0 5px;
+}
+
+.emotion-72 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: none;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+@media (min-width:768px) {
+  .emotion-72 {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+  }
+}
+
+.emotion-70 {
+  box-sizing: initial;
+  display: inline-block;
+  cursor: pointer;
+  width: 18px;
+  height: 18px;
+  padding: 0 5px;
+}
+
+.emotion-67 {
+  width: 100%;
+  height: auto;
+}
+
+<div
+  class="MuiBox-root MuiBox-root-219 emotion-78 emotion-79"
+>
+  <header
+    class="MuiPaper-root MuiPaper-elevation4 MuiAppBar-root MuiAppBar-positionStatic emotion-24 emotion-25 MuiAppBar-colorPrimary"
+    data-testid="header"
+  >
+    <div
+      class="MuiToolbar-root MuiToolbar-regular emotion-22 emotion-23 MuiToolbar-gutters"
+    >
+      <div
+        class="MuiToolbar-root MuiToolbar-regular emotion-14 emotion-15 MuiToolbar-gutters"
+      >
+        <a
+          class="emotion-2 emotion-3"
+          href="/"
+        >
+          <div
+            class="emotion-0 emotion-1"
+          />
+        </a>
+        <div
+          class="emotion-12 emotion-13"
+        >
+          <div
+            class="emotion-10 emotion-11"
+          >
+            <div
+              aria-expanded="false"
+              aria-haspopup="listbox"
+              aria-owns="react-autowhatever-1"
+              class="react-autosuggest__container"
+              role="combobox"
+            >
+              <div
+                aria-autocomplete="list"
+                aria-controls="react-autowhatever-1"
+                class="MuiFormControl-root MuiTextField-root react-autosuggest__input emotion-6 emotion-7 MuiFormControl-fullWidth"
+              >
+                <div
+                  class="MuiInputBase-root MuiInput-root MuiInput-underline MuiInputBase-fullWidth MuiInput-fullWidth MuiInputBase-formControl MuiInput-formControl MuiInputBase-adornedStart"
+                >
+                  <div
+                    class="MuiInputAdornment-root emotion-4 emotion-5 MuiInputAdornment-positionStart"
+                  >
+                    <svg
+                      aria-hidden="true"
+                      class="MuiSvgIcon-root"
+                      focusable="false"
+                      role="presentation"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"
+                      />
+                    </svg>
+                  </div>
+                  <input
+                    aria-invalid="false"
+                    autocomplete="off"
+                    class="MuiInputBase-input MuiInput-input MuiInputBase-inputAdornedStart"
+                    placeholder="Search Packages"
+                    type="text"
+                    value=""
+                  />
+                </div>
+              </div>
+              <div
+                class="MuiPaper-root MuiPaper-elevation1 react-autosuggest__suggestions-container emotion-8 emotion-9"
+                id="react-autowhatever-1"
+                role="listbox"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="MuiToolbar-root MuiToolbar-regular emotion-20 emotion-21 MuiToolbar-gutters"
+        data-testid="header-right"
+      >
+        <button
+          class="MuiButtonBase-root MuiIconButton-root emotion-16 emotion-17 MuiIconButton-colorInherit"
+          tabindex="0"
+          type="button"
+        >
+          <span
+            class="MuiIconButton-label"
+          >
+            <svg
+              aria-hidden="true"
+              class="MuiSvgIcon-root"
+              focusable="false"
+              role="presentation"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"
+              />
+            </svg>
+          </span>
+          <span
+            class="MuiTouchRipple-root"
+          />
+        </button>
+        <a
+          class="emotion-18 emotion-19"
+          data-testid="header--tooltip-documentation"
+          href="https://verdaccio.org/docs/en/installation"
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          <h6
+            class="MuiTypography-root MuiTypography-subtitle1"
+          >
+            <button
+              class="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorInherit"
+              tabindex="0"
+              type="button"
+            >
+              <span
+                class="MuiIconButton-label"
+              >
+                <svg
+                  aria-hidden="true"
+                  class="MuiSvgIcon-root"
+                  focusable="false"
+                  role="presentation"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17h-2v-2h2v2zm2.07-7.75l-.9.92C13.45 12.9 13 13.5 13 15h-2v-.5c0-1.1.45-2.1 1.17-2.83l1.24-1.26c.37-.36.59-.86.59-1.41 0-1.1-.9-2-2-2s-2 .9-2 2H8c0-2.21 1.79-4 4-4s4 1.79 4 4c0 .88-.36 1.68-.93 2.25z"
+                  />
+                </svg>
+              </span>
+              <span
+                class="MuiTouchRipple-root"
+              />
+            </button>
+          </h6>
+        </a>
+        <button
+          class="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorInherit"
+          data-testid="header--tooltip-info"
+          id="header--button-registryInfo"
+          tabindex="0"
+          type="button"
+        >
+          <span
+            class="MuiIconButton-label"
+          >
+            <svg
+              aria-hidden="true"
+              class="MuiSvgIcon-root"
+              focusable="false"
+              role="presentation"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"
+              />
+            </svg>
+          </span>
+          <span
+            class="MuiTouchRipple-root"
+          />
+        </button>
+        <button
+          class="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-colorInherit"
+          data-testid="header--button-login"
+          tabindex="0"
+          type="button"
+        >
+          <span
+            class="MuiButton-label"
+          >
+            Login
+          </span>
+          <span
+            class="MuiTouchRipple-root"
+          />
+        </button>
+      </div>
+    </div>
+  </header>
+  <div
+    class="MuiBox-root MuiBox-root-412 emotion-36 emotion-37"
+  >
+    <div
+      class="container content"
+    >
+      <div
+        class="emotion-34 emotion-35"
+        data-testid="loading"
+      >
+        <div
+          class="emotion-28 emotion-29"
+        >
+          <div
+            class="emotion-26 emotion-1"
+          />
+        </div>
+        <div
+          class="emotion-32 emotion-33"
+        >
+          <div
+            class="MuiCircularProgress-root emotion-30 emotion-31 MuiCircularProgress-colorPrimary MuiCircularProgress-indeterminate"
+            role="progressbar"
+            style="width: 50px; height: 50px;"
+          >
+            <svg
+              class="MuiCircularProgress-svg"
+              viewBox="22 22 44 44"
+            >
+              <circle
+                class="MuiCircularProgress-circle MuiCircularProgress-circleIndeterminate"
+                cx="44"
+                cy="44"
+                fill="none"
+                r="20.2"
+                stroke-width="3.6"
+              />
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    class="emotion-76 emotion-77"
+  >
+    <div
+      class="emotion-74 emotion-75"
+    >
+      <div
+        class="emotion-65 emotion-66"
+      >
+         Made with
+        <span
+          class="emotion-38 emotion-39"
+        >
+          ♥
+        </span>
+        on
+        <span
+          class="emotion-63 emotion-64"
+        >
+          <svg
+            class="emotion-40 emotion-41 emotion-42"
+          >
+            <title>
+              Earth
+            </title>
+            <use
+              xlink:href="[object Object]#earth"
+            />
+          </svg>
+          <span
+            class="emotion-61 emotion-62"
+          >
+            <svg
+              class="emotion-43 emotion-44 emotion-42"
+            >
+              <title>
+                Spain
+              </title>
+              <use
+                xlink:href="[object Object]#spain"
+              />
+            </svg>
+            <svg
+              class="emotion-43 emotion-44 emotion-42"
+            >
+              <title>
+                Nicaragua
+              </title>
+              <use
+                xlink:href="[object Object]#nicaragua"
+              />
+            </svg>
+            <svg
+              class="emotion-43 emotion-44 emotion-42"
+            >
+              <title>
+                India
+              </title>
+              <use
+                xlink:href="[object Object]#india"
+              />
+            </svg>
+            <svg
+              class="emotion-43 emotion-44 emotion-42"
+            >
+              <title>
+                Brazil
+              </title>
+              <use
+                xlink:href="[object Object]#brazil"
+              />
+            </svg>
+            <svg
+              class="emotion-43 emotion-44 emotion-42"
+            >
+              <title>
+                China
+              </title>
+              <use
+                xlink:href="[object Object]#china"
+              />
+            </svg>
+            <svg
+              class="emotion-43 emotion-44 emotion-42"
+            >
+              <title>
+                Austria
+              </title>
+              <use
+                xlink:href="[object Object]#austria"
+              />
+            </svg>
+          </span>
+        </span>
+      </div>
+      <div
+        class="emotion-72 emotion-73"
+      >
+        Powered by
+        <span
+          class="emotion-43 emotion-70 emotion-71"
+          title="Verdaccio"
+        >
+          <img
+            alt="Verdaccio"
+            class="emotion-67 emotion-68"
+            src="[object Object]"
+          />
+        </span>
+        / undefined
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`<App /> should display the Loading component at the beginning  1`] = `
+.emotion-78 {
+  background-color: #fff;
+}
+
+.emotion-24 {
+  background-color: #4b5e40;
+  min-height: 60px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+@media (min-width:768px) {
+  .emotion-24 .emotion-13 {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+  }
+
+  .emotion-24 .emotion-17 {
+    display: none;
+  }
+
+  .emotion-24 .e1jf5lit4 {
+    display: none;
+  }
+}
+
+@media (min-width:1024px) {
+  .emotion-24 .emotion-23 {
+    padding: 0 20px;
+  }
+
+@media (min-width:1275px) {
+    .emotion-24 .emotion-23 {
+      max-width: 1240px;
+      width: 100%;
+      margin: 0 auto;
+    }
+}
+}
+
+.emotion-22 {
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding: 0 15px;
+}
+
+.emotion-14 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 0;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+}
+
+.emotion-2 {
+  margin-right: 1em;
+}
+
+.emotion-0 {
+  display: inline-block;
+  vertical-align: middle;
+  box-sizing: border-box;
+  background-position: center;
+  background-size: contain;
+  background-image: url([object Object]);
+  background-repeat: no-repeat;
+  width: 40px;
+  height: 40px;
+}
+
+.emotion-12 {
+  display: none;
+  max-width: 393px;
+  width: 100%;
+}
+
+.emotion-10 {
+  width: 100%;
+  height: 32px;
+  position: relative;
+  z-index: 1;
+}
+
+.emotion-6 .MuiInputBase-root:before {
+  content: '';
+  border: none;
+}
+
+.emotion-6 .MuiInputBase-root:after {
+  border-color: #fff;
+}
+
+.emotion-6 .MuiInputBase-root:hover:before {
+  content: none;
+}
+
+.emotion-6 .MuiInputBase-input {
+  color: #fff;
+}
+
+.emotion-4 {
+  color: #fff;
+}
+
+.emotion-8 {
+  max-height: 500px;
+  overflow-y: auto;
+}
+
+.emotion-20 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 0;
+}
+
+.emotion-16 {
+  display: block;
+}
+
+.emotion-18 {
+  color: #fff;
+}
+
+@media screen and (min-width:1240px) {
+  .emotion-36 {
+    max-width: 1240px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+.emotion-34 {
+  -webkit-transform: translate(-50%,-50%);
+  -ms-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
+  top: 50%;
+  left: 50%;
+  position: absolute;
+}
+
+.emotion-28 {
+  margin: 0 0 30px 0;
+  border-radius: 25px;
+  box-shadow: 0 10px 20px 0 rgba(69,58,100,0.2);
+  background: #f7f8f6;
+}
+
+.emotion-26 {
+  display: inline-block;
+  vertical-align: middle;
+  box-sizing: border-box;
+  background-position: center;
+  background-size: contain;
+  background-image: url([object Object]);
+  background-repeat: no-repeat;
+  width: 90px;
+  height: 90px;
+}
+
+.emotion-32 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.emotion-30 {
+  color: #4b5e40;
+}
+
+.emotion-76 {
+  background: #f9f9f9;
+  border-top: 1px solid #e3e3e3;
+  color: #999999;
+  font-size: 14px;
+  padding: 20px;
+}
+
+.emotion-74 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: end;
+  -webkit-justify-content: flex-end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+  width: 100%;
+}
+
+@media (min-width:768px) {
+  .emotion-74 {
+    min-width: 400px;
+    max-width: 800px;
+    margin: auto;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+  }
+}
+
+@media (min-width:1024px) {
+  .emotion-74 {
+    max-width: 1240px;
+  }
+}
+
+.emotion-65 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: none;
+}
+
+@media (min-width:768px) {
+  .emotion-65 {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+  }
+}
+
+.emotion-38 {
+  color: #e25555;
+  padding: 0 5px;
+}
+
+.emotion-63 {
+  position: relative;
+  height: 18px;
+}
+
+.emotion-63:hover .emotion-62 {
+  visibility: visible;
+}
+
+.emotion-41 {
+  box-sizing: initial;
+  display: inline-block;
+  cursor: default;
+  width: 18px;
+  height: 18px;
+  padding: 0 10px;
+}
+
+.emotion-61 {
+  position: absolute;
+  background: #d3dddd;
+  padding: 1px 4px;
+  border-radius: 3px;
+  height: 20px;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  visibility: hidden;
+  top: -2px;
+}
+
+.emotion-61:before {
+  content: '';
+  position: absolute;
+  top: 29%;
+  left: -4px;
+  margin-left: -5px;
+  border: 5px solid;
+  border-color: #d3dddd transparent transparent transparent;
+  -webkit-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  transform: rotate(90deg);
+}
+
+.emotion-44 {
+  box-sizing: initial;
+  display: inline-block;
+  cursor: default;
+  width: 18px;
+  height: 18px;
+  padding: 0 5px;
+}
+
+.emotion-72 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: none;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+@media (min-width:768px) {
+  .emotion-72 {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+  }
+}
+
+.emotion-70 {
+  box-sizing: initial;
+  display: inline-block;
+  cursor: pointer;
+  width: 18px;
+  height: 18px;
+  padding: 0 5px;
+}
+
+.emotion-67 {
+  width: 100%;
+  height: auto;
+}
+
+<div
+  class="MuiBox-root MuiBox-root-2 emotion-78 emotion-79"
+>
+  <header
+    class="MuiPaper-root MuiPaper-elevation4 MuiAppBar-root MuiAppBar-positionStatic emotion-24 emotion-25 MuiAppBar-colorPrimary"
+    data-testid="header"
+  >
+    <div
+      class="MuiToolbar-root MuiToolbar-regular emotion-22 emotion-23 MuiToolbar-gutters"
+    >
+      <div
+        class="MuiToolbar-root MuiToolbar-regular emotion-14 emotion-15 MuiToolbar-gutters"
+      >
+        <a
+          class="emotion-2 emotion-3"
+          href="/"
+        >
+          <div
+            class="emotion-0 emotion-1"
+          />
+        </a>
+        <div
+          class="emotion-12 emotion-13"
+        >
+          <div
+            class="emotion-10 emotion-11"
+          >
+            <div
+              aria-expanded="false"
+              aria-haspopup="listbox"
+              aria-owns="react-autowhatever-1"
+              class="react-autosuggest__container"
+              role="combobox"
+            >
+              <div
+                aria-autocomplete="list"
+                aria-controls="react-autowhatever-1"
+                class="MuiFormControl-root MuiTextField-root react-autosuggest__input emotion-6 emotion-7 MuiFormControl-fullWidth"
+              >
+                <div
+                  class="MuiInputBase-root MuiInput-root MuiInput-underline MuiInputBase-fullWidth MuiInput-fullWidth MuiInputBase-formControl MuiInput-formControl MuiInputBase-adornedStart"
+                >
+                  <div
+                    class="MuiInputAdornment-root emotion-4 emotion-5 MuiInputAdornment-positionStart"
+                  >
+                    <svg
+                      aria-hidden="true"
+                      class="MuiSvgIcon-root"
+                      focusable="false"
+                      role="presentation"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"
+                      />
+                    </svg>
+                  </div>
+                  <input
+                    aria-invalid="false"
+                    autocomplete="off"
+                    class="MuiInputBase-input MuiInput-input MuiInputBase-inputAdornedStart"
+                    placeholder="Search Packages"
+                    type="text"
+                    value=""
+                  />
+                </div>
+              </div>
+              <div
+                class="MuiPaper-root MuiPaper-elevation1 react-autosuggest__suggestions-container emotion-8 emotion-9"
+                id="react-autowhatever-1"
+                role="listbox"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="MuiToolbar-root MuiToolbar-regular emotion-20 emotion-21 MuiToolbar-gutters"
+        data-testid="header-right"
+      >
+        <button
+          class="MuiButtonBase-root MuiIconButton-root emotion-16 emotion-17 MuiIconButton-colorInherit"
+          tabindex="0"
+          type="button"
+        >
+          <span
+            class="MuiIconButton-label"
+          >
+            <svg
+              aria-hidden="true"
+              class="MuiSvgIcon-root"
+              focusable="false"
+              role="presentation"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"
+              />
+            </svg>
+          </span>
+          <span
+            class="MuiTouchRipple-root"
+          />
+        </button>
+        <a
+          class="emotion-18 emotion-19"
+          data-testid="header--tooltip-documentation"
+          href="https://verdaccio.org/docs/en/installation"
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          <h6
+            class="MuiTypography-root MuiTypography-subtitle1"
+          >
+            <button
+              class="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorInherit"
+              tabindex="0"
+              type="button"
+            >
+              <span
+                class="MuiIconButton-label"
+              >
+                <svg
+                  aria-hidden="true"
+                  class="MuiSvgIcon-root"
+                  focusable="false"
+                  role="presentation"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17h-2v-2h2v2zm2.07-7.75l-.9.92C13.45 12.9 13 13.5 13 15h-2v-.5c0-1.1.45-2.1 1.17-2.83l1.24-1.26c.37-.36.59-.86.59-1.41 0-1.1-.9-2-2-2s-2 .9-2 2H8c0-2.21 1.79-4 4-4s4 1.79 4 4c0 .88-.36 1.68-.93 2.25z"
+                  />
+                </svg>
+              </span>
+              <span
+                class="MuiTouchRipple-root"
+              />
+            </button>
+          </h6>
+        </a>
+        <button
+          class="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorInherit"
+          data-testid="header--tooltip-info"
+          id="header--button-registryInfo"
+          tabindex="0"
+          type="button"
+        >
+          <span
+            class="MuiIconButton-label"
+          >
+            <svg
+              aria-hidden="true"
+              class="MuiSvgIcon-root"
+              focusable="false"
+              role="presentation"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"
+              />
+            </svg>
+          </span>
+          <span
+            class="MuiTouchRipple-root"
+          />
+        </button>
+        <button
+          class="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-colorInherit"
+          data-testid="header--button-login"
+          tabindex="0"
+          type="button"
+        >
+          <span
+            class="MuiButton-label"
+          >
+            Login
+          </span>
+          <span
+            class="MuiTouchRipple-root"
+          />
+        </button>
+      </div>
+    </div>
+  </header>
+  <div
+    class="MuiBox-root MuiBox-root-195 emotion-36 emotion-37"
+  >
+    <div
+      class="emotion-34 emotion-35"
+      data-testid="loading"
+    >
+      <div
+        class="emotion-28 emotion-29"
+      >
+        <div
+          class="emotion-26 emotion-1"
+        />
+      </div>
+      <div
+        class="emotion-32 emotion-33"
+      >
+        <div
+          class="MuiCircularProgress-root emotion-30 emotion-31 MuiCircularProgress-colorPrimary MuiCircularProgress-indeterminate"
+          role="progressbar"
+          style="width: 50px; height: 50px;"
+        >
+          <svg
+            class="MuiCircularProgress-svg"
+            viewBox="22 22 44 44"
+          >
+            <circle
+              class="MuiCircularProgress-circle MuiCircularProgress-circleIndeterminate"
+              cx="44"
+              cy="44"
+              fill="none"
+              r="20.2"
+              stroke-width="3.6"
+            />
+          </svg>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    class="emotion-76 emotion-77"
+  >
+    <div
+      class="emotion-74 emotion-75"
+    >
+      <div
+        class="emotion-65 emotion-66"
+      >
+         Made with
+        <span
+          class="emotion-38 emotion-39"
+        >
+          ♥
+        </span>
+        on
+        <span
+          class="emotion-63 emotion-64"
+        >
+          <svg
+            class="emotion-40 emotion-41 emotion-42"
+          >
+            <title>
+              Earth
+            </title>
+            <use
+              xlink:href="[object Object]#earth"
+            />
+          </svg>
+          <span
+            class="emotion-61 emotion-62"
+          >
+            <svg
+              class="emotion-43 emotion-44 emotion-42"
+            >
+              <title>
+                Spain
+              </title>
+              <use
+                xlink:href="[object Object]#spain"
+              />
+            </svg>
+            <svg
+              class="emotion-43 emotion-44 emotion-42"
+            >
+              <title>
+                Nicaragua
+              </title>
+              <use
+                xlink:href="[object Object]#nicaragua"
+              />
+            </svg>
+            <svg
+              class="emotion-43 emotion-44 emotion-42"
+            >
+              <title>
+                India
+              </title>
+              <use
+                xlink:href="[object Object]#india"
+              />
+            </svg>
+            <svg
+              class="emotion-43 emotion-44 emotion-42"
+            >
+              <title>
+                Brazil
+              </title>
+              <use
+                xlink:href="[object Object]#brazil"
+              />
+            </svg>
+            <svg
+              class="emotion-43 emotion-44 emotion-42"
+            >
+              <title>
+                China
+              </title>
+              <use
+                xlink:href="[object Object]#china"
+              />
+            </svg>
+            <svg
+              class="emotion-43 emotion-44 emotion-42"
+            >
+              <title>
+                Austria
+              </title>
+              <use
+                xlink:href="[object Object]#austria"
+              />
+            </svg>
+          </span>
+        </span>
+      </div>
+      <div
+        class="emotion-72 emotion-73"
+      >
+        Powered by
+        <span
+          class="emotion-43 emotion-70 emotion-71"
+          title="Verdaccio"
+        >
+          <img
+            alt="Verdaccio"
+            class="emotion-67 emotion-68"
+            src="[object Object]"
+          />
+        </span>
+        / undefined
+      </div>
+    </div>
+  </div>
+</div>
+`;
