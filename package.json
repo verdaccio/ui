@@ -37,7 +37,7 @@
     "@types/request": "2.48.4",
     "@types/validator": "12.0.1",
     "@types/webpack-env": "1.15.0",
-    "@typescript-eslint/parser": "2.15.0",
+    "@typescript-eslint/parser": "2.18.0",
     "@verdaccio/babel-preset": "9.0.0",
     "@verdaccio/commons-api": "9.0.0",
     "@verdaccio/eslint-config": "8.4.2",
