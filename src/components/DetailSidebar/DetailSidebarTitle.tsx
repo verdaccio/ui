@@ -15,7 +15,6 @@ interface Props {
 const StyledHeading = styled(Heading)({
   fontSize: '1rem',
   fontWeight: 700,
-  textTransform: 'capitalize',
 });
 
 const StyledBoxVersion = styled(Box)<{ theme?: Theme }>(({ theme }) => ({
