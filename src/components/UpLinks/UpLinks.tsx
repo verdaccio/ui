@@ -1,4 +1,5 @@
 import React, { useContext } from 'react';
+import { useTranslation } from 'react-i18next';
 
 import { DetailContext } from '../../pages/Version';
 import NoItems from '../NoItems';
@@ -10,6 +11,7 @@ import { StyledText, Spacer, ListItemText } from './styles';
 
 const UpLinks: React.FC = () => {
   const { packageMeta } = useContext(DetailContext);
+  const { t } = useTranslation();
 
   if (!packageMeta || !packageMeta._uplinks || !packageMeta.latest) {
     return null;
@@ -18,12 +20,12 @@ const UpLinks: React.FC = () => {
   const { _uplinks: uplinks, latest } = packageMeta;
 
   if (Object.keys(uplinks).length === 0) {
-    return <NoItems text={`${latest.name} has no uplinks.`} />;
+    return <NoItems text={t('uplinks.no-items', { name: latest.name })} />;
   }
 
   return (
     <>
-      <StyledText variant="subtitle1">{'Uplinks'}</StyledText>
+      <StyledText variant="subtitle1">{t('uplinks.title')}</StyledText>
       <List>
         {Object.keys(uplinks)
           .reverse()

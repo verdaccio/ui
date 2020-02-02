@@ -2,12 +2,14 @@ import React from 'react';
 import BugReport from '@material-ui/icons/BugReport';
 import DownloadIcon from '@material-ui/icons/CloudDownload';
 import HomeIcon from '@material-ui/icons/Home';
+import { useTranslation } from 'react-i18next';
 
 import { PackageMetaInterface, Author as PackageAuthor } from '../../../types/packageMeta';
 import Tag from '../Tag';
 import fileSizeSI from '../../utils/file-size';
-import { formatDate, formatDateDistance } from '../../utils/package';
+import { formatDate, formatDateDistance, getAuthorName } from '../../utils/package';
 import Tooltip from '../../muiComponents/Tooltip';
+import Link from '../Link';
 import { isURL } from '../../utils/url';
 import { downloadTarball } from '../ActionBar';
 import ListItem from '../../muiComponents/ListItem';
@@ -64,11 +66,13 @@ const Package: React.FC<PackageInterface> = ({
   time,
   version,
 }) => {
+  const { t } = useTranslation();
+
   const renderVersionInfo = (): React.ReactNode =>
     version && (
       <OverviewItem>
         <Icon name={'version'} />
-        {`v${version}`}
+        {t('package.version', { version })}
       </OverviewItem>
     );
 
@@ -77,7 +81,7 @@ const Package: React.FC<PackageInterface> = ({
       <Author>
         <Avatar alt={authorName} src={authorAvatar} />
         <Details>
-          <Text text={authorName} />
+          <Text text={getAuthorName(authorName)} />
         </Details>
       </Author>
     );
@@ -103,7 +107,7 @@ const Package: React.FC<PackageInterface> = ({
     time && (
       <OverviewItem>
         <Icon name="time" />
-        <Published>{`Published on ${formatDate(time)} •`}</Published>
+        <Published>{t('package.published-on', { time: formatDate(time) })}</Published>
         {formatDateDistance(time)}
       </OverviewItem>
     );
@@ -111,26 +115,26 @@ const Package: React.FC<PackageInterface> = ({
   const renderHomePageLink = (): React.ReactNode =>
     homepage &&
     isURL(homepage) && (
-      <a href={homepage} target={'_blank'}>
-        <Tooltip aria-label={'Homepage'} title={'Visit homepage'}>
-          <IconButton aria-label={'Homepage'}>
+      <Link external={true} to={homepage}>
+        <Tooltip aria-label={t('package.homepage')} title={t('package.visit-home-page')}>
+          <IconButton aria-label={t('package.homepage')}>
             <HomeIcon />
           </IconButton>
         </Tooltip>
-      </a>
+      </Link>
     );
 
   const renderBugsLink = (): React.ReactNode =>
     bugs &&
     bugs.url &&
     isURL(bugs.url) && (
-      <a href={bugs.url} target={'_blank'}>
-        <Tooltip aria-label={'Bugs'} title={'Open an issue'}>
-          <IconButton aria-label={'Bugs'}>
+      <Link external={true} to={bugs.url}>
+        <Tooltip aria-label={t('package.bugs')} title={t('package.open-an-issue')}>
+          <IconButton aria-label={t('package.bugs')}>
             <BugReport />
           </IconButton>
         </Tooltip>
-      </a>
+      </Link>
     );
 
   const renderDownloadLink = (): React.ReactNode =>
@@ -138,13 +142,13 @@ const Package: React.FC<PackageInterface> = ({
     dist.tarball &&
     isURL(dist.tarball) && (
       // eslint-disable-next-line
-      <a onClick={downloadTarball(dist.tarball.replace(`https://registry.npmjs.org/`, window.location.href))} target={'_blank'}>
-        <Tooltip aria-label={'Download the tar file'} title={'Download tarball'}>
-          <IconButton aria-label={'Download'}>
+      <Link to="#" external={true} onClick={downloadTarball(dist.tarball.replace(`https://registry.npmjs.org/`, window.location.href))}>
+        <Tooltip aria-label={t('package.download', { what: t('package.the-tar-file') })} title={t('package.tarball')}>
+          <IconButton aria-label={t('package.download')}>
             <DownloadIcon />
           </IconButton>
         </Tooltip>
-      </a>
+      </Link>
     );
 
   const renderPrimaryComponent = (): React.ReactNode => {
@@ -155,7 +159,7 @@ const Package: React.FC<PackageInterface> = ({
             <PackageTitle className="package-title">{packageName}</PackageTitle>
           </WrapperLink>
         </Grid>
-        <GridRightAligned item={true} xs={true}>
+        <GridRightAligned alignItems="center" container={true} item={true} justify="flex-end" xs={true}>
           {renderHomePageLink()}
           {renderBugsLink()}
           {renderDownloadLink()}

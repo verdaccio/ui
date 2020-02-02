@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from '@emotion/styled';
+import { useTranslation } from 'react-i18next';
 
 import Avatar from '../../muiComponents/Avatar';
 import Text from '../../muiComponents/Text';
@@ -44,6 +45,7 @@ const RepositoryAvatar = styled(Avatar)({
 
 const Repository: React.FC = () => {
   const detailContext = React.useContext(DetailContext);
+  const { t } = useTranslation();
 
   const { packageMeta } = detailContext;
 
@@ -64,7 +66,7 @@ const Repository: React.FC = () => {
   const repositoryURL = getCorrectRepositoryURL();
 
   return (
-    <List dense={true} subheader={<StyledText variant="subtitle1">{'Repository'}</StyledText>}>
+    <List dense={true} subheader={<StyledText variant="subtitle1">{t('sidebar.repository.title')}</StyledText>}>
       <RepositoryListItem button={true}>
         <RepositoryAvatar src={git} />
         <RepositoryListItemText

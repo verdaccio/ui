@@ -1,8 +1,8 @@
 import FileCopy from '@material-ui/icons/FileCopy';
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 
 import { copyToClipBoardUtility } from '../../utils/cli-utils';
-import { TEXT } from '../../utils/constants';
 import Tooltip from '../../muiComponents/Tooltip';
 
 import { ClipBoardCopy, ClipBoardCopyText, CopyIcon } from './styles';
@@ -20,19 +20,16 @@ const renderText = (text: string, children: React.ReactNode): JSX.Element => {
   return <ClipBoardCopyText>{text}</ClipBoardCopyText>;
 };
 
-const renderToolTipFileCopy = (text: string): React.ReactElement<HTMLElement> => (
-  <Tooltip disableFocusListener={true} title={TEXT.CLIPBOARD_COPY}>
-    <CopyIcon onClick={copyToClipBoardUtility(text)}>
-      <FileCopy />
-    </CopyIcon>
-  </Tooltip>
-);
-
 const CopyToClipBoard: React.FC<Props> = ({ text, children }) => {
+  const { t } = useTranslation();
   return (
     <ClipBoardCopy>
       {renderText(text, children)}
-      {renderToolTipFileCopy(text)}
+      <Tooltip disableFocusListener={true} title={t('copy-to-clipboard')}>
+        <CopyIcon onClick={copyToClipBoardUtility(text)}>
+          <FileCopy />
+        </CopyIcon>
+      </Tooltip>
     </ClipBoardCopy>
   );
 };

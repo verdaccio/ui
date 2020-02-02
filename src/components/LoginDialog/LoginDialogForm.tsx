@@ -1,5 +1,6 @@
 import React, { memo } from 'react';
 import styled from '@emotion/styled';
+import { useTranslation } from 'react-i18next';
 import useForm from 'react-hook-form/dist/react-hook-form.ie11';
 
 import TextField from '../../muiComponents/TextField';
@@ -28,6 +29,7 @@ interface Props {
 }
 
 const LoginDialogForm = memo(({ onSubmit, error }: Props) => {
+  const { t } = useTranslation();
   const {
     register,
     errors,
@@ -48,13 +50,13 @@ const LoginDialogForm = memo(({ onSubmit, error }: Props) => {
         helperText={errors.username?.message}
         id="login--dialog-username"
         inputRef={register({
-          required: { value: true, message: 'This field is required' },
-          minLength: { value: 2, message: 'This field required the min length of 2' },
+          required: { value: true, message: t('form-validation.required-field') },
+          minLength: { value: 2, message: t('form-validation.required-min-length', { length: 2 }) },
         })}
-        label="Username"
+        label={t('form.username')}
         margin="normal"
         name="username"
-        placeholder="Your username"
+        placeholder={t('form-placeholder.username')}
         required={true}
         variant="outlined"
       />
@@ -65,13 +67,13 @@ const LoginDialogForm = memo(({ onSubmit, error }: Props) => {
         helperText={errors.password?.message}
         id="login--dialog-password"
         inputRef={register({
-          required: { value: true, message: 'This field is required' },
-          minLength: { value: 2, message: 'This field required the min length of 2' },
+          required: { value: true, message: t('form-validation.required-field') },
+          minLength: { value: 2, message: t('form-validation.required-min-length', { length: 2 }) },
         })}
-        label="Password"
+        label={t('form.password')}
         margin="normal"
         name="password"
-        placeholder="Your strong password"
+        placeholder={t('form-placeholder.password')}
         required={true}
         type="password"
         variant="outlined"
@@ -79,13 +81,14 @@ const LoginDialogForm = memo(({ onSubmit, error }: Props) => {
       {error && <LoginDialogFormError error={error} />}
       <StyledButton
         color="primary"
+        data-testid="login-dialog-form-login-button"
         disabled={!isValid}
         fullWidth={true}
         id="login--dialog-button-submit"
         size="large"
         type="submit"
         variant="contained">
-        {'Sign In'}
+        {t('button.login')}
       </StyledButton>
     </StyledForm>
   );

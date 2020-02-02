@@ -1,5 +1,6 @@
 import React, { useContext } from 'react';
 import { useHistory } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
 import CardContent from '../../muiComponents/CardContent';
 import { PackageDependencies } from '../../../types/packageMeta';
@@ -16,6 +17,7 @@ interface DependencyBlockProps {
 const DependencyBlock: React.FC<DependencyBlockProps> = ({ title, dependencies }) => {
   const { enableLoading } = useContext(DetailContext);
   const history = useHistory();
+  const { t } = useTranslation();
 
   const deps = Object.entries(dependencies);
 
@@ -31,8 +33,14 @@ const DependencyBlock: React.FC<DependencyBlockProps> = ({ title, dependencies }
         <StyledText variant="subtitle1">{`${title} (${deps.length})`}</StyledText>
         <Tags>
           {deps.map(([name, version]) => (
-            // eslint-disable-next-line
-            <Tag className={'dep-tag'} clickable={true} key={name} label={`${name}@${version}`} onClick={() => handleClick(name)} />
+            <Tag
+              className={'dep-tag'}
+              clickable={true}
+              key={name}
+              label={t('dependencies.dependency-block', { package: name, version })}
+              // eslint-disable-next-line
+              onClick={() => handleClick(name)}
+            />
           ))}
         </Tags>
       </CardContent>
@@ -46,9 +54,10 @@ function hasKeys(object?: { [key: string]: any }): boolean {
 
 const Dependencies: React.FC<{}> = () => {
   const { packageMeta } = useContext(DetailContext);
+  const { t } = useTranslation();
 
   if (!packageMeta) {
-    throw new Error('packageMeta is required at DetailContext');
+    throw new Error(t('error.package-meta-is-required-at-detail-context'));
   }
 
   const { latest } = packageMeta;
@@ -72,7 +81,7 @@ const Dependencies: React.FC<{}> = () => {
     );
   }
 
-  return <NoItems className="no-dependencies" text={`${name} has no dependencies.`} />;
+  return <NoItems className="no-dependencies" text={t('dependencies.has-no-dependencies', { package: name })} />;
 };
 
 export default Dependencies;

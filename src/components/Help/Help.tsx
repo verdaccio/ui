@@ -1,4 +1,5 @@
 import React, { Fragment } from 'react';
+import { useTranslation } from 'react-i18next';
 
 import { getRegistryURL } from '../../utils/url';
 import CopyToClipBoard from '../CopyToClipBoard';
@@ -24,23 +25,24 @@ function renderHeadingClipboardSegments(title: string, text: string): React.Reac
 
 const Help: React.FC = () => {
   const registryUrl = getRegistryURL();
+  const { t } = useTranslation();
 
   return (
     <Card id="help-card">
       <CardContent>
         <Typography component="h2" gutterBottom={true} id={COMPONENT_HELP_ID} variant="h5">
-          {HELP_TITLE}
+          {t('help.title')}
         </Typography>
         <HelpTitle color="textSecondary" gutterBottom={true}>
-          {'To publish your first package just:'}
+          {t('help.sub-title')}
         </HelpTitle>
-        {renderHeadingClipboardSegments('1. Login', `npm adduser --registry ${registryUrl}`)}
-        {renderHeadingClipboardSegments('2. Publish', `npm publish --registry ${registryUrl}`)}
-        <Text variant="body2">{'3. Refresh this page.'}</Text>
+        {renderHeadingClipboardSegments(t('help.first-step'), t('help.first-step-command-line', { registryUrl }))}
+        {renderHeadingClipboardSegments(t('help.second-step'), t('help.second-step-command-line', { registryUrl }))}
+        <Text variant="body2">{t('help.third-step')}</Text>
       </CardContent>
       <CardActions>
         <Button color="primary" href="https://verdaccio.org/docs/en/installation" size="small">
-          {'Learn More'}
+          {t('button.learn-more')}
         </Button>
       </CardActions>
     </Card>

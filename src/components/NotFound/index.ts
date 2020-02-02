@@ -1,1 +1,1 @@
-export { default, NOT_FOUND_TEXT } from './NotFound';
+export { default } from './NotFound';

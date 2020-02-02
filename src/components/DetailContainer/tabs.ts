@@ -1,6 +1,6 @@
 export enum TabPosition {
-  README = 'Readme',
-  DEPENDENCIES = 'Dependencies',
-  VERSIONS = 'Versions',
-  UPLINKS = 'Uplinks',
+  README = 'readme',
+  DEPENDENCIES = 'dependencies',
+  VERSIONS = 'versions',
+  UPLINKS = 'uplinks',
 }

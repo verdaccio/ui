@@ -2,6 +2,7 @@ import React, { useState, FormEvent, useCallback } from 'react';
 import debounce from 'lodash/debounce';
 import { RouteComponentProps, withRouter } from 'react-router';
 import { SuggestionSelectedEventData } from 'react-autosuggest';
+import { useTranslation } from 'react-i18next';
 
 import AutoComplete from '../AutoComplete';
 import { callSearch } from '../../utils/calls';
@@ -10,11 +11,11 @@ import SearchAdornment from './SearchAdornment';
 
 const CONSTANTS = {
   API_DELAY: 300,
-  PLACEHOLDER_TEXT: 'Search Packages',
   ABORT_ERROR: 'AbortError',
 };
 
 const Search: React.FC<RouteComponentProps> = ({ history }) => {
+  const { t } = useTranslation();
   const [suggestions, setSuggestions] = useState([]);
   const [loaded, setLoaded] = useState(false);
   const [search, setSearch] = useState('');
@@ -141,7 +142,7 @@ const Search: React.FC<RouteComponentProps> = ({ history }) => {
       onCleanSuggestions={handlePackagesClearRequested}
       onClick={handleClickSearch}
       onSuggestionsFetch={debounce(handleFetchPackages, CONSTANTS.API_DELAY)}
-      placeholder={CONSTANTS.PLACEHOLDER_TEXT}
+      placeholder={t('search.packages')}
       startAdornment={<SearchAdornment />}
       suggestions={suggestions}
       suggestionsError={error}

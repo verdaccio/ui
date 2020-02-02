@@ -16,6 +16,22 @@ jest.mock('./api', () => ({
   request: require('../../jest/unit/components/__mocks__/api').default.request,
 }));
 
+jest.mock('i18next', () => {
+  const translationEN = require('../../i18n/translations/en-US.json');
+  return {
+    t: (key: string) => {
+      const splittedKey = key.split('.');
+      let result = translationEN;
+
+      for (const element of splittedKey) {
+        result = result[element];
+      }
+
+      return result;
+    },
+  };
+});
+
 describe('isTokenExpire', (): void => {
   test('isTokenExpire - null is not a valid payload', (): void => {
     expect(isTokenExpire(null)).toBeTruthy();

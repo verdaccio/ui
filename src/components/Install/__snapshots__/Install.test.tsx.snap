@@ -94,7 +94,7 @@ exports[`<Install /> renders correctly 1`] = `
           <button
             class="MuiButtonBase-root MuiIconButton-root  emotion-6 emotion-7"
             tabindex="0"
-            title="Copy to Clipboard"
+            title="Copy to clipboard"
             type="button"
           >
             <span
@@ -161,7 +161,7 @@ exports[`<Install /> renders correctly 1`] = `
           <button
             class="MuiButtonBase-root MuiIconButton-root  emotion-6 emotion-7"
             tabindex="0"
-            title="Copy to Clipboard"
+            title="Copy to clipboard"
             type="button"
           >
             <span
@@ -228,7 +228,7 @@ exports[`<Install /> renders correctly 1`] = `
           <button
             class="MuiButtonBase-root MuiIconButton-root  emotion-6 emotion-7"
             tabindex="0"
-            title="Copy to Clipboard"
+            title="Copy to clipboard"
             type="button"
           >
             <span
