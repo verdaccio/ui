@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.3.13](https://github.com/verdaccio/ui/compare/v0.3.12...v0.3.13) (2020-02-02)
+
+
+### Bug Fixes
+
+* do not capitalize heading - closes [#428](https://github.com/verdaccio/ui/issues/428) ([#431](https://github.com/verdaccio/ui/issues/431)) ([d481f54](https://github.com/verdaccio/ui/commit/d481f549484361c1d1bc011e0858e8f99b8a2528))
+* package list refresh based on logged-in user ([#415](https://github.com/verdaccio/ui/issues/415)) ([222ffed](https://github.com/verdaccio/ui/commit/222ffed0226f5aaa62f2d5b91bb08717b2aa24ef)), closes [#414](https://github.com/verdaccio/ui/issues/414) [#414](https://github.com/verdaccio/ui/issues/414)
+* reload packages on log in ([#421](https://github.com/verdaccio/ui/issues/421)) ([1eca1f4](https://github.com/verdaccio/ui/commit/1eca1f40797790e87d9592204ca061527d09c4ae))
+* typo ([#423](https://github.com/verdaccio/ui/issues/423)) ([164cea6](https://github.com/verdaccio/ui/commit/164cea6c10804c1d2097c2a582eb3e1e51814d4a))
+* update dependencies ([#420](https://github.com/verdaccio/ui/issues/420)) ([ee1c3f0](https://github.com/verdaccio/ui/commit/ee1c3f08eb16da2313d8841cfab18358d7f4ea10))
+
 ### [0.3.12](https://github.com/verdaccio/ui/compare/v0.3.11...v0.3.12) (2020-01-09)
 
 
