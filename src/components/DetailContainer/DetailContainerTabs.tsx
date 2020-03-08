@@ -1,44 +1,35 @@
-import React, { ChangeEvent, useState, useEffect } from 'react';
+import React from 'react';
 import styled from '@emotion/styled';
+import { useTranslation } from 'react-i18next';
 
 import { default as MuiTabs } from '../../muiComponents/Tabs';
 import Tab from '../../muiComponents/Tab';
 
-import { TabPosition } from './tabs';
-
 interface Props {
-  tabPosition: TabPosition;
-  onChangeTabPosition: (event: ChangeEvent<{}>) => void;
+  onChange: (event, newValue) => void;
+  tabPosition: number;
 }
 
-const Tabs = styled(MuiTabs)({
-  marginBottom: 16,
-});
-
-const getTabIndex = (tabPosition: TabPosition): number =>
-  Object.keys(TabPosition).findIndex(position => position === String(tabPosition).toUpperCase());
-
-const DetailContainerTabs: React.FC<Props> = ({ tabPosition, onChangeTabPosition }) => {
-  const [tabPositionIndex, setTabPositionIndex] = useState(0);
-
-  useEffect(() => {
-    const tabIndex = getTabIndex(tabPosition);
-    setTabPositionIndex(tabIndex);
-  }, [tabPosition]);
+const DetailContainerTabs: React.FC<Props> = ({ tabPosition, onChange }) => {
+  const { t } = useTranslation();
 
   return (
     <Tabs
       indicatorColor={'primary'}
-      onChange={onChangeTabPosition}
+      onChange={onChange}
       textColor={'primary'}
-      value={tabPositionIndex}
+      value={tabPosition}
       variant={'fullWidth'}>
-      <Tab data-testid={'readme-tab'} id={'readme-tab'} label={TabPosition.README} />
-      <Tab data-testid={'dependencies-tab'} id={'dependencies-tab'} label={TabPosition.DEPENDENCIES} />
-      <Tab data-testid={'versions-tab'} id={'versions-tab'} label={TabPosition.VERSIONS} />
-      <Tab data-testid={'uplinks-tab'} id={'uplinks-tab'} label={TabPosition.UPLINKS} />
+      <Tab data-testid={'readme-tab'} id={'readme-tab'} label={t('tab.readme')} />
+      <Tab data-testid={'dependencies-tab'} id={'dependencies-tab'} label={t('tab.dependencies')} />
+      <Tab data-testid={'versions-tab'} id={'versions-tab'} label={t('tab.versions')} />
+      <Tab data-testid={'uplinks-tab'} id={'uplinks-tab'} label={t('tab.uplinks')} />
     </Tabs>
   );
 };
 
 export default DetailContainerTabs;
+
+const Tabs = styled(MuiTabs)({
+  marginBottom: 16,
+});

@@ -2,6 +2,7 @@ import React from 'react';
 import styled from '@emotion/styled';
 import LockOutlined from '@material-ui/icons/LockOutlined';
 import CloseIcon from '@material-ui/icons/Close';
+import { useTranslation } from 'react-i18next';
 
 import Heading from '../../muiComponents/Heading';
 import Avatar from '../../muiComponents/Avatar';
@@ -26,17 +27,19 @@ interface Props {
 }
 
 const LoginDialogHeader: React.FC<Props> = ({ onClose }) => {
+  const { t } = useTranslation();
+
   return (
     <Box alignItems="center" display="flex" flexDirection="column" position="relative">
       {onClose && (
-        <StyledIconButton aria-label="Close" onClick={onClose}>
+        <StyledIconButton aria-label={t('button.close')} onClick={onClose}>
           <CloseIcon />
         </StyledIconButton>
       )}
       <StyledAvatar>
         <LockOutlined />
       </StyledAvatar>
-      <Heading>{'Sign in'}</Heading>
+      <Heading>{t('button.login')}</Heading>
     </Box>
   );
 };

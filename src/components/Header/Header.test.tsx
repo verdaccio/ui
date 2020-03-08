@@ -3,6 +3,7 @@ import { BrowserRouter as Router } from 'react-router-dom';
 
 import { render, fireEvent, waitForElement, waitForElementToBeRemoved } from '../../utils/test-react-testing-library';
 import { AppContextProvider } from '../../App';
+import translationEN from '../../../i18n/translations/en-US.json';
 
 import Header from './Header';
 
@@ -44,7 +45,7 @@ describe('<Header /> component with logged in state', () => {
   });
 
   test('should open login dialog', async () => {
-    const { getByText } = render(
+    const { getByTestId } = render(
       <Router>
         <AppContextProvider>
           <Header />
@@ -52,9 +53,9 @@ describe('<Header /> component with logged in state', () => {
       </Router>
     );
 
-    const loginBtn = getByText('Login');
+    const loginBtn = getByTestId('header--button-login');
     fireEvent.click(loginBtn);
-    const loginDialog = await waitForElement(() => getByText('Sign in'));
+    const loginDialog = await waitForElement(() => getByTestId('login--dialog'));
     expect(loginDialog).toBeTruthy();
   });
 
@@ -119,7 +120,7 @@ describe('<Header /> component with logged in state', () => {
     fireEvent.click(infoBtn);
 
     // wait for Close's button of registrationInfo modal appearance and return the element
-    const closeBtn = await waitForElement(() => getByText('CLOSE'));
+    const closeBtn = await waitForElement(() => getByText(translationEN.button.close));
     fireEvent.click(closeBtn);
 
     const hasRegistrationInfoModalBeenRemoved = await waitForElementToBeRemoved(() =>

@@ -4,8 +4,9 @@ import { MemoryRouter } from 'react-router-dom';
 import { render, cleanup } from '../../utils/test-react-testing-library';
 import { mount } from '../../utils/test-enzyme';
 import { DetailContext, DetailContextProps } from '../../pages/Version';
+import translationEN from '../../../i18n/translations/en-US.json';
 
-import Versions, { LABEL_CURRENT_TAGS, LABEL_VERSION_HISTORY } from './Versions';
+import Versions from './Versions';
 import data from './__partials__/data.json';
 
 const detailContextValue: Partial<DetailContextProps> = {
@@ -35,8 +36,8 @@ describe('<Version /> component', () => {
   test('should render versions', () => {
     const { getByText } = render(<ComponentToBeRendered contextValue={detailContextValue} />);
 
-    expect(getByText(LABEL_VERSION_HISTORY)).toBeTruthy();
-    expect(getByText(LABEL_CURRENT_TAGS)).toBeTruthy();
+    expect(getByText(translationEN.versions['version-history'])).toBeTruthy();
+    expect(getByText(translationEN.versions['current-tags'])).toBeTruthy();
 
     // pick some versions
     expect(getByText('2.3.0')).toBeTruthy();
@@ -48,8 +49,8 @@ describe('<Version /> component', () => {
       <ComponentToBeRendered contextValue={{ packageName: detailContextValue.packageName }} />
     );
 
-    expect(queryByText(LABEL_VERSION_HISTORY)).toBeFalsy();
-    expect(queryByText(LABEL_CURRENT_TAGS)).toBeFalsy();
+    expect(queryByText(translationEN.versions['version-history'])).toBeFalsy();
+    expect(queryByText(translationEN.versions['current-tags'])).toBeFalsy();
   });
 
   test.todo('should click on version link');

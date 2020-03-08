@@ -1,4 +1,5 @@
 import React, { useState, useContext } from 'react';
+import { useTranslation } from 'react-i18next';
 
 import storage from '../../utils/storage';
 import { getRegistryURL } from '../../utils/url';
@@ -18,13 +19,14 @@ interface Props {
 
 /* eslint-disable react/jsx-no-bind*/
 const Header: React.FC<Props> = ({ withoutSearch }) => {
+  const { t } = useTranslation();
   const appContext = useContext(AppContext);
   const [isInfoDialogOpen, setOpenInfoDialog] = useState();
   const [showMobileNavBar, setShowMobileNavBar] = useState();
   const [showLoginModal, setShowLoginModal] = useState(false);
 
   if (!appContext) {
-    throw Error('The app Context was not correct used');
+    throw Error(t('app-context-not-correct-used'));
   }
 
   const { user, scope, setUser } = appContext;
@@ -67,7 +69,7 @@ const Header: React.FC<Props> = ({ withoutSearch }) => {
             <Search />
           </InnerMobileNavBar>
           <Button color="inherit" onClick={() => setShowMobileNavBar(false)}>
-            {'Cancel'}
+            {t('button.cancel')}
           </Button>
         </MobileNavBar>
       )}

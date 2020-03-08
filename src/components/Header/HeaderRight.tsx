@@ -1,4 +1,5 @@
 import React, { useState, useEffect, MouseEvent } from 'react';
+import { useTranslation } from 'react-i18next';
 
 import Button from '../../muiComponents/Button';
 
@@ -25,6 +26,7 @@ const HeaderRight: React.FC<Props> = ({
 }) => {
   const [anchorEl, setAnchorEl] = useState();
   const [isMenuOpen, setIsMenuOpen] = useState();
+  const { t } = useTranslation();
 
   useEffect(() => {
     setIsMenuOpen(Boolean(anchorEl));
@@ -55,10 +57,10 @@ const HeaderRight: React.FC<Props> = ({
   return (
     <RightSide data-testid="header-right">
       {!withoutSearch && (
-        <HeaderToolTip onClick={onToggleMobileNav} title={'Search packages'} tooltipIconType={'search'} />
+        <HeaderToolTip onClick={onToggleMobileNav} title={t('search.packages')} tooltipIconType={'search'} />
       )}
-      <HeaderToolTip title={'Documentation'} tooltipIconType={'help'} />
-      <HeaderToolTip onClick={onOpenRegistryInfoDialog} title={'Registry Information'} tooltipIconType={'info'} />
+      <HeaderToolTip title={t('header.documentation')} tooltipIconType={'help'} />
+      <HeaderToolTip onClick={onOpenRegistryInfoDialog} title={t('header.registry-info')} tooltipIconType={'info'} />
       {username ? (
         <HeaderMenu
           anchorEl={anchorEl}
@@ -70,7 +72,7 @@ const HeaderRight: React.FC<Props> = ({
         />
       ) : (
         <Button color="inherit" data-testid="header--button-login" onClick={handleToggleLogin}>
-          {'Login'}
+          {t('button.login')}
         </Button>
       )}
     </RightSide>

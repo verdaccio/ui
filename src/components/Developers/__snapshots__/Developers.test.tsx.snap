@@ -4,7 +4,6 @@ exports[`test Developers should render the component for contributors with items
 .emotion-0 {
   font-weight: 700;
   margin-bottom: 10px;
-  text-transform: capitalize;
 }
 
 .emotion-8 > * {
@@ -14,64 +13,68 @@ exports[`test Developers should render the component for contributors with items
 <Developers
   type="contributors"
 >
-  <StyledText
-    variant="subtitle1"
+  <DevelopersTitle
+    type="contributors"
   >
-    <ForwardRef(Text)
-      className="emotion-0 emotion-1"
+    <StyledText
       variant="subtitle1"
     >
-      <WithStyles(ForwardRef(Typography))
+      <ForwardRef(Text)
         className="emotion-0 emotion-1"
         variant="subtitle1"
       >
-        <ForwardRef(Typography)
+        <WithStyles(ForwardRef(Typography))
           className="emotion-0 emotion-1"
-          classes={
-            Object {
-              "alignCenter": "MuiTypography-alignCenter",
-              "alignJustify": "MuiTypography-alignJustify",
-              "alignLeft": "MuiTypography-alignLeft",
-              "alignRight": "MuiTypography-alignRight",
-              "body1": "MuiTypography-body1",
-              "body2": "MuiTypography-body2",
-              "button": "MuiTypography-button",
-              "caption": "MuiTypography-caption",
-              "colorError": "MuiTypography-colorError",
-              "colorInherit": "MuiTypography-colorInherit",
-              "colorPrimary": "MuiTypography-colorPrimary",
-              "colorSecondary": "MuiTypography-colorSecondary",
-              "colorTextPrimary": "MuiTypography-colorTextPrimary",
-              "colorTextSecondary": "MuiTypography-colorTextSecondary",
-              "displayBlock": "MuiTypography-displayBlock",
-              "displayInline": "MuiTypography-displayInline",
-              "gutterBottom": "MuiTypography-gutterBottom",
-              "h1": "MuiTypography-h1",
-              "h2": "MuiTypography-h2",
-              "h3": "MuiTypography-h3",
-              "h4": "MuiTypography-h4",
-              "h5": "MuiTypography-h5",
-              "h6": "MuiTypography-h6",
-              "noWrap": "MuiTypography-noWrap",
-              "overline": "MuiTypography-overline",
-              "paragraph": "MuiTypography-paragraph",
-              "root": "MuiTypography-root",
-              "srOnly": "MuiTypography-srOnly",
-              "subtitle1": "MuiTypography-subtitle1",
-              "subtitle2": "MuiTypography-subtitle2",
-            }
-          }
           variant="subtitle1"
         >
-          <h6
-            className="MuiTypography-root emotion-0 emotion-1 MuiTypography-subtitle1"
+          <ForwardRef(Typography)
+            className="emotion-0 emotion-1"
+            classes={
+              Object {
+                "alignCenter": "MuiTypography-alignCenter",
+                "alignJustify": "MuiTypography-alignJustify",
+                "alignLeft": "MuiTypography-alignLeft",
+                "alignRight": "MuiTypography-alignRight",
+                "body1": "MuiTypography-body1",
+                "body2": "MuiTypography-body2",
+                "button": "MuiTypography-button",
+                "caption": "MuiTypography-caption",
+                "colorError": "MuiTypography-colorError",
+                "colorInherit": "MuiTypography-colorInherit",
+                "colorPrimary": "MuiTypography-colorPrimary",
+                "colorSecondary": "MuiTypography-colorSecondary",
+                "colorTextPrimary": "MuiTypography-colorTextPrimary",
+                "colorTextSecondary": "MuiTypography-colorTextSecondary",
+                "displayBlock": "MuiTypography-displayBlock",
+                "displayInline": "MuiTypography-displayInline",
+                "gutterBottom": "MuiTypography-gutterBottom",
+                "h1": "MuiTypography-h1",
+                "h2": "MuiTypography-h2",
+                "h3": "MuiTypography-h3",
+                "h4": "MuiTypography-h4",
+                "h5": "MuiTypography-h5",
+                "h6": "MuiTypography-h6",
+                "noWrap": "MuiTypography-noWrap",
+                "overline": "MuiTypography-overline",
+                "paragraph": "MuiTypography-paragraph",
+                "root": "MuiTypography-root",
+                "srOnly": "MuiTypography-srOnly",
+                "subtitle1": "MuiTypography-subtitle1",
+                "subtitle2": "MuiTypography-subtitle2",
+              }
+            }
+            variant="subtitle1"
           >
-            contributors
-          </h6>
-        </ForwardRef(Typography)>
-      </WithStyles(ForwardRef(Typography))>
-    </ForwardRef(Text)>
-  </StyledText>
+            <h6
+              className="MuiTypography-root emotion-0 emotion-1 MuiTypography-subtitle1"
+            >
+              sidebar.contributors.title
+            </h6>
+          </ForwardRef(Typography)>
+        </WithStyles(ForwardRef(Typography))>
+      </ForwardRef(Text)>
+    </StyledText>
+  </DevelopersTitle>
   <StyledBox
     display="flex"
     flexWrap="wrap"
@@ -427,7 +430,6 @@ exports[`test Developers should render the component for maintainers with items 
 .emotion-0 {
   font-weight: 700;
   margin-bottom: 10px;
-  text-transform: capitalize;
 }
 
 .emotion-8 > * {
@@ -437,64 +439,68 @@ exports[`test Developers should render the component for maintainers with items 
 <Developers
   type="maintainers"
 >
-  <StyledText
-    variant="subtitle1"
+  <DevelopersTitle
+    type="maintainers"
   >
-    <ForwardRef(Text)
-      className="emotion-0 emotion-1"
+    <StyledText
       variant="subtitle1"
     >
-      <WithStyles(ForwardRef(Typography))
+      <ForwardRef(Text)
         className="emotion-0 emotion-1"
         variant="subtitle1"
       >
-        <ForwardRef(Typography)
+        <WithStyles(ForwardRef(Typography))
           className="emotion-0 emotion-1"
-          classes={
-            Object {
-              "alignCenter": "MuiTypography-alignCenter",
-              "alignJustify": "MuiTypography-alignJustify",
-              "alignLeft": "MuiTypography-alignLeft",
-              "alignRight": "MuiTypography-alignRight",
-              "body1": "MuiTypography-body1",
-              "body2": "MuiTypography-body2",
-              "button": "MuiTypography-button",
-              "caption": "MuiTypography-caption",
-              "colorError": "MuiTypography-colorError",
-              "colorInherit": "MuiTypography-colorInherit",
-              "colorPrimary": "MuiTypography-colorPrimary",
-              "colorSecondary": "MuiTypography-colorSecondary",
-              "colorTextPrimary": "MuiTypography-colorTextPrimary",
-              "colorTextSecondary": "MuiTypography-colorTextSecondary",
-              "displayBlock": "MuiTypography-displayBlock",
-              "displayInline": "MuiTypography-displayInline",
-              "gutterBottom": "MuiTypography-gutterBottom",
-              "h1": "MuiTypography-h1",
-              "h2": "MuiTypography-h2",
-              "h3": "MuiTypography-h3",
-              "h4": "MuiTypography-h4",
-              "h5": "MuiTypography-h5",
-              "h6": "MuiTypography-h6",
-              "noWrap": "MuiTypography-noWrap",
-              "overline": "MuiTypography-overline",
-              "paragraph": "MuiTypography-paragraph",
-              "root": "MuiTypography-root",
-              "srOnly": "MuiTypography-srOnly",
-              "subtitle1": "MuiTypography-subtitle1",
-              "subtitle2": "MuiTypography-subtitle2",
-            }
-          }
           variant="subtitle1"
         >
-          <h6
-            className="MuiTypography-root emotion-0 emotion-1 MuiTypography-subtitle1"
+          <ForwardRef(Typography)
+            className="emotion-0 emotion-1"
+            classes={
+              Object {
+                "alignCenter": "MuiTypography-alignCenter",
+                "alignJustify": "MuiTypography-alignJustify",
+                "alignLeft": "MuiTypography-alignLeft",
+                "alignRight": "MuiTypography-alignRight",
+                "body1": "MuiTypography-body1",
+                "body2": "MuiTypography-body2",
+                "button": "MuiTypography-button",
+                "caption": "MuiTypography-caption",
+                "colorError": "MuiTypography-colorError",
+                "colorInherit": "MuiTypography-colorInherit",
+                "colorPrimary": "MuiTypography-colorPrimary",
+                "colorSecondary": "MuiTypography-colorSecondary",
+                "colorTextPrimary": "MuiTypography-colorTextPrimary",
+                "colorTextSecondary": "MuiTypography-colorTextSecondary",
+                "displayBlock": "MuiTypography-displayBlock",
+                "displayInline": "MuiTypography-displayInline",
+                "gutterBottom": "MuiTypography-gutterBottom",
+                "h1": "MuiTypography-h1",
+                "h2": "MuiTypography-h2",
+                "h3": "MuiTypography-h3",
+                "h4": "MuiTypography-h4",
+                "h5": "MuiTypography-h5",
+                "h6": "MuiTypography-h6",
+                "noWrap": "MuiTypography-noWrap",
+                "overline": "MuiTypography-overline",
+                "paragraph": "MuiTypography-paragraph",
+                "root": "MuiTypography-root",
+                "srOnly": "MuiTypography-srOnly",
+                "subtitle1": "MuiTypography-subtitle1",
+                "subtitle2": "MuiTypography-subtitle2",
+              }
+            }
+            variant="subtitle1"
           >
-            maintainers
-          </h6>
-        </ForwardRef(Typography)>
-      </WithStyles(ForwardRef(Typography))>
-    </ForwardRef(Text)>
-  </StyledText>
+            <h6
+              className="MuiTypography-root emotion-0 emotion-1 MuiTypography-subtitle1"
+            >
+              sidebar.maintainers.title
+            </h6>
+          </ForwardRef(Typography)>
+        </WithStyles(ForwardRef(Typography))>
+      </ForwardRef(Text)>
+    </StyledText>
+  </DevelopersTitle>
   <StyledBox
     display="flex"
     flexWrap="wrap"

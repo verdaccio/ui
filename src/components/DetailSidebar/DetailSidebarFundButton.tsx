@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import styled from '@emotion/styled';
 import Favorite from '@material-ui/icons/Favorite';
+import { Trans } from 'react-i18next';
 
 import Button from '../../muiComponents/Button';
 import Link from '../Link';
@@ -38,8 +39,7 @@ const DetailSidebarFundButton: React.FC = () => {
   return (
     <StyledLink external={true} to={fundingUrl}>
       <Button color="primary" fullWidth={true} startIcon={<StyledFavoriteIcon />} variant="outlined">
-        <StyledFundStrong>{'Fund'}</StyledFundStrong>
-        {'this package'}
+        <Trans components={[<StyledFundStrong key="fund" />]} i18nKey="button.fund-this-package" />
       </Button>
     </StyledLink>
   );

@@ -1,4 +1,5 @@
 import React, { useContext } from 'react';
+import { useTranslation } from 'react-i18next';
 
 import { DetailContext } from '../../pages/Version';
 import { DIST_TAGS } from '../../../lib/constants';
@@ -6,13 +7,9 @@ import { DIST_TAGS } from '../../../lib/constants';
 import { StyledText } from './styles';
 import VersionsTagList from './VersionsTagList';
 import VersionsHistoryList from './VersionsHistoryList';
-
-export const NOT_AVAILABLE = 'Not available';
-export const LABEL_CURRENT_TAGS = 'Current Tags';
-export const LABEL_VERSION_HISTORY = 'Version History';
-
 const Versions: React.FC = () => {
   const detailContext = useContext(DetailContext);
+  const { t } = useTranslation();
 
   const { packageMeta, packageName } = detailContext;
 
@@ -26,13 +23,13 @@ const Versions: React.FC = () => {
     <>
       {distTags && Object.keys(distTags).length > 0 && (
         <>
-          <StyledText variant="subtitle1">{LABEL_CURRENT_TAGS}</StyledText>
+          <StyledText variant="subtitle1">{t('versions.current-tags')}</StyledText>
           <VersionsTagList tags={distTags} />
         </>
       )}
       {versions && Object.keys(versions).length > 0 && packageName && (
         <>
-          <StyledText variant="subtitle1">{LABEL_VERSION_HISTORY}</StyledText>
+          <StyledText variant="subtitle1">{t('versions.version-history')}</StyledText>
           <VersionsHistoryList packageName={packageName} time={time} versions={versions} />
         </>
       )}

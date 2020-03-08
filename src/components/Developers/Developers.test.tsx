@@ -3,7 +3,8 @@ import React from 'react';
 import { mount } from '../../utils/test-enzyme';
 import { DetailContextProvider } from '../../pages/Version';
 
-import Developers, { DeveloperType, Fab } from './Developers';
+import Developers, { Fab } from './Developers';
+import { DeveloperType } from './types';
 
 describe('test Developers', () => {
   const packageMeta = {

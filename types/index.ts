@@ -2,6 +2,7 @@
 export interface VerdaccioOptions {
   url_prefix: string;
   base: string;
+  language?: string;
 }
 
 declare global {

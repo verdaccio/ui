@@ -1,4 +1,5 @@
 import React, { useState, useContext, useCallback } from 'react';
+import { useTranslation } from 'react-i18next';
 
 import { makeLogin } from '../../utils/login';
 import storage from '../../utils/storage';
@@ -16,10 +17,11 @@ interface Props {
 }
 
 const LoginDialog: React.FC<Props> = ({ onClose, open = false }) => {
+  const { t } = useTranslation();
   const appContext = useContext(AppContext);
 
   if (!appContext) {
-    throw Error('The app Context was not correct used');
+    throw Error(t('app-context-not-correct-used'));
   }
 
   const [error, setError] = useState();
@@ -43,7 +45,7 @@ const LoginDialog: React.FC<Props> = ({ onClose, open = false }) => {
   );
 
   return (
-    <Dialog fullWidth={true} id="login--dialog" maxWidth="sm" onClose={onClose} open={open}>
+    <Dialog data-testid="login--dialog" fullWidth={true} id="login--dialog" maxWidth="sm" onClose={onClose} open={open}>
       <LoginDialogCloseButton onClose={onClose} />
       <DialogContent>
         <LoginDialogHeader />

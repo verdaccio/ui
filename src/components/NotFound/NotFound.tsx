@@ -1,6 +1,7 @@
 import styled from '@emotion/styled';
 import React, { useCallback } from 'react';
 import { useHistory } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
 import Box from '../../muiComponents/Box';
 import Button from '../../muiComponents/Button';
@@ -8,10 +9,6 @@ import Heading from '../../muiComponents/Heading';
 import { Theme } from '../../design-tokens/theme';
 
 import PackageImg from './img/package.svg';
-
-export const NOT_FOUND_TEXT = "Sorry, we couldn't find it...";
-export const LABEL_NOT_FOUND = "The page you're looking for doesn't exist.";
-export const GO_TO_HOME_PAGE = 'Go to the home page';
 
 const EmptyPackage = styled('img')({
   width: '150px',
@@ -25,6 +22,7 @@ const StyledHeading = styled(Heading)<{ theme?: Theme }>(props => ({
 
 const NotFound: React.FC = () => {
   const history = useHistory();
+  const { t } = useTranslation();
 
   const handleGoHome = useCallback(() => {
     history.push('/');
@@ -39,12 +37,12 @@ const NotFound: React.FC = () => {
       flexGrow={1}
       justifyContent="center"
       p={2}>
-      <EmptyPackage alt="404 - Page not found" src={PackageImg} />
+      <EmptyPackage alt={t('error.404.page-not-found')} src={PackageImg} />
       <StyledHeading className="not-found-text" variant="h4">
-        {NOT_FOUND_TEXT}
+        {t('error.404.sorry-we-could-not-find-it')}
       </StyledHeading>
-      <Button onClick={handleGoHome} variant="contained">
-        {GO_TO_HOME_PAGE}
+      <Button data-testid="not-found-go-to-home-button" onClick={handleGoHome} variant="contained">
+        {t('button.go-to-the-home-page')}
       </Button>
     </Box>
   );

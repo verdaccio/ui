@@ -3,6 +3,7 @@ import styled from '@emotion/styled';
 import BugReportIcon from '@material-ui/icons/BugReport';
 import DownloadIcon from '@material-ui/icons/CloudDownload';
 import HomeIcon from '@material-ui/icons/Home';
+import { useTranslation } from 'react-i18next';
 
 import Tooltip from '../../muiComponents/Tooltip';
 import Link from '../Link';
@@ -26,10 +27,11 @@ export interface ActionBarActionProps {
 
 /* eslint-disable react/jsx-no-bind */
 const ActionBarAction: React.FC<ActionBarActionProps> = ({ type, link }) => {
+  const { t } = useTranslation();
   switch (type) {
     case 'VISIT_HOMEPAGE':
       return (
-        <Tooltip title="Visit homepage">
+        <Tooltip title={t('action-bar-action.visit-home-page')}>
           <Link external={true} to={link}>
             <Fab size="small">
               <HomeIcon />
@@ -39,7 +41,7 @@ const ActionBarAction: React.FC<ActionBarActionProps> = ({ type, link }) => {
       );
     case 'OPEN_AN_ISSUE':
       return (
-        <Tooltip title="Open an issue">
+        <Tooltip title={t('action-bar-action.open-an-issue')}>
           <Link external={true} to={link}>
             <Fab size="small">
               <BugReportIcon />
@@ -49,7 +51,7 @@ const ActionBarAction: React.FC<ActionBarActionProps> = ({ type, link }) => {
       );
     case 'DOWNLOAD_TARBALL':
       return (
-        <Tooltip title="Download tarball">
+        <Tooltip title={t('action-bar-action.download-tarball')}>
           <Fab data-testid="download-tarball-btn" onClick={downloadTarball(link)} size="small">
             <DownloadIcon />
           </Fab>

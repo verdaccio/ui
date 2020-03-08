@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { MouseEvent } from 'react';
 import { Link as RouterLink } from 'react-router-dom';
 
 import Text, { TextProps } from '../../muiComponents/Text';
@@ -8,6 +8,7 @@ interface Props extends Pick<TextProps, 'variant'> {
   className?: string;
   to: string;
   children?: React.ReactNode;
+  onClick?: (event: MouseEvent<HTMLAnchorElement>) => void;
 }
 
 type LinkRef = HTMLAnchorElement;

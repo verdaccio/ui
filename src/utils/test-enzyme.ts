@@ -1,3 +1,4 @@
+import React from 'react';
 import { mount, shallow } from 'enzyme';
 
 import ThemeProvider from '../design-tokens/ThemeProvider';

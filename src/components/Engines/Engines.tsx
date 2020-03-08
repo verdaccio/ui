@@ -1,4 +1,5 @@
 import React, { useContext } from 'react';
+import { useTranslation } from 'react-i18next';
 
 import { DetailContext } from '../../pages/Version';
 import Avatar from '../../muiComponents/Avatar';
@@ -12,6 +13,7 @@ import node from './img/node.png';
 
 const Engine: React.FC = () => {
   const { packageMeta } = useContext(DetailContext);
+  const { t } = useTranslation();
 
   const engines = packageMeta?.latest?.engines;
 
@@ -23,7 +25,7 @@ const Engine: React.FC = () => {
     <Grid container={true}>
       {engines.node && (
         <Grid item={true} xs={6}>
-          <List subheader={<StyledText variant={'subtitle1'}>{'node JS'}</StyledText>}>
+          <List subheader={<StyledText variant={'subtitle1'}>{t('sidebar.engines.node-js')}</StyledText>}>
             <EngineListItem button={true}>
               <Avatar src={node} />
               <ListItemText primary={engines.node} />
@@ -34,7 +36,7 @@ const Engine: React.FC = () => {
 
       {engines.npm && (
         <Grid item={true} xs={6}>
-          <List subheader={<StyledText variant={'subtitle1'}>{'NPM version'}</StyledText>}>
+          <List subheader={<StyledText variant={'subtitle1'}>{t('sidebar.engines.npm-version')}</StyledText>}>
             <EngineListItem button={true}>
               <Avatar src={npm} />
               <ListItemText primary={engines.npm} />

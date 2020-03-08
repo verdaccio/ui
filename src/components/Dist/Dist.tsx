@@ -1,4 +1,5 @@
 import React, { FC, useContext } from 'react';
+import { useTranslation } from 'react-i18next';
 
 import { DetailContext } from '../../pages/Version';
 import fileSizeSI from '../../utils/file-size';
@@ -22,6 +23,7 @@ const DistChip: FC<{ name: string }> = ({ name, children }) =>
 
 const Dist: FC = () => {
   const { packageMeta } = useContext(DetailContext);
+  const { t } = useTranslation();
 
   if (!packageMeta) {
     return null;
@@ -30,11 +32,11 @@ const Dist: FC = () => {
   const { dist, license } = packageMeta && packageMeta.latest;
 
   return (
-    <List subheader={<StyledText variant="subtitle1">{'Latest Distribution'}</StyledText>}>
+    <List subheader={<StyledText variant="subtitle1">{t('sidebar.distribution.title')}</StyledText>}>
       <DistListItem button={true}>
-        <DistChip name="file count">{dist.fileCount}</DistChip>
-        <DistChip name="size">{dist.unpackedSize && fileSizeSI(dist.unpackedSize)}</DistChip>
-        <DistChip name="license">{formatLicense(license)}</DistChip>
+        <DistChip name={t('sidebar.distribution.file-count')}>{dist.fileCount}</DistChip>
+        <DistChip name={t('sidebar.distribution.size')}>{dist.unpackedSize && fileSizeSI(dist.unpackedSize)}</DistChip>
+        <DistChip name={t('sidebar.distribution.license')}>{formatLicense(license)}</DistChip>
       </DistListItem>
     </List>
   );

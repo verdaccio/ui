@@ -3,6 +3,7 @@ import styled from '@emotion/styled';
 import Autosuggest, { SuggestionSelectedEventData, InputProps, ChangeEvent } from 'react-autosuggest';
 import match from 'autosuggest-highlight/match';
 import parse from 'autosuggest-highlight/parse';
+import { useTranslation } from 'react-i18next';
 
 import MenuItem from '../../muiComponents/MenuItem';
 import { Theme } from '../../design-tokens/theme';
@@ -83,12 +84,6 @@ const renderMessage = (message): JSX.Element => {
   );
 };
 
-const SUGGESTIONS_RESPONSE = {
-  LOADING: 'Loading...',
-  FAILURE: 'Something went wrong.',
-  NO_RESULT: 'No results found.',
-};
-
 const AutoComplete = memo(
   ({
     suggestions,
@@ -106,6 +101,8 @@ const AutoComplete = memo(
     suggestionsLoaded = false,
     suggestionsError = false,
   }: Props) => {
+    const { t } = useTranslation();
+
     const autosuggestProps = {
       renderInputComponent,
       suggestions,
@@ -130,9 +127,9 @@ const AutoComplete = memo(
     function renderSuggestionsContainer({ containerProps, children, query }): JSX.Element {
       return (
         <SuggestionContainer {...containerProps} square={true}>
-          {suggestionsLoaded && children === null && query && renderMessage(SUGGESTIONS_RESPONSE.NO_RESULT)}
-          {suggestionsLoading && query && renderMessage(SUGGESTIONS_RESPONSE.LOADING)}
-          {suggestionsError && renderMessage(SUGGESTIONS_RESPONSE.FAILURE)}
+          {suggestionsLoaded && children === null && query && renderMessage(t('auto-complete.no-results-found'))}
+          {suggestionsLoading && query && renderMessage(t('auto-complete.loading'))}
+          {suggestionsError && renderMessage(t('error.unspecific'))}
           {children}
         </SuggestionContainer>
       );
