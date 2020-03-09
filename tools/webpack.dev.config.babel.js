@@ -38,7 +38,6 @@ export default {
     new HTMLWebpackPlugin({
       __UI_OPTIONS: JSON.stringify({
         base: new URL('/', 'https://localhost:4872'),
-        language: 'es-ES',
       }),
       title: 'Verdaccio Dev UI',
       scope: '',
