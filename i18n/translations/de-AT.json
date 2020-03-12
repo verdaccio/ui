@@ -103,7 +103,7 @@
             "file-count": "Anzahl der Dateien"
         },
         "maintainers": {
-            "title": "Betreuerinnen"
+            "title": "Maintainer"
         },
         "contributors": {
             "title": "Beitragenden"
