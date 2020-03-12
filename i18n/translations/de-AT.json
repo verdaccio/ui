@@ -119,7 +119,7 @@
     },
     "button": {
         "close": "Schließen",
-        "cancel": "Beenden",
+        "cancel": "Abbrechen",
         "login": "Einloggen",
         "logout": "Ausloggen",
         "go-to-the-home-page": "Auf die Homepage gehen",
