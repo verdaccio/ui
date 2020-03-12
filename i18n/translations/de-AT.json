@@ -41,7 +41,7 @@
     "package": {
         "published-on": "Veröffentlicht am {{time}} •",
         "version": "v{{version}}",
-        "visit-home-page": "Auf die Homepage gehen",
+        "visit-home-page": "Zur Homepage",
         "homepage": "Homepage",
         "open-an-issue": "Einen Fehler melden",
         "bugs": "Fehler",
