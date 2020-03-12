@@ -32,6 +32,18 @@ function loadDayJSLocale() {
         dayjs.locale('pt-br');
       }
       break;
+    case 'de':
+      {
+        require('dayjs/locale/de');
+        dayjs.locale('de');
+      }
+      break;
+    case 'es-es':
+      {
+        require('dayjs/locale/es');
+        dayjs.locale('es');
+      }
+      break;
     default:
       break;
   }
