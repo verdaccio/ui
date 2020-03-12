@@ -21,7 +21,7 @@
     },
     "auto-complete": {
         "loading": "wird geladen...",
-        "no-results-found": "kein Ergebnis gefunden"
+        "no-results-found": "Kein Ergebnis gefunden"
     },
     "tab": {
         "uplinks": "Uplinks",
