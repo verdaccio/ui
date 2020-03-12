@@ -106,7 +106,7 @@
             "title": "Maintainer"
         },
         "contributors": {
-            "title": "Beitragenden"
+            "title": "Contributor"
         },
         "engines": {
             "npm-version": "NPM Version",
