@@ -32,10 +32,10 @@ function loadDayJSLocale() {
         dayjs.locale('pt-br');
       }
       break;
-    case 'de-at':
+    case 'de':
       {
-        require('dayjs/locale/de-at');
-        dayjs.locale('de-at');
+        require('dayjs/locale/de');
+        dayjs.locale('de');
       }
       break;
     case 'es-es':

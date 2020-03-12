@@ -4,7 +4,7 @@
     "action-bar-action": {
         "visit-home-page": "Auf die Homepage gehen",
         "open-an-issue": "Einen Fehler melden",
-        "download-tarball": "Tarball Herunterladen"
+        "download-tarball": "Archiv (Tarball) herunterladen"
     },
     "dialog": {
         "registry-info": {
@@ -47,7 +47,7 @@
         "bugs": "Fehler",
         "download": "{{what}} herunterladen",
         "the-tar-file": "die tar-Datei",
-        "tarball": "Tarball"
+        "tarball": "Archiv (Tarball)"
     },
     "dependencies": {
         "has-no-dependencies": "{{package}} hat keine Abhängigkeiten",
