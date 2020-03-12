@@ -63,7 +63,7 @@
     },
     "form-validation": {
         "required-field": "Dieses Feld ist erforderlich",
-        "required-min-length": "Dieses Feld erfordert die Mindestlänge von {{length}}",
+        "required-min-length": "Dieses Feld erfordert eine Mindestlänge von {{length}}",
         "unable-to-sign-in": "Anmeldung nicht möglich",
         "username-or-password-cant-be-empty": "Benutzername und Passwort dürfen nicht leer sein!"
     },
