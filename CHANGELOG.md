@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.0.0](https://github.com/verdaccio/ui/compare/v0.3.13...v1.0.0) (2020-03-13)
+
+
+### Features
+
+* **de-translations:** added de-DE translations to the UI ([#441](https://github.com/verdaccio/ui/issues/441)) ([e27d59b](https://github.com/verdaccio/ui/commit/e27d59bff7039473e566090fa0f825f7e462aa4e))
+* spanish translations to UI ([#440](https://github.com/verdaccio/ui/issues/440)) ([0abe1ef](https://github.com/verdaccio/ui/commit/0abe1ef41ca93b900ddda72e2d873ee52078221c))
+* **i18n:** added i18next for user interface translations  ([#432](https://github.com/verdaccio/ui/issues/432)) ([7428384](https://github.com/verdaccio/ui/commit/7428384b55e6089dbe45e6b216eee0b670dff576))
+
 ### [0.3.13](https://github.com/verdaccio/ui/compare/v0.3.12...v0.3.13) (2020-02-02)
 
 
