@@ -93,13 +93,17 @@ If you have any issue you can try the following options, do no desist to ask or 
 
 * [Blog](https://medium.com/verdaccio)
 * [Donations](https://opencollective.com/verdaccio)
-* [Roadmaps](https://github.com/verdaccio/verdaccio/projects)
+* [Roadmaps](https://github.com/verdaccio/ui/projects)
 * [Reporting an issue](https://github.com/verdaccio/verdaccio/blob/master/CONTRIBUTING.md#reporting-a-bug)
 * [Running discussions](https://github.com/verdaccio/verdaccio/issues?q=is%3Aissue+is%3Aopen+label%3Adiscuss)
 * [Chat](http://chat.verdaccio.org/)
 * [Logos](https://verdaccio.org/docs/en/logo)
 * [FAQ](https://github.com/verdaccio/verdaccio/issues?utf8=%E2%9C%93&q=is%3Aissue%20label%3Aquestion%20)
 * [Docker Examples](https://github.com/verdaccio/docker-examples)
+
+###Translations
+
+Translations are handled locally. I18n files can be found in the folder ```bash i18n/translations/*``` of this repository. We would love to provide translations from other languages, embracing all our users, but unfortunately we cannot do this without your help. Would you like to help us? Please feel **super welcome** to add a locale by opening a pull request.
 
 ### License
 
