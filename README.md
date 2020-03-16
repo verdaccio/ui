@@ -103,7 +103,7 @@ If you have any issue you can try the following options, do no desist to ask or 
 
 ###Translations
 
-Translations are handled locally. I18n files can be found in folder ```bash i18n/translations/*``` of this repository. 
+Translations are handled locally. I18n files can be found in the folder ```bash i18n/translations/*``` of this repository. 
 We would love to provide translations from other languages, embracing all our users, but unfortunately we cannot do this without your help. Would you like to help us? Please feel **super welcome** to add a locale by opening a pull request.
 
 ### License
