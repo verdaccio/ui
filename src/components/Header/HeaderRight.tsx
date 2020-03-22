@@ -1,7 +1,8 @@
-import React, { useState, useEffect, MouseEvent } from 'react';
+import React, { useState, useEffect, useContext, MouseEvent } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import Button from '../../muiComponents/Button';
+import ThemeContext from '../../design-tokens/ThemeContext';
 
 import { RightSide } from './styles';
 import HeaderToolTip from './HeaderToolTip';
@@ -16,17 +17,16 @@ interface Props {
   onLogout: () => void;
 }
 
-const HeaderRight: React.FC<Props> = ({
-  withoutSearch = false,
-  username,
-  onToggleLogin,
-  onLogout,
-  onToggleMobileNav,
-  onOpenRegistryInfoDialog,
-}) => {
+const HeaderRight: React.FC<Props> = ({ withoutSearch = false, username, onToggleLogin, onLogout, onToggleMobileNav, onOpenRegistryInfoDialog }) => {
+  const themeContext = useContext(ThemeContext);
   const [anchorEl, setAnchorEl] = useState();
   const [isMenuOpen, setIsMenuOpen] = useState();
+
   const { t } = useTranslation();
+
+  if (!themeContext) {
+    throw Error(t('app-context-not-correct-used'));
+  }
 
   useEffect(() => {
     setIsMenuOpen(Boolean(anchorEl));
@@ -54,13 +54,23 @@ const HeaderRight: React.FC<Props> = ({
     onToggleLogin();
   };
 
+  const handleToggleDarkLightMode = () => {
+    setTimeout(() => {
+      themeContext.setIsDarkMode(!themeContext.isDarkMode);
+    }, 300);
+  };
+
   return (
     <RightSide data-testid="header-right">
-      {!withoutSearch && (
-        <HeaderToolTip onClick={onToggleMobileNav} title={t('search.packages')} tooltipIconType={'search'} />
-      )}
+      {!withoutSearch && <HeaderToolTip onClick={onToggleMobileNav} title={t('search.packages')} tooltipIconType={'search'} />}
       <HeaderToolTip title={t('header.documentation')} tooltipIconType={'help'} />
       <HeaderToolTip onClick={onOpenRegistryInfoDialog} title={t('header.registry-info')} tooltipIconType={'info'} />
+      <HeaderToolTip
+        onClick={handleToggleDarkLightMode}
+        title={t('header.documentation')}
+        tooltipIconType={themeContext.isDarkMode ? 'dark-mode' : 'light-mode'}
+      />
+
       {username ? (
         <HeaderMenu
           anchorEl={anchorEl}

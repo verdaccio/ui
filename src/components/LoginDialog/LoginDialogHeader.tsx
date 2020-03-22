@@ -13,6 +13,7 @@ import { Theme } from '../../design-tokens/theme';
 const StyledAvatar = styled(Avatar)<{ theme?: Theme }>(({ theme }) => ({
   margin: theme.spacing(1),
   backgroundColor: theme.palette.primary.main,
+  color: theme.palette.white,
 }));
 
 const StyledIconButton = styled(IconButton)<{ theme?: Theme }>(({ theme }) => ({

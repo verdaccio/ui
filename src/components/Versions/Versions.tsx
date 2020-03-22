@@ -7,6 +7,7 @@ import { DIST_TAGS } from '../../../lib/constants';
 import { StyledText } from './styles';
 import VersionsTagList from './VersionsTagList';
 import VersionsHistoryList from './VersionsHistoryList';
+
 const Versions: React.FC = () => {
   const detailContext = useContext(DetailContext);
   const { t } = useTranslation();
