@@ -32,7 +32,7 @@ const HeaderRight: React.FC<Props> = ({
   const { t } = useTranslation();
 
   if (!themeContext) {
-    throw Error(t('app-context-not-correct-used'));
+    throw Error(t('theme-context-not-correct-used'));
   }
 
   useEffect(() => {
