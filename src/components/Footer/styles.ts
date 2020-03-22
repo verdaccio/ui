@@ -3,10 +3,10 @@ import styled from '@emotion/styled';
 import Icon from '../Icon/Icon';
 import { Theme } from '../../design-tokens/theme';
 
-export const Wrapper = styled('div')<{ theme?: Theme }>(props => ({
-  background: props.theme && props.theme.palette.snow,
-  borderTop: `1px solid ${props.theme && props.theme.palette.greyGainsboro}`,
-  color: props.theme && props.theme.palette.nobel01,
+export const Wrapper = styled('div')<{ theme?: Theme }>(({ theme }) => ({
+  background: theme?.palette.type === 'dark' ? theme?.palette.primary.main : theme?.palette.snow,
+  borderTop: `1px solid ${theme?.palette.greyGainsboro}`,
+  color: theme?.palette.type === 'dark' ? theme?.palette.white : theme?.palette.nobel01,
   fontSize: '14px',
   padding: '20px',
 }));

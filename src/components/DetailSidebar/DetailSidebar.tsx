@@ -15,10 +15,6 @@ import { Theme } from '../../design-tokens/theme';
 import DetailSidebarTitle from './DetailSidebarTitle';
 import DetailSidebarFundButton from './DetailSidebarFundButton';
 
-const StyledPaper = styled(Paper)<{ theme?: Theme }>(({ theme }) => ({
-  padding: theme.spacing(3, 2),
-}));
-
 const DetailSidebar: React.FC = () => {
   const detailContext = useContext(DetailContext);
 
@@ -50,3 +46,7 @@ const DetailSidebar: React.FC = () => {
 };
 
 export default DetailSidebar;
+
+const StyledPaper = styled(Paper)<{ theme?: Theme }>(({ theme }) => ({
+  padding: theme?.spacing(3, 2),
+}));

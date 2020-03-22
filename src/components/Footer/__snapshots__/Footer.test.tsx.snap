@@ -2,9 +2,9 @@
 
 exports[`<Footer /> component should load the initial state of Footer component 1`] = `
 .emotion-38 {
-  background: #f9f9f9;
+  background: #253341;
   border-top: 1px solid #e3e3e3;
-  color: #999999;
+  color: #fff;
   font-size: 14px;
   padding: 20px;
 }

@@ -10,6 +10,7 @@ export const Title = styled(DialogTitle)<{ theme?: Theme }>(props => ({
   fontSize: props.theme && props.theme.fontSize.lg,
 }));
 
-export const Content = styled(DialogContent)({
+export const Content = styled(DialogContent)<{ theme?: Theme }>(({ theme }) => ({
   padding: '0 24px',
-});
+  backgroundColor: theme?.palette.background.default,
+}));

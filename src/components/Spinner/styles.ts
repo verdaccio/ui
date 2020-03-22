@@ -19,6 +19,6 @@ export const Wrapper = styled('div')<WrapperProps>(props => ({
   }),
 }));
 
-export const Circular = styled(CircularProgress)<{ theme?: Theme }>(props => ({
-  color: props.theme && props.theme.palette.primary.main,
+export const Circular = styled(CircularProgress)<{ theme?: Theme }>(({ theme }) => ({
+  color: theme?.palette.type === 'dark' ? theme?.palette.white : theme?.palette.primary.main,
 }));

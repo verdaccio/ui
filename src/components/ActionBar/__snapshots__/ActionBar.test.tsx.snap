@@ -2,7 +2,7 @@
 
 exports[`<ActionBar /> component should render the component in default state 1`] = `
 .emotion-0 {
-  background-color: #4b5e40;
+  background-color: #253341;
   color: #fff;
   margin-right: 10px;
 }
