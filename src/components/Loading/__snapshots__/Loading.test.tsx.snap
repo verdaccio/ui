@@ -14,7 +14,7 @@ exports[`<Loading /> component should render the component in default state 1`] 
   margin: 0 0 30px 0;
   border-radius: 25px;
   box-shadow: 0 10px 20px 0 rgba(69,58,100,0.2);
-  background: #000;
+  background: #f7f8f6;
 }
 
 .emotion-0 {
@@ -45,7 +45,7 @@ exports[`<Loading /> component should render the component in default state 1`] 
 }
 
 .emotion-4 {
-  color: #fff;
+  color: #4b5e40;
 }
 
 <div
