@@ -6,7 +6,8 @@ import ThemeContext from './ThemeContext';
 import { getTheme, ThemeMode } from './theme';
 
 const ThemeProvider: React.FC = ({ children }) => {
-  const [isDarkMode, setIsDarkMode] = useState();
+  const isDarkModeDefault = window?.__VERDACCIO_BASENAME_UI_OPTIONS?.dark_mode;
+  const [isDarkMode, setIsDarkMode] = useState(!!isDarkModeDefault);
 
   const themeMode: ThemeMode = isDarkMode ? 'dark' : 'light';
 
