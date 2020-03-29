@@ -24,6 +24,7 @@ const colors = {
   primary: window.VERDACCIO_PRIMARY_COLOR || '#4b5e40',
   secondary: '#20232a',
   background: '#fff',
+  dodgerBlue: '#1ba1f2',
 };
 
 const themeModes = {
@@ -130,6 +131,7 @@ declare module '@material-ui/core/styles/createPalette' {
     nobel01: string;
     nobel02: string;
     background: string;
+    dodgerBlue: string;
   }
 
   /* eslint-disable-next-line @typescript-eslint/no-empty-interface */

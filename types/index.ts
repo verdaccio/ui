@@ -3,7 +3,7 @@ export interface VerdaccioOptions {
   url_prefix: string;
   base: string;
   language?: string;
-  dark_mode?: boolean;
+  darkMode?: boolean;
 }
 
 declare global {

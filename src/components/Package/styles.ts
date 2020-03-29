@@ -15,7 +15,7 @@ export const OverviewItem = styled('span')<{ theme?: Theme }>(({ theme }) => ({
   display: 'flex',
   alignItems: 'center',
   margin: '0 0 0 16px',
-  color: theme && theme.palette.greyLight2,
+  color: theme?.palette.type === 'light' ? theme?.palette.greyLight2 : theme?.palette.dodgerBlue,
   fontSize: 12,
   [`@media (max-width: ${theme && theme.breakPoints.medium}px)`]: {
     ':nth-of-type(3)': {
@@ -29,20 +29,20 @@ export const OverviewItem = styled('span')<{ theme?: Theme }>(({ theme }) => ({
   },
 }));
 
-export const Icon = styled(Ico)<{ theme?: Theme }>(props => ({
+export const Icon = styled(Ico)<{ theme?: Theme }>(({ theme }) => ({
   margin: '2px 10px 0 0',
-  fill: props.theme && props.theme.palette.greyLight2,
+  fill: theme?.palette.type === 'light' ? theme?.palette.greyLight2 : theme?.palette.dodgerBlue,
 }));
 
-export const Published = styled('span')<{ theme?: Theme }>(props => ({
-  color: props.theme && props.theme.palette.greyLight2,
+export const Published = styled('span')<{ theme?: Theme }>(({ theme }) => ({
+  color: theme?.palette.type === 'light' ? theme?.palette.greyLight2 : theme?.palette.dodgerBlue,
   margin: '0 5px 0 0',
 }));
 
-export const Text = styled(Label)<{ theme?: Theme }>(props => ({
+export const Text = styled(Label)<{ theme?: Theme }>(({ theme }) => ({
   fontSize: '12px',
-  fontWeight: props.theme && props.theme.fontWeight.semiBold,
-  color: props.theme && props.theme.palette.greyLight2,
+  fontWeight: theme?.fontWeight.semiBold,
+  color: theme?.palette.type === 'light' ? theme?.palette.greyLight2 : theme?.palette.dodgerBlue,
 }));
 
 export const Details = styled('span')({
@@ -91,6 +91,7 @@ export const PackageList = styled(List)<{ theme?: Theme }>(({ theme }) => ({
   '> :last-child': {
     paddingTop: 0,
   },
+  borderRadius: 4,
 }));
 
 export const IconButton = styled(MuiIconButton)({
