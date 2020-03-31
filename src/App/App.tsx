@@ -19,7 +19,7 @@ import AppRoute, { history } from './AppRoute';
 import loadDayJSLocale from './load-dayjs-locale';
 
 const StyledBox = styled(Box)<{ theme?: Theme }>(({ theme }) => ({
-  backgroundColor: theme && theme.palette.white,
+  backgroundColor: theme?.palette.background.default,
 }));
 
 const StyledBoxContent = styled(Box)<{ theme?: Theme }>(({ theme }) => ({

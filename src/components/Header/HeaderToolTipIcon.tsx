@@ -2,12 +2,14 @@ import React, { forwardRef } from 'react';
 import Info from '@material-ui/icons/Info';
 import Help from '@material-ui/icons/Help';
 import Search from '@material-ui/icons/Search';
+import NightsStay from '@material-ui/icons/NightsStay';
+import WbSunny from '@material-ui/icons/WbSunny';
 
 import IconButton from '../../muiComponents/IconButton';
 
 import { IconSearchButton, StyledLink } from './styles';
 
-export type TooltipIconType = 'search' | 'help' | 'info';
+export type TooltipIconType = 'search' | 'help' | 'info' | 'dark-mode' | 'light-mode';
 interface Props {
   tooltipIconType: TooltipIconType;
   onClick?: () => void;
@@ -49,6 +51,21 @@ const HeaderToolTipIcon = forwardRef<HeaderToolTipIconRef, Props>(function Heade
         <IconSearchButton color="inherit" onClick={onClick}>
           <Search />
         </IconSearchButton>
+      );
+    case 'dark-mode':
+      // todo(Priscila): Add Zoom transition effect
+      return (
+        <IconButton color="inherit" onClick={onClick} ref={ref}>
+          <NightsStay />
+        </IconButton>
+      );
+
+    case 'light-mode':
+      // todo(Priscila): Add Zoom transition effect
+      return (
+        <IconButton color="inherit" onClick={onClick} ref={ref}>
+          <WbSunny />
+        </IconButton>
       );
     default:
       return null;

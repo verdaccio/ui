@@ -30,7 +30,6 @@ const Header: React.FC<Props> = ({ withoutSearch }) => {
   }
 
   const { user, scope, setUser } = appContext;
-  const logo = window.VERDACCIO_LOGO;
 
   /**
    * Logouts user
@@ -46,7 +45,7 @@ const Header: React.FC<Props> = ({ withoutSearch }) => {
     <>
       <NavBar data-testid="header" position="static">
         <InnerNavBar>
-          <HeaderLeft logo={logo} />
+          <HeaderLeft />
           <HeaderRight
             onLogout={handleLogout}
             onOpenRegistryInfoDialog={() => setOpenInfoDialog(true)}
