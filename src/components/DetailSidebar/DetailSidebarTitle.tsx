@@ -13,15 +13,6 @@ interface Props {
   isLatest: boolean;
 }
 
-const StyledHeading = styled(Heading)({
-  fontSize: '1rem',
-  fontWeight: 700,
-});
-
-const StyledBoxVersion = styled(Box)<{ theme?: Theme }>(({ theme }) => ({
-  color: theme && theme.palette.text.secondary,
-}));
-
 const DetailSidebarTitle: React.FC<Props> = ({ description, packageName, version, isLatest }) => {
   const { t } = useTranslation();
   return (
@@ -36,3 +27,12 @@ const DetailSidebarTitle: React.FC<Props> = ({ description, packageName, version
 };
 
 export default DetailSidebarTitle;
+
+const StyledHeading = styled(Heading)({
+  fontSize: '1rem',
+  fontWeight: 700,
+});
+
+const StyledBoxVersion = styled(Box)<{ theme?: Theme }>(({ theme }) => ({
+  color: theme && theme.palette.text.secondary,
+}));

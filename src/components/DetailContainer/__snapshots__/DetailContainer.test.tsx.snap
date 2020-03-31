@@ -10,6 +10,7 @@ exports[`DetailContainer renders correctly 1`] = `
 >
   <div
     class="MuiTabs-root emotion-0 emotion-1"
+    color="primary"
   >
     <div
       class="MuiTabs-scroller MuiTabs-fixed"
@@ -21,7 +22,7 @@ exports[`DetailContainer renders correctly 1`] = `
       >
         <button
           aria-selected="true"
-          class="MuiButtonBase-root MuiTab-root MuiTab-textColorPrimary Mui-selected MuiTab-fullWidth"
+          class="MuiButtonBase-root MuiTab-root MuiTab-textColorInherit Mui-selected MuiTab-fullWidth"
           data-testid="readme-tab"
           id="readme-tab"
           role="tab"
@@ -39,7 +40,7 @@ exports[`DetailContainer renders correctly 1`] = `
         </button>
         <button
           aria-selected="false"
-          class="MuiButtonBase-root MuiTab-root MuiTab-textColorPrimary MuiTab-fullWidth"
+          class="MuiButtonBase-root MuiTab-root MuiTab-textColorInherit MuiTab-fullWidth"
           data-testid="dependencies-tab"
           id="dependencies-tab"
           role="tab"
@@ -57,7 +58,7 @@ exports[`DetailContainer renders correctly 1`] = `
         </button>
         <button
           aria-selected="false"
-          class="MuiButtonBase-root MuiTab-root MuiTab-textColorPrimary MuiTab-fullWidth"
+          class="MuiButtonBase-root MuiTab-root MuiTab-textColorInherit MuiTab-fullWidth"
           data-testid="versions-tab"
           id="versions-tab"
           role="tab"
@@ -75,7 +76,7 @@ exports[`DetailContainer renders correctly 1`] = `
         </button>
         <button
           aria-selected="false"
-          class="MuiButtonBase-root MuiTab-root MuiTab-textColorPrimary MuiTab-fullWidth"
+          class="MuiButtonBase-root MuiTab-root MuiTab-textColorInherit MuiTab-fullWidth"
           data-testid="uplinks-tab"
           id="uplinks-tab"
           role="tab"
