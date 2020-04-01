@@ -2,6 +2,30 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.3.0](https://github.com/verdaccio/ui/compare/v1.0.4...v1.3.0) (2020-04-01)
+
+
+### Features
+
+* **style:** added dark mode ([#446](https://github.com/verdaccio/ui/issues/446)) ([cdad5cf](https://github.com/verdaccio/ui/commit/cdad5cf70d69b7bb045fce461a32108def81721d))
+
+
+### Bug Fixes
+
+* **chore:** droped release ([#449](https://github.com/verdaccio/ui/issues/449)) ([f321f7b](https://github.com/verdaccio/ui/commit/f321f7b6fe1ac44897753f0bfdbbaa6ca7eca515))
+
+## [1.2.0](https://github.com/verdaccio/ui/compare/v1.0.4...v1.2.0) (2020-04-01)
+
+
+### Features
+
+* **style:** added dark mode ([#446](https://github.com/verdaccio/ui/issues/446)) ([cdad5cf](https://github.com/verdaccio/ui/commit/cdad5cf70d69b7bb045fce461a32108def81721d))
+
+
+### Bug Fixes
+
+* **chore:** droped release ([#449](https://github.com/verdaccio/ui/issues/449)) ([f321f7b](https://github.com/verdaccio/ui/commit/f321f7b6fe1ac44897753f0bfdbbaa6ca7eca515))
+
 ## [1.1.0](https://github.com/verdaccio/ui/compare/v1.0.4...v1.1.0) (2020-04-01)
 
 
