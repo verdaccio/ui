@@ -12,7 +12,9 @@ describe('<Readme /> component', () => {
 
   test('should dangerously set html', () => {
     const wrapper = mount(<Readme description="<h1>This is a test string</h1>" />);
-    expect(wrapper.html()).toEqual('<div class="markdown-body"><h1>This is a test string</h1></div>');
+    expect(wrapper.html()).toEqual(
+      '<div class="markdown-body css-beaqbv-Wrapper ecnabbe0"><h1>This is a test string</h1></div>'
+    );
     expect(wrapper.html()).toMatchSnapshot();
   });
 });

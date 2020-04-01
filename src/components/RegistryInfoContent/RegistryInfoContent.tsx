@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { css } from '@emotion/core';
 
 import CopyToClipBoard from '../CopyToClipBoard';
 import { getCLISetRegistry, getCLIChangePassword, getCLISetConfigRegistry } from '../../utils/cli-utils';
@@ -48,10 +47,10 @@ const RegistryInfoContent: React.FC<Props> = props => {
     return (
       <>
         <Tabs
+          color={'primary'}
           data-testid={'tabs-el'}
-          indicatorColor="primary"
+          indicatorColor={'primary'}
           onChange={handleChange}
-          textColor="primary"
           value={tabPosition}
           variant="fullWidth">
           <Tab data-testid={'npm-tab'} label={NODE_MANAGER.npm} />
@@ -69,14 +68,7 @@ const RegistryInfoContent: React.FC<Props> = props => {
   const TabContainer = ({ children }): JSX.Element => {
     return (
       <CommandContainer>
-        <Typography
-          // className={css`
-          //   padding: 0;
-          //   min-height: 170;
-          // `}
-          component="div">
-          {children}
-        </Typography>
+        <Typography component="div">{children}</Typography>
       </CommandContainer>
     );
   };

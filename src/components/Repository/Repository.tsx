@@ -6,6 +6,7 @@ import Avatar from '../../muiComponents/Avatar';
 import Text from '../../muiComponents/Text';
 import ListItem from '../../muiComponents/ListItem';
 import ListItemText from '../../muiComponents/ListItemText';
+import Link from '../Link';
 import { isURL } from '../../utils/url';
 import CopyToClipBoard from '../CopyToClipBoard';
 import List from '../../muiComponents/List';
@@ -19,8 +20,11 @@ const StyledText = styled(Text)<{ theme?: Theme }>(props => ({
   textTransform: 'capitalize',
 }));
 
-const GithubLink = styled('a')<{ theme?: Theme }>(props => ({
-  color: props.theme && props.theme.palette.primary.main,
+const GithubLink = styled(Link)<{ theme?: Theme }>(({ theme }) => ({
+  color: theme?.palette.type === 'light' ? theme?.palette.primary.main : theme?.palette.white,
+  ':hover': {
+    color: theme?.palette.dodgerBlue,
+  },
 }));
 
 const RepositoryListItem = styled(ListItem)({
@@ -72,7 +76,7 @@ const Repository: React.FC = () => {
         <RepositoryListItemText
           primary={
             <CopyToClipBoard text={repositoryURL}>
-              <GithubLink href={repositoryURL} target="_blank">
+              <GithubLink external={true} to={repositoryURL}>
                 {repositoryURL}
               </GithubLink>
             </CopyToClipBoard>

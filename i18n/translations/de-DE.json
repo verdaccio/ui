@@ -133,6 +133,7 @@
             "sorry-we-could-not-find-it": "Entschuldigung, wir konnten es nicht finden..."
         },
         "app-context-not-correct-used": "Der App-Kontext wurde nicht korrekt verwendet",
+        "theme-context-not-correct-used": "Der Theme-Kontext wurde nicht korrekt verwendet",
         "package-meta-is-required-at-detail-context": "packageMeta wird bei DetailContext benötigt"
     }
 }
