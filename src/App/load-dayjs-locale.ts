@@ -44,6 +44,12 @@ function loadDayJSLocale() {
         dayjs.locale('es');
       }
       break;
+    case 'zh-cn':
+      {
+        require('dayjs/locale/zh-cn');
+        dayjs.locale('zh-cn');
+      }
+      break;
     default:
       break;
   }
