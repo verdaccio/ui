@@ -3,6 +3,7 @@ import { useTranslation } from 'react-i18next';
 
 import Button from '../../muiComponents/Button';
 import ThemeContext from '../../design-tokens/ThemeContext';
+import LanguageSwitch from '../LanguageSwitch';
 
 import { RightSide } from './styles';
 import HeaderToolTip from './HeaderToolTip';
@@ -72,6 +73,7 @@ const HeaderRight: React.FC<Props> = ({
       {!withoutSearch && (
         <HeaderToolTip onClick={onToggleMobileNav} title={t('search.packages')} tooltipIconType={'search'} />
       )}
+      <LanguageSwitch />
       <HeaderToolTip title={t('header.documentation')} tooltipIconType={'help'} />
       <HeaderToolTip onClick={onOpenRegistryInfoDialog} title={t('header.registry-info')} tooltipIconType={'info'} />
       <HeaderToolTip
