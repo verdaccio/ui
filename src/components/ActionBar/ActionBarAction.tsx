@@ -12,10 +12,14 @@ import { Theme } from '../../design-tokens/theme';
 
 import downloadTarball from './download-tarball';
 
-export const Fab = styled(FloatingActionButton)<{ theme?: Theme }>(props => ({
-  backgroundColor: props.theme && props.theme.palette.primary.main,
-  color: props.theme && props.theme.palette.white,
+export const Fab = styled(FloatingActionButton)<{ theme?: Theme }>(({ theme }) => ({
+  backgroundColor: theme?.palette.type === 'light' ? theme?.palette.primary.main : theme?.palette.cyanBlue,
+  color: theme?.palette.white,
   marginRight: 10,
+  ':hover': {
+    color: theme?.palette.type === 'light' ? theme?.palette.primary.main : theme?.palette.cyanBlue,
+    background: theme?.palette.white,
+  },
 }));
 
 type ActionType = 'VISIT_HOMEPAGE' | 'OPEN_AN_ISSUE' | 'DOWNLOAD_TARBALL';

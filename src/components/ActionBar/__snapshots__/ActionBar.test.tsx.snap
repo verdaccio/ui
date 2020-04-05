@@ -7,6 +7,11 @@ exports[`<ActionBar /> component should render the component in default state 1`
   margin-right: 10px;
 }
 
+.emotion-0:hover {
+  color: #4b5e40;
+  background: #fff;
+}
+
 <div
   class="MuiBox-root MuiBox-root-2"
 >

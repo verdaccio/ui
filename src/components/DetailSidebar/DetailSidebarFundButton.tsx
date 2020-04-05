@@ -9,21 +9,6 @@ import { isURL } from '../../utils/url';
 import { Theme } from '../../design-tokens/theme';
 import { DetailContext } from '../../pages/Version';
 
-const StyledLink = styled(Link)<{ theme?: Theme }>(({ theme }) => ({
-  marginTop: theme && theme.spacing(1),
-  marginBottom: theme && theme.spacing(1),
-  textDecoration: 'none',
-  display: 'block',
-}));
-
-const StyledFavoriteIcon = styled(Favorite)<{ theme?: Theme }>(({ theme }) => ({
-  color: theme && theme.palette.orange,
-}));
-
-const StyledFundStrong = styled('strong')({
-  marginRight: 3,
-});
-
 /* eslint-disable react/jsx-no-bind */
 const DetailSidebarFundButton: React.FC = () => {
   const detailContext = useContext(DetailContext);
@@ -46,3 +31,18 @@ const DetailSidebarFundButton: React.FC = () => {
 };
 
 export default DetailSidebarFundButton;
+
+const StyledLink = styled(Link)<{ theme?: Theme }>(({ theme }) => ({
+  marginTop: theme?.spacing(1),
+  marginBottom: theme?.spacing(1),
+  textDecoration: 'none',
+  display: 'block',
+}));
+
+const StyledFavoriteIcon = styled(Favorite)<{ theme?: Theme }>(({ theme }) => ({
+  color: theme?.palette.orange,
+}));
+
+const StyledFundStrong = styled('strong')({
+  marginRight: 3,
+});

@@ -7,6 +7,7 @@ exports[`<App /> should display the Header component  1`] = `
 
 .emotion-24 {
   background-color: #4b5e40;
+  color: #fff;
   min-height: 60px;
   display: -webkit-box;
   display: -webkit-flex;
@@ -741,6 +742,7 @@ exports[`<App /> should display the Loading component at the beginning  1`] = `
 
 .emotion-24 {
   background-color: #4b5e40;
+  color: #fff;
   min-height: 60px;
   display: -webkit-box;
   display: -webkit-flex;

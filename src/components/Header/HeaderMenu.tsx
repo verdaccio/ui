@@ -47,7 +47,7 @@ const HeaderMenu: React.FC<Props> = ({
           vertical: 'top',
           horizontal: 'right',
         }}>
-        <MenuItem disabled={true}>
+        <MenuItem>
           <HeaderGreetings username={username} />
         </MenuItem>
         <MenuItem button={true} data-testid="header--button-logout" id="header--button-logout" onClick={onLogout}>
