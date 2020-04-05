@@ -6,6 +6,7 @@ import { Svg, Img, ImgWrapper } from './styles';
 import brazil from './img/brazil.svg';
 import china from './img/china.svg';
 import india from './img/india.svg';
+import germany from './img/germany.svg';
 import nicaragua from './img/nicaragua.svg';
 import pakistan from './img/pakistan.svg';
 import austria from './img/austria.svg';
@@ -25,6 +26,7 @@ export interface IconsMap {
   nicaragua: string;
   pakistan: string;
   austria: string;
+  germany: string;
   india: string;
   earth: string;
   verdaccio: string;
@@ -51,6 +53,7 @@ export const Icons: IconsMap = {
   license,
   time,
   version,
+  germany,
 };
 
 export interface Props {
