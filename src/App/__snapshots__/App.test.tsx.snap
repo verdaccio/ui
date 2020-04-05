@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<App /> should display the Header component  1`] = `
-.emotion-78 {
+.emotion-81 {
   background-color: #fff;
 }
 
@@ -152,7 +152,7 @@ exports[`<App /> should display the Header component  1`] = `
   }
 }
 
-.emotion-76 {
+.emotion-79 {
   background: #f9f9f9;
   border-top: 1px solid #e3e3e3;
   color: #999999;
@@ -160,7 +160,7 @@ exports[`<App /> should display the Header component  1`] = `
   padding: 20px;
 }
 
-.emotion-74 {
+.emotion-77 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -177,7 +177,7 @@ exports[`<App /> should display the Header component  1`] = `
 }
 
 @media (min-width:768px) {
-  .emotion-74 {
+  .emotion-77 {
     min-width: 400px;
     max-width: 800px;
     margin: auto;
@@ -189,12 +189,12 @@ exports[`<App /> should display the Header component  1`] = `
 }
 
 @media (min-width:1024px) {
-  .emotion-74 {
+  .emotion-77 {
     max-width: 1240px;
   }
 }
 
-.emotion-65 {
+.emotion-68 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -203,7 +203,7 @@ exports[`<App /> should display the Header component  1`] = `
 }
 
 @media (min-width:768px) {
-  .emotion-65 {
+  .emotion-68 {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -216,12 +216,12 @@ exports[`<App /> should display the Header component  1`] = `
   padding: 0 5px;
 }
 
-.emotion-63 {
+.emotion-66 {
   position: relative;
   height: 18px;
 }
 
-.emotion-63:hover .emotion-62 {
+.emotion-66:hover .emotion-65 {
   visibility: visible;
 }
 
@@ -234,7 +234,7 @@ exports[`<App /> should display the Header component  1`] = `
   padding: 0 10px;
 }
 
-.emotion-61 {
+.emotion-64 {
   position: absolute;
   background: #d3dddd;
   padding: 1px 4px;
@@ -252,7 +252,7 @@ exports[`<App /> should display the Header component  1`] = `
   top: -2px;
 }
 
-.emotion-61:before {
+.emotion-64:before {
   content: '';
   position: absolute;
   top: 29%;
@@ -274,7 +274,7 @@ exports[`<App /> should display the Header component  1`] = `
   padding: 0 5px;
 }
 
-.emotion-72 {
+.emotion-75 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -287,7 +287,7 @@ exports[`<App /> should display the Header component  1`] = `
 }
 
 @media (min-width:768px) {
-  .emotion-72 {
+  .emotion-75 {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -295,7 +295,7 @@ exports[`<App /> should display the Header component  1`] = `
   }
 }
 
-.emotion-70 {
+.emotion-73 {
   box-sizing: initial;
   display: inline-block;
   cursor: pointer;
@@ -304,7 +304,7 @@ exports[`<App /> should display the Header component  1`] = `
   padding: 0 5px;
 }
 
-.emotion-67 {
+.emotion-70 {
   width: 100%;
   height: auto;
 }
@@ -357,7 +357,7 @@ exports[`<App /> should display the Header component  1`] = `
 }
 
 <div
-  class="MuiBox-root MuiBox-root-219 emotion-78 emotion-79"
+  class="MuiBox-root MuiBox-root-219 emotion-81 emotion-82"
 >
   <header
     class="MuiPaper-root MuiPaper-elevation4 MuiAppBar-root MuiAppBar-positionStatic emotion-24 emotion-25 MuiAppBar-colorPrimary"
@@ -609,13 +609,13 @@ exports[`<App /> should display the Header component  1`] = `
     </div>
   </div>
   <div
-    class="emotion-76 emotion-77"
+    class="emotion-79 emotion-80"
   >
     <div
-      class="emotion-74 emotion-75"
+      class="emotion-77 emotion-78"
     >
       <div
-        class="emotion-65 emotion-66"
+        class="emotion-68 emotion-69"
       >
         Made with 
         <span
@@ -625,7 +625,7 @@ exports[`<App /> should display the Header component  1`] = `
         </span>
          on
         <span
-          class="emotion-63 emotion-64"
+          class="emotion-66 emotion-67"
         >
           <svg
             class="emotion-40 emotion-41 emotion-42"
@@ -638,7 +638,7 @@ exports[`<App /> should display the Header component  1`] = `
             />
           </svg>
           <span
-            class="emotion-61 emotion-62"
+            class="emotion-64 emotion-65"
           >
             <svg
               class="emotion-43 emotion-44 emotion-42"
@@ -700,20 +700,30 @@ exports[`<App /> should display the Header component  1`] = `
                 xlink:href="[object Object]#austria"
               />
             </svg>
+            <svg
+              class="emotion-43 emotion-44 emotion-42"
+            >
+              <title>
+                Germany
+              </title>
+              <use
+                xlink:href="[object Object]#germany"
+              />
+            </svg>
           </span>
         </span>
       </div>
       <div
-        class="emotion-72 emotion-73"
+        class="emotion-75 emotion-76"
       >
         Powered by
         <span
-          class="emotion-43 emotion-70 emotion-71"
+          class="emotion-43 emotion-73 emotion-74"
           title="Verdaccio"
         >
           <img
             alt="Verdaccio"
-            class="emotion-67 emotion-68"
+            class="emotion-70 emotion-71"
             src="[object Object]"
           />
         </span>
@@ -725,7 +735,7 @@ exports[`<App /> should display the Header component  1`] = `
 `;
 
 exports[`<App /> should display the Loading component at the beginning  1`] = `
-.emotion-68 {
+.emotion-71 {
   background-color: #fff;
 }
 
@@ -876,7 +886,7 @@ exports[`<App /> should display the Loading component at the beginning  1`] = `
   }
 }
 
-.emotion-66 {
+.emotion-69 {
   background: #f9f9f9;
   border-top: 1px solid #e3e3e3;
   color: #999999;
@@ -884,7 +894,7 @@ exports[`<App /> should display the Loading component at the beginning  1`] = `
   padding: 20px;
 }
 
-.emotion-64 {
+.emotion-67 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -901,7 +911,7 @@ exports[`<App /> should display the Loading component at the beginning  1`] = `
 }
 
 @media (min-width:768px) {
-  .emotion-64 {
+  .emotion-67 {
     min-width: 400px;
     max-width: 800px;
     margin: auto;
@@ -913,12 +923,12 @@ exports[`<App /> should display the Loading component at the beginning  1`] = `
 }
 
 @media (min-width:1024px) {
-  .emotion-64 {
+  .emotion-67 {
     max-width: 1240px;
   }
 }
 
-.emotion-55 {
+.emotion-58 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -927,7 +937,7 @@ exports[`<App /> should display the Loading component at the beginning  1`] = `
 }
 
 @media (min-width:768px) {
-  .emotion-55 {
+  .emotion-58 {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -940,12 +950,12 @@ exports[`<App /> should display the Loading component at the beginning  1`] = `
   padding: 0 5px;
 }
 
-.emotion-53 {
+.emotion-56 {
   position: relative;
   height: 18px;
 }
 
-.emotion-53:hover .emotion-52 {
+.emotion-56:hover .emotion-55 {
   visibility: visible;
 }
 
@@ -958,7 +968,7 @@ exports[`<App /> should display the Loading component at the beginning  1`] = `
   padding: 0 10px;
 }
 
-.emotion-51 {
+.emotion-54 {
   position: absolute;
   background: #d3dddd;
   padding: 1px 4px;
@@ -976,7 +986,7 @@ exports[`<App /> should display the Loading component at the beginning  1`] = `
   top: -2px;
 }
 
-.emotion-51:before {
+.emotion-54:before {
   content: '';
   position: absolute;
   top: 29%;
@@ -998,7 +1008,7 @@ exports[`<App /> should display the Loading component at the beginning  1`] = `
   padding: 0 5px;
 }
 
-.emotion-62 {
+.emotion-65 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -1011,7 +1021,7 @@ exports[`<App /> should display the Loading component at the beginning  1`] = `
 }
 
 @media (min-width:768px) {
-  .emotion-62 {
+  .emotion-65 {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -1019,7 +1029,7 @@ exports[`<App /> should display the Loading component at the beginning  1`] = `
   }
 }
 
-.emotion-60 {
+.emotion-63 {
   box-sizing: initial;
   display: inline-block;
   cursor: pointer;
@@ -1028,13 +1038,13 @@ exports[`<App /> should display the Loading component at the beginning  1`] = `
   padding: 0 5px;
 }
 
-.emotion-57 {
+.emotion-60 {
   width: 100%;
   height: auto;
 }
 
 <div
-  class="MuiBox-root MuiBox-root-2 emotion-68 emotion-69"
+  class="MuiBox-root MuiBox-root-2 emotion-71 emotion-72"
   style="display: none;"
 >
   <header
@@ -1246,13 +1256,13 @@ exports[`<App /> should display the Loading component at the beginning  1`] = `
     class="MuiBox-root MuiBox-root-195 emotion-26 emotion-27"
   />
   <div
-    class="emotion-66 emotion-67"
+    class="emotion-69 emotion-70"
   >
     <div
-      class="emotion-64 emotion-65"
+      class="emotion-67 emotion-68"
     >
       <div
-        class="emotion-55 emotion-56"
+        class="emotion-58 emotion-59"
       >
         Made with 
         <span
@@ -1262,7 +1272,7 @@ exports[`<App /> should display the Loading component at the beginning  1`] = `
         </span>
          on
         <span
-          class="emotion-53 emotion-54"
+          class="emotion-56 emotion-57"
         >
           <svg
             class="emotion-30 emotion-31 emotion-32"
@@ -1275,7 +1285,7 @@ exports[`<App /> should display the Loading component at the beginning  1`] = `
             />
           </svg>
           <span
-            class="emotion-51 emotion-52"
+            class="emotion-54 emotion-55"
           >
             <svg
               class="emotion-33 emotion-34 emotion-32"
@@ -1337,20 +1347,30 @@ exports[`<App /> should display the Loading component at the beginning  1`] = `
                 xlink:href="[object Object]#austria"
               />
             </svg>
+            <svg
+              class="emotion-33 emotion-34 emotion-32"
+            >
+              <title>
+                Germany
+              </title>
+              <use
+                xlink:href="[object Object]#germany"
+              />
+            </svg>
           </span>
         </span>
       </div>
       <div
-        class="emotion-62 emotion-63"
+        class="emotion-65 emotion-66"
       >
         Powered by
         <span
-          class="emotion-33 emotion-60 emotion-61"
+          class="emotion-33 emotion-63 emotion-64"
           title="Verdaccio"
         >
           <img
             alt="Verdaccio"
-            class="emotion-57 emotion-58"
+            class="emotion-60 emotion-61"
             src="[object Object]"
           />
         </span>
