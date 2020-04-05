@@ -25,6 +25,7 @@ const colors = {
   secondary: '#20232a',
   background: '#fff',
   dodgerBlue: '#1ba1f2',
+  cyanBlue: '#253341',
 };
 
 const themeModes = {
@@ -33,8 +34,8 @@ const themeModes = {
   },
   dark: {
     ...colors,
-    primary: '#253341',
-    secondary: '#20232a',
+    primary: '#fff',
+    secondary: '#424242',
     background: '#1A202C',
   },
 };
@@ -132,6 +133,7 @@ declare module '@material-ui/core/styles/createPalette' {
     nobel02: string;
     background: string;
     dodgerBlue: string;
+    cyanBlue: string;
   }
 
   /* eslint-disable-next-line @typescript-eslint/no-empty-interface */

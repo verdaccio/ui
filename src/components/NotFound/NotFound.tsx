@@ -10,16 +10,6 @@ import { Theme } from '../../design-tokens/theme';
 
 import PackageImg from './img/package.svg';
 
-const EmptyPackage = styled('img')({
-  width: '150px',
-  margin: '0 auto',
-});
-
-const StyledHeading = styled(Heading)<{ theme?: Theme }>(props => ({
-  color: props.theme && props.theme.palette.primary.main,
-  marginBottom: 16,
-}));
-
 const NotFound: React.FC = () => {
   const history = useHistory();
   const { t } = useTranslation();
@@ -49,3 +39,13 @@ const NotFound: React.FC = () => {
 };
 
 export default NotFound;
+
+const EmptyPackage = styled('img')({
+  width: '150px',
+  margin: '0 auto',
+});
+
+const StyledHeading = styled(Heading)<{ theme?: Theme }>(({ theme }) => ({
+  color: theme?.palette.type === 'light' ? theme?.palette.primary.main : theme?.palette.white,
+  marginBottom: 16,
+}));
