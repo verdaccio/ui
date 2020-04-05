@@ -54,11 +54,12 @@ export const SearchWrapper = styled('div')({
 });
 
 export const NavBar = styled(AppBar)<{ theme?: Theme }>(({ theme }) => ({
-  backgroundColor: theme && theme.palette.primary.main,
+  backgroundColor: theme?.palette.type === 'light' ? theme?.palette.primary.main : theme?.palette.cyanBlue,
+  color: theme?.palette.white,
   minHeight: 60,
   display: 'flex',
   justifyContent: 'center',
-  [`@media (min-width: ${theme && theme.breakPoints.medium}px)`]: css`
+  [`@media (min-width: ${theme?.breakPoints.medium}px)`]: css`
     ${SearchWrapper} {
       display: flex;
     }
@@ -69,12 +70,12 @@ export const NavBar = styled(AppBar)<{ theme?: Theme }>(({ theme }) => ({
       display: none;
     }
   `,
-  [`@media (min-width: ${theme && theme.breakPoints.large}px)`]: css`
+  [`@media (min-width: ${theme?.breakPoints.large}px)`]: css`
     ${InnerNavBar} {
       padding: 0 20px;
     }
   `,
-  [`@media (min-width: ${theme && theme.breakPoints.xlarge}px)`]: css`
+  [`@media (min-width: ${theme?.breakPoints.xlarge}px)`]: css`
     ${InnerNavBar} {
       max-width: 1240px;
       width: 100%;
@@ -83,6 +84,6 @@ export const NavBar = styled(AppBar)<{ theme?: Theme }>(({ theme }) => ({
   `,
 }));
 
-export const StyledLink = styled(Link)<{ theme?: Theme }>(props => ({
-  color: props.theme && props.theme.palette.white,
+export const StyledLink = styled(Link)<{ theme?: Theme }>(({ theme }) => ({
+  color: theme?.palette.white,
 }));

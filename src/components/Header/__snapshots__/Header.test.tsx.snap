@@ -3,6 +3,7 @@
 exports[`<Header /> component with logged in state should load the component in logged in state 1`] = `
 .emotion-24 {
   background-color: #4b5e40;
+  color: #fff;
   min-height: 60px;
   display: -webkit-box;
   display: -webkit-flex;
@@ -360,6 +361,7 @@ exports[`<Header /> component with logged in state should load the component in 
 exports[`<Header /> component with logged in state should load the component in logged out state 1`] = `
 .emotion-24 {
   background-color: #4b5e40;
+  color: #fff;
   min-height: 60px;
   display: -webkit-box;
   display: -webkit-flex;

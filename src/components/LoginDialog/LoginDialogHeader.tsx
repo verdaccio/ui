@@ -9,20 +9,6 @@ import Avatar from '../../muiComponents/Avatar';
 import Box from '../../muiComponents/Box';
 import IconButton from '../../muiComponents/IconButton';
 import { Theme } from '../../design-tokens/theme';
-
-const StyledAvatar = styled(Avatar)<{ theme?: Theme }>(({ theme }) => ({
-  margin: theme.spacing(1),
-  backgroundColor: theme.palette.primary.main,
-  color: theme.palette.white,
-}));
-
-const StyledIconButton = styled(IconButton)<{ theme?: Theme }>(({ theme }) => ({
-  position: 'absolute',
-  right: theme.spacing() / 2,
-  top: theme.spacing() / 2,
-  color: theme.palette.grey[500],
-}));
-
 interface Props {
   onClose?: () => void;
 }
@@ -46,3 +32,16 @@ const LoginDialogHeader: React.FC<Props> = ({ onClose }) => {
 };
 
 export default LoginDialogHeader;
+
+const StyledAvatar = styled(Avatar)<{ theme?: Theme }>(({ theme }) => ({
+  margin: theme?.spacing(1),
+  backgroundColor: theme?.palette.type === 'light' ? theme?.palette.primary.main : theme?.palette.cyanBlue,
+  color: theme?.palette.white,
+}));
+
+const StyledIconButton = styled(IconButton)<{ theme?: Theme }>(({ theme }) => ({
+  position: 'absolute',
+  right: theme?.spacing() / 2,
+  top: theme?.spacing() / 2,
+  color: theme?.palette.grey[500],
+}));
