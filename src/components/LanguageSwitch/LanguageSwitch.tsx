@@ -1,35 +1,65 @@
 import React, { MouseEvent } from 'react';
 import LanguageIcon from '@material-ui/icons/Language';
-import { useTranslation } from 'react-i18next';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
-import i18n from 'i18next';
+import i18next, { TFunction } from 'i18next';
+import { useTranslation } from 'react-i18next';
 import { withStyles } from '@material-ui/core/styles';
+import ClickAwayListener from '@material-ui/core/ClickAwayListener';
+import Grow from '@material-ui/core/Grow';
+import Popper from '@material-ui/core/Popper';
+import MenuList from '@material-ui/core/MenuList';
 import styled from '@emotion/styled';
-import Menu from '@material-ui/core/Menu';
-import MenuItem from '@material-ui/core/MenuItem';
 
+import Paper from '../../muiComponents/Paper';
+import MenuItem from '../../muiComponents/MenuItem';
 import Button from '../../muiComponents/Button';
 import Tooltip from '../../muiComponents/Tooltip';
 import Divider from '../../muiComponents/Divider';
 import Box from '../../muiComponents/Box';
-import Link from '../Link';
 import { Theme } from '../../design-tokens/theme';
+import Link from '../Link';
+import Icon from '../Icon';
 
-import LanguageSwitchMenuItemContent from './LanguageSwitchMenuItemContent';
+const getTranslatedCurrentLanguage = (
+  t: TFunction
+): { [key: string]: { translation: string; icon: React.ComponentProps<typeof Icon>['name'] } } => ({
+  'en-us': {
+    translation: t('lng.english'),
+    icon: 'usa',
+  },
+  'pt-br': {
+    translation: t('lng.portuguese'),
+    icon: 'brazil',
+  },
+  'de-de': {
+    translation: t('lng.german'),
+    icon: 'germany',
+  },
+  'es-es': {
+    translation: t('lng.spanish'),
+    icon: 'spain',
+  },
+  'zh-cn': {
+    translation: t('lng.chinese'),
+    icon: 'china',
+  },
+});
 
 const LanguageSwitch = () => {
   const { t } = useTranslation();
   const [open, setOpen] = React.useState(false);
   const anchorRef = React.useRef<HTMLButtonElement>(null);
 
-  const languages = i18n.options.resources ? Object.keys(i18n.options.resources) : [];
-  const userLanguage = i18n.language || i18n.options?.fallbackLng?.[0];
+  const languages = i18next.options.resources ? Object.keys(i18next.options.resources) : [];
+  const currentLanguage = i18next.language || i18next.options?.fallbackLng?.[0];
+
+  const { translation: userLanguage } = getTranslatedCurrentLanguage(t)[currentLanguage.toLowerCase()];
 
   const handleToggle = () => {
     setOpen(prevOpen => !prevOpen);
   };
 
-  const handleClose = (event: MouseEvent<HTMLLIElement | HTMLUListElement>) => {
+  const handleClose = (event: MouseEvent<HTMLLIElement | Document | HTMLAnchorElement>) => {
     if (anchorRef.current) {
       if (anchorRef.current.contains(event.currentTarget)) {
         return;
@@ -52,7 +82,7 @@ const LanguageSwitch = () => {
   }, [open]);
 
   const handleSwitchLanguage = (language: string) => (event: MouseEvent<HTMLLIElement>) => {
-    i18n.changeLanguage(language);
+    i18next.changeLanguage(language);
     handleClose(event);
   };
 
@@ -65,23 +95,38 @@ const LanguageSwitch = () => {
           <ExpandMoreIcon fontSize="small" />
         </SwitchButton>
       </Tooltip>
-      <Menu anchorEl={anchorRef.current} onClose={handleClose} open={open}>
-        {languages.map(language => (
-          <MenuItem key={language} onClick={handleSwitchLanguage(language)} selected={userLanguage === language}>
-            <LanguageSwitchMenuItemContent language={language} />
-          </MenuItem>
-        ))}
-        <Box my={1}>
-          <Divider />
-        </Box>
-        <MenuItem
-          component="a"
-          href="https://github.com/verdaccio/ui#translations"
-          onClick={handleClose}
-          target="_blank">
-          {`${t('help-to-translate')}`}
-        </MenuItem>
-      </Menu>
+      <Popper anchorEl={anchorRef.current} disablePortal={true} open={open} role={undefined} transition={true}>
+        {({ TransitionProps }) => (
+          <Grow {...TransitionProps}>
+            <Paper>
+              <ClickAwayListener onClickAway={handleClose}>
+                <MenuList>
+                  {languages.map(language => {
+                    const { icon, translation } = getTranslatedCurrentLanguage(t)[language.toLowerCase()];
+                    return (
+                      <StyledMenuItem
+                        key={language}
+                        onClick={handleSwitchLanguage(language)}
+                        selected={userLanguage === translation}>
+                        <Icon name={icon} size="md" />
+                        {translation}
+                      </StyledMenuItem>
+                    );
+                  })}
+                  <Box my={1}>
+                    <Divider />
+                  </Box>
+                  <MenuItem button={true}>
+                    <StyledLink external={true} onClick={handleClose} to="https://github.com/verdaccio/ui#translations">
+                      {`${t('help-to-translate')}`}
+                    </StyledLink>
+                  </MenuItem>
+                </MenuList>
+              </ClickAwayListener>
+            </Paper>
+          </Grow>
+        )}
+      </Popper>
     </>
   );
 };
@@ -96,7 +141,17 @@ const SwitchButton = withStyles((theme: Theme) => ({
   },
 }))(Button);
 
+const StyledMenuItem = withStyles((theme: Theme) => ({
+  root: {
+    display: 'grid',
+    cursor: 'pointer',
+    gridGap: theme?.spacing(0.5),
+    gridTemplateColumns: '20px 1fr',
+    alignItems: 'center',
+  },
+}))(MenuItem);
+
 const StyledLink = styled(Link)<{ theme?: Theme }>(({ theme }) => ({
-  color: theme?.palette.white,
+  color: theme?.palette.type === 'dark' ? theme?.palette.white : theme?.palette.text.primary,
   textDecoration: 'none',
 }));

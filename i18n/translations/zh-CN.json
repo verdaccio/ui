@@ -134,5 +134,13 @@
         },
         "app-context-not-correct-used": "The app context was not correct used",
         "package-meta-is-required-at-detail-context": "packageMeta is required at DetailContext"
-    }
+    },
+    "lng": {
+        "english": "英語",
+        "portuguese": "葡萄牙語",
+        "spanish": "西班牙文",
+        "german": "德語",
+        "chinese": "中文"
+    },
+    "help-to-translate": "幫助翻譯"
 }
