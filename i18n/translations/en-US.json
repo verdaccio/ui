@@ -143,5 +143,6 @@
         "german": "German",
         "chinese": "Chinese"
     },
-    "help-to-translate": "Help to translate"
+    "help-to-translate": "Help to translate",
+    "change-language": "Change language"
 }

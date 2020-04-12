@@ -96,7 +96,7 @@ const LanguageSwitch = () => {
 
   return (
     <>
-      <Tooltip enterDelay={300} title={t('changeLanguage')}>
+      <Tooltip enterDelay={300} title={t('change-language')}>
         <SwitchButton color="inherit" onClick={handleToggle} ref={anchorRef}>
           <LanguageIcon />
           <span>{userLanguage}</span>
