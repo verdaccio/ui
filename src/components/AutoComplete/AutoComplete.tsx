@@ -62,7 +62,7 @@ const renderSuggestion = (suggestion, { query, isHighlighted }): JSX.Element => 
   const matches = match(suggestion.name, query);
   const parts = parse(suggestion.name, matches);
   return (
-    <StyledMenuItem component="div" selected={isHighlighted}>
+    <StyledMenuItem selected={isHighlighted}>
       <div>
         {parts.map((part, index) => {
           return (
@@ -78,7 +78,7 @@ const renderSuggestion = (suggestion, { query, isHighlighted }): JSX.Element => 
 
 const renderMessage = (message): JSX.Element => {
   return (
-    <MenuItem component="div" selected={false}>
+    <MenuItem selected={false}>
       <div>{message}</div>
     </MenuItem>
   );

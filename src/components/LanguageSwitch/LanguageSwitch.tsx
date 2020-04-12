@@ -1,4 +1,4 @@
-import React, { MouseEvent } from 'react';
+import React, { MouseEvent, useCallback } from 'react';
 import LanguageIcon from '@material-ui/icons/Language';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import i18next, { TFunction } from 'i18next';
@@ -19,6 +19,8 @@ import Box from '../../muiComponents/Box';
 import { Theme } from '../../design-tokens/theme';
 import Link from '../Link';
 import Icon from '../Icon';
+
+const VERDACCIO_UI_GITHUB_REPOSITORY = 'https://github.com/verdaccio/ui';
 
 const getTranslatedCurrentLanguage = (
   t: TFunction
@@ -55,19 +57,30 @@ const LanguageSwitch = () => {
 
   const { translation: userLanguage } = getTranslatedCurrentLanguage(t)[currentLanguage.toLowerCase()];
 
-  const handleToggle = () => {
+  const handleToggle = useCallback(() => {
     setOpen(prevOpen => !prevOpen);
-  };
+  }, []);
 
-  const handleClose = (event: MouseEvent<HTMLLIElement | Document | HTMLAnchorElement>) => {
-    if (anchorRef.current) {
-      if (anchorRef.current.contains(event.currentTarget)) {
-        return;
+  const handleClose = useCallback(
+    (event: MouseEvent<HTMLLIElement | Document | HTMLAnchorElement>) => {
+      if (anchorRef.current) {
+        if (anchorRef.current.contains(event.currentTarget)) {
+          return;
+        }
       }
-    }
 
-    setOpen(false);
-  };
+      setOpen(false);
+    },
+    [setOpen]
+  );
+
+  const handleSwitchLanguage = useCallback(
+    (language: string) => (event: MouseEvent<HTMLLIElement>) => {
+      i18next.changeLanguage(language);
+      handleClose(event);
+    },
+    [handleClose]
+  );
 
   // return focus to the button when we transitioned from !open -> open
   const prevOpen = React.useRef(open);
@@ -80,11 +93,6 @@ const LanguageSwitch = () => {
 
     prevOpen.current = open;
   }, [open]);
-
-  const handleSwitchLanguage = (language: string) => (event: MouseEvent<HTMLLIElement>) => {
-    i18next.changeLanguage(language);
-    handleClose(event);
-  };
 
   return (
     <>
@@ -117,7 +125,7 @@ const LanguageSwitch = () => {
                     <Divider />
                   </Box>
                   <MenuItem button={true}>
-                    <StyledLink external={true} onClick={handleClose} to="https://github.com/verdaccio/ui#translations">
+                    <StyledLink external={true} onClick={handleClose} to={VERDACCIO_UI_GITHUB_REPOSITORY}>
                       {`${t('help-to-translate')}`}
                     </StyledLink>
                   </MenuItem>
