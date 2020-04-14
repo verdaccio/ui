@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.5.0](https://github.com/verdaccio/ui/compare/v1.4.0...v1.5.0) (2020-04-08)
+
+
+### Features
+
+* **flag:** Added Germany flag ([#454](https://github.com/verdaccio/ui/issues/454)) ([07620e5](https://github.com/verdaccio/ui/commit/07620e5d4b1ed54bae2266d936af5306bfbe2d8b))
+
+
+### Bug Fixes
+
+* **styles:** Updated dark colors ([#455](https://github.com/verdaccio/ui/issues/455)) ([d29aa05](https://github.com/verdaccio/ui/commit/d29aa05cc6ef31cb871e79de10c1b1ddd74f023e))
+
 ## [1.4.0](https://github.com/verdaccio/ui/compare/v1.3.0...v1.4.0) (2020-04-02)
 
 
