@@ -5,6 +5,7 @@ import translationEN from './translations/en-US.json';
 import translationPT from './translations/pt-BR.json';
 import translationES from './translations/es-ES.json';
 import translationDE from './translations/de-DE.json';
+import translationFR from './translations/fr-FR.json';
 import translationCN from './translations/zh-CN.json';
 
 i18n
@@ -16,7 +17,7 @@ i18n
     // in case window.VEDACCIO_LANGUAGE is undefined,it will fall back to 'en-US'
     lng: window?.__VERDACCIO_BASENAME_UI_OPTIONS?.language,
     fallbackLng: 'en-US',
-    whitelist: ['en-US', 'pt-BR', 'es-ES', 'de-DE', 'zh-CN'],
+    whitelist: ['en-US', 'pt-BR', 'es-ES', 'de-DE', 'fr-FR', 'zh-CN'],
     load: 'currentOnly',
     resources: {
       'en-US': {
@@ -30,6 +31,9 @@ i18n
       },
       'de-DE': {
         translation: translationDE,
+      },
+      'fr-FR': {
+        translation: translationFR,
       },
       'zh-CN': {
         translation: translationCN,
