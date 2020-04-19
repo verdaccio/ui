@@ -19,7 +19,7 @@ const ThemeProvider: React.FC = ({ children }) => {
   const themeMode: ThemeMode = isDarkMode ? 'dark' : 'light';
 
   useEffect(() => {
-    i18next.changeLanguage(language);
+    i18next?.changeLanguage(language);
   }, [language, setLanguage]);
 
   return (

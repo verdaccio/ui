@@ -9,6 +9,7 @@ import Grow from '@material-ui/core/Grow';
 import Popper from '@material-ui/core/Popper';
 import MenuList from '@material-ui/core/MenuList';
 import styled from '@emotion/styled';
+import { css } from '@emotion/core';
 
 import { Language } from '../../../i18n/config';
 import ThemeContext from '../../design-tokens/ThemeContext';
@@ -106,18 +107,18 @@ const LanguageSwitch = () => {
   }, [open]);
 
   return (
-    <>
+    <Wrapper>
       <Tooltip enterDelay={300} title={t('change-language')}>
         <SwitchButton color="inherit" onClick={handleToggle} ref={anchorRef}>
           <LanguageIcon />
-          <span>{userLanguage}</span>
+          <UserLanguage>{userLanguage}</UserLanguage>
           <ExpandMoreIcon fontSize="small" />
         </SwitchButton>
       </Tooltip>
       <Popper anchorEl={anchorRef.current} disablePortal={true} open={open} role={undefined} transition={true}>
         {({ TransitionProps }) => (
           <Grow {...TransitionProps}>
-            <Paper>
+            <StyledPaper>
               <ClickAwayListener onClickAway={handleClose}>
                 <MenuList>
                   {languages
@@ -144,21 +145,38 @@ const LanguageSwitch = () => {
                   </MenuItem>
                 </MenuList>
               </ClickAwayListener>
-            </Paper>
+            </StyledPaper>
           </Grow>
         )}
       </Popper>
-    </>
+    </Wrapper>
   );
 };
 
 export default LanguageSwitch;
 
+const Wrapper = styled('div')<{ theme?: Theme }>(({ theme }) => ({
+  display: 'none',
+  [`@media screen and (min-width: ${theme && theme.breakPoints.medium}px)`]: {
+    display: 'inline-block',
+  },
+}));
+
+const UserLanguage = styled('span')<{ theme?: Theme }>(({ theme }) => ({
+  display: 'none',
+  [`@media screen and (min-width: ${theme && theme.breakPoints.medium}px)`]: {
+    display: 'inline-block',
+  },
+}));
+
 const SwitchButton = withStyles((theme: Theme) => ({
   label: {
     display: 'grid',
     gridGap: theme?.spacing(1),
-    gridTemplateColumns: '24px 1fr 20px',
+    gridTemplateColumns: '24px 20px',
+    [`@media screen and (min-width: ${theme && theme.breakPoints.medium}px)`]: {
+      gridTemplateColumns: '24px 1fr 20px',
+    },
   },
 }))(Button);
 
@@ -169,10 +187,18 @@ const StyledMenuItem = withStyles((theme: Theme) => ({
     gridGap: theme?.spacing(0.5),
     gridTemplateColumns: '20px 1fr',
     alignItems: 'center',
+    '&:first-child': {
+      borderTopLeftRadius: 4,
+      borderTopRightRadius: 4,
+    },
   },
 }))(MenuItem);
 
 const StyledLink = styled(Link)<{ theme?: Theme }>(({ theme }) => ({
   color: theme?.palette.type === 'dark' ? theme?.palette.white : theme?.palette.text.primary,
   textDecoration: 'none',
+}));
+
+const StyledPaper = styled(Paper)<{ theme?: Theme }>(({ theme }) => ({
+  backgroundColor: theme?.palette.type === 'dark' ? theme?.palette.cyanBlue : theme?.palette.white,
 }));
