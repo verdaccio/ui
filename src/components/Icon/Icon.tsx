@@ -12,6 +12,7 @@ import pakistan from './img/pakistan.svg';
 import austria from './img/austria.svg';
 import spain from './img/spain.svg';
 import usa from './img/usa.svg';
+import france from './img/france.svg';
 import earth from './img/earth.svg';
 import verdaccio from './img/verdaccio.svg';
 import filebinary from './img/filebinary.svg';
@@ -28,6 +29,7 @@ export interface IconsMap {
   nicaragua: string;
   pakistan: string;
   austria: string;
+  france: string;
   germany: string;
   india: string;
   earth: string;
@@ -57,6 +59,7 @@ export const Icons: IconsMap = {
   version,
   germany,
   usa,
+  france,
 };
 
 export interface Props {

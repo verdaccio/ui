@@ -20,7 +20,6 @@ MenuItem.defaultProps = {
 };
 
 export default MenuItem;
-
 const StyledMaterialUIMenuItem = styled(MaterialUIMenuItem)({
   outline: 'none',
 });

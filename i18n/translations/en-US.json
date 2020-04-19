@@ -141,7 +141,8 @@
         "portuguese": "Portuguese",
         "spanish": "Spanish",
         "german": "German",
-        "chinese": "Chinese"
+        "chinese": "Chinese",
+        "french":  "French"
     },
     "help-to-translate": "Help to translate",
     "change-language": "Change language"

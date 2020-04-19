@@ -29,6 +29,10 @@ const getTranslatedCurrentLanguage = (
     translation: t('lng.english'),
     icon: 'usa',
   },
+  'fr-fr': {
+    translation: t('lng.french'),
+    icon: 'france',
+  },
   'pt-br': {
     translation: t('lng.portuguese'),
     icon: 'brazil',
@@ -109,18 +113,17 @@ const LanguageSwitch = () => {
             <Paper>
               <ClickAwayListener onClickAway={handleClose}>
                 <MenuList>
-                  {languages.map(language => {
-                    const { icon, translation } = getTranslatedCurrentLanguage(t)[language.toLowerCase()];
-                    return (
-                      <StyledMenuItem
-                        key={language}
-                        onClick={handleSwitchLanguage(language)}
-                        selected={userLanguage === translation}>
-                        <Icon name={icon} size="md" />
-                        {translation}
-                      </StyledMenuItem>
-                    );
-                  })}
+                  {languages
+                    .filter(language => language !== currentLanguage)
+                    .map(language => {
+                      const { icon, translation } = getTranslatedCurrentLanguage(t)[language.toLowerCase()];
+                      return (
+                        <StyledMenuItem key={language} onClick={handleSwitchLanguage(language)} selected={userLanguage === translation}>
+                          <Icon name={icon} size="md" />
+                          {translation}
+                        </StyledMenuItem>
+                      );
+                    })}
                   <Box my={1}>
                     <Divider />
                   </Box>
