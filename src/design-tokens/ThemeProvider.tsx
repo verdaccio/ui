@@ -18,9 +18,13 @@ const ThemeProvider: React.FC = ({ children }) => {
 
   const themeMode: ThemeMode = isDarkMode ? 'dark' : 'light';
 
+  const changeLanguage = async () => {
+    await i18next.changeLanguage(language);
+  };
+
   useEffect(() => {
-    i18next?.changeLanguage(language);
-  }, [language, setLanguage]);
+    changeLanguage();
+  }, [language, changeLanguage]);
 
   return (
     <ThemeContext.Provider value={{ isDarkMode, setIsDarkMode, language, setLanguage }}>
