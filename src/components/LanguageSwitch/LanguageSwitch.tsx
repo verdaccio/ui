@@ -1,4 +1,4 @@
-import React, { MouseEvent, useCallback } from 'react';
+import React, { MouseEvent, useCallback, useState, useRef, useContext } from 'react';
 import LanguageIcon from '@material-ui/icons/Language';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import i18next, { TFunction } from 'i18next';
@@ -10,6 +10,8 @@ import Popper from '@material-ui/core/Popper';
 import MenuList from '@material-ui/core/MenuList';
 import styled from '@emotion/styled';
 
+import { Language } from '../../../i18n/config';
+import ThemeContext from '../../design-tokens/ThemeContext';
 import Paper from '../../muiComponents/Paper';
 import MenuItem from '../../muiComponents/MenuItem';
 import Button from '../../muiComponents/Button';
@@ -52,12 +54,17 @@ const getTranslatedCurrentLanguage = (
 });
 
 const LanguageSwitch = () => {
+  const themeContext = useContext(ThemeContext);
   const { t } = useTranslation();
-  const [open, setOpen] = React.useState(false);
-  const anchorRef = React.useRef<HTMLButtonElement>(null);
+  const [open, setOpen] = useState(false);
+  const anchorRef = useRef<HTMLButtonElement>(null);
 
-  const languages = i18next.options.resources ? Object.keys(i18next.options.resources) : [];
-  const currentLanguage = i18next.language || i18next.options?.fallbackLng?.[0];
+  if (!themeContext) {
+    throw Error(t('theme-context-not-correct-used'));
+  }
+
+  const languages = (i18next.options.resources ? Object.keys(i18next.options.resources) : []) as Array<Language>;
+  const currentLanguage: Language = i18next.language || i18next.options?.fallbackLng?.[0];
 
   const { translation: userLanguage } = getTranslatedCurrentLanguage(t)[currentLanguage.toLowerCase()];
 
@@ -79,11 +86,11 @@ const LanguageSwitch = () => {
   );
 
   const handleSwitchLanguage = useCallback(
-    (language: string) => (event: MouseEvent<HTMLLIElement>) => {
-      i18next.changeLanguage(language);
+    (language: Language) => (event: MouseEvent<HTMLLIElement>) => {
+      themeContext.setLanguage(language);
       handleClose(event);
     },
-    [handleClose]
+    [handleClose, themeContext]
   );
 
   // return focus to the button when we transitioned from !open -> open
@@ -118,7 +125,10 @@ const LanguageSwitch = () => {
                     .map(language => {
                       const { icon, translation } = getTranslatedCurrentLanguage(t)[language.toLowerCase()];
                       return (
-                        <StyledMenuItem key={language} onClick={handleSwitchLanguage(language)} selected={userLanguage === translation}>
+                        <StyledMenuItem
+                          key={language}
+                          onClick={handleSwitchLanguage(language)}
+                          selected={userLanguage === translation}>
                           <Icon name={icon} size="md" />
                           {translation}
                         </StyledMenuItem>

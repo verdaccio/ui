@@ -8,6 +8,29 @@ import translationDE from './translations/de-DE.json';
 import translationFR from './translations/fr-FR.json';
 import translationCN from './translations/zh-CN.json';
 
+const languages = {
+  'en-US': {
+    translation: translationEN,
+  },
+  'pt-BR': {
+    translation: translationPT,
+  },
+  'es-ES': {
+    translation: translationES,
+  },
+  'de-DE': {
+    translation: translationDE,
+  },
+  'fr-FR': {
+    translation: translationFR,
+  },
+  'zh-CN': {
+    translation: translationCN,
+  },
+};
+
+type Language = keyof typeof languages;
+
 i18n
   // pass the i18n instance to react-i18next.
   .use(initReactI18next)
@@ -19,26 +42,7 @@ i18n
     fallbackLng: 'en-US',
     whitelist: ['en-US', 'pt-BR', 'es-ES', 'de-DE', 'fr-FR', 'zh-CN'],
     load: 'currentOnly',
-    resources: {
-      'en-US': {
-        translation: translationEN,
-      },
-      'pt-BR': {
-        translation: translationPT,
-      },
-      'es-ES': {
-        translation: translationES,
-      },
-      'de-DE': {
-        translation: translationDE,
-      },
-      'fr-FR': {
-        translation: translationFR,
-      },
-      'zh-CN': {
-        translation: translationCN,
-      },
-    },
+    resources: languages,
     debug: false,
     interpolation: {
       escapeValue: false, // react already safes from xss
@@ -46,3 +50,4 @@ i18n
   });
 
 export default i18n;
+export { Language };
