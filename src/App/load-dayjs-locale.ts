@@ -56,6 +56,12 @@ function loadDayJSLocale() {
         dayjs.locale('zh-cn');
       }
       break;
+    case 'ja-jp':
+      {
+        require('dayjs/locale/ja');
+        dayjs.locale('ja');
+      }
+      break;
     default:
       break;
   }

@@ -7,6 +7,7 @@ import translationES from './translations/es-ES.json';
 import translationDE from './translations/de-DE.json';
 import translationFR from './translations/fr-FR.json';
 import translationCN from './translations/zh-CN.json';
+import translationJP from './translations/ja-JP.json';
 
 i18n
   // pass the i18n instance to react-i18next.
@@ -17,7 +18,7 @@ i18n
     // in case window.VEDACCIO_LANGUAGE is undefined,it will fall back to 'en-US'
     lng: window?.__VERDACCIO_BASENAME_UI_OPTIONS?.language,
     fallbackLng: 'en-US',
-    whitelist: ['en-US', 'pt-BR', 'es-ES', 'de-DE', 'fr-FR', 'zh-CN'],
+    whitelist: ['en-US', 'pt-BR', 'es-ES', 'de-DE', 'fr-FR', 'zh-CN', 'ja-JP'],
     load: 'currentOnly',
     resources: {
       'en-US': {
@@ -37,6 +38,9 @@ i18n
       },
       'zh-CN': {
         translation: translationCN,
+      },
+      'ja-JP': {
+        translation: translationJP,
       },
     },
     debug: false,
