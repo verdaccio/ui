@@ -9,10 +9,10 @@ interface Props extends Omit<MenuItemProps, 'component'> {
   component?: HTMLElementTagName;
 }
 
-const MenuItem = forwardRef<MenuItemRef, Props>(function MenuItem({ button, ...props }, ref) {
+const MenuItem = forwardRef<MenuItemRef, Props>(function MenuItem(props, ref) {
   // it seems typescript has some discrimination type limitions. Please see: https://github.com/mui-org/material-ui/issues/14971
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  return <StyledMaterialUIMenuItem {...props} button={button as any} innerRef={ref} />;
+  // @ts-ignore Type Types of property 'button' are incompatible.
+  return <StyledMaterialUIMenuItem {...props} ref={ref as any} />;
 });
 
 MenuItem.defaultProps = {
@@ -20,7 +20,6 @@ MenuItem.defaultProps = {
 };
 
 export default MenuItem;
-
 const StyledMaterialUIMenuItem = styled(MaterialUIMenuItem)({
   outline: 'none',
 });
