@@ -133,7 +133,7 @@
           "sorry-we-could-not-find-it": "残念ながら、ご指定のページはありませんでした…。"
       },
       "app-context-not-correct-used": "AppContextが正しく使用されませんでした",
-      "theme-context-not-correct-used": "ThemeContextのコンテキストが正しく使用されませんでした",
+      "theme-context-not-correct-used": "ThemeContextが正しく使用されませんでした",
       "package-meta-is-required-at-detail-context": "DetailContextではpackageMetaが必要です"
   }
 }
