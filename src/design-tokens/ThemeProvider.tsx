@@ -1,6 +1,9 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { ThemeProvider as MuiThemeProvider } from '@material-ui/core/styles';
 import { ThemeProvider as EmotionThemeProvider } from 'emotion-theming';
+import i18next from 'i18next';
+
+import { Language } from '../../i18n/config';
 
 import ThemeContext from './ThemeContext';
 import { getTheme, ThemeMode } from './theme';
@@ -8,12 +11,23 @@ import useLocalStorage from './useLocalStorage';
 
 const ThemeProvider: React.FC = ({ children }) => {
   const isDarkModeDefault = window?.__VERDACCIO_BASENAME_UI_OPTIONS?.darkMode;
+  const currentLanguage: Language = i18next.language || i18next.options?.fallbackLng?.[0];
+
   const [isDarkMode, setIsDarkMode] = useLocalStorage('darkMode', !!isDarkModeDefault);
+  const [language, setLanguage] = useLocalStorage('language', currentLanguage);
 
   const themeMode: ThemeMode = isDarkMode ? 'dark' : 'light';
 
+  const changeLanguage = async () => {
+    await i18next.changeLanguage(language);
+  };
+
+  useEffect(() => {
+    changeLanguage();
+  }, [language, changeLanguage]);
+
   return (
-    <ThemeContext.Provider value={{ isDarkMode, setIsDarkMode }}>
+    <ThemeContext.Provider value={{ isDarkMode, setIsDarkMode, language, setLanguage }}>
       <EmotionThemeProvider theme={getTheme(themeMode)}>
         <MuiThemeProvider theme={getTheme(themeMode)}>{children}</MuiThemeProvider>
       </EmotionThemeProvider>

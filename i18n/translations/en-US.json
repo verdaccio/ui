@@ -135,5 +135,15 @@
         "app-context-not-correct-used": "The app context was not used correctly",
         "theme-context-not-correct-used": "The theme context was not used correctly",
         "package-meta-is-required-at-detail-context": "packageMeta is required at DetailContext"
-    }
+    },
+    "lng": {
+        "english": "English",
+        "portuguese": "Portuguese",
+        "spanish": "Spanish",
+        "german": "German",
+        "chinese": "Chinese",
+        "french":  "French"
+    },
+    "help-to-translate": "Help to translate",
+    "change-language": "Change language"
 }

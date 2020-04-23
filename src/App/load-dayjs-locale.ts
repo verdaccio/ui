@@ -25,14 +25,13 @@ function loadDayJSLocale() {
   }
 
   switch (locale.toLowerCase()) {
-    // At the moment we only support pt-BR, please see: i18n/translations/*
     case 'pt-br':
       {
         require('dayjs/locale/pt-br');
         dayjs.locale('pt-br');
       }
       break;
-    case 'de':
+    case 'de-de':
       {
         require('dayjs/locale/de');
         dayjs.locale('de');

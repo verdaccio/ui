@@ -1,6 +1,6 @@
 import { isObject } from 'util';
 
-import i18n from 'i18next';
+import i18next from 'i18next';
 import { UpLinks } from '@verdaccio/types';
 import isString from 'lodash/isString';
 import dayjs from 'dayjs';
@@ -93,5 +93,5 @@ export function getRecentReleases(time: Time = {}): Time[] {
 }
 
 export function getAuthorName(authorName: string): string {
-  return authorName.toLowerCase() === 'anonymous' ? i18n.t('author-anonymous') : authorName;
+  return authorName.toLowerCase() === 'anonymous' ? i18next.t('author-anonymous') : authorName;
 }
