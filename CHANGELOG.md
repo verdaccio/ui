@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.7.0](https://github.com/verdaccio/ui/compare/v1.6.0...v1.7.0) (2020-04-24)
+
+
+### Features
+
+* add japanese translations ([#460](https://github.com/verdaccio/ui/issues/460)) ([25def6c](https://github.com/verdaccio/ui/commit/25def6ccd5a42d43af1c33e7ace4bd7fdbec0e64))
+
 ## [1.6.0](https://github.com/verdaccio/ui/compare/v1.5.0...v1.6.0) (2020-04-23)
 
 
