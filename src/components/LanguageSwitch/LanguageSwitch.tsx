@@ -9,7 +9,6 @@ import Grow from '@material-ui/core/Grow';
 import Popper from '@material-ui/core/Popper';
 import MenuList from '@material-ui/core/MenuList';
 import styled from '@emotion/styled';
-import { css } from '@emotion/core';
 
 import { Language } from '../../../i18n/config';
 import ThemeContext from '../../design-tokens/ThemeContext';
@@ -25,34 +24,48 @@ import Icon from '../Icon';
 
 const VERDACCIO_UI_GITHUB_REPOSITORY = 'https://github.com/verdaccio/ui';
 
-const getTranslatedCurrentLanguage = (
-  t: TFunction
-): { [key: string]: { translation: string; icon: React.ComponentProps<typeof Icon>['name'] } } => ({
-  'en-us': {
-    translation: t('lng.english'),
-    icon: 'usa',
-  },
-  'fr-fr': {
-    translation: t('lng.french'),
-    icon: 'france',
-  },
-  'pt-br': {
-    translation: t('lng.portuguese'),
-    icon: 'brazil',
-  },
-  'de-de': {
-    translation: t('lng.german'),
-    icon: 'germany',
-  },
-  'es-es': {
-    translation: t('lng.spanish'),
-    icon: 'spain',
-  },
-  'zh-cn': {
-    translation: t('lng.chinese'),
-    icon: 'china',
-  },
-});
+const getTranslatedCurrentLanguageDetails = (
+  t: TFunction,
+  currentLanguage: string
+): { translation: string; icon: React.ComponentProps<typeof Icon>['name'] } => {
+  switch (currentLanguage) {
+    case 'fr-FR':
+      return {
+        translation: t('lng.french'),
+        icon: 'france',
+      };
+    case 'pt-BR':
+      return {
+        translation: t('lng.portuguese'),
+        icon: 'brazil',
+      };
+    case 'de-DE':
+      return {
+        translation: t('lng.german'),
+        icon: 'germany',
+      };
+    case 'es-ES':
+      return {
+        translation: t('lng.spanish'),
+        icon: 'spain',
+      };
+    case 'zh-CN':
+      return {
+        translation: t('lng.chinese'),
+        icon: 'china',
+      };
+    case 'ja-JP':
+      return {
+        translation: t('lng.japanese'),
+        icon: 'japan',
+      };
+    default:
+      return {
+        translation: t('lng.english'),
+        icon: 'usa',
+      };
+  }
+};
 
 const LanguageSwitch = () => {
   const themeContext = useContext(ThemeContext);
@@ -65,9 +78,9 @@ const LanguageSwitch = () => {
   }
 
   const languages = (i18next.options.resources ? Object.keys(i18next.options.resources) : []) as Array<Language>;
-  const currentLanguage: Language = i18next.language || i18next.options?.fallbackLng?.[0];
+  const currentLanguage = themeContext.language;
 
-  const { translation: userLanguage } = getTranslatedCurrentLanguage(t)[currentLanguage.toLowerCase()];
+  const { translation: userLanguage } = getTranslatedCurrentLanguageDetails(t, currentLanguage);
 
   const handleToggle = useCallback(() => {
     setOpen(prevOpen => !prevOpen);
@@ -124,7 +137,7 @@ const LanguageSwitch = () => {
                   {languages
                     .filter(language => language !== currentLanguage)
                     .map(language => {
-                      const { icon, translation } = getTranslatedCurrentLanguage(t)[language.toLowerCase()];
+                      const { icon, translation } = getTranslatedCurrentLanguageDetails(t, language);
                       return (
                         <StyledMenuItem
                           key={language}
