@@ -3,15 +3,13 @@ import { ThemeProvider as MuiThemeProvider } from '@material-ui/core/styles';
 import { ThemeProvider as EmotionThemeProvider } from 'emotion-theming';
 import i18next from 'i18next';
 
-import { Language } from '../../i18n/config';
-
 import ThemeContext from './ThemeContext';
 import { getTheme, ThemeMode } from './theme';
 import useLocalStorage from './useLocalStorage';
 
 const ThemeProvider: React.FC = ({ children }) => {
   const isDarkModeDefault = window?.__VERDACCIO_BASENAME_UI_OPTIONS?.darkMode;
-  const currentLanguage: Language = i18next.language || i18next.options?.fallbackLng?.[0];
+  const currentLanguage = i18next.languages?.[0];
 
   const [isDarkMode, setIsDarkMode] = useLocalStorage('darkMode', !!isDarkModeDefault);
   const [language, setLanguage] = useLocalStorage('language', currentLanguage);
