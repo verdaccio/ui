@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.7.1](https://github.com/verdaccio/ui/compare/v1.7.0...v1.7.1) (2020-04-27)
+
+
+### Bug Fixes
+
+* **i18n:** fixed current locale ([#462](https://github.com/verdaccio/ui/issues/462)) ([f44abd7](https://github.com/verdaccio/ui/commit/f44abd7dd08a8d68b1bfc2bf0c053f3e80a343d0))
+
 ## [1.7.0](https://github.com/verdaccio/ui/compare/v1.6.0...v1.7.0) (2020-04-24)
 
 
