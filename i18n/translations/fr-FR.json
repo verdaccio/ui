@@ -137,14 +137,14 @@
         "package-meta-is-required-at-detail-context": "packageMeta est obligatoire à DetailContext"
     },
     "lng": {
-        "english": "Anglaise",
-        "japanese": "Japonaise",
-        "portuguese": "Portugaise",
+        "english": "Anglais",
+        "japanese": "Japonais",
+        "portuguese": "Portugais",
         "spanish": "Espagnol",
-        "german": "Allemande",
-        "chinese": "Chinoise",
-        "french": "Française"
+        "german": "Allemand",
+        "chinese": "Chinois",
+        "french": "Français"
     },
-    "help-to-translate": "Aide à traduire",
+    "help-to-translate": "Aide à la traduction",
     "change-language": "Changer la langue"
 }
