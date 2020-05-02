@@ -109,7 +109,7 @@
             "title": "贡献者"
         },
         "engines": {
-            "npm-version": "NPM Version",
+            "npm-version": "NPM版本",
             "node-js": "NODE JS"
         }
     },
@@ -136,14 +136,14 @@
         "package-meta-is-required-at-detail-context": "packageMeta is required at DetailContext"
     },
     "lng": {
-        "english": "英語",
-        "japanese": "日語",
-        "portuguese": "葡萄牙語",
-        "spanish": "西班牙文",
-        "german": "德語",
+        "english": "英语",
+        "japanese": "日语",
+        "portuguese": "葡萄牙语",
+        "spanish": "西班牙语",
+        "german": "德语",
         "chinese": "中文",
-        "french": "法國人"
+        "french": "法语"
     },
-    "help-to-translate": "幫助翻譯",
-    "change-language": "改變語言"
+    "help-to-translate": "幫助翻译",
+    "change-language": "改变语言"
 }
