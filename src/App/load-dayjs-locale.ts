@@ -19,12 +19,13 @@ function loadDayJSLocale() {
   const fallbackLanguage = getFallFackLanguage();
   const locale = i18n.language || fallbackLanguage;
 
-  // dayjs loades en-US by default
-  if (!locale || locale === 'en-US') {
-    return;
-  }
-
   switch (locale.toLowerCase()) {
+    case 'en-us':
+      {
+        require('dayjs/locale/en');
+        dayjs.locale('en');
+      }
+      break;
     case 'pt-br':
       {
         require('dayjs/locale/pt-br');
