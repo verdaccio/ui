@@ -61,6 +61,12 @@ function loadDayJSLocale() {
         dayjs.locale('ja');
       }
       break;
+    case 'uk-ua':
+      {
+        require('dayjs/locale/uk');
+        dayjs.locale('uk');
+      }
+      break;
     default:
       break;
   }

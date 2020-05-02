@@ -59,6 +59,11 @@ const getTranslatedCurrentLanguageDetails = (
         translation: t('lng.japanese'),
         icon: 'japan',
       };
+    case 'uk-UA':
+      return {
+        translation: t('lng.ukraine'),
+        icon: 'ukraine',
+      };
     default:
       return {
         translation: t('lng.english'),
@@ -139,10 +144,7 @@ const LanguageSwitch = () => {
                     .map(language => {
                       const { icon, translation } = getTranslatedCurrentLanguageDetails(t, language);
                       return (
-                        <StyledMenuItem
-                          key={language}
-                          onClick={handleSwitchLanguage(language)}
-                          selected={userLanguage === translation}>
+                        <StyledMenuItem key={language} onClick={handleSwitchLanguage(language)} selected={userLanguage === translation}>
                           <Icon name={icon} size="md" />
                           {translation}
                         </StyledMenuItem>
