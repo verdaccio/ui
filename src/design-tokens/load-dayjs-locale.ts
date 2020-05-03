@@ -19,12 +19,7 @@ function loadDayJSLocale() {
   const fallbackLanguage = getFallFackLanguage();
   const locale = i18n.language || fallbackLanguage;
 
-  // dayjs loades en-US by default
-  if (!locale || locale === 'en-US') {
-    return;
-  }
-
-  switch (locale.toLowerCase()) {
+  switch (locale?.toLowerCase()) {
     case 'pt-br':
       {
         require('dayjs/locale/pt-br');
@@ -61,7 +56,17 @@ function loadDayJSLocale() {
         dayjs.locale('ja');
       }
       break;
+    case 'uk-ua':
+      {
+        require('dayjs/locale/uk');
+        dayjs.locale('uk');
+      }
+      break;
     default:
+      {
+        require('dayjs/locale/en');
+        dayjs.locale('en');
+      }
       break;
   }
 }

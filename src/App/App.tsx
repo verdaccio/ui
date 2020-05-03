@@ -13,10 +13,10 @@ import Loading from '../components/Loading';
 import Box from '../muiComponents/Box';
 import StyleBaseline from '../design-tokens/StyleBaseline';
 import { Theme } from '../design-tokens/theme';
+import loadDayJSLocale from '../design-tokens/load-dayjs-locale';
 
 import AppContextProvider from './AppContextProvider';
 import AppRoute, { history } from './AppRoute';
-import loadDayJSLocale from './load-dayjs-locale';
 
 const StyledBox = styled(Box)<{ theme?: Theme }>(({ theme }) => ({
   backgroundColor: theme?.palette.background.default,

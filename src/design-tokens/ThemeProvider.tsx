@@ -3,6 +3,7 @@ import { ThemeProvider as MuiThemeProvider } from '@material-ui/core/styles';
 import { ThemeProvider as EmotionThemeProvider } from 'emotion-theming';
 import i18next from 'i18next';
 
+import loadDayJSLocale from './load-dayjs-locale';
 import ThemeContext from './ThemeContext';
 import { getTheme, ThemeMode } from './theme';
 import useLocalStorage from './useLocalStorage';
@@ -22,7 +23,8 @@ const ThemeProvider: React.FC = ({ children }) => {
 
   useEffect(() => {
     changeLanguage();
-  }, [language, changeLanguage]);
+    loadDayJSLocale();
+  }, [language, changeLanguage, loadDayJSLocale]);
 
   return (
     <ThemeContext.Provider value={{ isDarkMode, setIsDarkMode, language, setLanguage }}>
