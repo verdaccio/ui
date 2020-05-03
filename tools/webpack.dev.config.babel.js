@@ -42,7 +42,7 @@ export default {
       title: 'Verdaccio Dev UI',
       scope: '',
       filename: 'index.html',
-      verdaccioURL: '//localhost:4872',
+      verdaccioURL: '//localhost:4873',
       template: `${env.SRC_ROOT}/template/index.html`,
       debug: true,
       inject: true,
