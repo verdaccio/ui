@@ -119,7 +119,7 @@ The file ```pt-BR ``` should contain:
  ```
  "lng": {
      ...,
-     "cs_cz": "Tcheco"
+     "czech": "Tcheco"
  }
  ```
 
