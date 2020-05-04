@@ -2,6 +2,8 @@
 export interface VerdaccioOptions {
   url_prefix: string;
   base: string;
+  language?: string;
+  darkMode?: boolean;
 }
 
 declare global {

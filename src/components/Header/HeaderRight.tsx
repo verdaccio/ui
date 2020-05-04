@@ -1,6 +1,9 @@
-import React, { useState, useEffect, MouseEvent } from 'react';
+import React, { useState, useEffect, useContext, MouseEvent } from 'react';
+import { useTranslation } from 'react-i18next';
 
 import Button from '../../muiComponents/Button';
+import ThemeContext from '../../design-tokens/ThemeContext';
+import LanguageSwitch from '../LanguageSwitch';
 
 import { RightSide } from './styles';
 import HeaderToolTip from './HeaderToolTip';
@@ -23,8 +26,15 @@ const HeaderRight: React.FC<Props> = ({
   onToggleMobileNav,
   onOpenRegistryInfoDialog,
 }) => {
+  const themeContext = useContext(ThemeContext);
   const [anchorEl, setAnchorEl] = useState();
   const [isMenuOpen, setIsMenuOpen] = useState();
+
+  const { t } = useTranslation();
+
+  if (!themeContext) {
+    throw Error(t('theme-context-not-correct-used'));
+  }
 
   useEffect(() => {
     setIsMenuOpen(Boolean(anchorEl));
@@ -52,13 +62,26 @@ const HeaderRight: React.FC<Props> = ({
     onToggleLogin();
   };
 
+  const handleToggleDarkLightMode = () => {
+    setTimeout(() => {
+      themeContext.setIsDarkMode(!themeContext.isDarkMode);
+    }, 300);
+  };
+
   return (
     <RightSide data-testid="header-right">
       {!withoutSearch && (
-        <HeaderToolTip onClick={onToggleMobileNav} title={'Search packages'} tooltipIconType={'search'} />
+        <HeaderToolTip onClick={onToggleMobileNav} title={t('search.packages')} tooltipIconType={'search'} />
       )}
-      <HeaderToolTip title={'Documentation'} tooltipIconType={'help'} />
-      <HeaderToolTip onClick={onOpenRegistryInfoDialog} title={'Registry Information'} tooltipIconType={'info'} />
+      <LanguageSwitch />
+      <HeaderToolTip title={t('header.documentation')} tooltipIconType={'help'} />
+      <HeaderToolTip onClick={onOpenRegistryInfoDialog} title={t('header.registry-info')} tooltipIconType={'info'} />
+      <HeaderToolTip
+        onClick={handleToggleDarkLightMode}
+        title={t('header.documentation')}
+        tooltipIconType={themeContext.isDarkMode ? 'dark-mode' : 'light-mode'}
+      />
+
       {username ? (
         <HeaderMenu
           anchorEl={anchorEl}
@@ -70,7 +93,7 @@ const HeaderRight: React.FC<Props> = ({
         />
       ) : (
         <Button color="inherit" data-testid="header--button-login" onClick={handleToggleLogin}>
-          {'Login'}
+          {t('button.login')}
         </Button>
       )}
     </RightSide>

@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from '@emotion/styled';
+import { useTranslation } from 'react-i18next';
 
 import CopyToClipBoard from '../CopyToClipBoard';
 import Avatar from '../../muiComponents/Avatar';
@@ -43,14 +44,16 @@ interface Interface {
 }
 
 const InstallListItem: React.FC<Interface> = ({ packageName, dependencyManager }) => {
+  const { t } = useTranslation();
+
   switch (dependencyManager) {
     case DependencyManager.NPM:
       return (
         <InstallItem button={true} data-testid={'installListItem-npm'}>
           <PackageMangerAvatar alt="npm" src={npmLogo} />
           <InstallListItemText
-            primary={<CopyToClipBoard text={`npm install ${packageName}`} />}
-            secondary={'Install using npm'}
+            primary={<CopyToClipBoard text={t('sidebar.installation.install-using-npm-command', { packageName })} />}
+            secondary={t('sidebar.installation.install-using-npm')}
           />
         </InstallItem>
       );
@@ -59,8 +62,8 @@ const InstallListItem: React.FC<Interface> = ({ packageName, dependencyManager }
         <InstallItem button={true} data-testid={'installListItem-yarn'}>
           <PackageMangerAvatar alt="yarn" src={yarnLogo} />
           <InstallListItemText
-            primary={<CopyToClipBoard text={`yarn add ${packageName}`} />}
-            secondary={'Install using yarn'}
+            primary={<CopyToClipBoard text={t('sidebar.installation.install-using-yarn-command', { packageName })} />}
+            secondary={t('sidebar.installation.install-using-yarn')}
           />
         </InstallItem>
       );
@@ -69,8 +72,8 @@ const InstallListItem: React.FC<Interface> = ({ packageName, dependencyManager }
         <InstallItem button={true} data-testid={'installListItem-pnpm'}>
           <PackageMangerAvatar alt={'pnpm'} src={pnpmLogo} />
           <InstallListItemText
-            primary={<CopyToClipBoard text={`pnpm install ${packageName}`} />}
-            secondary={'Install using pnpm'}
+            primary={<CopyToClipBoard text={t('sidebar.installation.install-using-pnpm-command', { packageName })} />}
+            secondary={t('sidebar.installation.install-using-pnpm')}
           />
         </InstallItem>
       );

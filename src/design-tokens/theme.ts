@@ -1,7 +1,5 @@
 import createMuiTheme from '@material-ui/core/styles/createMuiTheme';
 
-// Main colors
-// -------------------------
 const colors = {
   black: '#000',
   white: '#fff',
@@ -25,9 +23,24 @@ const colors = {
   nobel02: '#9f9f9f',
   primary: window.VERDACCIO_PRIMARY_COLOR || '#4b5e40',
   secondary: '#20232a',
+  background: '#fff',
+  dodgerBlue: '#1ba1f2',
+  cyanBlue: '#253341',
 };
 
-export type Colors = keyof typeof colors;
+const themeModes = {
+  light: {
+    ...colors,
+  },
+  dark: {
+    ...colors,
+    primary: '#fff',
+    secondary: '#424242',
+    background: '#1A202C',
+  },
+};
+
+export type ThemeMode = keyof typeof themeModes;
 
 const fontSize = {
   xxl: 26,
@@ -67,20 +80,27 @@ const customizedTheme = {
 
 type CustomizedTheme = typeof customizedTheme;
 
-export const theme = createMuiTheme({
-  typography: {
-    fontFamily: 'inherit',
-  },
-  palette: {
-    ...colors,
-    primary: { main: colors.primary },
-    secondary: { main: colors.secondary },
-    error: { main: colors.red },
-  },
-  ...customizedTheme,
-});
+export const getTheme = (themeMode: ThemeMode) => {
+  const palette = themeModes[themeMode];
+  return createMuiTheme({
+    typography: {
+      fontFamily: 'inherit',
+    },
+    palette: {
+      type: themeMode,
+      ...palette,
+      primary: { main: palette.primary },
+      secondary: { main: palette.secondary },
+      error: { main: palette.red },
+      background: {
+        default: palette.background,
+      },
+    },
+    ...customizedTheme,
+  });
+};
 
-export type Theme = typeof theme;
+export type Theme = ReturnType<typeof getTheme>;
 
 declare module '@material-ui/core/styles/createMuiTheme' {
   /* eslint-disable-next-line @typescript-eslint/no-empty-interface */
@@ -111,6 +131,9 @@ declare module '@material-ui/core/styles/createPalette' {
     love: string;
     nobel01: string;
     nobel02: string;
+    background: string;
+    dodgerBlue: string;
+    cyanBlue: string;
   }
 
   /* eslint-disable-next-line @typescript-eslint/no-empty-interface */
@@ -118,5 +141,3 @@ declare module '@material-ui/core/styles/createPalette' {
   /* eslint-disable-next-line @typescript-eslint/no-empty-interface */
   interface PaletteOptions extends Partial<CustomPalette> {}
 }
-
-export default { ...theme };

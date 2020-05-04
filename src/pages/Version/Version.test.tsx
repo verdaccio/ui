@@ -3,7 +3,7 @@ import { MemoryRouter } from 'react-router';
 import { waitForElement } from '@testing-library/dom';
 
 import { render } from '../../utils/test-react-testing-library';
-import { NOT_FOUND_TEXT } from '../../components/NotFound';
+import translationEN from '../../../i18n/translations/en-US.json';
 
 import Version from './Version';
 import { DetailContext } from './context';
@@ -51,7 +51,9 @@ describe('test Version page', () => {
       </MemoryRouter>
     );
     // we wait fetch response (mocked above)
-    const notFoundElement = await waitForElement(() => getByText(NOT_FOUND_TEXT));
+    const notFoundElement = await waitForElement(() =>
+      getByText(translationEN.error['404']['sorry-we-could-not-find-it'])
+    );
     expect(notFoundElement).toBeTruthy();
   });
 

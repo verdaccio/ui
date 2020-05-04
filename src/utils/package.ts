@@ -1,15 +1,18 @@
 import { isObject } from 'util';
 
+import i18next from 'i18next';
 import { UpLinks } from '@verdaccio/types';
 import isString from 'lodash/isString';
 import dayjs from 'dayjs';
 import relativeTime from 'dayjs/plugin/relativeTime';
+import localizedFormat from 'dayjs/plugin/localizedFormat';
 
 import { Time } from '../../types/packageMeta';
 
-export const TIMEFORMAT = 'DD.MM.YYYY, HH:mm:ss';
+export const TIMEFORMAT = 'L LTS';
 
 dayjs.extend(relativeTime);
+dayjs.extend(localizedFormat);
 
 /**
  * Formats license field for webui.
@@ -89,4 +92,8 @@ export function getRecentReleases(time: Time = {}): Time[] {
   }));
 
   return recent.slice(recent.length - 3, recent.length).reverse();
+}
+
+export function getAuthorName(authorName: string): string {
+  return authorName.toLowerCase() === 'anonymous' ? i18next.t('author-anonymous') : authorName;
 }

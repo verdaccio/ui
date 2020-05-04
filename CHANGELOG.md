@@ -2,6 +2,94 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.7.1](https://github.com/verdaccio/ui/compare/v1.7.0...v1.7.1) (2020-04-27)
+
+
+### Bug Fixes
+
+* **i18n:** fixed current locale ([#462](https://github.com/verdaccio/ui/issues/462)) ([f44abd7](https://github.com/verdaccio/ui/commit/f44abd7dd08a8d68b1bfc2bf0c053f3e80a343d0))
+
+## [1.7.0](https://github.com/verdaccio/ui/compare/v1.6.0...v1.7.0) (2020-04-24)
+
+
+### Features
+
+* add japanese translations ([#460](https://github.com/verdaccio/ui/issues/460)) ([25def6c](https://github.com/verdaccio/ui/commit/25def6ccd5a42d43af1c33e7ace4bd7fdbec0e64))
+
+## [1.6.0](https://github.com/verdaccio/ui/compare/v1.5.0...v1.6.0) (2020-04-23)
+
+
+### Features
+
+* **lng:** Added change language on the fly ([#456](https://github.com/verdaccio/ui/issues/456)) ([675ee98](https://github.com/verdaccio/ui/commit/675ee980ee2c4c789e52d38553f751bb219d1270))
+* Add french language + minor english language fix ([#459](https://github.com/verdaccio/ui/issues/459)) ([b173684](https://github.com/verdaccio/ui/commit/b17368470d63878292aca3e6d2f9adc97748ebac))
+
+## [1.5.0](https://github.com/verdaccio/ui/compare/v1.4.0...v1.5.0) (2020-04-08)
+
+
+### Features
+
+* **flag:** Added Germany flag ([#454](https://github.com/verdaccio/ui/issues/454)) ([07620e5](https://github.com/verdaccio/ui/commit/07620e5d4b1ed54bae2266d936af5306bfbe2d8b))
+
+
+### Bug Fixes
+
+* **styles:** Updated dark colors ([#455](https://github.com/verdaccio/ui/issues/455)) ([d29aa05](https://github.com/verdaccio/ui/commit/d29aa05cc6ef31cb871e79de10c1b1ddd74f023e))
+
+## [1.4.0](https://github.com/verdaccio/ui/compare/v1.3.0...v1.4.0) (2020-04-02)
+
+
+### Features
+
+* added zh-CN translations to the UI ([#448](https://github.com/verdaccio/ui/issues/448)) ([03114a8](https://github.com/verdaccio/ui/commit/03114a842b88ae0f482f389e7ae91af62e00bca4))
+
+## [1.3.0](https://github.com/verdaccio/ui/compare/v1.0.4...v1.3.0) (2020-04-01)
+
+
+### Features
+
+* **style:** added dark mode ([#446](https://github.com/verdaccio/ui/issues/446)) ([cdad5cf](https://github.com/verdaccio/ui/commit/cdad5cf70d69b7bb045fce461a32108def81721d))
+
+
+### Bug Fixes
+
+* **chore:** droped release ([#449](https://github.com/verdaccio/ui/issues/449)) ([f321f7b](https://github.com/verdaccio/ui/commit/f321f7b6fe1ac44897753f0bfdbbaa6ca7eca515))
+
+## [1.2.0](https://github.com/verdaccio/ui/compare/v1.0.4...v1.2.0) (2020-04-01)
+
+
+### Features
+
+* **style:** added dark mode ([#446](https://github.com/verdaccio/ui/issues/446)) ([cdad5cf](https://github.com/verdaccio/ui/commit/cdad5cf70d69b7bb045fce461a32108def81721d))
+
+
+### Bug Fixes
+
+* **chore:** droped release ([#449](https://github.com/verdaccio/ui/issues/449)) ([f321f7b](https://github.com/verdaccio/ui/commit/f321f7b6fe1ac44897753f0bfdbbaa6ca7eca515))
+
+## [1.1.0](https://github.com/verdaccio/ui/compare/v1.0.4...v1.1.0) (2020-04-01)
+
+
+### Features
+
+* **style:** added dark mode ([#446](https://github.com/verdaccio/ui/issues/446)) ([cdad5cf](https://github.com/verdaccio/ui/commit/cdad5cf70d69b7bb045fce461a32108def81721d))
+
+
+### Bug Fixes
+
+* **chore:** droped release ([#449](https://github.com/verdaccio/ui/issues/449)) ([f321f7b](https://github.com/verdaccio/ui/commit/f321f7b6fe1ac44897753f0bfdbbaa6ca7eca515))
+
+### [1.0.4](https://github.com/verdaccio/ui/compare/v1.0.0...v1.0.4) (2020-03-17)
+
+## [1.0.0](https://github.com/verdaccio/ui/compare/v0.3.13...v1.0.0) (2020-03-13)
+
+
+### Features
+
+* **de-translations:** added de-DE translations to the UI ([#441](https://github.com/verdaccio/ui/issues/441)) ([e27d59b](https://github.com/verdaccio/ui/commit/e27d59bff7039473e566090fa0f825f7e462aa4e))
+* spanish translations to UI ([#440](https://github.com/verdaccio/ui/issues/440)) ([0abe1ef](https://github.com/verdaccio/ui/commit/0abe1ef41ca93b900ddda72e2d873ee52078221c))
+* **i18n:** added i18next for user interface translations  ([#432](https://github.com/verdaccio/ui/issues/432)) ([7428384](https://github.com/verdaccio/ui/commit/7428384b55e6089dbe45e6b216eee0b670dff576))
+
 ### [0.3.13](https://github.com/verdaccio/ui/compare/v0.3.12...v0.3.13) (2020-02-02)
 
 

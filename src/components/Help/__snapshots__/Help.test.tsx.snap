@@ -68,7 +68,7 @@ exports[`<Help /> component should load the component in default state 1`] = `
       <button
         class="MuiButtonBase-root MuiIconButton-root  emotion-4 emotion-5"
         tabindex="0"
-        title="Copy to Clipboard"
+        title="Copy to clipboard"
         type="button"
       >
         <span
@@ -107,7 +107,7 @@ exports[`<Help /> component should load the component in default state 1`] = `
       <button
         class="MuiButtonBase-root MuiIconButton-root  emotion-4 emotion-5"
         tabindex="0"
-        title="Copy to Clipboard"
+        title="Copy to clipboard"
         type="button"
       >
         <span

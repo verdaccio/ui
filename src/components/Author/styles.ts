@@ -7,7 +7,6 @@ import { Theme } from '../../design-tokens/theme';
 
 export const StyledText = styled(Text)<{ theme?: Theme }>(props => ({
   fontWeight: props.theme && props.theme.fontWeight.bold,
-  textTransform: 'capitalize',
 }));
 
 export const AuthorListItem = styled(ListItem)({

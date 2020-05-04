@@ -17,7 +17,7 @@ compiler.hooks.done.tap('Verdaccio Dev Server', () => {
 });
 
 new WebpackDevServer(compiler, {
-  contentBase: `${env.DIST_PATH}`,
+  contentBase: env.DIST_PATH,
   publicPath: config.output.publicPath,
   hot: true,
   historyApiFallback: {

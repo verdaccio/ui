@@ -41,7 +41,6 @@ export default {
       }),
       title: 'Verdaccio Dev UI',
       scope: '',
-      logo: 'https://verdaccio.org/img/logo/symbol/svg/verdaccio-tiny.svg',
       filename: 'index.html',
       verdaccioURL: '//localhost:4872',
       template: `${env.SRC_ROOT}/template/index.html`,

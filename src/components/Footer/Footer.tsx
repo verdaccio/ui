@@ -1,53 +1,39 @@
 import React from 'react';
+import { useTranslation, Trans } from 'react-i18next';
 
 import { goToVerdaccioWebsite } from '../../utils/windows';
 
 import { Wrapper, Left, Right, Earth, Flags, Love, Flag, Logo, Inner, ToolTip } from './styles';
 
-const renderTooltip = (): JSX.Element => (
-  <ToolTip>
-    <Earth name="earth" size="md" />
-    <Flags>
-      <Flag name="spain" size="md" />
-      <Flag name="nicaragua" size="md" />
-      <Flag name="india" size="md" />
-      <Flag name="brazil" size="md" />
-      <Flag name="china" size="md" />
-      <Flag name="austria" size="md" />
-    </Flags>
-  </ToolTip>
-);
-const POWERED_LABEL = 'Powered by';
-const MADEWITH_LABEL = ' Made with';
-const ON_LABEL = 'on';
-const HEARTH_EMOJI = '♥';
-
-const renderRight = (version = window.VERDACCIO_VERSION): JSX.Element => {
+/* eslint-disable react/jsx-key */
+const Footer: React.FC = () => {
+  const { t } = useTranslation();
   return (
-    <Right>
-      {POWERED_LABEL}
-      <Logo img={true} name="verdaccio" onClick={goToVerdaccioWebsite} pointer={true} size="md" />
-      {`/ ${version}`}
-    </Right>
+    <Wrapper>
+      <Inner>
+        <Left>
+          <Trans components={[<Love />]} i18nKey="footer.made-with-love-on" />
+          <ToolTip>
+            <Earth name="earth" size="md" />
+            <Flags>
+              <Flag name="spain" size="md" />
+              <Flag name="nicaragua" size="md" />
+              <Flag name="india" size="md" />
+              <Flag name="brazil" size="md" />
+              <Flag name="china" size="md" />
+              <Flag name="austria" size="md" />
+              <Flag name="germany" size="md" />
+            </Flags>
+          </ToolTip>
+        </Left>
+        <Right>
+          {t('footer.powered-by')}
+          <Logo img={true} name="verdaccio" onClick={goToVerdaccioWebsite} pointer={true} size="md" />
+          {`/ ${window.VERDACCIO_VERSION}`}
+        </Right>
+      </Inner>
+    </Wrapper>
   );
 };
-
-const renderLeft = (): JSX.Element => (
-  <Left>
-    {MADEWITH_LABEL}
-    <Love>{HEARTH_EMOJI}</Love>
-    {ON_LABEL}
-    {renderTooltip()}
-  </Left>
-);
-
-const Footer: React.FC = () => (
-  <Wrapper>
-    <Inner>
-      {renderLeft()}
-      {renderRight()}
-    </Inner>
-  </Wrapper>
-);
 
 export default Footer;

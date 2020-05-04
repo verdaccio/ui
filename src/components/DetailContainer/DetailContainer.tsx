@@ -1,4 +1,4 @@
-import React, { useCallback, useState, ChangeEvent, useContext } from 'react';
+import React, { useState, useContext } from 'react';
 
 import { DetailContext } from '../../pages/Version';
 import Box from '../../muiComponents/Box';
@@ -8,24 +8,19 @@ import DetailContainerContent from './DetailContainerContent';
 import { TabPosition } from './tabs';
 
 const DetailContainer: React.FC = () => {
-  const [tabPosition, setTabPosition] = useState(TabPosition.README);
+  const tabs = Object.values(TabPosition);
+  const [tabPosition, setTabPosition] = useState(0);
   const detailContext = useContext(DetailContext);
   const { readMe } = detailContext;
 
-  const handleChangeTabPosition = useCallback(
-    (event: ChangeEvent<{}>) => {
-      event.preventDefault();
-      const eventTarget = event.target as HTMLSpanElement;
-      const chosentab = eventTarget.innerText as TabPosition;
-      setTabPosition(TabPosition[chosentab]);
-    },
-    [setTabPosition]
-  );
+  const handleChange = (event, newValue) => {
+    setTabPosition(newValue);
+  };
 
   return (
     <Box component="div" display="flex" flexDirection="column" padding={2}>
-      <DetailContainerTabs onChangeTabPosition={handleChangeTabPosition} tabPosition={tabPosition} />
-      <DetailContainerContent readDescription={readMe} tabPosition={tabPosition} />
+      <DetailContainerTabs onChange={handleChange} tabPosition={tabPosition} />
+      <DetailContainerContent readDescription={readMe} tabPosition={tabs[tabPosition]} />
     </Box>
   );
 };

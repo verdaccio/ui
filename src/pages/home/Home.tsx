@@ -29,7 +29,11 @@ const Home: React.FC<Props> = ({ isUserLoggedIn }) => {
     loadPackages().then();
   }, [isUserLoggedIn]);
 
-  return <div className="container content">{isLoading ? <Loading /> : <PackageList packages={packages} />}</div>;
+  return (
+    <div className="container content" data-testid="home-page-container">
+      {isLoading ? <Loading /> : <PackageList packages={packages} />}
+    </div>
+  );
 };
 
 export default Home;

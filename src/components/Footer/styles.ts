@@ -3,10 +3,10 @@ import styled from '@emotion/styled';
 import Icon from '../Icon/Icon';
 import { Theme } from '../../design-tokens/theme';
 
-export const Wrapper = styled('div')<{ theme?: Theme }>(props => ({
-  background: props.theme && props.theme.palette.snow,
-  borderTop: `1px solid ${props.theme && props.theme.palette.greyGainsboro}`,
-  color: props.theme && props.theme.palette.nobel01,
+export const Wrapper = styled('div')<{ theme?: Theme }>(({ theme }) => ({
+  background: theme?.palette.type === 'light' ? theme?.palette.snow : theme?.palette.cyanBlue,
+  borderTop: `1px solid ${theme?.palette.greyGainsboro}`,
+  color: theme?.palette.type === 'dark' ? theme?.palette.white : theme?.palette.nobel01,
   fontSize: '14px',
   padding: '20px',
 }));
@@ -16,13 +16,13 @@ export const Inner = styled('div')<{ theme?: Theme }>(({ theme }) => ({
   alignItems: 'center',
   justifyContent: 'flex-end',
   width: '100%',
-  [`@media (min-width: ${theme && theme.breakPoints.medium}px)`]: {
+  [`@media (min-width: ${theme?.breakPoints.medium}px)`]: {
     minWidth: 400,
     maxWidth: 800,
     margin: 'auto',
     justifyContent: 'space-between',
   },
-  [`@media (min-width: ${theme && theme.breakPoints.large}px)`]: {
+  [`@media (min-width: ${theme?.breakPoints.large}px)`]: {
     maxWidth: 1240,
   },
 }));
@@ -30,7 +30,7 @@ export const Inner = styled('div')<{ theme?: Theme }>(({ theme }) => ({
 export const Left = styled('div')<{ theme?: Theme }>(({ theme }) => ({
   alignItems: 'center',
   display: 'none',
-  [`@media (min-width: ${theme && theme.breakPoints.medium}px)`]: {
+  [`@media (min-width: ${theme?.breakPoints.medium}px)`]: {
     display: 'flex',
   },
 }));
@@ -43,9 +43,9 @@ export const Earth = styled(Icon)({
   padding: '0 10px',
 });
 
-export const Flags = styled('span')<{ theme?: Theme }>(props => ({
+export const Flags = styled('span')<{ theme?: Theme }>(({ theme }) => ({
   position: 'absolute',
-  background: props.theme && props.theme.palette.greyAthens,
+  background: theme?.palette.greyAthens,
   padding: '1px 4px',
   borderRadius: 3,
   height: 20,
@@ -60,7 +60,7 @@ export const Flags = styled('span')<{ theme?: Theme }>(props => ({
     left: -4,
     marginLeft: -5,
     border: '5px solid',
-    borderColor: `${props.theme && props.theme.palette.greyAthens} transparent transparent transparent`,
+    borderColor: `${theme?.palette.greyAthens} transparent transparent transparent`,
     transform: 'rotate(90deg)',
   },
 }));
@@ -75,8 +75,8 @@ export const ToolTip = styled('span')({
   },
 });
 
-export const Love = styled('span')<{ theme?: Theme }>(props => ({
-  color: props.theme && props.theme.palette.love,
+export const Love = styled('span')<{ theme?: Theme }>(({ theme }) => ({
+  color: theme?.palette.love,
   padding: '0 5px',
 }));
 

@@ -15,7 +15,7 @@ export const OverviewItem = styled('span')<{ theme?: Theme }>(({ theme }) => ({
   display: 'flex',
   alignItems: 'center',
   margin: '0 0 0 16px',
-  color: theme && theme.palette.greyLight2,
+  color: theme?.palette.type === 'light' ? theme?.palette.greyLight2 : theme?.palette.white,
   fontSize: 12,
   [`@media (max-width: ${theme && theme.breakPoints.medium}px)`]: {
     ':nth-of-type(3)': {
@@ -29,20 +29,20 @@ export const OverviewItem = styled('span')<{ theme?: Theme }>(({ theme }) => ({
   },
 }));
 
-export const Icon = styled(Ico)<{ theme?: Theme }>(props => ({
+export const Icon = styled(Ico)<{ theme?: Theme }>(({ theme }) => ({
   margin: '2px 10px 0 0',
-  fill: props.theme && props.theme.palette.greyLight2,
+  fill: theme?.palette.type === 'light' ? theme?.palette.greyLight2 : theme?.palette.white,
 }));
 
-export const Published = styled('span')<{ theme?: Theme }>(props => ({
-  color: props.theme && props.theme.palette.greyLight2,
+export const Published = styled('span')<{ theme?: Theme }>(({ theme }) => ({
+  color: theme?.palette.type === 'light' ? theme?.palette.greyLight2 : theme?.palette.white,
   margin: '0 5px 0 0',
 }));
 
-export const Text = styled(Label)<{ theme?: Theme }>(props => ({
+export const Text = styled(Label)<{ theme?: Theme }>(({ theme }) => ({
   fontSize: '12px',
-  fontWeight: props.theme && props.theme.fontWeight.semiBold,
-  color: props.theme && props.theme.palette.greyLight2,
+  fontWeight: theme?.fontWeight.semiBold,
+  color: theme?.palette.type === 'light' ? theme?.palette.greyLight2 : theme?.palette.white,
 }));
 
 export const Details = styled('span')({
@@ -71,11 +71,8 @@ export const PackageTitle = styled('span')<{ theme?: Theme }>(({ theme }) => ({
   fontSize: 20,
   display: 'block',
   marginBottom: 12,
-  color: theme && theme.palette.eclipse,
+  color: theme?.palette.type == 'dark' ? theme?.palette.dodgerBlue : theme?.palette.eclipse,
   cursor: 'pointer',
-  ':hover': {
-    color: theme && theme.palette.black,
-  },
   [`@media (max-width: ${theme && theme.breakPoints.small}px)`]: {
     fontSize: 14,
     marginBottom: 8,
@@ -86,14 +83,15 @@ export const GridRightAligned = styled(Grid)({
   textAlign: 'right',
 });
 
-export const PackageList = styled(List)<{ theme?: Theme }>(props => ({
+export const PackageList = styled(List)<{ theme?: Theme }>(({ theme }) => ({
   padding: '12px 0 12px 0',
   ':hover': {
-    backgroundColor: props.theme && props.theme.palette.greyLight3,
+    backgroundColor: theme?.palette?.type == 'dark' ? theme?.palette?.secondary.main : theme?.palette?.greyLight3,
   },
   '> :last-child': {
     paddingTop: 0,
   },
+  borderRadius: 4,
 }));
 
 export const IconButton = styled(MuiIconButton)({
@@ -106,7 +104,8 @@ export const IconButton = styled(MuiIconButton)({
 export const TagContainer = styled('span')<{ theme?: Theme }>(({ theme }) => ({
   marginTop: 8,
   marginBottom: 12,
-  display: 'block',
+  display: 'flex',
+  flexWrap: 'wrap',
   [`@media (max-width: ${theme && theme.breakPoints.medium}px)`]: {
     display: 'none',
   },
@@ -116,8 +115,8 @@ export const PackageListItemText = styled(ListItemText)({
   paddingRight: 0,
 });
 
-export const Description = styled(Typography)<{ theme?: Theme }>(props => ({
-  color: props.theme && props.theme.palette.greyDark2,
+export const Description = styled(Typography)<{ theme?: Theme }>(({ theme }) => ({
+  color: theme?.palette.type === 'light' ? theme?.palette.greyDark2 : theme?.palette.white,
   fontSize: '14px',
   paddingRight: 0,
 }));

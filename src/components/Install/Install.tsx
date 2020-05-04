@@ -1,5 +1,6 @@
 import React, { useContext } from 'react';
 import styled from '@emotion/styled';
+import { useTranslation } from 'react-i18next';
 
 import { DetailContext } from '../../pages/Version';
 import Text from '../../muiComponents/Text';
@@ -14,6 +15,7 @@ const StyledText = styled(Text)<{ theme?: Theme }>(props => ({
 }));
 
 const Install: React.FC = () => {
+  const { t } = useTranslation();
   const detailContext = useContext(DetailContext);
 
   const { packageMeta, packageName } = detailContext;
@@ -23,7 +25,9 @@ const Install: React.FC = () => {
   }
 
   return (
-    <List data-testid={'installList'} subheader={<StyledText variant={'subtitle1'}>{'Installation'}</StyledText>}>
+    <List
+      data-testid={'installList'}
+      subheader={<StyledText variant={'subtitle1'}>{t('sidebar.installation.title')}</StyledText>}>
       <InstallListItem dependencyManager={DependencyManager.NPM} packageName={packageName} />
       <InstallListItem dependencyManager={DependencyManager.YARN} packageName={packageName} />
       <InstallListItem dependencyManager={DependencyManager.PNPM} packageName={packageName} />

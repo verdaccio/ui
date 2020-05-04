@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from '@emotion/styled';
 import CloseIcon from '@material-ui/icons/Close';
+import { useTranslation } from 'react-i18next';
 
 import DialogTitle from '../../muiComponents/DialogTitle';
 import IconButton from '../../muiComponents/IconButton';
@@ -17,12 +18,15 @@ interface Props {
   onClose: () => void;
 }
 
-const LoginDialogCloseButton: React.FC<Props> = ({ onClose }) => (
-  <DialogTitle>
-    <StyledIconButton data-testid="close-login-dialog-button" onClick={onClose}>
-      <CloseIcon titleAccess="Close Dialog" />
-    </StyledIconButton>
-  </DialogTitle>
-);
+const LoginDialogCloseButton: React.FC<Props> = ({ onClose }) => {
+  const { t } = useTranslation();
+  return (
+    <DialogTitle>
+      <StyledIconButton data-testid="close-login-dialog-button" onClick={onClose}>
+        <CloseIcon titleAccess={t('button.close')} />
+      </StyledIconButton>
+    </DialogTitle>
+  );
+};
 
 export default LoginDialogCloseButton;
