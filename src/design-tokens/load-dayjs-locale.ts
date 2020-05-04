@@ -19,20 +19,14 @@ function loadDayJSLocale() {
   const fallbackLanguage = getFallFackLanguage();
   const locale = i18n.language || fallbackLanguage;
 
-  // dayjs loades en-US by default
-  if (!locale || locale === 'en-US') {
-    return;
-  }
-
-  switch (locale.toLowerCase()) {
-    // At the moment we only support pt-BR, please see: i18n/translations/*
+  switch (locale?.toLowerCase()) {
     case 'pt-br':
       {
         require('dayjs/locale/pt-br');
         dayjs.locale('pt-br');
       }
       break;
-    case 'de':
+    case 'de-de':
       {
         require('dayjs/locale/de');
         dayjs.locale('de');
@@ -44,13 +38,35 @@ function loadDayJSLocale() {
         dayjs.locale('es');
       }
       break;
+    case 'fr-fr':
+      {
+        require('dayjs/locale/fr');
+        dayjs.locale('fr');
+      }
+      break;
     case 'zh-cn':
       {
         require('dayjs/locale/zh-cn');
         dayjs.locale('zh-cn');
       }
       break;
+    case 'ja-jp':
+      {
+        require('dayjs/locale/ja');
+        dayjs.locale('ja');
+      }
+      break;
+    case 'uk-ua':
+      {
+        require('dayjs/locale/uk');
+        dayjs.locale('uk');
+      }
+      break;
     default:
+      {
+        require('dayjs/locale/en');
+        dayjs.locale('en');
+      }
       break;
   }
 }

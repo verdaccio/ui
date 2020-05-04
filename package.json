@@ -1,6 +1,6 @@
 {
   "name": "@verdaccio/ui-theme",
-  "version": "1.5.0",
+  "version": "1.7.1",
   "description": "Verdaccio User Interface",
   "author": {
     "name": "Verdaccio Core Team",
@@ -140,11 +140,11 @@
   "bundlesize": [
     {
       "path": "./static/vendors.*.js",
-      "maxSize": "200 kB"
+      "maxSize": "210 kB"
     },
     {
       "path": "./static/main.*.js",
-      "maxSize": "30 kB"
+      "maxSize": "35 kB"
     },
     {
       "path": "./static/[0-9].*.{js,css}",

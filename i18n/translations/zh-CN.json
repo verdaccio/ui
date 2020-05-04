@@ -109,7 +109,7 @@
             "title": "贡献者"
         },
         "engines": {
-            "npm-version": "NPM Version",
+            "npm-version": "NPM版本",
             "node-js": "NODE JS"
         }
     },
@@ -134,5 +134,17 @@
         },
         "app-context-not-correct-used": "The app context was not correct used",
         "package-meta-is-required-at-detail-context": "packageMeta is required at DetailContext"
-    }
+    },
+    "lng": {
+        "english": "英语",
+        "japanese": "日语",
+        "portuguese": "葡萄牙语",
+        "spanish": "西班牙语",
+        "german": "德语",
+        "chinese": "中文",
+        "french": "法语",
+        "ukraine": "烏克蘭"
+    },
+    "help-to-translate": "幫助翻译",
+    "change-language": "改变语言"
 }

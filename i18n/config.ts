@@ -5,7 +5,39 @@ import translationEN from './translations/en-US.json';
 import translationPT from './translations/pt-BR.json';
 import translationES from './translations/es-ES.json';
 import translationDE from './translations/de-DE.json';
+import translationFR from './translations/fr-FR.json';
 import translationCN from './translations/zh-CN.json';
+import translationJP from './translations/ja-JP.json';
+import translationUA from './translations/uk-UA.json';
+
+const languages = {
+  'en-US': {
+    translation: translationEN,
+  },
+  'pt-BR': {
+    translation: translationPT,
+  },
+  'es-ES': {
+    translation: translationES,
+  },
+  'de-DE': {
+    translation: translationDE,
+  },
+  'fr-FR': {
+    translation: translationFR,
+  },
+  'zh-CN': {
+    translation: translationCN,
+  },
+  'ja-JP': {
+    translation: translationJP,
+  },
+  'uk-UA': {
+    translation: translationUA,
+  },
+};
+
+type Language = keyof typeof languages;
 
 i18n
   // pass the i18n instance to react-i18next.
@@ -16,25 +48,9 @@ i18n
     // in case window.VEDACCIO_LANGUAGE is undefined,it will fall back to 'en-US'
     lng: window?.__VERDACCIO_BASENAME_UI_OPTIONS?.language,
     fallbackLng: 'en-US',
-    whitelist: ['en-US', 'pt-BR', 'es-ES', 'de-DE', 'zh-CN'],
+    whitelist: ['en-US', 'pt-BR', 'es-ES', 'de-DE', 'fr-FR', 'zh-CN', 'ja-JP', 'uk-UA'],
     load: 'currentOnly',
-    resources: {
-      'en-US': {
-        translation: translationEN,
-      },
-      'pt-BR': {
-        translation: translationPT,
-      },
-      'es-ES': {
-        translation: translationES,
-      },
-      'de-DE': {
-        translation: translationDE,
-      },
-      'zh-CN': {
-        translation: translationCN,
-      },
-    },
+    resources: languages,
     debug: false,
     interpolation: {
       escapeValue: false, // react already safes from xss
@@ -42,3 +58,4 @@ i18n
   });
 
 export default i18n;
+export { Language };

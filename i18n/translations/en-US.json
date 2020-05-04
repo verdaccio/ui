@@ -8,7 +8,7 @@
     },
     "dialog": {
         "registry-info": {
-            "title": "Register Info"
+            "title": "Registry Info"
         }
     },
     "header": {
@@ -132,8 +132,20 @@
             "page-not-found": "404 - Page not found",
             "sorry-we-could-not-find-it": "Sorry, we couldn't find it..."
         },
-        "app-context-not-correct-used": "The app context was not correct used",
-        "theme-context-not-correct-used": "The theme context was not correct used",
+        "app-context-not-correct-used": "The app context was not used correctly",
+        "theme-context-not-correct-used": "The theme context was not used correctly",
         "package-meta-is-required-at-detail-context": "packageMeta is required at DetailContext"
-    }
+    },
+    "lng": {
+        "english": "English",
+        "japanese": "Japanese",
+        "portuguese": "Portuguese",
+        "spanish": "Spanish",
+        "german": "German",
+        "chinese": "Chinese",
+        "french":  "French",
+        "ukraine": "Ukraine"
+    },
+    "help-to-translate": "Help to translate",
+    "change-language": "Change language"
 }

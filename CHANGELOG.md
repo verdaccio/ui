@@ -2,6 +2,28 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.7.1](https://github.com/verdaccio/ui/compare/v1.7.0...v1.7.1) (2020-04-27)
+
+
+### Bug Fixes
+
+* **i18n:** fixed current locale ([#462](https://github.com/verdaccio/ui/issues/462)) ([f44abd7](https://github.com/verdaccio/ui/commit/f44abd7dd08a8d68b1bfc2bf0c053f3e80a343d0))
+
+## [1.7.0](https://github.com/verdaccio/ui/compare/v1.6.0...v1.7.0) (2020-04-24)
+
+
+### Features
+
+* add japanese translations ([#460](https://github.com/verdaccio/ui/issues/460)) ([25def6c](https://github.com/verdaccio/ui/commit/25def6ccd5a42d43af1c33e7ace4bd7fdbec0e64))
+
+## [1.6.0](https://github.com/verdaccio/ui/compare/v1.5.0...v1.6.0) (2020-04-23)
+
+
+### Features
+
+* **lng:** Added change language on the fly ([#456](https://github.com/verdaccio/ui/issues/456)) ([675ee98](https://github.com/verdaccio/ui/commit/675ee980ee2c4c789e52d38553f751bb219d1270))
+* Add french language + minor english language fix ([#459](https://github.com/verdaccio/ui/issues/459)) ([b173684](https://github.com/verdaccio/ui/commit/b17368470d63878292aca3e6d2f9adc97748ebac))
+
 ## [1.5.0](https://github.com/verdaccio/ui/compare/v1.4.0...v1.5.0) (2020-04-08)
 
 

@@ -114,7 +114,7 @@
         }
     },
     "footer": {
-        "powered-by": "Distribuído por",
+        "powered-by": "Feito por",
         "made-with-love-on": "Feito com amor <0>♥</0> no(a)"
     },
     "button": {
@@ -135,5 +135,17 @@
         "app-context-not-correct-used": "O contexto do aplicativo não foi usado corretamente",
         "theme-context-not-correct-used": "O contexto do tema não foi usado corretamente",
         "package-meta-is-required-at-detail-context": "packageMeta é requerido em DetailContext"
-    }
+    },
+    "lng": {
+        "english": "Inglês",
+        "japanese": "Japonês",
+        "portuguese": "Português",
+        "spanish": "Espanhol",
+        "german": "Alemão",
+        "chinese": "Chinês",
+        "french": "Francês",
+        "ukraine": "Ucraniano"
+    },
+    "help-to-translate": "Ajude a traduzir",
+    "change-language": "Mudar idioma"
 }
