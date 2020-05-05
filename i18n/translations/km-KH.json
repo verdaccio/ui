@@ -137,14 +137,14 @@
         "package-meta-is-required-at-detail-context": "packageMeta ត្រូវបានទាមទារនៅ DetailContext"
     },
     "lng": {
-        "english": "English",
-        "japanese": "Japanese",
-        "portuguese": "Portuguese",
-        "spanish": "Spanish",
-        "german": "German",
-        "chinese": "Chinese",
-        "french":  "French",
-        "ukraine": "Ukraine",
+        "english": "អង់គ្លេស",
+        "japanese": "ជប៉ុន",
+        "portuguese": "ព័រទុយហ្កាល់",
+        "spanish": "អេស្ប៉ាញ",
+        "german": "អាឡឺម៉ង់",
+        "chinese": "ចិន",
+        "french":  "បារាំង",
+        "ukraine": "អ៊ុយក្រែន",
         "khmer": "ខ្មែរ"
     },
     "help-to-translate": "ជួយបកប្រែ",
