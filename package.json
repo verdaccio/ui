@@ -144,7 +144,7 @@
     },
     {
       "path": "./static/main.*.js",
-      "maxSize": "30 kB"
+      "maxSize": "35 kB"
     },
     {
       "path": "./static/[0-9].*.{js,css}",
