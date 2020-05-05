@@ -64,6 +64,11 @@ const getTranslatedCurrentLanguageDetails = (
         translation: t('lng.ukraine'),
         icon: 'ukraine',
       };
+    case 'km-KH':
+      return {
+        translation: t('lng.khmer'),
+        icon: 'khmer',
+      };
     default:
       return {
         translation: t('lng.english'),

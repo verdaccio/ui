@@ -38,7 +38,7 @@ const languages = {
   },
   'km-KH': {
     translation: translationKM,
-  }
+  },
 };
 
 type Language = keyof typeof languages;
