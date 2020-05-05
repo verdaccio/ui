@@ -55,7 +55,7 @@
     },
     "form": {
         "username": "ឈ្មោះអ្នកប្រើប្រាស់",
-        "password": "ពាក្យសម្ងាត់"
+        "password": "ពាក្យសម្ងាត់",
     },
     "form-placeholder": {
         "username": "ឈ្មោះអ្នកប្រើរបស់អ្នក",
