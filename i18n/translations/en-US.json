@@ -144,7 +144,8 @@
         "german": "German",
         "chinese": "Chinese",
         "french":  "French",
-        "ukraine": "Ukraine"
+        "ukraine": "Ukraine",
+        "khmer": "Khmer"
     },
     "help-to-translate": "Help to translate",
     "change-language": "Change language"
