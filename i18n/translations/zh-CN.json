@@ -19,9 +19,12 @@
     "search": {
         "packages": "查找Packages"
     },
-    "auto-complete": {
+    "autoComplete": {
         "loading": "加载中...",
-        "no-results-found": "没有找到结果"
+        "no-results-found": "没有找到结果",
+        "clear": "清洁",
+        "expand": "扩大",
+        "collapse": "缩回"
     },
     "tab": {
         "uplinks": "Uplinks",
@@ -146,7 +149,5 @@
         "french": "法语",
         "ukraine": "乌克兰",
         "khmer": "Khmer"
-    },
-    "help-to-translate": "帮助翻译",
-    "change-language": "改变语言"
+    }
 }

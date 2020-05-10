@@ -19,9 +19,12 @@
     "search": {
         "packages": "Buscar paquetes"
     },
-    "auto-complete": {
+    "autoComplete": {
         "loading": "Cargando...",
-        "no-results-found": "Sin resultados encontrados"
+        "no-results-found": "Sin resultados encontrados",
+        "clear": "Limpiar",
+        "expand": "Expandir",
+        "collapse": "Retraer"
     },
     "tab": {
         "uplinks": "Remoto",
@@ -146,7 +149,5 @@
         "french": "Francés",
         "ukraine": "Ucraniano",
         "khmer": "Khmer"
-    },
-    "help-to-translate": "Ayuda a traducir",
-    "change-language": "Cambiar idioma"
+    }
 }
