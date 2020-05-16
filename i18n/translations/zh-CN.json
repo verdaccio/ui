@@ -39,7 +39,7 @@
         "not-available": "不可用"
     },
     "package": {
-        "published-on": "发表于 {{time}} •",
+        "published-on": "发布于 {{time}} •",
         "version": "v{{version}}",
         "visit-home-page": "访问主页",
         "homepage": "主页",
@@ -63,13 +63,13 @@
     },
     "form-validation": {
         "required-field": "必填项",
-        "required-min-length": "长度不能小于{{length}}",
+        "required-min-length": "长度不能小于 {{length}}",
         "unable-to-sign-in": "登录失败",
         "username-or-password-cant-be-empty": "用户名或密码不能为空!"
     },
     "help": {
-        "title": "还没有发布任何NPM包.",
-        "sub-title": "发布第一个NPM包:",
+        "title": "还没有发布任何 NPM 包.",
+        "sub-title": "发布第一个 NPM 包:",
         "first-step": "1. 登录",
         "first-step-command-line": "npm adduser --registry {{registryUrl}}",
         "second-step": "2. 发布",
@@ -83,11 +83,11 @@
         },
         "installation": {
             "title": "安装",
-            "install-using-yarn": "使用yarn安装",
+            "install-using-yarn": "使用 yarn 安装",
             "install-using-yarn-command": "yarn add {{packageName}}",
-            "install-using-npm": "使用npm安装",
+            "install-using-npm": "使用 npm 安装",
             "install-using-npm-command": "npm install {{packageName}}",
-            "install-using-pnpm": "使用pnpm安装",
+            "install-using-pnpm": "使用 pnpm 安装",
             "install-using-pnpm-command": "pnpm install {{packageName}}"
         },
         "repository": {
@@ -97,8 +97,8 @@
             "title": "作者"
         },
         "distribution": {
-            "title": "最后发布",
-            "license": "License",
+            "title": "发布信息",
+            "license": "许可",
             "size": "大小",
             "file-count": "文件数量"
         },
@@ -109,7 +109,7 @@
             "title": "贡献者"
         },
         "engines": {
-            "npm-version": "NPM版本",
+            "npm-version": "NPM 版本",
             "node-js": "NODE JS"
         }
     },
@@ -132,7 +132,8 @@
             "page-not-found": "404 - 页面不存在",
             "sorry-we-could-not-find-it": "对不起, 我们没找到..."
         },
-        "app-context-not-correct-used": "The app context was not correct used",
+        "app-context-not-correct-used": "app context 没有被正确使用",
+        "theme-context-not-correct-used": "theme context 没有被正确使用",
         "package-meta-is-required-at-detail-context": "packageMeta is required at DetailContext"
     },
     "lng": {
@@ -143,8 +144,9 @@
         "german": "德语",
         "chinese": "中文",
         "french": "法语",
-        "ukraine": "烏克蘭"
+        "ukraine": "乌克兰",
+        "khmer": "Khmer"
     },
-    "help-to-translate": "幫助翻译",
+    "help-to-translate": "帮助翻译",
     "change-language": "改变语言"
 }

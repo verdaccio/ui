@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.7.2](https://github.com/verdaccio/ui/compare/v1.7.1...v1.7.2) (2020-05-12)
+
+
+### Bug Fixes
+
+* time format localization ([#471](https://github.com/verdaccio/ui/issues/471)) ([c9910c9](https://github.com/verdaccio/ui/commit/c9910c97b0018da75fe3070ca4178f01232525e2))
+* update zh-CN.json ([#466](https://github.com/verdaccio/ui/issues/466)) ([f8101ae](https://github.com/verdaccio/ui/commit/f8101ae90ad812148b1b10b293e74a9b452704f4))
+* when scope is provided use proper separator ([#457](https://github.com/verdaccio/ui/issues/457)) ([7e56c8e](https://github.com/verdaccio/ui/commit/7e56c8e7e27cc2e2ab9ba509c8fbc722d9832afa))
+
 ### [1.7.1](https://github.com/verdaccio/ui/compare/v1.7.0...v1.7.1) (2020-04-27)
 
 
