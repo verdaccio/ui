@@ -94,16 +94,16 @@ const LanguageSwitch = () => {
   );
 
   const option = useCallback(
-    (option: ReturnType<typeof getCurrentLngDetails>) => (
+    ({ icon, translation }: ReturnType<typeof getCurrentLngDetails>) => (
       <StyledMenuItem component="div">
-        <Icon name={option.icon} size="md" />
-        {option.translation}
+        <Icon name={icon} size="md" />
+        {translation}
       </StyledMenuItem>
     ),
     [getCurrentLngDetails]
   );
 
-  const optionLabel = useCallback((option: ReturnType<typeof getCurrentLngDetails>) => option.translation, [
+  const optionLabel = useCallback(({ translation }: ReturnType<typeof getCurrentLngDetails>) => translation, [
     getCurrentLngDetails,
   ]);
 
