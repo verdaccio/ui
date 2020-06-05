@@ -10,6 +10,7 @@ import translationCN from './translations/zh-CN.json';
 import translationJP from './translations/ja-JP.json';
 import translationUA from './translations/uk-UA.json';
 import translationKM from './translations/km-KH.json';
+import translatiobTW from './translations/zh-TW.json';
 
 const languages = {
   'en-US': {
@@ -39,6 +40,9 @@ const languages = {
   'km-KH': {
     translation: translationKM,
   },
+  'zh-TW': {
+    translation: translatiobTW,
+  },
 };
 
 type Language = keyof typeof languages;
@@ -52,7 +56,7 @@ i18n
     // in case window.VEDACCIO_LANGUAGE is undefined,it will fall back to 'en-US'
     lng: window?.__VERDACCIO_BASENAME_UI_OPTIONS?.language,
     fallbackLng: 'en-US',
-    whitelist: ['en-US', 'pt-BR', 'es-ES', 'de-DE', 'fr-FR', 'zh-CN', 'ja-JP', 'uk-UA', 'km-KH'],
+    whitelist: ['en-US', 'pt-BR', 'es-ES', 'de-DE', 'fr-FR', 'zh-CN', 'ja-JP', 'uk-UA', 'km-KH', 'zh-TW'],
     load: 'currentOnly',
     resources: languages,
     debug: false,

@@ -49,6 +49,10 @@ const lngDetails: Record<Language, { translation: TFunctionKeys; icon: React.Com
     translation: 'lng.english',
     icon: 'usa',
   },
+  'zh-TW': {
+    translation: 'lng.chineseTraditional',
+    icon: 'taiwan',
+  },
 };
 
 const LanguageSwitch = () => {
@@ -102,10 +106,8 @@ const LanguageSwitch = () => {
     ),
     [getCurrentLngDetails]
   );
-
-  const optionLabel = useCallback(({ translation }: ReturnType<typeof getCurrentLngDetails>) => translation, [
-    getCurrentLngDetails,
-  ]);
+  // prettier-ignore
+  const optionLabel = useCallback(({ translation }: ReturnType<typeof getCurrentLngDetails>) => translation, [getCurrentLngDetails]);
 
   return (
     <Wrapper>
