@@ -24,7 +24,7 @@ const ThemeProvider: React.FC = ({ children }) => {
   useEffect(() => {
     changeLanguage();
     loadDayJSLocale();
-  }, [language, changeLanguage, loadDayJSLocale]);
+  }, [language, changeLanguage]);
 
   return (
     <ThemeContext.Provider value={{ isDarkMode, setIsDarkMode, language, setLanguage }}>

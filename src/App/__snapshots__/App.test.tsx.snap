@@ -1,11 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<App /> should display the Header component  1`] = `
-.emotion-85 {
+.emotion-93 {
   background-color: #fff;
 }
 
-.emotion-28 {
+.emotion-36 {
   background-color: #4b5e40;
   color: #fff;
   min-height: 60px;
@@ -20,29 +20,29 @@ exports[`<App /> should display the Header component  1`] = `
 }
 
 @media (min-width:768px) {
-  .emotion-28 .emotion-13 {
+  .emotion-36 .emotion-13 {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
   }
 
-  .emotion-28 .emotion-17 {
+  .emotion-36 .emotion-17 {
     display: none;
   }
 
-  .emotion-28 .e1jf5lit4 {
+  .emotion-36 .e1jf5lit4 {
     display: none;
   }
 }
 
 @media (min-width:1024px) {
-  .emotion-28 .emotion-27 {
+  .emotion-36 .emotion-35 {
     padding: 0 20px;
   }
 
 @media (min-width:1275px) {
-    .emotion-28 .emotion-27 {
+    .emotion-36 .emotion-35 {
       max-width: 1240px;
       width: 100%;
       margin: 0 auto;
@@ -50,7 +50,7 @@ exports[`<App /> should display the Header component  1`] = `
 }
 }
 
-.emotion-26 {
+.emotion-34 {
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
@@ -128,7 +128,7 @@ exports[`<App /> should display the Header component  1`] = `
   overflow-y: auto;
 }
 
-.emotion-24 {
+.emotion-32 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -140,32 +140,76 @@ exports[`<App /> should display the Header component  1`] = `
   display: block;
 }
 
-.emotion-20 {
+.emotion-28 {
+  width: 220px;
   display: none;
 }
 
 @media screen and (min-width:768px) {
-  .emotion-20 {
+  .emotion-28 {
     display: inline-block;
   }
+}
+
+.emotion-26 {
+  position: relative;
+  height: 40px;
+}
+
+.emotion-24 {
+  height: 40px;
+  color: #fff;
+}
+
+.emotion-24 .MuiInputBase-root {
+  height: 40px;
+  color: #fff;
+}
+
+.emotion-24 .MuiInputBase-inputAdornedStart {
+  padding-left: 16px;
+}
+
+.emotion-24 .MuiInputBase-input {
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+
+.emotion-24 .MuiOutlinedInput-notchedOutline {
+  border-color: transparent;
+}
+
+.emotion-24 :hover .MuiOutlinedInput-notchedOutline {
+  border-color: #fff;
+}
+
+.emotion-24 :active .MuiOutlinedInput-notchedOutline {
+  border-color: #fff;
 }
 
 .emotion-18 {
-  display: none;
-}
-
-@media screen and (min-width:768px) {
-  .emotion-18 {
-    display: inline-block;
-  }
+  color: #fff;
 }
 
 .emotion-22 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.emotion-20 {
+  -webkit-transform: none;
+  -ms-transform: none;
+  transform: none;
+}
+
+.emotion-30 {
   color: #fff;
 }
 
 @media screen and (min-width:1240px) {
-  .emotion-40 {
+  .emotion-48 {
     max-width: 1240px;
     width: 100%;
     margin-left: auto;
@@ -173,7 +217,7 @@ exports[`<App /> should display the Header component  1`] = `
   }
 }
 
-.emotion-83 {
+.emotion-91 {
   background: #f9f9f9;
   border-top: 1px solid #e3e3e3;
   color: #999999;
@@ -181,7 +225,7 @@ exports[`<App /> should display the Header component  1`] = `
   padding: 20px;
 }
 
-.emotion-81 {
+.emotion-89 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -198,7 +242,7 @@ exports[`<App /> should display the Header component  1`] = `
 }
 
 @media (min-width:768px) {
-  .emotion-81 {
+  .emotion-89 {
     min-width: 400px;
     max-width: 800px;
     margin: auto;
@@ -210,12 +254,12 @@ exports[`<App /> should display the Header component  1`] = `
 }
 
 @media (min-width:1024px) {
-  .emotion-81 {
+  .emotion-89 {
     max-width: 1240px;
   }
 }
 
-.emotion-72 {
+.emotion-80 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -224,7 +268,7 @@ exports[`<App /> should display the Header component  1`] = `
 }
 
 @media (min-width:768px) {
-  .emotion-72 {
+  .emotion-80 {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -232,21 +276,21 @@ exports[`<App /> should display the Header component  1`] = `
   }
 }
 
-.emotion-42 {
+.emotion-50 {
   color: #e25555;
   padding: 0 5px;
 }
 
-.emotion-70 {
+.emotion-78 {
   position: relative;
   height: 18px;
 }
 
-.emotion-70:hover .emotion-69 {
+.emotion-78:hover .emotion-77 {
   visibility: visible;
 }
 
-.emotion-45 {
+.emotion-53 {
   box-sizing: initial;
   display: inline-block;
   cursor: default;
@@ -255,7 +299,7 @@ exports[`<App /> should display the Header component  1`] = `
   padding: 0 10px;
 }
 
-.emotion-68 {
+.emotion-76 {
   position: absolute;
   background: #d3dddd;
   padding: 1px 4px;
@@ -273,7 +317,7 @@ exports[`<App /> should display the Header component  1`] = `
   top: -2px;
 }
 
-.emotion-68:before {
+.emotion-76:before {
   content: '';
   position: absolute;
   top: 29%;
@@ -286,7 +330,7 @@ exports[`<App /> should display the Header component  1`] = `
   transform: rotate(90deg);
 }
 
-.emotion-48 {
+.emotion-56 {
   box-sizing: initial;
   display: inline-block;
   cursor: default;
@@ -295,7 +339,7 @@ exports[`<App /> should display the Header component  1`] = `
   padding: 0 5px;
 }
 
-.emotion-79 {
+.emotion-87 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -308,7 +352,7 @@ exports[`<App /> should display the Header component  1`] = `
 }
 
 @media (min-width:768px) {
-  .emotion-79 {
+  .emotion-87 {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -316,7 +360,7 @@ exports[`<App /> should display the Header component  1`] = `
   }
 }
 
-.emotion-77 {
+.emotion-85 {
   box-sizing: initial;
   display: inline-block;
   cursor: pointer;
@@ -325,12 +369,12 @@ exports[`<App /> should display the Header component  1`] = `
   padding: 0 5px;
 }
 
-.emotion-74 {
+.emotion-82 {
   width: 100%;
   height: auto;
 }
 
-.emotion-38 {
+.emotion-46 {
   -webkit-transform: translate(-50%,-50%);
   -ms-transform: translate(-50%,-50%);
   transform: translate(-50%,-50%);
@@ -339,14 +383,14 @@ exports[`<App /> should display the Header component  1`] = `
   position: absolute;
 }
 
-.emotion-32 {
+.emotion-40 {
   margin: 0 0 30px 0;
   border-radius: 25px;
   box-shadow: 0 10px 20px 0 rgba(69,58,100,0.2);
   background: #f7f8f6;
 }
 
-.emotion-30 {
+.emotion-38 {
   display: inline-block;
   vertical-align: middle;
   box-sizing: border-box;
@@ -358,7 +402,7 @@ exports[`<App /> should display the Header component  1`] = `
   height: 90px;
 }
 
-.emotion-36 {
+.emotion-44 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -373,19 +417,19 @@ exports[`<App /> should display the Header component  1`] = `
   justify-content: center;
 }
 
-.emotion-34 {
+.emotion-42 {
   color: #4b5e40;
 }
 
 <div
-  class="MuiBox-root MuiBox-root-220 emotion-85 emotion-86"
+  class="MuiBox-root MuiBox-root-236 emotion-93 emotion-94"
 >
   <header
-    class="MuiPaper-root MuiPaper-elevation4 MuiAppBar-root MuiAppBar-positionStatic emotion-28 emotion-29 MuiAppBar-colorPrimary"
+    class="MuiPaper-root MuiPaper-elevation4 MuiAppBar-root MuiAppBar-positionStatic emotion-36 emotion-37 MuiAppBar-colorPrimary"
     data-testid="header"
   >
     <div
-      class="MuiToolbar-root MuiToolbar-regular emotion-26 emotion-27 MuiToolbar-gutters"
+      class="MuiToolbar-root MuiToolbar-regular emotion-34 emotion-35 MuiToolbar-gutters"
     >
       <div
         class="MuiToolbar-root MuiToolbar-regular emotion-14 emotion-15 MuiToolbar-gutters"
@@ -454,7 +498,7 @@ exports[`<App /> should display the Header component  1`] = `
         </div>
       </div>
       <div
-        class="MuiToolbar-root MuiToolbar-regular emotion-24 emotion-25 MuiToolbar-gutters"
+        class="MuiToolbar-root MuiToolbar-regular emotion-32 emotion-33 MuiToolbar-gutters"
         data-testid="header-right"
       >
         <button
@@ -482,52 +526,109 @@ exports[`<App /> should display the Header component  1`] = `
           />
         </button>
         <div
-          class="emotion-20 emotion-21"
+          class="emotion-28 emotion-29"
         >
-          <button
-            class="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-colorInherit"
-            tabindex="0"
-            title="Change language"
-            type="button"
+          <div
+            class="emotion-26 emotion-27"
           >
-            <span
-              class="MuiButton-label ForwardRef(Button)-label-339"
+            <div
+              class="MuiFormControl-root MuiTextField-root emotion-24 emotion-25"
             >
-              <svg
-                aria-hidden="true"
-                class="MuiSvgIcon-root"
-                focusable="false"
-                role="presentation"
-                viewBox="0 0 24 24"
+              <div
+                class="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-formControl MuiInputBase-adornedStart MuiOutlinedInput-adornedStart MuiInputBase-adornedEnd MuiOutlinedInput-adornedEnd"
               >
-                <path
-                  d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zm6.93 6h-2.95c-.32-1.25-.78-2.45-1.38-3.56 1.84.63 3.37 1.91 4.33 3.56zM12 4.04c.83 1.2 1.48 2.53 1.91 3.96h-3.82c.43-1.43 1.08-2.76 1.91-3.96zM4.26 14C4.1 13.36 4 12.69 4 12s.1-1.36.26-2h3.38c-.08.66-.14 1.32-.14 2 0 .68.06 1.34.14 2H4.26zm.82 2h2.95c.32 1.25.78 2.45 1.38 3.56-1.84-.63-3.37-1.9-4.33-3.56zm2.95-8H5.08c.96-1.66 2.49-2.93 4.33-3.56C8.81 5.55 8.35 6.75 8.03 8zM12 19.96c-.83-1.2-1.48-2.53-1.91-3.96h3.82c-.43 1.43-1.08 2.76-1.91 3.96zM14.34 14H9.66c-.09-.66-.16-1.32-.16-2 0-.68.07-1.35.16-2h4.68c.09.65.16 1.32.16 2 0 .68-.07 1.34-.16 2zm.25 5.56c.6-1.11 1.06-2.31 1.38-3.56h2.95c-.96 1.65-2.49 2.93-4.33 3.56zM16.36 14c.08-.66.14-1.32.14-2 0-.68-.06-1.34-.14-2h3.38c.16.64.26 1.31.26 2s-.1 1.36-.26 2h-3.38z"
+                <svg
+                  aria-hidden="true"
+                  class="MuiSvgIcon-root emotion-18 emotion-19"
+                  focusable="false"
+                  role="presentation"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zm6.93 6h-2.95c-.32-1.25-.78-2.45-1.38-3.56 1.84.63 3.37 1.91 4.33 3.56zM12 4.04c.83 1.2 1.48 2.53 1.91 3.96h-3.82c.43-1.43 1.08-2.76 1.91-3.96zM4.26 14C4.1 13.36 4 12.69 4 12s.1-1.36.26-2h3.38c-.08.66-.14 1.32-.14 2 0 .68.06 1.34.14 2H4.26zm.82 2h2.95c.32 1.25.78 2.45 1.38 3.56-1.84-.63-3.37-1.9-4.33-3.56zm2.95-8H5.08c.96-1.66 2.49-2.93 4.33-3.56C8.81 5.55 8.35 6.75 8.03 8zM12 19.96c-.83-1.2-1.48-2.53-1.91-3.96h3.82c-.43 1.43-1.08 2.76-1.91 3.96zM14.34 14H9.66c-.09-.66-.16-1.32-.16-2 0-.68.07-1.35.16-2h4.68c.09.65.16 1.32.16 2 0 .68-.07 1.34-.16 2zm.25 5.56c.6-1.11 1.06-2.31 1.38-3.56h2.95c-.96 1.65-2.49 2.93-4.33 3.56zM16.36 14c.08-.66.14-1.32.14-2 0-.68-.06-1.34-.14-2h3.38c.16.64.26 1.31.26 2s-.1 1.36-.26 2h-3.38z"
+                  />
+                </svg>
+                <input
+                  aria-invalid="false"
+                  autocomplete="off"
+                  class="MuiInputBase-input MuiOutlinedInput-input MuiInputBase-inputAdornedStart MuiOutlinedInput-inputAdornedStart MuiInputBase-inputAdornedEnd MuiOutlinedInput-inputAdornedEnd"
+                  type="text"
+                  value="English"
                 />
-              </svg>
-              <span
-                class="emotion-18 emotion-19"
-              >
-                English
-              </span>
-              <svg
-                aria-hidden="true"
-                class="MuiSvgIcon-root MuiSvgIcon-fontSizeSmall"
-                focusable="false"
-                role="presentation"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"
-                />
-              </svg>
-            </span>
-            <span
-              class="MuiTouchRipple-root"
-            />
-          </button>
+                <div
+                  class="emotion-22 emotion-23"
+                >
+                  <button
+                    class="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorInherit MuiIconButton-sizeSmall"
+                    tabindex="0"
+                    title="Clear"
+                    type="button"
+                  >
+                    <span
+                      class="MuiIconButton-label"
+                    >
+                      <svg
+                        aria-hidden="true"
+                        class="MuiSvgIcon-root MuiSvgIcon-fontSizeSmall"
+                        focusable="false"
+                        role="presentation"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"
+                        />
+                      </svg>
+                    </span>
+                    <span
+                      class="MuiTouchRipple-root"
+                    />
+                  </button>
+                  <button
+                    class="MuiButtonBase-root MuiIconButton-root emotion-20 emotion-21 MuiIconButton-colorInherit MuiIconButton-sizeSmall"
+                    tabindex="0"
+                    title="Expand"
+                    type="button"
+                  >
+                    <span
+                      class="MuiIconButton-label"
+                    >
+                      <svg
+                        aria-hidden="true"
+                        class="MuiSvgIcon-root MuiSvgIcon-fontSizeSmall"
+                        focusable="false"
+                        role="presentation"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"
+                        />
+                      </svg>
+                    </span>
+                    <span
+                      class="MuiTouchRipple-root"
+                    />
+                  </button>
+                </div>
+                <fieldset
+                  aria-hidden="true"
+                  class="PrivateNotchedOutline-root-370 MuiOutlinedInput-notchedOutline"
+                  style="padding-left: 8px;"
+                >
+                  <legend
+                    class="PrivateNotchedOutline-legend-371"
+                    style="width: 0px;"
+                  >
+                    <span>
+                      ​
+                    </span>
+                  </legend>
+                </fieldset>
+              </div>
+            </div>
+          </div>
         </div>
         <a
-          class="emotion-22 emotion-23"
+          class="emotion-30 emotion-31"
           data-testid="header--tooltip-documentation"
           href="https://verdaccio.org/docs/en/installation"
           rel="noopener noreferrer"
@@ -631,28 +732,28 @@ exports[`<App /> should display the Header component  1`] = `
     </div>
   </header>
   <div
-    class="MuiBox-root MuiBox-root-414 emotion-40 emotion-41"
+    class="MuiBox-root MuiBox-root-446 emotion-48 emotion-49"
   >
     <div
       class="container content"
       data-testid="home-page-container"
     >
       <div
-        class="emotion-38 emotion-39"
+        class="emotion-46 emotion-47"
         data-testid="loading"
       >
         <div
-          class="emotion-32 emotion-33"
+          class="emotion-40 emotion-41"
         >
           <div
-            class="emotion-30 emotion-1"
+            class="emotion-38 emotion-1"
           />
         </div>
         <div
-          class="emotion-36 emotion-37"
+          class="emotion-44 emotion-45"
         >
           <div
-            class="MuiCircularProgress-root emotion-34 emotion-35 MuiCircularProgress-colorPrimary MuiCircularProgress-indeterminate"
+            class="MuiCircularProgress-root emotion-42 emotion-43 MuiCircularProgress-colorPrimary MuiCircularProgress-indeterminate"
             role="progressbar"
             style="width: 50px; height: 50px;"
           >
@@ -675,26 +776,26 @@ exports[`<App /> should display the Header component  1`] = `
     </div>
   </div>
   <div
-    class="emotion-83 emotion-84"
+    class="emotion-91 emotion-92"
   >
     <div
-      class="emotion-81 emotion-82"
+      class="emotion-89 emotion-90"
     >
       <div
-        class="emotion-72 emotion-73"
+        class="emotion-80 emotion-81"
       >
         Made with 
         <span
-          class="emotion-42 emotion-43"
+          class="emotion-50 emotion-51"
         >
           ♥
         </span>
          on
         <span
-          class="emotion-70 emotion-71"
+          class="emotion-78 emotion-79"
         >
           <svg
-            class="emotion-44 emotion-45 emotion-46"
+            class="emotion-52 emotion-53 emotion-54"
           >
             <title>
               Earth
@@ -704,10 +805,10 @@ exports[`<App /> should display the Header component  1`] = `
             />
           </svg>
           <span
-            class="emotion-68 emotion-69"
+            class="emotion-76 emotion-77"
           >
             <svg
-              class="emotion-47 emotion-48 emotion-46"
+              class="emotion-55 emotion-56 emotion-54"
             >
               <title>
                 Spain
@@ -717,7 +818,7 @@ exports[`<App /> should display the Header component  1`] = `
               />
             </svg>
             <svg
-              class="emotion-47 emotion-48 emotion-46"
+              class="emotion-55 emotion-56 emotion-54"
             >
               <title>
                 Nicaragua
@@ -727,7 +828,7 @@ exports[`<App /> should display the Header component  1`] = `
               />
             </svg>
             <svg
-              class="emotion-47 emotion-48 emotion-46"
+              class="emotion-55 emotion-56 emotion-54"
             >
               <title>
                 India
@@ -737,7 +838,7 @@ exports[`<App /> should display the Header component  1`] = `
               />
             </svg>
             <svg
-              class="emotion-47 emotion-48 emotion-46"
+              class="emotion-55 emotion-56 emotion-54"
             >
               <title>
                 Brazil
@@ -747,7 +848,7 @@ exports[`<App /> should display the Header component  1`] = `
               />
             </svg>
             <svg
-              class="emotion-47 emotion-48 emotion-46"
+              class="emotion-55 emotion-56 emotion-54"
             >
               <title>
                 China
@@ -757,7 +858,7 @@ exports[`<App /> should display the Header component  1`] = `
               />
             </svg>
             <svg
-              class="emotion-47 emotion-48 emotion-46"
+              class="emotion-55 emotion-56 emotion-54"
             >
               <title>
                 Austria
@@ -767,7 +868,7 @@ exports[`<App /> should display the Header component  1`] = `
               />
             </svg>
             <svg
-              class="emotion-47 emotion-48 emotion-46"
+              class="emotion-55 emotion-56 emotion-54"
             >
               <title>
                 Germany
@@ -780,16 +881,16 @@ exports[`<App /> should display the Header component  1`] = `
         </span>
       </div>
       <div
-        class="emotion-79 emotion-80"
+        class="emotion-87 emotion-88"
       >
         Powered by
         <span
-          class="emotion-47 emotion-77 emotion-78"
+          class="emotion-55 emotion-85 emotion-86"
           title="Verdaccio"
         >
           <img
             alt="Verdaccio"
-            class="emotion-74 emotion-75"
+            class="emotion-82 emotion-83"
             src="[object Object]"
           />
         </span>
@@ -801,11 +902,11 @@ exports[`<App /> should display the Header component  1`] = `
 `;
 
 exports[`<App /> should display the Loading component at the beginning  1`] = `
-.emotion-75 {
+.emotion-83 {
   background-color: #fff;
 }
 
-.emotion-28 {
+.emotion-36 {
   background-color: #4b5e40;
   color: #fff;
   min-height: 60px;
@@ -820,29 +921,29 @@ exports[`<App /> should display the Loading component at the beginning  1`] = `
 }
 
 @media (min-width:768px) {
-  .emotion-28 .emotion-13 {
+  .emotion-36 .emotion-13 {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
   }
 
-  .emotion-28 .emotion-17 {
+  .emotion-36 .emotion-17 {
     display: none;
   }
 
-  .emotion-28 .e1jf5lit4 {
+  .emotion-36 .e1jf5lit4 {
     display: none;
   }
 }
 
 @media (min-width:1024px) {
-  .emotion-28 .emotion-27 {
+  .emotion-36 .emotion-35 {
     padding: 0 20px;
   }
 
 @media (min-width:1275px) {
-    .emotion-28 .emotion-27 {
+    .emotion-36 .emotion-35 {
       max-width: 1240px;
       width: 100%;
       margin: 0 auto;
@@ -850,7 +951,7 @@ exports[`<App /> should display the Loading component at the beginning  1`] = `
 }
 }
 
-.emotion-26 {
+.emotion-34 {
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
@@ -928,7 +1029,7 @@ exports[`<App /> should display the Loading component at the beginning  1`] = `
   overflow-y: auto;
 }
 
-.emotion-24 {
+.emotion-32 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -940,32 +1041,76 @@ exports[`<App /> should display the Loading component at the beginning  1`] = `
   display: block;
 }
 
-.emotion-20 {
+.emotion-28 {
+  width: 220px;
   display: none;
 }
 
 @media screen and (min-width:768px) {
-  .emotion-20 {
+  .emotion-28 {
     display: inline-block;
   }
+}
+
+.emotion-26 {
+  position: relative;
+  height: 40px;
+}
+
+.emotion-24 {
+  height: 40px;
+  color: #fff;
+}
+
+.emotion-24 .MuiInputBase-root {
+  height: 40px;
+  color: #fff;
+}
+
+.emotion-24 .MuiInputBase-inputAdornedStart {
+  padding-left: 16px;
+}
+
+.emotion-24 .MuiInputBase-input {
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+
+.emotion-24 .MuiOutlinedInput-notchedOutline {
+  border-color: transparent;
+}
+
+.emotion-24 :hover .MuiOutlinedInput-notchedOutline {
+  border-color: #fff;
+}
+
+.emotion-24 :active .MuiOutlinedInput-notchedOutline {
+  border-color: #fff;
 }
 
 .emotion-18 {
-  display: none;
-}
-
-@media screen and (min-width:768px) {
-  .emotion-18 {
-    display: inline-block;
-  }
+  color: #fff;
 }
 
 .emotion-22 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.emotion-20 {
+  -webkit-transform: none;
+  -ms-transform: none;
+  transform: none;
+}
+
+.emotion-30 {
   color: #fff;
 }
 
 @media screen and (min-width:1240px) {
-  .emotion-30 {
+  .emotion-38 {
     max-width: 1240px;
     width: 100%;
     margin-left: auto;
@@ -973,7 +1118,7 @@ exports[`<App /> should display the Loading component at the beginning  1`] = `
   }
 }
 
-.emotion-73 {
+.emotion-81 {
   background: #f9f9f9;
   border-top: 1px solid #e3e3e3;
   color: #999999;
@@ -981,7 +1126,7 @@ exports[`<App /> should display the Loading component at the beginning  1`] = `
   padding: 20px;
 }
 
-.emotion-71 {
+.emotion-79 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -998,7 +1143,7 @@ exports[`<App /> should display the Loading component at the beginning  1`] = `
 }
 
 @media (min-width:768px) {
-  .emotion-71 {
+  .emotion-79 {
     min-width: 400px;
     max-width: 800px;
     margin: auto;
@@ -1010,12 +1155,12 @@ exports[`<App /> should display the Loading component at the beginning  1`] = `
 }
 
 @media (min-width:1024px) {
-  .emotion-71 {
+  .emotion-79 {
     max-width: 1240px;
   }
 }
 
-.emotion-62 {
+.emotion-70 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -1024,7 +1169,7 @@ exports[`<App /> should display the Loading component at the beginning  1`] = `
 }
 
 @media (min-width:768px) {
-  .emotion-62 {
+  .emotion-70 {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -1032,21 +1177,21 @@ exports[`<App /> should display the Loading component at the beginning  1`] = `
   }
 }
 
-.emotion-32 {
+.emotion-40 {
   color: #e25555;
   padding: 0 5px;
 }
 
-.emotion-60 {
+.emotion-68 {
   position: relative;
   height: 18px;
 }
 
-.emotion-60:hover .emotion-59 {
+.emotion-68:hover .emotion-67 {
   visibility: visible;
 }
 
-.emotion-35 {
+.emotion-43 {
   box-sizing: initial;
   display: inline-block;
   cursor: default;
@@ -1055,7 +1200,7 @@ exports[`<App /> should display the Loading component at the beginning  1`] = `
   padding: 0 10px;
 }
 
-.emotion-58 {
+.emotion-66 {
   position: absolute;
   background: #d3dddd;
   padding: 1px 4px;
@@ -1073,7 +1218,7 @@ exports[`<App /> should display the Loading component at the beginning  1`] = `
   top: -2px;
 }
 
-.emotion-58:before {
+.emotion-66:before {
   content: '';
   position: absolute;
   top: 29%;
@@ -1086,7 +1231,7 @@ exports[`<App /> should display the Loading component at the beginning  1`] = `
   transform: rotate(90deg);
 }
 
-.emotion-38 {
+.emotion-46 {
   box-sizing: initial;
   display: inline-block;
   cursor: default;
@@ -1095,7 +1240,7 @@ exports[`<App /> should display the Loading component at the beginning  1`] = `
   padding: 0 5px;
 }
 
-.emotion-69 {
+.emotion-77 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -1108,7 +1253,7 @@ exports[`<App /> should display the Loading component at the beginning  1`] = `
 }
 
 @media (min-width:768px) {
-  .emotion-69 {
+  .emotion-77 {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -1116,7 +1261,7 @@ exports[`<App /> should display the Loading component at the beginning  1`] = `
   }
 }
 
-.emotion-67 {
+.emotion-75 {
   box-sizing: initial;
   display: inline-block;
   cursor: pointer;
@@ -1125,21 +1270,21 @@ exports[`<App /> should display the Loading component at the beginning  1`] = `
   padding: 0 5px;
 }
 
-.emotion-64 {
+.emotion-72 {
   width: 100%;
   height: auto;
 }
 
 <div
-  class="MuiBox-root MuiBox-root-2 emotion-75 emotion-76"
+  class="MuiBox-root MuiBox-root-2 emotion-83 emotion-84"
   style="display: none;"
 >
   <header
-    class="MuiPaper-root MuiPaper-elevation4 MuiAppBar-root MuiAppBar-positionStatic emotion-28 emotion-29 MuiAppBar-colorPrimary"
+    class="MuiPaper-root MuiPaper-elevation4 MuiAppBar-root MuiAppBar-positionStatic emotion-36 emotion-37 MuiAppBar-colorPrimary"
     data-testid="header"
   >
     <div
-      class="MuiToolbar-root MuiToolbar-regular emotion-26 emotion-27 MuiToolbar-gutters"
+      class="MuiToolbar-root MuiToolbar-regular emotion-34 emotion-35 MuiToolbar-gutters"
     >
       <div
         class="MuiToolbar-root MuiToolbar-regular emotion-14 emotion-15 MuiToolbar-gutters"
@@ -1208,7 +1353,7 @@ exports[`<App /> should display the Loading component at the beginning  1`] = `
         </div>
       </div>
       <div
-        class="MuiToolbar-root MuiToolbar-regular emotion-24 emotion-25 MuiToolbar-gutters"
+        class="MuiToolbar-root MuiToolbar-regular emotion-32 emotion-33 MuiToolbar-gutters"
         data-testid="header-right"
       >
         <button
@@ -1236,52 +1381,109 @@ exports[`<App /> should display the Loading component at the beginning  1`] = `
           />
         </button>
         <div
-          class="emotion-20 emotion-21"
+          class="emotion-28 emotion-29"
         >
-          <button
-            class="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-colorInherit"
-            tabindex="0"
-            title="Change language"
-            type="button"
+          <div
+            class="emotion-26 emotion-27"
           >
-            <span
-              class="MuiButton-label ForwardRef(Button)-label-121"
+            <div
+              class="MuiFormControl-root MuiTextField-root emotion-24 emotion-25"
             >
-              <svg
-                aria-hidden="true"
-                class="MuiSvgIcon-root"
-                focusable="false"
-                role="presentation"
-                viewBox="0 0 24 24"
+              <div
+                class="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-formControl MuiInputBase-adornedStart MuiOutlinedInput-adornedStart MuiInputBase-adornedEnd MuiOutlinedInput-adornedEnd"
               >
-                <path
-                  d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zm6.93 6h-2.95c-.32-1.25-.78-2.45-1.38-3.56 1.84.63 3.37 1.91 4.33 3.56zM12 4.04c.83 1.2 1.48 2.53 1.91 3.96h-3.82c.43-1.43 1.08-2.76 1.91-3.96zM4.26 14C4.1 13.36 4 12.69 4 12s.1-1.36.26-2h3.38c-.08.66-.14 1.32-.14 2 0 .68.06 1.34.14 2H4.26zm.82 2h2.95c.32 1.25.78 2.45 1.38 3.56-1.84-.63-3.37-1.9-4.33-3.56zm2.95-8H5.08c.96-1.66 2.49-2.93 4.33-3.56C8.81 5.55 8.35 6.75 8.03 8zM12 19.96c-.83-1.2-1.48-2.53-1.91-3.96h3.82c-.43 1.43-1.08 2.76-1.91 3.96zM14.34 14H9.66c-.09-.66-.16-1.32-.16-2 0-.68.07-1.35.16-2h4.68c.09.65.16 1.32.16 2 0 .68-.07 1.34-.16 2zm.25 5.56c.6-1.11 1.06-2.31 1.38-3.56h2.95c-.96 1.65-2.49 2.93-4.33 3.56zM16.36 14c.08-.66.14-1.32.14-2 0-.68-.06-1.34-.14-2h3.38c.16.64.26 1.31.26 2s-.1 1.36-.26 2h-3.38z"
+                <svg
+                  aria-hidden="true"
+                  class="MuiSvgIcon-root emotion-18 emotion-19"
+                  focusable="false"
+                  role="presentation"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zm6.93 6h-2.95c-.32-1.25-.78-2.45-1.38-3.56 1.84.63 3.37 1.91 4.33 3.56zM12 4.04c.83 1.2 1.48 2.53 1.91 3.96h-3.82c.43-1.43 1.08-2.76 1.91-3.96zM4.26 14C4.1 13.36 4 12.69 4 12s.1-1.36.26-2h3.38c-.08.66-.14 1.32-.14 2 0 .68.06 1.34.14 2H4.26zm.82 2h2.95c.32 1.25.78 2.45 1.38 3.56-1.84-.63-3.37-1.9-4.33-3.56zm2.95-8H5.08c.96-1.66 2.49-2.93 4.33-3.56C8.81 5.55 8.35 6.75 8.03 8zM12 19.96c-.83-1.2-1.48-2.53-1.91-3.96h3.82c-.43 1.43-1.08 2.76-1.91 3.96zM14.34 14H9.66c-.09-.66-.16-1.32-.16-2 0-.68.07-1.35.16-2h4.68c.09.65.16 1.32.16 2 0 .68-.07 1.34-.16 2zm.25 5.56c.6-1.11 1.06-2.31 1.38-3.56h2.95c-.96 1.65-2.49 2.93-4.33 3.56zM16.36 14c.08-.66.14-1.32.14-2 0-.68-.06-1.34-.14-2h3.38c.16.64.26 1.31.26 2s-.1 1.36-.26 2h-3.38z"
+                  />
+                </svg>
+                <input
+                  aria-invalid="false"
+                  autocomplete="off"
+                  class="MuiInputBase-input MuiOutlinedInput-input MuiInputBase-inputAdornedStart MuiOutlinedInput-inputAdornedStart MuiInputBase-inputAdornedEnd MuiOutlinedInput-inputAdornedEnd"
+                  type="text"
+                  value="English"
                 />
-              </svg>
-              <span
-                class="emotion-18 emotion-19"
-              >
-                English
-              </span>
-              <svg
-                aria-hidden="true"
-                class="MuiSvgIcon-root MuiSvgIcon-fontSizeSmall"
-                focusable="false"
-                role="presentation"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"
-                />
-              </svg>
-            </span>
-            <span
-              class="MuiTouchRipple-root"
-            />
-          </button>
+                <div
+                  class="emotion-22 emotion-23"
+                >
+                  <button
+                    class="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorInherit MuiIconButton-sizeSmall"
+                    tabindex="0"
+                    title="Clear"
+                    type="button"
+                  >
+                    <span
+                      class="MuiIconButton-label"
+                    >
+                      <svg
+                        aria-hidden="true"
+                        class="MuiSvgIcon-root MuiSvgIcon-fontSizeSmall"
+                        focusable="false"
+                        role="presentation"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"
+                        />
+                      </svg>
+                    </span>
+                    <span
+                      class="MuiTouchRipple-root"
+                    />
+                  </button>
+                  <button
+                    class="MuiButtonBase-root MuiIconButton-root emotion-20 emotion-21 MuiIconButton-colorInherit MuiIconButton-sizeSmall"
+                    tabindex="0"
+                    title="Expand"
+                    type="button"
+                  >
+                    <span
+                      class="MuiIconButton-label"
+                    >
+                      <svg
+                        aria-hidden="true"
+                        class="MuiSvgIcon-root MuiSvgIcon-fontSizeSmall"
+                        focusable="false"
+                        role="presentation"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"
+                        />
+                      </svg>
+                    </span>
+                    <span
+                      class="MuiTouchRipple-root"
+                    />
+                  </button>
+                </div>
+                <fieldset
+                  aria-hidden="true"
+                  class="PrivateNotchedOutline-root-136 MuiOutlinedInput-notchedOutline"
+                  style="padding-left: 8px;"
+                >
+                  <legend
+                    class="PrivateNotchedOutline-legend-137"
+                    style="width: 0px;"
+                  >
+                    <span>
+                      ​
+                    </span>
+                  </legend>
+                </fieldset>
+              </div>
+            </div>
+          </div>
         </div>
         <a
-          class="emotion-22 emotion-23"
+          class="emotion-30 emotion-31"
           data-testid="header--tooltip-documentation"
           href="https://verdaccio.org/docs/en/installation"
           rel="noopener noreferrer"
@@ -1385,29 +1587,29 @@ exports[`<App /> should display the Loading component at the beginning  1`] = `
     </div>
   </header>
   <div
-    class="MuiBox-root MuiBox-root-196 emotion-30 emotion-31"
+    class="MuiBox-root MuiBox-root-212 emotion-38 emotion-39"
   />
   <div
-    class="emotion-73 emotion-74"
+    class="emotion-81 emotion-82"
   >
     <div
-      class="emotion-71 emotion-72"
+      class="emotion-79 emotion-80"
     >
       <div
-        class="emotion-62 emotion-63"
+        class="emotion-70 emotion-71"
       >
         Made with 
         <span
-          class="emotion-32 emotion-33"
+          class="emotion-40 emotion-41"
         >
           ♥
         </span>
          on
         <span
-          class="emotion-60 emotion-61"
+          class="emotion-68 emotion-69"
         >
           <svg
-            class="emotion-34 emotion-35 emotion-36"
+            class="emotion-42 emotion-43 emotion-44"
           >
             <title>
               Earth
@@ -1417,10 +1619,10 @@ exports[`<App /> should display the Loading component at the beginning  1`] = `
             />
           </svg>
           <span
-            class="emotion-58 emotion-59"
+            class="emotion-66 emotion-67"
           >
             <svg
-              class="emotion-37 emotion-38 emotion-36"
+              class="emotion-45 emotion-46 emotion-44"
             >
               <title>
                 Spain
@@ -1430,7 +1632,7 @@ exports[`<App /> should display the Loading component at the beginning  1`] = `
               />
             </svg>
             <svg
-              class="emotion-37 emotion-38 emotion-36"
+              class="emotion-45 emotion-46 emotion-44"
             >
               <title>
                 Nicaragua
@@ -1440,7 +1642,7 @@ exports[`<App /> should display the Loading component at the beginning  1`] = `
               />
             </svg>
             <svg
-              class="emotion-37 emotion-38 emotion-36"
+              class="emotion-45 emotion-46 emotion-44"
             >
               <title>
                 India
@@ -1450,7 +1652,7 @@ exports[`<App /> should display the Loading component at the beginning  1`] = `
               />
             </svg>
             <svg
-              class="emotion-37 emotion-38 emotion-36"
+              class="emotion-45 emotion-46 emotion-44"
             >
               <title>
                 Brazil
@@ -1460,7 +1662,7 @@ exports[`<App /> should display the Loading component at the beginning  1`] = `
               />
             </svg>
             <svg
-              class="emotion-37 emotion-38 emotion-36"
+              class="emotion-45 emotion-46 emotion-44"
             >
               <title>
                 China
@@ -1470,7 +1672,7 @@ exports[`<App /> should display the Loading component at the beginning  1`] = `
               />
             </svg>
             <svg
-              class="emotion-37 emotion-38 emotion-36"
+              class="emotion-45 emotion-46 emotion-44"
             >
               <title>
                 Austria
@@ -1480,7 +1682,7 @@ exports[`<App /> should display the Loading component at the beginning  1`] = `
               />
             </svg>
             <svg
-              class="emotion-37 emotion-38 emotion-36"
+              class="emotion-45 emotion-46 emotion-44"
             >
               <title>
                 Germany
@@ -1493,16 +1695,16 @@ exports[`<App /> should display the Loading component at the beginning  1`] = `
         </span>
       </div>
       <div
-        class="emotion-69 emotion-70"
+        class="emotion-77 emotion-78"
       >
         Powered by
         <span
-          class="emotion-37 emotion-67 emotion-68"
+          class="emotion-45 emotion-75 emotion-76"
           title="Verdaccio"
         >
           <img
             alt="Verdaccio"
-            class="emotion-64 emotion-65"
+            class="emotion-72 emotion-73"
             src="[object Object]"
           />
         </span>

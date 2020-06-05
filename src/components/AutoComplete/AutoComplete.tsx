@@ -127,8 +127,8 @@ const AutoComplete = memo(
     function renderSuggestionsContainer({ containerProps, children, query }): JSX.Element {
       return (
         <SuggestionContainer {...containerProps} square={true}>
-          {suggestionsLoaded && children === null && query && renderMessage(t('auto-complete.no-results-found'))}
-          {suggestionsLoading && query && renderMessage(t('auto-complete.loading'))}
+          {suggestionsLoaded && children === null && query && renderMessage(t('autoComplete.no-results-found'))}
+          {suggestionsLoading && query && renderMessage(t('autoComplete.loading'))}
           {suggestionsError && renderMessage(t('error.unspecific'))}
           {children}
         </SuggestionContainer>

@@ -19,9 +19,12 @@
     "search": {
         "packages": "ស្វែងរកកញ្ចប់"
     },
-    "auto-complete": {
+    "autoComplete": {
         "loading": "កំពុងផ្ទុក...",
-        "no-results-found": "រកមិនឃើញលទ្ធផល"
+        "no-results-found": "រកមិនឃើញលទ្ធផល",
+        "clear": "សម្អាត",
+        "expand": "ពង្រីក",
+        "collapse": "ដកថយ"
     },
     "tab": {
         "uplinks": "ភ្ជាប់តំណទៅ",
@@ -146,7 +149,5 @@
         "french":  "បារាំង",
         "ukraine": "អ៊ុយក្រែន",
         "khmer": "ខ្មែរ"
-    },
-    "help-to-translate": "ជួយបកប្រែ",
-    "change-language": "ប្ដូរភាសា"
+    }
 }
