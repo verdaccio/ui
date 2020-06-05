@@ -19,9 +19,12 @@
     "search": {
         "packages": "Rechercher des paquets"
     },
-    "auto-complete": {
+    "autoComplete": {
         "loading": "En cours de chargement...",
-        "no-results-found": "Aucun resultat trouvé"
+        "no-results-found": "Aucun resultat trouvé",
+        "clear": "Nettoyer",
+        "expand": "Développer",
+        "collapse": "Se rétracter"
     },
     "tab": {
         "uplinks": "Uplinks",
@@ -146,7 +149,5 @@
         "french": "Français",
         "ukraine": "Ukrainien",
         "khmer": "Khmer"
-    },
-    "help-to-translate": "Aide à la traduction",
-    "change-language": "Changer la langue"
+    }
 }

@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<Header /> component with logged in state should load the component in logged in state 1`] = `
-.emotion-28 {
+.emotion-36 {
   background-color: #4b5e40;
   color: #fff;
   min-height: 60px;
@@ -16,29 +16,29 @@ exports[`<Header /> component with logged in state should load the component in 
 }
 
 @media (min-width:768px) {
-  .emotion-28 .emotion-13 {
+  .emotion-36 .emotion-13 {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
   }
 
-  .emotion-28 .emotion-17 {
+  .emotion-36 .emotion-17 {
     display: none;
   }
 
-  .emotion-28 .e1jf5lit4 {
+  .emotion-36 .e1jf5lit4 {
     display: none;
   }
 }
 
 @media (min-width:1024px) {
-  .emotion-28 .emotion-27 {
+  .emotion-36 .emotion-35 {
     padding: 0 20px;
   }
 
 @media (min-width:1275px) {
-    .emotion-28 .emotion-27 {
+    .emotion-36 .emotion-35 {
       max-width: 1240px;
       width: 100%;
       margin: 0 auto;
@@ -46,7 +46,7 @@ exports[`<Header /> component with logged in state should load the component in 
 }
 }
 
-.emotion-26 {
+.emotion-34 {
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
@@ -124,7 +124,7 @@ exports[`<Header /> component with logged in state should load the component in 
   overflow-y: auto;
 }
 
-.emotion-24 {
+.emotion-32 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -136,36 +136,80 @@ exports[`<Header /> component with logged in state should load the component in 
   display: block;
 }
 
-.emotion-20 {
+.emotion-28 {
+  width: 220px;
   display: none;
 }
 
 @media screen and (min-width:768px) {
-  .emotion-20 {
+  .emotion-28 {
     display: inline-block;
   }
+}
+
+.emotion-26 {
+  position: relative;
+  height: 40px;
+}
+
+.emotion-24 {
+  height: 40px;
+  color: #fff;
+}
+
+.emotion-24 .MuiInputBase-root {
+  height: 40px;
+  color: #fff;
+}
+
+.emotion-24 .MuiInputBase-inputAdornedStart {
+  padding-left: 16px;
+}
+
+.emotion-24 .MuiInputBase-input {
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+
+.emotion-24 .MuiOutlinedInput-notchedOutline {
+  border-color: transparent;
+}
+
+.emotion-24 :hover .MuiOutlinedInput-notchedOutline {
+  border-color: #fff;
+}
+
+.emotion-24 :active .MuiOutlinedInput-notchedOutline {
+  border-color: #fff;
 }
 
 .emotion-18 {
-  display: none;
-}
-
-@media screen and (min-width:768px) {
-  .emotion-18 {
-    display: inline-block;
-  }
+  color: #fff;
 }
 
 .emotion-22 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.emotion-20 {
+  -webkit-transform: none;
+  -ms-transform: none;
+  transform: none;
+}
+
+.emotion-30 {
   color: #fff;
 }
 
 <header
-  class="MuiPaper-root MuiPaper-elevation4 MuiAppBar-root MuiAppBar-positionStatic emotion-28 emotion-29 MuiAppBar-colorPrimary"
+  class="MuiPaper-root MuiPaper-elevation4 MuiAppBar-root MuiAppBar-positionStatic emotion-36 emotion-37 MuiAppBar-colorPrimary"
   data-testid="header"
 >
   <div
-    class="MuiToolbar-root MuiToolbar-regular emotion-26 emotion-27 MuiToolbar-gutters"
+    class="MuiToolbar-root MuiToolbar-regular emotion-34 emotion-35 MuiToolbar-gutters"
   >
     <div
       class="MuiToolbar-root MuiToolbar-regular emotion-14 emotion-15 MuiToolbar-gutters"
@@ -234,7 +278,7 @@ exports[`<Header /> component with logged in state should load the component in 
       </div>
     </div>
     <div
-      class="MuiToolbar-root MuiToolbar-regular emotion-24 emotion-25 MuiToolbar-gutters"
+      class="MuiToolbar-root MuiToolbar-regular emotion-32 emotion-33 MuiToolbar-gutters"
       data-testid="header-right"
     >
       <button
@@ -262,52 +306,109 @@ exports[`<Header /> component with logged in state should load the component in 
         />
       </button>
       <div
-        class="emotion-20 emotion-21"
+        class="emotion-28 emotion-29"
       >
-        <button
-          class="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-colorInherit"
-          tabindex="0"
-          title="Change language"
-          type="button"
+        <div
+          class="emotion-26 emotion-27"
         >
-          <span
-            class="MuiButton-label ForwardRef(Button)-label-322"
+          <div
+            class="MuiFormControl-root MuiTextField-root emotion-24 emotion-25"
           >
-            <svg
-              aria-hidden="true"
-              class="MuiSvgIcon-root"
-              focusable="false"
-              role="presentation"
-              viewBox="0 0 24 24"
+            <div
+              class="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-formControl MuiInputBase-adornedStart MuiOutlinedInput-adornedStart MuiInputBase-adornedEnd MuiOutlinedInput-adornedEnd"
             >
-              <path
-                d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zm6.93 6h-2.95c-.32-1.25-.78-2.45-1.38-3.56 1.84.63 3.37 1.91 4.33 3.56zM12 4.04c.83 1.2 1.48 2.53 1.91 3.96h-3.82c.43-1.43 1.08-2.76 1.91-3.96zM4.26 14C4.1 13.36 4 12.69 4 12s.1-1.36.26-2h3.38c-.08.66-.14 1.32-.14 2 0 .68.06 1.34.14 2H4.26zm.82 2h2.95c.32 1.25.78 2.45 1.38 3.56-1.84-.63-3.37-1.9-4.33-3.56zm2.95-8H5.08c.96-1.66 2.49-2.93 4.33-3.56C8.81 5.55 8.35 6.75 8.03 8zM12 19.96c-.83-1.2-1.48-2.53-1.91-3.96h3.82c-.43 1.43-1.08 2.76-1.91 3.96zM14.34 14H9.66c-.09-.66-.16-1.32-.16-2 0-.68.07-1.35.16-2h4.68c.09.65.16 1.32.16 2 0 .68-.07 1.34-.16 2zm.25 5.56c.6-1.11 1.06-2.31 1.38-3.56h2.95c-.96 1.65-2.49 2.93-4.33 3.56zM16.36 14c.08-.66.14-1.32.14-2 0-.68-.06-1.34-.14-2h3.38c.16.64.26 1.31.26 2s-.1 1.36-.26 2h-3.38z"
+              <svg
+                aria-hidden="true"
+                class="MuiSvgIcon-root emotion-18 emotion-19"
+                focusable="false"
+                role="presentation"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zm6.93 6h-2.95c-.32-1.25-.78-2.45-1.38-3.56 1.84.63 3.37 1.91 4.33 3.56zM12 4.04c.83 1.2 1.48 2.53 1.91 3.96h-3.82c.43-1.43 1.08-2.76 1.91-3.96zM4.26 14C4.1 13.36 4 12.69 4 12s.1-1.36.26-2h3.38c-.08.66-.14 1.32-.14 2 0 .68.06 1.34.14 2H4.26zm.82 2h2.95c.32 1.25.78 2.45 1.38 3.56-1.84-.63-3.37-1.9-4.33-3.56zm2.95-8H5.08c.96-1.66 2.49-2.93 4.33-3.56C8.81 5.55 8.35 6.75 8.03 8zM12 19.96c-.83-1.2-1.48-2.53-1.91-3.96h3.82c-.43 1.43-1.08 2.76-1.91 3.96zM14.34 14H9.66c-.09-.66-.16-1.32-.16-2 0-.68.07-1.35.16-2h4.68c.09.65.16 1.32.16 2 0 .68-.07 1.34-.16 2zm.25 5.56c.6-1.11 1.06-2.31 1.38-3.56h2.95c-.96 1.65-2.49 2.93-4.33 3.56zM16.36 14c.08-.66.14-1.32.14-2 0-.68-.06-1.34-.14-2h3.38c.16.64.26 1.31.26 2s-.1 1.36-.26 2h-3.38z"
+                />
+              </svg>
+              <input
+                aria-invalid="false"
+                autocomplete="off"
+                class="MuiInputBase-input MuiOutlinedInput-input MuiInputBase-inputAdornedStart MuiOutlinedInput-inputAdornedStart MuiInputBase-inputAdornedEnd MuiOutlinedInput-inputAdornedEnd"
+                type="text"
+                value="English"
               />
-            </svg>
-            <span
-              class="emotion-18 emotion-19"
-            >
-              English
-            </span>
-            <svg
-              aria-hidden="true"
-              class="MuiSvgIcon-root MuiSvgIcon-fontSizeSmall"
-              focusable="false"
-              role="presentation"
-              viewBox="0 0 24 24"
-            >
-              <path
-                d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"
-              />
-            </svg>
-          </span>
-          <span
-            class="MuiTouchRipple-root"
-          />
-        </button>
+              <div
+                class="emotion-22 emotion-23"
+              >
+                <button
+                  class="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorInherit MuiIconButton-sizeSmall"
+                  tabindex="0"
+                  title="Clear"
+                  type="button"
+                >
+                  <span
+                    class="MuiIconButton-label"
+                  >
+                    <svg
+                      aria-hidden="true"
+                      class="MuiSvgIcon-root MuiSvgIcon-fontSizeSmall"
+                      focusable="false"
+                      role="presentation"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"
+                      />
+                    </svg>
+                  </span>
+                  <span
+                    class="MuiTouchRipple-root"
+                  />
+                </button>
+                <button
+                  class="MuiButtonBase-root MuiIconButton-root emotion-20 emotion-21 MuiIconButton-colorInherit MuiIconButton-sizeSmall"
+                  tabindex="0"
+                  title="Expand"
+                  type="button"
+                >
+                  <span
+                    class="MuiIconButton-label"
+                  >
+                    <svg
+                      aria-hidden="true"
+                      class="MuiSvgIcon-root MuiSvgIcon-fontSizeSmall"
+                      focusable="false"
+                      role="presentation"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"
+                      />
+                    </svg>
+                  </span>
+                  <span
+                    class="MuiTouchRipple-root"
+                  />
+                </button>
+              </div>
+              <fieldset
+                aria-hidden="true"
+                class="PrivateNotchedOutline-root-353 MuiOutlinedInput-notchedOutline"
+                style="padding-left: 8px;"
+              >
+                <legend
+                  class="PrivateNotchedOutline-legend-354"
+                  style="width: 0px;"
+                >
+                  <span>
+                    ​
+                  </span>
+                </legend>
+              </fieldset>
+            </div>
+          </div>
+        </div>
       </div>
       <a
-        class="emotion-22 emotion-23"
+        class="emotion-30 emotion-31"
         data-testid="header--tooltip-documentation"
         href="https://verdaccio.org/docs/en/installation"
         rel="noopener noreferrer"
@@ -424,7 +525,7 @@ exports[`<Header /> component with logged in state should load the component in 
 `;
 
 exports[`<Header /> component with logged in state should load the component in logged out state 1`] = `
-.emotion-28 {
+.emotion-36 {
   background-color: #4b5e40;
   color: #fff;
   min-height: 60px;
@@ -439,29 +540,29 @@ exports[`<Header /> component with logged in state should load the component in 
 }
 
 @media (min-width:768px) {
-  .emotion-28 .emotion-13 {
+  .emotion-36 .emotion-13 {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
   }
 
-  .emotion-28 .emotion-17 {
+  .emotion-36 .emotion-17 {
     display: none;
   }
 
-  .emotion-28 .e1jf5lit4 {
+  .emotion-36 .e1jf5lit4 {
     display: none;
   }
 }
 
 @media (min-width:1024px) {
-  .emotion-28 .emotion-27 {
+  .emotion-36 .emotion-35 {
     padding: 0 20px;
   }
 
 @media (min-width:1275px) {
-    .emotion-28 .emotion-27 {
+    .emotion-36 .emotion-35 {
       max-width: 1240px;
       width: 100%;
       margin: 0 auto;
@@ -469,7 +570,7 @@ exports[`<Header /> component with logged in state should load the component in 
 }
 }
 
-.emotion-26 {
+.emotion-34 {
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
@@ -547,7 +648,7 @@ exports[`<Header /> component with logged in state should load the component in 
   overflow-y: auto;
 }
 
-.emotion-24 {
+.emotion-32 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -559,36 +660,80 @@ exports[`<Header /> component with logged in state should load the component in 
   display: block;
 }
 
-.emotion-20 {
+.emotion-28 {
+  width: 220px;
   display: none;
 }
 
 @media screen and (min-width:768px) {
-  .emotion-20 {
+  .emotion-28 {
     display: inline-block;
   }
+}
+
+.emotion-26 {
+  position: relative;
+  height: 40px;
+}
+
+.emotion-24 {
+  height: 40px;
+  color: #fff;
+}
+
+.emotion-24 .MuiInputBase-root {
+  height: 40px;
+  color: #fff;
+}
+
+.emotion-24 .MuiInputBase-inputAdornedStart {
+  padding-left: 16px;
+}
+
+.emotion-24 .MuiInputBase-input {
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+
+.emotion-24 .MuiOutlinedInput-notchedOutline {
+  border-color: transparent;
+}
+
+.emotion-24 :hover .MuiOutlinedInput-notchedOutline {
+  border-color: #fff;
+}
+
+.emotion-24 :active .MuiOutlinedInput-notchedOutline {
+  border-color: #fff;
 }
 
 .emotion-18 {
-  display: none;
-}
-
-@media screen and (min-width:768px) {
-  .emotion-18 {
-    display: inline-block;
-  }
+  color: #fff;
 }
 
 .emotion-22 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.emotion-20 {
+  -webkit-transform: none;
+  -ms-transform: none;
+  transform: none;
+}
+
+.emotion-30 {
   color: #fff;
 }
 
 <header
-  class="MuiPaper-root MuiPaper-elevation4 MuiAppBar-root MuiAppBar-positionStatic emotion-28 emotion-29 MuiAppBar-colorPrimary"
+  class="MuiPaper-root MuiPaper-elevation4 MuiAppBar-root MuiAppBar-positionStatic emotion-36 emotion-37 MuiAppBar-colorPrimary"
   data-testid="header"
 >
   <div
-    class="MuiToolbar-root MuiToolbar-regular emotion-26 emotion-27 MuiToolbar-gutters"
+    class="MuiToolbar-root MuiToolbar-regular emotion-34 emotion-35 MuiToolbar-gutters"
   >
     <div
       class="MuiToolbar-root MuiToolbar-regular emotion-14 emotion-15 MuiToolbar-gutters"
@@ -657,7 +802,7 @@ exports[`<Header /> component with logged in state should load the component in 
       </div>
     </div>
     <div
-      class="MuiToolbar-root MuiToolbar-regular emotion-24 emotion-25 MuiToolbar-gutters"
+      class="MuiToolbar-root MuiToolbar-regular emotion-32 emotion-33 MuiToolbar-gutters"
       data-testid="header-right"
     >
       <button
@@ -685,52 +830,109 @@ exports[`<Header /> component with logged in state should load the component in 
         />
       </button>
       <div
-        class="emotion-20 emotion-21"
+        class="emotion-28 emotion-29"
       >
-        <button
-          class="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-colorInherit"
-          tabindex="0"
-          title="Change language"
-          type="button"
+        <div
+          class="emotion-26 emotion-27"
         >
-          <span
-            class="MuiButton-label ForwardRef(Button)-label-119"
+          <div
+            class="MuiFormControl-root MuiTextField-root emotion-24 emotion-25"
           >
-            <svg
-              aria-hidden="true"
-              class="MuiSvgIcon-root"
-              focusable="false"
-              role="presentation"
-              viewBox="0 0 24 24"
+            <div
+              class="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-formControl MuiInputBase-adornedStart MuiOutlinedInput-adornedStart MuiInputBase-adornedEnd MuiOutlinedInput-adornedEnd"
             >
-              <path
-                d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zm6.93 6h-2.95c-.32-1.25-.78-2.45-1.38-3.56 1.84.63 3.37 1.91 4.33 3.56zM12 4.04c.83 1.2 1.48 2.53 1.91 3.96h-3.82c.43-1.43 1.08-2.76 1.91-3.96zM4.26 14C4.1 13.36 4 12.69 4 12s.1-1.36.26-2h3.38c-.08.66-.14 1.32-.14 2 0 .68.06 1.34.14 2H4.26zm.82 2h2.95c.32 1.25.78 2.45 1.38 3.56-1.84-.63-3.37-1.9-4.33-3.56zm2.95-8H5.08c.96-1.66 2.49-2.93 4.33-3.56C8.81 5.55 8.35 6.75 8.03 8zM12 19.96c-.83-1.2-1.48-2.53-1.91-3.96h3.82c-.43 1.43-1.08 2.76-1.91 3.96zM14.34 14H9.66c-.09-.66-.16-1.32-.16-2 0-.68.07-1.35.16-2h4.68c.09.65.16 1.32.16 2 0 .68-.07 1.34-.16 2zm.25 5.56c.6-1.11 1.06-2.31 1.38-3.56h2.95c-.96 1.65-2.49 2.93-4.33 3.56zM16.36 14c.08-.66.14-1.32.14-2 0-.68-.06-1.34-.14-2h3.38c.16.64.26 1.31.26 2s-.1 1.36-.26 2h-3.38z"
+              <svg
+                aria-hidden="true"
+                class="MuiSvgIcon-root emotion-18 emotion-19"
+                focusable="false"
+                role="presentation"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zm6.93 6h-2.95c-.32-1.25-.78-2.45-1.38-3.56 1.84.63 3.37 1.91 4.33 3.56zM12 4.04c.83 1.2 1.48 2.53 1.91 3.96h-3.82c.43-1.43 1.08-2.76 1.91-3.96zM4.26 14C4.1 13.36 4 12.69 4 12s.1-1.36.26-2h3.38c-.08.66-.14 1.32-.14 2 0 .68.06 1.34.14 2H4.26zm.82 2h2.95c.32 1.25.78 2.45 1.38 3.56-1.84-.63-3.37-1.9-4.33-3.56zm2.95-8H5.08c.96-1.66 2.49-2.93 4.33-3.56C8.81 5.55 8.35 6.75 8.03 8zM12 19.96c-.83-1.2-1.48-2.53-1.91-3.96h3.82c-.43 1.43-1.08 2.76-1.91 3.96zM14.34 14H9.66c-.09-.66-.16-1.32-.16-2 0-.68.07-1.35.16-2h4.68c.09.65.16 1.32.16 2 0 .68-.07 1.34-.16 2zm.25 5.56c.6-1.11 1.06-2.31 1.38-3.56h2.95c-.96 1.65-2.49 2.93-4.33 3.56zM16.36 14c.08-.66.14-1.32.14-2 0-.68-.06-1.34-.14-2h3.38c.16.64.26 1.31.26 2s-.1 1.36-.26 2h-3.38z"
+                />
+              </svg>
+              <input
+                aria-invalid="false"
+                autocomplete="off"
+                class="MuiInputBase-input MuiOutlinedInput-input MuiInputBase-inputAdornedStart MuiOutlinedInput-inputAdornedStart MuiInputBase-inputAdornedEnd MuiOutlinedInput-inputAdornedEnd"
+                type="text"
+                value="English"
               />
-            </svg>
-            <span
-              class="emotion-18 emotion-19"
-            >
-              English
-            </span>
-            <svg
-              aria-hidden="true"
-              class="MuiSvgIcon-root MuiSvgIcon-fontSizeSmall"
-              focusable="false"
-              role="presentation"
-              viewBox="0 0 24 24"
-            >
-              <path
-                d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"
-              />
-            </svg>
-          </span>
-          <span
-            class="MuiTouchRipple-root"
-          />
-        </button>
+              <div
+                class="emotion-22 emotion-23"
+              >
+                <button
+                  class="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorInherit MuiIconButton-sizeSmall"
+                  tabindex="0"
+                  title="Clear"
+                  type="button"
+                >
+                  <span
+                    class="MuiIconButton-label"
+                  >
+                    <svg
+                      aria-hidden="true"
+                      class="MuiSvgIcon-root MuiSvgIcon-fontSizeSmall"
+                      focusable="false"
+                      role="presentation"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"
+                      />
+                    </svg>
+                  </span>
+                  <span
+                    class="MuiTouchRipple-root"
+                  />
+                </button>
+                <button
+                  class="MuiButtonBase-root MuiIconButton-root emotion-20 emotion-21 MuiIconButton-colorInherit MuiIconButton-sizeSmall"
+                  tabindex="0"
+                  title="Expand"
+                  type="button"
+                >
+                  <span
+                    class="MuiIconButton-label"
+                  >
+                    <svg
+                      aria-hidden="true"
+                      class="MuiSvgIcon-root MuiSvgIcon-fontSizeSmall"
+                      focusable="false"
+                      role="presentation"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"
+                      />
+                    </svg>
+                  </span>
+                  <span
+                    class="MuiTouchRipple-root"
+                  />
+                </button>
+              </div>
+              <fieldset
+                aria-hidden="true"
+                class="PrivateNotchedOutline-root-134 MuiOutlinedInput-notchedOutline"
+                style="padding-left: 8px;"
+              >
+                <legend
+                  class="PrivateNotchedOutline-legend-135"
+                  style="width: 0px;"
+                >
+                  <span>
+                    ​
+                  </span>
+                </legend>
+              </fieldset>
+            </div>
+          </div>
+        </div>
       </div>
       <a
-        class="emotion-22 emotion-23"
+        class="emotion-30 emotion-31"
         data-testid="header--tooltip-documentation"
         href="https://verdaccio.org/docs/en/installation"
         rel="noopener noreferrer"

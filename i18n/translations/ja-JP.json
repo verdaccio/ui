@@ -19,9 +19,12 @@
   "search": {
       "packages": "パッケージを検索"
   },
-  "auto-complete": {
+  "autoComplete": {
       "loading": "ロード中...",
-      "no-results-found": "パッケージが見つかりませんでした"
+      "no-results-found": "パッケージが見つかりませんでした",
+      "clear": "きれいにするため",
+      "expand": "拡大する",
+      "collapse": "撤回する"
   },
   "tab": {
       "uplinks": "アップリンク",
@@ -146,7 +149,5 @@
     "french": "フランス語",
     "ukraine": "ウクライナ",
     "khmer": "Khmer"
-   },
-   "help-to-translate": "翻訳を助ける",
-   "change-language": "言語を変更"
+   }
 }
