@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.8.0](https://github.com/verdaccio/ui/compare/v1.7.2...v1.8.0) (2020-06-05)
+
+
+### Features
+
+* **ui:** add new language filter autocomplete ([#477](https://github.com/verdaccio/ui/issues/477)) ([4dcfdec](https://github.com/verdaccio/ui/commit/4dcfdec7050c2b9b16d120fe193038a52a47c8c3))
+* custom favicon ([#463](https://github.com/verdaccio/ui/issues/463)) ([4713dea](https://github.com/verdaccio/ui/commit/4713dea319721f811470bfc530075bc16fab67aa))
+
+
+### Bug Fixes
+
+* revert custom favicon ([#463](https://github.com/verdaccio/ui/issues/463)) ([#480](https://github.com/verdaccio/ui/issues/480)) ([46f76c8](https://github.com/verdaccio/ui/commit/46f76c8e0e5df13aaa2c084da0811f78f5f1fd42))
+
 ### [1.7.2](https://github.com/verdaccio/ui/compare/v1.7.1...v1.7.2) (2020-05-12)
 
 

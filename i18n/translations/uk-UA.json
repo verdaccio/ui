@@ -19,9 +19,12 @@
     "search": {
         "packages": "Пошук пакетів"
     },
-    "auto-complete": {
+    "autoComplete": {
         "loading": "Завантаження...",
-        "no-results-found": "Нічого не знайдено"
+        "no-results-found": "Нічого не знайдено",
+        "clear": "Чистити",
+        "expand": "Розгорнути",
+        "collapse": "Відкликати"
     },
     "tab": {
         "uplinks": "Публікації",
@@ -146,7 +149,5 @@
         "french":  "Французька",
         "ukraine": "Українська",
         "khmer": "Khmer"
-    },
-    "help-to-translate": "Допоможіть перекласти",
-    "change-language": "Змінити мову"
+    }
 }

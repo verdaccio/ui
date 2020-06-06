@@ -1,207 +1,141 @@
-import React, { MouseEvent, useCallback, useState, useRef, useContext } from 'react';
+import React, { useCallback, useContext, useState, useMemo } from 'react';
 import LanguageIcon from '@material-ui/icons/Language';
-import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
-import i18next, { TFunction } from 'i18next';
+import i18next, { TFunctionKeys } from 'i18next';
 import { useTranslation } from 'react-i18next';
 import { withStyles } from '@material-ui/core/styles';
-import ClickAwayListener from '@material-ui/core/ClickAwayListener';
-import Grow from '@material-ui/core/Grow';
-import Popper from '@material-ui/core/Popper';
-import MenuList from '@material-ui/core/MenuList';
 import styled from '@emotion/styled';
 
 import { Language } from '../../../i18n/config';
 import ThemeContext from '../../design-tokens/ThemeContext';
-import Paper from '../../muiComponents/Paper';
 import MenuItem from '../../muiComponents/MenuItem';
-import Button from '../../muiComponents/Button';
-import Tooltip from '../../muiComponents/Tooltip';
-import Divider from '../../muiComponents/Divider';
-import Box from '../../muiComponents/Box';
 import { Theme } from '../../design-tokens/theme';
-import Link from '../Link';
 import Icon from '../Icon';
+import { AutoComplete } from '../AutoComplete/AutoCompleteV2';
 
-const VERDACCIO_UI_GITHUB_REPOSITORY = 'https://github.com/verdaccio/ui';
-
-const getTranslatedCurrentLanguageDetails = (
-  t: TFunction,
-  currentLanguage: string
-): { translation: string; icon: React.ComponentProps<typeof Icon>['name'] } => {
-  switch (currentLanguage) {
-    case 'fr-FR':
-      return {
-        translation: t('lng.french'),
-        icon: 'france',
-      };
-    case 'pt-BR':
-      return {
-        translation: t('lng.portuguese'),
-        icon: 'brazil',
-      };
-    case 'de-DE':
-      return {
-        translation: t('lng.german'),
-        icon: 'germany',
-      };
-    case 'es-ES':
-      return {
-        translation: t('lng.spanish'),
-        icon: 'spain',
-      };
-    case 'zh-CN':
-      return {
-        translation: t('lng.chinese'),
-        icon: 'china',
-      };
-    case 'ja-JP':
-      return {
-        translation: t('lng.japanese'),
-        icon: 'japan',
-      };
-    case 'uk-UA':
-      return {
-        translation: t('lng.ukraine'),
-        icon: 'ukraine',
-      };
-    case 'km-KH':
-      return {
-        translation: t('lng.khmer'),
-        icon: 'khmer',
-      };
-    default:
-      return {
-        translation: t('lng.english'),
-        icon: 'usa',
-      };
-  }
+const lngDetails: Record<Language, { translation: TFunctionKeys; icon: React.ComponentProps<typeof Icon>['name'] }> = {
+  'fr-FR': {
+    translation: 'lng.french',
+    icon: 'france',
+  },
+  'pt-BR': {
+    translation: 'lng.portuguese',
+    icon: 'brazil',
+  },
+  'de-DE': {
+    translation: 'lng.german',
+    icon: 'germany',
+  },
+  'es-ES': {
+    translation: 'lng.spanish',
+    icon: 'spain',
+  },
+  'zh-CN': {
+    translation: 'lng.chinese',
+    icon: 'china',
+  },
+  'uk-UA': {
+    translation: 'lng.ukraine',
+    icon: 'ukraine',
+  },
+  'km-KH': {
+    translation: 'lng.khmer',
+    icon: 'khmer',
+  },
+  'ja-JP': {
+    translation: 'lng.japanese',
+    icon: 'japan',
+  },
+  'en-US': {
+    translation: 'lng.english',
+    icon: 'usa',
+  },
 };
 
 const LanguageSwitch = () => {
   const themeContext = useContext(ThemeContext);
+  const [languages] = useState<Array<Language>>(Object.keys(i18next.options?.resources || {}) as Array<Language>);
   const { t } = useTranslation();
-  const [open, setOpen] = useState(false);
-  const anchorRef = useRef<HTMLButtonElement>(null);
 
   if (!themeContext) {
     throw Error(t('theme-context-not-correct-used'));
   }
 
-  const languages = (i18next.options.resources ? Object.keys(i18next.options.resources) : []) as Array<Language>;
   const currentLanguage = themeContext.language;
 
-  const { translation: userLanguage } = getTranslatedCurrentLanguageDetails(t, currentLanguage);
-
-  const handleToggle = useCallback(() => {
-    setOpen(prevOpen => !prevOpen);
-  }, []);
-
-  const handleClose = useCallback(
-    (event: MouseEvent<HTMLLIElement | Document | HTMLAnchorElement>) => {
-      if (anchorRef.current) {
-        if (anchorRef.current.contains(event.currentTarget)) {
-          return;
-        }
-      }
-
-      setOpen(false);
-    },
-    [setOpen]
-  );
-
-  const handleSwitchLanguage = useCallback(
-    (language: Language) => (event: MouseEvent<HTMLLIElement>) => {
+  const switchLanguage = useCallback(
+    ({ language }: { language: Language }) => {
       themeContext.setLanguage(language);
-      handleClose(event);
     },
-    [handleClose, themeContext]
+    [themeContext]
   );
 
-  // return focus to the button when we transitioned from !open -> open
-  const prevOpen = React.useRef(open);
-  React.useEffect(() => {
-    if (prevOpen.current === true && open === false) {
-      if (anchorRef.current) {
-        anchorRef.current.focus();
-      }
-    }
+  const getCurrentLngDetails = useCallback(
+    (language: Language) => {
+      const { icon, translation } = lngDetails[language] || lngDetails['en-US'];
+      return {
+        icon,
+        translation: t(translation),
+      };
+    },
+    [t]
+  );
 
-    prevOpen.current = open;
-  }, [open]);
+  const options = useMemo(
+    () =>
+      languages.map(language => {
+        const { icon, translation } = getCurrentLngDetails(language);
+        return {
+          language,
+          icon,
+          translation,
+        };
+      }),
+    [languages, getCurrentLngDetails]
+  );
+
+  const option = useCallback(
+    ({ icon, translation }: ReturnType<typeof getCurrentLngDetails>) => (
+      <StyledMenuItem component="div">
+        <Icon name={icon} size="md" />
+        {translation}
+      </StyledMenuItem>
+    ),
+    [getCurrentLngDetails]
+  );
+
+  const optionLabel = useCallback(({ translation }: ReturnType<typeof getCurrentLngDetails>) => translation, [
+    getCurrentLngDetails,
+  ]);
 
   return (
     <Wrapper>
-      <Tooltip enterDelay={300} title={t('change-language')}>
-        <SwitchButton color="inherit" onClick={handleToggle} ref={anchorRef}>
-          <LanguageIcon />
-          <UserLanguage>{userLanguage}</UserLanguage>
-          <ExpandMoreIcon fontSize="small" />
-        </SwitchButton>
-      </Tooltip>
-      <Popper anchorEl={anchorRef.current} disablePortal={true} open={open} role={undefined} transition={true}>
-        {({ TransitionProps }) => (
-          <Grow {...TransitionProps}>
-            <StyledPaper>
-              <ClickAwayListener onClickAway={handleClose}>
-                <MenuList>
-                  {languages
-                    .filter(language => language !== currentLanguage)
-                    .map(language => {
-                      const { icon, translation } = getTranslatedCurrentLanguageDetails(t, language);
-                      return (
-                        <StyledMenuItem
-                          key={language}
-                          onClick={handleSwitchLanguage(language)}
-                          selected={userLanguage === translation}>
-                          <Icon name={icon} size="md" />
-                          {translation}
-                        </StyledMenuItem>
-                      );
-                    })}
-                  <Box my={1}>
-                    <Divider />
-                  </Box>
-                  <MenuItem button={true}>
-                    <StyledLink external={true} onClick={handleClose} to={VERDACCIO_UI_GITHUB_REPOSITORY}>
-                      {`${t('help-to-translate')}`}
-                    </StyledLink>
-                  </MenuItem>
-                </MenuList>
-              </ClickAwayListener>
-            </StyledPaper>
-          </Grow>
-        )}
-      </Popper>
+      <AutoComplete
+        defaultValue={getCurrentLngDetails(currentLanguage).translation}
+        getOptionLabel={optionLabel}
+        hasClearIcon={true}
+        inputStartAdornment={<StyledLanguageIcon />}
+        onClick={switchLanguage}
+        options={options}
+        renderOption={option}
+        variant="outlined"
+      />
     </Wrapper>
   );
 };
 
 export default LanguageSwitch;
 
+const StyledLanguageIcon = styled(LanguageIcon)<{ theme?: Theme }>(({ theme }) => ({
+  color: theme?.palette.white,
+}));
+
 const Wrapper = styled('div')<{ theme?: Theme }>(({ theme }) => ({
+  width: 220,
   display: 'none',
   [`@media screen and (min-width: ${theme && theme.breakPoints.medium}px)`]: {
     display: 'inline-block',
   },
 }));
-
-const UserLanguage = styled('span')<{ theme?: Theme }>(({ theme }) => ({
-  display: 'none',
-  [`@media screen and (min-width: ${theme && theme.breakPoints.medium}px)`]: {
-    display: 'inline-block',
-  },
-}));
-
-const SwitchButton = withStyles((theme: Theme) => ({
-  label: {
-    display: 'grid',
-    gridGap: theme?.spacing(1),
-    gridTemplateColumns: '24px 20px',
-    [`@media screen and (min-width: ${theme && theme.breakPoints.medium}px)`]: {
-      gridTemplateColumns: '24px 1fr 20px',
-    },
-  },
-}))(Button);
 
 const StyledMenuItem = withStyles((theme: Theme) => ({
   root: {
@@ -216,12 +150,3 @@ const StyledMenuItem = withStyles((theme: Theme) => ({
     },
   },
 }))(MenuItem);
-
-const StyledLink = styled(Link)<{ theme?: Theme }>(({ theme }) => ({
-  color: theme?.palette.type === 'dark' ? theme?.palette.white : theme?.palette.text.primary,
-  textDecoration: 'none',
-}));
-
-const StyledPaper = styled(Paper)<{ theme?: Theme }>(({ theme }) => ({
-  backgroundColor: theme?.palette.type === 'dark' ? theme?.palette.cyanBlue : theme?.palette.white,
-}));
