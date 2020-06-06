@@ -1731,33 +1731,20 @@
   dependencies:
     "@hapi/hoek" "^8.3.0"
 
-"@htmllinter/basic-config@^0.5.0":
-  version "0.5.0"
-  resolved "https://registry.verdaccio.org/@htmllinter%2fbasic-config/-/basic-config-0.5.0.tgz#9238b8d187b73d86a0beadd680e37ef4e39621fc"
-  integrity sha512-86i6f6JzFX/Jna9Lns5pmSnEcTgcW5IlcMu8tSWXeBVBoOfe2jzUVaP6l0cCyo525Z49o7+B2InZmJWEEkgYxA==
+"@htmllinter/basic-config@^0.5.1":
+  version "0.5.1"
+  resolved "https://registry.verdaccio.org/@htmllinter%2fbasic-config/-/basic-config-0.5.1.tgz#2ac95f1ba6bc7da0f0728bb08448b16c1f3e6550"
+  integrity sha512-IrzjDoQXNL5Db5vS5jUBk2fcYiCLVyeHNRK4ZmMUSoehesfaMLZy755VAn+iVdZyV01KaSYVMKB7rIH1CTm0Ig==
   dependencies:
-    "@htmllinter/basic-rules" "^0.5.0"
-    "@htmllinter/core" "^0.5.0"
+    "@htmllinter/basic-rules" "^0.5.1"
+    "@htmllinter/core" "^0.5.1"
 
-"@htmllinter/basic-rules@^0.5.0":
-  version "0.5.0"
-  resolved "https://registry.verdaccio.org/@htmllinter%2fbasic-rules/-/basic-rules-0.5.0.tgz#52664e41f0b68abc9cf19b3d02a9f70df46e9b76"
-  integrity sha512-Db9CJovxhr24Sq79VZ77i7yx2XKiAfQ3djvauSjGiGfcDjNWQSFjvJZ60BfEUOpz8gUudQRYf67DobeCIaE5nA==
+"@htmllinter/basic-rules@^0.5.1":
+  version "0.5.1"
+  resolved "https://registry.verdaccio.org/@htmllinter%2fbasic-rules/-/basic-rules-0.5.1.tgz#11b040ab97bd85ca777ff19ff64dd5aa8a2ff635"
+  integrity sha512-bZyGTJkP+e0w+VA+Jk1SEKlGhypRKxXoOSSE42WrTvukMM4/4WNQKgU8QrXOiBOVs0ckKo1/W6nEevtl7PjNyw==
   dependencies:
-    "@htmllinter/core" "^0.5.0"
-
-"@htmllinter/core@^0.5.0":
-  version "0.5.0"
-  resolved "https://registry.verdaccio.org/@htmllinter%2fcore/-/core-0.5.0.tgz#b6aab94c3bb74d000cff20c8eaf98acbe1c7d584"
-  integrity sha512-+xmyKWLKiZYRbWiOqWwZBOw1zM5Dkvk2kSNL+mVsnuF0miOypFqtax04OdDOEmtOONhVTRH8pWRPJ5VY1JIpBw==
-  dependencies:
-    ajv "^6.12.2"
-    chalk "^3.0.0"
-    glob "^7.1.6"
-    posthtml "^0.13.0"
-    reshape-parser "^1.0.0"
-    strip-ansi "^6.0.0"
-    text-table "^0.2.0"
+    "@htmllinter/core" "^0.5.1"
 
 "@htmllinter/core@^0.5.1":
   version "0.5.1"

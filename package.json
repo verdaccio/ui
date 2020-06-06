@@ -19,7 +19,7 @@
     "@commitlint/config-conventional": "8.3.4",
     "@emotion/core": "10.0.22",
     "@emotion/styled": "10.0.23",
-    "@htmllinter/basic-config": "^0.5.0",
+    "@htmllinter/basic-config": "^0.5.1",
     "@htmllinter/core": "^0.5.1",
     "@material-ui/core": "4.8.0",
     "@material-ui/icons": "4.5.1",
