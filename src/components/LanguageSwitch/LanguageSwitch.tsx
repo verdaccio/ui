@@ -106,8 +106,10 @@ const LanguageSwitch = () => {
     ),
     [getCurrentLngDetails]
   );
-  // prettier-ignore
-  const optionLabel = useCallback(({ translation }: ReturnType<typeof getCurrentLngDetails>) => translation, [getCurrentLngDetails]);
+
+  const optionLabel = useCallback(({ translation }: ReturnType<typeof getCurrentLngDetails>) => translation, [
+    getCurrentLngDetails,
+  ]);
 
   return (
     <Wrapper>
