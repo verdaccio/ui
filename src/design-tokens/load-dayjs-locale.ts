@@ -62,6 +62,12 @@ function loadDayJSLocale() {
         dayjs.locale('uk');
       }
       break;
+    case 'zh-tw':
+      {
+        require('dayjs/locale/zh-tw');
+        dayjs.locale('zh-tw');
+      }
+      break;
     default:
       {
         require('dayjs/locale/en');

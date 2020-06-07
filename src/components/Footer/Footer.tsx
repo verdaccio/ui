@@ -23,6 +23,7 @@ const Footer: React.FC = () => {
               <Flag name="china" size="md" />
               <Flag name="austria" size="md" />
               <Flag name="germany" size="md" />
+              <Flag name="taiwan" size="md" />
             </Flags>
           </ToolTip>
         </Left>
