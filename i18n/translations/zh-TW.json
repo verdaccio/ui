@@ -143,9 +143,8 @@
         "spanish": "西班牙文",
         "german": "德文",
         "chinese": "簡體中文",
+        "chineseTraditional":"正體中文",
         "french": "法文",
         "ukraine": "烏克蘭文",
-        "khmer": "高棉文",
-        "chineseTraditional":"正體中文"
-    }
+        "khmer": "高棉文"    }
 }
