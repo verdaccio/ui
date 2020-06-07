@@ -16,6 +16,7 @@ import france from './img/france.svg';
 import japan from './img/japan.svg';
 import ukraine from './img/ukraine.svg';
 import khmer from './img/khmer.svg';
+import taiwan from './img/taiwan.svg';
 import earth from './img/earth.svg';
 import verdaccio from './img/verdaccio.svg';
 import filebinary from './img/filebinary.svg';
@@ -38,6 +39,7 @@ export interface IconsMap {
   japan: string;
   ukraine: string;
   khmer: string;
+  taiwan: string;
   earth: string;
   verdaccio: string;
   license: string;
@@ -69,6 +71,7 @@ export const Icons: IconsMap = {
   japan,
   ukraine,
   khmer,
+  taiwan,
 };
 
 export interface Props {

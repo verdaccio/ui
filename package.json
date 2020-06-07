@@ -1,6 +1,6 @@
 {
   "name": "@verdaccio/ui-theme",
-  "version": "1.8.0",
+  "version": "1.9.0",
   "description": "Verdaccio User Interface",
   "author": {
     "name": "Verdaccio Core Team",
@@ -40,7 +40,7 @@
     "@types/validator": "12.0.1",
     "@types/webpack-env": "1.15.0",
     "@typescript-eslint/parser": "2.18.0",
-    "@verdaccio/babel-preset": "9.0.0",
+    "@verdaccio/babel-preset": "9.4.0",
     "@verdaccio/commons-api": "9.0.0",
     "@verdaccio/eslint-config": "8.4.2",
     "@verdaccio/types": "9.0.0",
@@ -146,7 +146,7 @@
     },
     {
       "path": "./static/main.*.js",
-      "maxSize": "35 kB"
+      "maxSize": "36 kB"
     },
     {
       "path": "./static/[0-9].*.{js,css}",

@@ -49,6 +49,10 @@ const lngDetails: Record<Language, { translation: TFunctionKeys; icon: React.Com
     translation: 'lng.english',
     icon: 'usa',
   },
+  'zh-TW': {
+    translation: 'lng.chineseTraditional',
+    icon: 'taiwan',
+  },
 };
 
 const LanguageSwitch = () => {
