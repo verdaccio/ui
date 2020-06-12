@@ -5,6 +5,7 @@ import { Breakpoint } from '@material-ui/core/styles/createBreakpoints';
 import { Svg, Img, ImgWrapper } from './styles';
 import brazil from './img/brazil.svg';
 import china from './img/china.svg';
+import czech from './img/czech.svg';
 import india from './img/india.svg';
 import germany from './img/germany.svg';
 import nicaragua from './img/nicaragua.svg';
@@ -27,6 +28,7 @@ import version from './img/version.svg';
 
 export interface IconsMap {
   brazil: string;
+  czech: string;
   spain: string;
   china: string;
   usa: string;
@@ -52,6 +54,7 @@ export interface IconsMap {
 
 export const Icons: IconsMap = {
   brazil,
+  czech,
   spain,
   china,
   nicaragua,
