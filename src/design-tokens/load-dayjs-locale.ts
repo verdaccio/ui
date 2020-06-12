@@ -68,6 +68,12 @@ function loadDayJSLocale() {
         dayjs.locale('zh-tw');
       }
       break;
+    case 'cs-cz':
+      {
+        require('dayjs/locale/cs');
+        dayjs.locale('cs');
+      }
+      break;
     default:
       {
         require('dayjs/locale/en');
