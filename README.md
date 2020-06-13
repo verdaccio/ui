@@ -111,7 +111,7 @@ Your PR should contain:
 
 2 - The files ```i18n/config.ts``` and  ```LanguageSwitch.tsx``` updated with the new language. Please see the current structure
 
-3 - The other translations containing the new language in the language of the file. Example: 
+3 - The other translations containing the new language in the language of the file. Example:
 
 New language: ```cs_CZ ```
 
@@ -123,10 +123,17 @@ The file ```pt-BR ``` should contain:
  }
  ```
 
-4 - A SVG flag of the new translated language in the the folder ```src/components/Icon/img/*```. You maybe want to compress the svg file using https://jakearchibald.github.io/svgomg/ 
+4 - A SVG flag of the new translated language in the the folder ```src/components/Icon/img/*```. You maybe want to compress the svg file using https://jakearchibald.github.io/svgomg/
 
 
 
 ### License
 
 Verdaccio is [MIT licensed](https://github.com/verdaccio/verdaccio/blob/master/LICENSE)
+
+
+### Contributors
+
+<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+
+<!-- ALL-CONTRIBUTORS-LIST:END -->
