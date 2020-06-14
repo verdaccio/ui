@@ -63,6 +63,16 @@
         "code",
         "maintenance"
       ]
+    },
+    {
+      "login": "JackyChan",
+      "name": "JackyChan",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/260615?v=4",
+      "profile": "https://github.com/JackyChan",
+      "contributions": [
+        "translation",
+        "code"
+      ]
     }
   ],
   "skipCi": true,
