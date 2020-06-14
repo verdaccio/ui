@@ -34,7 +34,7 @@ const themeModes = {
   },
   dark: {
     ...colors,
-    primary: '#fff',
+    primary: '#24394e',
     secondary: '#424242',
     background: '#1A202C',
   },
