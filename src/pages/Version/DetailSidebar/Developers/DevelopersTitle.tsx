@@ -1,9 +1,9 @@
-import React from 'react';
 import styled from '@emotion/styled';
+import React from 'react';
 import { useTranslation } from 'react-i18next';
 
-import Text from '../../../../components/Text';
-import { Theme } from '../../../../design-tokens/theme';
+import Text from '@verdaccio/components/Text';
+import { Theme } from '@verdaccio/design-tokens/theme';
 
 import { DeveloperType } from './types';
 

@@ -30,7 +30,21 @@
     }
   },
   "rules": {
-    "import/order": ["error", {"newlines-between": "always"}],
+    "import/order": ["error", {
+      "pathGroups": [
+        {
+          "pattern": "@verdaccio/**",
+          "group": "external",
+          "position": "after"
+        }
+      ],
+      "pathGroupsExcludedImportTypes": ["@verdaccio"],
+      "alphabetize": {
+        "order": "asc",
+        "caseInsensitive": true
+      },
+      "newlines-between": "always"
+    }],
     "babel/no-invalid-this": 0,
     "no-invalid-this": 0,
     "no-console": ["error", { "allow": ["warn", "error"] }],

@@ -1,11 +1,12 @@
-import React, { useContext } from 'react';
 import styled from '@emotion/styled';
+import React, { useContext } from 'react';
 import { useTranslation } from 'react-i18next';
 
+import List from '@verdaccio/components/List';
+import Text from '@verdaccio/components/Text';
+import { Theme } from '@verdaccio/design-tokens/theme';
+
 import { DetailContext } from '../..';
-import Text from '../../../../components/Text';
-import List from '../../../../components/List';
-import { Theme } from '../../../../design-tokens/theme';
 
 import InstallListItem, { DependencyManager } from './InstallListItem';
 

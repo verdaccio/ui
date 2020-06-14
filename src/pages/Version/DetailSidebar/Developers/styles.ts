@@ -1,8 +1,8 @@
 import styled from '@emotion/styled';
 
-import Text from '../../../../components/Text';
-import FloatingActionButton from '../../../../components/FloatingActionButton';
-import { Theme } from '../../../../design-tokens/theme';
+import FloatingActionButton from '@verdaccio/components/FloatingActionButton';
+import Text from '@verdaccio/components/Text';
+import { Theme } from '@verdaccio/design-tokens/theme';
 
 export const Details = styled('span')({
   display: 'flex',

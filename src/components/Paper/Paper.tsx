@@ -1,5 +1,5 @@
-import React, { forwardRef } from 'react';
 import { default as MaterialUIPaper, PaperProps } from '@material-ui/core/Paper';
+import React, { forwardRef } from 'react';
 
 type PaperRef = HTMLElementTagNameMap[keyof HTMLElementTagNameMap];
 

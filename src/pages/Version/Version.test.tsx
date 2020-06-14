@@ -1,16 +1,17 @@
+import { waitForElement } from '@testing-library/dom';
 import React from 'react';
 import { MemoryRouter } from 'react-router';
-import { waitForElement } from '@testing-library/dom';
 
-import { render } from '../../utils/test-react-testing-library';
+import { render } from '@verdaccio/utils/test-react-testing-library';
+
 import translationEN from '../../../i18n/translations/en-US.json';
 
-import Version from './Version';
-import { DetailContext } from './context';
 import data from './__partials__/data.json';
+import { DetailContext } from './context';
+import Version from './Version';
 
 // :-) we mock this otherways fails on render, some weird issue on material-ui
-jest.mock('../../components/Avatar');
+jest.mock('@verdaccio/components/Avatar');
 
 const detailContextValue = {
   packageName: 'foo',

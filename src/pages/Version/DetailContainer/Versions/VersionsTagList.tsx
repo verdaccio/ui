@@ -1,8 +1,9 @@
 import React from 'react';
 
+import List from '@verdaccio/components/List';
+import ListItem from '@verdaccio/components/ListItem';
+
 import { DistTags } from '../../../../../types/packageMeta';
-import ListItem from '../../../../components/ListItem';
-import List from '../../../../components/List';
 
 import { Spacer, ListItemText } from './styles';
 

@@ -1,11 +1,11 @@
-import React, { useState, FormEvent, useCallback } from 'react';
 import debounce from 'lodash/debounce';
-import { RouteComponentProps, withRouter } from 'react-router';
+import React, { useState, FormEvent, useCallback } from 'react';
 import { SuggestionSelectedEventData } from 'react-autosuggest';
 import { useTranslation } from 'react-i18next';
+import { RouteComponentProps, withRouter } from 'react-router';
 
-import AutoComplete from '../../../components/AutoComplete';
-import { callSearch } from '../../../utils/calls';
+import AutoComplete from '@verdaccio/components/AutoComplete';
+import { callSearch } from '@verdaccio/utils/calls';
 
 import SearchAdornment from './SearchAdornment';
 

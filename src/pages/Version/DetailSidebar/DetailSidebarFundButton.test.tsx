@@ -1,7 +1,8 @@
-import React from 'react';
 import _ from 'lodash';
+import React from 'react';
 
-import { render } from '../../../utils/test-react-testing-library';
+import { render } from '@verdaccio/utils/test-react-testing-library';
+
 import { DetailContext } from '../context';
 import { DetailContextProps } from '../version-config';
 

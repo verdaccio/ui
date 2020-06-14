@@ -5,8 +5,8 @@ import { DIST_TAGS } from '../../../../../lib/constants';
 import { DetailContext } from '../../context';
 
 import { StyledText } from './styles';
-import VersionsTagList from './VersionsTagList';
 import VersionsHistoryList from './VersionsHistoryList';
+import VersionsTagList from './VersionsTagList';
 
 const Versions: React.FC = () => {
   const detailContext = useContext(DetailContext);

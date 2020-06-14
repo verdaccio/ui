@@ -2,8 +2,8 @@
 
 const [, , /* node */ /* file */ tag] = process.argv;
 
-const getStdin = require('get-stdin');
 const Octokit = require('@octokit/rest');
+const getStdin = require('get-stdin');
 const octokit = new Octokit({
   auth: `token ${process.env.GITHUB_TOKEN}`,
 });

@@ -1,16 +1,17 @@
-import React, { useCallback, useContext, useState, useMemo } from 'react';
+import styled from '@emotion/styled';
+import { withStyles } from '@material-ui/core/styles';
 import LanguageIcon from '@material-ui/icons/Language';
 import i18next, { TFunctionKeys } from 'i18next';
+import React, { useCallback, useContext, useState, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
-import { withStyles } from '@material-ui/core/styles';
-import styled from '@emotion/styled';
+
+import { AutoComplete } from '@verdaccio/components/AutoComplete/AutoCompleteV2';
+import Icon from '@verdaccio/components/Icon';
+import MenuItem from '@verdaccio/components/MenuItem';
+import { Theme } from '@verdaccio/design-tokens/theme';
+import ThemeContext from '@verdaccio/design-tokens/ThemeContext';
 
 import { Language } from '../../../../i18n/config';
-import ThemeContext from '../../../design-tokens/ThemeContext';
-import MenuItem from '../../../components/MenuItem';
-import { Theme } from '../../../design-tokens/theme';
-import Icon from '../../../components/Icon';
-import { AutoComplete } from '../../../components/AutoComplete/AutoCompleteV2';
 
 const lngDetails: Record<Language, { translation: TFunctionKeys; icon: React.ComponentProps<typeof Icon>['name'] }> = {
   'fr-FR': {

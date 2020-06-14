@@ -1,8 +1,9 @@
 import React from 'react';
 
-import { render, waitForElement, fireEvent } from '../../../utils/test-react-testing-library';
+import api from '@verdaccio/utils/api';
+import { render, waitForElement, fireEvent } from '@verdaccio/utils/test-react-testing-library';
+
 import AppContext, { AppContextProps } from '../../AppContext';
-import api from '../../../utils/api';
 
 import LoginDialog from './LoginDialog';
 

@@ -1,8 +1,8 @@
+import styled from '@emotion/styled';
 import React from 'react';
 import 'github-markdown-css';
-import styled from '@emotion/styled';
 
-import { Theme } from '../../design-tokens/theme';
+import { Theme } from '@verdaccio/design-tokens/theme';
 
 import { Props } from './types';
 

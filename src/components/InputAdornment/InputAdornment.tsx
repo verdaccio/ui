@@ -1,5 +1,5 @@
-import React, { forwardRef } from 'react';
 import { default as MaterialUIInputAdornment, InputAdornmentProps } from '@material-ui/core/InputAdornment';
+import React, { forwardRef } from 'react';
 
 type InputAdornmentRef = HTMLElementTagNameMap[keyof HTMLElementTagNameMap];
 

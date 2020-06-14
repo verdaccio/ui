@@ -1,11 +1,11 @@
-import React, { forwardRef } from 'react';
-import Info from '@material-ui/icons/Info';
 import Help from '@material-ui/icons/Help';
-import Search from '@material-ui/icons/Search';
+import Info from '@material-ui/icons/Info';
 import NightsStay from '@material-ui/icons/NightsStay';
+import Search from '@material-ui/icons/Search';
 import WbSunny from '@material-ui/icons/WbSunny';
+import React, { forwardRef } from 'react';
 
-import IconButton from '../../components/IconButton';
+import IconButton from '@verdaccio/components/IconButton';
 
 import { IconSearchButton, StyledLink } from './styles';
 

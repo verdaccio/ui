@@ -1,5 +1,5 @@
-import React, { forwardRef } from 'react';
 import { default as MaterialUIChip, ChipProps } from '@material-ui/core/Chip';
+import React, { forwardRef } from 'react';
 
 type ChipRef = HTMLElementTagNameMap[keyof HTMLElementTagNameMap];
 

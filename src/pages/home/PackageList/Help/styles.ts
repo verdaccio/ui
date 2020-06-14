@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
 
-import { default as Typography } from '../../../../components/Heading';
-import Card from '../../../../components/Card';
+import Card from '@verdaccio/components/Card';
+import { default as Typography } from '@verdaccio/components/Heading';
 
 export const CardStyled = styled(Card)({
   width: 600,

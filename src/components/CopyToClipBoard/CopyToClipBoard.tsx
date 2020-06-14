@@ -2,7 +2,8 @@ import FileCopy from '@material-ui/icons/FileCopy';
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 
-import { copyToClipBoardUtility } from '../../utils/cli-utils';
+import { copyToClipBoardUtility } from '@verdaccio/utils/cli-utils';
+
 import Tooltip from '../Tooltip';
 
 import { ClipBoardCopy, ClipBoardCopyText, CopyIcon } from './styles';

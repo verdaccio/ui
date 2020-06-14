@@ -1,5 +1,5 @@
-import React, { forwardRef } from 'react';
 import { default as MaterialUIFab, FabProps } from '@material-ui/core/Fab';
+import React, { forwardRef } from 'react';
 
 type FloatingActionButtonRef = HTMLButtonElement;
 

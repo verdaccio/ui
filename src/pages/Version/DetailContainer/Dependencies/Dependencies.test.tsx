@@ -1,8 +1,9 @@
 import React from 'react';
 import { HashRouter } from 'react-router-dom';
 
+import { render } from '@verdaccio/utils/test-react-testing-library';
+
 import { DetailContextProvider } from '../../context';
-import { render } from '../../../../utils/test-react-testing-library';
 
 import Dependencies from './Dependencies';
 

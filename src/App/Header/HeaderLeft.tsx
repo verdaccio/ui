@@ -1,11 +1,11 @@
-import React from 'react';
 import styled from '@emotion/styled';
+import React from 'react';
 import { Link } from 'react-router-dom';
 
-import Logo from '../../components/Logo';
+import Logo from '@verdaccio/components/Logo';
 
-import { LeftSide, SearchWrapper } from './styles';
 import Search from './Search';
+import { LeftSide, SearchWrapper } from './styles';
 
 interface Props {
   withoutSearch?: boolean;

@@ -1,12 +1,12 @@
-import React, { memo } from 'react';
 import styled from '@emotion/styled';
-import { useTranslation } from 'react-i18next';
+import React, { memo } from 'react';
 import useForm from 'react-hook-form/dist/react-hook-form.ie11';
+import { useTranslation } from 'react-i18next';
 
-import TextField from '../../../components/TextField';
-import Button from '../../../components/Button';
-import { Theme } from '../../../design-tokens/theme';
-import { LoginError } from '../../../utils/login';
+import Button from '@verdaccio/components/Button';
+import TextField from '@verdaccio/components/TextField';
+import { Theme } from '@verdaccio/design-tokens/theme';
+import { LoginError } from '@verdaccio/utils/login';
 
 import LoginDialogFormError from './LoginDialogFormError';
 

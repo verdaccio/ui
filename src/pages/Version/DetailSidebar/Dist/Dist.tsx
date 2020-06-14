@@ -1,10 +1,11 @@
 import React, { FC, useContext } from 'react';
 import { useTranslation } from 'react-i18next';
 
+import List from '@verdaccio/components/List';
+import fileSizeSI from '@verdaccio/utils/file-size';
+import { formatLicense } from '@verdaccio/utils/package';
+
 import { DetailContext } from '../../context';
-import fileSizeSI from '../../../../utils/file-size';
-import { formatLicense } from '../../../../utils/package';
-import List from '../../../../components/List';
 
 import { StyledText, DistListItem, DistChips } from './styles';
 

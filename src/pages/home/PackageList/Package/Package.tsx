@@ -1,20 +1,20 @@
-import React from 'react';
 import BugReport from '@material-ui/icons/BugReport';
 import DownloadIcon from '@material-ui/icons/CloudDownload';
 import HomeIcon from '@material-ui/icons/Home';
+import React from 'react';
 import { useTranslation } from 'react-i18next';
 
-import { PackageMetaInterface, Author as PackageAuthor } from '../../../../../types/packageMeta';
-import fileSizeSI from '../../../../utils/file-size';
-import { formatDate, formatDateDistance, getAuthorName } from '../../../../utils/package';
-import Tooltip from '../../../../components/Tooltip';
-import Link from '../../../../components/Link';
-import { isURL } from '../../../../utils/url';
-import { downloadTarball } from '../../../../components/ActionBar';
-import ListItem from '../../../../components/ListItem';
-import Grid from '../../../../components/Grid';
+import { downloadTarball } from '@verdaccio/components/ActionBar';
+import Grid from '@verdaccio/components/Grid';
+import Link from '@verdaccio/components/Link';
+import ListItem from '@verdaccio/components/ListItem';
+import Tooltip from '@verdaccio/components/Tooltip';
+import fileSizeSI from '@verdaccio/utils/file-size';
+import { formatDate, formatDateDistance, getAuthorName } from '@verdaccio/utils/package';
+import { isURL } from '@verdaccio/utils/url';
 
-import Tag from './Tag';
+import { PackageMetaInterface, Author as PackageAuthor } from '../../../../../types/packageMeta';
+
 import {
   Author,
   Avatar,
@@ -32,6 +32,7 @@ import {
   Text,
   WrapperLink,
 } from './styles';
+import Tag from './Tag';
 
 interface Bugs {
   url: string;

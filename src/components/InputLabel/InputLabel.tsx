@@ -1,5 +1,5 @@
-import React, { forwardRef } from 'react';
 import { default as MaterialUIInputLabel, InputLabelProps } from '@material-ui/core/InputLabel';
+import React, { forwardRef } from 'react';
 
 type InputLabelRef = HTMLLabelElement;
 

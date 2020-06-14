@@ -1,9 +1,15 @@
 import React from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
 
-import { render, fireEvent, waitForElement, waitForElementToBeRemoved } from '../../utils/test-react-testing-library';
-import { AppContextProvider } from '../../App';
+import {
+  render,
+  fireEvent,
+  waitForElement,
+  waitForElementToBeRemoved,
+} from '@verdaccio/utils/test-react-testing-library';
+
 import translationEN from '../../../i18n/translations/en-US.json';
+import { AppContextProvider } from '../../App';
 
 import Header from './Header';
 

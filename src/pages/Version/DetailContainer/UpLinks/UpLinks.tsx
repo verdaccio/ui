@@ -1,11 +1,12 @@
 import React, { useContext } from 'react';
 import { useTranslation } from 'react-i18next';
 
+import List from '@verdaccio/components/List';
+import ListItem from '@verdaccio/components/ListItem';
+import { formatDateDistance } from '@verdaccio/utils/package';
+
 import { DetailContext } from '../..';
 import NoItems from '../NoItems';
-import { formatDateDistance } from '../../../../utils/package';
-import List from '../../../../components/List';
-import ListItem from '../../../../components/ListItem';
 
 import { StyledText, Spacer, ListItemText } from './styles';
 

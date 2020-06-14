@@ -2,8 +2,8 @@
  * Token Utility
  */
 
-import { Base64 } from 'js-base64';
 import dayjs from 'dayjs';
+import { Base64 } from 'js-base64';
 
 export function generateTokenWithTimeRange(amount = 0) {
   const payload = {

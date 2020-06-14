@@ -1,9 +1,9 @@
-import React from 'react';
-import Search from '@material-ui/icons/Search';
 import styled from '@emotion/styled';
+import Search from '@material-ui/icons/Search';
+import React from 'react';
 
-import InputAdornment from '../../../components/InputAdornment';
-import { Theme } from '../../../design-tokens/theme';
+import InputAdornment from '@verdaccio/components/InputAdornment';
+import { Theme } from '@verdaccio/design-tokens/theme';
 
 const StyledInputAdornment = styled(InputAdornment)<{ theme?: Theme }>(props => ({
   color: props.theme && props.theme.palette.white,

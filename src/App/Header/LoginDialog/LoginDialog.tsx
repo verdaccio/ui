@@ -1,10 +1,11 @@
 import React, { useState, useContext, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 
-import { makeLogin } from '../../../utils/login';
-import storage from '../../../utils/storage';
-import Dialog from '../../../components/Dialog';
-import DialogContent from '../../../components/DialogContent';
+import Dialog from '@verdaccio/components/Dialog';
+import DialogContent from '@verdaccio/components/DialogContent';
+import { makeLogin } from '@verdaccio/utils/login';
+import storage from '@verdaccio/utils/storage';
+
 import AppContext from '../../../App/AppContext';
 
 import LoginDialogCloseButton from './LoginDialogCloseButton';

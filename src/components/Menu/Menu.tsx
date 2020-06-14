@@ -1,5 +1,5 @@
-import React, { forwardRef } from 'react';
 import { default as MaterialUIMenu, MenuProps } from '@material-ui/core/Menu';
+import React, { forwardRef } from 'react';
 
 type MenuRef = HTMLDivElement;
 

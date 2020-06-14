@@ -1,12 +1,12 @@
-import webpack from 'webpack';
-import HTMLWebpackPlugin from 'html-webpack-plugin';
 import FriendlyErrorsPlugin from 'friendly-errors-webpack-plugin';
+import HTMLWebpackPlugin from 'html-webpack-plugin';
 import StyleLintPlugin from 'stylelint-webpack-plugin';
+import webpack from 'webpack';
 
 import env from '../config/env';
 
-import baseConfig from './webpack.config';
 import getPackageJson from './getPackageJson';
+import baseConfig from './webpack.config';
 
 export default {
   ...baseConfig,

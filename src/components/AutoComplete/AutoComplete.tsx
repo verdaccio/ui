@@ -1,12 +1,13 @@
-import React, { KeyboardEvent, memo } from 'react';
 import styled from '@emotion/styled';
-import Autosuggest, { SuggestionSelectedEventData, InputProps, ChangeEvent } from 'react-autosuggest';
 import match from 'autosuggest-highlight/match';
 import parse from 'autosuggest-highlight/parse';
+import React, { KeyboardEvent, memo } from 'react';
+import Autosuggest, { SuggestionSelectedEventData, InputProps, ChangeEvent } from 'react-autosuggest';
 import { useTranslation } from 'react-i18next';
 
+import { Theme } from '@verdaccio/design-tokens/theme';
+
 import MenuItem from '../MenuItem';
-import { Theme } from '../../design-tokens/theme';
 
 import { Wrapper, InputField, SuggestionContainer } from './styles';
 

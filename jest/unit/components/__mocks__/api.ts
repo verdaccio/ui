@@ -1,10 +1,10 @@
 /**
  * API Mocks for WebUI
  */
-import logo from '../store/logo';
 import login from '../store/login';
-import { packageMeta } from '../store/packageMeta';
+import logo from '../store/logo';
 import { packageInformation } from '../store/package';
+import { packageMeta } from '../store/packageMeta';
 
 /**
  * Register mock api endpoints

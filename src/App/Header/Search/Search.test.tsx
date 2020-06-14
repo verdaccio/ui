@@ -1,9 +1,9 @@
 import React from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
-import '@testing-library/jest-dom/extend-expect';
 
-import { render, fireEvent, waitForElement } from '../../../utils/test-react-testing-library';
-import api from '../../../utils/api';
+import '@testing-library/jest-dom/extend-expect';
+import api from '@verdaccio/utils/api';
+import { render, fireEvent, waitForElement } from '@verdaccio/utils/test-react-testing-library';
 
 import Search from './Search';
 

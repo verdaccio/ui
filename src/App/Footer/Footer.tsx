@@ -1,7 +1,7 @@
 import React from 'react';
 import { useTranslation, Trans } from 'react-i18next';
 
-import { goToVerdaccioWebsite } from '../../utils/windows';
+import { goToVerdaccioWebsite } from '@verdaccio/utils/windows';
 
 import { Wrapper, Left, Right, Earth, Flags, Love, Flag, Logo, Inner, ToolTip } from './styles';
 

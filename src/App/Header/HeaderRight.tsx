@@ -1,13 +1,13 @@
 import React, { useState, useEffect, useContext, MouseEvent } from 'react';
 import { useTranslation } from 'react-i18next';
 
-import Button from '../../components/Button';
-import ThemeContext from '../../design-tokens/ThemeContext';
+import Button from '@verdaccio/components/Button';
+import ThemeContext from '@verdaccio/design-tokens/ThemeContext';
 
+import HeaderMenu from './HeaderMenu';
+import HeaderToolTip from './HeaderToolTip';
 import LanguageSwitch from './LanguageSwitch';
 import { RightSide } from './styles';
-import HeaderToolTip from './HeaderToolTip';
-import HeaderMenu from './HeaderMenu';
 
 interface Props {
   withoutSearch?: boolean;

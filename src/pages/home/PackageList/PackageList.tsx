@@ -1,11 +1,11 @@
-import React, { Fragment, ReactNode } from 'react';
 import styled from '@emotion/styled';
+import React, { Fragment, ReactNode } from 'react';
 
-import { formatLicense } from '../../../utils/package';
-import Divider from '../../../components/Divider';
+import Divider from '@verdaccio/components/Divider';
+import { formatLicense } from '@verdaccio/utils/package';
 
-import Package, { PackageInterface } from './Package';
 import Help from './Help';
+import Package, { PackageInterface } from './Package';
 
 const PkgContainer = styled('div')({
   margin: 0,

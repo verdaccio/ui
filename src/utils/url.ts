@@ -1,5 +1,5 @@
-import isURLValidator from 'validator/lib/isURL';
 import isEmailValidator from 'validator/lib/isEmail';
+import isURLValidator from 'validator/lib/isURL';
 import '../../types';
 
 export function isURL(url: string): boolean {

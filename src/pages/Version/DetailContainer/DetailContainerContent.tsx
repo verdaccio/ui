@@ -1,10 +1,10 @@
 import React from 'react';
 
 import Dependencies from './Dependencies';
-import UpLinks from './UpLinks';
-import Versions from './Versions';
 import DetailContainerContentReadme from './DetailContainerContentReadme';
 import { TabPosition } from './tabs';
+import UpLinks from './UpLinks';
+import Versions from './Versions';
 
 interface Props {
   tabPosition: TabPosition;

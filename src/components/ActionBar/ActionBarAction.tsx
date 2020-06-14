@@ -1,14 +1,15 @@
-import React from 'react';
 import styled from '@emotion/styled';
 import BugReportIcon from '@material-ui/icons/BugReport';
 import DownloadIcon from '@material-ui/icons/CloudDownload';
 import HomeIcon from '@material-ui/icons/Home';
+import React from 'react';
 import { useTranslation } from 'react-i18next';
 
-import Tooltip from '../Tooltip';
-import Link from '../Link';
+import { Theme } from '@verdaccio/design-tokens/theme';
+
 import FloatingActionButton from '../FloatingActionButton';
-import { Theme } from '../../design-tokens/theme';
+import Link from '../Link';
+import Tooltip from '../Tooltip';
 
 import downloadTarball from './download-tarball';
 

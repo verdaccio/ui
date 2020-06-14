@@ -1,5 +1,5 @@
-import React, { forwardRef } from 'react';
 import { default as MaterialUIToolbar, ToolbarProps } from '@material-ui/core/Toolbar';
+import React, { forwardRef } from 'react';
 
 type ToolbarRef = HTMLElementTagNameMap[keyof HTMLElementTagNameMap];
 

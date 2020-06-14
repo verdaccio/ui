@@ -1,10 +1,10 @@
-import React from 'react';
 import styled from '@emotion/styled';
+import React from 'react';
 
-import { Theme } from '../../design-tokens/theme';
+import { Theme } from '@verdaccio/design-tokens/theme';
 
-import defaultLogo from './img/logo.svg';
 import blackAndWithLogo from './img/logo-black-and-white.svg';
+import defaultLogo from './img/logo.svg';
 
 export enum Size {
   Small = '40px',

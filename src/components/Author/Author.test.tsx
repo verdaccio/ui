@@ -1,6 +1,7 @@
 import React from 'react';
 
-import { mount } from '../../utils/test-enzyme';
+import { mount } from '@verdaccio/utils/test-enzyme';
+
 import { DetailContext } from '../../pages/Version';
 
 import Authors from './Author';

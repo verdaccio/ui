@@ -1,15 +1,15 @@
 import styled from '@emotion/styled';
 import { Link } from 'react-router-dom';
 
-import Ico from '../../../../components/Icon';
-import Label from '../../../../components/Label';
-import { default as MuiIconButton } from '../../../../components/IconButton';
-import { default as Photo } from '../../../../components/Avatar';
-import List from '../../../../components/List';
-import { default as Typography } from '../../../../components/Heading';
-import Grid from '../../../../components/Grid';
-import ListItemText from '../../../../components/ListItemText';
-import { Theme } from '../../../../design-tokens/theme';
+import { default as Photo } from '@verdaccio/components/Avatar';
+import Grid from '@verdaccio/components/Grid';
+import { default as Typography } from '@verdaccio/components/Heading';
+import Ico from '@verdaccio/components/Icon';
+import { default as MuiIconButton } from '@verdaccio/components/IconButton';
+import Label from '@verdaccio/components/Label';
+import List from '@verdaccio/components/List';
+import ListItemText from '@verdaccio/components/ListItemText';
+import { Theme } from '@verdaccio/design-tokens/theme';
 
 export const OverviewItem = styled('span')<{ theme?: Theme }>(({ theme }) => ({
   display: 'flex',

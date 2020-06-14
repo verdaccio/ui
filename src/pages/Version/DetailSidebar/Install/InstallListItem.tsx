@@ -1,11 +1,11 @@
-import React from 'react';
 import styled from '@emotion/styled';
+import React from 'react';
 import { useTranslation } from 'react-i18next';
 
-import CopyToClipBoard from '../../../../components/CopyToClipBoard';
-import Avatar from '../../../../components/Avatar';
-import ListItem from '../../../../components/ListItem';
-import ListItemText from '../../../../components/ListItemText';
+import Avatar from '@verdaccio/components/Avatar';
+import CopyToClipBoard from '@verdaccio/components/CopyToClipBoard';
+import ListItem from '@verdaccio/components/ListItem';
+import ListItemText from '@verdaccio/components/ListItemText';
 
 // logos of package managers
 import npmLogo from './img/npm.svg';

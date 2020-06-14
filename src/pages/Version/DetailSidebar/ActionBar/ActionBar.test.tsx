@@ -1,9 +1,10 @@
 import React from 'react';
 
-import { render, cleanup } from '../../../../utils/test-react-testing-library';
+import ActionBar from '@verdaccio/components/ActionBar';
+import { render, cleanup } from '@verdaccio/utils/test-react-testing-library';
+
 import { DetailContext } from '../../context';
 import { DetailContextProps } from '../../version-config';
-import ActionBar from '../../../../components/ActionBar';
 
 const detailContextValue: DetailContextProps = {
   packageName: 'foo',

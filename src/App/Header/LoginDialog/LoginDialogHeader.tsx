@@ -1,14 +1,14 @@
-import React from 'react';
 import styled from '@emotion/styled';
-import LockOutlined from '@material-ui/icons/LockOutlined';
 import CloseIcon from '@material-ui/icons/Close';
+import LockOutlined from '@material-ui/icons/LockOutlined';
+import React from 'react';
 import { useTranslation } from 'react-i18next';
 
-import Heading from '../../../components/Heading';
-import Avatar from '../../../components/Avatar';
-import Box from '../../../components/Box';
-import IconButton from '../../../components/IconButton';
-import { Theme } from '../../../design-tokens/theme';
+import Avatar from '@verdaccio/components/Avatar';
+import Box from '@verdaccio/components/Box';
+import Heading from '@verdaccio/components/Heading';
+import IconButton from '@verdaccio/components/IconButton';
+import { Theme } from '@verdaccio/design-tokens/theme';
 interface Props {
   onClose?: () => void;
 }

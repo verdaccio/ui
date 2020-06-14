@@ -1,5 +1,5 @@
-import path from 'path';
 import { fork } from 'child_process';
+import path from 'path';
 
 import { HTTP_STATUS } from '@verdaccio/commons-api';
 

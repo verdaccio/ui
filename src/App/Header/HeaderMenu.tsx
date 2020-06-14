@@ -1,10 +1,10 @@
+import AccountCircle from '@material-ui/icons/AccountCircle';
 import React, { MouseEvent } from 'react';
 import { useTranslation } from 'react-i18next';
-import AccountCircle from '@material-ui/icons/AccountCircle';
 
-import IconButton from '../../components/IconButton';
-import MenuItem from '../../components/MenuItem';
-import Menu from '../../components/Menu';
+import IconButton from '@verdaccio/components/IconButton';
+import Menu from '@verdaccio/components/Menu';
+import MenuItem from '@verdaccio/components/MenuItem';
 
 import HeaderGreetings from './HeaderGreetings';
 

@@ -1,20 +1,20 @@
-import React, { useContext } from 'react';
 import styled from '@emotion/styled';
+import React, { useContext } from 'react';
 
-import Paper from '../../../components/Paper';
-import ActionBar from '../../../components/ActionBar';
-import Author from '../../../components/Author';
-import { Theme } from '../../../design-tokens/theme';
-
-import Developers, { DeveloperType } from './Developers';
-import Dist from './Dist';
-import Install from './Install';
-import Engines from './Engines';
-import Repository from './Repository';
-import DetailSidebarTitle from './DetailSidebarTitle';
-import DetailSidebarFundButton from './DetailSidebarFundButton';
+import ActionBar from '@verdaccio/components/ActionBar';
+import Author from '@verdaccio/components/Author';
+import Paper from '@verdaccio/components/Paper';
+import { Theme } from '@verdaccio/design-tokens/theme';
 
 import { DetailContext } from '..';
+
+import DetailSidebarFundButton from './DetailSidebarFundButton';
+import DetailSidebarTitle from './DetailSidebarTitle';
+import Developers, { DeveloperType } from './Developers';
+import Dist from './Dist';
+import Engines from './Engines';
+import Install from './Install';
+import Repository from './Repository';
 
 const DetailSidebar: React.FC = () => {
   const detailContext = useContext(DetailContext);

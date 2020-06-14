@@ -1,6 +1,7 @@
 import React from 'react';
 
-import { render, cleanup } from '../../utils/test-react-testing-library';
+import { render, cleanup } from '@verdaccio/utils/test-react-testing-library';
+
 import { DetailContext, DetailContextProps } from '../../pages/Version';
 
 import ActionBar from './ActionBar';

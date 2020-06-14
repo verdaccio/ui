@@ -1,6 +1,7 @@
 import React from 'react';
 
-import { mount } from '../../../../utils/test-enzyme';
+import { mount } from '@verdaccio/utils/test-enzyme';
+
 import { DetailContextProvider } from '../../context';
 
 import Developers, { Fab } from './Developers';

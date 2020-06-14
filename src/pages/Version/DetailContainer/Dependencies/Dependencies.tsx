@@ -1,8 +1,9 @@
 import React, { useContext } from 'react';
-import { useHistory } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
+import { useHistory } from 'react-router-dom';
 
-import CardContent from '../../../../components/CardContent';
+import CardContent from '@verdaccio/components/CardContent';
+
 import { PackageDependencies } from '../../../../../types/packageMeta';
 import { DetailContext } from '../../context';
 import NoItems from '../NoItems';

@@ -1,10 +1,10 @@
 import React from 'react';
 
-import { shallow } from '../../../../utils/test-enzyme';
+import { shallow } from '@verdaccio/utils/test-enzyme';
 
-import Tag from './Tag';
 import Package from './Package';
 import { WrapperLink, Description, OverviewItem } from './styles';
+import Tag from './Tag';
 
 /**
  * Generates one month back date from current time

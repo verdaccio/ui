@@ -1,12 +1,12 @@
 import React, { useState, useContext } from 'react';
 
-import Box from '../../../components/Box';
+import Box from '@verdaccio/components/Box';
 
-import DetailContainerTabs from './DetailContainerTabs';
+import { DetailContext } from '../context';
+
 import DetailContainerContent from './DetailContainerContent';
+import DetailContainerTabs from './DetailContainerTabs';
 import { TabPosition } from './tabs';
-
-import { DetailContext } from '..';
 
 const DetailContainer: React.FC = () => {
   const tabs = Object.values(TabPosition);

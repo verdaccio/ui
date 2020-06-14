@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { render, cleanup, fireEvent } from '../../../utils/test-react-testing-library';
+import { render, cleanup, fireEvent } from '@verdaccio/utils/test-react-testing-library';
 
 import RegistryInfoContent from './RegistryInfoContent';
 

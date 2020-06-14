@@ -1,11 +1,11 @@
-import React from 'react';
 import styled from '@emotion/styled';
 import CloseIcon from '@material-ui/icons/Close';
+import React from 'react';
 import { useTranslation } from 'react-i18next';
 
-import DialogTitle from '../../../components/DialogTitle';
-import IconButton from '../../../components/IconButton';
-import { Theme } from '../../../design-tokens/theme';
+import DialogTitle from '@verdaccio/components/DialogTitle';
+import IconButton from '@verdaccio/components/IconButton';
+import { Theme } from '@verdaccio/design-tokens/theme';
 
 const StyledIconButton = styled(IconButton)<{ theme?: Theme }>(({ theme }) => ({
   position: 'absolute',

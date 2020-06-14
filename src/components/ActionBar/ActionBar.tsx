@@ -1,7 +1,8 @@
 import React from 'react';
 
+import { isURL } from '@verdaccio/utils/url';
+
 import { DetailContext } from '../../pages/Version';
-import { isURL } from '../../utils/url';
 import Box from '../Box';
 
 import ActionBarAction, { ActionBarActionProps } from './ActionBarAction';

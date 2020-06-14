@@ -1,7 +1,7 @@
 import { HELP_TITLE } from '../../src/components/Help/Help';
 
-const scopedPackageMetadata = require('./partials/pkg-scoped');
 const protectedPackageMetadata = require('./partials/pkg-protected');
+const scopedPackageMetadata = require('./partials/pkg-scoped');
 
 describe('/ (Verdaccio Page)', () => {
   let page;

@@ -1,22 +1,23 @@
 /* eslint-disable react/jsx-max-depth */
-import React, { useState, useEffect, Suspense } from 'react';
 import styled from '@emotion/styled';
 import isNil from 'lodash/isNil';
+import React, { useState, useEffect, Suspense } from 'react';
 import { Router } from 'react-router-dom';
 
-import '../../i18n/config';
-import storage from '../utils/storage';
-import { isTokenExpire } from '../utils/login';
-import { Loading } from '../components/Loading';
-import Box from '../components/Box';
-import StyleBaseline from '../design-tokens/StyleBaseline';
-import { Theme } from '../design-tokens/theme';
-import loadDayJSLocale from '../design-tokens/load-dayjs-locale';
+import Box from '@verdaccio/components/Box';
+import { Loading } from '@verdaccio/components/Loading';
+import loadDayJSLocale from '@verdaccio/design-tokens/load-dayjs-locale';
+import StyleBaseline from '@verdaccio/design-tokens/StyleBaseline';
+import { Theme } from '@verdaccio/design-tokens/theme';
+import { isTokenExpire } from '@verdaccio/utils/login';
+import storage from '@verdaccio/utils/storage';
 
-import Header from './Header';
-import Footer from './Footer';
 import AppContextProvider from './AppContextProvider';
 import AppRoute, { history } from './AppRoute';
+import Footer from './Footer';
+import Header from './Header';
+
+import '../../i18n/config';
 
 const StyledBox = styled(Box)<{ theme?: Theme }>(({ theme }) => ({
   backgroundColor: theme?.palette.background.default,

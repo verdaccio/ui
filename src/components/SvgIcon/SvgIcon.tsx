@@ -1,5 +1,5 @@
-import React, { forwardRef } from 'react';
 import { default as MaterialUISvgIcon, SvgIconProps } from '@material-ui/core/SvgIcon';
+import React, { forwardRef } from 'react';
 
 type SvgIconRef = SVGSVGElement;
 

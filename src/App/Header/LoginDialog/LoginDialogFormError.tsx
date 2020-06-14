@@ -1,11 +1,11 @@
-import React, { memo } from 'react';
 import styled from '@emotion/styled';
 import Error from '@material-ui/icons/Error';
+import React, { memo } from 'react';
 
-import SnackbarContent from '../../../components/SnackbarContent';
-import Box from '../../../components/Box';
-import { Theme } from '../../../design-tokens/theme';
-import { LoginError } from '../../../utils/login';
+import Box from '@verdaccio/components/Box';
+import SnackbarContent from '@verdaccio/components/SnackbarContent';
+import { Theme } from '@verdaccio/design-tokens/theme';
+import { LoginError } from '@verdaccio/utils/login';
 
 const StyledSnackbarContent = styled(SnackbarContent)<{ theme?: Theme }>(({ theme }) => ({
   backgroundColor: theme?.palette.error.dark,

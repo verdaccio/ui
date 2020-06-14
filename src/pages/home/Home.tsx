@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 
-import API from '../../utils/api';
-import { Loading } from '../../components/Loading';
+import { Loading } from '@verdaccio/components/Loading';
+import API from '@verdaccio/utils/api';
 
 import { PackageList } from './PackageList';
 

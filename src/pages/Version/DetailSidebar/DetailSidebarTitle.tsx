@@ -1,10 +1,10 @@
-import React from 'react';
 import styled from '@emotion/styled';
+import React from 'react';
 import { useTranslation } from 'react-i18next';
 
-import Box from '../../../components/Box';
-import Heading from '../../../components/Heading';
-import { Theme } from '../../../design-tokens/theme';
+import Box from '@verdaccio/components/Box';
+import Heading from '@verdaccio/components/Heading';
+import { Theme } from '@verdaccio/design-tokens/theme';
 
 interface Props {
   packageName: string;

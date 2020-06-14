@@ -1,12 +1,13 @@
 import styled from '@emotion/styled';
 import React, { useCallback } from 'react';
-import { useHistory } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
+import { useHistory } from 'react-router-dom';
+
+import { Theme } from '@verdaccio/design-tokens/theme';
 
 import Box from '../Box';
 import Button from '../Button';
 import Heading from '../Heading';
-import { Theme } from '../../design-tokens/theme';
 
 import PackageImg from './img/package.svg';
 

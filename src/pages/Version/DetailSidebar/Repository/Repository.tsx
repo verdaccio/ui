@@ -1,17 +1,18 @@
-import React from 'react';
 import styled from '@emotion/styled';
+import React from 'react';
 import { useTranslation } from 'react-i18next';
 
-import Avatar from '../../../../components/Avatar';
-import Text from '../../../../components/Text';
-import ListItem from '../../../../components/ListItem';
-import ListItemText from '../../../../components/ListItemText';
-import Link from '../../../../components/Link';
-import { isURL } from '../../../../utils/url';
-import CopyToClipBoard from '../../../../components/CopyToClipBoard';
-import List from '../../../../components/List';
+import Avatar from '@verdaccio/components/Avatar';
+import CopyToClipBoard from '@verdaccio/components/CopyToClipBoard';
+import Link from '@verdaccio/components/Link';
+import List from '@verdaccio/components/List';
+import ListItem from '@verdaccio/components/ListItem';
+import ListItemText from '@verdaccio/components/ListItemText';
+import Text from '@verdaccio/components/Text';
+import { Theme } from '@verdaccio/design-tokens/theme';
+import { isURL } from '@verdaccio/utils/url';
+
 import { DetailContext } from '../../context';
-import { Theme } from '../../../../design-tokens/theme';
 
 import git from './img/git.png';
 

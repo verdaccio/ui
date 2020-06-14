@@ -1,5 +1,5 @@
-import React, { forwardRef } from 'react';
 import { default as MaterialUIDialogContent, DialogContentProps } from '@material-ui/core/DialogContent';
+import React, { forwardRef } from 'react';
 
 type DialogContentRef = HTMLDivElement;
 

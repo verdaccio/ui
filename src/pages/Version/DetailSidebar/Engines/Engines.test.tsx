@@ -1,8 +1,9 @@
 import React from 'react';
 
-import { mount } from '../../../../utils/test-enzyme';
-import { DetailContext } from '../../context';
+import { mount } from '@verdaccio/utils/test-enzyme';
+
 import { PackageMetaInterface } from '../../../../../types/packageMeta';
+import { DetailContext } from '../../context';
 
 import Engine from './Engines';
 

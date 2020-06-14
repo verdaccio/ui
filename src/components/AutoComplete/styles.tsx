@@ -1,9 +1,10 @@
-import React from 'react';
 import styled from '@emotion/styled';
+import React from 'react';
 
-import TextField from '../TextField';
+import { Theme } from '@verdaccio/design-tokens/theme';
+
 import Paper from '../Paper';
-import { Theme } from '../../design-tokens/theme';
+import TextField from '../TextField';
 
 export interface InputFieldProps {
   color: string;

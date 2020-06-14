@@ -1,7 +1,7 @@
-import React from 'react';
 import styled from '@emotion/styled';
+import React from 'react';
 
-import { Theme } from '../../design-tokens/theme';
+import { Theme } from '@verdaccio/design-tokens/theme';
 
 interface Props {
   text: string;

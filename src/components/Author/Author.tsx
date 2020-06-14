@@ -1,11 +1,12 @@
 import React, { FC, useContext } from 'react';
 import { useTranslation } from 'react-i18next';
 
+import { getAuthorName } from '@verdaccio/utils/package';
+import { isEmail } from '@verdaccio/utils/url';
+
 import { DetailContext } from '../../pages/Version';
-import { isEmail } from '../../utils/url';
 import Avatar from '../Avatar';
 import List from '../List';
-import { getAuthorName } from '../../utils/package';
 
 import { StyledText, AuthorListItem, AuthorListItemText } from './styles';
 

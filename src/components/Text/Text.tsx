@@ -1,5 +1,5 @@
-import React, { forwardRef } from 'react';
 import { default as MaterialUITypography } from '@material-ui/core/Typography';
+import React, { forwardRef } from 'react';
 
 import { TextProps } from './TextConfig';
 

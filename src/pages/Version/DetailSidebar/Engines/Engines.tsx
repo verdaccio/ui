@@ -1,15 +1,16 @@
 import React, { useContext } from 'react';
 import { useTranslation } from 'react-i18next';
 
-import { DetailContext } from '../../context';
-import Avatar from '../../../../components/Avatar';
-import List from '../../../../components/List';
-import npm from '../Install/img/npm.svg';
-import ListItemText from '../../../../components/ListItemText';
-import Grid from '../../../../components/Grid';
+import Avatar from '@verdaccio/components/Avatar';
+import Grid from '@verdaccio/components/Grid';
+import List from '@verdaccio/components/List';
+import ListItemText from '@verdaccio/components/ListItemText';
 
-import { StyledText, EngineListItem } from './styles';
+import { DetailContext } from '../../context';
+import npm from '../Install/img/npm.svg';
+
 import node from './img/node.png';
+import { StyledText, EngineListItem } from './styles';
 
 const Engine: React.FC = () => {
   const { packageMeta } = useContext(DetailContext);

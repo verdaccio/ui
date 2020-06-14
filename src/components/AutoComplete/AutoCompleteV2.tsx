@@ -1,16 +1,17 @@
-import React, { memo, useState, ChangeEvent, KeyboardEvent, useEffect, useRef, useCallback } from 'react';
 import styled from '@emotion/styled';
-import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
-import CloseIcon from '@material-ui/icons/Close';
 import { withStyles } from '@material-ui/core/styles';
+import CloseIcon from '@material-ui/icons/Close';
+import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
+import React, { memo, useState, ChangeEvent, KeyboardEvent, useEffect, useRef, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 
-import TextField from '../TextField';
-import Paper from '../Paper';
-import MenuItem from '../MenuItem';
+import { Theme } from '@verdaccio/design-tokens/theme';
+import { useOnClickOutside } from '@verdaccio/design-tokens/useOnClickOutside';
+
 import IconButton from '../IconButton';
-import { Theme } from '../../design-tokens/theme';
-import { useOnClickOutside } from '../../design-tokens/useOnClickOutside';
+import MenuItem from '../MenuItem';
+import Paper from '../Paper';
+import TextField from '../TextField';
 
 import { createFilterOptions } from './useAutoComplete';
 

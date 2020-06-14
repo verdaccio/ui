@@ -1,8 +1,8 @@
 import styled from '@emotion/styled';
 
+import { default as MuiCard } from '../Card';
 import { default as Typography } from '../Heading';
 import List from '../List';
-import { default as MuiCard } from '../Card';
 
 export const Wrapper = styled('div')({
   display: 'flex',

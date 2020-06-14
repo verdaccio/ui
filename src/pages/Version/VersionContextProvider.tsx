@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 
-import { callDetailPage, callReadme } from '../../utils/calls';
+import { callDetailPage, callReadme } from '@verdaccio/utils/calls';
 
-import getRouterPackageName from './get-route-package-name';
 import { DetailContext } from './context';
+import getRouterPackageName from './get-route-package-name';
 import isPackageVersionValid from './is-package-version-valid';
 
 interface Params {

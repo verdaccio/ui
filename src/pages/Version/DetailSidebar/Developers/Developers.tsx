@@ -1,17 +1,18 @@
-import React, { useState, useCallback, useContext, useEffect, useMemo } from 'react';
-import Add from '@material-ui/icons/Add';
 import styled from '@emotion/styled';
+import Add from '@material-ui/icons/Add';
+import React, { useState, useCallback, useContext, useEffect, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 
-import { DetailContext } from '../..';
-import Tooltip from '../../../../components/Tooltip';
-import Avatar from '../../../../components/Avatar';
-import Box from '../../../../components/Box';
-import FloatingActionButton from '../../../../components/FloatingActionButton';
-import { Theme } from '../../../../design-tokens/theme';
+import Avatar from '@verdaccio/components/Avatar';
+import Box from '@verdaccio/components/Box';
+import FloatingActionButton from '@verdaccio/components/FloatingActionButton';
+import Tooltip from '@verdaccio/components/Tooltip';
+import { Theme } from '@verdaccio/design-tokens/theme';
 
-import getUniqueDeveloperValues from './get-unique-developer-values';
+import { DetailContext } from '../..';
+
 import DevelopersTitle from './DevelopersTitle';
+import getUniqueDeveloperValues from './get-unique-developer-values';
 import { DeveloperType } from './types';
 
 export const Fab = styled(FloatingActionButton)<{ theme?: Theme }>(props => ({

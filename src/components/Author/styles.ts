@@ -1,9 +1,10 @@
 import styled from '@emotion/styled';
 
+import { Theme } from '@verdaccio/design-tokens/theme';
+
 import ListItem from '../ListItem';
-import Text from '../Text';
 import ListItemText from '../ListItemText';
-import { Theme } from '../../design-tokens/theme';
+import Text from '../Text';
 
 export const StyledText = styled(Text)<{ theme?: Theme }>(props => ({
   fontWeight: props.theme && props.theme.fontWeight.bold,

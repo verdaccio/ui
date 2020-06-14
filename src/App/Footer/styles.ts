@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
-import Icon from '@verdaccio/components/Icon';
 
-import { Theme } from '../../design-tokens/theme';
+import Icon from '@verdaccio/components/Icon';
+import { Theme } from '@verdaccio/design-tokens/theme';
 
 export const Wrapper = styled('div')<{ theme?: Theme }>(({ theme }) => ({
   background: theme?.palette.type === 'light' ? theme?.palette.snow : theme?.palette.cyanBlue,

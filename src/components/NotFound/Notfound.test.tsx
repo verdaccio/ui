@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
 
-import { render, fireEvent } from '../../utils/test-react-testing-library';
+import { render, fireEvent } from '@verdaccio/utils/test-react-testing-library';
 
 import NotFound from './NotFound';
 

@@ -1,5 +1,5 @@
-import React, { forwardRef } from 'react';
 import { default as MaterialUITab, TabProps } from '@material-ui/core/Tab';
+import React, { forwardRef } from 'react';
 
 type TabRef = HTMLButtonElement;
 

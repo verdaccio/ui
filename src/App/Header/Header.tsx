@@ -1,17 +1,18 @@
 import React, { useState, useContext } from 'react';
 import { useTranslation } from 'react-i18next';
 
-import storage from '../../utils/storage';
-import { getRegistryURL } from '../../utils/url';
-import Button from '../../components/Button';
+import Button from '@verdaccio/components/Button';
+import storage from '@verdaccio/utils/storage';
+import { getRegistryURL } from '@verdaccio/utils/url';
+
 import AppContext from '../../App/AppContext';
 
-import Search from './Search';
-import LoginDialog from './LoginDialog';
-import { NavBar, InnerNavBar, MobileNavBar, InnerMobileNavBar } from './styles';
+import HeaderInfoDialog from './HeaderInfoDialog';
 import HeaderLeft from './HeaderLeft';
 import HeaderRight from './HeaderRight';
-import HeaderInfoDialog from './HeaderInfoDialog';
+import LoginDialog from './LoginDialog';
+import Search from './Search';
+import { NavBar, InnerNavBar, MobileNavBar, InnerMobileNavBar } from './styles';
 
 interface Props {
   withoutSearch?: boolean;

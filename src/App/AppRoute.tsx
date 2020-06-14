@@ -1,11 +1,11 @@
-import React, { lazy, useContext } from 'react';
-import { Route as ReactRouterDomRoute, Switch, Router } from 'react-router-dom';
 import { createBrowserHistory } from 'history';
+import React, { lazy, useContext } from 'react';
 import { useTranslation } from 'react-i18next';
+import { Route as ReactRouterDomRoute, Switch, Router } from 'react-router-dom';
 
 import AppContext from './AppContext';
 
-const NotFound = lazy(() => import('../components/NotFound'));
+const NotFound = lazy(() => import('@verdaccio/components/NotFound'));
 const VersionContextProvider = lazy(() => import('../pages/Version/VersionContextProvider'));
 const VersionPage = lazy(() => import('../pages/Version'));
 const HomePage = lazy(() => import('../pages/home'));

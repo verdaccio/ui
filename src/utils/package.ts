@@ -1,11 +1,12 @@
 import { isObject } from 'util';
 
-import i18next from 'i18next';
-import { UpLinks } from '@verdaccio/types';
-import isString from 'lodash/isString';
 import dayjs from 'dayjs';
-import relativeTime from 'dayjs/plugin/relativeTime';
 import localizedFormat from 'dayjs/plugin/localizedFormat';
+import relativeTime from 'dayjs/plugin/relativeTime';
+import i18next from 'i18next';
+import isString from 'lodash/isString';
+
+import { UpLinks } from '@verdaccio/types';
 
 import { Time } from '../../types/packageMeta';
 

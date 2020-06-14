@@ -1,8 +1,8 @@
 import styled from '@emotion/styled';
 
-import DialogTitle from '../../../components/DialogTitle';
-import DialogContent from '../../../components/DialogContent';
-import { Theme } from '../../../design-tokens/theme';
+import DialogContent from '@verdaccio/components/DialogContent';
+import DialogTitle from '@verdaccio/components/DialogTitle';
+import { Theme } from '@verdaccio/design-tokens/theme';
 
 export const Title = styled(DialogTitle)<{ theme?: Theme }>(props => ({
   backgroundColor: props.theme && props.theme.palette.primary.main,

@@ -3,6 +3,7 @@
     "skipLibCheck": true,
     "target": "esnext",
     "module": "commonjs",
+    "moduleResolution": "node",
     "noImplicitAny": false,
     "strict": true,
     "outDir": "build",
@@ -15,6 +16,8 @@
     "baseUrl": ".",
     "paths": {
       "@verdaccio/components/*": ["src/components/*"],
+      "@verdaccio/design-tokens/*": ["src/design-tokens/*"],
+      "@verdaccio/utils/*": ["src/utils/*"]
     },
   },
   "include": [
