@@ -63,6 +63,16 @@
         "code",
         "maintenance"
       ]
+    },
+    {
+      "login": "tso1158687",
+      "name": "jason",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/9198263?v=4",
+      "profile": "https://github.com/tso1158687",
+      "contributions": [
+        "translation",
+        "code"
+      ]
     }
   ],
   "skipCi": true,
