@@ -73,6 +73,16 @@
         "translation",
         "code"
       ]
+    },
+    {
+      "login": "ayusharma",
+      "name": "Ayush Sharma",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/6918450?v=4",
+      "profile": "http://ayusharma.github.io",
+      "contributions": [
+        "maintenance",
+        "code"
+      ]
     }
   ],
   "skipCi": true,
