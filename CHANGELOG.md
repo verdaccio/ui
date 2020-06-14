@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.10.0](https://github.com/verdaccio/ui/compare/v1.9.0...v1.10.0) (2020-06-14)
+
+
+### Features
+
+* **i18n:** add Czech language ([#488](https://github.com/verdaccio/ui/issues/488)) ([c87e08c](https://github.com/verdaccio/ui/commit/c87e08c34641e39546c07acd5252c8a80d616bf0))
+
+
+### Bug Fixes
+
+* [#478](https://github.com/verdaccio/ui/issues/478) ([#490](https://github.com/verdaccio/ui/issues/490)) ([e9d0729](https://github.com/verdaccio/ui/commit/e9d0729d1f59268ca640d8319ef05ed158347124))
+
 ## [1.9.0](https://github.com/verdaccio/ui/compare/v1.8.0...v1.9.0) (2020-06-07)
 
 
