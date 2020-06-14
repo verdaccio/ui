@@ -17,9 +17,9 @@
         "doc",
         "code",
         "infra",
-				"eventOrganizing",
-				"blog",
-				"maintenance"
+        "eventOrganizing",
+        "blog",
+        "maintenance"
       ]
     },
     {
@@ -29,7 +29,7 @@
       "profile": "https://github.com/sergiohgz",
       "contributions": [
         "infra",
-				"maintenance"
+        "maintenance"
       ]
     },
     {
@@ -39,8 +39,8 @@
       "profile": "https://daniel-ruf.de/",
       "contributions": [
         "security",
-				"infra",
-				"maintenance"
+        "infra",
+        "maintenance"
       ]
     },
     {
@@ -51,8 +51,20 @@
       "contributions": [
         "design",
         "code",
-				"maintenance"
+        "maintenance"
+      ]
+    },
+    {
+      "login": "VentyCZ",
+      "name": "Jiří Michel",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/3247664?v=4",
+      "profile": "https://github.com/VentyCZ",
+      "contributions": [
+        "code",
+        "maintenance"
       ]
     }
-  ]
+  ],
+  "skipCi": true,
+  "contributorsPerLine": 7
 }
