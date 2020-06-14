@@ -2,6 +2,7 @@ import i18n from 'i18next';
 import { initReactI18next } from 'react-i18next';
 
 import translationEN from './translations/en-US.json';
+import translationCS from './translations/cs-CZ.json';
 import translationPT from './translations/pt-BR.json';
 import translationES from './translations/es-ES.json';
 import translationDE from './translations/de-DE.json';
@@ -15,6 +16,9 @@ import translatiobTW from './translations/zh-TW.json';
 const languages = {
   'en-US': {
     translation: translationEN,
+  },
+  'cs-CZ': {
+    translation: translationCS,
   },
   'pt-BR': {
     translation: translationPT,
@@ -56,7 +60,7 @@ i18n
     // in case window.VEDACCIO_LANGUAGE is undefined,it will fall back to 'en-US'
     lng: window?.__VERDACCIO_BASENAME_UI_OPTIONS?.language,
     fallbackLng: 'en-US',
-    whitelist: ['en-US', 'pt-BR', 'es-ES', 'de-DE', 'fr-FR', 'zh-CN', 'ja-JP', 'uk-UA', 'km-KH', 'zh-TW'],
+    whitelist: ['en-US', 'cs-CZ', 'pt-BR', 'es-ES', 'de-DE', 'fr-FR', 'zh-CN', 'ja-JP', 'uk-UA', 'km-KH', 'zh-TW'],
     load: 'currentOnly',
     resources: languages,
     debug: false,
