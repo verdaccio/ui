@@ -3,9 +3,9 @@ import React, { useCallback } from 'react';
 import { useHistory } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 
-import Box from '../../muiComponents/Box';
-import Button from '../../muiComponents/Button';
-import Heading from '../../muiComponents/Heading';
+import Box from '../Box';
+import Button from '../Button';
+import Heading from '../Heading';
 import { Theme } from '../../design-tokens/theme';
 
 import PackageImg from './img/package.svg';

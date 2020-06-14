@@ -2,7 +2,7 @@ import React from 'react';
 
 import { DetailContext } from '../../pages/Version';
 import { isURL } from '../../utils/url';
-import Box from '../../muiComponents/Box';
+import Box from '../Box';
 
 import ActionBarAction, { ActionBarActionProps } from './ActionBarAction';
 

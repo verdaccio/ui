@@ -7,14 +7,14 @@ import { Router } from 'react-router-dom';
 import '../../i18n/config';
 import storage from '../utils/storage';
 import { isTokenExpire } from '../utils/login';
-import Header from '../components/Header';
-import Footer from '../components/Footer';
-import Loading from '../components/Loading';
-import Box from '../muiComponents/Box';
+import { Loading } from '../components/Loading';
+import Box from '../components/Box';
 import StyleBaseline from '../design-tokens/StyleBaseline';
 import { Theme } from '../design-tokens/theme';
 import loadDayJSLocale from '../design-tokens/load-dayjs-locale';
 
+import Header from './Header';
+import Footer from './Footer';
 import AppContextProvider from './AppContextProvider';
 import AppRoute, { history } from './AppRoute';
 
@@ -34,7 +34,7 @@ const StyledBoxContent = styled(Box)<{ theme?: Theme }>(({ theme }) => ({
 /* eslint-disable react/jsx-no-bind */
 /* eslint-disable react-hooks/exhaustive-deps */
 const App: React.FC = () => {
-  const [user, setUser] = useState();
+  const [user, setUser] = useState<undefined | { username: string }>();
   /**
    * Logout user
    * Required by: <Header />

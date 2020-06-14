@@ -5,7 +5,7 @@ import match from 'autosuggest-highlight/match';
 import parse from 'autosuggest-highlight/parse';
 import { useTranslation } from 'react-i18next';
 
-import MenuItem from '../../muiComponents/MenuItem';
+import MenuItem from '../MenuItem';
 import { Theme } from '../../design-tokens/theme';
 
 import { Wrapper, InputField, SuggestionContainer } from './styles';

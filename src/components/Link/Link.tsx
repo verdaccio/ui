@@ -1,7 +1,7 @@
 import React, { MouseEvent } from 'react';
 import { Link as RouterLink } from 'react-router-dom';
 
-import Text, { TextProps } from '../../muiComponents/Text';
+import Text, { TextProps } from '../Text';
 
 interface Props extends Pick<TextProps, 'variant'> {
   external?: boolean;

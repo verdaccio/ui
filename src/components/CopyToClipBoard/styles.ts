@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
 
-import IconButton from '../../muiComponents/IconButton';
+import IconButton from '../IconButton';
 
 export const ClipBoardCopy = styled('div')({
   display: 'flex',

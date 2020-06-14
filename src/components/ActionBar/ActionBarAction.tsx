@@ -5,9 +5,9 @@ import DownloadIcon from '@material-ui/icons/CloudDownload';
 import HomeIcon from '@material-ui/icons/Home';
 import { useTranslation } from 'react-i18next';
 
-import Tooltip from '../../muiComponents/Tooltip';
+import Tooltip from '../Tooltip';
 import Link from '../Link';
-import FloatingActionButton from '../../muiComponents/FloatingActionButton';
+import FloatingActionButton from '../FloatingActionButton';
 import { Theme } from '../../design-tokens/theme';
 
 import downloadTarball from './download-tarball';

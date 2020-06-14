@@ -5,10 +5,10 @@ import CloseIcon from '@material-ui/icons/Close';
 import { withStyles } from '@material-ui/core/styles';
 import { useTranslation } from 'react-i18next';
 
-import TextField from '../../muiComponents/TextField';
-import Paper from '../../muiComponents/Paper';
-import MenuItem from '../../muiComponents/MenuItem';
-import IconButton from '../../muiComponents/IconButton';
+import TextField from '../TextField';
+import Paper from '../Paper';
+import MenuItem from '../MenuItem';
+import IconButton from '../IconButton';
 import { Theme } from '../../design-tokens/theme';
 import { useOnClickOutside } from '../../design-tokens/useOnClickOutside';
 

@@ -1,8 +1,8 @@
 import React from 'react';
 import styled from '@emotion/styled';
 
-import TextField from '../../muiComponents/TextField';
-import Paper from '../../muiComponents/Paper';
+import TextField from '../TextField';
+import Paper from '../Paper';
 import { Theme } from '../../design-tokens/theme';
 
 export interface InputFieldProps {

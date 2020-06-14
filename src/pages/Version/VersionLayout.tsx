@@ -1,8 +1,8 @@
 import React from 'react';
 import Grid from '@material-ui/core/Grid';
 
-import DetailContainer from '../../components/DetailContainer';
-import DetailSidebar from '../../components/DetailSidebar';
+import DetailContainer from './DetailContainer';
+import DetailSidebar from './DetailSidebar';
 
 const VersionLayout: React.FC = () => {
   return (

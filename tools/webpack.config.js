@@ -13,6 +13,9 @@ module.exports = {
 
   resolve: {
     extensions: ['.js', '.jsx', '.ts', '.tsx'],
+    alias: {
+      '@verdaccio/components/*': `${env.SRC_ROOT}/components/*`,
+    },
   },
 
   plugins: [

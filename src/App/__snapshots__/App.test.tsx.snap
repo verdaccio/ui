@@ -31,7 +31,7 @@ exports[`<App /> should display the Header component  1`] = `
     display: none;
   }
 
-  .emotion-36 .e1jf5lit4 {
+  .emotion-36 .e1onlrbh4 {
     display: none;
   }
 }
@@ -942,7 +942,7 @@ exports[`<App /> should display the Loading component at the beginning  1`] = `
     display: none;
   }
 
-  .emotion-36 .e1jf5lit4 {
+  .emotion-36 .e1onlrbh4 {
     display: none;
   }
 }

@@ -3,7 +3,7 @@ import React from 'react';
 import { useTranslation } from 'react-i18next';
 
 import { copyToClipBoardUtility } from '../../utils/cli-utils';
-import Tooltip from '../../muiComponents/Tooltip';
+import Tooltip from '../Tooltip';
 
 import { ClipBoardCopy, ClipBoardCopyText, CopyIcon } from './styles';
 

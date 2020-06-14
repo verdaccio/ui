@@ -10,7 +10,7 @@ import { DetailContext } from './context';
 import data from './__partials__/data.json';
 
 // :-) we mock this otherways fails on render, some weird issue on material-ui
-jest.mock('../../muiComponents/Avatar');
+jest.mock('../../components/Avatar');
 
 const detailContextValue = {
   packageName: 'foo',

@@ -3,8 +3,8 @@ import { useTranslation } from 'react-i18next';
 
 import { DetailContext } from '../../pages/Version';
 import { isEmail } from '../../utils/url';
-import Avatar from '../../muiComponents/Avatar';
-import List from '../../muiComponents/List';
+import Avatar from '../Avatar';
+import List from '../List';
 import { getAuthorName } from '../../utils/package';
 
 import { StyledText, AuthorListItem, AuthorListItemText } from './styles';

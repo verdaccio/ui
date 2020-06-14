@@ -12,6 +12,10 @@
     "resolveJsonModule": true,
     "checkJs": false,
     "esModuleInterop": true,
+    "baseUrl": ".",
+    "paths": {
+      "@verdaccio/components/*": ["src/components/*"],
+    },
   },
   "include": [
     "src",
@@ -21,5 +25,5 @@
   ],
   "exclude": [
     "node_modules"
-  ]
+  ],
 }
