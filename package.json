@@ -44,6 +44,7 @@
     "@verdaccio/commons-api": "9.0.0",
     "@verdaccio/eslint-config": "8.4.2",
     "@verdaccio/types": "9.0.0",
+    "all-contributors-cli": "6.16.0",
     "autosuggest-highlight": "3.1.1",
     "babel-loader": "8.0.6",
     "bundlesize": "0.18.0",
