@@ -391,11 +391,11 @@ exports[`<Header /> component with logged in state should load the component in 
               </div>
               <fieldset
                 aria-hidden="true"
-                class="PrivateNotchedOutline-root-353 MuiOutlinedInput-notchedOutline"
+                class="PrivateNotchedOutline-root-3 MuiOutlinedInput-notchedOutline"
                 style="padding-left: 8px;"
               >
                 <legend
-                  class="PrivateNotchedOutline-legend-354"
+                  class="PrivateNotchedOutline-legend-4"
                   style="width: 0px;"
                 >
                   <span>
@@ -915,11 +915,11 @@ exports[`<Header /> component with logged in state should load the component in 
               </div>
               <fieldset
                 aria-hidden="true"
-                class="PrivateNotchedOutline-root-134 MuiOutlinedInput-notchedOutline"
+                class="PrivateNotchedOutline-root-1 MuiOutlinedInput-notchedOutline"
                 style="padding-left: 8px;"
               >
                 <legend
-                  class="PrivateNotchedOutline-legend-135"
+                  class="PrivateNotchedOutline-legend-2"
                   style="width: 0px;"
                 >
                   <span>

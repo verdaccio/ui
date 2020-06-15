@@ -13,7 +13,7 @@ exports[`<ActionBar /> component should render the component in default state 1`
 }
 
 <div
-  class="MuiBox-root MuiBox-root-2"
+  class="MuiBox-root MuiBox-root-1"
 >
   <a
     class=""
@@ -118,6 +118,6 @@ exports[`<ActionBar /> component should render the component in default state 1`
 
 exports[`<ActionBar /> component when there is no action bar data 1`] = `
 <div
-  class="MuiBox-root MuiBox-root-77"
+  class="MuiBox-root MuiBox-root-2"
 />
 `;

@@ -93,7 +93,7 @@ exports[`test Developers should render the component for contributors with items
         margin="10px 0 10px 0"
       >
         <div
-          className="MuiBox-root MuiBox-root-91 emotion-8 emotion-9"
+          className="MuiBox-root MuiBox-root-2 emotion-8 emotion-9"
         >
           <ForwardRef(ToolTip)
             key="dave.methvin@gmail.com"
@@ -519,7 +519,7 @@ exports[`test Developers should render the component for maintainers with items 
         margin="10px 0 10px 0"
       >
         <div
-          className="MuiBox-root MuiBox-root-32 emotion-8 emotion-9"
+          className="MuiBox-root MuiBox-root-1 emotion-8 emotion-9"
         >
           <ForwardRef(ToolTip)
             key="dave.methvin@gmail.com"

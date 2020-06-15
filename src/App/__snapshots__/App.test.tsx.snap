@@ -422,7 +422,7 @@ exports[`<App /> should display the Header component  1`] = `
 }
 
 <div
-  class="MuiBox-root MuiBox-root-236 emotion-96 emotion-97"
+  class="MuiBox-root MuiBox-root-5 emotion-96 emotion-97"
 >
   <header
     class="MuiPaper-root MuiPaper-elevation4 MuiAppBar-root MuiAppBar-positionStatic emotion-36 emotion-37 MuiAppBar-colorPrimary"
@@ -611,11 +611,11 @@ exports[`<App /> should display the Header component  1`] = `
                 </div>
                 <fieldset
                   aria-hidden="true"
-                  class="PrivateNotchedOutline-root-370 MuiOutlinedInput-notchedOutline"
+                  class="PrivateNotchedOutline-root-6 MuiOutlinedInput-notchedOutline"
                   style="padding-left: 8px;"
                 >
                   <legend
-                    class="PrivateNotchedOutline-legend-371"
+                    class="PrivateNotchedOutline-legend-7"
                     style="width: 0px;"
                   >
                     <span>
@@ -732,7 +732,7 @@ exports[`<App /> should display the Header component  1`] = `
     </div>
   </header>
   <div
-    class="MuiBox-root MuiBox-root-446 emotion-48 emotion-49"
+    class="MuiBox-root MuiBox-root-8 emotion-48 emotion-49"
   >
     <div
       class="container content"
@@ -1286,7 +1286,7 @@ exports[`<App /> should display the Loading component at the beginning  1`] = `
 }
 
 <div
-  class="MuiBox-root MuiBox-root-2 emotion-86 emotion-87"
+  class="MuiBox-root MuiBox-root-1 emotion-86 emotion-87"
   style="display: none;"
 >
   <header
@@ -1476,11 +1476,11 @@ exports[`<App /> should display the Loading component at the beginning  1`] = `
                 </div>
                 <fieldset
                   aria-hidden="true"
-                  class="PrivateNotchedOutline-root-136 MuiOutlinedInput-notchedOutline"
+                  class="PrivateNotchedOutline-root-2 MuiOutlinedInput-notchedOutline"
                   style="padding-left: 8px;"
                 >
                   <legend
-                    class="PrivateNotchedOutline-legend-137"
+                    class="PrivateNotchedOutline-legend-3"
                     style="width: 0px;"
                   >
                     <span>
@@ -1597,7 +1597,7 @@ exports[`<App /> should display the Loading component at the beginning  1`] = `
     </div>
   </header>
   <div
-    class="MuiBox-root MuiBox-root-212 emotion-38 emotion-39"
+    class="MuiBox-root MuiBox-root-4 emotion-38 emotion-39"
   />
   <div
     class="emotion-84 emotion-85"

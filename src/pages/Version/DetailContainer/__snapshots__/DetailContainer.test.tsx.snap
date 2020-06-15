@@ -6,7 +6,7 @@ exports[`DetailContainer renders correctly 1`] = `
 }
 
 <div
-  class="MuiBox-root MuiBox-root-2"
+  class="MuiBox-root MuiBox-root-1"
 >
   <div
     class="MuiTabs-root emotion-0 emotion-1"
@@ -94,7 +94,7 @@ exports[`DetailContainer renders correctly 1`] = `
         </button>
       </div>
       <span
-        class="PrivateTabIndicator-root-27 PrivateTabIndicator-colorPrimary-28 MuiTabs-indicator"
+        class="PrivateTabIndicator-root-2 PrivateTabIndicator-colorPrimary-3 MuiTabs-indicator"
         style="left: 0px; width: 0px;"
       />
     </div>
