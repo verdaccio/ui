@@ -1,4 +1,4 @@
-import { HELP_TITLE } from '../../src/components/Help/Help';
+import { HELP_TITLE } from '../../src/pages/home/PackageList/Help';
 
 const protectedPackageMetadata = require('./partials/pkg-protected');
 const scopedPackageMetadata = require('./partials/pkg-scoped');
