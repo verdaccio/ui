@@ -13,10 +13,11 @@ module.exports = {
 
   resolve: {
     extensions: ['.js', '.jsx', '.ts', '.tsx'],
+    modules: ['node_modules'],
     alias: {
-      '@verdaccio/components/*': `${env.SRC_ROOT}/components/*`,
-      '@verdaccio/design-tokens/*': `${env.SRC_ROOT}/design-tokens/*`,
-      '@verdaccio/utils/*': `${env.SRC_ROOT}/utils/*`,
+      '@verdaccio/components': `${env.SRC_ROOT}/components`,
+      '@verdaccio/design-tokens': `${env.SRC_ROOT}/design-tokens`,
+      '@verdaccio/utils': `${env.SRC_ROOT}/utils`,
     },
   },
 
