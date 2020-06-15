@@ -1,5 +1,3 @@
-import { HELP_TITLE } from '../../src/pages/home/PackageList/Help';
-
 const protectedPackageMetadata = require('./partials/pkg-protected');
 const scopedPackageMetadata = require('./partials/pkg-scoped');
 
@@ -65,7 +63,7 @@ describe('/ (Verdaccio Page)', () => {
 
   test('should match title with no packages published', async () => {
     const text = await page.evaluate(() => document.querySelector('#help-card__title').textContent);
-    expect(text).toMatch(HELP_TITLE);
+    expect(text).toMatch('No Package Published Yet.');
   });
   //
 

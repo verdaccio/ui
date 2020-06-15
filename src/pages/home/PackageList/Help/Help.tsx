@@ -11,9 +11,6 @@ import { getRegistryURL } from '@verdaccio/utils/url';
 
 import { CardStyled as Card, HelpTitle } from './styles';
 
-export const HELP_TITLE = 'No Package Published Yet.';
-export const COMPONENT_HELP_ID = 'help-card__title';
-
 function renderHeadingClipboardSegments(title: string, text: string): React.ReactNode {
   return (
     <Fragment>
@@ -30,7 +27,7 @@ const Help: React.FC = () => {
   return (
     <Card id="help-card">
       <CardContent>
-        <Typography component="h2" gutterBottom={true} id={COMPONENT_HELP_ID} variant="h5">
+        <Typography component="h2" gutterBottom={true} id="help-card__title" variant="h5">
           {t('help.title')}
         </Typography>
         <HelpTitle color="textSecondary" gutterBottom={true}>
