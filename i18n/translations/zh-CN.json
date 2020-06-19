@@ -4,7 +4,7 @@
     "action-bar-action": {
         "visit-home-page": "访问主页",
         "open-an-issue": "提交问题",
-        "download-tarball": "下载 tarball"
+        "download-tarball": "下载压缩包"
     },
     "dialog": {
         "registry-info": {
@@ -22,9 +22,9 @@
     "autoComplete": {
         "loading": "加载中...",
         "no-results-found": "没有找到结果",
-        "clear": "清洁",
-        "expand": "扩大",
-        "collapse": "缩回"
+        "clear": "清除",
+        "expand": "展开",
+        "collapse": "收回"
     },
     "tab": {
         "uplinks": "Uplinks",
@@ -34,7 +34,7 @@
     },
     "uplinks": {
         "title": "Uplinks",
-        "no-items": "{{name}} has no uplinks."
+        "no-items": "{{name}} 没有 uplinks."
     },
     "versions": {
         "current-tags": "当前标签",
@@ -50,7 +50,7 @@
         "bugs": "Bugs",
         "download": "下载 {{what}}",
         "the-tar-file": "tar 文件",
-        "tarball": "Tarball"
+        "tarball": "压缩包"
     },
     "dependencies": {
         "has-no-dependencies": "{{package}} 没有依赖包.",
@@ -94,7 +94,7 @@
             "install-using-pnpm-command": "pnpm install {{packageName}}"
         },
         "repository": {
-            "title": "库"
+            "title": "仓库"
         },
         "author": {
             "title": "作者"
@@ -127,17 +127,17 @@
         "logout": "注销",
         "go-to-the-home-page": "跳转到主页",
         "learn-more": "了解更多",
-        "fund-this-package": "<0>Fund</0> this package"
+        "fund-this-package": "<0>捐助</0>这个 package"
     },
     "error": {
-        "unspecific": "发生错误.",
+        "unspecific": "发生了一些错误",
         "404": {
             "page-not-found": "404 - 页面不存在",
-            "sorry-we-could-not-find-it": "对不起, 我们没找到..."
+            "sorry-we-could-not-find-it": "对不起, 我们没有找到..."
         },
         "app-context-not-correct-used": "app context 没有被正确使用",
         "theme-context-not-correct-used": "theme context 没有被正确使用",
-        "package-meta-is-required-at-detail-context": "packageMeta is required at DetailContext"
+        "package-meta-is-required-at-detail-context": "packageMeta 在 DetailContext 上是必需的"
     },
     "lng": {
         "english": "英语",
