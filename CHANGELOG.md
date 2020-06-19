@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.11.0](https://github.com/verdaccio/ui/compare/v1.10.0...v1.11.0) (2020-06-19)
+
+
+### Features
+
+* **i18n:** Improve Chinese(zh-CN) translation ([#498](https://github.com/verdaccio/ui/issues/498)) ([6b6dbc2](https://github.com/verdaccio/ui/commit/6b6dbc299ee5e10952f3b4d690dbd32256c59370))
+
 ## [1.10.0](https://github.com/verdaccio/ui/compare/v1.9.0...v1.10.0) (2020-06-14)
 
 
