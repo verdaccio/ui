@@ -25,8 +25,8 @@ module.exports = {
     '<rootDir>/../.vscode/',
   ],
   moduleNameMapper: {
-    '@verdaccio/components/(.*)': '<rootDir>/../src/components/$1',
-    '@verdaccio/utils/(.*)': '<rootDir>/../src/utils/$1',
-    '@verdaccio/design-tokens/(.*)': '<rootDir>/../src/design-tokens/$1',
+    'verdaccio-ui/components/(.*)': '<rootDir>/../src/components/$1',
+    'verdaccio-ui/utils/(.*)': '<rootDir>/../src/utils/$1',
+    'verdaccio-ui/design-tokens/(.*)': '<rootDir>/../src/design-tokens/$1',
   },
 };

@@ -4,12 +4,11 @@ import LanguageIcon from '@material-ui/icons/Language';
 import i18next, { TFunctionKeys } from 'i18next';
 import React, { useCallback, useContext, useState, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
-
-import { AutoComplete } from '@verdaccio/components/AutoComplete/AutoCompleteV2';
-import Icon from '@verdaccio/components/Icon';
-import MenuItem from '@verdaccio/components/MenuItem';
-import { Theme } from '@verdaccio/design-tokens/theme';
-import ThemeContext from '@verdaccio/design-tokens/ThemeContext';
+import { AutoComplete } from 'verdaccio-ui/components/AutoComplete/AutoCompleteV2';
+import Icon from 'verdaccio-ui/components/Icon';
+import MenuItem from 'verdaccio-ui/components/MenuItem';
+import { Theme } from 'verdaccio-ui/design-tokens/theme';
+import ThemeContext from 'verdaccio-ui/design-tokens/ThemeContext';
 
 import { Language } from '../../../../i18n/config';
 

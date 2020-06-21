@@ -4,9 +4,8 @@ import CloseIcon from '@material-ui/icons/Close';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import React, { memo, useState, ChangeEvent, KeyboardEvent, useEffect, useRef, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
-
-import { Theme } from '@verdaccio/design-tokens/theme';
-import { useOnClickOutside } from '@verdaccio/design-tokens/useOnClickOutside';
+import { Theme } from 'verdaccio-ui/design-tokens/theme';
+import { useOnClickOutside } from 'verdaccio-ui/design-tokens/useOnClickOutside';
 
 import IconButton from '../IconButton';
 import MenuItem from '../MenuItem';

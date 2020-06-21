@@ -1,9 +1,8 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-
-import List from '@verdaccio/components/List';
-import ListItem from '@verdaccio/components/ListItem';
-import { formatDateDistance } from '@verdaccio/utils/package';
+import List from 'verdaccio-ui/components/List';
+import ListItem from 'verdaccio-ui/components/ListItem';
+import { formatDateDistance } from 'verdaccio-ui/utils/package';
 
 import { Versions, Time } from '../../../../../types/packageMeta';
 

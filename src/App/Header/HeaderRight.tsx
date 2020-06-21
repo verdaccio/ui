@@ -1,8 +1,7 @@
 import React, { useState, useEffect, useContext, MouseEvent } from 'react';
 import { useTranslation } from 'react-i18next';
-
-import Button from '@verdaccio/components/Button';
-import ThemeContext from '@verdaccio/design-tokens/ThemeContext';
+import Button from 'verdaccio-ui/components/Button';
+import ThemeContext from 'verdaccio-ui/design-tokens/ThemeContext';
 
 import HeaderMenu from './HeaderMenu';
 import HeaderToolTip from './HeaderToolTip';

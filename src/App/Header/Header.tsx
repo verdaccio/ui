@@ -1,9 +1,8 @@
 import React, { useState, useContext } from 'react';
 import { useTranslation } from 'react-i18next';
-
-import Button from '@verdaccio/components/Button';
-import storage from '@verdaccio/utils/storage';
-import { getRegistryURL } from '@verdaccio/utils/url';
+import Button from 'verdaccio-ui/components/Button';
+import storage from 'verdaccio-ui/utils/storage';
+import { getRegistryURL } from 'verdaccio-ui/utils/url';
 
 import AppContext from '../../App/AppContext';
 

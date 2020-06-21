@@ -1,7 +1,6 @@
 import React, { useContext } from 'react';
-
-import Loading from '@verdaccio/components/Loading/Loading';
-import NotFound from '@verdaccio/components/NotFound';
+import Loading from 'verdaccio-ui/components/Loading/Loading';
+import NotFound from 'verdaccio-ui/components/NotFound';
 
 import { DetailContext } from './context';
 import VersionLayout from './VersionLayout';

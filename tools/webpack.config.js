@@ -15,9 +15,9 @@ module.exports = {
     extensions: ['.js', '.jsx', '.ts', '.tsx'],
     modules: ['node_modules'],
     alias: {
-      '@verdaccio/components': `${env.SRC_ROOT}/components`,
-      '@verdaccio/design-tokens': `${env.SRC_ROOT}/design-tokens`,
-      '@verdaccio/utils': `${env.SRC_ROOT}/utils`,
+      'verdaccio-ui/components': `${env.SRC_ROOT}/components`,
+      'verdaccio-ui/design-tokens': `${env.SRC_ROOT}/design-tokens`,
+      'verdaccio-ui/utils': `${env.SRC_ROOT}/utils`,
     },
   },
 

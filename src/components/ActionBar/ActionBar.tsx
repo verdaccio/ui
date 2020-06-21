@@ -1,6 +1,5 @@
 import React from 'react';
-
-import { isURL } from '@verdaccio/utils/url';
+import { isURL } from 'verdaccio-ui/utils/url';
 
 import { DetailContext } from '../../pages/Version';
 import Box from '../Box';

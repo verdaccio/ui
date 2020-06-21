@@ -1,9 +1,8 @@
 import styled from '@emotion/styled';
-
-import Card from '@verdaccio/components/Card';
-import Chip from '@verdaccio/components/Chip';
-import Text from '@verdaccio/components/Text';
-import { Theme } from '@verdaccio/design-tokens/theme';
+import Card from 'verdaccio-ui/components/Card';
+import Chip from 'verdaccio-ui/components/Chip';
+import Text from 'verdaccio-ui/components/Text';
+import { Theme } from 'verdaccio-ui/design-tokens/theme';
 
 export const CardWrap = styled(Card)({
   margin: '0 0 16px',

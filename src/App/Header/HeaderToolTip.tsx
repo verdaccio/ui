@@ -1,6 +1,5 @@
 import React from 'react';
-
-import Tooltip from '@verdaccio/components/Tooltip';
+import Tooltip from 'verdaccio-ui/components/Tooltip';
 
 import HeaderToolTipIcon, { TooltipIconType } from './HeaderToolTipIcon';
 

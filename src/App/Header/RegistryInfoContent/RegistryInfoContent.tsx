@@ -1,11 +1,10 @@
 import React, { useState } from 'react';
-
-import CopyToClipBoard from '@verdaccio/components/CopyToClipBoard';
-import { default as Typography } from '@verdaccio/components/Heading';
-import Tab from '@verdaccio/components/Tab';
-import Tabs from '@verdaccio/components/Tabs';
-import { getCLISetRegistry, getCLIChangePassword, getCLISetConfigRegistry } from '@verdaccio/utils/cli-utils';
-import { NODE_MANAGER } from '@verdaccio/utils/constants';
+import CopyToClipBoard from 'verdaccio-ui/components/CopyToClipBoard';
+import { default as Typography } from 'verdaccio-ui/components/Heading';
+import Tab from 'verdaccio-ui/components/Tab';
+import Tabs from 'verdaccio-ui/components/Tabs';
+import { getCLISetRegistry, getCLIChangePassword, getCLISetConfigRegistry } from 'verdaccio-ui/utils/cli-utils';
+import { NODE_MANAGER } from 'verdaccio-ui/utils/constants';
 
 import { CommandContainer } from './styles';
 import { Props, State } from './types';

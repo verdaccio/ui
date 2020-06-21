@@ -2,8 +2,7 @@ import styled from '@emotion/styled';
 import React, { useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useHistory } from 'react-router-dom';
-
-import { Theme } from '@verdaccio/design-tokens/theme';
+import { Theme } from 'verdaccio-ui/design-tokens/theme';
 
 import Box from '../Box';
 import Button from '../Button';

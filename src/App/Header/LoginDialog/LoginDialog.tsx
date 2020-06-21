@@ -1,10 +1,9 @@
 import React, { useState, useContext, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
-
-import Dialog from '@verdaccio/components/Dialog';
-import DialogContent from '@verdaccio/components/DialogContent';
-import { makeLogin } from '@verdaccio/utils/login';
-import storage from '@verdaccio/utils/storage';
+import Dialog from 'verdaccio-ui/components/Dialog';
+import DialogContent from 'verdaccio-ui/components/DialogContent';
+import { makeLogin } from 'verdaccio-ui/utils/login';
+import storage from 'verdaccio-ui/utils/storage';
 
 import AppContext from '../../../App/AppContext';
 

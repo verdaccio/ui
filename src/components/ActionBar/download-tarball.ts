@@ -1,5 +1,5 @@
-import api from '@verdaccio/utils/api';
-import { extractFileName, downloadFile } from '@verdaccio/utils/url';
+import api from 'verdaccio-ui/utils/api';
+import { extractFileName, downloadFile } from 'verdaccio-ui/utils/url';
 
 function downloadTarball(link: string) {
   return async function downloadHandler(): Promise<void> {

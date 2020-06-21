@@ -1,6 +1,5 @@
 import styled from '@emotion/styled';
-
-import { Theme } from '@verdaccio/design-tokens/theme';
+import { Theme } from 'verdaccio-ui/design-tokens/theme';
 
 import ListItem from '../ListItem';
 import ListItemText from '../ListItemText';

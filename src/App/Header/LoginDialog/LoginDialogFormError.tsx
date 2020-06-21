@@ -1,11 +1,10 @@
 import styled from '@emotion/styled';
 import Error from '@material-ui/icons/Error';
 import React, { memo } from 'react';
-
-import Box from '@verdaccio/components/Box';
-import SnackbarContent from '@verdaccio/components/SnackbarContent';
-import { Theme } from '@verdaccio/design-tokens/theme';
-import { LoginError } from '@verdaccio/utils/login';
+import Box from 'verdaccio-ui/components/Box';
+import SnackbarContent from 'verdaccio-ui/components/SnackbarContent';
+import { Theme } from 'verdaccio-ui/design-tokens/theme';
+import { LoginError } from 'verdaccio-ui/utils/login';
 
 const StyledSnackbarContent = styled(SnackbarContent)<{ theme?: Theme }>(({ theme }) => ({
   backgroundColor: theme?.palette.error.dark,

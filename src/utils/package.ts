@@ -5,8 +5,7 @@ import localizedFormat from 'dayjs/plugin/localizedFormat';
 import relativeTime from 'dayjs/plugin/relativeTime';
 import i18next from 'i18next';
 import isString from 'lodash/isString';
-
-import { UpLinks } from '@verdaccio/types';
+import { UpLinks } from 'verdaccio-ui/types';
 
 import { Time } from '../../types/packageMeta';
 

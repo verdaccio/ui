@@ -15,9 +15,9 @@
     "esModuleInterop": true,
     "baseUrl": ".",
     "paths": {
-      "@verdaccio/components/*": ["src/components/*"],
-      "@verdaccio/design-tokens/*": ["src/design-tokens/*"],
-      "@verdaccio/utils/*": ["src/utils/*"]
+      "verdaccio-ui/components/*": ["src/components/*"],
+      "verdaccio-ui/design-tokens/*": ["src/design-tokens/*"],
+      "verdaccio-ui/utils/*": ["src/utils/*"]
     },
   },
   "include": [

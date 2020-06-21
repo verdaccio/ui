@@ -2,8 +2,8 @@ import React from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
 
 import '@testing-library/jest-dom/extend-expect';
-import api from '@verdaccio/utils/api';
-import { render, fireEvent, waitForElement } from '@verdaccio/utils/test-react-testing-library';
+import api from 'verdaccio-ui/utils/api';
+import { render, fireEvent, waitForElement } from 'verdaccio-ui/utils/test-react-testing-library';
 
 import Search from './Search';
 
@@ -21,7 +21,7 @@ describe('<Search /> component', () => {
     jest.spyOn(api, 'request').mockImplementation(() =>
       Promise.resolve([
         {
-          name: '@verdaccio/types',
+          name: 'verdaccio-ui/types',
           version: '8.4.2',
         },
         {

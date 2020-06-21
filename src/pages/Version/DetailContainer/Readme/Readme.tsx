@@ -2,7 +2,7 @@ import styled from '@emotion/styled';
 import React from 'react';
 import 'github-markdown-css';
 
-import { Theme } from '@verdaccio/design-tokens/theme';
+import { Theme } from 'verdaccio-ui/design-tokens/theme';
 
 import { Props } from './types';
 

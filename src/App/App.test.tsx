@@ -1,14 +1,13 @@
 import React from 'react';
-
-import storage from '@verdaccio/utils/storage';
-import { render, waitForElement, fireEvent } from '@verdaccio/utils/test-react-testing-library';
+import storage from 'verdaccio-ui/utils/storage';
+import { render, waitForElement, fireEvent } from 'verdaccio-ui/utils/test-react-testing-library';
 
 // eslint-disable-next-line jest/no-mocks-import
 import { generateTokenWithTimeRange } from '../../jest/unit/components/__mocks__/token';
 
 import App from './App';
 
-jest.mock('@verdaccio/utils/storage', () => {
+jest.mock('verdaccio-ui/utils/storage', () => {
   class LocalStorageMock {
     private store: Record<string, string>;
     public constructor() {
@@ -30,7 +29,7 @@ jest.mock('@verdaccio/utils/storage', () => {
   return new LocalStorageMock();
 });
 
-jest.mock('@verdaccio/utils/api', () => ({
+jest.mock('verdaccio-ui/utils/api', () => ({
   // eslint-disable-next-line jest/no-mocks-import
   request: require('../../jest/unit/components/__mocks__/api').default.request,
 }));

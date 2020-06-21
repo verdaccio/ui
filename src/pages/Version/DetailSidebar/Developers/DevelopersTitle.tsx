@@ -1,9 +1,8 @@
 import styled from '@emotion/styled';
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-
-import Text from '@verdaccio/components/Text';
-import { Theme } from '@verdaccio/design-tokens/theme';
+import Text from 'verdaccio-ui/components/Text';
+import { Theme } from 'verdaccio-ui/design-tokens/theme';
 
 import { DeveloperType } from './types';
 

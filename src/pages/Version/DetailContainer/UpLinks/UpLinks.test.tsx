@@ -1,6 +1,5 @@
 import React from 'react';
-
-import { mount, shallow } from '@verdaccio/utils/test-enzyme';
+import { mount, shallow } from 'verdaccio-ui/utils/test-enzyme';
 
 import { DetailContext } from '../../context';
 

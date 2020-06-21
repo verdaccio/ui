@@ -1,13 +1,12 @@
 import React, { Fragment } from 'react';
 import { useTranslation } from 'react-i18next';
-
-import Button from '@verdaccio/components/Button';
-import CardActions from '@verdaccio/components/CardActions';
-import CardContent from '@verdaccio/components/CardContent';
-import CopyToClipBoard from '@verdaccio/components/CopyToClipBoard';
-import { default as Typography } from '@verdaccio/components/Heading';
-import Text from '@verdaccio/components/Text';
-import { getRegistryURL } from '@verdaccio/utils/url';
+import Button from 'verdaccio-ui/components/Button';
+import CardActions from 'verdaccio-ui/components/CardActions';
+import CardContent from 'verdaccio-ui/components/CardContent';
+import CopyToClipBoard from 'verdaccio-ui/components/CopyToClipBoard';
+import { default as Typography } from 'verdaccio-ui/components/Heading';
+import Text from 'verdaccio-ui/components/Text';
+import { getRegistryURL } from 'verdaccio-ui/utils/url';
 
 import { CardStyled as Card, HelpTitle } from './styles';
 

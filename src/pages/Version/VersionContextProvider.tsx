@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-
-import { callDetailPage, callReadme } from '@verdaccio/utils/calls';
+import { callDetailPage, callReadme } from 'verdaccio-ui/utils/calls';
 
 import { DetailContext } from './context';
 import getRouterPackageName from './get-route-package-name';

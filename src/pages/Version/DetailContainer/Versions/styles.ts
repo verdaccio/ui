@@ -1,9 +1,8 @@
 import styled from '@emotion/styled';
-
-import Link from '@verdaccio/components/Link';
-import { default as MuiListItemText } from '@verdaccio/components/ListItemText';
-import Text from '@verdaccio/components/Text';
-import { Theme } from '@verdaccio/design-tokens/theme';
+import Link from 'verdaccio-ui/components/Link';
+import { default as MuiListItemText } from 'verdaccio-ui/components/ListItemText';
+import Text from 'verdaccio-ui/components/Text';
+import { Theme } from 'verdaccio-ui/design-tokens/theme';
 
 export const StyledText = styled(Text)<{ theme?: Theme }>(props => ({
   fontWeight: props.theme && props.theme.fontWeight.bold,

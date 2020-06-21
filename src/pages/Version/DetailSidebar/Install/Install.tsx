@@ -1,10 +1,9 @@
 import styled from '@emotion/styled';
 import React, { useContext } from 'react';
 import { useTranslation } from 'react-i18next';
-
-import List from '@verdaccio/components/List';
-import Text from '@verdaccio/components/Text';
-import { Theme } from '@verdaccio/design-tokens/theme';
+import List from 'verdaccio-ui/components/List';
+import Text from 'verdaccio-ui/components/Text';
+import { Theme } from 'verdaccio-ui/design-tokens/theme';
 
 import { DetailContext } from '../..';
 

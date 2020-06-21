@@ -1,6 +1,5 @@
 import React from 'react';
-
-import { preventXSS } from '@verdaccio/utils/sec-utils';
+import { preventXSS } from 'verdaccio-ui/utils/sec-utils';
 
 import Readme from './Readme';
 

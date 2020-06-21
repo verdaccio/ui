@@ -5,7 +5,7 @@ import { Route as ReactRouterDomRoute, Switch, Router } from 'react-router-dom';
 
 import AppContext from './AppContext';
 
-const NotFound = lazy(() => import('@verdaccio/components/NotFound'));
+const NotFound = lazy(() => import('verdaccio-ui/components/NotFound'));
 const VersionContextProvider = lazy(() => import('../pages/Version/VersionContextProvider'));
 const VersionPage = lazy(() => import('../pages/Version'));
 const HomePage = lazy(() => import('../pages/home'));

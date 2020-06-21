@@ -1,15 +1,14 @@
 import styled from '@emotion/styled';
 import { Link } from 'react-router-dom';
-
-import { default as Photo } from '@verdaccio/components/Avatar';
-import Grid from '@verdaccio/components/Grid';
-import { default as Typography } from '@verdaccio/components/Heading';
-import Ico from '@verdaccio/components/Icon';
-import { default as MuiIconButton } from '@verdaccio/components/IconButton';
-import Label from '@verdaccio/components/Label';
-import List from '@verdaccio/components/List';
-import ListItemText from '@verdaccio/components/ListItemText';
-import { Theme } from '@verdaccio/design-tokens/theme';
+import { default as Photo } from 'verdaccio-ui/components/Avatar';
+import Grid from 'verdaccio-ui/components/Grid';
+import { default as Typography } from 'verdaccio-ui/components/Heading';
+import Ico from 'verdaccio-ui/components/Icon';
+import { default as MuiIconButton } from 'verdaccio-ui/components/IconButton';
+import Label from 'verdaccio-ui/components/Label';
+import List from 'verdaccio-ui/components/List';
+import ListItemText from 'verdaccio-ui/components/ListItemText';
+import { Theme } from 'verdaccio-ui/design-tokens/theme';
 
 export const OverviewItem = styled('span')<{ theme?: Theme }>(({ theme }) => ({
   display: 'flex',

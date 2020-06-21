@@ -1,6 +1,5 @@
 import React from 'react';
-
-import Text from '@verdaccio/components/Text';
+import Text from 'verdaccio-ui/components/Text';
 
 interface Props {
   text: string;

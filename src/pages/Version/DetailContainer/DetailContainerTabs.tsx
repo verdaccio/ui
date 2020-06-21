@@ -1,10 +1,9 @@
 import styled from '@emotion/styled';
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-
-import Tab from '@verdaccio/components/Tab';
-import { default as MuiTabs } from '@verdaccio/components/Tabs';
-import { Theme } from '@verdaccio/design-tokens/theme';
+import Tab from 'verdaccio-ui/components/Tab';
+import { default as MuiTabs } from 'verdaccio-ui/components/Tabs';
+import { Theme } from 'verdaccio-ui/design-tokens/theme';
 
 interface Props {
   onChange: (event, newValue) => void;

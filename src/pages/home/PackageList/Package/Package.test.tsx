@@ -1,6 +1,5 @@
 import React from 'react';
-
-import { shallow } from '@verdaccio/utils/test-enzyme';
+import { shallow } from 'verdaccio-ui/utils/test-enzyme';
 
 import Package from './Package';
 import { WrapperLink, Description, OverviewItem } from './styles';

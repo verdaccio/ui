@@ -1,9 +1,8 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-
-import Button from '@verdaccio/components/Button';
-import Dialog from '@verdaccio/components/Dialog';
-import DialogActions from '@verdaccio/components/DialogActions';
+import Button from 'verdaccio-ui/components/Button';
+import Dialog from 'verdaccio-ui/components/Dialog';
+import DialogActions from 'verdaccio-ui/components/DialogActions';
 
 import { Title, Content } from './styles';
 import { Props } from './types';

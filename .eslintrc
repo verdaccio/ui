@@ -33,7 +33,7 @@
     "import/order": ["error", {
       "pathGroups": [
         {
-          "pattern": "@verdaccio/**",
+          "pattern": "verdaccio-ui/**",
           "group": "external",
           "position": "after"
         }

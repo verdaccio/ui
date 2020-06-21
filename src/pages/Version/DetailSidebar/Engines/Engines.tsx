@@ -1,10 +1,9 @@
 import React, { useContext } from 'react';
 import { useTranslation } from 'react-i18next';
-
-import Avatar from '@verdaccio/components/Avatar';
-import Grid from '@verdaccio/components/Grid';
-import List from '@verdaccio/components/List';
-import ListItemText from '@verdaccio/components/ListItemText';
+import Avatar from 'verdaccio-ui/components/Avatar';
+import Grid from 'verdaccio-ui/components/Grid';
+import List from 'verdaccio-ui/components/List';
+import ListItemText from 'verdaccio-ui/components/ListItemText';
 
 import { DetailContext } from '../../context';
 import npm from '../Install/img/npm.svg';

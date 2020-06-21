@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
-
-import { Loading } from '@verdaccio/components/Loading';
-import API from '@verdaccio/utils/api';
+import { Loading } from 'verdaccio-ui/components/Loading';
+import API from 'verdaccio-ui/utils/api';
 
 import { PackageList } from './PackageList';
 

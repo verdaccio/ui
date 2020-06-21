@@ -1,6 +1,5 @@
 import styled from '@emotion/styled';
-
-import { Theme } from '@verdaccio/design-tokens/theme';
+import { Theme } from 'verdaccio-ui/design-tokens/theme';
 
 export const Wrapper = styled('div')({
   transform: 'translate(-50%, -50%)',

@@ -1,8 +1,7 @@
 import React from 'react';
 import { MemoryRouter } from 'react-router-dom';
-
-import { mount } from '@verdaccio/utils/test-enzyme';
-import { render, cleanup } from '@verdaccio/utils/test-react-testing-library';
+import { mount } from 'verdaccio-ui/utils/test-enzyme';
+import { render, cleanup } from 'verdaccio-ui/utils/test-react-testing-library';
 
 import translationEN from '../../../../../i18n/translations/en-US.json';
 import { DetailContext } from '../../context';

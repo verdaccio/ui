@@ -1,6 +1,5 @@
 import React, { useState, useContext } from 'react';
-
-import Box from '@verdaccio/components/Box';
+import Box from 'verdaccio-ui/components/Box';
 
 import { DetailContext } from '../context';
 

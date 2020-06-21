@@ -1,8 +1,7 @@
 import styled from '@emotion/styled';
-
-import DialogContent from '@verdaccio/components/DialogContent';
-import DialogTitle from '@verdaccio/components/DialogTitle';
-import { Theme } from '@verdaccio/design-tokens/theme';
+import DialogContent from 'verdaccio-ui/components/DialogContent';
+import DialogTitle from 'verdaccio-ui/components/DialogTitle';
+import { Theme } from 'verdaccio-ui/design-tokens/theme';
 
 export const Title = styled(DialogTitle)<{ theme?: Theme }>(props => ({
   backgroundColor: props.theme && props.theme.palette.primary.main,

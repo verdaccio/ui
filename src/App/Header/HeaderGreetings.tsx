@@ -1,7 +1,6 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-
-import Label from '@verdaccio/components/Label';
+import Label from 'verdaccio-ui/components/Label';
 
 import { Greetings } from './styles';
 

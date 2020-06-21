@@ -1,11 +1,10 @@
 import { css } from '@emotion/core';
 import styled from '@emotion/styled';
-
-import AppBar from '@verdaccio/components/AppBar';
-import IconButton from '@verdaccio/components/IconButton';
-import Link from '@verdaccio/components/Link';
-import Toolbar from '@verdaccio/components/Toolbar';
-import { Theme } from '@verdaccio/design-tokens/theme';
+import AppBar from 'verdaccio-ui/components/AppBar';
+import IconButton from 'verdaccio-ui/components/IconButton';
+import Link from 'verdaccio-ui/components/Link';
+import Toolbar from 'verdaccio-ui/components/Toolbar';
+import { Theme } from 'verdaccio-ui/design-tokens/theme';
 
 export const InnerNavBar = styled(Toolbar)({
   justifyContent: 'space-between',

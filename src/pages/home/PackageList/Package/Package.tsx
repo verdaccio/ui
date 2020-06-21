@@ -3,15 +3,14 @@ import DownloadIcon from '@material-ui/icons/CloudDownload';
 import HomeIcon from '@material-ui/icons/Home';
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-
-import { downloadTarball } from '@verdaccio/components/ActionBar';
-import Grid from '@verdaccio/components/Grid';
-import Link from '@verdaccio/components/Link';
-import ListItem from '@verdaccio/components/ListItem';
-import Tooltip from '@verdaccio/components/Tooltip';
-import fileSizeSI from '@verdaccio/utils/file-size';
-import { formatDate, formatDateDistance, getAuthorName } from '@verdaccio/utils/package';
-import { isURL } from '@verdaccio/utils/url';
+import { downloadTarball } from 'verdaccio-ui/components/ActionBar';
+import Grid from 'verdaccio-ui/components/Grid';
+import Link from 'verdaccio-ui/components/Link';
+import ListItem from 'verdaccio-ui/components/ListItem';
+import Tooltip from 'verdaccio-ui/components/Tooltip';
+import fileSizeSI from 'verdaccio-ui/utils/file-size';
+import { formatDate, formatDateDistance, getAuthorName } from 'verdaccio-ui/utils/package';
+import { isURL } from 'verdaccio-ui/utils/url';
 
 import { PackageMetaInterface, Author as PackageAuthor } from '../../../../../types/packageMeta';
 

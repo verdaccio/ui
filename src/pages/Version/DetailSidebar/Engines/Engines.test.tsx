@@ -1,6 +1,5 @@
 import React from 'react';
-
-import { mount } from '@verdaccio/utils/test-enzyme';
+import { mount } from 'verdaccio-ui/utils/test-enzyme';
 
 import { PackageMetaInterface } from '../../../../../types/packageMeta';
 import { DetailContext } from '../../context';

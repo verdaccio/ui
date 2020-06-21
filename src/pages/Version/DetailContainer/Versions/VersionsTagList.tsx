@@ -1,7 +1,6 @@
 import React from 'react';
-
-import List from '@verdaccio/components/List';
-import ListItem from '@verdaccio/components/ListItem';
+import List from 'verdaccio-ui/components/List';
+import ListItem from 'verdaccio-ui/components/ListItem';
 
 import { DistTags } from '../../../../../types/packageMeta';
 

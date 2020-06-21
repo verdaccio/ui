@@ -1,12 +1,11 @@
 import React from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
-
 import {
   render,
   fireEvent,
   waitForElement,
   waitForElementToBeRemoved,
-} from '@verdaccio/utils/test-react-testing-library';
+} from 'verdaccio-ui/utils/test-react-testing-library';
 
 import translationEN from '../../../i18n/translations/en-US.json';
 import { AppContextProvider } from '../../App';
