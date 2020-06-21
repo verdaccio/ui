@@ -1,5 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
+
 import { render, fireEvent } from 'verdaccio-ui/utils/test-react-testing-library';
 
 import NotFound from './NotFound';

@@ -1,5 +1,6 @@
 import styled from '@emotion/styled';
 import React from 'react';
+
 import { Theme } from 'verdaccio-ui/design-tokens/theme';
 
 import blackAndWithLogo from './img/logo-black-and-white.svg';

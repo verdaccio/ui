@@ -1,4 +1,5 @@
 import React from 'react';
+
 import { mount } from 'verdaccio-ui/utils/test-enzyme';
 
 import { DetailContext } from '../../context';

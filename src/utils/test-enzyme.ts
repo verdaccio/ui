@@ -1,5 +1,6 @@
 import { mount, shallow } from 'enzyme';
 import React from 'react';
+
 import ThemeProvider from 'verdaccio-ui/design-tokens/ThemeProvider';
 
 const shallowWithTheme = (element: React.ReactElement<any>, ...props): any =>

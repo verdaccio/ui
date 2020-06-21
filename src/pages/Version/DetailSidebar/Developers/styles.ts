@@ -1,4 +1,5 @@
 import styled from '@emotion/styled';
+
 import FloatingActionButton from 'verdaccio-ui/components/FloatingActionButton';
 import Text from 'verdaccio-ui/components/Text';
 import { Theme } from 'verdaccio-ui/design-tokens/theme';

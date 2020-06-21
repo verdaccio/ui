@@ -1,5 +1,6 @@
 import React from 'react';
 import { MemoryRouter } from 'react-router-dom';
+
 import { mount } from 'verdaccio-ui/utils/test-enzyme';
 import { render, cleanup } from 'verdaccio-ui/utils/test-react-testing-library';
 

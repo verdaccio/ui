@@ -1,5 +1,6 @@
 import { ReactWrapper } from 'enzyme';
 import React from 'react';
+
 import { copyToClipBoardUtility } from 'verdaccio-ui/utils/cli-utils';
 import { mount } from 'verdaccio-ui/utils/test-enzyme';
 

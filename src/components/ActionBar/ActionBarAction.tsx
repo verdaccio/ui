@@ -4,6 +4,7 @@ import DownloadIcon from '@material-ui/icons/CloudDownload';
 import HomeIcon from '@material-ui/icons/Home';
 import React from 'react';
 import { useTranslation } from 'react-i18next';
+
 import { Theme } from 'verdaccio-ui/design-tokens/theme';
 
 import FloatingActionButton from '../FloatingActionButton';

@@ -1,5 +1,6 @@
 import React from 'react';
 import { BrowserRouter } from 'react-router-dom';
+
 import { mount } from 'verdaccio-ui/utils/test-enzyme';
 
 import Help from './Help';

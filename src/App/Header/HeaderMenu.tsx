@@ -1,6 +1,7 @@
 import AccountCircle from '@material-ui/icons/AccountCircle';
 import React, { MouseEvent } from 'react';
 import { useTranslation } from 'react-i18next';
+
 import IconButton from 'verdaccio-ui/components/IconButton';
 import Menu from 'verdaccio-ui/components/Menu';
 import MenuItem from 'verdaccio-ui/components/MenuItem';

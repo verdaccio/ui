@@ -1,4 +1,5 @@
 import React from 'react';
+
 import { render, cleanup, fireEvent } from 'verdaccio-ui/utils/test-react-testing-library';
 
 import RegistryInfoContent from './RegistryInfoContent';

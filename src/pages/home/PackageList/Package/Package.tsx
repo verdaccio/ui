@@ -3,6 +3,7 @@ import DownloadIcon from '@material-ui/icons/CloudDownload';
 import HomeIcon from '@material-ui/icons/Home';
 import React from 'react';
 import { useTranslation } from 'react-i18next';
+
 import { downloadTarball } from 'verdaccio-ui/components/ActionBar';
 import Grid from 'verdaccio-ui/components/Grid';
 import Link from 'verdaccio-ui/components/Link';

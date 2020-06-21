@@ -4,6 +4,7 @@ import parse from 'autosuggest-highlight/parse';
 import React, { KeyboardEvent, memo } from 'react';
 import Autosuggest, { SuggestionSelectedEventData, InputProps, ChangeEvent } from 'react-autosuggest';
 import { useTranslation } from 'react-i18next';
+
 import { Theme } from 'verdaccio-ui/design-tokens/theme';
 
 import MenuItem from '../MenuItem';

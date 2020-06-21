@@ -1,5 +1,6 @@
 import styled from '@emotion/styled';
 import React, { Fragment, ReactNode } from 'react';
+
 import Divider from 'verdaccio-ui/components/Divider';
 import { formatLicense } from 'verdaccio-ui/utils/package';
 

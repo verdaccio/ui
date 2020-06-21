@@ -1,5 +1,6 @@
 import styled from '@emotion/styled';
 import { Link } from 'react-router-dom';
+
 import { default as Photo } from 'verdaccio-ui/components/Avatar';
 import Grid from 'verdaccio-ui/components/Grid';
 import { default as Typography } from 'verdaccio-ui/components/Heading';

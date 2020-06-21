@@ -1,4 +1,5 @@
 import React from 'react';
+
 import ActionBar from 'verdaccio-ui/components/ActionBar';
 import { render, cleanup } from 'verdaccio-ui/utils/test-react-testing-library';
 

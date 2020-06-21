@@ -1,4 +1,5 @@
 import React from 'react';
+
 import { shallow } from 'verdaccio-ui/utils/test-enzyme';
 
 import Package from './Package';

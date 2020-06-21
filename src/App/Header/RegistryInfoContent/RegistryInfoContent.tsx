@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+
 import CopyToClipBoard from 'verdaccio-ui/components/CopyToClipBoard';
 import { default as Typography } from 'verdaccio-ui/components/Heading';
 import Tab from 'verdaccio-ui/components/Tab';

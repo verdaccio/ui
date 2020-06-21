@@ -1,4 +1,5 @@
 import styled from '@emotion/styled';
+
 import Icon from 'verdaccio-ui/components/Icon';
 import { Theme } from 'verdaccio-ui/design-tokens/theme';
 

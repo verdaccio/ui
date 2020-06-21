@@ -1,5 +1,6 @@
 import React, { FC, useContext } from 'react';
 import { useTranslation } from 'react-i18next';
+
 import { getAuthorName } from 'verdaccio-ui/utils/package';
 import { isEmail } from 'verdaccio-ui/utils/url';
 

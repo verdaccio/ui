@@ -1,5 +1,6 @@
 import React, { useContext } from 'react';
 import { useTranslation } from 'react-i18next';
+
 import Avatar from 'verdaccio-ui/components/Avatar';
 import Grid from 'verdaccio-ui/components/Grid';
 import List from 'verdaccio-ui/components/List';

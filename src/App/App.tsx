@@ -3,6 +3,7 @@ import styled from '@emotion/styled';
 import isNil from 'lodash/isNil';
 import React, { useState, useEffect, Suspense } from 'react';
 import { Router } from 'react-router-dom';
+
 import Box from 'verdaccio-ui/components/Box';
 import { Loading } from 'verdaccio-ui/components/Loading';
 import loadDayJSLocale from 'verdaccio-ui/design-tokens/load-dayjs-locale';

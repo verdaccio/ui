@@ -1,6 +1,7 @@
 import { waitForElement } from '@testing-library/dom';
 import React from 'react';
 import { MemoryRouter } from 'react-router';
+
 import { render } from 'verdaccio-ui/utils/test-react-testing-library';
 
 import translationEN from '../../../i18n/translations/en-US.json';

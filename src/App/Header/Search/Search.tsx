@@ -3,6 +3,7 @@ import React, { useState, FormEvent, useCallback } from 'react';
 import { SuggestionSelectedEventData } from 'react-autosuggest';
 import { useTranslation } from 'react-i18next';
 import { RouteComponentProps, withRouter } from 'react-router';
+
 import AutoComplete from 'verdaccio-ui/components/AutoComplete';
 import { callSearch } from 'verdaccio-ui/utils/calls';
 

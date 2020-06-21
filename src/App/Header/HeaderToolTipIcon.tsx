@@ -4,6 +4,7 @@ import NightsStay from '@material-ui/icons/NightsStay';
 import Search from '@material-ui/icons/Search';
 import WbSunny from '@material-ui/icons/WbSunny';
 import React, { forwardRef } from 'react';
+
 import IconButton from 'verdaccio-ui/components/IconButton';
 
 import { IconSearchButton, StyledLink } from './styles';

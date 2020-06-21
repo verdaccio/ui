@@ -1,4 +1,5 @@
 import styled from '@emotion/styled';
+
 import Card from 'verdaccio-ui/components/Card';
 import Chip from 'verdaccio-ui/components/Chip';
 import Text from 'verdaccio-ui/components/Text';

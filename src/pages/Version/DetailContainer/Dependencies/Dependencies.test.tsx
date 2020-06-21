@@ -1,5 +1,6 @@
 import React from 'react';
 import { HashRouter } from 'react-router-dom';
+
 import { render } from 'verdaccio-ui/utils/test-react-testing-library';
 
 import { DetailContextProvider } from '../../context';

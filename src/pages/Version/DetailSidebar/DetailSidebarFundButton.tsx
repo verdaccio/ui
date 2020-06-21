@@ -2,6 +2,7 @@ import styled from '@emotion/styled';
 import Favorite from '@material-ui/icons/Favorite';
 import React, { useContext } from 'react';
 import { Trans } from 'react-i18next';
+
 import Button from 'verdaccio-ui/components/Button';
 import Link from 'verdaccio-ui/components/Link';
 import { Theme } from 'verdaccio-ui/design-tokens/theme';
