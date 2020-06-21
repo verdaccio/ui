@@ -38,7 +38,7 @@
           "position": "after"
         }
       ],
-      "pathGroupsExcludedImportTypes": ["@verdaccio"],
+      "pathGroupsExcludedImportTypes": ["verdaccio-ui"],
       "alphabetize": {
         "order": "asc",
         "caseInsensitive": true
