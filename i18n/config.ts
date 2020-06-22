@@ -1,16 +1,16 @@
 import i18n from 'i18next';
 import { initReactI18next } from 'react-i18next';
 
-import translationEN from './translations/en-US.json';
 import translationCS from './translations/cs-CZ.json';
-import translationPT from './translations/pt-BR.json';
-import translationES from './translations/es-ES.json';
 import translationDE from './translations/de-DE.json';
+import translationEN from './translations/en-US.json';
+import translationES from './translations/es-ES.json';
 import translationFR from './translations/fr-FR.json';
-import translationCN from './translations/zh-CN.json';
 import translationJP from './translations/ja-JP.json';
-import translationUA from './translations/uk-UA.json';
 import translationKM from './translations/km-KH.json';
+import translationPT from './translations/pt-BR.json';
+import translationUA from './translations/uk-UA.json';
+import translationCN from './translations/zh-CN.json';
 import translatiobTW from './translations/zh-TW.json';
 
 const languages = {

@@ -5,8 +5,8 @@ import ReactDOM from 'react-dom';
 import { AppContainer } from 'react-hot-loader';
 
 import App from './App';
-import ThemeProvider from './design-tokens/ThemeProvider';
 import StyleBaseline from './design-tokens/StyleBaseline';
+import ThemeProvider from './design-tokens/ThemeProvider';
 
 const rootNode = document.getElementById('root');
 

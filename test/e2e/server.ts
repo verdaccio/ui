@@ -1,10 +1,10 @@
 import assert from 'assert';
 
-import _ from 'lodash';
 import { HTTP_STATUS, HEADERS, API_MESSAGE } from '@verdaccio/commons-api';
+import _ from 'lodash';
 
-import smartRequest, { RequestPromise } from './request';
 import { CREDENTIALS } from './registry-launcher';
+import smartRequest, { RequestPromise } from './request';
 
 declare class PromiseAssert<RequestPromise> extends Promise<any> {
   public constructor(options: any);

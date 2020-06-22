@@ -1,6 +1,7 @@
 import React from 'react';
 
-import { render, cleanup } from '../../utils/test-react-testing-library';
+import { render, cleanup } from 'verdaccio-ui/utils/test-react-testing-library';
+
 import { DetailContext, DetailContextProps } from '../../pages/Version';
 
 import ActionBar from './ActionBar';
@@ -14,7 +15,7 @@ const detailContextValue: DetailContextProps = {
   packageMeta: {
     _uplinks: {},
     latest: {
-      name: '@verdaccio/local-storage',
+      name: 'verdaccio-ui/local-storage',
       version: '8.0.1-next.1',
       dist: { fileCount: 0, unpackedSize: 0, tarball: 'http://localhost:8080/bootstrap/-/bootstrap-4.3.1.tgz' },
       homepage: 'https://verdaccio.org',

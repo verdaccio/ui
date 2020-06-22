@@ -1,13 +1,13 @@
-import React from 'react';
 import { ReactWrapper } from 'enzyme';
+import React from 'react';
 
-import { copyToClipBoardUtility } from '../../utils/cli-utils';
-import { mount } from '../../utils/test-enzyme';
+import { copyToClipBoardUtility } from 'verdaccio-ui/utils/cli-utils';
+import { mount } from 'verdaccio-ui/utils/test-enzyme';
 
 import CopyToClipBoard from './CopyToClipBoard';
 import { CopyIcon } from './styles';
 
-jest.mock('../../utils/cli-utils');
+jest.mock('verdaccio-ui/utils/cli-utils');
 
 describe('<CopyToClipBoard /> component', () => {
   let wrapper: ReactWrapper;

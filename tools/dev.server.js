@@ -1,6 +1,6 @@
+import ora from 'ora';
 import webpack from 'webpack';
 import WebpackDevServer from 'webpack-dev-server';
-import ora from 'ora';
 
 import env from '../config/env';
 

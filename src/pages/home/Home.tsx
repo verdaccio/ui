@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react';
 
-import { PackageList } from '../../components/PackageList';
-import API from '../../utils/api';
-import Loading from '../../components/Loading';
+import Loading from 'verdaccio-ui/components/Loading';
+import API from 'verdaccio-ui/utils/api';
+
+import { PackageList } from './PackageList';
 
 interface Props {
   isUserLoggedIn: boolean;

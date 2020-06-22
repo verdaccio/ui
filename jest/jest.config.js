@@ -26,5 +26,8 @@ module.exports = {
     'github-markdown-css': '<rootDir>/node_modules/identity-obj-proxy',
     '\\.(png)$': '<rootDir>/node_modules/identity-obj-proxy',
     '\\.(svg)$': '<rootDir>/jest/unit/empty.ts',
+    'verdaccio-ui/components/(.*)': '<rootDir>/src/components/$1',
+    'verdaccio-ui/utils/(.*)': '<rootDir>/src/utils/$1',
+    'verdaccio-ui/design-tokens/(.*)': '<rootDir>/src/design-tokens/$1',
   },
 };
