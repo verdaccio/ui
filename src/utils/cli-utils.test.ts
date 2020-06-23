@@ -3,7 +3,7 @@ import { SyntheticEvent } from 'react';
 import { copyToClipBoardUtility, getCLISetConfigRegistry } from './cli-utils';
 
 describe('copyToClipBoardUtility', () => {
-  let originalGetSelection;
+  let originalGetSelection: typeof window.getSelection;
 
   const mockGetSelectionResult = {
     removeAllRanges: jest.fn(),

@@ -14,7 +14,7 @@ const DetailContainer: React.FC = () => {
   const detailContext = useContext(DetailContext);
   const { readMe } = detailContext;
 
-  const handleChange = (event, newValue) => {
+  const handleChange = (event: React.ChangeEvent<{}>, newValue: number) => {
     setTabPosition(newValue);
   };
 

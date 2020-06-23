@@ -65,7 +65,7 @@ const RegistryInfoContent: React.FC<Props> = props => {
   };
 
   /* eslint react/prop-types:0 */
-  const TabContainer = ({ children }): JSX.Element => {
+  const TabContainer: React.FC = ({ children }): JSX.Element => {
     return (
       <CommandContainer>
         <Typography component="div">{children}</Typography>

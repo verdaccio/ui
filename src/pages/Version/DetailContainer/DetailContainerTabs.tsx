@@ -7,7 +7,7 @@ import { default as MuiTabs } from 'verdaccio-ui/components/Tabs';
 import { Theme } from 'verdaccio-ui/design-tokens/theme';
 
 interface Props {
-  onChange: (event, newValue) => void;
+  onChange: (event: React.ChangeEvent<{}>, newValue: number) => void;
   tabPosition: number;
 }
 

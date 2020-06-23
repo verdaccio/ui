@@ -31,7 +31,7 @@ describe('api', () => {
   });
 
   describe('api client', () => {
-    let fetchSpy;
+    let fetchSpy: jest.SpyInstance;
 
     beforeEach(() => {
       fetchSpy = jest.spyOn(window, 'fetch');
