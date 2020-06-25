@@ -2,7 +2,7 @@
 name: "Feature Request 🔮"
 about: You want a feature request.
 title: ""
-labels: "topic: feature request"
+labels: "enhancement"
 assignees: ""
 ---
 

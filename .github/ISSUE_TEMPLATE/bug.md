@@ -1,7 +1,7 @@
 ---
 name: Bug report 🐛
 about: A feature is not working as is expected, I want to report a bug
-labels: "issue: bug" "issue: needs triage"
+labels: "issue: needs triage"
 ---
 
 - [ ] I'd be willing to implement a fix
@@ -10,13 +10,7 @@ labels: "issue: bug" "issue: needs triage"
 <!-- A clear and concise description of what the bug is. -->
 
 **To Reproduce**
-
-<!-- IMPORTANT:
- - How to reproduce the issue
- - Steps to reproduce the issue
-
-Be aware, the lack of reproducible steps the issue might cause your ticket to be closed.
--->
+<!-- IMPORTANT: Steps to reproduce the issue -->
 
 **Expected behavior**
 <!-- A clear and concise description of what you expected to happen. -->
@@ -29,7 +23,6 @@ Be aware, the lack of reproducible steps the issue might cause your ticket to be
 <!-- Please be careful do not leak any sensitive information, remove tokens -->
 
 **Environment information**
-<!-- Browser, Operative system, etc ..-->
+<!-- Browser, Operative system, server log etc ..-->
 
-**Server log**
 
