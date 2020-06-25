@@ -2,7 +2,7 @@ import styled from '@emotion/styled';
 import match from 'autosuggest-highlight/match';
 import parse from 'autosuggest-highlight/parse';
 import React, { KeyboardEvent, memo } from 'react';
-import Autosuggest, { SuggestionSelectedEventData, InputProps, ChangeEvent } from 'react-autosuggest';
+import Autosuggest, { SuggestionSelectedEventData, InputProps, ChangeEvent, SuggestionsFetchRequested, GetSuggestionValue, RenderSuggestion, RenderSuggestionsContainer, RenderInputComponent } from 'react-autosuggest';
 import { useTranslation } from 'react-i18next';
 
 import { Theme } from 'verdaccio-ui/design-tokens/theme';
@@ -20,7 +20,7 @@ const StyledMenuItem = styled(MenuItem)({
 });
 
 interface Props {
-  suggestions: unknown[];
+  suggestions: Suggestion[];
   suggestionsLoading?: boolean;
   suggestionsLoaded?: boolean;
   suggestionsError?: boolean;
@@ -30,22 +30,29 @@ interface Props {
   startAdornment?: JSX.Element;
   disableUnderline?: boolean;
   onChange: (event: React.FormEvent<HTMLInputElement>, params: ChangeEvent) => void;
-  onSuggestionsFetch: ({ value: string }) => Promise<void>;
+  onSuggestionsFetch: SuggestionsFetchRequested;//({ value: string }) => Promise<void>;
   onCleanSuggestions?: () => void;
   onClick?: (event: React.FormEvent<HTMLInputElement>, data: SuggestionSelectedEventData<unknown>) => void;
   onKeyDown?: (event: KeyboardEvent<HTMLInputElement>) => void;
   onBlur?: (event: React.FormEvent<HTMLInputElement>) => void;
 }
 
+interface Suggestion {
+  name: string;
+}
+
+type CustomInputProps = Pick<Props, "disableUnderline" | "startAdornment">;
+
 /* eslint-disable react/jsx-sort-props  */
 /* eslint-disable verdaccio/jsx-spread */
-const renderInputComponent = (inputProps): JSX.Element => {
+const renderInputComponent: RenderInputComponent<Suggestion> = (inputProps) => {
+  // @ts-ignore
   const { ref, startAdornment, disableUnderline, onKeyDown, ...others } = inputProps;
   return (
     <InputField
       fullWidth={true}
       InputProps={{
-        inputRef: node => {
+        inputRef: (node: any) => {
           ref(node);
         },
         startAdornment,
@@ -57,9 +64,9 @@ const renderInputComponent = (inputProps): JSX.Element => {
   );
 };
 
-const getSuggestionValue = (suggestion): string => suggestion.name;
+const getSuggestionValue: GetSuggestionValue<Suggestion> = (suggestion): string => suggestion.name;
 
-const renderSuggestion = (suggestion, { query, isHighlighted }): JSX.Element => {
+const renderSuggestion: RenderSuggestion<Suggestion> = (suggestion, { query, isHighlighted }): JSX.Element => {
   const matches = match(suggestion.name, query);
   const parts = parse(suggestion.name, matches);
   return (
@@ -77,7 +84,7 @@ const renderSuggestion = (suggestion, { query, isHighlighted }): JSX.Element => 
   );
 };
 
-const renderMessage = (message): JSX.Element => {
+const renderMessage = (message: string): JSX.Element => {
   return (
     <MenuItem component="div" selected={false}>
       <div>{message}</div>
@@ -104,15 +111,7 @@ const AutoComplete = memo(
   }: Props) => {
     const { t } = useTranslation();
 
-    const autosuggestProps = {
-      renderInputComponent,
-      suggestions,
-      getSuggestionValue,
-      renderSuggestion,
-      onSuggestionsFetchRequested: onSuggestionsFetch,
-      onSuggestionsClearRequested: onCleanSuggestions,
-    };
-    const inputProps: InputProps<unknown> = {
+    const inputProps: InputProps<Suggestion> = {
       value,
       onChange,
       placeholder,
@@ -125,7 +124,7 @@ const AutoComplete = memo(
     };
 
     // this format avoid arrow function eslint rule
-    function renderSuggestionsContainer({ containerProps, children, query }): JSX.Element {
+    const renderSuggestionsContainer: RenderSuggestionsContainer = function({ containerProps, children, query }): JSX.Element {
       return (
         <SuggestionContainer {...containerProps} square={true}>
           {suggestionsLoaded && children === null && query && renderMessage(t('autoComplete.no-results-found'))}
@@ -138,8 +137,13 @@ const AutoComplete = memo(
 
     return (
       <Wrapper>
-        <Autosuggest
-          {...autosuggestProps}
+        <Autosuggest<Suggestion>
+          renderInputComponent={renderInputComponent}
+          suggestions={suggestions}
+          getSuggestionValue={getSuggestionValue}
+          renderSuggestion={renderSuggestion}
+          onSuggestionsFetchRequested={onSuggestionsFetch}
+          onSuggestionsClearRequested={onCleanSuggestions}
           inputProps={inputProps}
           onSuggestionSelected={onClick}
           renderSuggestionsContainer={renderSuggestionsContainer}
