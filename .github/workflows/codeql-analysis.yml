@@ -3,6 +3,9 @@ name: "Code scanning - action"
 on:
   push:
   pull_request:
+    paths:
+      - .github/workflows/codeql-analsis.yml
+      - 'src/**'
   schedule:
     - cron: '0 20 * * 0'
 

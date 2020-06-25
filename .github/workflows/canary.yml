@@ -1,6 +1,10 @@
 name: CI Canary
 
-on: [pull_request]
+on:
+  pull_request:
+    paths:
+      - .github/workflows/canary.yml
+      - 'src/**'
 
 jobs:
   build_test_lint:
