@@ -2,8 +2,8 @@ const fs = require('fs');
 const os = require('os');
 const path = require('path');
 
-const { yellow } = require('kleur');
 const NodeEnvironment = require('jest-environment-node');
+const { yellow } = require('kleur');
 const puppeteer = require('puppeteer');
 
 const VerdaccioProcess = require('./registry-launcher');

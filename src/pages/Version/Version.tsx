@@ -1,10 +1,10 @@
 import React, { useContext } from 'react';
 
-import Loading from '../../components/Loading/Loading';
-import NotFound from '../../components/NotFound';
+import Loading from 'verdaccio-ui/components/Loading';
+import NotFound from 'verdaccio-ui/components/NotFound';
 
-import VersionLayout from './VersionLayout';
 import { DetailContext } from './context';
+import VersionLayout from './VersionLayout';
 
 const Version: React.FC = () => {
   const detailContext = useContext(DetailContext);

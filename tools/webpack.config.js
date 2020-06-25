@@ -13,6 +13,12 @@ module.exports = {
 
   resolve: {
     extensions: ['.js', '.jsx', '.ts', '.tsx'],
+    modules: ['node_modules'],
+    alias: {
+      'verdaccio-ui/components': `${env.SRC_ROOT}/components`,
+      'verdaccio-ui/design-tokens': `${env.SRC_ROOT}/design-tokens`,
+      'verdaccio-ui/utils': `${env.SRC_ROOT}/utils`,
+    },
   },
 
   plugins: [

@@ -3,8 +3,8 @@ const os = require('os');
 const path = require('path');
 
 const { green } = require('kleur');
-const puppeteer = require('puppeteer');
 const mkdirp = require('mkdirp');
+const puppeteer = require('puppeteer');
 
 const DIR = path.join(os.tmpdir(), 'jest_puppeteer_global_setup');
 

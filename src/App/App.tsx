@@ -1,22 +1,23 @@
 /* eslint-disable react/jsx-max-depth */
-import React, { useState, useEffect, Suspense } from 'react';
 import styled from '@emotion/styled';
 import isNil from 'lodash/isNil';
+import React, { useState, useEffect, Suspense } from 'react';
 import { Router } from 'react-router-dom';
 
-import '../../i18n/config';
-import storage from '../utils/storage';
-import { isTokenExpire } from '../utils/login';
-import Header from '../components/Header';
-import Footer from '../components/Footer';
-import Loading from '../components/Loading';
-import Box from '../muiComponents/Box';
-import StyleBaseline from '../design-tokens/StyleBaseline';
-import { Theme } from '../design-tokens/theme';
-import loadDayJSLocale from '../design-tokens/load-dayjs-locale';
+import Box from 'verdaccio-ui/components/Box';
+import Loading from 'verdaccio-ui/components/Loading';
+import loadDayJSLocale from 'verdaccio-ui/design-tokens/load-dayjs-locale';
+import StyleBaseline from 'verdaccio-ui/design-tokens/StyleBaseline';
+import { Theme } from 'verdaccio-ui/design-tokens/theme';
+import { isTokenExpire } from 'verdaccio-ui/utils/login';
+import storage from 'verdaccio-ui/utils/storage';
 
 import AppContextProvider from './AppContextProvider';
 import AppRoute, { history } from './AppRoute';
+import Footer from './Footer';
+import Header from './Header';
+
+import '../../i18n/config';
 
 const StyledBox = styled(Box)<{ theme?: Theme }>(({ theme }) => ({
   backgroundColor: theme?.palette.background.default,
@@ -34,7 +35,7 @@ const StyledBoxContent = styled(Box)<{ theme?: Theme }>(({ theme }) => ({
 /* eslint-disable react/jsx-no-bind */
 /* eslint-disable react-hooks/exhaustive-deps */
 const App: React.FC = () => {
-  const [user, setUser] = useState();
+  const [user, setUser] = useState<undefined | { username: string }>();
   /**
    * Logout user
    * Required by: <Header />

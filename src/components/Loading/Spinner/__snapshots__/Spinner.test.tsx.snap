@@ -1,0 +1,3 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Spinner /> component should render the component in custom state 1`] = `"<div class=\\"css-1ju0ex2-Wrapper e1y5sxxq0\\"><div class=\\"MuiCircularProgress-root css-evyw70-Circular e1y5sxxq1 MuiCircularProgress-colorPrimary MuiCircularProgress-indeterminate\\" style=\\"width: 10px; height: 10px;\\" role=\\"progressbar\\"><svg class=\\"MuiCircularProgress-svg\\" viewBox=\\"22 22 44 44\\"><circle class=\\"MuiCircularProgress-circle MuiCircularProgress-circleIndeterminate\\" cx=\\"44\\" cy=\\"44\\" r=\\"20.2\\" fill=\\"none\\" stroke-width=\\"3.6\\"></circle></svg></div></div>"`;

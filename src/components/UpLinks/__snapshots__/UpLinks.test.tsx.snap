@@ -1,5 +1,0 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`<UpLinks /> component should render the component when there is no uplink 1`] = `"<h6 class=\\"MuiTypography-root MuiTypography-subtitle1 MuiTypography-gutterBottom\\">uplinks.no-items</h6>"`;
-
-exports[`<UpLinks /> component should render the component with uplinks 1`] = `"<h6 class=\\"MuiTypography-root css-5wp24z-StyledText e14i1sy10 MuiTypography-subtitle1\\">uplinks.title</h6><ul class=\\"MuiList-root MuiList-padding\\"><li class=\\"MuiListItem-root MuiListItem-gutters\\"><div class=\\"MuiListItemText-root css-1ork7s0-ListItemText e14i1sy12\\"><span class=\\"MuiTypography-root MuiListItemText-primary MuiTypography-body1\\">npmjs</span></div><div class=\\"css-4lqckn-Spacer e14i1sy11\\"></div><div class=\\"MuiListItemText-root css-1ork7s0-ListItemText e14i1sy12\\"><span class=\\"MuiTypography-root MuiListItemText-primary MuiTypography-body1\\">2 years ago</span></div></li></ul>"`;

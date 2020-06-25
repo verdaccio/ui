@@ -1,8 +1,8 @@
-import isString from 'lodash/isString';
-import isNumber from 'lodash/isNumber';
-import isEmpty from 'lodash/isEmpty';
-import { Base64 } from 'js-base64';
 import i18next from 'i18next';
+import { Base64 } from 'js-base64';
+import isEmpty from 'lodash/isEmpty';
+import isNumber from 'lodash/isNumber';
+import isString from 'lodash/isString';
 
 import { HEADERS } from '../../lib/constants';
 
