@@ -29,7 +29,7 @@ export interface PackageMetaInterface {
     maintainers?: Array<Developer>;
     contributors?: Array<Developer>;
   };
-  _uplinks: {};
+  _uplinks: Record<string, { fetched: number }>;
 }
 export interface Developer {
   name: string;
