@@ -2,7 +2,16 @@ import styled from '@emotion/styled';
 import match from 'autosuggest-highlight/match';
 import parse from 'autosuggest-highlight/parse';
 import React, { KeyboardEvent, memo } from 'react';
-import Autosuggest, { SuggestionSelectedEventData, InputProps, ChangeEvent, SuggestionsFetchRequested, GetSuggestionValue, RenderSuggestion, RenderSuggestionsContainer, RenderInputComponent } from 'react-autosuggest';
+import Autosuggest, {
+  SuggestionSelectedEventData,
+  InputProps,
+  ChangeEvent,
+  SuggestionsFetchRequested,
+  GetSuggestionValue,
+  RenderSuggestion,
+  RenderSuggestionsContainer,
+  RenderInputComponent,
+} from 'react-autosuggest';
 import { useTranslation } from 'react-i18next';
 
 import { Theme } from 'verdaccio-ui/design-tokens/theme';
@@ -30,7 +39,7 @@ interface Props {
   startAdornment?: JSX.Element;
   disableUnderline?: boolean;
   onChange: (event: React.FormEvent<HTMLInputElement>, params: ChangeEvent) => void;
-  onSuggestionsFetch: SuggestionsFetchRequested;//({ value: string }) => Promise<void>;
+  onSuggestionsFetch: SuggestionsFetchRequested;
   onCleanSuggestions?: () => void;
   onClick?: (event: React.FormEvent<HTMLInputElement>, data: SuggestionSelectedEventData<unknown>) => void;
   onKeyDown?: (event: KeyboardEvent<HTMLInputElement>) => void;
@@ -41,11 +50,11 @@ interface Suggestion {
   name: string;
 }
 
-type CustomInputProps = Pick<Props, "disableUnderline" | "startAdornment">;
+type CustomInputProps = Pick<Props, 'disableUnderline' | 'startAdornment'>;
 
 /* eslint-disable react/jsx-sort-props  */
 /* eslint-disable verdaccio/jsx-spread */
-const renderInputComponent: RenderInputComponent<Suggestion> = (inputProps) => {
+const renderInputComponent: RenderInputComponent<Suggestion> = inputProps => {
   // @ts-ignore
   const { ref, startAdornment, disableUnderline, onKeyDown, ...others } = inputProps;
   return (
@@ -124,7 +133,11 @@ const AutoComplete = memo(
     };
 
     // this format avoid arrow function eslint rule
-    const renderSuggestionsContainer: RenderSuggestionsContainer = function({ containerProps, children, query }): JSX.Element {
+    const renderSuggestionsContainer: RenderSuggestionsContainer = function({
+      containerProps,
+      children,
+      query,
+    }): JSX.Element {
       return (
         <SuggestionContainer {...containerProps} square={true}>
           {suggestionsLoaded && children === null && query && renderMessage(t('autoComplete.no-results-found'))}
@@ -133,7 +146,7 @@ const AutoComplete = memo(
           {children}
         </SuggestionContainer>
       );
-    }
+    };
 
     return (
       <Wrapper>
