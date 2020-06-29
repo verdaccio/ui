@@ -27,8 +27,8 @@ const HeaderRight: React.FC<Props> = ({
   onOpenRegistryInfoDialog,
 }) => {
   const themeContext = useContext(ThemeContext);
-  const [anchorEl, setAnchorEl] = useState();
-  const [isMenuOpen, setIsMenuOpen] = useState();
+  const [anchorEl, setAnchorEl] = useState<HTMLElement | null>(null);
+  const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
 
   const { t } = useTranslation();
 
