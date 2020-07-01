@@ -7,7 +7,7 @@ describe('api', () => {
       const ok = false;
       const response: Response = {
         url: 'http://localhost:8080/-/packages',
-        ok: ok,
+        ok,
         headers: new Headers(),
         text: async () => responseText,
       } as Response;
