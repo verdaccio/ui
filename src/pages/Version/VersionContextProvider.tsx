@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
+import { PackageMetaInterface } from 'types/packageMeta';
 
 import { callDetailPage, callReadme } from 'verdaccio-ui/utils/calls';
 
@@ -17,10 +18,10 @@ const VersionContextProvider: React.FC = ({ children }) => {
   const { version, package: pkgName, scope } = useParams<Params>();
   const [packageName, setPackageName] = useState(getRouterPackageName(pkgName, scope));
   const [packageVersion, setPackageVersion] = useState(version);
-  const [packageMeta, setPackageMeta] = useState();
-  const [readMe, setReadme] = useState();
-  const [isLoading, setIsLoading] = useState(true);
-  const [hasNotBeenFound, setHasNotBeenFound] = useState();
+  const [packageMeta, setPackageMeta] = useState<PackageMetaInterface>();
+  const [readMe, setReadme] = useState<string>();
+  const [isLoading, setIsLoading] = useState<boolean>(true);
+  const [hasNotBeenFound, setHasNotBeenFound] = useState<boolean>();
 
   useEffect(() => {
     const updatedPackageName = getRouterPackageName(pkgName, scope);

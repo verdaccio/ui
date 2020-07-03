@@ -6,7 +6,7 @@ import '../../types';
  * @param {object} response
  * @returns {promise}
  */
-export function handleResponseType(response: Response): Promise<[boolean, Blob | string] | void> {
+export function handleResponseType(response: Response): Promise<[boolean, any]> {
   if (response.headers) {
     const contentType = response.headers.get('Content-Type');
     if (contentType && contentType.includes('application/pdf')) {
@@ -26,7 +26,7 @@ export function handleResponseType(response: Response): Promise<[boolean, Blob |
     }
   }
 
-  return Promise.resolve();
+  return Promise.all([response.ok, response.text()]);
 }
 
 class API {
@@ -36,10 +36,11 @@ class API {
     }
 
     const token = storage.getItem('token');
-    if (token && options.headers && typeof options.headers['Authorization'] === 'undefined') {
-      options.headers = Object.assign({}, options.headers, {
-        ['Authorization']: `Bearer ${token}`,
-      });
+    const headers = new Headers(options.headers);
+
+    if (token && headers.has('Authorization') === false) {
+      headers.set('Authorization', `Bearer ${token}`);
+      options.headers = headers;
     }
 
     if (!['http://', 'https://', '//'].some(prefix => url.startsWith(prefix))) {

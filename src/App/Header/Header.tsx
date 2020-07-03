@@ -22,9 +22,9 @@ interface Props {
 const Header: React.FC<Props> = ({ withoutSearch }) => {
   const { t } = useTranslation();
   const appContext = useContext(AppContext);
-  const [isInfoDialogOpen, setOpenInfoDialog] = useState();
-  const [showMobileNavBar, setShowMobileNavBar] = useState();
-  const [showLoginModal, setShowLoginModal] = useState(false);
+  const [isInfoDialogOpen, setOpenInfoDialog] = useState<boolean>(false);
+  const [showMobileNavBar, setShowMobileNavBar] = useState<boolean>(false);
+  const [showLoginModal, setShowLoginModal] = useState<boolean>(false);
 
   if (!appContext) {
     throw Error(t('app-context-not-correct-used'));

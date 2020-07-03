@@ -118,7 +118,7 @@
     "stylelint-webpack-plugin": "1.1.2",
     "supertest": "4.0.2",
     "typeface-roboto": "0.0.75",
-    "typescript": "3.7.4",
+    "typescript": "3.9.6",
     "uglifyjs-webpack-plugin": "2.2.0",
     "url-loader": "3.0.0",
     "validator": "12.1.0",
@@ -169,7 +169,6 @@
   "scripts": {
     "type-check": "tsc --noEmit --pretty",
     "type-check:watch": "npm run type-check -- --watch",
-    "type-check-strict:watch": "tsc --project ./tsconfig.strict.json --noEmit --pretty --watch",
     "release": "standard-version -a",
     "test:clean": "npx jest --clearCache",
     "test:acceptance": "codeceptjs run --steps",
