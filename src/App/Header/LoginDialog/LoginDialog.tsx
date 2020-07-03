@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next';
 
 import Dialog from 'verdaccio-ui/components/Dialog';
 import DialogContent from 'verdaccio-ui/components/DialogContent';
-import { makeLogin } from 'verdaccio-ui/utils/login';
+import { makeLogin, LoginError } from 'verdaccio-ui/utils/login';
 import storage from 'verdaccio-ui/utils/storage';
 
 import AppContext from '../../../App/AppContext';
@@ -25,7 +25,7 @@ const LoginDialog: React.FC<Props> = ({ onClose, open = false }) => {
     throw Error(t('app-context-not-correct-used'));
   }
 
-  const [error, setError] = useState();
+  const [error, setError] = useState<LoginError>();
 
   const handleDoLogin = useCallback(
     async (data: FormValues) => {
