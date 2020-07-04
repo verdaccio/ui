@@ -59,6 +59,13 @@ yarn build && yarn test:e2e
 
 > `yarn build` will build with webpack the production files.
 
+## Special Thanks
+
+Thanks to the following companies to help us to achieve our goals providing free open source licenses.
+
+[![jetbrain](https://github.com/verdaccio/verdaccio/raw/master/assets/thanks/jetbrains/logo.png)](https://www.jetbrains.com/)
+[![crowdin](https://github.com/verdaccio/verdaccio/raw/master/assets/thanks/crowdin/logo.png)](https://crowdin.com/)
+[![browserstack](https://cdn.verdaccio.dev/readme/browserstack_logo.png)](https://www.browserstack.com/)
 
 ## Open Collective Sponsors
 
