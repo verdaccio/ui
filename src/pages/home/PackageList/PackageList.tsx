@@ -1,5 +1,9 @@
-import styled from '@emotion/styled';
-import React, { Fragment, ReactNode } from 'react';
+import React from 'react';
+import AutoSizer from 'react-virtualized/dist/commonjs/AutoSizer';
+import CellMeasurer from 'react-virtualized/dist/commonjs/CellMeasurer/CellMeasurer';
+import CellMeasurerCache from 'react-virtualized/dist/commonjs/CellMeasurer/CellMeasurerCache';
+import List from 'react-virtualized/dist/commonjs/List';
+import WindowScroller from 'react-virtualized/dist/commonjs/WindowScroller';
 
 import Divider from 'verdaccio-ui/components/Divider';
 import { formatLicense } from 'verdaccio-ui/utils/package';
@@ -7,36 +11,70 @@ import { formatLicense } from 'verdaccio-ui/utils/package';
 import Help from './Help';
 import Package, { PackageInterface } from './Package';
 
-const PkgContainer = styled('div')({
-  margin: 0,
-  padding: 0,
-});
-
 interface Props {
   packages: PackageInterface[];
 }
 
-export const PackageList: React.FC<Props> = ({ packages }) => {
-  const renderPackages: () => ReactNode[] = () => {
-    return packages.map(({ name, version, description, time, keywords, dist, homepage, bugs, author, license }, i) => {
-      // TODO: move format license to API side.
-      const _license = formatLicense(license);
-      return (
-        <Fragment key={i}>
-          {i !== 0 && <Divider />}
+const cache = new CellMeasurerCache({
+  fixedWidth: true,
+  defaultHeight: 100,
+});
+
+/* eslint-disable  verdaccio/jsx-no-style */
+const PackageList: React.FC<Props> = ({ packages }) => {
+  const renderRow = ({ index, key, parent, style }) => {
+    const { name, version, description, time, keywords, dist, homepage, bugs, author, license } = packages[index];
+    // TODO: move format license to API side.
+    const formattedLicense = formatLicense(license);
+
+    return (
+      <CellMeasurer cache={cache} columnIndex={0} key={key} parent={parent} rowIndex={index}>
+        <div style={style}>
+          {index !== 0 && <Divider />}
           <Package
-            {...{ name, dist, version, author, description, license: _license, time, keywords, homepage, bugs }}
+            author={author}
+            bugs={bugs}
+            description={description}
+            dist={dist}
+            homepage={homepage}
+            keywords={keywords}
+            license={formattedLicense}
+            name={name}
+            time={time}
+            version={version}
           />
-        </Fragment>
-      );
-    });
+        </div>
+      </CellMeasurer>
+    );
   };
 
-  const hasPackages: () => boolean = () => packages.length > 0;
+  if (packages.length === 0) {
+    return <Help />;
+  }
 
   return (
-    <div className={'package-list-items'}>
-      <PkgContainer>{hasPackages() ? renderPackages() : <Help />}</PkgContainer>
-    </div>
+    <WindowScroller>
+      {({ height, isScrolling, scrollTop, onChildScroll }) => (
+        <AutoSizer disableHeight={true}>
+          {({ width }) => (
+            <List
+              autoHeight={true}
+              deferredMeasurementCache={cache}
+              height={height}
+              isScrolling={isScrolling}
+              onScroll={onChildScroll}
+              overscanRowCount={3}
+              rowCount={packages.length}
+              rowHeight={cache.rowHeight}
+              rowRenderer={renderRow}
+              scrollTop={scrollTop}
+              width={width}
+            />
+          )}
+        </AutoSizer>
+      )}
+    </WindowScroller>
   );
 };
+
+export { PackageList };

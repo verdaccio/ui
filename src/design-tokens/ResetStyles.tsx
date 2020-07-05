@@ -23,6 +23,7 @@ const resetStyles = makeStyles(({ theme }: { theme?: Theme }) => ({
     '.container': {
       padding: 15,
       flex: 1,
+      height: '100%',
 
       [`@media screen and (min-width: ${theme && theme.breakPoints.container}px)`]: {
         maxWidth: theme && theme.breakPoints.container,
