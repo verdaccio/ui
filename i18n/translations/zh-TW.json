@@ -146,6 +146,8 @@
         "chinese": "簡體中文",
         "chineseTraditional":"正體中文",
         "french": "法文",
+        "russian": "俄文",
         "ukraine": "烏克蘭文",
-        "khmer": "高棉文"    }
+        "khmer": "高棉文"
+    }
 }
