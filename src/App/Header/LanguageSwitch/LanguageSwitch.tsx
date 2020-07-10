@@ -34,6 +34,10 @@ const lngDetails: Record<Language, { translation: TFunctionKeys; icon: React.Com
     translation: 'lng.chinese',
     icon: 'china',
   },
+  'ru-RU': {
+    translation: 'lng.russian',
+    icon: 'russia',
+  },
   'uk-UA': {
     translation: 'lng.ukraine',
     icon: 'ukraine',

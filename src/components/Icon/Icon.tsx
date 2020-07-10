@@ -17,6 +17,7 @@ import law from './img/law.svg';
 import license from './img/license.svg';
 import nicaragua from './img/nicaragua.svg';
 import pakistan from './img/pakistan.svg';
+import russia from './img/russia.svg';
 import spain from './img/spain.svg';
 import taiwan from './img/taiwan.svg';
 import time from './img/time.svg';
@@ -39,6 +40,7 @@ export interface IconsMap {
   germany: string;
   india: string;
   japan: string;
+  russia: string;
   ukraine: string;
   khmer: string;
   taiwan: string;
@@ -72,6 +74,7 @@ export const Icons: IconsMap = {
   usa,
   france,
   japan,
+  russia,
   ukraine,
   khmer,
   taiwan,
