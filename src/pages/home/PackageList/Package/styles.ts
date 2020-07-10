@@ -83,15 +83,10 @@ export const GridRightAligned = styled(Grid)({
   textAlign: 'right',
 });
 
-export const PackageList = styled(List)<{ theme?: Theme }>(({ theme }) => ({
-  padding: '12px 0 12px 0',
+export const Wrapper = styled(List)<{ theme?: Theme }>(({ theme }) => ({
   ':hover': {
     backgroundColor: theme?.palette?.type == 'dark' ? theme?.palette?.secondary.main : theme?.palette?.greyLight3,
   },
-  '> :last-child': {
-    paddingTop: 0,
-  },
-  borderRadius: 4,
 }));
 
 export const IconButton = styled(MuiIconButton)({

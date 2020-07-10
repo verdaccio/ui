@@ -24,7 +24,7 @@ import {
   Icon,
   IconButton,
   OverviewItem,
-  PackageList,
+  Wrapper,
   PackageListItemText,
   PackageTitle,
   Published,
@@ -190,7 +190,7 @@ const Package: React.FC<PackageInterface> = ({
   );
 
   return (
-    <PackageList className={'package'}>
+    <Wrapper className={'package'}>
       <ListItem alignItems={'flex-start'}>{renderPackageListItemText()}</ListItem>
       <ListItem alignItems={'flex-start'}>
         {renderAuthorInfo()}
@@ -199,7 +199,7 @@ const Package: React.FC<PackageInterface> = ({
         {renderFileSize()}
         {renderLicenseInfo()}
       </ListItem>
-    </PackageList>
+    </Wrapper>
   );
 };
 

@@ -16,6 +16,9 @@ describe('<PackageList /> component', () => {
   });
 
   test('should load the component with packages', () => {
+    // Mock <Autosizer /> width
+    jest.spyOn(HTMLElement.prototype, 'offsetWidth', 'get').mockReturnValue(600);
+
     const props = {
       packages: [
         {
