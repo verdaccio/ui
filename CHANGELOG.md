@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.12.0](https://github.com/verdaccio/ui/compare/v1.11.0...v1.12.0) (2020-07-10)
+
+
+### Features
+
+* add russian language ([#513](https://github.com/verdaccio/ui/issues/513)) ([79835ac](https://github.com/verdaccio/ui/commit/79835accc202aefe4bcde0a0be45b2e89317d4ed))
+* **packagelist:** add list windowing ([#512](https://github.com/verdaccio/ui/issues/512)) ([6f00df9](https://github.com/verdaccio/ui/commit/6f00df9c93d08d42e7a30bc7d58e8abafc1629b5))
+* enabled typescript strict mode ([#504](https://github.com/verdaccio/ui/issues/504)) ([5c1ac55](https://github.com/verdaccio/ui/commit/5c1ac55544f88f7541844754f128bc4f6855f859))
+
+
+### Bug Fixes
+
+* strict Typing for AutoComplete Component ([#503](https://github.com/verdaccio/ui/issues/503)) ([4a61fd3](https://github.com/verdaccio/ui/commit/4a61fd368e4f0dab27a5a2b2827b8bf26307ae2f))
+
 ## [1.11.0](https://github.com/verdaccio/ui/compare/v1.10.0...v1.11.0) (2020-06-19)
 
 
