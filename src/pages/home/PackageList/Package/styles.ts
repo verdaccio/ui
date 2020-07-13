@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 
 import { default as Photo } from 'verdaccio-ui/components/Avatar';
 import Grid from 'verdaccio-ui/components/Grid';
-import Ico from 'verdaccio-ui/components/Icon';
 import { default as MuiIconButton } from 'verdaccio-ui/components/IconButton';
 import Label from 'verdaccio-ui/components/Label';
 import List from 'verdaccio-ui/components/List';
@@ -27,11 +26,6 @@ export const OverviewItem = styled('span')<{ theme?: Theme }>(({ theme }) => ({
       display: 'none',
     },
   },
-}));
-
-export const Icon = styled(Ico)<{ theme?: Theme }>(({ theme }) => ({
-  margin: '2px 10px 0 0',
-  fill: theme?.palette.type === 'light' ? theme?.palette.greyLight2 : theme?.palette.white,
 }));
 
 export const Published = styled('span')<{ theme?: Theme }>(({ theme }) => ({

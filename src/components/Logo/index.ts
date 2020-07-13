@@ -1,1 +1,1 @@
-export { default, Size } from './Logo';
+export { default } from './Logo';

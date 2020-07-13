@@ -154,5 +154,15 @@
         "turkish": "土耳其",
         "ukraine": "乌克兰",
         "khmer": "高棉语"
-    }
+    },
+    "flag": {
+        "austria": "奥地利",
+        "brazil": "巴西",
+        "spain": "西班牙",
+        "nicaragua": "尼加拉瓜",
+        "india": "印度",
+        "china": "中国",
+        "germany": "德国",
+        "taiwan": "台湾"
+       }
 }

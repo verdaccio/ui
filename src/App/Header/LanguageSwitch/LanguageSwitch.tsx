@@ -6,65 +6,79 @@ import React, { useCallback, useContext, useState, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import { AutoComplete } from 'verdaccio-ui/components/AutoComplete/AutoCompleteV2';
-import Icon from 'verdaccio-ui/components/Icon';
+import {
+  France,
+  Brazil,
+  Germany,
+  Spain,
+  China,
+  Russia,
+  Turkey,
+  Ukraine,
+  Khmer,
+  Japan,
+  Usa,
+  Czech,
+  Taiwan,
+} from 'verdaccio-ui/components/Icons';
 import MenuItem from 'verdaccio-ui/components/MenuItem';
 import { Theme } from 'verdaccio-ui/design-tokens/theme';
 import ThemeContext from 'verdaccio-ui/design-tokens/ThemeContext';
 
 import { Language } from '../../../../i18n/config';
 
-const lngDetails: Record<Language, { translation: TFunctionKeys; icon: React.ComponentProps<typeof Icon>['name'] }> = {
+const lngDetails: Record<Language, { translation: TFunctionKeys; icon: React.ReactElement }> = {
   'fr-FR': {
     translation: 'lng.french',
-    icon: 'france',
+    icon: <France size="md" />,
   },
   'pt-BR': {
     translation: 'lng.portuguese',
-    icon: 'brazil',
+    icon: <Brazil size="md" />,
   },
   'de-DE': {
     translation: 'lng.german',
-    icon: 'germany',
+    icon: <Germany size="md" />,
   },
   'es-ES': {
     translation: 'lng.spanish',
-    icon: 'spain',
+    icon: <Spain size="md" />,
   },
   'zh-CN': {
     translation: 'lng.chinese',
-    icon: 'china',
+    icon: <China size="md" />,
   },
   'ru-RU': {
     translation: 'lng.russian',
-    icon: 'russia',
+    icon: <Russia size="md" />,
   },
   'tr-TR': {
     translation: 'lng.turkish',
-    icon: 'turkey',
+    icon: <Turkey size="md" />,
   },
   'uk-UA': {
     translation: 'lng.ukraine',
-    icon: 'ukraine',
+    icon: <Ukraine size="md" />,
   },
   'km-KH': {
     translation: 'lng.khmer',
-    icon: 'khmer',
+    icon: <Khmer size="md" />,
   },
   'ja-JP': {
     translation: 'lng.japanese',
-    icon: 'japan',
+    icon: <Japan size="md" />,
   },
   'en-US': {
     translation: 'lng.english',
-    icon: 'usa',
+    icon: <Usa size="md" />,
   },
   'cs-CZ': {
     translation: 'lng.czech',
-    icon: 'czech',
+    icon: <Czech size="md" />,
   },
   'zh-TW': {
     translation: 'lng.chineseTraditional',
-    icon: 'taiwan',
+    icon: <Taiwan size="md" />,
   },
 };
 
@@ -113,16 +127,14 @@ const LanguageSwitch = () => {
   const option = useCallback(
     ({ icon, translation }: ReturnType<typeof getCurrentLngDetails>) => (
       <StyledMenuItem component="div">
-        <Icon name={icon} size="md" />
+        {icon}
         {translation}
       </StyledMenuItem>
     ),
-    [getCurrentLngDetails]
+    []
   );
 
-  const optionLabel = useCallback(({ translation }: ReturnType<typeof getCurrentLngDetails>) => translation, [
-    getCurrentLngDetails,
-  ]);
+  const optionLabel = useCallback(({ translation }: ReturnType<typeof getCurrentLngDetails>) => translation, []);
 
   return (
     <Wrapper>

@@ -1,3 +1,5 @@
+import { css } from '@emotion/core';
+import styled from '@emotion/styled';
 import BugReport from '@material-ui/icons/BugReport';
 import DownloadIcon from '@material-ui/icons/CloudDownload';
 import HomeIcon from '@material-ui/icons/Home';
@@ -6,9 +8,11 @@ import { useTranslation } from 'react-i18next';
 
 import { downloadTarball } from 'verdaccio-ui/components/ActionBar';
 import Grid from 'verdaccio-ui/components/Grid';
+import { Version, FileBinary, Time, Law } from 'verdaccio-ui/components/Icons';
 import Link from 'verdaccio-ui/components/Link';
 import ListItem from 'verdaccio-ui/components/ListItem';
 import Tooltip from 'verdaccio-ui/components/Tooltip';
+import { Theme } from 'verdaccio-ui/design-tokens/theme';
 import fileSizeSI from 'verdaccio-ui/utils/file-size';
 import { formatDate, formatDateDistance, getAuthorName } from 'verdaccio-ui/utils/package';
 import { isURL } from 'verdaccio-ui/utils/url';
@@ -21,7 +25,6 @@ import {
   Description,
   Details,
   GridRightAligned,
-  Icon,
   IconButton,
   OverviewItem,
   Wrapper,
@@ -72,7 +75,7 @@ const Package: React.FC<PackageInterface> = ({
   const renderVersionInfo = (): React.ReactNode =>
     version && (
       <OverviewItem>
-        <Icon name={'version'} />
+        <StyledVersion />
         {t('package.version', { version })}
       </OverviewItem>
     );
@@ -93,7 +96,7 @@ const Package: React.FC<PackageInterface> = ({
     dist &&
     dist.unpackedSize && (
       <OverviewItem>
-        <Icon name={'filebinary'} />
+        <StyledFileBinary />
         {fileSizeSI(dist.unpackedSize)}
       </OverviewItem>
     );
@@ -101,7 +104,7 @@ const Package: React.FC<PackageInterface> = ({
   const renderLicenseInfo = (): React.ReactNode =>
     license && (
       <OverviewItem>
-        <Icon name="law" />
+        <StyledLaw />
         {license}
       </OverviewItem>
     );
@@ -109,7 +112,7 @@ const Package: React.FC<PackageInterface> = ({
   const renderPublishedInfo = (): React.ReactNode =>
     time && (
       <OverviewItem>
-        <Icon name="time" />
+        <StyledTime />
         <Published>{t('package.published-on', { time: formatDate(time) })}</Published>
         {formatDateDistance(time)}
       </OverviewItem>
@@ -206,3 +209,24 @@ const Package: React.FC<PackageInterface> = ({
 };
 
 export default Package;
+
+const iconStyle = ({ theme }: { theme: Theme }) => css`
+  margin: 2px 10px 0 0;
+  fill: ${theme?.palette.type === 'light' ? theme?.palette.greyLight2 : theme?.palette.white};
+`;
+
+const StyledVersion = styled(Version)`
+  ${iconStyle};
+`;
+
+const StyledFileBinary = styled(FileBinary)`
+  ${iconStyle};
+`;
+
+const StyledLaw = styled(Law)`
+  ${iconStyle};
+`;
+
+const StyledTime = styled(Time)`
+  ${iconStyle};
+`;
