@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.12.1](https://github.com/verdaccio/ui/compare/v1.12.0...v1.12.1) (2020-07-16)
+
+
+### Bug Fixes
+
+* update lodash ([#517](https://github.com/verdaccio/ui/issues/517)) ([8b72880](https://github.com/verdaccio/ui/commit/8b728808c487fff4579888c76c68a48b8bbd32f1))
+
 ## [1.12.0](https://github.com/verdaccio/ui/compare/v1.11.0...v1.12.0) (2020-07-10)
 
 
