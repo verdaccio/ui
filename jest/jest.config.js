@@ -9,6 +9,7 @@ module.exports = {
   moduleFileExtensions: [...defaults.moduleFileExtensions, 'ts', 'tsx'],
   testURL: 'http://localhost',
   rootDir: '..',
+  setupFilesAfterEnv: ['<rootDir>/jest/expect-setup.js'],
   setupFiles: ['<rootDir>/jest/setup.ts'],
   transformIgnorePatterns: ['<rootDir>/node_modules/(?!react-syntax-highlighter)'],
   modulePathIgnorePatterns: [

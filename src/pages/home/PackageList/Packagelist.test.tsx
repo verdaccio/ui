@@ -1,18 +1,19 @@
 import React from 'react';
 import { BrowserRouter } from 'react-router-dom';
 
-import { mount } from 'verdaccio-ui/utils/test-enzyme';
+import { render, cleanup } from 'verdaccio-ui/utils/test-react-testing-library';
 
-import Help from './Help';
 import { PackageList } from './PackageList';
 
 describe('<PackageList /> component', () => {
+  beforeEach(cleanup);
+
   test('should load the component with no packages', () => {
     const props = {
       packages: [],
     };
-    const wrapper = mount(<PackageList packages={props.packages} />);
-    expect(wrapper.find(Help).exists()).toBeTruthy();
+    const wrapper = render(<PackageList packages={props.packages} />);
+    expect(wrapper.getByText('No Package Published Yet.')).toBeInTheDocument();
   });
 
   test('should load the component with packages', () => {
@@ -45,13 +46,12 @@ describe('<PackageList /> component', () => {
       help: false,
     };
 
-    const wrapper = mount(
+    const wrapper = render(
       <BrowserRouter>
         <PackageList packages={props.packages} />
       </BrowserRouter>
     );
 
-    // package count
-    expect(wrapper.find('Package')).toHaveLength(3);
+    expect(wrapper.queryAllByTestId('package-item-list')).toHaveLength(3);
   });
 });
