@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { render, cleanup, screen } from 'verdaccio-ui/utils/test-react-testing-library';
+import { render, cleanup } from 'verdaccio-ui/utils/test-react-testing-library';
 
 import { DetailContext } from '../../context';
 
