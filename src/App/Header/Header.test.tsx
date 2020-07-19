@@ -132,8 +132,7 @@ describe('<Header /> component with logged in state', () => {
     const hasRegistrationInfoModalBeenRemoved = await waitForElementToBeRemoved(() =>
       queryByTestId('registryInfo--dialog')
     );
-
-    expect(hasRegistrationInfoModalBeenRemoved).not.toBeDefined()
+    expect(hasRegistrationInfoModalBeenRemoved).not.toBeDefined();
   });
 
   test.todo('autocompletion should display suggestions according to the type value');
