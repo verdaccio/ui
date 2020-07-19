@@ -1,15 +1,18 @@
 import React from 'react';
 
-import { mount, shallow } from 'verdaccio-ui/utils/test-enzyme';
+import { render, cleanup, screen } from 'verdaccio-ui/utils/test-react-testing-library';
 
 import { DetailContext } from '../../context';
 
 import UpLinks from './UpLinks';
 
 describe('<UpLinks /> component', () => {
+  beforeEach(cleanup);
+
   test('should return null without packageMeta', () => {
-    const wrapper = shallow(<UpLinks />);
-    expect(wrapper.html()).toBeNull();
+    const wrapper = render(<UpLinks />);
+    wrapper.debug();
+    // expect(wrapper).toBeNull();
   });
 
   test('should render the component when there is no uplink', () => {
@@ -22,12 +25,12 @@ describe('<UpLinks /> component', () => {
       _uplinks: {},
     };
 
-    const wrapper = mount(
+    const wrapper = render(
       <DetailContext.Provider value={{ packageMeta }}>
         <UpLinks />
       </DetailContext.Provider>
     );
-    expect(wrapper.html()).toMatchSnapshot();
+    expect(wrapper).toMatchSnapshot();
   });
 
   test('should render the component with uplinks', () => {
@@ -50,12 +53,12 @@ describe('<UpLinks /> component', () => {
       },
     };
 
-    const wrapper = mount(
+    const wrapper = render(
       <DetailContext.Provider value={{ packageMeta }}>
         <UpLinks />
       </DetailContext.Provider>
     );
 
-    expect(wrapper.html()).toMatchSnapshot();
+    expect(wrapper).toMatchSnapshot();
   });
 });

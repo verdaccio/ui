@@ -21,7 +21,7 @@ module.exports = {
     '<rootDir>/.vscode/',
     '<rootDir>/test/e2e/',
   ],
-  snapshotSerializers: ['enzyme-to-json/serializer', 'jest-emotion'],
+  snapshotSerializers: ['jest-emotion'],
   moduleNameMapper: {
     '\\.(s?css)$': '<rootDir>/node_modules/identity-obj-proxy',
     'github-markdown-css': '<rootDir>/node_modules/identity-obj-proxy',

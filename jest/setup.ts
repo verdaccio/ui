@@ -2,13 +2,8 @@
  * Setup configuration for Jest
  * This file includes global settings for the JEST environment.
  */
-import 'raf/polyfill';
-import { configure } from 'enzyme';
-import Adapter from 'enzyme-adapter-react-16';
 import { GlobalWithFetchMock } from 'jest-fetch-mock';
 import 'mutationobserver-shim';
-
-configure({ adapter: new Adapter() });
 
 // @ts-ignore : Property '__APP_VERSION__' does not exist on type 'Global'.
 global.__APP_VERSION__ = '1.0.0';

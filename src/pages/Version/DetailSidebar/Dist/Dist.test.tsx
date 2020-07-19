@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { mount } from 'verdaccio-ui/utils/test-enzyme';
+import { render, cleanup } from 'verdaccio-ui/utils/test-react-testing-library';
 
 import { DetailContext } from '../../context';
 
@@ -13,6 +13,10 @@ const withDistComponent = (packageMeta: React.ContextType<typeof DetailContext>[
 );
 
 describe('<Dist /> component', () => {
+  afterEach(function() {
+    cleanup();
+  });
+
   test('should render the component in default state', () => {
     const packageMeta = {
       latest: {
@@ -27,8 +31,8 @@ describe('<Dist /> component', () => {
       _uplinks: {},
     };
 
-    const wrapper = mount(withDistComponent(packageMeta));
-    expect(wrapper.html()).toMatchSnapshot();
+    const wrapper = render(withDistComponent(packageMeta));
+    expect(wrapper).toMatchSnapshot();
   });
 
   test('should render the component with license as string', () => {
@@ -45,8 +49,8 @@ describe('<Dist /> component', () => {
       _uplinks: {},
     };
 
-    const wrapper = mount(withDistComponent(packageMeta));
-    expect(wrapper.html()).toMatchSnapshot();
+    const wrapper = render(withDistComponent(packageMeta));
+    expect(wrapper).toMatchSnapshot();
   });
 
   test('should render the component with license as object', () => {
@@ -66,7 +70,7 @@ describe('<Dist /> component', () => {
       _uplinks: {},
     };
 
-    const wrapper = mount(withDistComponent(packageMeta));
-    expect(wrapper.html()).toMatchSnapshot();
+    const wrapper = render(withDistComponent(packageMeta));
+    expect(wrapper).toMatchSnapshot();
   });
 });
