@@ -27,7 +27,7 @@ const CopyToClipBoard: React.FC<Props> = ({ text, children }) => {
     <ClipBoardCopy>
       {renderText(text, children)}
       <Tooltip disableFocusListener={true} title={t('copy-to-clipboard')}>
-        <CopyIcon onClick={copyToClipBoardUtility(text)}>
+        <CopyIcon onClick={copyToClipBoardUtility(text)} data-testid="copy-icon">
           <FileCopy />
         </CopyIcon>
       </Tooltip>
