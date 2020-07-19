@@ -18,59 +18,59 @@ describe('<Dist /> component', () => {
   });
 
   test('should render the component in default state', () => {
-    const packageMeta = {
-      latest: {
-        name: 'verdaccio',
-        version: '4.0.0',
-        dist: {
-          fileCount: 7,
-          unpackedSize: 10,
+    const wrapper = render(
+      withDistComponent({
+        latest: {
+          name: 'verdaccio1',
+          version: '4.0.0',
+          dist: {
+            fileCount: 7,
+            unpackedSize: 10,
+          },
+          license: '',
         },
-        license: '',
-      },
-      _uplinks: {},
-    };
-
-    const wrapper = render(withDistComponent(packageMeta));
+        _uplinks: {},
+      })
+    );
     expect(wrapper).toMatchSnapshot();
   });
 
   test('should render the component with license as string', () => {
-    const packageMeta = {
-      latest: {
-        name: 'verdaccio',
-        version: '4.0.0',
-        dist: {
-          fileCount: 7,
-          unpackedSize: 10,
+    const wrapper = render(
+      withDistComponent({
+        latest: {
+          name: 'verdaccio2',
+          version: '4.0.0',
+          dist: {
+            fileCount: 7,
+            unpackedSize: 10,
+          },
+          license: 'MIT',
         },
-        license: 'MIT',
-      },
-      _uplinks: {},
-    };
-
-    const wrapper = render(withDistComponent(packageMeta));
+        _uplinks: {},
+      })
+    );
     expect(wrapper).toMatchSnapshot();
   });
 
   test('should render the component with license as object', () => {
-    const packageMeta = {
-      latest: {
-        name: 'verdaccio',
-        version: '4.0.0',
-        dist: {
-          fileCount: 7,
-          unpackedSize: 10,
+    const wrapper = render(
+      withDistComponent({
+        latest: {
+          name: 'verdaccio3',
+          version: '4.0.0',
+          dist: {
+            fileCount: 7,
+            unpackedSize: 10,
+          },
+          license: {
+            type: 'MIT',
+            url: 'https://www.opensource.org/licenses/mit-license.php',
+          },
         },
-        license: {
-          type: 'MIT',
-          url: 'https://www.opensource.org/licenses/mit-license.php',
-        },
-      },
-      _uplinks: {},
-    };
-
-    const wrapper = render(withDistComponent(packageMeta));
+        _uplinks: {},
+      })
+    );
     expect(wrapper).toMatchSnapshot();
   });
 });
