@@ -1,13 +1,17 @@
 import React from 'react';
 
-import { mount } from 'verdaccio-ui/utils/test-enzyme';
+import { render, cleanup, fireEvent } from 'verdaccio-ui/utils/test-react-testing-library';
 
 import { DetailContextProvider } from '../../context';
 
-import Developers, { Fab } from './Developers';
+import Developers from './Developers';
 import { DeveloperType } from './types';
 
 describe('test Developers', () => {
+  afterEach(() => {
+    cleanup();
+  });
+
   const packageMeta = {
     latest: {
       packageName: 'foo',
@@ -15,7 +19,7 @@ describe('test Developers', () => {
       maintainers: [
         {
           name: 'dmethvin',
-          email: 'dave.methvin@gmail.com',
+          email: 'test@gmail.com',
         },
         {
           name: 'mgol',
@@ -25,7 +29,7 @@ describe('test Developers', () => {
       contributors: [
         {
           name: 'dmethvin',
-          email: 'dave.methvin@gmail.com',
+          email: 'test@gmail.com',
         },
         {
           name: 'mgol',
@@ -39,7 +43,7 @@ describe('test Developers', () => {
     const packageMeta = {
       latest: {},
     };
-    const wrapper = mount(
+    const wrapper = render(
       // @ts-ignore
       <DetailContextProvider value={{ packageMeta }}>
         <Developers type={DeveloperType.MAINTAINERS} />
@@ -50,7 +54,7 @@ describe('test Developers', () => {
   });
 
   test('should render the component for maintainers with items', () => {
-    const wrapper = mount(
+    const wrapper = render(
       // @ts-ignore
       <DetailContextProvider value={{ packageMeta }}>
         <Developers type={DeveloperType.MAINTAINERS} />
@@ -61,7 +65,7 @@ describe('test Developers', () => {
   });
 
   test('should render the component for contributors with items', () => {
-    const wrapper = mount(
+    const wrapper = render(
       // @ts-ignore
       <DetailContextProvider value={{ packageMeta }}>
         <Developers type={DeveloperType.CONTRIBUTORS} />
@@ -79,25 +83,35 @@ describe('test Developers', () => {
         contributors: [
           {
             name: 'dmethvin',
-            email: 'dave.methvin@gmail.com',
+            email: 'test@gmail.com',
           },
           {
             name: 'dmethvin2',
-            email: 'dave2.methvin@gmail.com',
+            email: 'test2@gmail.com',
+          },
+          {
+            name: 'dmethvin3',
+            email: 'test3@gmail.com',
           },
         ],
       },
     };
 
-    const wrapper = mount(
+    const wrapper = render(
       // @ts-ignore
       <DetailContextProvider value={{ packageMeta }}>
         <Developers type={DeveloperType.CONTRIBUTORS} visibleMax={1} />
       </DetailContextProvider>
     );
 
-    const item2 = wrapper.find(Fab);
-    // TODO: I am not sure here how to verify the method inside the component was called.
-    item2.simulate('click');
+    // const item2 = wrapper.find(Fab);
+    // // TODO: I am not sure here how to verify the method inside the component was called.
+    // item2.simulate('click');
+
+    expect(wrapper.getByText('Contributors')).toBeInTheDocument();
+    fireEvent.click(wrapper.getByTestId('fab'));
+
+    expect(wrapper.getByTitle(packageMeta.latest.contributors[0].name)).toBeInTheDocument();
+    expect(wrapper.getByTitle(packageMeta.latest.contributors[1].name)).toBeInTheDocument();
   });
 });

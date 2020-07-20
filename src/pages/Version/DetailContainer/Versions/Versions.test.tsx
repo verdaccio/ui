@@ -1,7 +1,6 @@
 import React from 'react';
 import { MemoryRouter } from 'react-router-dom';
 
-import { mount } from 'verdaccio-ui/utils/test-enzyme';
 import { render, cleanup } from 'verdaccio-ui/utils/test-react-testing-library';
 
 import translationEN from '../../../../../i18n/translations/en-US.json';
@@ -31,8 +30,8 @@ describe('<Version /> component', () => {
 
   // FIXME: this test is not deterministic (writes `N days ago` in the snapshot, where N is random number)
   test.skip('should render the component in default state', () => {
-    const wrapper = mount(<ComponentToBeRendered contextValue={detailContextValue} />);
-    expect(wrapper.html()).toMatchSnapshot();
+    const wrapper = render(<ComponentToBeRendered contextValue={detailContextValue} />);
+    expect(wrapper).toMatchSnapshot();
   });
 
   test('should render versions', () => {

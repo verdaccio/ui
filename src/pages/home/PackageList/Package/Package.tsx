@@ -190,7 +190,7 @@ const Package: React.FC<PackageInterface> = ({
   );
 
   return (
-    <Wrapper className={'package'}>
+    <Wrapper className={'package'} data-testid="package-item-list">
       <ListItem alignItems={'flex-start'}>{renderPackageListItemText()}</ListItem>
       <ListItem alignItems={'flex-start'}>
         {renderAuthorInfo()}

@@ -54,7 +54,6 @@ const languages = {
 };
 
 type Language = keyof typeof languages;
-
 i18n
   // pass the i18n instance to react-i18next.
   .use(initReactI18next)

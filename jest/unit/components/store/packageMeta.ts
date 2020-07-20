@@ -189,7 +189,6 @@ export const packageMeta = {
       'build:docker': 'docker build -t verdaccio . --no-cache',
       'build:docker:rpi': 'docker build -f Dockerfile.rpi -t verdaccio:rpi .',
     },
-    jest: { snapshotSerializers: ['jest-serializer-enzyme'] },
     engines: { node: '>=4.6.1', npm: '>=2.15.9' },
     preferGlobal: true,
     publishConfig: { registry: 'https://registry.verdaccio.org' },

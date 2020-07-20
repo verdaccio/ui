@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { mount } from 'verdaccio-ui/utils/test-enzyme';
+import { render, cleanup } from 'verdaccio-ui/utils/test-react-testing-library';
 
 import { DetailContext } from '../../pages/Version';
 
@@ -15,6 +15,7 @@ const withAuthorComponent = (packageMeta: React.ContextType<typeof DetailContext
 describe('<Author /> component', () => {
   beforeEach(() => {
     jest.resetAllMocks();
+    cleanup();
   });
 
   test('should render the component in default state', () => {
@@ -33,8 +34,8 @@ describe('<Author /> component', () => {
       _uplinks: {},
     };
 
-    const wrapper = mount(withAuthorComponent(packageMeta));
-    expect(wrapper.html()).toMatchSnapshot();
+    const wrapper = render(withAuthorComponent(packageMeta));
+    expect(wrapper).toMatchSnapshot();
   });
 
   test('should render the component when there is no author information available', () => {
@@ -47,8 +48,9 @@ describe('<Author /> component', () => {
       _uplinks: {},
     };
 
-    const wrapper = mount(withAuthorComponent(packageMeta));
-    expect(wrapper.html()).toBeNull();
+    const wrapper = render(withAuthorComponent(packageMeta));
+    wrapper.debug();
+    expect(wrapper.queryAllByText('verdaccio')).toHaveLength(0);
   });
 
   test('should render the component when there is no author email', () => {
@@ -66,7 +68,7 @@ describe('<Author /> component', () => {
       _uplinks: {},
     };
 
-    const wrapper = mount(withAuthorComponent(packageMeta));
-    expect(wrapper.html()).toMatchSnapshot();
+    const wrapper = render(withAuthorComponent(packageMeta));
+    expect(wrapper).toMatchSnapshot();
   });
 });

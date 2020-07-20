@@ -1,20 +1,19 @@
 import React from 'react';
 
-import { mount } from 'verdaccio-ui/utils/test-enzyme';
+import { render, cleanup } from 'verdaccio-ui/utils/test-react-testing-library';
 
 import Readme from './Readme';
 
 describe('<Readme /> component', () => {
+  beforeEach(cleanup);
+
   test('should load the component in default state', () => {
-    const wrapper = mount(<Readme description="test" />);
-    expect(wrapper.html()).toMatchSnapshot();
+    const wrapper = render(<Readme description="test" />);
+    expect(wrapper).toMatchSnapshot();
   });
 
   test('should dangerously set html', () => {
-    const wrapper = mount(<Readme description="<h1>This is a test string</h1>" />);
-    expect(wrapper.html()).toEqual(
-      '<div class="markdown-body css-beaqbv-Wrapper esdleg90"><h1>This is a test string</h1></div>'
-    );
-    expect(wrapper.html()).toMatchSnapshot();
+    const wrapper = render(<Readme description="<h1>This is a test string</h1>" />);
+    expect(wrapper.getByText('This is a test string')).toBeInTheDocument();
   });
 });

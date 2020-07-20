@@ -1,10 +1,9 @@
 import React from 'react';
+import { MemoryRouter } from 'react-router';
 
-import { shallow } from 'verdaccio-ui/utils/test-enzyme';
+import { render, cleanup } from 'verdaccio-ui/utils/test-react-testing-library';
 
 import Package from './Package';
-import { WrapperLink, Description, OverviewItem } from './styles';
-import Tag from './Tag';
 
 /**
  * Generates one month back date from current time
@@ -13,7 +12,11 @@ import Tag from './Tag';
 const dateOneMonthAgo = (): Date => new Date(1544377770747);
 
 describe('<Package /> component', () => {
-  test.skip('should load the component', () => {
+  afterEach(() => {
+    cleanup();
+  });
+
+  test('should load the component', () => {
     const props = {
       name: 'verdaccio',
       version: '1.0.0',
@@ -26,63 +29,25 @@ describe('<Package /> component', () => {
       keywords: ['verdaccio'],
     };
 
-    const wrapper = shallow(
-      <Package
-        author={props.author}
-        description={props.description}
-        license={props.license}
-        name={props.name}
-        time={props.time}
-        version={props.version}
-      />
+    const wrapper = render(
+      <MemoryRouter>
+        <Package
+          author={props.author}
+          description={props.description}
+          license={props.license}
+          name={props.name}
+          time={props.time}
+          version={props.version}
+        />
+      </MemoryRouter>
     );
 
-    // integration expectations
-
-    // check link
-    expect(wrapper.find(WrapperLink).prop('to')).toEqual(`detail/${props.name}`);
-
-    // check version
-    expect(wrapper.find(OverviewItem).prop('children')).toHaveReturnedWith(`v${props.version}`);
-
-    // TODO - REWRITE THE TEST
-    // expect(wrapper.find(Author).dive())
-
-    // check description
-    expect(wrapper.find(Description).prop('children')).toHaveReturnedWith(props.description);
-
-    // check license
-    expect(wrapper.find(OverviewItem).someWhere(n => n.get(0).props.children[1] === props.license)).toBe(true);
-
-    // check keyword
-    expect(wrapper.find(Tag).prop('children')).toEqual(props.keywords[0]);
+    // FUTURE: improve this expectectations
+    expect(wrapper.getByText('verdaccio')).toBeInTheDocument();
+    expect(wrapper.getByText('Private NPM repository')).toBeInTheDocument();
+    expect(wrapper.getByText('v1.0.0')).toBeInTheDocument();
+    expect(wrapper.getByText('MIT')).toBeInTheDocument();
   });
 
-  test.skip('should load the component without author', () => {
-    const props = {
-      name: 'verdaccio',
-      version: '1.0.0',
-      time: String(dateOneMonthAgo()),
-      license: 'MIT',
-      author: {
-        name: 'Anonymous',
-        email: '',
-        avatar: '',
-      },
-      description: 'Private NPM repository',
-    };
-    const wrapper = shallow(
-      <Package
-        author={props.author}
-        description={props.description}
-        license={props.license}
-        name={props.name}
-        time={props.time}
-        version={props.version}
-      />
-    );
-
-    // integration expectations
-    expect(wrapper.html()).toMatchSnapshot();
-  });
+  test.todo('should load the component without author');
 });
