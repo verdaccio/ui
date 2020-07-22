@@ -1,11 +1,18 @@
 import { render } from '@testing-library/react';
 import React from 'react';
+import { I18nextProvider } from 'react-i18next';
 
-import ThemeProvider from '../design-tokens/ThemeProvider';
+import ThemeProvider from 'verdaccio-ui/design-tokens/ThemeProvider';
 
-/* eslint-disable @typescript-eslint/explicit-function-return-type */
+import i18nConfig from '../../i18n/config';
+
 const customRender = (node: React.ReactElement<any>, ...options: Array<any>) => {
-  return render(<ThemeProvider>{node}</ThemeProvider>, ...options);
+  return render(
+    <ThemeProvider>
+      <I18nextProvider i18n={i18nConfig}>{node}</I18nextProvider>
+    </ThemeProvider>,
+    ...options
+  );
 };
 
 export * from '@testing-library/react';

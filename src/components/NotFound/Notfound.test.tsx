@@ -1,9 +1,9 @@
 import React from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
 
-import { render, fireEvent } from '../../utils/test-react-testing-library';
+import { render, fireEvent } from 'verdaccio-ui/utils/test-react-testing-library';
 
-import NotFound, { GO_TO_HOME_PAGE } from './NotFound';
+import NotFound from './NotFound';
 
 describe('<NotFound /> component', () => {
   test('should load the component in default state', () => {
@@ -14,17 +14,17 @@ describe('<NotFound /> component', () => {
     );
     expect(container.firstChild).toMatchSnapshot();
   });
-  test('go to Home Page button click', () => {
+
+  test('go to Home Page button click', async () => {
     const spy = jest.spyOn(React, 'useCallback');
-    const { getByText } = render(
+    const { getByTestId } = render(
       <Router>
         <NotFound />
       </Router>
     );
 
-    const node = getByText(GO_TO_HOME_PAGE);
+    const node = getByTestId('not-found-go-to-home-button');
     fireEvent.click(node);
-
     expect(spy).toHaveBeenCalled();
   });
 });

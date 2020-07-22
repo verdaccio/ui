@@ -1,9 +1,10 @@
-import React from 'react';
 import styled from '@emotion/styled';
+import React from 'react';
 
-import TextField from '../../muiComponents/TextField';
-import Paper from '../../muiComponents/Paper';
-import { Theme } from '../../design-tokens/theme';
+import { Theme } from 'verdaccio-ui/design-tokens/theme';
+
+import Paper from '../Paper';
+import TextField from '../TextField';
 
 export interface InputFieldProps {
   color: string;
@@ -36,7 +37,9 @@ export const StyledTextField = styled(TextField)<{ theme?: Theme }>(props => ({
 
 /* eslint-disable verdaccio/jsx-spread */
 // @ts-ignore types of color are incompatible
-export const InputField: React.FC<InputFieldProps> = ({ ...others }) => <StyledTextField {...others} />;
+export const InputField: React.FC<InputFieldProps & TextFieldProps> = ({ ...others }) => (
+  <StyledTextField {...others} />
+);
 
 export const SuggestionContainer = styled(Paper)({
   maxHeight: '500px',

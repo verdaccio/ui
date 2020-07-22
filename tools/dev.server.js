@@ -1,6 +1,6 @@
+import ora from 'ora';
 import webpack from 'webpack';
 import WebpackDevServer from 'webpack-dev-server';
-import ora from 'ora';
 
 import env from '../config/env';
 
@@ -17,7 +17,7 @@ compiler.hooks.done.tap('Verdaccio Dev Server', () => {
 });
 
 new WebpackDevServer(compiler, {
-  contentBase: `${env.DIST_PATH}`,
+  contentBase: env.DIST_PATH,
   publicPath: config.output.publicPath,
   hot: true,
   historyApiFallback: {

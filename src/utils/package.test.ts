@@ -50,7 +50,7 @@ describe('formatRepository', (): void => {
 describe('formatDate', (): void => {
   test('should format the date', (): void => {
     const date = 1532211072138;
-    expect(formatDate(date)).toEqual('21.07.2018, 22:11:12');
+    expect(formatDate(date)).toEqual('07/21/2018 10:11:12 PM');
   });
 });
 
@@ -71,14 +71,14 @@ describe('formatDateDistance', (): void => {
     const date2 = dateTwoMonthsAgo();
     // FIXME: we need to review this expect, fails every x time.
     // expect(formatDateDistance(date1)).toEqual('about 2 months');
-    expect(formatDateDistance(date2)).toEqual('2 months');
+    expect(formatDateDistance(date2)).toEqual('2 months ago');
   });
 });
 
 describe('getLastUpdatedPackageTime', (): void => {
   test('should get the last update time', (): void => {
     const lastUpdated = packageMeta._uplinks;
-    expect(getLastUpdatedPackageTime(lastUpdated)).toEqual('22.07.2018, 22:11:12');
+    expect(getLastUpdatedPackageTime(lastUpdated)).toEqual('07/22/2018 10:11:12 PM');
   });
 
   test('should get the last update time for blank uplink', (): void => {
@@ -91,9 +91,9 @@ describe('getRecentReleases', (): void => {
   test('should get the recent releases', (): void => {
     const { time } = packageMeta;
     const result = [
-      { time: '14.12.2017, 15:43:27', version: '2.7.1' },
-      { time: '05.12.2017, 23:25:06', version: '2.7.0' },
-      { time: '08.11.2017, 22:47:16', version: '2.6.6' },
+      { time: '12/14/2017 3:43:27 PM', version: '2.7.1' },
+      { time: '12/05/2017 11:25:06 PM', version: '2.7.0' },
+      { time: '11/08/2017 10:47:16 PM', version: '2.6.6' },
     ];
     expect(getRecentReleases(time)).toEqual(result);
     expect(getRecentReleases()).toEqual([]);

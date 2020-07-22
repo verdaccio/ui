@@ -3,16 +3,18 @@ import api, { handleResponseType } from '../../src/utils/api';
 describe('api', () => {
   describe('handleResponseType', () => {
     test('should handle missing Content-Type', async () => {
+      const responseText = `responseText`;
+      const ok = false;
       const response: Response = {
         url: 'http://localhost:8080/-/packages',
-        ok: false,
+        ok,
         headers: new Headers(),
+        text: async () => responseText,
       } as Response;
 
       const handled = await handleResponseType(response);
 
-      // Should this actually return [false, null] ?
-      expect(handled).toBeUndefined();
+      expect(handled).toEqual([ok, responseText]);
     });
 
     test('should test tgz scenario', async () => {
@@ -31,7 +33,7 @@ describe('api', () => {
   });
 
   describe('api client', () => {
-    let fetchSpy;
+    let fetchSpy: jest.SpyInstance;
 
     beforeEach(() => {
       fetchSpy = jest.spyOn(window, 'fetch');
@@ -94,9 +96,9 @@ describe('api', () => {
 
       expect(fetchSpy).toHaveBeenCalledWith('https://verdaccio.tld/resource', {
         credentials: 'same-origin',
-        headers: {
+        headers: new Headers({
           Authorization: 'Bearer token-xx-xx-xx',
-        },
+        }),
         method: 'GET',
       });
       expect(response).toEqual({ c: 3 });

@@ -1,7 +1,5 @@
-import { HELP_TITLE } from '../../src/components/Help/Help';
-
-const scopedPackageMetadata = require('./partials/pkg-scoped');
 const protectedPackageMetadata = require('./partials/pkg-protected');
+const scopedPackageMetadata = require('./partials/pkg-scoped');
 
 describe('/ (Verdaccio Page)', () => {
   let page;
@@ -30,16 +28,16 @@ describe('/ (Verdaccio Page)', () => {
     await clickElement('button[data-testid="header--button-login"]');
     await page.waitFor(500);
     // we fill the sign in form
-    const signInDialog = await page.$('#login--form-container');
-    const userInput = await signInDialog.$('#login--form-username');
+    const signInDialog = await page.$('#login--dialog');
+    const userInput = await signInDialog.$('#login--dialog-username');
     expect(userInput).not.toBeNull();
-    const passInput = await signInDialog.$('#login--form-password');
+    const passInput = await signInDialog.$('#login--dialog-password');
     expect(passInput).not.toBeNull();
     await userInput.type('test', { delay: 100 });
     await passInput.type('test', { delay: 100 });
     await passInput.dispose();
     // click on log in
-    const loginButton = await page.$('#login--form-submit');
+    const loginButton = await page.$('#login--dialog-button-submit');
     expect(loginButton).toBeDefined();
     await loginButton.focus();
     await loginButton.click({ delay: 100 });
@@ -65,7 +63,7 @@ describe('/ (Verdaccio Page)', () => {
 
   test('should match title with no packages published', async () => {
     const text = await page.evaluate(() => document.querySelector('#help-card__title').textContent);
-    expect(text).toMatch(HELP_TITLE);
+    expect(text).toMatch('No Package Published Yet.');
   });
   //
 
@@ -89,8 +87,7 @@ describe('/ (Verdaccio Page)', () => {
     const signInButton = await page.$('button[data-testid="header--button-login"]');
     await signInButton.click();
     await page.waitFor(1000);
-    const signInDialog = await page.$('#login--form-container');
-
+    const signInDialog = await page.$('#login--dialog');
     expect(signInDialog).not.toBeNull();
   });
   //

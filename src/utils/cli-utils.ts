@@ -21,7 +21,8 @@ export const copyToClipBoardUtility = (str: string): ((e: SyntheticEvent<HTMLEle
 };
 
 export function getCLISetConfigRegistry(command: string, scope: string, registryUrl: string): string {
-  return `${command} ${scope}registry ${registryUrl}`;
+  // if there is a scope defined there needs to be a ":" separator between the scope and the registry
+  return `${command} ${scope}${scope !== '' ? ':' : ''}registry ${registryUrl}`;
 }
 
 export function getCLISetRegistry(command: string, registryUrl: string): string {

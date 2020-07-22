@@ -1,31 +1,49 @@
-import React, { MouseEvent } from 'react';
-import capitalize from 'lodash/capitalize';
 import { Breakpoint } from '@material-ui/core/styles/createBreakpoints';
+import capitalize from 'lodash/capitalize';
+import React, { MouseEvent } from 'react';
 
-import { Svg, Img, ImgWrapper } from './styles';
+import austria from './img/austria.svg';
 import brazil from './img/brazil.svg';
 import china from './img/china.svg';
-import india from './img/india.svg';
-import nicaragua from './img/nicaragua.svg';
-import pakistan from './img/pakistan.svg';
-import austria from './img/austria.svg';
-import spain from './img/spain.svg';
+import czech from './img/czech.svg';
 import earth from './img/earth.svg';
-import verdaccio from './img/verdaccio.svg';
 import filebinary from './img/filebinary.svg';
+import france from './img/france.svg';
+import germany from './img/germany.svg';
+import india from './img/india.svg';
+import japan from './img/japan.svg';
+import khmer from './img/khmer.svg';
 import law from './img/law.svg';
 import license from './img/license.svg';
+import nicaragua from './img/nicaragua.svg';
+import pakistan from './img/pakistan.svg';
+import russia from './img/russia.svg';
+import spain from './img/spain.svg';
+import taiwan from './img/taiwan.svg';
 import time from './img/time.svg';
+import ukraine from './img/ukraine.svg';
+import usa from './img/usa.svg';
+import verdaccio from './img/verdaccio.svg';
 import version from './img/version.svg';
+import { Svg, Img, ImgWrapper } from './styles';
 
 export interface IconsMap {
   brazil: string;
+  czech: string;
   spain: string;
   china: string;
+  usa: string;
   nicaragua: string;
   pakistan: string;
   austria: string;
+  france: string;
+  germany: string;
   india: string;
+  japan: string;
+  russia: string;
+  ukraine: string;
+  khmer: string;
+  taiwan: string;
   earth: string;
   verdaccio: string;
   license: string;
@@ -38,6 +56,7 @@ export interface IconsMap {
 
 export const Icons: IconsMap = {
   brazil,
+  czech,
   spain,
   china,
   nicaragua,
@@ -51,6 +70,14 @@ export const Icons: IconsMap = {
   license,
   time,
   version,
+  germany,
+  usa,
+  france,
+  japan,
+  russia,
+  ukraine,
+  khmer,
+  taiwan,
 };
 
 export interface Props {

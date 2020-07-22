@@ -1,7 +1,8 @@
-import isString from 'lodash/isString';
-import isNumber from 'lodash/isNumber';
-import isEmpty from 'lodash/isEmpty';
+import i18next from 'i18next';
 import { Base64 } from 'js-base64';
+import isEmpty from 'lodash/isEmpty';
+import isNumber from 'lodash/isNumber';
+import isString from 'lodash/isString';
 
 import { HEADERS } from '../../lib/constants';
 
@@ -47,7 +48,6 @@ export interface LoginBody {
 }
 
 export interface LoginError {
-  title: string;
   type: string;
   description: string;
 }
@@ -56,9 +56,8 @@ export async function makeLogin(username?: string, password?: string): Promise<L
   // checks isEmpty
   if (isEmpty(username) || isEmpty(password)) {
     const error = {
-      title: 'Unable to login',
       type: 'error',
-      description: "Username or password can't be empty!",
+      description: i18next.t('form-validation.username-or-password-cant-be-empty'),
     };
     return { error };
   }
@@ -77,10 +76,10 @@ export async function makeLogin(username?: string, password?: string): Promise<L
     };
     return result;
   } catch (e) {
+    console.error('login error', e.message);
     const error = {
-      title: 'Unable to login',
       type: 'error',
-      description: e.error,
+      description: i18next.t('form-validation.unable-to-sign-in'),
     };
     return { error };
   }

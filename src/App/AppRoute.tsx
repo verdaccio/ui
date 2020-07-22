@@ -1,12 +1,11 @@
-import React, { lazy, useContext, Suspense } from 'react';
-import { Route as ReactRouterDomRoute, Switch, Router } from 'react-router-dom';
 import { createBrowserHistory } from 'history';
+import React, { lazy, useContext } from 'react';
+import { useTranslation } from 'react-i18next';
+import { Route as ReactRouterDomRoute, Switch, Router } from 'react-router-dom';
 
-import Loading from '../components/Loading';
+import AppContext from './AppContext';
 
-import { AppContext } from './AppContext';
-
-const NotFound = lazy(() => import('../components/NotFound'));
+const NotFound = lazy(() => import('verdaccio-ui/components/NotFound'));
 const VersionContextProvider = lazy(() => import('../pages/Version/VersionContextProvider'));
 const VersionPage = lazy(() => import('../pages/Version'));
 const HomePage = lazy(() => import('../pages/home'));
@@ -19,48 +18,52 @@ enum Route {
   PACKAGE_VERSION = '/-/web/detail/:package/v/:version',
 }
 
-const history = createBrowserHistory({
+export const history = createBrowserHistory({
   basename: window.__VERDACCIO_BASENAME_UI_OPTIONS && window.__VERDACCIO_BASENAME_UI_OPTIONS.url_prefix,
 });
 
-/* eslint react/jsx-max-depth: 0 */
-const AppRoute: React.FC = ({ children }) => {
+const AppRoute: React.FC = () => {
   const appContext = useContext(AppContext);
-  const { isUserLoggedIn, packages } = appContext;
+  const { t } = useTranslation();
+
+  if (!appContext) {
+    throw Error(t('app-context-not-correct-used'));
+  }
+
+  const { user } = appContext;
+
+  const isUserLoggedIn = user && user.username;
 
   return (
     <Router history={history}>
-      <Suspense fallback={<Loading />}>
-        {children}
-        <Switch>
-          <ReactRouterDomRoute exact={true} path={Route.ROOT}>
-            <HomePage isUserLoggedIn={!!isUserLoggedIn} packages={packages || []} />
-          </ReactRouterDomRoute>
-          <ReactRouterDomRoute exact={true} path={Route.PACKAGE}>
-            <VersionContextProvider>
-              <VersionPage />
-            </VersionContextProvider>
-          </ReactRouterDomRoute>
-          <ReactRouterDomRoute exact={true} path={Route.PACKAGE_VERSION}>
-            <VersionContextProvider>
-              <VersionPage />
-            </VersionContextProvider>
-          </ReactRouterDomRoute>
-          <ReactRouterDomRoute exact={true} path={Route.SCOPE_PACKAGE_VERSION}>
-            <VersionContextProvider>
-              <VersionPage />
-            </VersionContextProvider>
-          </ReactRouterDomRoute>
-          <ReactRouterDomRoute exact={true} path={Route.SCOPE_PACKAGE}>
-            <VersionContextProvider>
-              <VersionPage />
-            </VersionContextProvider>
-          </ReactRouterDomRoute>
-          <ReactRouterDomRoute>
-            <NotFound />
-          </ReactRouterDomRoute>
-        </Switch>
-      </Suspense>
+      <Switch>
+        <ReactRouterDomRoute exact={true} path={Route.ROOT}>
+          <HomePage isUserLoggedIn={!!isUserLoggedIn} />
+        </ReactRouterDomRoute>
+        <ReactRouterDomRoute exact={true} path={Route.PACKAGE}>
+          <VersionContextProvider>
+            <VersionPage />
+          </VersionContextProvider>
+        </ReactRouterDomRoute>
+        <ReactRouterDomRoute exact={true} path={Route.PACKAGE_VERSION}>
+          <VersionContextProvider>
+            <VersionPage />
+          </VersionContextProvider>
+        </ReactRouterDomRoute>
+        <ReactRouterDomRoute exact={true} path={Route.SCOPE_PACKAGE_VERSION}>
+          <VersionContextProvider>
+            <VersionPage />
+          </VersionContextProvider>
+        </ReactRouterDomRoute>
+        <ReactRouterDomRoute exact={true} path={Route.SCOPE_PACKAGE}>
+          <VersionContextProvider>
+            <VersionPage />
+          </VersionContextProvider>
+        </ReactRouterDomRoute>
+        <ReactRouterDomRoute>
+          <NotFound />
+        </ReactRouterDomRoute>
+      </Switch>
     </Router>
   );
 };

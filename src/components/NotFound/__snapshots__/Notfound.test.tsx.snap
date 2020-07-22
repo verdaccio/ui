@@ -12,7 +12,7 @@ exports[`<NotFound /> component should load the component in default state 1`] =
 }
 
 <div
-  class="MuiBox-root MuiBox-root-2"
+  class="MuiBox-root MuiBox-root-1"
   data-testid="404"
 >
   <img
@@ -27,6 +27,7 @@ exports[`<NotFound /> component should load the component in default state 1`] =
   </h4>
   <button
     class="MuiButtonBase-root MuiButton-root MuiButton-contained"
+    data-testid="not-found-go-to-home-button"
     tabindex="0"
     type="button"
   >

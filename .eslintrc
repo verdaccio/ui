@@ -30,7 +30,21 @@
     }
   },
   "rules": {
-    "import/order": ["error", {"newlines-between": "always"}],
+    "import/order": ["error", {
+      "pathGroups": [
+        {
+          "pattern": "verdaccio-ui/**",
+          "group": "external",
+          "position": "after"
+        }
+      ],
+      "pathGroupsExcludedImportTypes": ["verdaccio-ui"],
+      "alphabetize": {
+        "order": "asc",
+        "caseInsensitive": true
+      },
+      "newlines-between": "always"
+    }],
     "babel/no-invalid-this": 0,
     "no-invalid-this": 0,
     "no-console": ["error", { "allow": ["warn", "error"] }],
@@ -45,11 +59,8 @@
         }
       }
     ],
-    "@typescript-eslint/explicit-function-return-type": ["warn",
-      {
-          "allowExpressions": true,
-          "allowTypedFunctionExpressions": true
-    }],
+    "@typescript-eslint/explicit-function-return-type": 0,
+    "react/display-name": 0,
     "react/no-deprecated": 1,
     "react/jsx-no-target-blank": 1,
     "react/destructuring-assignment": ["error", "always"],
@@ -75,7 +86,7 @@
       "arrow": "parens",
       "condition": "parens",
       "logical": "parens",
-      "prop": "parens"
+      "prop": "ignore"
     }],
     "react/jsx-boolean-value": ["error", "always"],
     "react/jsx-closing-tag-location": ["error"],
@@ -86,9 +97,9 @@
     "react/jsx-indent": ["error", 2],
     "react/jsx-indent-props": ["error", 2],
     "react/jsx-key": ["error"],
-    "react/jsx-max-depth": ["error", { "max": 2}],
+    "react/jsx-max-depth":["error", { "max": 5}],
     "react/jsx-max-props-per-line": ["error", {"maximum": 3, "when": "multiline" }],
-    "react/jsx-no-bind": ["error"],
+    "react/jsx-no-bind": ["error", {"allowArrowFunctions": true}],
     "react/jsx-no-comment-textnodes": ["error"],
     "react/jsx-no-duplicate-props": ["error"],
     "react/jsx-no-literals": ["error"],

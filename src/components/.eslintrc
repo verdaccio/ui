@@ -1,5 +1,7 @@
 {
     "rules": {
-        "no-invalid-this": 0
+      "verdaccio/jsx-spread": 0,
+      "react/jsx-sort-props": 0
     }
-}
+  }
+  

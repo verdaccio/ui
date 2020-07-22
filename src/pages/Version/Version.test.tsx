@@ -1,16 +1,17 @@
+import { waitForElement } from '@testing-library/dom';
 import React from 'react';
 import { MemoryRouter } from 'react-router';
-import { waitForElement } from '@testing-library/dom';
 
-import { render } from '../../utils/test-react-testing-library';
-import { NOT_FOUND_TEXT } from '../../components/NotFound';
+import { render } from 'verdaccio-ui/utils/test-react-testing-library';
 
-import Version from './Version';
-import { DetailContext } from './context';
+import translationEN from '../../../i18n/translations/en-US.json';
+
 import data from './__partials__/data.json';
+import { DetailContext } from './context';
+import Version from './Version';
 
 // :-) we mock this otherways fails on render, some weird issue on material-ui
-jest.mock('../../muiComponents/Avatar');
+jest.mock('verdaccio-ui/components/Avatar');
 
 const detailContextValue = {
   packageName: 'foo',
@@ -23,7 +24,6 @@ const detailContextValue = {
 };
 
 describe('test Version page', () => {
-  /* eslint-disable react/jsx-max-depth */
   test('should render the version page', async () => {
     const { getByTestId, getByText } = render(
       <MemoryRouter>
@@ -52,7 +52,9 @@ describe('test Version page', () => {
       </MemoryRouter>
     );
     // we wait fetch response (mocked above)
-    const notFoundElement = await waitForElement(() => getByText(NOT_FOUND_TEXT));
+    const notFoundElement = await waitForElement(() =>
+      getByText(translationEN.error['404']['sorry-we-could-not-find-it'])
+    );
     expect(notFoundElement).toBeTruthy();
   });
 

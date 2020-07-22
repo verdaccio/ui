@@ -1,89 +1,72 @@
 import React from 'react';
 
-import { mount } from '../../utils/test-enzyme';
-import api from '../../utils/api';
+import { render, cleanup } from 'verdaccio-ui/utils/test-react-testing-library';
 
-import { ActionBar } from './ActionBar';
+import { DetailContext, DetailContextProps } from '../../pages/Version';
 
-const mockPackageMeta: jest.Mock = jest.fn(() => ({
-  latest: {
-    homepage: 'https://verdaccio.tld',
-    bugs: {
-      url: 'https://verdaccio.tld/bugs',
-    },
-    dist: {
-      tarball: 'https://verdaccio.tld/download',
+import ActionBar from './ActionBar';
+
+const detailContextValue: DetailContextProps = {
+  packageName: 'foo',
+  readMe: 'test',
+  enableLoading: () => {},
+  isLoading: false,
+  hasNotBeenFound: false,
+  packageMeta: {
+    _uplinks: {},
+    latest: {
+      name: 'verdaccio-ui/local-storage',
+      version: '8.0.1-next.1',
+      dist: { fileCount: 0, unpackedSize: 0, tarball: 'http://localhost:8080/bootstrap/-/bootstrap-4.3.1.tgz' },
+      homepage: 'https://verdaccio.org',
+      bugs: {
+        url: 'https://github.com/verdaccio/monorepo/issues',
+      },
     },
   },
-}));
+};
 
-jest.mock('../../pages/Version', () => ({
-  DetailContextConsumer: component => {
-    return component.children({ packageMeta: mockPackageMeta() });
-  },
-}));
+const ComponentToBeRendered: React.FC<{ contextValue: DetailContextProps }> = ({ contextValue }) => (
+  <DetailContext.Provider value={contextValue}>
+    <ActionBar />
+  </DetailContext.Provider>
+);
 
 describe('<ActionBar /> component', () => {
-  beforeEach(() => {
-    jest.resetModules();
-    jest.resetAllMocks();
+  afterEach(() => {
+    cleanup();
   });
 
   test('should render the component in default state', () => {
-    const wrapper = mount(<ActionBar />);
-    expect(wrapper.html()).toMatchSnapshot();
+    const { container } = render(<ComponentToBeRendered contextValue={detailContextValue} />);
+    expect(container.firstChild).toMatchSnapshot();
   });
 
   test('when there is no action bar data', () => {
-    mockPackageMeta.mockImplementation(() => ({
-      latest: {},
-    }));
+    const packageMeta = {
+      ...detailContextValue.packageMeta,
+      latest: {
+        ...detailContextValue.packageMeta.latest,
+        homepage: undefined,
+        bugs: undefined,
+        dist: {
+          ...detailContextValue.packageMeta.latest.dist,
+          tarball: undefined,
+        },
+      },
+    };
 
-    const wrapper = mount(<ActionBar />);
-    // FIXME: this only renders the DetailContextConsumer, thus
-    // the wrapper will be always empty
-    expect(wrapper.html()).toEqual('');
-  });
-
-  test('when there is no latest property in package meta', () => {
-    mockPackageMeta.mockImplementation(() => ({}));
-    const wrapper = mount(<ActionBar />);
-    expect(wrapper.html()).toEqual('');
+    const { container } = render(<ComponentToBeRendered contextValue={{ ...detailContextValue, packageMeta }} />);
+    expect(container.firstChild).toMatchSnapshot();
   });
 
   test('when there is a button to download a tarball', () => {
-    mockPackageMeta.mockImplementation(() => ({
-      latest: {
-        dist: {
-          tarball: 'http://localhost:8080/bootstrap/-/bootstrap-4.3.1.tgz',
-        },
-      },
-    }));
-
-    const wrapper = mount(<ActionBar />);
-    expect(wrapper.html()).toMatchSnapshot();
-
-    const button = wrapper.find('button');
-    expect(button).toHaveLength(1);
-
-    const spy = jest.spyOn(api, 'request');
-    button.simulate('click');
-    expect(spy).toHaveBeenCalled();
+    const { getByTitle } = render(<ComponentToBeRendered contextValue={{ ...detailContextValue }} />);
+    expect(getByTitle('Download tarball')).toBeTruthy();
   });
 
   test('when there is a button to open an issue', () => {
-    mockPackageMeta.mockImplementation(() => ({
-      latest: {
-        bugs: {
-          url: 'https://verdaccio.tld/bugs',
-        },
-      },
-    }));
-
-    const wrapper = mount(<ActionBar />);
-    expect(wrapper.html()).toMatchSnapshot();
-
-    const button = wrapper.find('button');
-    expect(button).toHaveLength(1);
+    const { getByTitle } = render(<ComponentToBeRendered contextValue={{ ...detailContextValue }} />);
+    expect(getByTitle('Open an issue')).toBeTruthy();
   });
 });

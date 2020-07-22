@@ -1,0 +1,294 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Footer /> component should load the initial state of Footer component 1`] = `
+.emotion-44 {
+  background: #f9f9f9;
+  border-top: 1px solid #e3e3e3;
+  color: #999999;
+  font-size: 14px;
+  padding: 20px;
+}
+
+.emotion-42 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: end;
+  -webkit-justify-content: flex-end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+  width: 100%;
+}
+
+@media (min-width:768px) {
+  .emotion-42 {
+    min-width: 400px;
+    max-width: 800px;
+    margin: auto;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+  }
+}
+
+@media (min-width:1024px) {
+  .emotion-42 {
+    max-width: 1240px;
+  }
+}
+
+.emotion-33 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: none;
+}
+
+@media (min-width:768px) {
+  .emotion-33 {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+  }
+}
+
+.emotion-0 {
+  color: #e25555;
+  padding: 0 5px;
+}
+
+.emotion-31 {
+  position: relative;
+  height: 18px;
+}
+
+.emotion-31:hover .emotion-30 {
+  visibility: visible;
+}
+
+.emotion-3 {
+  box-sizing: initial;
+  display: inline-block;
+  cursor: default;
+  width: 18px;
+  height: 18px;
+  padding: 0 10px;
+}
+
+.emotion-29 {
+  position: absolute;
+  background: #d3dddd;
+  padding: 1px 4px;
+  border-radius: 3px;
+  height: 20px;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  visibility: hidden;
+  top: -2px;
+}
+
+.emotion-29:before {
+  content: '';
+  position: absolute;
+  top: 29%;
+  left: -4px;
+  margin-left: -5px;
+  border: 5px solid;
+  border-color: #d3dddd transparent transparent transparent;
+  -webkit-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  transform: rotate(90deg);
+}
+
+.emotion-6 {
+  box-sizing: initial;
+  display: inline-block;
+  cursor: default;
+  width: 18px;
+  height: 18px;
+  padding: 0 5px;
+}
+
+.emotion-40 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: none;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+@media (min-width:768px) {
+  .emotion-40 {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+  }
+}
+
+.emotion-38 {
+  box-sizing: initial;
+  display: inline-block;
+  cursor: pointer;
+  width: 18px;
+  height: 18px;
+  padding: 0 5px;
+}
+
+.emotion-35 {
+  width: 100%;
+  height: auto;
+}
+
+<div
+  class="emotion-44 emotion-45"
+>
+  <div
+    class="emotion-42 emotion-43"
+  >
+    <div
+      class="emotion-33 emotion-34"
+    >
+      Made with 
+      <span
+        class="emotion-0 emotion-1"
+      >
+        ♥
+      </span>
+       on
+      <span
+        class="emotion-31 emotion-32"
+      >
+        <svg
+          class="emotion-2 emotion-3 emotion-4"
+        >
+          <title>
+            Earth
+          </title>
+          <use
+            xlink:href="[object Object]#earth"
+          />
+        </svg>
+        <span
+          class="emotion-29 emotion-30"
+        >
+          <svg
+            class="emotion-5 emotion-6 emotion-4"
+          >
+            <title>
+              Spain
+            </title>
+            <use
+              xlink:href="[object Object]#spain"
+            />
+          </svg>
+          <svg
+            class="emotion-5 emotion-6 emotion-4"
+          >
+            <title>
+              Nicaragua
+            </title>
+            <use
+              xlink:href="[object Object]#nicaragua"
+            />
+          </svg>
+          <svg
+            class="emotion-5 emotion-6 emotion-4"
+          >
+            <title>
+              India
+            </title>
+            <use
+              xlink:href="[object Object]#india"
+            />
+          </svg>
+          <svg
+            class="emotion-5 emotion-6 emotion-4"
+          >
+            <title>
+              Brazil
+            </title>
+            <use
+              xlink:href="[object Object]#brazil"
+            />
+          </svg>
+          <svg
+            class="emotion-5 emotion-6 emotion-4"
+          >
+            <title>
+              China
+            </title>
+            <use
+              xlink:href="[object Object]#china"
+            />
+          </svg>
+          <svg
+            class="emotion-5 emotion-6 emotion-4"
+          >
+            <title>
+              Austria
+            </title>
+            <use
+              xlink:href="[object Object]#austria"
+            />
+          </svg>
+          <svg
+            class="emotion-5 emotion-6 emotion-4"
+          >
+            <title>
+              Germany
+            </title>
+            <use
+              xlink:href="[object Object]#germany"
+            />
+          </svg>
+          <svg
+            class="emotion-5 emotion-6 emotion-4"
+          >
+            <title>
+              Taiwan
+            </title>
+            <use
+              xlink:href="[object Object]#taiwan"
+            />
+          </svg>
+        </span>
+      </span>
+    </div>
+    <div
+      class="emotion-40 emotion-41"
+    >
+      Powered by
+      <span
+        class="emotion-5 emotion-38 emotion-39"
+        title="Verdaccio"
+      >
+        <img
+          alt="Verdaccio"
+          class="emotion-35 emotion-36"
+          src="[object Object]"
+        />
+      </span>
+      / v.1.0.0
+    </div>
+  </div>
+</div>
+`;

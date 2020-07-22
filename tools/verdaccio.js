@@ -1,8 +1,8 @@
 const fs = require('fs');
 const path = require('path');
 
-const startServer = require('verdaccio').default;
 const yalm = require('js-yaml');
+const startServer = require('verdaccio').default;
 
 const storageLocation = path.join(__dirname, '../partials/storage');
 const pluginsLocation = path.join(__dirname, '../partials/plugins');

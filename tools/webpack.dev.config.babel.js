@@ -1,12 +1,12 @@
-import webpack from 'webpack';
-import HTMLWebpackPlugin from 'html-webpack-plugin';
 import FriendlyErrorsPlugin from 'friendly-errors-webpack-plugin';
+import HTMLWebpackPlugin from 'html-webpack-plugin';
 import StyleLintPlugin from 'stylelint-webpack-plugin';
+import webpack from 'webpack';
 
 import env from '../config/env';
 
-import baseConfig from './webpack.config';
 import getPackageJson from './getPackageJson';
+import baseConfig from './webpack.config';
 
 export default {
   ...baseConfig,
@@ -37,11 +37,10 @@ export default {
     }),
     new HTMLWebpackPlugin({
       __UI_OPTIONS: JSON.stringify({
-        base: '/',
+        base: new URL('/', 'https://localhost:4872'),
       }),
       title: 'Verdaccio Dev UI',
       scope: '',
-      logo: 'https://verdaccio.org/img/logo/symbol/svg/verdaccio-tiny.svg',
       filename: 'index.html',
       verdaccioURL: '//localhost:4872',
       template: `${env.SRC_ROOT}/template/index.html`,

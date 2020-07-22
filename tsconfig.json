@@ -3,7 +3,7 @@
     "skipLibCheck": true,
     "target": "esnext",
     "module": "commonjs",
-    "noImplicitAny": false,
+    "moduleResolution": "node",
     "strict": true,
     "outDir": "build",
     "allowSyntheticDefaultImports": true,
@@ -12,14 +12,20 @@
     "resolveJsonModule": true,
     "checkJs": false,
     "esModuleInterop": true,
+    "baseUrl": ".",
+    "paths": {
+      "verdaccio-ui/components/*": ["src/components/*"],
+      "verdaccio-ui/design-tokens/*": ["src/design-tokens/*"],
+      "verdaccio-ui/utils/*": ["src/utils/*"]
+    },
   },
   "include": [
     "src",
     "types/*.d.ts",
     "scripts/lib",
-    "node_modules/config"
+    "node_modules/config",
   ],
   "exclude": [
     "node_modules"
-  ]
+  ],
 }

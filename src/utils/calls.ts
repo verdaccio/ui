@@ -2,15 +2,15 @@ import { PackageMetaInterface } from '../../types/packageMeta';
 
 import API from './api';
 
-export async function callReadme(packageName: string, packageVersion?: string): Promise<string | {}> {
-  return await API.request<string | {}>(
+export async function callReadme(packageName: string, packageVersion?: string): Promise<string> {
+  return await API.request<string>(
     `package/readme/${packageName}${packageVersion ? `?v=${packageVersion}` : ''}`,
     'GET'
   );
 }
 
-export async function callDetailPage(packageName: string, packageVersion?: string): Promise<PackageMetaInterface | {}> {
-  const packageMeta = await API.request<PackageMetaInterface | {}>(
+export async function callDetailPage(packageName: string, packageVersion?: string): Promise<PackageMetaInterface> {
+  const packageMeta = await API.request<PackageMetaInterface>(
     `sidebar/${packageName}${packageVersion ? `?v=${packageVersion}` : ''}`,
     'GET'
   );

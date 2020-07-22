@@ -20,6 +20,7 @@ interface CommonStyleProps {
   size: Breakpoint;
   pointer?: boolean;
 }
+
 const commonStyle = ({ size = 'sm', pointer }: CommonStyleProps): object => ({
   display: 'inline-block',
   cursor: pointer ? 'pointer' : 'default',

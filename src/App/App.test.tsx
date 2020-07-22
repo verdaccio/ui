@@ -1,14 +1,14 @@
 import React from 'react';
-import { ReactWrapper } from 'enzyme';
 
-import { mount } from '../utils/test-enzyme';
-import storage from '../utils/storage';
+import storage from 'verdaccio-ui/utils/storage';
+import { render, waitForElement, fireEvent } from 'verdaccio-ui/utils/test-react-testing-library';
+
+// eslint-disable-next-line jest/no-mocks-import
 import { generateTokenWithTimeRange } from '../../jest/unit/components/__mocks__/token';
 
 import App from './App';
-import { AppProps } from './AppContext';
 
-jest.mock('../utils/storage', () => {
+jest.mock('verdaccio-ui/utils/storage', () => {
   class LocalStorageMock {
     private store: Record<string, string>;
     public constructor() {
@@ -30,67 +30,76 @@ jest.mock('../utils/storage', () => {
   return new LocalStorageMock();
 });
 
-jest.mock('../utils/api', () => ({
+jest.mock('verdaccio-ui/utils/api', () => ({
+  // eslint-disable-next-line jest/no-mocks-import
   request: require('../../jest/unit/components/__mocks__/api').default.request,
 }));
 
-describe('App', () => {
-  let wrapper: ReactWrapper<{}, AppProps, App>;
+/* eslint-disable react/jsx-no-bind*/
+describe('<App />', () => {
+  test('should display the Loading component at the beginning ', () => {
+    const { container, queryByTestId } = render(<App />);
 
-  beforeEach(() => {
-    wrapper = mount(<App />);
+    expect(container.firstChild).toMatchSnapshot();
+    expect(queryByTestId('loading')).toBeTruthy();
   });
 
-  test('toggleLoginModal: should toggle the value in state', () => {
-    const { handleToggleLoginModal } = wrapper.instance();
-    expect(wrapper.state().showLoginModal).toBeFalsy();
-    handleToggleLoginModal();
-    expect(wrapper.state('showLoginModal')).toBeTruthy();
-    expect(wrapper.state('error')).toEqual(undefined);
+  test('should display the Header component ', async () => {
+    const { container, queryByTestId } = render(<App />);
+
+    expect(container.firstChild).toMatchSnapshot();
+    expect(queryByTestId('loading')).toBeTruthy();
+
+    // wait for the Header component appearance and return the element
+    const headerElement = await waitForElement(() => queryByTestId('header'));
+    expect(headerElement).toBeTruthy();
+  });
+
+  test('handleLogout - logouts the user and clear localstorage', async () => {
+    storage.setItem('username', 'verdaccio');
+    storage.setItem('token', generateTokenWithTimeRange(24));
+
+    const { queryByTestId } = render(<App />);
+
+    // wait for the Account's circle element component appearance and return the element
+    const accountCircleElement = await waitForElement(() => queryByTestId('header--menu-accountcircle'));
+    expect(accountCircleElement).toBeTruthy();
+
+    if (accountCircleElement) {
+      fireEvent.click(accountCircleElement);
+
+      // wait for the Button's logout element component appearance and return the element
+      const buttonLogoutElement = await waitForElement(() => queryByTestId('header--button-logout'));
+      expect(buttonLogoutElement).toBeTruthy();
+
+      if (buttonLogoutElement) {
+        fireEvent.click(buttonLogoutElement);
+
+        expect(queryByTestId('greetings-label')).toBeFalsy();
+      }
+    }
   });
 
   test('isUserAlreadyLoggedIn: token already available in storage', async () => {
     storage.setItem('username', 'verdaccio');
     storage.setItem('token', generateTokenWithTimeRange(24));
-    const { isUserAlreadyLoggedIn } = wrapper.instance();
 
-    isUserAlreadyLoggedIn();
+    const { queryByTestId, queryAllByText } = render(<App />);
 
-    expect(wrapper.state('user').username).toEqual('verdaccio');
-  });
+    // wait for the Account's circle element component appearance and return the element
+    const accountCircleElement = await waitForElement(() => queryByTestId('header--menu-accountcircle'));
+    expect(accountCircleElement).toBeTruthy();
 
-  test('handleLogout - logouts the user and clear localstorage', async () => {
-    const { handleLogout } = wrapper.instance();
-    storage.setItem('username', 'verdaccio');
-    storage.setItem('token', 'xxxx.TOKEN.xxxx');
+    if (accountCircleElement) {
+      fireEvent.click(accountCircleElement);
 
-    await handleLogout();
-    expect(wrapper.state('user')).toEqual({});
-    expect(wrapper.state('isUserLoggedIn')).toBeFalsy();
-  });
+      // wait for the Greeting's label element component appearance and return the element
+      const greetingsLabelElement = await waitForElement(() => queryByTestId('greetings-label'));
+      expect(greetingsLabelElement).toBeTruthy();
 
-  test('handleDoLogin - login the user successfully', async () => {
-    const { handleDoLogin } = wrapper.instance();
-    await handleDoLogin('sam', '1234');
-    const result = {
-      username: 'sam',
-    };
-    expect(wrapper.state('isUserLoggedIn')).toBeTruthy();
-    expect(wrapper.state('showLoginModal')).toBeFalsy();
-    expect(storage.getItem('username')).toEqual('sam');
-    expect(storage.getItem('token')).toEqual('TEST_TOKEN');
-    expect(wrapper.state('user')).toEqual(result);
-  });
-
-  test('handleDoLogin - authentication failure', async () => {
-    const { handleDoLogin } = wrapper.instance();
-    await handleDoLogin('sam', '12345');
-    const result = {
-      description: 'bad username/password, access denied',
-      title: 'Unable to login',
-      type: 'error',
-    };
-    expect(wrapper.state('user')).toEqual({});
-    expect(wrapper.state('error')).toEqual(result);
+      if (greetingsLabelElement) {
+        expect(queryAllByText('verdaccio')).toBeTruthy();
+      }
+    }
   });
 });

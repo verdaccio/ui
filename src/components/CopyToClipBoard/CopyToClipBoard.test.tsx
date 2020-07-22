@@ -1,28 +1,27 @@
 import React from 'react';
-import { ReactWrapper } from 'enzyme';
 
-import { copyToClipBoardUtility } from '../../utils/cli-utils';
-import { mount } from '../../utils/test-enzyme';
+import { copyToClipBoardUtility } from 'verdaccio-ui/utils/cli-utils';
+import { render, cleanup, fireEvent } from 'verdaccio-ui/utils/test-react-testing-library';
 
 import CopyToClipBoard from './CopyToClipBoard';
-import { CopyIcon } from './styles';
 
-jest.mock('../../utils/cli-utils');
+jest.mock('verdaccio-ui/utils/cli-utils');
 
 describe('<CopyToClipBoard /> component', () => {
-  let wrapper: ReactWrapper;
+  let wrapper: any;
   const copyText = 'copy text';
 
   beforeEach(() => {
-    wrapper = mount(<CopyToClipBoard text={copyText} />);
+    cleanup();
+    wrapper = render(<CopyToClipBoard text={copyText} />);
   });
 
   test('should load the component in default state', () => {
-    expect(wrapper.html()).toMatchSnapshot();
+    expect(wrapper).toMatchSnapshot();
   });
 
   test('should call the copyToClipBoardUtility for copy to clipboard utility', () => {
-    wrapper.find(CopyIcon).simulate('click');
+    fireEvent.click(wrapper.getByTestId('copy-icon'));
     expect(copyToClipBoardUtility).toHaveBeenCalledWith(copyText);
   });
 });

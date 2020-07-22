@@ -1,3 +1,4 @@
+// eslint-disable-next-line jest/no-mocks-import
 import {
   generateTokenWithTimeRange,
   generateTokenWithExpirationAsString,
@@ -11,8 +12,25 @@ import { isTokenExpire, makeLogin } from './login';
 console.error = jest.fn();
 
 jest.mock('./api', () => ({
+  // eslint-disable-next-line jest/no-mocks-import
   request: require('../../jest/unit/components/__mocks__/api').default.request,
 }));
+
+jest.mock('i18next', () => {
+  const translationEN = require('../../i18n/translations/en-US.json');
+  return {
+    t: (key: string) => {
+      const splittedKey = key.split('.');
+      let result = translationEN;
+
+      for (const element of splittedKey) {
+        result = result[element];
+      }
+
+      return result;
+    },
+  };
+});
 
 describe('isTokenExpire', (): void => {
   test('isTokenExpire - null is not a valid payload', (): void => {
@@ -40,11 +58,8 @@ describe('isTokenExpire', (): void => {
 
   test('isTokenExpire - token is not a valid json token', (): void => {
     const token = generateInvalidToken();
-    const result = [
-      'Invalid token:',
-      new SyntaxError('Unexpected token i in JSON at position 0'),
-      'xxxxxx.aW52YWxpZHRva2Vu.xxxxxx',
-    ];
+    const errorToken = new SyntaxError('Unexpected token i in JSON at position 0');
+    const result = ['Invalid token:', errorToken, 'xxxxxx.aW52YWxpZHRva2Vu.xxxxxx'];
     expect(isTokenExpire(token)).toBeTruthy();
     expect(console.error).toHaveBeenCalledWith(...result);
   });
@@ -60,7 +75,6 @@ describe('makeLogin', (): void => {
     const result = {
       error: {
         description: "Username or password can't be empty!",
-        title: 'Unable to login',
         type: 'error',
       },
     };
@@ -78,8 +92,7 @@ describe('makeLogin', (): void => {
   test('makeLogin - login should failed with 401', async () => {
     const result = {
       error: {
-        description: 'bad username/password, access denied',
-        title: 'Unable to login',
+        description: 'Unable to sign in',
         type: 'error',
       },
     };
@@ -92,7 +105,6 @@ describe('makeLogin', (): void => {
   test('makeLogin - login should failed with when no data is sent', async () => {
     const result = {
       error: {
-        title: 'Unable to login',
         type: 'error',
         description: "Username or password can't be empty!",
       },

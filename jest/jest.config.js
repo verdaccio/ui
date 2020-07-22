@@ -9,6 +9,7 @@ module.exports = {
   moduleFileExtensions: [...defaults.moduleFileExtensions, 'ts', 'tsx'],
   testURL: 'http://localhost',
   rootDir: '..',
+  setupFilesAfterEnv: ['<rootDir>/jest/expect-setup.js'],
   setupFiles: ['<rootDir>/jest/setup.ts'],
   transformIgnorePatterns: ['<rootDir>/node_modules/(?!react-syntax-highlighter)'],
   modulePathIgnorePatterns: [
@@ -20,11 +21,14 @@ module.exports = {
     '<rootDir>/.vscode/',
     '<rootDir>/test/e2e/',
   ],
-  snapshotSerializers: ['enzyme-to-json/serializer', 'jest-emotion'],
+  snapshotSerializers: ['jest-emotion'],
   moduleNameMapper: {
     '\\.(s?css)$': '<rootDir>/node_modules/identity-obj-proxy',
     'github-markdown-css': '<rootDir>/node_modules/identity-obj-proxy',
     '\\.(png)$': '<rootDir>/node_modules/identity-obj-proxy',
     '\\.(svg)$': '<rootDir>/jest/unit/empty.ts',
+    'verdaccio-ui/components/(.*)': '<rootDir>/src/components/$1',
+    'verdaccio-ui/utils/(.*)': '<rootDir>/src/utils/$1',
+    'verdaccio-ui/design-tokens/(.*)': '<rootDir>/src/design-tokens/$1',
   },
 };

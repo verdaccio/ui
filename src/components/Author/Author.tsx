@@ -1,14 +1,18 @@
 import React, { FC, useContext } from 'react';
+import { useTranslation } from 'react-i18next';
+
+import { getAuthorName } from 'verdaccio-ui/utils/package';
+import { isEmail } from 'verdaccio-ui/utils/url';
 
 import { DetailContext } from '../../pages/Version';
-import { isEmail } from '../../utils/url';
-import Avatar from '../../muiComponents/Avatar';
-import List from '../../muiComponents/List';
+import Avatar from '../Avatar';
+import List from '../List';
 
 import { StyledText, AuthorListItem, AuthorListItemText } from './styles';
 
 const Author: FC = () => {
   const { packageMeta } = useContext(DetailContext);
+  const { t } = useTranslation();
 
   if (!packageMeta) {
     return null;
@@ -25,7 +29,7 @@ const Author: FC = () => {
   const avatarComponent = <Avatar alt={author.name} src={author.avatar} />;
 
   return (
-    <List subheader={<StyledText variant={'subtitle1'}>{'Author'}</StyledText>}>
+    <List subheader={<StyledText variant={'subtitle1'}>{t('sidebar.author.title')}</StyledText>}>
       <AuthorListItem button={true}>
         {!email || !isEmail(email) ? (
           avatarComponent
@@ -34,8 +38,7 @@ const Author: FC = () => {
             {avatarComponent}
           </a>
         )}
-
-        <AuthorListItemText primary={name} />
+        {name && <AuthorListItemText primary={getAuthorName(name)} />}
       </AuthorListItem>
     </List>
   );

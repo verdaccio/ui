@@ -1,9 +1,9 @@
 import { SyntheticEvent } from 'react';
 
-import { copyToClipBoardUtility } from './cli-utils';
+import { copyToClipBoardUtility, getCLISetConfigRegistry } from './cli-utils';
 
 describe('copyToClipBoardUtility', () => {
-  let originalGetSelection;
+  let originalGetSelection: typeof window.getSelection;
 
   const mockGetSelectionResult = {
     removeAllRanges: jest.fn(),
@@ -45,5 +45,20 @@ describe('copyToClipBoardUtility', () => {
     expect(spys.appendChild).toHaveBeenCalledWith(expectedDiv);
     expect(spys.execCommand).toHaveBeenCalledWith('copy');
     expect(spys.removeChild).toHaveBeenCalledWith(expectedDiv);
+  });
+});
+
+describe('getCLISetRegistry', () => {
+  const command = 'npm set';
+  const scope = '@testscope';
+  const blankScope = '';
+  const url = 'https://test.local';
+
+  test('should return ":" separated string when scope is set', () => {
+    expect(getCLISetConfigRegistry(command, scope, url)).toEqual(`${command} ${scope}:registry ${url}`);
+  });
+
+  test('should not output scope when scope is not set', () => {
+    expect(getCLISetConfigRegistry(command, blankScope, url)).toEqual(`${command} registry ${url}`);
   });
 });
