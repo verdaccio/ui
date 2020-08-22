@@ -1901,15 +1901,15 @@
   dependencies:
     "@sinonjs/commons" "^1.7.0"
 
-"@testing-library/dom@^7.17.1":
-  version "7.21.1"
-  resolved "https://registry.verdaccio.org/@testing-library%2fdom/-/dom-7.21.1.tgz#c59f50fddc33db34547a7860f969dbede110623d"
-  integrity sha512-BVFZeCtZ4cbFqOr/T8rS8q8tfK998SZeC0VcBUGBp3uEr2NVjPaImnzHPJWUx3A+JQqT01aG60SZ7kuyuZCZUQ==
+"@testing-library/dom@^7.22.3":
+  version "7.22.3"
+  resolved "https://registry.verdaccio.org/@testing-library%2fdom/-/dom-7.22.3.tgz#12c0b1b97115e7731da6a86b4574eae401cb9ac5"
+  integrity sha512-IK6/eL1Xza/0goDKrwnBvlM06L+5eL9b1o+hUhX7HslfUvMETh0TYgXEr2LVpsVkHiOhRmUbUyml95KV/VlRNw==
   dependencies:
     "@babel/runtime" "^7.10.3"
     "@types/aria-query" "^4.2.0"
     aria-query "^4.2.2"
-    dom-accessibility-api "^0.4.6"
+    dom-accessibility-api "^0.5.1"
     pretty-format "^25.5.0"
 
 "@testing-library/jest-dom@5.11.1":
@@ -1928,13 +1928,13 @@
     lodash "^4.17.15"
     redent "^3.0.0"
 
-"@testing-library/react@10.4.7":
-  version "10.4.7"
-  resolved "https://registry.verdaccio.org/@testing-library%2freact/-/react-10.4.7.tgz#fc14847fb70a5e93576b8f7f0d1490ead02a9061"
-  integrity sha512-hUYbum3X2f1ZKusKfPaooKNYqE/GtPiQ+D2HJaJ4pkxeNJQFVUEvAvEh9+3QuLdBeTWkDMNY5NSijc5+pGdM4Q==
+"@testing-library/react@10.4.9":
+  version "10.4.9"
+  resolved "https://registry.verdaccio.org/@testing-library%2freact/-/react-10.4.9.tgz#9faa29c6a1a217bf8bbb96a28bd29d7a847ca150"
+  integrity sha512-pHZKkqUy0tmiD81afs8xfiuseXfU/N7rAX3iKjeZYje86t9VaB0LrxYVa+OOsvkrveX5jCK3IjajVn2MbePvqA==
   dependencies:
     "@babel/runtime" "^7.10.3"
-    "@testing-library/dom" "^7.17.1"
+    "@testing-library/dom" "^7.22.3"
 
 "@tootallnate/once@1":
   version "1.1.2"
@@ -5641,10 +5641,10 @@ doctrine@^3.0.0:
   dependencies:
     esutils "^2.0.2"
 
-dom-accessibility-api@^0.4.6:
-  version "0.4.6"
-  resolved "https://registry.verdaccio.org/dom-accessibility-api/-/dom-accessibility-api-0.4.6.tgz#f3f2af68aee01b1c862f37918d41841bb1aaf92a"
-  integrity sha512-qxFVFR/ymtfamEQT/AsYLe048sitxFCoCHiM+vuOdR3fE94i3so2SCFJxyz/RxV69PZ+9FgToYWOd7eqJqcbYw==
+dom-accessibility-api@^0.5.1:
+  version "0.5.1"
+  resolved "https://registry.verdaccio.org/dom-accessibility-api/-/dom-accessibility-api-0.5.1.tgz#152f5e88583d900977119223e3e76c2d93d23830"
+  integrity sha512-8DhtmKTYWXNpPiL/QOszbnkAbCGuPz9ieVwDrmWM1rNx4KRI3zqmvKANAD1PJdvvov3+eq1BPLXQkYTpqTrWng==
 
 dom-converter@^0.2:
   version "0.2.0"
