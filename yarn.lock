@@ -6179,10 +6179,10 @@ eslint-plugin-react@7.17.0:
     prop-types "^15.7.2"
     resolve "^1.13.1"
 
-eslint-plugin-verdaccio@8.4.2:
-  version "8.4.2"
-  resolved "https://registry.verdaccio.org/eslint-plugin-verdaccio/-/eslint-plugin-verdaccio-8.4.2.tgz#163876aaac32bf859d8904f80110ae07742e3b18"
-  integrity sha512-OieE+1Xh6TEz463yFxvN4o9OpTCBzapP0XrHefpfeOvtqee7NhoYorZKDNAHiJGduqKHSu6jtrwK3ZxdCpSqug==
+eslint-plugin-verdaccio@9.6.1:
+  version "9.6.1"
+  resolved "https://registry.verdaccio.org/eslint-plugin-verdaccio/-/eslint-plugin-verdaccio-9.6.1.tgz#999f84a29f842ae72f8084a314f3d9609a3fd23f"
+  integrity sha512-ZRfyQ6WeH4b/NjFuJkIqGGX/GTBXPpoHH4hkzbYNHbjlcYvbDcOSvtQat6KIGJtixQVyzuOx/VZkEIDdY4okxw==
   dependencies:
     jsx-ast-utils "2.2.3"
 

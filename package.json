@@ -64,7 +64,7 @@
     "eslint-plugin-prettier": "3.1.2",
     "eslint-plugin-react": "7.17.0",
     "eslint-plugin-react-hooks": "2.3.0",
-    "eslint-plugin-verdaccio": "8.4.2",
+    "eslint-plugin-verdaccio": "9.6.1",
     "file-loader": "5.0.2",
     "friendly-errors-webpack-plugin": "1.7.0",
     "get-stdin": "7.0.0",
