@@ -38,6 +38,10 @@ const lngDetails: Record<Language, { translation: TFunctionKeys; icon: React.Com
     translation: 'lng.russian',
     icon: 'russia',
   },
+  'tr-TR': {
+    translation: 'lng.turkish',
+    icon: 'turkey',
+  },
   'uk-UA': {
     translation: 'lng.ukraine',
     icon: 'ukraine',
@@ -116,9 +120,7 @@ const LanguageSwitch = () => {
     [getCurrentLngDetails]
   );
 
-  const optionLabel = useCallback(({ translation }: ReturnType<typeof getCurrentLngDetails>) => translation, [
-    getCurrentLngDetails,
-  ]);
+  const optionLabel = useCallback(({ translation }: ReturnType<typeof getCurrentLngDetails>) => translation, [getCurrentLngDetails]);
 
   return (
     <Wrapper>

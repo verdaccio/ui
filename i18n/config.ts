@@ -10,6 +10,7 @@ import translationJP from './translations/ja-JP.json';
 import translationKM from './translations/km-KH.json';
 import translationPT from './translations/pt-BR.json';
 import translationRU from './translations/ru-RU.json';
+import translationTR from './translations/tr-TR.json';
 import translationUA from './translations/uk-UA.json';
 import translationCN from './translations/zh-CN.json';
 import translatiobTW from './translations/zh-TW.json';
@@ -42,6 +43,9 @@ const languages = {
   'ru-RU': {
     translation: translationRU,
   },
+  'tr-TR': {
+    translation: translationTR,
+  },
   'uk-UA': {
     translation: translationUA,
   },
@@ -63,20 +67,7 @@ i18n
     // in case window.VEDACCIO_LANGUAGE is undefined,it will fall back to 'en-US'
     lng: window?.__VERDACCIO_BASENAME_UI_OPTIONS?.language,
     fallbackLng: 'en-US',
-    whitelist: [
-      'en-US',
-      'cs-CZ',
-      'pt-BR',
-      'es-ES',
-      'de-DE',
-      'fr-FR',
-      'zh-CN',
-      'ja-JP',
-      'ru-RU',
-      'uk-UA',
-      'km-KH',
-      'zh-TW',
-    ],
+    whitelist: ['en-US', 'cs-CZ', 'pt-BR', 'es-ES', 'de-DE', 'fr-FR', 'zh-CN', 'ja-JP', 'ru-RU', 'tr-TR', 'uk-UA', 'km-KH', 'zh-TW'],
     load: 'currentOnly',
     resources: languages,
     debug: false,

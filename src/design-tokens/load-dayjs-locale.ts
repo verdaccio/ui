@@ -62,6 +62,12 @@ function loadDayJSLocale() {
         dayjs.locale('ru');
       }
       break;
+    case 'tr-tr':
+      {
+        require('dayjs/locale/tr');
+        dayjs.locale('tr');
+      }
+      break;
     case 'uk-ua':
       {
         require('dayjs/locale/uk');
