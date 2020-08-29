@@ -46,7 +46,7 @@
     "@verdaccio/types": "9.0.0",
     "all-contributors-cli": "6.16.0",
     "autosuggest-highlight": "3.1.1",
-    "babel-loader": "8.0.6",
+    "babel-loader": "8.1.0",
     "bundlesize": "0.18.0",
     "codeceptjs": "2.4.0",
     "codecov": "3.7.1",
