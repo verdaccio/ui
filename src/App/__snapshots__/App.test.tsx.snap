@@ -422,10 +422,10 @@ exports[`<App /> should display the Header component  1`] = `
 }
 
 <div
-  class="MuiBox-root MuiBox-root-5 emotion-96 emotion-97"
+  class="MuiBox-root MuiBox-root-7 emotion-96 emotion-97"
 >
   <header
-    class="MuiPaper-root MuiPaper-elevation4 MuiAppBar-root MuiAppBar-positionStatic emotion-36 emotion-37 MuiAppBar-colorPrimary"
+    class="MuiPaper-root MuiAppBar-root MuiAppBar-positionStatic MuiAppBar-colorPrimary emotion-36 emotion-37 MuiPaper-elevation4"
     data-testid="header"
   >
     <div
@@ -470,7 +470,6 @@ exports[`<App /> should display the Header component  1`] = `
                       aria-hidden="true"
                       class="MuiSvgIcon-root"
                       focusable="false"
-                      role="presentation"
                       viewBox="0 0 24 24"
                     >
                       <path
@@ -489,7 +488,7 @@ exports[`<App /> should display the Header component  1`] = `
                 </div>
               </div>
               <div
-                class="MuiPaper-root MuiPaper-elevation1 react-autosuggest__suggestions-container emotion-8 emotion-9"
+                class="MuiPaper-root react-autosuggest__suggestions-container emotion-8 emotion-9 MuiPaper-elevation1"
                 id="react-autowhatever-1"
                 role="listbox"
               />
@@ -513,7 +512,6 @@ exports[`<App /> should display the Header component  1`] = `
               aria-hidden="true"
               class="MuiSvgIcon-root"
               focusable="false"
-              role="presentation"
               viewBox="0 0 24 24"
             >
               <path
@@ -541,7 +539,6 @@ exports[`<App /> should display the Header component  1`] = `
                   aria-hidden="true"
                   class="MuiSvgIcon-root emotion-18 emotion-19"
                   focusable="false"
-                  role="presentation"
                   viewBox="0 0 24 24"
                 >
                   <path
@@ -571,7 +568,6 @@ exports[`<App /> should display the Header component  1`] = `
                         aria-hidden="true"
                         class="MuiSvgIcon-root MuiSvgIcon-fontSizeSmall"
                         focusable="false"
-                        role="presentation"
                         viewBox="0 0 24 24"
                       >
                         <path
@@ -596,7 +592,6 @@ exports[`<App /> should display the Header component  1`] = `
                         aria-hidden="true"
                         class="MuiSvgIcon-root MuiSvgIcon-fontSizeSmall"
                         focusable="false"
-                        role="presentation"
                         viewBox="0 0 24 24"
                       >
                         <path
@@ -611,12 +606,12 @@ exports[`<App /> should display the Header component  1`] = `
                 </div>
                 <fieldset
                   aria-hidden="true"
-                  class="PrivateNotchedOutline-root-6 MuiOutlinedInput-notchedOutline"
+                  class="PrivateNotchedOutline-root-8 MuiOutlinedInput-notchedOutline"
                   style="padding-left: 8px;"
                 >
                   <legend
-                    class="PrivateNotchedOutline-legend-7"
-                    style="width: 0px;"
+                    class="PrivateNotchedOutline-legend-9"
+                    style="width: 0.01px;"
                   >
                     <span>
                       ​
@@ -649,7 +644,6 @@ exports[`<App /> should display the Header component  1`] = `
                   aria-hidden="true"
                   class="MuiSvgIcon-root"
                   focusable="false"
-                  role="presentation"
                   viewBox="0 0 24 24"
                 >
                   <path
@@ -677,7 +671,6 @@ exports[`<App /> should display the Header component  1`] = `
               aria-hidden="true"
               class="MuiSvgIcon-root"
               focusable="false"
-              role="presentation"
               viewBox="0 0 24 24"
             >
               <path
@@ -701,7 +694,6 @@ exports[`<App /> should display the Header component  1`] = `
               aria-hidden="true"
               class="MuiSvgIcon-root"
               focusable="false"
-              role="presentation"
               viewBox="0 0 24 24"
             >
               <path
@@ -732,7 +724,7 @@ exports[`<App /> should display the Header component  1`] = `
     </div>
   </header>
   <div
-    class="MuiBox-root MuiBox-root-8 emotion-48 emotion-49"
+    class="MuiBox-root MuiBox-root-12 emotion-48 emotion-49"
   >
     <div
       class="container content"
@@ -1290,7 +1282,7 @@ exports[`<App /> should display the Loading component at the beginning  1`] = `
   style="display: none;"
 >
   <header
-    class="MuiPaper-root MuiPaper-elevation4 MuiAppBar-root MuiAppBar-positionStatic emotion-36 emotion-37 MuiAppBar-colorPrimary"
+    class="MuiPaper-root MuiAppBar-root MuiAppBar-positionStatic MuiAppBar-colorPrimary emotion-36 emotion-37 MuiPaper-elevation4"
     data-testid="header"
   >
     <div
@@ -1335,7 +1327,6 @@ exports[`<App /> should display the Loading component at the beginning  1`] = `
                       aria-hidden="true"
                       class="MuiSvgIcon-root"
                       focusable="false"
-                      role="presentation"
                       viewBox="0 0 24 24"
                     >
                       <path
@@ -1354,7 +1345,7 @@ exports[`<App /> should display the Loading component at the beginning  1`] = `
                 </div>
               </div>
               <div
-                class="MuiPaper-root MuiPaper-elevation1 react-autosuggest__suggestions-container emotion-8 emotion-9"
+                class="MuiPaper-root react-autosuggest__suggestions-container emotion-8 emotion-9 MuiPaper-elevation1"
                 id="react-autowhatever-1"
                 role="listbox"
               />
@@ -1378,7 +1369,6 @@ exports[`<App /> should display the Loading component at the beginning  1`] = `
               aria-hidden="true"
               class="MuiSvgIcon-root"
               focusable="false"
-              role="presentation"
               viewBox="0 0 24 24"
             >
               <path
@@ -1406,7 +1396,6 @@ exports[`<App /> should display the Loading component at the beginning  1`] = `
                   aria-hidden="true"
                   class="MuiSvgIcon-root emotion-18 emotion-19"
                   focusable="false"
-                  role="presentation"
                   viewBox="0 0 24 24"
                 >
                   <path
@@ -1436,7 +1425,6 @@ exports[`<App /> should display the Loading component at the beginning  1`] = `
                         aria-hidden="true"
                         class="MuiSvgIcon-root MuiSvgIcon-fontSizeSmall"
                         focusable="false"
-                        role="presentation"
                         viewBox="0 0 24 24"
                       >
                         <path
@@ -1461,7 +1449,6 @@ exports[`<App /> should display the Loading component at the beginning  1`] = `
                         aria-hidden="true"
                         class="MuiSvgIcon-root MuiSvgIcon-fontSizeSmall"
                         focusable="false"
-                        role="presentation"
                         viewBox="0 0 24 24"
                       >
                         <path
@@ -1481,7 +1468,7 @@ exports[`<App /> should display the Loading component at the beginning  1`] = `
                 >
                   <legend
                     class="PrivateNotchedOutline-legend-3"
-                    style="width: 0px;"
+                    style="width: 0.01px;"
                   >
                     <span>
                       ​
@@ -1514,7 +1501,6 @@ exports[`<App /> should display the Loading component at the beginning  1`] = `
                   aria-hidden="true"
                   class="MuiSvgIcon-root"
                   focusable="false"
-                  role="presentation"
                   viewBox="0 0 24 24"
                 >
                   <path
@@ -1542,7 +1528,6 @@ exports[`<App /> should display the Loading component at the beginning  1`] = `
               aria-hidden="true"
               class="MuiSvgIcon-root"
               focusable="false"
-              role="presentation"
               viewBox="0 0 24 24"
             >
               <path
@@ -1566,7 +1551,6 @@ exports[`<App /> should display the Loading component at the beginning  1`] = `
               aria-hidden="true"
               class="MuiSvgIcon-root"
               focusable="false"
-              role="presentation"
               viewBox="0 0 24 24"
             >
               <path
@@ -1597,7 +1581,7 @@ exports[`<App /> should display the Loading component at the beginning  1`] = `
     </div>
   </header>
   <div
-    class="MuiBox-root MuiBox-root-4 emotion-38 emotion-39"
+    class="MuiBox-root MuiBox-root-6 emotion-38 emotion-39"
   />
   <div
     class="emotion-84 emotion-85"

@@ -44,7 +44,7 @@ exports[`DetailContainer renders correctly 1`] = `
           data-testid="dependencies-tab"
           id="dependencies-tab"
           role="tab"
-          tabindex="0"
+          tabindex="-1"
           type="button"
         >
           <span
@@ -62,7 +62,7 @@ exports[`DetailContainer renders correctly 1`] = `
           data-testid="versions-tab"
           id="versions-tab"
           role="tab"
-          tabindex="0"
+          tabindex="-1"
           type="button"
         >
           <span
@@ -80,7 +80,7 @@ exports[`DetailContainer renders correctly 1`] = `
           data-testid="uplinks-tab"
           id="uplinks-tab"
           role="tab"
-          tabindex="0"
+          tabindex="-1"
           type="button"
         >
           <span

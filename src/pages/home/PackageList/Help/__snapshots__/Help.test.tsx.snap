@@ -35,7 +35,7 @@ exports[`<Help /> component should load the component in default state 1`] = `
 }
 
 <div
-  class="MuiPaper-root MuiPaper-elevation1 MuiCard-root emotion-14 emotion-15 MuiPaper-rounded"
+  class="MuiPaper-root MuiCard-root emotion-14 emotion-15 MuiPaper-elevation1 MuiPaper-rounded"
   id="help-card"
 >
   <div
@@ -79,7 +79,6 @@ exports[`<Help /> component should load the component in default state 1`] = `
             aria-hidden="true"
             class="MuiSvgIcon-root"
             focusable="false"
-            role="presentation"
             viewBox="0 0 24 24"
           >
             <path
@@ -119,7 +118,6 @@ exports[`<Help /> component should load the component in default state 1`] = `
             aria-hidden="true"
             class="MuiSvgIcon-root"
             focusable="false"
-            role="presentation"
             viewBox="0 0 24 24"
           >
             <path

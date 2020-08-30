@@ -30,7 +30,6 @@ Object {
             aria-hidden="true"
             class="MuiSvgIcon-root MuiAvatar-fallback"
             focusable="false"
-            role="presentation"
             viewBox="0 0 24 24"
           >
             <path
@@ -46,7 +45,6 @@ Object {
             aria-hidden="true"
             class="MuiSvgIcon-root MuiAvatar-fallback"
             focusable="false"
-            role="presentation"
             viewBox="0 0 24 24"
           >
             <path
@@ -83,7 +81,6 @@ Object {
           aria-hidden="true"
           class="MuiSvgIcon-root MuiAvatar-fallback"
           focusable="false"
-          role="presentation"
           viewBox="0 0 24 24"
         >
           <path
@@ -99,7 +96,6 @@ Object {
           aria-hidden="true"
           class="MuiSvgIcon-root MuiAvatar-fallback"
           focusable="false"
-          role="presentation"
           viewBox="0 0 24 24"
         >
           <path
@@ -193,7 +189,6 @@ Object {
             aria-hidden="true"
             class="MuiSvgIcon-root MuiAvatar-fallback"
             focusable="false"
-            role="presentation"
             viewBox="0 0 24 24"
           >
             <path
@@ -209,7 +204,6 @@ Object {
             aria-hidden="true"
             class="MuiSvgIcon-root MuiAvatar-fallback"
             focusable="false"
-            role="presentation"
             viewBox="0 0 24 24"
           >
             <path
@@ -246,7 +240,6 @@ Object {
           aria-hidden="true"
           class="MuiSvgIcon-root MuiAvatar-fallback"
           focusable="false"
-          role="presentation"
           viewBox="0 0 24 24"
         >
           <path
@@ -262,7 +255,6 @@ Object {
           aria-hidden="true"
           class="MuiSvgIcon-root MuiAvatar-fallback"
           focusable="false"
-          role="presentation"
           viewBox="0 0 24 24"
         >
           <path

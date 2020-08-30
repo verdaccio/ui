@@ -114,7 +114,7 @@ Object {
             class="MuiListItemText-root emotion-2 emotion-3"
           >
             <span
-              class="MuiTypography-root MuiListItemText-primary MuiTypography-body1"
+              class="MuiTypography-root MuiListItemText-primary MuiTypography-body1 MuiTypography-displayBlock"
             >
               npmjs
             </span>
@@ -126,7 +126,7 @@ Object {
             class="MuiListItemText-root emotion-2 emotion-3"
           >
             <span
-              class="MuiTypography-root MuiListItemText-primary MuiTypography-body1"
+              class="MuiTypography-root MuiListItemText-primary MuiTypography-body1 MuiTypography-displayBlock"
             >
               2 years ago
             </span>
@@ -172,7 +172,7 @@ Object {
           class="MuiListItemText-root emotion-2 emotion-3"
         >
           <span
-            class="MuiTypography-root MuiListItemText-primary MuiTypography-body1"
+            class="MuiTypography-root MuiListItemText-primary MuiTypography-body1 MuiTypography-displayBlock"
           >
             npmjs
           </span>
@@ -184,7 +184,7 @@ Object {
           class="MuiListItemText-root emotion-2 emotion-3"
         >
           <span
-            class="MuiTypography-root MuiListItemText-primary MuiTypography-body1"
+            class="MuiTypography-root MuiListItemText-primary MuiTypography-body1 MuiTypography-displayBlock"
           >
             2 years ago
           </span>

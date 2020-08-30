@@ -25,7 +25,7 @@ const prodConf = {
   mode: 'production',
 
   entry: {
-    main: ['babel-polyfill', 'whatwg-fetch', `${env.SRC_ROOT}/index.tsx`],
+    main: ['@babel/polyfill', 'whatwg-fetch', `${env.SRC_ROOT}/index.tsx`],
   },
 
   module: {
