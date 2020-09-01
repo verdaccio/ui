@@ -173,7 +173,7 @@ const Package: React.FC<PackageInterface> = ({
     const tags = keywords.sort().map((keyword, index) => <Tag key={index}>{keyword}</Tag>);
     return (
       <>
-        <Description component={'span'}>{description}</Description>
+        <Description>{description}</Description>
         {tags.length > 0 && <TagContainer>{tags}</TagContainer>}
       </>
     );
