@@ -41,12 +41,12 @@ exports[`<Help /> component should load the component in default state 1`] = `
   <div
     class="MuiCardContent-root"
   >
-    <h5
-      class="MuiTypography-root MuiTypography-h5 MuiTypography-gutterBottom"
+    <h2
+      class="MuiTypography-root MuiTypography-h2 MuiTypography-gutterBottom"
       id="help-card__title"
     >
       No Package Published Yet.
-    </h5>
+    </h2>
     <h6
       class="MuiTypography-root emotion-0 emotion-1 MuiTypography-h6 MuiTypography-colorTextSecondary MuiTypography-gutterBottom"
     >

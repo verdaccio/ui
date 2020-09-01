@@ -27,7 +27,7 @@ const Help: React.FC = () => {
   return (
     <Card id="help-card">
       <CardContent>
-        <Typography gutterBottom={true} id="help-card__title" variant="h5">
+        <Typography gutterBottom={true} id="help-card__title" variant="h2">
           {t('help.title')}
         </Typography>
         <HelpTitle color="textSecondary" gutterBottom={true}>
