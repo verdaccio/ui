@@ -42,13 +42,13 @@ exports[`<Help /> component should load the component in default state 1`] = `
     class="MuiCardContent-root"
   >
     <h5
-      class="MuiTypography-root MuiTypography-body1 MuiTypography-gutterBottom"
+      class="MuiTypography-root MuiTypography-h5 MuiTypography-gutterBottom"
       id="help-card__title"
     >
       No Package Published Yet.
     </h5>
     <h6
-      class="MuiTypography-root emotion-0 emotion-1 MuiTypography-body1 MuiTypography-colorTextSecondary MuiTypography-gutterBottom"
+      class="MuiTypography-root emotion-0 emotion-1 MuiTypography-h6 MuiTypography-colorTextSecondary MuiTypography-gutterBottom"
     >
       To publish your first package just:
     </h6>

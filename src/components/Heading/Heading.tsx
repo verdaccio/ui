@@ -9,7 +9,7 @@ interface Props extends Omit<TypographyProps, 'variant'> {
 }
 
 const Heading = forwardRef<HeadingRef, Props>(function Heading({ variant = 'h6', ...props }, ref) {
-  return <MaterialUITypography {...props} component={variant} ref={ref} />;
+  return <MaterialUITypography {...props} variant={variant} ref={ref} />;
 });
 
 export default Heading;
