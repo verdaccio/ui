@@ -1,6 +1,7 @@
 {
   "copy-to-clipboard": "クリップボードにコピー",
   "author-anonymous": "匿名",
+  "author-unknown": "わからない",  
   "action-bar-action": {
       "visit-home-page": "ホームページへ移動",
       "open-an-issue": "課題を開く",

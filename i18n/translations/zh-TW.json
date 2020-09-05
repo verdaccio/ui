@@ -1,6 +1,7 @@
 {
     "copy-to-clipboard": "複製到剪貼簿",
     "author-anonymous": "匿名",
+    "author-unknown": "未知",     
     "action-bar-action": {
         "visit-home-page": "瀏覽首頁",
         "open-an-issue": "提交問題",

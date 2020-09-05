@@ -1,6 +1,7 @@
 {
     "copy-to-clipboard": "Panoya kopyala",
     "author-anonymous": "Anonim",
+    "author-unknown": "Bilinmeyen",  
     "action-bar-action": {
         "visit-home-page": "Ana sayfayı ziyaret et",
         "open-an-issue": "Sorunları aç",

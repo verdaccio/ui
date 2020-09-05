@@ -77,15 +77,17 @@ const Package: React.FC<PackageInterface> = ({
       </OverviewItem>
     );
 
-  const renderAuthorInfo = (): React.ReactNode =>
-    authorName && (
+  const renderAuthorInfo = (): React.ReactNode => {
+    const name = getAuthorName(authorName);
+    return (
       <Author>
-        <Avatar alt={authorName} src={authorAvatar} />
+        <Avatar alt={name} src={authorAvatar} />
         <Details>
-          <Text text={getAuthorName(authorName)} />
+          <Text text={name} />
         </Details>
       </Author>
     );
+  };
 
   const renderFileSize = (): React.ReactNode =>
     dist &&

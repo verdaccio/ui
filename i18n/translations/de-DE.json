@@ -1,6 +1,7 @@
 {
     "copy-to-clipboard": "In die Zwischenablage kopieren",
     "author-anonymous": "Anonymus",
+    "author-unknown": "Unbekannt",
     "action-bar-action": {
         "visit-home-page": "Zur Homepage",
         "open-an-issue": "Einen Fehler melden",

@@ -1,6 +1,7 @@
 {
     "copy-to-clipboard": "ចម្លងទៅក្ដារតម្បៀតខ្ទាស់",
     "author-anonymous": "គ្មានអត្តសញ្ញាណ",
+    "author-unknown": "មិនស្គាល់",  
     "action-bar-action": {
         "visit-home-page": "ទស្សនាគេហទំព័រ",
         "open-an-issue": "បើកកិច្ចការ",

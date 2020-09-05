@@ -1,6 +1,7 @@
 {
     "copy-to-clipboard": "Copy to clipboard",
     "author-anonymous": "Anonymous",
+    "author-unknown": "Unknown",
     "action-bar-action": {
         "visit-home-page": "Visit homepage",
         "open-an-issue": "Open an issue",

@@ -1,6 +1,7 @@
 {
     "copy-to-clipboard": "Copiar al portapapeles",
     "author-anonymous": "Anónimo",
+    "author-unknown": "Desconocido",
     "action-bar-action": {
         "visit-home-page": "Visitar página principal",
         "open-an-issue": "Reportar un error",
