@@ -52,11 +52,11 @@ exports[`<Help /> component should load the component in default state 1`] = `
     >
       To publish your first package just:
     </h6>
-    <p
+    <span
       class="MuiTypography-root MuiTypography-body1"
     >
       1. Login
-    </p>
+    </span>
     <div
       class="emotion-6 emotion-7"
     >
@@ -91,11 +91,11 @@ exports[`<Help /> component should load the component in default state 1`] = `
         />
       </button>
     </div>
-    <p
+    <span
       class="MuiTypography-root MuiTypography-body1"
     >
       2. Publish
-    </p>
+    </span>
     <div
       class="emotion-6 emotion-7"
     >
@@ -130,11 +130,11 @@ exports[`<Help /> component should load the component in default state 1`] = `
         />
       </button>
     </div>
-    <p
+    <span
       class="MuiTypography-root MuiTypography-body2"
     >
       3. Refresh this page.
-    </p>
+    </span>
   </div>
   <div
     class="MuiCardActions-root MuiCardActions-spacing"

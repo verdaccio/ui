@@ -23,11 +23,11 @@ Object {
       <ul
         class="MuiList-root MuiList-padding MuiList-subheader"
       >
-        <h6
+        <span
           class="MuiTypography-root emotion-0 emotion-1 MuiTypography-subtitle1"
         >
           Latest Distribution
-        </h6>
+        </span>
         <div
           aria-disabled="false"
           class="MuiButtonBase-root MuiListItem-root emotion-6 emotion-7 MuiListItem-gutters MuiListItem-button"
@@ -86,11 +86,11 @@ Object {
     <ul
       class="MuiList-root MuiList-padding MuiList-subheader"
     >
-      <h6
+      <span
         class="MuiTypography-root emotion-0 emotion-1 MuiTypography-subtitle1"
       >
         Latest Distribution
-      </h6>
+      </span>
       <div
         aria-disabled="false"
         class="MuiButtonBase-root MuiListItem-root emotion-6 emotion-7 MuiListItem-gutters MuiListItem-button"
@@ -206,11 +206,11 @@ Object {
       <ul
         class="MuiList-root MuiList-padding MuiList-subheader"
       >
-        <h6
+        <span
           class="MuiTypography-root emotion-0 emotion-1 MuiTypography-subtitle1"
         >
           Latest Distribution
-        </h6>
+        </span>
         <div
           aria-disabled="false"
           class="MuiButtonBase-root MuiListItem-root emotion-8 emotion-9 MuiListItem-gutters MuiListItem-button"
@@ -282,11 +282,11 @@ Object {
     <ul
       class="MuiList-root MuiList-padding MuiList-subheader"
     >
-      <h6
+      <span
         class="MuiTypography-root emotion-0 emotion-1 MuiTypography-subtitle1"
       >
         Latest Distribution
-      </h6>
+      </span>
       <div
         aria-disabled="false"
         class="MuiButtonBase-root MuiListItem-root emotion-8 emotion-9 MuiListItem-gutters MuiListItem-button"
@@ -415,11 +415,11 @@ Object {
       <ul
         class="MuiList-root MuiList-padding MuiList-subheader"
       >
-        <h6
+        <span
           class="MuiTypography-root emotion-0 emotion-1 MuiTypography-subtitle1"
         >
           Latest Distribution
-        </h6>
+        </span>
         <div
           aria-disabled="false"
           class="MuiButtonBase-root MuiListItem-root emotion-8 emotion-9 MuiListItem-gutters MuiListItem-button"
@@ -491,11 +491,11 @@ Object {
     <ul
       class="MuiList-root MuiList-padding MuiList-subheader"
     >
-      <h6
+      <span
         class="MuiTypography-root emotion-0 emotion-1 MuiTypography-subtitle1"
       >
         Latest Distribution
-      </h6>
+      </span>
       <div
         aria-disabled="false"
         class="MuiButtonBase-root MuiListItem-root emotion-8 emotion-9 MuiListItem-gutters MuiListItem-button"

@@ -629,7 +629,7 @@ exports[`<App /> should display the Header component  1`] = `
           rel="noopener noreferrer"
           target="_blank"
         >
-          <h6
+          <span
             class="MuiTypography-root MuiTypography-subtitle1"
           >
             <button
@@ -655,7 +655,7 @@ exports[`<App /> should display the Header component  1`] = `
                 class="MuiTouchRipple-root"
               />
             </button>
-          </h6>
+          </span>
         </a>
         <button
           class="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorInherit"
@@ -1486,7 +1486,7 @@ exports[`<App /> should display the Loading component at the beginning  1`] = `
           rel="noopener noreferrer"
           target="_blank"
         >
-          <h6
+          <span
             class="MuiTypography-root MuiTypography-subtitle1"
           >
             <button
@@ -1512,7 +1512,7 @@ exports[`<App /> should display the Loading component at the beginning  1`] = `
                 class="MuiTouchRipple-root"
               />
             </button>
-          </h6>
+          </span>
         </a>
         <button
           class="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorInherit"

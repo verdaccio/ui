@@ -56,11 +56,11 @@ exports[`<Install /> renders correctly 1`] = `
   class="MuiList-root MuiList-padding MuiList-subheader"
   data-testid="installList"
 >
-  <h6
+  <span
     class="MuiTypography-root emotion-0 emotion-1 MuiTypography-subtitle1"
   >
     Installation
-  </h6>
+  </span>
   <div
     aria-disabled="false"
     class="MuiButtonBase-root MuiListItem-root emotion-12 emotion-13 MuiListItem-gutters MuiListItem-button"

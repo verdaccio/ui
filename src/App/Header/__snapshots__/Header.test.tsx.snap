@@ -409,7 +409,7 @@ exports[`<Header /> component with logged in state should load the component in 
         rel="noopener noreferrer"
         target="_blank"
       >
-        <h6
+        <span
           class="MuiTypography-root MuiTypography-subtitle1"
         >
           <button
@@ -435,7 +435,7 @@ exports[`<Header /> component with logged in state should load the component in 
               class="MuiTouchRipple-root"
             />
           </button>
-        </h6>
+        </span>
       </a>
       <button
         class="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorInherit"
@@ -924,7 +924,7 @@ exports[`<Header /> component with logged in state should load the component in 
         rel="noopener noreferrer"
         target="_blank"
       >
-        <h6
+        <span
           class="MuiTypography-root MuiTypography-subtitle1"
         >
           <button
@@ -950,7 +950,7 @@ exports[`<Header /> component with logged in state should load the component in 
               class="MuiTouchRipple-root"
             />
           </button>
-        </h6>
+        </span>
       </a>
       <button
         class="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorInherit"

@@ -25,11 +25,11 @@ Object {
       <ul
         class="MuiList-root MuiList-padding MuiList-subheader"
       >
-        <h6
+        <span
           class="MuiTypography-root emotion-0 emotion-1 MuiTypography-subtitle1"
         >
           Author
-        </h6>
+        </span>
         <div
           aria-disabled="false"
           class="MuiButtonBase-root MuiListItem-root emotion-4 emotion-5 MuiListItem-gutters MuiListItem-button"
@@ -87,11 +87,11 @@ Object {
     <ul
       class="MuiList-root MuiList-padding MuiList-subheader"
     >
-      <h6
+      <span
         class="MuiTypography-root emotion-0 emotion-1 MuiTypography-subtitle1"
       >
         Author
-      </h6>
+      </span>
       <div
         aria-disabled="false"
         class="MuiButtonBase-root MuiListItem-root emotion-4 emotion-5 MuiListItem-gutters MuiListItem-button"
@@ -206,11 +206,11 @@ Object {
       <ul
         class="MuiList-root MuiList-padding MuiList-subheader"
       >
-        <h6
+        <span
           class="MuiTypography-root emotion-0 emotion-1 MuiTypography-subtitle1"
         >
           Author
-        </h6>
+        </span>
         <div
           aria-disabled="false"
           class="MuiButtonBase-root MuiListItem-root emotion-4 emotion-5 MuiListItem-gutters MuiListItem-button"
@@ -263,11 +263,11 @@ Object {
     <ul
       class="MuiList-root MuiList-padding MuiList-subheader"
     >
-      <h6
+      <span
         class="MuiTypography-root emotion-0 emotion-1 MuiTypography-subtitle1"
       >
         Author
-      </h6>
+      </span>
       <div
         aria-disabled="false"
         class="MuiButtonBase-root MuiListItem-root emotion-4 emotion-5 MuiListItem-gutters MuiListItem-button"
