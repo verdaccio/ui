@@ -59,7 +59,6 @@ exports[`<Search /> component should load the component in default state 1`] = `
             aria-hidden="true"
             class="MuiSvgIcon-root"
             focusable="false"
-            role="presentation"
             viewBox="0 0 24 24"
           >
             <path
@@ -78,7 +77,7 @@ exports[`<Search /> component should load the component in default state 1`] = `
       </div>
     </div>
     <div
-      class="MuiPaper-root MuiPaper-elevation1 react-autosuggest__suggestions-container emotion-4 emotion-5"
+      class="MuiPaper-root react-autosuggest__suggestions-container emotion-4 emotion-5 MuiPaper-elevation1"
       id="react-autowhatever-1"
       role="listbox"
     />

@@ -1,6 +1,7 @@
 {
     "copy-to-clipboard": "Копировать в буфер обмена",
     "author-anonymous": "Анонимный",
+    "author-unknown": "неизвестно",  
     "action-bar-action": {
         "visit-home-page": "Посетить домашнюю страницу",
         "open-an-issue": "Открыть вопрос, проблему, ...",

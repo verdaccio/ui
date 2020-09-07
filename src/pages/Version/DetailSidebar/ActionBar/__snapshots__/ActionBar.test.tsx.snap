@@ -22,7 +22,7 @@ exports[`<ActionBar /> component should render the component in default state 1`
     target="_blank"
     title="Visit homepage"
   >
-    <h6
+    <span
       class="MuiTypography-root MuiTypography-subtitle1"
     >
       <button
@@ -38,7 +38,6 @@ exports[`<ActionBar /> component should render the component in default state 1`
             aria-hidden="true"
             class="MuiSvgIcon-root"
             focusable="false"
-            role="presentation"
             viewBox="0 0 24 24"
           >
             <path
@@ -50,7 +49,7 @@ exports[`<ActionBar /> component should render the component in default state 1`
           class="MuiTouchRipple-root"
         />
       </button>
-    </h6>
+    </span>
   </a>
   <a
     class=""
@@ -59,7 +58,7 @@ exports[`<ActionBar /> component should render the component in default state 1`
     target="_blank"
     title="Open an issue"
   >
-    <h6
+    <span
       class="MuiTypography-root MuiTypography-subtitle1"
     >
       <button
@@ -75,7 +74,6 @@ exports[`<ActionBar /> component should render the component in default state 1`
             aria-hidden="true"
             class="MuiSvgIcon-root"
             focusable="false"
-            role="presentation"
             viewBox="0 0 24 24"
           >
             <path
@@ -87,7 +85,7 @@ exports[`<ActionBar /> component should render the component in default state 1`
           class="MuiTouchRipple-root"
         />
       </button>
-    </h6>
+    </span>
   </a>
   <button
     class="MuiButtonBase-root MuiFab-root  emotion-0 emotion-1 MuiFab-sizeSmall"
@@ -103,7 +101,6 @@ exports[`<ActionBar /> component should render the component in default state 1`
         aria-hidden="true"
         class="MuiSvgIcon-root"
         focusable="false"
-        role="presentation"
         viewBox="0 0 24 24"
       >
         <path

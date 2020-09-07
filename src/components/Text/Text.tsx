@@ -7,7 +7,7 @@ type TextRef = HTMLElementTagNameMap[keyof HTMLElementTagNameMap];
 
 // The reference is already from type of the Component, so the any below is not a problem
 const Text = forwardRef<TextRef, TextProps>(function Text(props, ref) {
-  return <MaterialUITypography {...props} ref={ref} />;
+  return <MaterialUITypography {...props} component="span" ref={ref} />;
 });
 
 Text.defaultProps = {

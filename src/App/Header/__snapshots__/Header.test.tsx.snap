@@ -205,7 +205,7 @@ exports[`<Header /> component with logged in state should load the component in 
 }
 
 <header
-  class="MuiPaper-root MuiPaper-elevation4 MuiAppBar-root MuiAppBar-positionStatic emotion-36 emotion-37 MuiAppBar-colorPrimary"
+  class="MuiPaper-root MuiAppBar-root MuiAppBar-positionStatic MuiAppBar-colorPrimary emotion-36 emotion-37 MuiPaper-elevation4"
   data-testid="header"
 >
   <div
@@ -250,7 +250,6 @@ exports[`<Header /> component with logged in state should load the component in 
                     aria-hidden="true"
                     class="MuiSvgIcon-root"
                     focusable="false"
-                    role="presentation"
                     viewBox="0 0 24 24"
                   >
                     <path
@@ -269,7 +268,7 @@ exports[`<Header /> component with logged in state should load the component in 
               </div>
             </div>
             <div
-              class="MuiPaper-root MuiPaper-elevation1 react-autosuggest__suggestions-container emotion-8 emotion-9"
+              class="MuiPaper-root react-autosuggest__suggestions-container emotion-8 emotion-9 MuiPaper-elevation1"
               id="react-autowhatever-1"
               role="listbox"
             />
@@ -293,7 +292,6 @@ exports[`<Header /> component with logged in state should load the component in 
             aria-hidden="true"
             class="MuiSvgIcon-root"
             focusable="false"
-            role="presentation"
             viewBox="0 0 24 24"
           >
             <path
@@ -321,7 +319,6 @@ exports[`<Header /> component with logged in state should load the component in 
                 aria-hidden="true"
                 class="MuiSvgIcon-root emotion-18 emotion-19"
                 focusable="false"
-                role="presentation"
                 viewBox="0 0 24 24"
               >
                 <path
@@ -351,7 +348,6 @@ exports[`<Header /> component with logged in state should load the component in 
                       aria-hidden="true"
                       class="MuiSvgIcon-root MuiSvgIcon-fontSizeSmall"
                       focusable="false"
-                      role="presentation"
                       viewBox="0 0 24 24"
                     >
                       <path
@@ -376,7 +372,6 @@ exports[`<Header /> component with logged in state should load the component in 
                       aria-hidden="true"
                       class="MuiSvgIcon-root MuiSvgIcon-fontSizeSmall"
                       focusable="false"
-                      role="presentation"
                       viewBox="0 0 24 24"
                     >
                       <path
@@ -391,12 +386,12 @@ exports[`<Header /> component with logged in state should load the component in 
               </div>
               <fieldset
                 aria-hidden="true"
-                class="PrivateNotchedOutline-root-3 MuiOutlinedInput-notchedOutline"
+                class="PrivateNotchedOutline-root-5 MuiOutlinedInput-notchedOutline"
                 style="padding-left: 8px;"
               >
                 <legend
-                  class="PrivateNotchedOutline-legend-4"
-                  style="width: 0px;"
+                  class="PrivateNotchedOutline-legend-6"
+                  style="width: 0.01px;"
                 >
                   <span>
                     ​
@@ -414,7 +409,7 @@ exports[`<Header /> component with logged in state should load the component in 
         rel="noopener noreferrer"
         target="_blank"
       >
-        <h6
+        <span
           class="MuiTypography-root MuiTypography-subtitle1"
         >
           <button
@@ -429,7 +424,6 @@ exports[`<Header /> component with logged in state should load the component in 
                 aria-hidden="true"
                 class="MuiSvgIcon-root"
                 focusable="false"
-                role="presentation"
                 viewBox="0 0 24 24"
               >
                 <path
@@ -441,7 +435,7 @@ exports[`<Header /> component with logged in state should load the component in 
               class="MuiTouchRipple-root"
             />
           </button>
-        </h6>
+        </span>
       </a>
       <button
         class="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorInherit"
@@ -457,7 +451,6 @@ exports[`<Header /> component with logged in state should load the component in 
             aria-hidden="true"
             class="MuiSvgIcon-root"
             focusable="false"
-            role="presentation"
             viewBox="0 0 24 24"
           >
             <path
@@ -481,7 +474,6 @@ exports[`<Header /> component with logged in state should load the component in 
             aria-hidden="true"
             class="MuiSvgIcon-root"
             focusable="false"
-            role="presentation"
             viewBox="0 0 24 24"
           >
             <path
@@ -507,7 +499,6 @@ exports[`<Header /> component with logged in state should load the component in 
             aria-hidden="true"
             class="MuiSvgIcon-root"
             focusable="false"
-            role="presentation"
             viewBox="0 0 24 24"
           >
             <path
@@ -729,7 +720,7 @@ exports[`<Header /> component with logged in state should load the component in 
 }
 
 <header
-  class="MuiPaper-root MuiPaper-elevation4 MuiAppBar-root MuiAppBar-positionStatic emotion-36 emotion-37 MuiAppBar-colorPrimary"
+  class="MuiPaper-root MuiAppBar-root MuiAppBar-positionStatic MuiAppBar-colorPrimary emotion-36 emotion-37 MuiPaper-elevation4"
   data-testid="header"
 >
   <div
@@ -774,7 +765,6 @@ exports[`<Header /> component with logged in state should load the component in 
                     aria-hidden="true"
                     class="MuiSvgIcon-root"
                     focusable="false"
-                    role="presentation"
                     viewBox="0 0 24 24"
                   >
                     <path
@@ -793,7 +783,7 @@ exports[`<Header /> component with logged in state should load the component in 
               </div>
             </div>
             <div
-              class="MuiPaper-root MuiPaper-elevation1 react-autosuggest__suggestions-container emotion-8 emotion-9"
+              class="MuiPaper-root react-autosuggest__suggestions-container emotion-8 emotion-9 MuiPaper-elevation1"
               id="react-autowhatever-1"
               role="listbox"
             />
@@ -817,7 +807,6 @@ exports[`<Header /> component with logged in state should load the component in 
             aria-hidden="true"
             class="MuiSvgIcon-root"
             focusable="false"
-            role="presentation"
             viewBox="0 0 24 24"
           >
             <path
@@ -845,7 +834,6 @@ exports[`<Header /> component with logged in state should load the component in 
                 aria-hidden="true"
                 class="MuiSvgIcon-root emotion-18 emotion-19"
                 focusable="false"
-                role="presentation"
                 viewBox="0 0 24 24"
               >
                 <path
@@ -875,7 +863,6 @@ exports[`<Header /> component with logged in state should load the component in 
                       aria-hidden="true"
                       class="MuiSvgIcon-root MuiSvgIcon-fontSizeSmall"
                       focusable="false"
-                      role="presentation"
                       viewBox="0 0 24 24"
                     >
                       <path
@@ -900,7 +887,6 @@ exports[`<Header /> component with logged in state should load the component in 
                       aria-hidden="true"
                       class="MuiSvgIcon-root MuiSvgIcon-fontSizeSmall"
                       focusable="false"
-                      role="presentation"
                       viewBox="0 0 24 24"
                     >
                       <path
@@ -920,7 +906,7 @@ exports[`<Header /> component with logged in state should load the component in 
               >
                 <legend
                   class="PrivateNotchedOutline-legend-2"
-                  style="width: 0px;"
+                  style="width: 0.01px;"
                 >
                   <span>
                     ​
@@ -938,7 +924,7 @@ exports[`<Header /> component with logged in state should load the component in 
         rel="noopener noreferrer"
         target="_blank"
       >
-        <h6
+        <span
           class="MuiTypography-root MuiTypography-subtitle1"
         >
           <button
@@ -953,7 +939,6 @@ exports[`<Header /> component with logged in state should load the component in 
                 aria-hidden="true"
                 class="MuiSvgIcon-root"
                 focusable="false"
-                role="presentation"
                 viewBox="0 0 24 24"
               >
                 <path
@@ -965,7 +950,7 @@ exports[`<Header /> component with logged in state should load the component in 
               class="MuiTouchRipple-root"
             />
           </button>
-        </h6>
+        </span>
       </a>
       <button
         class="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorInherit"
@@ -981,7 +966,6 @@ exports[`<Header /> component with logged in state should load the component in 
             aria-hidden="true"
             class="MuiSvgIcon-root"
             focusable="false"
-            role="presentation"
             viewBox="0 0 24 24"
           >
             <path
@@ -1005,7 +989,6 @@ exports[`<Header /> component with logged in state should load the component in 
             aria-hidden="true"
             class="MuiSvgIcon-root"
             focusable="false"
-            role="presentation"
             viewBox="0 0 24 24"
           >
             <path

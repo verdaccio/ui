@@ -5,19 +5,19 @@ Object {
   "asFragment": [Function],
   "baseElement": <body>
     <div>
-      <h6
+      <span
         class="MuiTypography-root MuiTypography-subtitle1 MuiTypography-gutterBottom"
       >
         verdaccio has no uplinks.
-      </h6>
+      </span>
     </div>
   </body>,
   "container": <div>
-    <h6
+    <span
       class="MuiTypography-root MuiTypography-subtitle1 MuiTypography-gutterBottom"
     >
       verdaccio has no uplinks.
-    </h6>
+    </span>
   </div>,
   "debug": [Function],
   "findAllByAltText": [Function],
@@ -99,11 +99,11 @@ Object {
 
 <body>
     <div>
-      <h6
+      <span
         class="MuiTypography-root emotion-0 emotion-1 MuiTypography-subtitle1"
       >
         Uplinks
-      </h6>
+      </span>
       <ul
         class="MuiList-root MuiList-padding"
       >
@@ -114,7 +114,7 @@ Object {
             class="MuiListItemText-root emotion-2 emotion-3"
           >
             <span
-              class="MuiTypography-root MuiListItemText-primary MuiTypography-body1"
+              class="MuiTypography-root MuiListItemText-primary MuiTypography-body1 MuiTypography-displayBlock"
             >
               npmjs
             </span>
@@ -126,7 +126,7 @@ Object {
             class="MuiListItemText-root emotion-2 emotion-3"
           >
             <span
-              class="MuiTypography-root MuiListItemText-primary MuiTypography-body1"
+              class="MuiTypography-root MuiListItemText-primary MuiTypography-body1 MuiTypography-displayBlock"
             >
               2 years ago
             </span>
@@ -157,11 +157,11 @@ Object {
 }
 
 <div>
-    <h6
+    <span
       class="MuiTypography-root emotion-0 emotion-1 MuiTypography-subtitle1"
     >
       Uplinks
-    </h6>
+    </span>
     <ul
       class="MuiList-root MuiList-padding"
     >
@@ -172,7 +172,7 @@ Object {
           class="MuiListItemText-root emotion-2 emotion-3"
         >
           <span
-            class="MuiTypography-root MuiListItemText-primary MuiTypography-body1"
+            class="MuiTypography-root MuiListItemText-primary MuiTypography-body1 MuiTypography-displayBlock"
           >
             npmjs
           </span>
@@ -184,7 +184,7 @@ Object {
           class="MuiListItemText-root emotion-2 emotion-3"
         >
           <span
-            class="MuiTypography-root MuiListItemText-primary MuiTypography-body1"
+            class="MuiTypography-root MuiListItemText-primary MuiTypography-body1 MuiTypography-displayBlock"
           >
             2 years ago
           </span>

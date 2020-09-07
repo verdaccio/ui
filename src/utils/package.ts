@@ -94,6 +94,14 @@ export function getRecentReleases(time: Time = {}): Time[] {
   return recent.slice(recent.length - 3, recent.length).reverse();
 }
 
-export function getAuthorName(authorName: string): string {
-  return authorName.toLowerCase() === 'anonymous' ? i18next.t('author-anonymous') : authorName;
+export function getAuthorName(authorName?: string): string {
+  if (!authorName) {
+    return i18next.t('author-unknown');
+  }
+
+  if (authorName.toLowerCase() === 'anonymous') {
+    return i18next.t('author-anonymous');
+  }
+
+  return authorName;
 }

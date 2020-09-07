@@ -1,6 +1,7 @@
 {
     "copy-to-clipboard": "Zkopírovat do schránky",
     "author-anonymous": "Anonymní",
+    "author-unknown": "Neznámý",
     "action-bar-action": {
         "visit-home-page": "Navštívit domovskou stránku",
         "open-an-issue": "Otevřít otázku",

@@ -25,11 +25,11 @@ Object {
       <ul
         class="MuiList-root MuiList-padding MuiList-subheader"
       >
-        <h6
+        <span
           class="MuiTypography-root emotion-0 emotion-1 MuiTypography-subtitle1"
         >
           Author
-        </h6>
+        </span>
         <div
           aria-disabled="false"
           class="MuiButtonBase-root MuiListItem-root emotion-4 emotion-5 MuiListItem-gutters MuiListItem-button"
@@ -54,7 +54,7 @@ Object {
             class="MuiListItemText-root emotion-2 emotion-3"
           >
             <span
-              class="MuiTypography-root MuiListItemText-primary MuiTypography-body1"
+              class="MuiTypography-root MuiListItemText-primary MuiTypography-body1 MuiTypography-displayBlock"
             >
               verdaccio user
             </span>
@@ -87,11 +87,11 @@ Object {
     <ul
       class="MuiList-root MuiList-padding MuiList-subheader"
     >
-      <h6
+      <span
         class="MuiTypography-root emotion-0 emotion-1 MuiTypography-subtitle1"
       >
         Author
-      </h6>
+      </span>
       <div
         aria-disabled="false"
         class="MuiButtonBase-root MuiListItem-root emotion-4 emotion-5 MuiListItem-gutters MuiListItem-button"
@@ -116,7 +116,7 @@ Object {
           class="MuiListItemText-root emotion-2 emotion-3"
         >
           <span
-            class="MuiTypography-root MuiListItemText-primary MuiTypography-body1"
+            class="MuiTypography-root MuiListItemText-primary MuiTypography-body1 MuiTypography-displayBlock"
           >
             verdaccio user
           </span>
@@ -206,11 +206,11 @@ Object {
       <ul
         class="MuiList-root MuiList-padding MuiList-subheader"
       >
-        <h6
+        <span
           class="MuiTypography-root emotion-0 emotion-1 MuiTypography-subtitle1"
         >
           Author
-        </h6>
+        </span>
         <div
           aria-disabled="false"
           class="MuiButtonBase-root MuiListItem-root emotion-4 emotion-5 MuiListItem-gutters MuiListItem-button"
@@ -230,7 +230,7 @@ Object {
             class="MuiListItemText-root emotion-2 emotion-3"
           >
             <span
-              class="MuiTypography-root MuiListItemText-primary MuiTypography-body1"
+              class="MuiTypography-root MuiListItemText-primary MuiTypography-body1 MuiTypography-displayBlock"
             >
               verdaccio user
             </span>
@@ -263,11 +263,11 @@ Object {
     <ul
       class="MuiList-root MuiList-padding MuiList-subheader"
     >
-      <h6
+      <span
         class="MuiTypography-root emotion-0 emotion-1 MuiTypography-subtitle1"
       >
         Author
-      </h6>
+      </span>
       <div
         aria-disabled="false"
         class="MuiButtonBase-root MuiListItem-root emotion-4 emotion-5 MuiListItem-gutters MuiListItem-button"
@@ -287,7 +287,7 @@ Object {
           class="MuiListItemText-root emotion-2 emotion-3"
         >
           <span
-            class="MuiTypography-root MuiListItemText-primary MuiTypography-body1"
+            class="MuiTypography-root MuiListItemText-primary MuiTypography-body1 MuiTypography-displayBlock"
           >
             verdaccio user
           </span>

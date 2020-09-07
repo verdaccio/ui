@@ -77,15 +77,17 @@ const Package: React.FC<PackageInterface> = ({
       </OverviewItem>
     );
 
-  const renderAuthorInfo = (): React.ReactNode =>
-    authorName && (
+  const renderAuthorInfo = (): React.ReactNode => {
+    const name = getAuthorName(authorName);
+    return (
       <Author>
-        <Avatar alt={authorName} src={authorAvatar} />
+        <Avatar alt={name} src={authorAvatar} />
         <Details>
-          <Text text={getAuthorName(authorName)} />
+          <Text text={name} />
         </Details>
       </Author>
     );
+  };
 
   const renderFileSize = (): React.ReactNode =>
     dist &&
@@ -173,7 +175,7 @@ const Package: React.FC<PackageInterface> = ({
     const tags = keywords.sort().map((keyword, index) => <Tag key={index}>{keyword}</Tag>);
     return (
       <>
-        <Description component={'span'}>{description}</Description>
+        <Description>{description}</Description>
         {tags.length > 0 && <TagContainer>{tags}</TagContainer>}
       </>
     );

@@ -1,6 +1,7 @@
 {
     "copy-to-clipboard": "Copiar para área de transferência",
     "author-anonymous": "Anônimo(a)",
+    "author-unknown": "Desconhecido",  
     "action-bar-action": {
         "visit-home-page": "Visitar a página inicial",
         "open-an-issue": "Criar um incidente",

@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-no-bind */
 import styled from '@emotion/styled';
 import match from 'autosuggest-highlight/match';
 import parse from 'autosuggest-highlight/parse';
@@ -62,6 +63,7 @@ const renderInputComponent: RenderInputComponent<Suggestion> = inputProps => {
       fullWidth={true}
       InputProps={{
         inputRef: (node: any) => {
+          // @ts-ignore
           ref(node);
         },
         startAdornment,
@@ -133,11 +135,8 @@ const AutoComplete = memo(
     };
 
     // this format avoid arrow function eslint rule
-    const renderSuggestionsContainer: RenderSuggestionsContainer = function({
-      containerProps,
-      children,
-      query,
-    }): JSX.Element {
+    // eslint-disable-next-line prettier/prettier
+    const renderSuggestionsContainer: RenderSuggestionsContainer = function({ containerProps, children, query }): JSX.Element {
       return (
         <SuggestionContainer {...containerProps} square={true}>
           {suggestionsLoaded && children === null && query && renderMessage(t('autoComplete.no-results-found'))}

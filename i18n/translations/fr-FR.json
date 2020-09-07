@@ -1,6 +1,7 @@
 {
     "copy-to-clipboard": "Copier dans le presse-papier",
     "author-anonymous": "Anonyme",
+    "author-unknown": "Inconnue",    
     "action-bar-action": {
         "visit-home-page": "Visiter la page d'accueil",
         "open-an-issue": "Ouvrir un ticket",

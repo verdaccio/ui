@@ -68,7 +68,7 @@ const RegistryInfoContent: React.FC<Props> = props => {
   const TabContainer: React.FC = ({ children }): JSX.Element => {
     return (
       <CommandContainer>
-        <Typography component="div">{children}</Typography>
+        <Typography>{children}</Typography>
       </CommandContainer>
     );
   };

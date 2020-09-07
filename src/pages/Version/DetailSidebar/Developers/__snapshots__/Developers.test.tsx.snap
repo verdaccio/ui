@@ -14,11 +14,11 @@ Object {
 
 <body>
     <div>
-      <h6
+      <span
         class="MuiTypography-root emotion-0 emotion-1 MuiTypography-subtitle1"
       >
         Contributors
-      </h6>
+      </span>
       <div
         class="MuiBox-root MuiBox-root-2 emotion-2 emotion-3"
       >
@@ -30,7 +30,6 @@ Object {
             aria-hidden="true"
             class="MuiSvgIcon-root MuiAvatar-fallback"
             focusable="false"
-            role="presentation"
             viewBox="0 0 24 24"
           >
             <path
@@ -46,7 +45,6 @@ Object {
             aria-hidden="true"
             class="MuiSvgIcon-root MuiAvatar-fallback"
             focusable="false"
-            role="presentation"
             viewBox="0 0 24 24"
           >
             <path
@@ -67,11 +65,11 @@ Object {
 }
 
 <div>
-    <h6
+    <span
       class="MuiTypography-root emotion-0 emotion-1 MuiTypography-subtitle1"
     >
       Contributors
-    </h6>
+    </span>
     <div
       class="MuiBox-root MuiBox-root-2 emotion-2 emotion-3"
     >
@@ -83,7 +81,6 @@ Object {
           aria-hidden="true"
           class="MuiSvgIcon-root MuiAvatar-fallback"
           focusable="false"
-          role="presentation"
           viewBox="0 0 24 24"
         >
           <path
@@ -99,7 +96,6 @@ Object {
           aria-hidden="true"
           class="MuiSvgIcon-root MuiAvatar-fallback"
           focusable="false"
-          role="presentation"
           viewBox="0 0 24 24"
         >
           <path
@@ -177,11 +173,11 @@ Object {
 
 <body>
     <div>
-      <h6
+      <span
         class="MuiTypography-root emotion-0 emotion-1 MuiTypography-subtitle1"
       >
         Maintainers
-      </h6>
+      </span>
       <div
         class="MuiBox-root MuiBox-root-1 emotion-2 emotion-3"
       >
@@ -193,7 +189,6 @@ Object {
             aria-hidden="true"
             class="MuiSvgIcon-root MuiAvatar-fallback"
             focusable="false"
-            role="presentation"
             viewBox="0 0 24 24"
           >
             <path
@@ -209,7 +204,6 @@ Object {
             aria-hidden="true"
             class="MuiSvgIcon-root MuiAvatar-fallback"
             focusable="false"
-            role="presentation"
             viewBox="0 0 24 24"
           >
             <path
@@ -230,11 +224,11 @@ Object {
 }
 
 <div>
-    <h6
+    <span
       class="MuiTypography-root emotion-0 emotion-1 MuiTypography-subtitle1"
     >
       Maintainers
-    </h6>
+    </span>
     <div
       class="MuiBox-root MuiBox-root-1 emotion-2 emotion-3"
     >
@@ -246,7 +240,6 @@ Object {
           aria-hidden="true"
           class="MuiSvgIcon-root MuiAvatar-fallback"
           focusable="false"
-          role="presentation"
           viewBox="0 0 24 24"
         >
           <path
@@ -262,7 +255,6 @@ Object {
           aria-hidden="true"
           class="MuiSvgIcon-root MuiAvatar-fallback"
           focusable="false"
-          role="presentation"
           viewBox="0 0 24 24"
         >
           <path

@@ -6,7 +6,7 @@ describe('/ (Verdaccio Page)', () => {
   // this might be increased based on the delays included in all test
   jest.setTimeout(20000);
 
-  const clickElement = async function(selector, options = { button: 'middle', delay: 100 }) {
+  const clickElement = async function(selector, options = { delay: 100 }) {
     const button = await page.$(selector);
     await button.focus();
     await button.click(options);
@@ -26,7 +26,6 @@ describe('/ (Verdaccio Page)', () => {
 
   const logIn = async function() {
     await clickElement('button[data-testid="header--button-login"]');
-    await page.waitFor(500);
     // we fill the sign in form
     const signInDialog = await page.$('#login--dialog');
     const userInput = await signInDialog.$('#login--dialog-username');
@@ -60,6 +59,7 @@ describe('/ (Verdaccio Page)', () => {
 
     expect(text).toContain('verdaccio-server-e2e');
   });
+  //
 
   test('should match title with no packages published', async () => {
     const text = await page.evaluate(() => document.querySelector('#help-card__title').textContent);
@@ -78,6 +78,7 @@ describe('/ (Verdaccio Page)', () => {
     expect(text).toContain('npm publish --registry http://0.0.0.0:55558');
   });
   //
+
   test('should match button Login to sign in', async () => {
     await evaluateSignIn();
   });
@@ -89,6 +90,9 @@ describe('/ (Verdaccio Page)', () => {
     await page.waitFor(1000);
     const signInDialog = await page.$('#login--dialog');
     expect(signInDialog).not.toBeNull();
+    const closeButton = await page.$('button[data-testid="close-login-dialog-button"]');
+    await closeButton.click();
+    await page.waitFor(500);
   });
   //
 
@@ -99,13 +103,12 @@ describe('/ (Verdaccio Page)', () => {
     const buttonLogout = await page.$('#header--button-logout');
     expect(buttonLogout).toBeDefined();
   });
-  //
 
   test('should logout an user', async () => {
     // we assume the user is logged already
-    await clickElement('#header--button-account', { clickCount: 1, delay: 500 });
+    await clickElement('#header--button-account', { delay: 500 });
     await page.waitFor(1000);
-    await clickElement('#header--button-logout > span', { clickCount: 1, delay: 500 });
+    await clickElement('#header--button-logout > span', { delay: 500 });
     await page.waitFor(1000);
     await evaluateSignIn();
   });
@@ -120,7 +123,7 @@ describe('/ (Verdaccio Page)', () => {
     expect(registryInfoDialog).not.toBeNull();
 
     const closeButton = await page.$('#registryInfo--dialog-close');
-    closeButton.click();
+    await closeButton.click();
   });
   //
 
@@ -138,7 +141,7 @@ describe('/ (Verdaccio Page)', () => {
     const packagesList = await getPackages();
     // console.log("-->packagesList:", packagesList);
     const firstPackage = packagesList[0];
-    await firstPackage.click({ clickCount: 1, delay: 200 });
+    await firstPackage.click({ delay: 200 });
     await page.waitFor(1000);
     const readmeText = await page.evaluate(() => document.querySelector('.markdown-body').textContent);
 
@@ -150,10 +153,11 @@ describe('/ (Verdaccio Page)', () => {
     expect(versionList).toHaveLength(1);
   });
   //
+
   test('should display dependencies tab', async () => {
     const dependenciesTab = await page.$$('#dependencies-tab');
     expect(dependenciesTab).toHaveLength(1);
-    await dependenciesTab[0].click({ clickCount: 1, delay: 200 });
+    await dependenciesTab[0].click({ delay: 200 });
     await page.waitFor(1000);
     const tags = await page.$$('.dep-tag');
     const tag = tags[0];
@@ -164,7 +168,7 @@ describe('/ (Verdaccio Page)', () => {
   test('should display version tab', async () => {
     const versionsTab = await page.$$('#versions-tab');
     expect(versionsTab).toHaveLength(1);
-    await versionsTab[0].click({ clickCount: 1, delay: 200 });
+    await versionsTab[0].click({ delay: 200 });
     await page.waitFor(1000);
     const versionItems = await page.$$('.version-item');
     expect(versionItems).toHaveLength(2);
@@ -173,14 +177,14 @@ describe('/ (Verdaccio Page)', () => {
   test('should display uplinks tab', async () => {
     const upLinksTab = await page.$$('#uplinks-tab');
     expect(upLinksTab).toHaveLength(1);
-    await upLinksTab[0].click({ clickCount: 1, delay: 200 });
+    await upLinksTab[0].click({ delay: 200 });
     await page.waitFor(1000);
   });
 
   test('should display readme tab', async () => {
     const readmeTab = await page.$$('#readme-tab');
     expect(readmeTab).toHaveLength(1);
-    await readmeTab[0].click({ clickCount: 1, delay: 200 });
+    await readmeTab[0].click({ delay: 200 });
     await page.waitFor(1000);
   });
 

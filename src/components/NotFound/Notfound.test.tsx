@@ -1,30 +1,37 @@
 import React from 'react';
-import { BrowserRouter as Router } from 'react-router-dom';
+import { MemoryRouter } from 'react-router';
 
 import { render, fireEvent } from 'verdaccio-ui/utils/test-react-testing-library';
 
 import NotFound from './NotFound';
 
+const mockHistory = jest.fn();
+
+jest.mock('react-router-dom', () => ({
+  useHistory: () => ({
+    push: mockHistory,
+  }),
+}));
+
 describe('<NotFound /> component', () => {
   test('should load the component in default state', () => {
     const { container } = render(
-      <Router>
+      <MemoryRouter>
         <NotFound />
-      </Router>
+      </MemoryRouter>
     );
     expect(container.firstChild).toMatchSnapshot();
   });
 
   test('go to Home Page button click', async () => {
-    const spy = jest.spyOn(React, 'useCallback');
     const { getByTestId } = render(
-      <Router>
+      <MemoryRouter>
         <NotFound />
-      </Router>
+      </MemoryRouter>
     );
 
     const node = getByTestId('not-found-go-to-home-button');
     fireEvent.click(node);
-    expect(spy).toHaveBeenCalled();
+    expect(mockHistory).toHaveBeenCalled();
   });
 });

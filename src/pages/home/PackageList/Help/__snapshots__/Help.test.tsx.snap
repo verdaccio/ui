@@ -35,14 +35,14 @@ exports[`<Help /> component should load the component in default state 1`] = `
 }
 
 <div
-  class="MuiPaper-root MuiPaper-elevation1 MuiCard-root emotion-14 emotion-15 MuiPaper-rounded"
+  class="MuiPaper-root MuiCard-root emotion-14 emotion-15 MuiPaper-elevation1 MuiPaper-rounded"
   id="help-card"
 >
   <div
     class="MuiCardContent-root"
   >
     <h2
-      class="MuiTypography-root MuiTypography-h5 MuiTypography-gutterBottom"
+      class="MuiTypography-root MuiTypography-h2 MuiTypography-gutterBottom"
       id="help-card__title"
     >
       No Package Published Yet.
@@ -52,11 +52,11 @@ exports[`<Help /> component should load the component in default state 1`] = `
     >
       To publish your first package just:
     </h6>
-    <p
+    <span
       class="MuiTypography-root MuiTypography-body1"
     >
       1. Login
-    </p>
+    </span>
     <div
       class="emotion-6 emotion-7"
     >
@@ -79,7 +79,6 @@ exports[`<Help /> component should load the component in default state 1`] = `
             aria-hidden="true"
             class="MuiSvgIcon-root"
             focusable="false"
-            role="presentation"
             viewBox="0 0 24 24"
           >
             <path
@@ -92,11 +91,11 @@ exports[`<Help /> component should load the component in default state 1`] = `
         />
       </button>
     </div>
-    <p
+    <span
       class="MuiTypography-root MuiTypography-body1"
     >
       2. Publish
-    </p>
+    </span>
     <div
       class="emotion-6 emotion-7"
     >
@@ -119,7 +118,6 @@ exports[`<Help /> component should load the component in default state 1`] = `
             aria-hidden="true"
             class="MuiSvgIcon-root"
             focusable="false"
-            role="presentation"
             viewBox="0 0 24 24"
           >
             <path
@@ -132,11 +130,11 @@ exports[`<Help /> component should load the component in default state 1`] = `
         />
       </button>
     </div>
-    <p
+    <span
       class="MuiTypography-root MuiTypography-body2"
     >
       3. Refresh this page.
-    </p>
+    </span>
   </div>
   <div
     class="MuiCardActions-root MuiCardActions-spacing"
