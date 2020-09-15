@@ -4,6 +4,7 @@ import { SvgIcon } from '../SvgIcon';
 
 type Props = React.ComponentProps<typeof SvgIcon>;
 
+/* eslint-disable max-len */
 const Law = React.forwardRef(function Law(props: Props, ref: React.Ref<SVGSVGElement>) {
   return (
     <SvgIcon {...props} ref={ref}>

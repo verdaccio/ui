@@ -5,6 +5,7 @@ import { SvgIcon } from '../SvgIcon';
 
 type Props = React.ComponentProps<typeof SvgIcon>;
 
+/* eslint-disable max-len */
 const India = React.forwardRef(function India(props: Props, ref: React.Ref<SVGSVGElement>) {
   const { t } = useTranslation();
   return (
