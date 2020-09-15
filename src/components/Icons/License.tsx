@@ -4,7 +4,6 @@ import { SvgIcon } from '../SvgIcon';
 
 type Props = React.ComponentProps<typeof SvgIcon>;
 
-/* eslint-disable max-len */
 const License = React.forwardRef(function License(props: Props, ref: React.Ref<SVGSVGElement>) {
   return (
     <SvgIcon viewBox="0 0 490.652 490.652" {...props} ref={ref}>

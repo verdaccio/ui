@@ -4,7 +4,6 @@ import { SvgIcon } from '../SvgIcon';
 
 type Props = React.ComponentProps<typeof SvgIcon>;
 
-/* eslint-disable max-len */
 const Time = React.forwardRef(function Time(props: Props, ref: React.Ref<SVGSVGElement>) {
   return (
     <SvgIcon viewBox="0 0 24 24" {...props} ref={ref}>

@@ -4,7 +4,6 @@ import { SvgIcon } from '../SvgIcon';
 
 type Props = React.ComponentProps<typeof SvgIcon>;
 
-/* eslint-disable max-len */
 const FileBinary = React.forwardRef(function FileBinary(props: Props, ref: React.Ref<SVGSVGElement>) {
   return (
     <SvgIcon {...props} ref={ref}>

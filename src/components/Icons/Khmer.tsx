@@ -5,7 +5,6 @@ import { SvgIcon } from '../SvgIcon';
 
 type Props = React.ComponentProps<typeof SvgIcon>;
 
-/* eslint-disable max-len */
 const Khmer = React.forwardRef(function Khmer(props: Props, ref: React.Ref<SVGSVGElement>) {
   const { t } = useTranslation();
   return (
@@ -15,10 +14,7 @@ const Khmer = React.forwardRef(function Khmer(props: Props, ref: React.Ref<SVGSV
         fill="#032ea1"
       />
       <path fill="#e00025" d="M0 189.6h496v116H0z" />
-      <path
-        d="M448 418.4c26.4 0 48-21.6 48-48.8v-64.8H315.2L448 418.4zm0-340.8H48l132.8 113.6H496v-64.8a48.3 48.3 0 00-48-48.8z"
-        fill="#042a7f"
-      />
+      <path d="M448 418.4c26.4 0 48-21.6 48-48.8v-64.8H315.2L448 418.4zm0-340.8H48l132.8 113.6H496v-64.8a48.3 48.3 0 00-48-48.8z" fill="#042a7f" />
       <path fill="#b50030" d="M316 306.4h180V189.6H180z" />
       <path fill="#002566" d="M448 77.6H48l370.4 113.6H496v-64.8a48.3 48.3 0 00-48-48.8z" />
       <path fill="#8c002b" d="M496 214.4v-24.8h-81.6z" />
