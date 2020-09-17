@@ -2,7 +2,7 @@ import styled from '@emotion/styled';
 import React from 'react';
 import { useTranslation, Trans } from 'react-i18next';
 
-import { Austria, Brazil, Earth, Nicaragua, Spain, Germany, China, Taiwan } from 'verdaccio-ui/components/Icons';
+import { Austria, Brazil, Earth, Nicaragua, Spain, Germany, India, China, Taiwan } from 'verdaccio-ui/components/Icons';
 import Logo from 'verdaccio-ui/components/Logo';
 import { Theme } from 'verdaccio-ui/design-tokens/theme';
 import { goToVerdaccioWebsite } from 'verdaccio-ui/utils/windows';
@@ -22,7 +22,7 @@ const Footer = () => {
             <Flags>
               <Spain />
               <Nicaragua />
-              <Nicaragua />
+              <India />
               <Brazil />
               <China />
               <Austria />
