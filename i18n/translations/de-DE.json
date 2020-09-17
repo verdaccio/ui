@@ -154,5 +154,15 @@
         "turkish": "Türkisch",
         "ukraine": "Ukrainisch",
         "khmer": "Khmer"
+    },
+    "flag": {
+        "austria": "Österreich",
+        "brazil": "Brasilien",
+        "spain": "Spanien",
+        "nicaragua": "Nicaragua",
+        "india": "Indien",
+        "china": "China",
+        "germany": "Deutschland",
+        "taiwan": "Taiwan"
     }
 }

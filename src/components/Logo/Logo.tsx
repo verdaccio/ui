@@ -6,10 +6,11 @@ import { Theme } from 'verdaccio-ui/design-tokens/theme';
 import blackAndWithLogo from './img/logo-black-and-white.svg';
 import defaultLogo from './img/logo.svg';
 
-export enum Size {
-  Small = '40px',
-  Big = '90px',
-}
+const sizes = {
+  'x-small': '30px',
+  small: '40px',
+  big: '90px',
+};
 
 const logos = {
   light: defaultLogo,
@@ -19,18 +20,20 @@ const logos = {
 const logo = window.VERDACCIO_LOGO;
 
 interface Props {
-  size?: Size;
+  size?: keyof typeof sizes;
+  onClick?: () => void;
+  className?: string;
 }
 
-const Logo: React.FC<Props> = ({ size = Size.Small }) => {
+const Logo: React.FC<Props> = ({ size, onClick, className }) => {
   if (logo) {
     return (
-      <ImageLogo>
+      <ImageLogo onClick={onClick} className={className}>
         <img alt="logo" height="40px" src={logo} />
       </ImageLogo>
     );
   }
-  return <StyledLogo size={size} />;
+  return <StyledLogo size={size} onClick={onClick} className={className} />;
 };
 
 export default Logo;
@@ -39,7 +42,7 @@ const ImageLogo = styled('div')({
   fontSize: 0,
 });
 
-const StyledLogo = styled('div')<Props & { theme?: Theme }>(({ size, theme }) => ({
+const StyledLogo = styled('div')<Props & { theme?: Theme }>(({ size = 'small', theme }) => ({
   display: 'inline-block',
   verticalAlign: 'middle',
   boxSizing: 'border-box',
@@ -47,6 +50,6 @@ const StyledLogo = styled('div')<Props & { theme?: Theme }>(({ size, theme }) =>
   backgroundSize: 'contain',
   backgroundImage: `url(${logos[theme?.palette.type]})`,
   backgroundRepeat: ' no-repeat',
-  width: size,
-  height: size,
+  width: sizes[size],
+  height: sizes[size],
 }));
