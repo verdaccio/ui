@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.13.0](https://github.com/verdaccio/ui/compare/v1.12.1...v1.13.0) (2020-09-20)
+
+
+### Features
+
+* **lang:** Add turkish language ([#534](https://github.com/verdaccio/ui/issues/534)) ([1c43cff](https://github.com/verdaccio/ui/commit/1c43cffec893f943b22fcf4c845ef3ff5a4329cc))
+
+
+### Bug Fixes
+
+* **ui:** Fix duplicate country flag ([#551](https://github.com/verdaccio/ui/issues/551)) ([ac0a9e9](https://github.com/verdaccio/ui/commit/ac0a9e9272e11700712ee87f2a82e32fd8e2e9de))
+* changed some words to improve Spanish translation ([#525](https://github.com/verdaccio/ui/issues/525)) ([50a3b5e](https://github.com/verdaccio/ui/commit/50a3b5e1654c54b54685349dbf0dbb62870392f0))
+
 ### [1.12.1](https://github.com/verdaccio/ui/compare/v1.12.0...v1.12.1) (2020-07-16)
 
 
