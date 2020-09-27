@@ -1,7 +1,7 @@
 import { filterXSS, escapeAttrValue } from 'xss';
 
 const xssOpts = {
-  onIgnoreTagAttr: function (tag, name, value, isWhiteAttr) {
+  onIgnoreTagAttr: function (tag:any, name:any, value:any, isWhiteAttr:any) {
     if (tag.match(/h[0-9]/) && name === 'id') {
       return name + '="' + escapeAttrValue(value) + '"';
     }
