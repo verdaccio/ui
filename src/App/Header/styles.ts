@@ -49,7 +49,6 @@ export const IconSearchButton = styled(IconButton)({
 
 export const SearchWrapper = styled('div')({
   display: 'none',
-  maxWidth: '393px',
   width: '100%',
 });
 
