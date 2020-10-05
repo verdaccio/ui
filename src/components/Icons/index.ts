@@ -14,7 +14,6 @@ export { Russia } from './Russia';
 export { Ukraine } from './Ukraine';
 export { Usa } from './Usa';
 export { Turkey } from './Turkey';
-export { Pakistan } from './Pakistan';
 export { Version } from './Version';
 export { Time } from './Time';
 export { Earth } from './Earth';
