@@ -50,7 +50,7 @@ const Developers: React.FC<Props> = ({ type, visibleMax = VISIBLE_MAX }) => {
   const [visibleDevelopers, setVisibleDevelopers] = useState(developers);
 
   useEffect(() => {
-    if (!developers) return;
+    if (!developers.length) return;
     setVisibleDevelopers(developers.slice(0, visibleDevelopersMax));
   }, [developers, visibleDevelopersMax]);
 
@@ -58,7 +58,7 @@ const Developers: React.FC<Props> = ({ type, visibleMax = VISIBLE_MAX }) => {
     setVisibleDevelopersMax(visibleDevelopersMax + VISIBLE_MAX);
   }, [visibleDevelopersMax]);
 
-  if (!visibleDevelopers || !developers) return null;
+  if (!visibleDevelopers || !developers.length) return null;
 
   return (
     <>
