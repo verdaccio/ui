@@ -1,12 +1,10 @@
-const { defaults } = require('jest-config');
-
 module.exports = {
   name: 'verdaccio-ui-jest',
   verbose: true,
   automock: false,
   collectCoverage: true,
   testEnvironment: 'jest-environment-jsdom-global',
-  moduleFileExtensions: [...defaults.moduleFileExtensions, 'ts', 'tsx'],
+  moduleFileExtensions: ['js', 'ts', 'tsx'],
   testURL: 'http://localhost',
   rootDir: '..',
   setupFilesAfterEnv: ['<rootDir>/jest/expect-setup.js'],
@@ -23,9 +21,9 @@ module.exports = {
   ],
   snapshotSerializers: ['jest-emotion'],
   moduleNameMapper: {
-    '\\.(s?css)$': '<rootDir>/node_modules/identity-obj-proxy',
-    'github-markdown-css': '<rootDir>/node_modules/identity-obj-proxy',
-    '\\.(png)$': '<rootDir>/node_modules/identity-obj-proxy',
+    '\\.(s?css)$': '<rootDir>/jest/identity.js',
+    'github-markdown-css': '<rootDir>/jest/identity.js',
+    '\\.(png)$': '<rootDir>/jest/identity.js',
     '\\.(svg)$': '<rootDir>/jest/unit/empty.ts',
     'verdaccio-ui/components/(.*)': '<rootDir>/src/components/$1',
     'verdaccio-ui/utils/(.*)': '<rootDir>/src/utils/$1',
