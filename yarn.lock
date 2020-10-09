@@ -2767,7 +2767,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/react-dom@npm:16.9.8":
+"@types/react-dom@npm:^16.9.8":
   version: 16.9.8
   resolution: "@types/react-dom@npm:16.9.8"
   dependencies:
@@ -2776,14 +2776,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/react-router-dom@npm:5.1.5":
-  version: 5.1.5
-  resolution: "@types/react-router-dom@npm:5.1.5"
+"@types/react-router-dom@npm:^5.1.5":
+  version: 5.1.6
+  resolution: "@types/react-router-dom@npm:5.1.6"
   dependencies:
     "@types/history": "*"
     "@types/react": "*"
     "@types/react-router": "*"
-  checksum: d25c11cb718653a01b0e2cd5e4a44b1910fd506b3141c49e4b47ee197ddc06a05f3ee3c6853c60c15d83b96aeea534321ab200d4fbfd4ba047413b2c7176bfcb
+  checksum: dcff1d613899af1cbfb003eb3994f7ebce5f2633e0018588008be39af8e15971041644b7c99e6448122d661d509ee7cafce7bb5972598e8bb6701e77c9431def
   languageName: node
   linkType: hard
 
@@ -2852,7 +2852,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/testing-library__jest-dom@npm:^5.9.1":
+"@types/testing-library__jest-dom@npm:^5.9.1, @types/testing-library__jest-dom@npm:^5.9.4":
   version: 5.9.4
   resolution: "@types/testing-library__jest-dom@npm:5.9.4"
   dependencies:
@@ -3165,10 +3165,11 @@ __metadata:
     "@types/node": 14.6.2
     "@types/react": 16.9.48
     "@types/react-autosuggest": 10.0.0
-    "@types/react-dom": 16.9.8
-    "@types/react-router-dom": 5.1.5
+    "@types/react-dom": ^16.9.8
+    "@types/react-router-dom": ^5.1.5
     "@types/react-virtualized": 9.21.10
     "@types/request": 2.48.5
+    "@types/testing-library__jest-dom": ^5.9.4
     "@types/validator": 13.1.0
     "@types/webpack-env": 1.15.2
     "@typescript-eslint/parser": 2.18.0
@@ -3269,6 +3270,11 @@ __metadata:
     webpack-merge: 4.2.2
     whatwg-fetch: 3.4.0
     xss: 1.0.8
+  dependenciesMeta:
+    "@testing-library/jest-dom@5.11.4":
+      unplugged: true
+    react-router@5.2.0:
+      unplugged: true
   languageName: unknown
   linkType: soft
 

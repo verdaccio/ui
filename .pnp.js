@@ -83,9 +83,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/react", "npm:16.9.48"],
             ["@types/react-autosuggest", "npm:10.0.0"],
             ["@types/react-dom", "npm:16.9.8"],
-            ["@types/react-router-dom", "npm:5.1.5"],
+            ["@types/react-router-dom", "npm:5.1.6"],
             ["@types/react-virtualized", "npm:9.21.10"],
             ["@types/request", "npm:2.48.5"],
+            ["@types/testing-library__jest-dom", "npm:5.9.4"],
             ["@types/validator", "npm:13.1.0"],
             ["@types/webpack-env", "npm:1.15.2"],
             ["@typescript-eslint/parser", "virtual:48995c15c53cbf797b45f53ce386c40043871d4ea2d4014751859906766e14847604fff4950dd7e9dc0eda845528d80f9765dc5e10607095bf9619c0df766a7a#npm:2.18.0"],
@@ -3558,7 +3559,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
       ]],
       ["@testing-library/jest-dom", [
         ["npm:5.11.4", {
-          "packageLocation": "./.yarn/cache/@testing-library-jest-dom-npm-5.11.4-6e5f38ef88-2d59d58828.zip/node_modules/@testing-library/jest-dom/",
+          "packageLocation": "./.yarn/unplugged/@testing-library-jest-dom-npm-5.11.4-6e5f38ef88/node_modules/@testing-library/jest-dom/",
           "packageDependencies": [
             ["@testing-library/jest-dom", "npm:5.11.4"],
             ["@babel/runtime", "npm:7.11.2"],
@@ -3939,10 +3940,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]
       ]],
       ["@types/react-router-dom", [
-        ["npm:5.1.5", {
-          "packageLocation": "./.yarn/cache/@types-react-router-dom-npm-5.1.5-b0a728cc6d-d25c11cb71.zip/node_modules/@types/react-router-dom/",
+        ["npm:5.1.6", {
+          "packageLocation": "./.yarn/cache/@types-react-router-dom-npm-5.1.6-d10d920490-dcff1d6138.zip/node_modules/@types/react-router-dom/",
           "packageDependencies": [
-            ["@types/react-router-dom", "npm:5.1.5"],
+            ["@types/react-router-dom", "npm:5.1.6"],
             ["@types/history", "npm:4.7.8"],
             ["@types/react", "npm:16.9.48"],
             ["@types/react-router", "npm:5.1.8"]
@@ -4385,9 +4386,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/react", "npm:16.9.48"],
             ["@types/react-autosuggest", "npm:10.0.0"],
             ["@types/react-dom", "npm:16.9.8"],
-            ["@types/react-router-dom", "npm:5.1.5"],
+            ["@types/react-router-dom", "npm:5.1.6"],
             ["@types/react-virtualized", "npm:9.21.10"],
             ["@types/request", "npm:2.48.5"],
+            ["@types/testing-library__jest-dom", "npm:5.9.4"],
             ["@types/validator", "npm:13.1.0"],
             ["@types/webpack-env", "npm:1.15.2"],
             ["@typescript-eslint/parser", "virtual:48995c15c53cbf797b45f53ce386c40043871d4ea2d4014751859906766e14847604fff4950dd7e9dc0eda845528d80f9765dc5e10607095bf9619c0df766a7a#npm:2.18.0"],
@@ -19017,7 +19019,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
       ]],
       ["react-router", [
         ["virtual:48995c15c53cbf797b45f53ce386c40043871d4ea2d4014751859906766e14847604fff4950dd7e9dc0eda845528d80f9765dc5e10607095bf9619c0df766a7a#npm:5.2.0", {
-          "packageLocation": "./.yarn/$$virtual/react-router-virtual-97aae223b4/0/cache/react-router-npm-5.2.0-ae172a6818-4437eaa9ba.zip/node_modules/react-router/",
+          "packageLocation": "./.yarn/unplugged/react-router-virtual-97aae223b4/node_modules/react-router/",
           "packageDependencies": [
             ["react-router", "virtual:48995c15c53cbf797b45f53ce386c40043871d4ea2d4014751859906766e14847604fff4950dd7e9dc0eda845528d80f9765dc5e10607095bf9619c0df766a7a#npm:5.2.0"],
             ["@babel/runtime", "npm:7.11.2"],
