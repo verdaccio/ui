@@ -91,7 +91,6 @@ exports[`<App /> should display the Header component  1`] = `
 
 .emotion-12 {
   display: none;
-  max-width: 393px;
   width: 100%;
 }
 
@@ -1266,7 +1265,6 @@ exports[`<App /> should display the Loading component at the beginning  1`] = `
 
 .emotion-12 {
   display: none;
-  max-width: 393px;
   width: 100%;
 }
 
