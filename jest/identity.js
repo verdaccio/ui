@@ -1,5 +1,5 @@
 /* eslint-disable no-var, comma-dangle, no-unused-vars, global-require */
-let Reflect; 
+let Reflect;
 let idObj;
 
 function checkIsNodeV6OrAbove() {
@@ -11,7 +11,7 @@ function checkIsNodeV6OrAbove() {
 }
 
 if (!checkIsNodeV6OrAbove()) {
-  Reflect = require('harmony-reflect'); 
+  Reflect = require('harmony-reflect');
 }
 
 idObj = new Proxy(

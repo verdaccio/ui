@@ -213,10 +213,9 @@
     "lint:html": "yarn htmllinter src/template/index.html",
     "lint:css": "yarn stylelint \"src/**/styles.ts\"",
     "coverage:publish": "codecov",
-    "pre:webpack": "rimraf static/*",
     "dev:web": "cross-env BABEL_ENV=ui babel-node tools/dev.server.js",
     "verdaccio:server": "node tools/verdaccio.js",
-    "build": "yarn run pre:webpack && cross-env BABEL_ENV=ui webpack --config tools/webpack.prod.config.babel.js",
+    "build": "cross-env BABEL_ENV=ui webpack --config tools/webpack.prod.config.babel.js",
     "build:stats": "cross-env BABEL_ENV=ui webpack --config tools/webpack.prod.config.babel.js --json > stats.json",
     "build:size": "cross-env BABEL_ENV=ui webpack --config tools/webpack.prod.config.babel.js --json | webpack-bundle-size-analyzer",
     "dev": "concurrently --kill-others \"yarn run dev:web\" \"yarn run verdaccio:server\""
