@@ -22,7 +22,13 @@
 
 ## Contributing
 
-We use `>=yarn2`, keep in mind that we use lockfiles and use at least Node `v12` to be able to build the project.
+We use `>=yarn`, keep in mind that we use lockfiles and use at least Node `v12` to be able to build the project.
+
+Install dependencies
+
+```
+yarn 
+```
 
 For development run the following command, it will execute `webpack` and `verdaccio` to
 
