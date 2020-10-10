@@ -2776,14 +2776,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/react-router-dom@npm:^5.1.5":
-  version: 5.1.6
-  resolution: "@types/react-router-dom@npm:5.1.6"
+"@types/react-router-dom@npm:5.1.5":
+  version: 5.1.5
+  resolution: "@types/react-router-dom@npm:5.1.5"
   dependencies:
     "@types/history": "*"
     "@types/react": "*"
     "@types/react-router": "*"
-  checksum: dcff1d613899af1cbfb003eb3994f7ebce5f2633e0018588008be39af8e15971041644b7c99e6448122d661d509ee7cafce7bb5972598e8bb6701e77c9431def
+  checksum: d25c11cb718653a01b0e2cd5e4a44b1910fd506b3141c49e4b47ee197ddc06a05f3ee3c6853c60c15d83b96aeea534321ab200d4fbfd4ba047413b2c7176bfcb
   languageName: node
   linkType: hard
 
@@ -3166,7 +3166,7 @@ __metadata:
     "@types/react": 16.9.48
     "@types/react-autosuggest": 10.0.0
     "@types/react-dom": ^16.9.8
-    "@types/react-router-dom": ^5.1.5
+    "@types/react-router-dom": 5.1.5
     "@types/react-virtualized": 9.21.10
     "@types/request": 2.48.5
     "@types/testing-library__jest-dom": ^5.9.4

@@ -52,7 +52,14 @@ module.exports = {
         enforce: 'pre',
         test: /\.jsx?$/,
         exclude: /node_modules/,
-        use: require.resolve('eslint-loader'),
+        use: 'eslint-loader',
+      },
+
+      /* Normal loader */
+      {
+        test: /\.jsx?$/,
+        exclude: /node_modules/,
+        use: 'babel-loader',
       },
       {
         test: /\.(jpe?g|png|gif|svg)$/,
@@ -64,7 +71,7 @@ module.exports = {
       },
       {
         test: /\.(woff|woff2|eot|ttf|otf)$/,
-        loader: require.resolve('url-loader'),
+        loader: 'url-loader',
         options: {
           name: '[name].[ext]',
           outputPath: 'fonts',
@@ -75,10 +82,10 @@ module.exports = {
         test: /\.css$/,
         use: [
           {
-            loader: require.resolve('style-loader'),
+            loader: 'style-loader',
           },
           {
-            loader: require.resolve('css-loader'),
+            loader: 'css-loader',
           },
         ],
       },
@@ -86,9 +93,7 @@ module.exports = {
       /* Typescript loader */
       {
         test: /\.tsx?$/,
-        use: {
-          loader: require.resolve(`babel-loader`),
-        },
+        use: 'babel-loader',
         exclude: /node_modules/,
       },
     ],
