@@ -174,7 +174,7 @@
   "bundlesize": [
     {
       "path": "./static/vendors.*.js",
-      "maxSize": "210 kB"
+      "maxSize": "240 kB"
     },
     {
       "path": "./static/main.*.js",
