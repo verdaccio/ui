@@ -3,6 +3,7 @@ coverage/
 static/
 .github/
 .circleci/
+jest/identity.js
 build
 *.md
 *.lock

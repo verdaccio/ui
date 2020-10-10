@@ -1,6 +1,6 @@
-/* eslint-disable no-var, comma-dangle */
-var Reflect; // eslint-disable-line no-unused-vars
-var idObj;
+/* eslint-disable no-var, comma-dangle, no-unused-vars, global-require */
+let Reflect; 
+let idObj;
 
 function checkIsNodeV6OrAbove() {
   if (typeof process === 'undefined') {
@@ -11,16 +11,19 @@ function checkIsNodeV6OrAbove() {
 }
 
 if (!checkIsNodeV6OrAbove()) {
-  Reflect = require('harmony-reflect'); // eslint-disable-line global-require
+  Reflect = require('harmony-reflect'); 
 }
 
-idObj = new Proxy({}, {
-  get: function getter(target, key) {
-    if (key === '__esModule') {
-      return false;
-    }
-    return key;
+idObj = new Proxy(
+  {},
+  {
+    get: function getter(target, key) {
+      if (key === '__esModule') {
+        return false;
+      }
+      return key;
+    },
   }
-});
+);
 
 module.exports = idObj;
