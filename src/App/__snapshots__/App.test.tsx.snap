@@ -91,7 +91,6 @@ exports[`<App /> should display the Header component  1`] = `
 
 .emotion-12 {
   display: none;
-  max-width: 393px;
   width: 100%;
 }
 
@@ -115,8 +114,23 @@ exports[`<App /> should display the Header component  1`] = `
   content: none;
 }
 
-.emotion-6 .MuiInputBase-input {
-  color: #fff;
+.emotion-6 .MuiInputBase-root:hover:after {
+  content: none;
+  -webkit-transform: scaleX(1);
+  -ms-transform: scaleX(1);
+  transform: scaleX(1);
+}
+
+@media screen and (min-width:768px) {
+  .emotion-6 .MuiInputBase-root:hover:after {
+    content: '';
+  }
+}
+
+@media screen and (min-width:768px) {
+  .emotion-6 .MuiInputBase-input {
+    color: #fff;
+  }
 }
 
 .emotion-4 {
@@ -1266,7 +1280,6 @@ exports[`<App /> should display the Loading component at the beginning  1`] = `
 
 .emotion-12 {
   display: none;
-  max-width: 393px;
   width: 100%;
 }
 
@@ -1290,8 +1303,23 @@ exports[`<App /> should display the Loading component at the beginning  1`] = `
   content: none;
 }
 
-.emotion-6 .MuiInputBase-input {
-  color: #fff;
+.emotion-6 .MuiInputBase-root:hover:after {
+  content: none;
+  -webkit-transform: scaleX(1);
+  -ms-transform: scaleX(1);
+  transform: scaleX(1);
+}
+
+@media screen and (min-width:768px) {
+  .emotion-6 .MuiInputBase-root:hover:after {
+    content: '';
+  }
+}
+
+@media screen and (min-width:768px) {
+  .emotion-6 .MuiInputBase-input {
+    color: #fff;
+  }
 }
 
 .emotion-4 {

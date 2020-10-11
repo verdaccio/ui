@@ -29,9 +29,20 @@ export const StyledTextField = styled(TextField)<{ theme?: Theme }>(props => ({
     ':hover:before': {
       content: 'none',
     },
+    ':hover:after': {
+      content: 'none',
+      transform: 'scaleX(1)',
+    },
+    [`@media screen and (min-width: ${props.theme?.breakPoints.medium}px)`]: {
+      ':hover:after': {
+        content: "''",
+      },
+    },
   },
   '& .MuiInputBase-input': {
-    color: props.theme && props.theme.palette.white,
+    [`@media screen and (min-width: ${props.theme?.breakPoints.medium}px)`]: {
+      color: props.theme && props.theme.palette.white,
+    },
   },
 }));
 
