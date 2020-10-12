@@ -22,6 +22,7 @@ stats.json
 
 # This is the Yarn build state; it's local to each clone
 /.yarn/build-state.yml
+/.yarn/sdks/
 
 # This is the Yarn install state cache, it can be rebuilt anytime
 /.yarn/install-state.gz

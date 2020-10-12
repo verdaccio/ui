@@ -246,13 +246,5 @@
     "type": "opencollective",
     "url": "https://opencollective.com/verdaccio",
     "logo": "https://opencollective.com/verdaccio/logo.txt"
-  },
-  "dependenciesMeta": {
-    "@testing-library/jest-dom@5.11.4": {
-      "unplugged": true
-    },
-    "react-router@5.2.0": {
-      "unplugged": true
-    }
   }
 }
