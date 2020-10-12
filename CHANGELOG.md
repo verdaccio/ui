@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.13.2](https://github.com/verdaccio/ui/compare/v1.13.1...v1.13.2) (2020-10-12)
+
+
+### Bug Fixes
+
+* **ui:** Change no package title size ([#579](https://github.com/verdaccio/ui/issues/579)) ([519261c](https://github.com/verdaccio/ui/commit/519261c4d90d4d26f98ad953ed1fb306119fb18b))
+
 ### [1.13.1](https://github.com/verdaccio/ui/compare/v1.13.0...v1.13.1) (2020-10-10)
 
 

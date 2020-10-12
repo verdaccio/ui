@@ -21,8 +21,23 @@ exports[`<Search /> component should load the component in default state 1`] = `
   content: none;
 }
 
-.emotion-2 .MuiInputBase-input {
-  color: #fff;
+.emotion-2 .MuiInputBase-root:hover:after {
+  content: none;
+  -webkit-transform: scaleX(1);
+  -ms-transform: scaleX(1);
+  transform: scaleX(1);
+}
+
+@media screen and (min-width:768px) {
+  .emotion-2 .MuiInputBase-root:hover:after {
+    content: '';
+  }
+}
+
+@media screen and (min-width:768px) {
+  .emotion-2 .MuiInputBase-input {
+    color: #fff;
+  }
 }
 
 .emotion-0 {
