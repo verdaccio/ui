@@ -3272,11 +3272,6 @@ __metadata:
     webpack-merge: 4.2.2
     whatwg-fetch: ^3.4.1
     xss: 1.0.8
-  dependenciesMeta:
-    "@testing-library/jest-dom@5.11.4":
-      unplugged: true
-    react-router@5.2.0:
-      unplugged: true
   languageName: unknown
   linkType: soft
 
