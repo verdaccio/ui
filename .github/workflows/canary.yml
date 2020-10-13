@@ -17,7 +17,7 @@ jobs:
           node-version: '12.x'
           registry-url: 'https://registry.verdaccio.org'
       - name: Install
-        run: yarn install
+        run: yarn install --frozen-lockfile
       - name: Lint
         run: yarn lint
       - name: Build
