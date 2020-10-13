@@ -150,7 +150,7 @@
     "typeface-roboto": "0.0.75",
     "typescript": "3.9.6",
     "uglifyjs-webpack-plugin": "2.2.0",
-    "url-loader": "4.1.0",
+    "url-loader": "4.1.1",
     "validator": "13.1.1",
     "verdaccio": "4.8.1",
     "verdaccio-auth-memory": "9.7.2",
