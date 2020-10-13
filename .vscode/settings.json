@@ -6,7 +6,6 @@
     "typescript",
     "typescriptreact"
   ],
-  "typescript.tsdk": ".yarn/sdks/typescript/lib",
   "editor.formatOnSave": false,
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": true
