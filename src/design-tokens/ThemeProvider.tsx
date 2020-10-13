@@ -9,7 +9,7 @@ import ThemeContext from './ThemeContext';
 import useLocalStorage from './useLocalStorage';
 
 const ThemeProvider: React.FC = ({ children }) => {
-  const prefersDarkMode = window?.matchMedia('(prefers-color-scheme:dark)').matches;
+  const prefersDarkMode = window.matchMedia?.('(prefers-color-scheme:dark)').matches;
   const isDarkModeDefault = window?.__VERDACCIO_BASENAME_UI_OPTIONS?.darkMode || prefersDarkMode;
   const currentLanguage = i18next.languages?.[0];
 
