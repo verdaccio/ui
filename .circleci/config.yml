@@ -49,7 +49,7 @@ jobs:
           key: *yarn_cache_key
       - run:
           name: Install dependencies
-          command: yarn install --frozen-lockfile
+          command: yarn install
       - run:
           name: Lint code
           command: yarn lint
