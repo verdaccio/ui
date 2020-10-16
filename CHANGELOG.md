@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.14.0](https://github.com/verdaccio/ui/compare/v1.13.2...v1.14.0) (2020-10-16)
+
+
+### Features
+
+* allow deep links on readme pages ([#557](https://github.com/verdaccio/ui/issues/557)) ([e3d547a](https://github.com/verdaccio/ui/commit/e3d547ad17169595bfd66a3f05576a20859313a8))
+* **ui:** add prefers-color-scheme media query support ([#568](https://github.com/verdaccio/ui/issues/568)) ([c29c889](https://github.com/verdaccio/ui/commit/c29c8899d77248ee186576f200ab19f4574d0d42))
+
 ### [1.13.2](https://github.com/verdaccio/ui/compare/v1.13.1...v1.13.2) (2020-10-12)
 
 
