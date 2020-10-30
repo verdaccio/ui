@@ -18,13 +18,12 @@ const DevelopersTitle: React.FC<Props> = ({ type }) => {
       return <StyledText variant={'subtitle1'}>{t('sidebar.contributors.title')}</StyledText>;
     case DeveloperType.MAINTAINERS:
       return <StyledText variant={'subtitle1'}>{t('sidebar.maintainers.title')}</StyledText>;
-      return null;
   }
 };
 
 export default DevelopersTitle;
 
 const StyledText = styled(Text)<{ theme?: Theme }>(({ theme }) => ({
-  fontWeight: theme && theme.fontWeight.bold,
+  fontWeight: theme?.fontWeight.bold,
   marginBottom: '10px',
 }));
