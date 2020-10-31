@@ -24,8 +24,8 @@ const StyledBox = styled(Box)<{ theme?: Theme }>(({ theme }) => ({
 }));
 
 const StyledBoxContent = styled(Box)<{ theme?: Theme }>(({ theme }) => ({
-  [`@media screen and (min-width: ${theme && theme.breakPoints.container}px)`]: {
-    maxWidth: theme && theme.breakPoints.container,
+  [`@media screen and (min-width: ${theme?.breakPoints.container}px)`]: {
+    maxWidth: theme?.breakPoints.container,
     width: '100%',
     marginLeft: 'auto',
     marginRight: 'auto',
