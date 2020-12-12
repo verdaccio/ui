@@ -6,7 +6,7 @@ import ThemeProvider from 'verdaccio-ui/design-tokens/ThemeProvider';
 
 import i18nConfig from '../../i18n/config';
 
-const customRender = (node: React.ReactElement<any>, ...options: Array<any>) => {
+const customRender = (node: React.ReactElement, ...options: any) => {
   return render(
     <ThemeProvider>
       <I18nextProvider i18n={i18nConfig}>{node}</I18nextProvider>

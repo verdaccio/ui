@@ -1,7 +1,7 @@
 import React from 'react';
 
 import storage from 'verdaccio-ui/utils/storage';
-import { render, waitForElement, fireEvent } from 'verdaccio-ui/utils/test-react-testing-library';
+import { render, waitFor, fireEvent } from 'verdaccio-ui/utils/test-react-testing-library';
 
 // eslint-disable-next-line jest/no-mocks-import
 import { generateTokenWithTimeRange } from '../../jest/unit/components/__mocks__/token';
@@ -51,7 +51,7 @@ describe('<App />', () => {
     expect(queryByTestId('loading')).toBeTruthy();
 
     // wait for the Header component appearance and return the element
-    const headerElement = await waitForElement(() => queryByTestId('header'));
+    const headerElement = await waitFor(() => queryByTestId('header'));
     expect(headerElement).toBeTruthy();
   });
 
@@ -62,14 +62,14 @@ describe('<App />', () => {
     const { queryByTestId } = render(<App />);
 
     // wait for the Account's circle element component appearance and return the element
-    const accountCircleElement = await waitForElement(() => queryByTestId('header--menu-accountcircle'));
+    const accountCircleElement = await waitFor(() => queryByTestId('header--menu-accountcircle'));
     expect(accountCircleElement).toBeTruthy();
 
     if (accountCircleElement) {
       fireEvent.click(accountCircleElement);
 
       // wait for the Button's logout element component appearance and return the element
-      const buttonLogoutElement = await waitForElement(() => queryByTestId('header--button-logout'));
+      const buttonLogoutElement = await waitFor(() => queryByTestId('header--button-logout'));
       expect(buttonLogoutElement).toBeTruthy();
 
       if (buttonLogoutElement) {
@@ -87,14 +87,14 @@ describe('<App />', () => {
     const { queryByTestId, queryAllByText } = render(<App />);
 
     // wait for the Account's circle element component appearance and return the element
-    const accountCircleElement = await waitForElement(() => queryByTestId('header--menu-accountcircle'));
+    const accountCircleElement = await waitFor(() => queryByTestId('header--menu-accountcircle'));
     expect(accountCircleElement).toBeTruthy();
 
     if (accountCircleElement) {
       fireEvent.click(accountCircleElement);
 
       // wait for the Greeting's label element component appearance and return the element
-      const greetingsLabelElement = await waitForElement(() => queryByTestId('greetings-label'));
+      const greetingsLabelElement = await waitFor(() => queryByTestId('greetings-label'));
       expect(greetingsLabelElement).toBeTruthy();
 
       if (greetingsLabelElement) {

@@ -3664,10 +3664,9 @@ __metadata:
     history: ^4.10.1
     html-webpack-plugin: ^4.5.0
     husky: 4.3.5
-    i18next: 19.8.4
+    i18next: ^19.8.4
     in-publish: 2.0.1
     jest: 26.6.3
-    jest-emotion: ^11.0.0
     jest-environment-jsdom: 26.6.2
     jest-environment-jsdom-global: ^2.0.4
     jest-environment-node: 26.6.2
@@ -3692,7 +3691,7 @@ __metadata:
     react-dom: 16.13.1
     react-hook-form: 3.29.4
     react-hot-loader: 4.12.21
-    react-i18next: 11.7.2
+    react-i18next: ^11.8.3
     react-router: ^5.2.0
     react-router-dom: 5.2.0
     react-virtualized: 9.22.2
@@ -10342,7 +10341,7 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"i18next@npm:19.8.4":
+"i18next@npm:^19.8.4":
   version: 19.8.4
   resolution: "i18next@npm:19.8.4"
   dependencies:
@@ -11452,13 +11451,6 @@ fsevents@^1.2.7:
     jest-util: ^26.6.2
     pretty-format: ^26.6.2
   checksum: 628eaeca647adb4d6cf75bdc17c9ceb8cbcbb6921d838a583cd4de3db188e3e49b62209e3a0703f1281db379d1b2c07254900e5d97e85d61dd193d7b40361d3a
-  languageName: node
-  linkType: hard
-
-"jest-emotion@npm:^11.0.0":
-  version: 11.0.0
-  resolution: "jest-emotion@npm:11.0.0"
-  checksum: 98becc020f11e5df72c6e1e0769e5ac8e53640b7d74fbdcd1995038067f757a17f1340505f022811d8d534db384c83a8659ef3bb1e3eb539859e185469a46ff0
   languageName: node
   linkType: hard
 
@@ -15928,16 +15920,16 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"react-i18next@npm:11.7.2":
-  version: 11.7.2
-  resolution: "react-i18next@npm:11.7.2"
+"react-i18next@npm:^11.8.3":
+  version: 11.8.3
+  resolution: "react-i18next@npm:11.8.3"
   dependencies:
     "@babel/runtime": ^7.3.1
     html-parse-stringify2: 2.0.1
   peerDependencies:
     i18next: ">= 19.0.0"
     react: ">= 16.8.0"
-  checksum: ea5c989d1b129d74b2d4b4d90cd33709f883cf89df90bcfbb78e3c97ac0c052cbf3369554e9e5beb405f1dbab5d7f7b77aa29fc0e13716d78d456f4f8408771c
+  checksum: 4a74e81264bf43a3bb87f512ace32a0bf0eddbd012ee60a61bbfe591c8c057708293ab5697837e9ba8558218cb5964284b2b46252ebf86c1af8c37e446c90ea2
   languageName: node
   linkType: hard
 

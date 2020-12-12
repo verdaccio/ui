@@ -1,12 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
 
-import {
-  render,
-  fireEvent,
-  waitForElement,
-  waitForElementToBeRemoved,
-} from 'verdaccio-ui/utils/test-react-testing-library';
+import { render, fireEvent, waitFor, waitForElementToBeRemoved } from 'verdaccio-ui/utils/test-react-testing-library';
 
 import translationEN from '../../../i18n/translations/en-US.json';
 import { AppContextProvider } from '../../App';
@@ -61,7 +56,7 @@ describe('<Header /> component with logged in state', () => {
 
     const loginBtn = getByTestId('header--button-login');
     fireEvent.click(loginBtn);
-    const loginDialog = await waitForElement(() => getByTestId('login--dialog'));
+    const loginDialog = await waitFor(() => getByTestId('login--dialog'));
     expect(loginDialog).toBeTruthy();
   });
 
@@ -78,7 +73,7 @@ describe('<Header /> component with logged in state', () => {
     fireEvent.click(headerMenuAccountCircle);
 
     // wait for button Logout's appearance and return the element
-    const logoutBtn = await waitForElement(() => getByText('Logout'));
+    const logoutBtn = await waitFor(() => getByText('Logout'));
     fireEvent.click(logoutBtn);
     expect(getByText('Login')).toBeTruthy();
   });
@@ -109,7 +104,7 @@ describe('<Header /> component with logged in state', () => {
     fireEvent.click(infoBtn);
 
     // wait for registrationInfo modal appearance and return the element
-    const registrationInfoModal = await waitForElement(() => getByTestId('registryInfo--dialog'));
+    const registrationInfoModal = await waitFor(() => getByTestId('registryInfo--dialog'));
     expect(registrationInfoModal).toBeTruthy();
   });
 
@@ -126,7 +121,7 @@ describe('<Header /> component with logged in state', () => {
     fireEvent.click(infoBtn);
 
     // wait for Close's button of registrationInfo modal appearance and return the element
-    const closeBtn = await waitForElement(() => getByText(translationEN.button.close));
+    const closeBtn = await waitFor(() => getByText(translationEN.button.close));
     fireEvent.click(closeBtn);
 
     const hasRegistrationInfoModalBeenRemoved = await waitForElementToBeRemoved(() =>
