@@ -10,9 +10,7 @@ import baseConfig from './webpack.config';
 
 export default {
   ...baseConfig,
-
   mode: 'development',
-
   entry: {
     main: [
       'whatwg-fetch',
@@ -28,7 +26,7 @@ export default {
     publicPath: '/',
   },
 
-  devtool: 'cheap-module-eval-source-map',
+  devtool: 'inline-cheap-module-source-map',
 
   plugins: [
     new webpack.DefinePlugin({

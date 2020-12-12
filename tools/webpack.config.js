@@ -31,15 +31,14 @@ module.exports = {
 
   optimization: {
     runtimeChunk: {
-      name: 'manifest',
+      name: 'runtime',
     },
     splitChunks: {
       cacheGroups: {
-        defaultVendors: {
+        commons: {
           test: /[\\/]node_modules[\\/]/,
-          name: 'vendors',
-          priority: -20,
-          chunks: 'all',
+          name: 'vendor',
+          chunks: 'initial',
         },
       },
     },

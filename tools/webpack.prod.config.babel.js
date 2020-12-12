@@ -39,7 +39,10 @@ const prodConf = {
       __APP_VERSION__: `"${version}"`,
     }),
     new MiniCssExtractPlugin({
-      filename: 'style.[contenthash].css',
+      // Options similar to the same options in webpackOptions.output
+      // both options are optional
+      filename: '[name].[contenthash].css',
+      chunkFilename: '[id].[contenthash].css',
     }),
     new HTMLWebpackPlugin({
       title: 'ToReplaceByTitle',
@@ -61,6 +64,11 @@ const prodConf = {
   optimization: {
     minimize: true,
     minimizer: [new TerserPlugin(), new OptimizeCSSAssetsPlugin({})],
+  },
+  performance: {
+    hints: false,
+    maxEntrypointSize: 512000,
+    maxAssetSize: 512000,
   },
 };
 
