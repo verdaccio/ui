@@ -1,5 +1,5 @@
 const BROWSER_TARGETS = {
-  browsers: ['last 5 versions', 'FireFox >= 44', 'Safari >= 7', 'last 4 Edge versions'],
+  browsers: ['last 5 versions', 'FireFox >= 44', 'Safari >= 7', 'Explorer 11', 'last 4 Edge versions'],
 };
 
 module.exports = {
@@ -7,10 +7,7 @@ module.exports = {
     [
       '@babel/env',
       {
-        targets: BROWSER_TARGETS,
-        // 'modules': true,
-        // 'shippedProposals': true,
-        // 'loose': false
+        targets: BROWSER_TARGETS
       },
     ],
     '@babel/react',
