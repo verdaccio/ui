@@ -4,7 +4,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const UglifyJsWebpackPlugin = require('uglifyjs-webpack-plugin');
 const webpack = require('webpack');
-const merge = require('webpack-merge');
+const { merge } = require('webpack-merge');
 
 const env = require('../config/env');
 
@@ -59,14 +59,14 @@ const prodConf = {
     new webpack.BannerPlugin(banner),
   ],
 
-  optimization: {
-    minimizer: [
-      new UglifyJsWebpackPlugin({
-        sourceMap: true,
-      }),
-      new OptimizeCSSAssetsPlugin({}),
-    ],
-  },
+  // optimization: {
+  //   minimizer: [
+  //     new UglifyJsWebpackPlugin({
+  //       sourceMap: true,
+  //     }),
+  //     new OptimizeCSSAssetsPlugin({}),
+  //   ],
+  // },
 };
 
 prodConf.module.rules = baseConfig.module.rules

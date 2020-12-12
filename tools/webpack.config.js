@@ -12,7 +12,7 @@ module.exports = {
   },
 
   resolve: {
-    extensions: ['.js', '.jsx', '.ts', '.tsx'],
+    extensions: ['.wasm', '.mjs', '.js', '.jsx', '.ts', '.tsx'],
     modules: ['node_modules'],
     alias: {
       'verdaccio-ui/components': `${env.SRC_ROOT}/components`,
@@ -21,29 +21,29 @@ module.exports = {
     },
   },
 
-  plugins: [
-    new StyleLintPlugin({
-      files: ['src/**/styles.ts'],
-      failOnError: false,
-      emitErrors: true,
-    }),
-  ],
+  // plugins: [
+  //   new StyleLintPlugin({
+  //     files: ['src/**/styles.ts'],
+  //     failOnError: false,
+  //     emitErrors: true,
+  //   }),
+  // ],
 
-  optimization: {
-    runtimeChunk: {
-      name: 'manifest',
-    },
-    splitChunks: {
-      cacheGroups: {
-        vendor: {
-          test: /[\\/]node_modules[\\/]/,
-          name: 'vendors',
-          priority: -20,
-          chunks: 'all',
-        },
-      },
-    },
-  },
+  // optimization: {
+  //   runtimeChunk: {
+  //     name: 'manifest',
+  //   },
+  //   splitChunks: {
+  //     cacheGroups: {
+  //       vendor: {
+  //         test: /[\\/]node_modules[\\/]/,
+  //         name: 'vendors',
+  //         priority: -20,
+  //         chunks: 'all',
+  //       },
+  //     },
+  //   },
+  // },
 
   module: {
     rules: [
@@ -60,6 +60,12 @@ module.exports = {
         test: /\.jsx?$/,
         exclude: /node_modules/,
         use: 'babel-loader',
+      },
+      {
+        test: /\.m?js/,
+        resolve: {
+          fullySpecified: false,
+        }
       },
       {
         test: /\.(jpe?g|png|gif|svg)$/,
@@ -89,7 +95,6 @@ module.exports = {
           },
         ],
       },
-
       /* Typescript loader */
       {
         test: /\.tsx?$/,
