@@ -23,6 +23,7 @@ describe('test Deprecated', () => {
 
   test('should render the deprecated message', () => {
     render(
+      // @ts-ignore
       <DetailContextProvider value={{ packageMeta }}>
         <Deprecated message={packageMeta.latest.deprecated} />
       </DetailContextProvider>
