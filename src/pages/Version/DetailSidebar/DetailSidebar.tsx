@@ -8,6 +8,7 @@ import { Theme } from 'verdaccio-ui/design-tokens/theme';
 
 import { DetailContext } from '..';
 
+import Deprecated from './Deprecated';
 import DetailSidebarFundButton from './DetailSidebarFundButton';
 import DetailSidebarTitle from './DetailSidebarTitle';
 import Developers, { DeveloperType } from './Developers';
@@ -33,6 +34,7 @@ const DetailSidebar: React.FC = () => {
         packageName={packageName}
         version={packageVersion || packageMeta.latest.version}
       />
+      {packageMeta?.latest?.deprecated && <Deprecated message={packageMeta?.latest?.deprecated} />}
       <ActionBar />
       <Install />
       <DetailSidebarFundButton />
