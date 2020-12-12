@@ -1,4 +1,4 @@
-import { waitForElement } from '@testing-library/dom';
+import { waitFor } from '@testing-library/dom';
 import React from 'react';
 import { MemoryRouter } from 'react-router';
 
@@ -33,7 +33,7 @@ describe('test Version page', () => {
       </MemoryRouter>
     );
     // we wait fetch response (mocked above)
-    await waitForElement(() => getByTestId('version-layout'));
+    await waitFor(() => getByTestId('version-layout'));
     // check whether readme was loaded
     const hasReadme = getByText(detailContextValue.readMe);
     expect(hasReadme).toBeTruthy();
@@ -52,9 +52,7 @@ describe('test Version page', () => {
       </MemoryRouter>
     );
     // we wait fetch response (mocked above)
-    const notFoundElement = await waitForElement(() =>
-      getByText(translationEN.error['404']['sorry-we-could-not-find-it'])
-    );
+    const notFoundElement = await waitFor(() => getByText(translationEN.error['404']['sorry-we-could-not-find-it']));
     expect(notFoundElement).toBeTruthy();
   });
 

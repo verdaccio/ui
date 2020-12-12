@@ -3,7 +3,7 @@ import { BrowserRouter as Router } from 'react-router-dom';
 
 import '@testing-library/jest-dom/extend-expect';
 import api from 'verdaccio-ui/utils/api';
-import { render, fireEvent, waitForElement } from 'verdaccio-ui/utils/test-react-testing-library';
+import { render, fireEvent, waitFor } from 'verdaccio-ui/utils/test-react-testing-library';
 
 import Search from './Search';
 
@@ -16,8 +16,6 @@ const ComponentToBeRendered: React.FC = () => (
 
 describe('<Search /> component', () => {
   beforeEach(() => {
-    jest.resetModules();
-    jest.resetAllMocks();
     jest.spyOn(api, 'request').mockImplementation(() =>
       Promise.resolve([
         {
@@ -30,6 +28,10 @@ describe('<Search /> component', () => {
         },
       ])
     );
+  });
+
+  afterEach(() => {
+    jest.clearAllMocks();
   });
 
   test('should load the component in default state', () => {
@@ -47,7 +49,7 @@ describe('<Search /> component', () => {
 
     expect(autoCompleteInput).toHaveAttribute('value', 'verdaccio');
 
-    const suggestionsElements = await waitForElement(() => getAllByText('verdaccio', { exact: true }));
+    const suggestionsElements = await waitFor(() => getAllByText('verdaccio', { exact: true }));
 
     expect(suggestionsElements).toHaveLength(2);
     expect(api.request).toHaveBeenCalledTimes(1);
@@ -62,13 +64,13 @@ describe('<Search /> component', () => {
     fireEvent.change(autoCompleteInput, { target: { value: 'verdaccio' } });
     expect(autoCompleteInput).toHaveAttribute('value', 'verdaccio');
 
-    const suggestionsElements = await waitForElement(() => getAllByText('verdaccio', { exact: true }));
+    const suggestionsElements = await waitFor(() => getAllByText('verdaccio', { exact: true }));
     expect(suggestionsElements).toHaveLength(2);
     expect(api.request).toHaveBeenCalledTimes(1);
 
     fireEvent.blur(autoCompleteInput);
-    const listBoxElement = await waitForElement(() => getByRole('listbox'));
-    expect(listBoxElement).toBeEmpty();
+    const listBoxElement = await waitFor(() => getByRole('listbox'));
+    expect(listBoxElement).toBeEmptyDOMElement();
   });
 
   test('handleSearch: cancel all search requests when there is no value in search component with type method', async () => {
@@ -79,8 +81,8 @@ describe('<Search /> component', () => {
     fireEvent.focus(autoCompleteInput);
     fireEvent.change(autoCompleteInput, { target: { value: ' ', method: 'type' } });
     expect(autoCompleteInput).toHaveAttribute('value', '');
-    const listBoxElement = await waitForElement(() => getByRole('listbox'));
-    expect(listBoxElement).toBeEmpty();
+    const listBoxElement = await waitFor(() => getByRole('listbox'));
+    expect(listBoxElement).toBeEmptyDOMElement();
     expect(api.request).toHaveBeenCalledTimes(0);
   });
 
@@ -92,20 +94,20 @@ describe('<Search /> component', () => {
     fireEvent.focus(autoCompleteInput);
     fireEvent.change(autoCompleteInput, { target: { value: ' ', method: 'click' } });
     expect(autoCompleteInput).toHaveAttribute('value', '');
-    const listBoxElement = await waitForElement(() => getByRole('listbox'));
-    expect(listBoxElement).toBeEmpty();
+    const listBoxElement = await waitFor(() => getByRole('listbox'));
+    expect(listBoxElement).toBeEmptyDOMElement();
     expect(api.request).toHaveBeenCalledTimes(0);
   });
 
   test('handleSearch: loading is been displayed', async () => {
-    const { getByPlaceholderText, getByRole, getByText } = render(<ComponentToBeRendered />);
+    const { getByPlaceholderText, getByText } = render(<ComponentToBeRendered />);
     const autoCompleteInput = getByPlaceholderText('Search Packages');
 
     fireEvent.focus(autoCompleteInput);
     fireEvent.change(autoCompleteInput, { target: { value: 'verdaccio' } });
     expect(autoCompleteInput).toHaveAttribute('value', 'verdaccio');
 
-    const loadingElement = await waitForElement(() => getByText('Loading...'));
+    const loadingElement = await waitFor(() => getByText('Loading...'));
     expect(loadingElement).toBeTruthy();
   });
 
@@ -117,14 +119,14 @@ describe('<Search /> component', () => {
     fireEvent.change(autoCompleteInput, { target: { value: 'verdaccio' } });
     expect(autoCompleteInput).toHaveAttribute('value', 'verdaccio');
 
-    const suggestionsElements = await waitForElement(() => getAllByText('verdaccio', { exact: true }));
+    const suggestionsElements = await waitFor(() => getAllByText('verdaccio', { exact: true }));
     expect(suggestionsElements).toHaveLength(2);
 
     fireEvent.change(autoCompleteInput, { target: { value: ' ' } });
-    const listBoxElement = await waitForElement(() => getByRole('listbox'));
-    expect(listBoxElement).toBeEmpty();
+    const listBoxElement = await waitFor(() => getByRole('listbox'));
+    expect(listBoxElement).toBeEmptyDOMElement();
 
-    expect(api.request).toHaveBeenCalledTimes(2);
+    expect(api.request).toHaveBeenCalledTimes(1);
   });
 
   test('handleClickSearch: should change the window location on click or return key', async () => {
@@ -135,13 +137,13 @@ describe('<Search /> component', () => {
     fireEvent.change(autoCompleteInput, { target: { value: 'verdaccio' } });
     expect(autoCompleteInput).toHaveAttribute('value', 'verdaccio');
 
-    const suggestionsElements = await waitForElement(() => getAllByText('verdaccio', { exact: true }));
+    const suggestionsElements = await waitFor(() => getAllByText('verdaccio', { exact: true }));
     expect(suggestionsElements).toHaveLength(2);
 
     // click on the second suggestion
     fireEvent.click(suggestionsElements[1]);
-    const listBoxElement = await waitForElement(() => getByRole('listbox'));
+    const listBoxElement = await waitFor(() => getByRole('listbox'));
     // when the page redirects, the list box should be empty again
-    expect(listBoxElement).toBeEmpty();
+    expect(listBoxElement).toBeEmptyDOMElement();
   });
 });

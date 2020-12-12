@@ -19,12 +19,13 @@ module.exports = {
     '<rootDir>/.vscode/',
     '<rootDir>/test/e2e/',
   ],
-  snapshotSerializers: ['jest-emotion'],
+  snapshotSerializers: ['@emotion/jest/serializer'],
   moduleNameMapper: {
     '\\.(s?css)$': '<rootDir>/jest/identity.js',
-    'github-markdown-css': '<rootDir>/jest/identity.js',
     '\\.(png)$': '<rootDir>/jest/identity.js',
     '\\.(svg)$': '<rootDir>/jest/unit/empty.ts',
+    'github-markdown-css': '<rootDir>/jest/identity.js',
+    // note: this section has to be on sync with webpack configuration
     'verdaccio-ui/components/(.*)': '<rootDir>/src/components/$1',
     'verdaccio-ui/utils/(.*)': '<rootDir>/src/utils/$1',
     'verdaccio-ui/design-tokens/(.*)': '<rootDir>/src/design-tokens/$1',

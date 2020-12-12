@@ -1,5 +1,5 @@
 import debounce from 'lodash/debounce';
-import React, { useState, FormEvent, useCallback } from 'react';
+import React, { useState, FormEvent, useCallback, useRef, useEffect } from 'react';
 import { SuggestionSelectedEventData } from 'react-autosuggest';
 import { useTranslation } from 'react-i18next';
 import { RouteComponentProps, withRouter } from 'react-router';
@@ -21,6 +21,7 @@ const Search: React.FC<RouteComponentProps> = ({ history }) => {
   const [search, setSearch] = useState('');
   const [error, setError] = useState(false);
   const [loading, setLoading] = useState(false);
+  const mountedRef = useRef(true);
   const [requestList, setRequestList] = useState<Array<{ abort: () => void }>>([]);
 
   /**
@@ -65,7 +66,7 @@ const Search: React.FC<RouteComponentProps> = ({ history }) => {
          * A use case where User keeps adding and removing value in input field,
          * so we cancel all the existing requests when input is empty.
          */
-        if (value.length === 0) {
+        if (value?.length === 0) {
           cancelAllSearchRequests();
         }
       }
@@ -110,11 +111,14 @@ const Search: React.FC<RouteComponentProps> = ({ history }) => {
       try {
         const controller = new window.AbortController();
         const signal = controller.signal;
+        if (!mountedRef.current) {
+          return null;
+        }
         // Keep track of search requests.
         setRequestList([...requestList, controller]);
         const suggestions = await callSearch(value, signal);
-        // @ts-ignore FIXME: Argument of type 'unknown' is not assignable to parameter of type 'SetStateAction<never[]>'
-        setSuggestions(suggestions);
+        // FIXME: Argument of type 'unknown' is not assignable to parameter of type 'SetStateAction<never[]>'
+        setSuggestions(suggestions as any);
         setLoaded(true);
       } catch (error) {
         /**
@@ -129,11 +133,19 @@ const Search: React.FC<RouteComponentProps> = ({ history }) => {
           setLoaded(false);
         }
       } finally {
-        setLoading(false);
+        if (mountedRef.current) {
+          setLoading(false);
+        }
       }
     },
     [requestList, setRequestList, setSuggestions, setLoaded, setError, setLoading]
   );
+
+  useEffect(() => {
+    return () => {
+      mountedRef.current = false;
+    };
+  }, []);
 
   return (
     <AutoComplete

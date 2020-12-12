@@ -1,16 +1,16 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<Help /> component should load the component in default state 1`] = `
-.emotion-14 {
+.emotion-0 {
   width: 600px;
   margin: auto;
 }
 
-.emotion-0 {
+.emotion-2 {
   margin-bottom: 20px;
 }
 
-.emotion-6 {
+.emotion-4 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -25,7 +25,7 @@ exports[`<Help /> component should load the component in default state 1`] = `
   justify-content: space-between;
 }
 
-.emotion-2 {
+.emotion-6 {
   display: inline-block;
   text-overflow: ellipsis;
   overflow: hidden;
@@ -35,7 +35,7 @@ exports[`<Help /> component should load the component in default state 1`] = `
 }
 
 <div
-  class="MuiPaper-root MuiCard-root emotion-14 emotion-15 MuiPaper-elevation1 MuiPaper-rounded"
+  class="MuiPaper-root MuiCard-root emotion-0 emotion-1 MuiPaper-elevation1 MuiPaper-rounded"
   id="help-card"
 >
   <div
@@ -48,7 +48,7 @@ exports[`<Help /> component should load the component in default state 1`] = `
       No Package Published Yet.
     </h5>
     <h6
-      class="MuiTypography-root emotion-0 emotion-1 MuiTypography-h6 MuiTypography-colorTextSecondary MuiTypography-gutterBottom"
+      class="MuiTypography-root emotion-2 emotion-3 MuiTypography-h6 MuiTypography-colorTextSecondary MuiTypography-gutterBottom"
     >
       To publish your first package just:
     </h6>
@@ -58,15 +58,15 @@ exports[`<Help /> component should load the component in default state 1`] = `
       1. Login
     </span>
     <div
-      class="emotion-6 emotion-7"
+      class="emotion-4 emotion-5"
     >
       <span
-        class="emotion-2 emotion-3"
+        class="emotion-6 emotion-7"
       >
         npm adduser --registry http://localhost
       </span>
       <button
-        class="MuiButtonBase-root MuiIconButton-root  emotion-4 emotion-5"
+        class="MuiButtonBase-root MuiIconButton-root  emotion-8 emotion-9"
         data-testid="copy-icon"
         tabindex="0"
         title="Copy to clipboard"
@@ -97,15 +97,15 @@ exports[`<Help /> component should load the component in default state 1`] = `
       2. Publish
     </span>
     <div
-      class="emotion-6 emotion-7"
+      class="emotion-4 emotion-5"
     >
       <span
-        class="emotion-2 emotion-3"
+        class="emotion-6 emotion-7"
       >
         npm publish --registry http://localhost
       </span>
       <button
-        class="MuiButtonBase-root MuiIconButton-root  emotion-4 emotion-5"
+        class="MuiButtonBase-root MuiIconButton-root  emotion-8 emotion-9"
         data-testid="copy-icon"
         tabindex="0"
         title="Copy to clipboard"

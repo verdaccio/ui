@@ -1,7 +1,7 @@
 import React from 'react';
 
 import api from 'verdaccio-ui/utils/api';
-import { render, waitForElement, fireEvent } from 'verdaccio-ui/utils/test-react-testing-library';
+import { render, waitFor, fireEvent } from 'verdaccio-ui/utils/test-react-testing-library';
 
 import AppContext, { AppContextProps } from '../../AppContext';
 
@@ -42,7 +42,7 @@ describe('<LoginDialog /> component', () => {
       </AppContext.Provider>
     );
 
-    const loginDialogHeading = await waitForElement(() => getByTestId('login-dialog-form-login-button'));
+    const loginDialogHeading = await waitFor(() => getByTestId('login-dialog-form-login-button'));
     expect(loginDialogHeading).toBeTruthy();
   });
 
@@ -58,7 +58,7 @@ describe('<LoginDialog /> component', () => {
       </AppContext.Provider>
     );
 
-    const loginDialogButton = await waitForElement(() => getByTestId('close-login-dialog-button'));
+    const loginDialogButton = await waitFor(() => getByTestId('close-login-dialog-button'));
     expect(loginDialogButton).toBeTruthy();
 
     fireEvent.click(loginDialogButton, { open: false });

@@ -26,8 +26,8 @@ security:
       notBefore: 0
 
 uplinks:
-  npmjs:
-    url: https://registry.npmjs.org/
+  ver:
+    url: https://registry.verdaccio.org/
 
 packages:
   '@*/*':
