@@ -3,7 +3,7 @@
 exports[`<Spinner /> component should render the component in default state 1`] = `
 Object {
   "asFragment": [Function],
-  "baseElement": .emotion-2 {
+  "baseElement": .emotion-0 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -18,17 +18,17 @@ Object {
   justify-content: center;
 }
 
-.emotion-0 {
+.emotion-2 {
   color: #4b5e40;
 }
 
 <body>
     <div>
       <div
-        class="emotion-2 emotion-3"
+        class="emotion-0 emotion-1"
       >
         <div
-          class="MuiCircularProgress-root emotion-0 emotion-1 MuiCircularProgress-colorPrimary MuiCircularProgress-indeterminate"
+          class="MuiCircularProgress-root emotion-2 emotion-3 MuiCircularProgress-colorPrimary MuiCircularProgress-indeterminate"
           role="progressbar"
           style="width: 50px; height: 50px;"
         >
@@ -49,7 +49,7 @@ Object {
       </div>
     </div>
   </body>,
-  "container": .emotion-2 {
+  "container": .emotion-0 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -64,16 +64,16 @@ Object {
   justify-content: center;
 }
 
-.emotion-0 {
+.emotion-2 {
   color: #4b5e40;
 }
 
 <div>
     <div
-      class="emotion-2 emotion-3"
+      class="emotion-0 emotion-1"
     >
       <div
-        class="MuiCircularProgress-root emotion-0 emotion-1 MuiCircularProgress-colorPrimary MuiCircularProgress-indeterminate"
+        class="MuiCircularProgress-root emotion-2 emotion-3 MuiCircularProgress-colorPrimary MuiCircularProgress-indeterminate"
         role="progressbar"
         style="width: 50px; height: 50px;"
       >

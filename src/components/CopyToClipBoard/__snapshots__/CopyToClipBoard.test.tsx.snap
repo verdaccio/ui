@@ -3,7 +3,7 @@
 exports[`<CopyToClipBoard /> component should load the component in default state 1`] = `
 Object {
   "asFragment": [Function],
-  "baseElement": .emotion-4 {
+  "baseElement": .emotion-0 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -18,7 +18,7 @@ Object {
   justify-content: space-between;
 }
 
-.emotion-0 {
+.emotion-2 {
   display: inline-block;
   text-overflow: ellipsis;
   overflow: hidden;
@@ -30,15 +30,15 @@ Object {
 <body>
     <div>
       <div
-        class="emotion-4 emotion-5"
+        class="emotion-0 emotion-1"
       >
         <span
-          class="emotion-0 emotion-1"
+          class="emotion-2 emotion-3"
         >
           copy text
         </span>
         <button
-          class="MuiButtonBase-root MuiIconButton-root  emotion-2 emotion-3"
+          class="MuiButtonBase-root MuiIconButton-root  emotion-4 emotion-5"
           data-testid="copy-icon"
           tabindex="0"
           title="Copy to clipboard"
@@ -65,7 +65,7 @@ Object {
       </div>
     </div>
   </body>,
-  "container": .emotion-4 {
+  "container": .emotion-0 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -80,7 +80,7 @@ Object {
   justify-content: space-between;
 }
 
-.emotion-0 {
+.emotion-2 {
   display: inline-block;
   text-overflow: ellipsis;
   overflow: hidden;
@@ -91,15 +91,15 @@ Object {
 
 <div>
     <div
-      class="emotion-4 emotion-5"
+      class="emotion-0 emotion-1"
     >
       <span
-        class="emotion-0 emotion-1"
+        class="emotion-2 emotion-3"
       >
         copy text
       </span>
       <button
-        class="MuiButtonBase-root MuiIconButton-root  emotion-2 emotion-3"
+        class="MuiButtonBase-root MuiIconButton-root  emotion-4 emotion-5"
         data-testid="copy-icon"
         tabindex="0"
         title="Copy to clipboard"

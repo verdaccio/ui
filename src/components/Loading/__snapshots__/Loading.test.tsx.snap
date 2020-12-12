@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<Loading /> component should render the component in default state 1`] = `
-.emotion-8 {
+.emotion-0 {
   -webkit-transform: translate(-50%,-50%);
   -ms-transform: translate(-50%,-50%);
   transform: translate(-50%,-50%);
@@ -17,7 +17,7 @@ exports[`<Loading /> component should render the component in default state 1`] 
   background: #f7f8f6;
 }
 
-.emotion-0 {
+.emotion-4 {
   display: inline-block;
   vertical-align: middle;
   box-sizing: border-box;
@@ -44,26 +44,26 @@ exports[`<Loading /> component should render the component in default state 1`] 
   justify-content: center;
 }
 
-.emotion-4 {
+.emotion-8 {
   color: #4b5e40;
 }
 
 <div
-  class="emotion-8 emotion-9"
+  class="emotion-0 emotion-1"
   data-testid="loading"
 >
   <div
     class="emotion-2 emotion-3"
   >
     <div
-      class="emotion-0 emotion-1"
+      class="emotion-4 emotion-5"
     />
   </div>
   <div
     class="emotion-6 emotion-7"
   >
     <div
-      class="MuiCircularProgress-root emotion-4 emotion-5 MuiCircularProgress-colorPrimary MuiCircularProgress-indeterminate"
+      class="MuiCircularProgress-root emotion-8 emotion-9 MuiCircularProgress-colorPrimary MuiCircularProgress-indeterminate"
       role="progressbar"
       style="width: 50px; height: 50px;"
     >

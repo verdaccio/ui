@@ -19,7 +19,7 @@ module.exports = {
     '<rootDir>/.vscode/',
     '<rootDir>/test/e2e/',
   ],
-  snapshotSerializers: ['jest-emotion'],
+  snapshotSerializers: ['@emotion/jest/serializer'],
   moduleNameMapper: {
     '\\.(s?css)$': '<rootDir>/jest/identity.js',
     'github-markdown-css': '<rootDir>/jest/identity.js',

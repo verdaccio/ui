@@ -8,7 +8,7 @@ Object {
   margin-bottom: 10px;
 }
 
-.emotion-2 > * {
+.emotion-2>* {
   margin: 5px;
 }
 
@@ -60,7 +60,7 @@ Object {
   margin-bottom: 10px;
 }
 
-.emotion-2 > * {
+.emotion-2>* {
   margin: 5px;
 }
 
@@ -167,7 +167,7 @@ Object {
   margin-bottom: 10px;
 }
 
-.emotion-2 > * {
+.emotion-2>* {
   margin: 5px;
 }
 
@@ -219,7 +219,7 @@ Object {
   margin-bottom: 10px;
 }
 
-.emotion-2 > * {
+.emotion-2>* {
   margin: 5px;
 }
 
