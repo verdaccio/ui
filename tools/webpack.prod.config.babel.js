@@ -2,9 +2,9 @@ const HTMLWebpackPlugin = require('html-webpack-plugin');
 const _ = require('lodash');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
-const UglifyJsWebpackPlugin = require('uglifyjs-webpack-plugin');
+const TerserPlugin = require('terser-webpack-plugin');
 const webpack = require('webpack');
-const merge = require('webpack-merge');
+const { merge } = require('webpack-merge');
 
 const env = require('../config/env');
 
@@ -39,7 +39,10 @@ const prodConf = {
       __APP_VERSION__: `"${version}"`,
     }),
     new MiniCssExtractPlugin({
-      filename: 'style.[contenthash].css',
+      // Options similar to the same options in webpackOptions.output
+      // both options are optional
+      filename: '[name].[contenthash].css',
+      chunkFilename: '[id].[contenthash].css',
     }),
     new HTMLWebpackPlugin({
       title: 'ToReplaceByTitle',
@@ -58,14 +61,14 @@ const prodConf = {
     }),
     new webpack.BannerPlugin(banner),
   ],
-
   optimization: {
-    minimizer: [
-      new UglifyJsWebpackPlugin({
-        sourceMap: true,
-      }),
-      new OptimizeCSSAssetsPlugin({}),
-    ],
+    minimize: true,
+    minimizer: [new TerserPlugin(), new OptimizeCSSAssetsPlugin({})],
+  },
+  performance: {
+    hints: false,
+    maxEntrypointSize: 512000,
+    maxAssetSize: 512000,
   },
 };
 

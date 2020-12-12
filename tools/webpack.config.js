@@ -7,12 +7,12 @@ module.exports = {
 
   output: {
     path: `${env.APP_ROOT}/static/`,
-    filename: '[name].[hash].js',
+    filename: '[name].[fullhash].js',
     publicPath: '/-/static/',
   },
 
   resolve: {
-    extensions: ['.js', '.jsx', '.ts', '.tsx'],
+    extensions: ['.wasm', '.mjs', '.js', '.jsx', '.ts', '.tsx'],
     modules: ['node_modules'],
     alias: {
       'verdaccio-ui/components': `${env.SRC_ROOT}/components`,
@@ -31,15 +31,14 @@ module.exports = {
 
   optimization: {
     runtimeChunk: {
-      name: 'manifest',
+      name: 'runtime',
     },
     splitChunks: {
       cacheGroups: {
-        vendor: {
+        commons: {
           test: /[\\/]node_modules[\\/]/,
           name: 'vendors',
-          priority: -20,
-          chunks: 'all',
+          chunks: 'initial',
         },
       },
     },
@@ -60,6 +59,12 @@ module.exports = {
         test: /\.jsx?$/,
         exclude: /node_modules/,
         use: 'babel-loader',
+      },
+      {
+        test: /\.m?js/,
+        resolve: {
+          fullySpecified: false,
+        },
       },
       {
         test: /\.(jpe?g|png|gif|svg)$/,
@@ -89,7 +94,6 @@ module.exports = {
           },
         ],
       },
-
       /* Typescript loader */
       {
         test: /\.tsx?$/,

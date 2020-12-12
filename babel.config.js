@@ -19,6 +19,7 @@ module.exports = {
     '@babel/proposal-object-rest-spread',
     '@babel/plugin-proposal-optional-chaining',
     '@babel/plugin-proposal-nullish-coalescing-operator',
+    // FIXME: filter in production
     'react-hot-loader/babel',
     '@babel/transform-runtime',
     '@babel/syntax-dynamic-import',
