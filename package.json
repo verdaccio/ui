@@ -149,7 +149,6 @@
     "supertest": "4.0.2",
     "typeface-roboto": "0.0.75",
     "typescript": "3.9.6",
-    "uglifyjs-webpack-plugin": "^2.2.0",
     "url-loader": "^4.1.1",
     "validator": "13.1.1",
     "verdaccio": "4.8.1",
@@ -245,5 +244,8 @@
     "type": "opencollective",
     "url": "https://opencollective.com/verdaccio",
     "logo": "https://opencollective.com/verdaccio/logo.txt"
+  },
+  "dependencies": {
+    "terser-webpack-plugin": "^5.0.3"
   }
 }

@@ -7,7 +7,7 @@ module.exports = {
 
   output: {
     path: `${env.APP_ROOT}/static/`,
-    filename: '[name].[hash].js',
+    filename: '[name].[fullhash].js',
     publicPath: '/-/static/',
   },
 
@@ -21,29 +21,29 @@ module.exports = {
     },
   },
 
-  // plugins: [
-  //   new StyleLintPlugin({
-  //     files: ['src/**/styles.ts'],
-  //     failOnError: false,
-  //     emitErrors: true,
-  //   }),
-  // ],
+  plugins: [
+    new StyleLintPlugin({
+      files: ['src/**/styles.ts'],
+      failOnError: false,
+      emitErrors: true,
+    }),
+  ],
 
-  // optimization: {
-  //   runtimeChunk: {
-  //     name: 'manifest',
-  //   },
-  //   splitChunks: {
-  //     cacheGroups: {
-  //       vendor: {
-  //         test: /[\\/]node_modules[\\/]/,
-  //         name: 'vendors',
-  //         priority: -20,
-  //         chunks: 'all',
-  //       },
-  //     },
-  //   },
-  // },
+  optimization: {
+    runtimeChunk: {
+      name: 'manifest',
+    },
+    splitChunks: {
+      cacheGroups: {
+        defaultVendors: {
+          test: /[\\/]node_modules[\\/]/,
+          name: 'vendors',
+          priority: -20,
+          chunks: 'all',
+        },
+      },
+    },
+  },
 
   module: {
     rules: [
@@ -65,7 +65,7 @@ module.exports = {
         test: /\.m?js/,
         resolve: {
           fullySpecified: false,
-        }
+        },
       },
       {
         test: /\.(jpe?g|png|gif|svg)$/,
