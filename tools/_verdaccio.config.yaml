@@ -46,7 +46,6 @@ packages:
     access: $all
     publish: $authenticated
     unpublish: $authenticated
-    proxy: ver
 middlewares:
   audit:
     enabled: true
