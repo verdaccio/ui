@@ -7,7 +7,7 @@ module.exports = {
     [
       '@babel/env',
       {
-        targets: BROWSER_TARGETS
+        targets: BROWSER_TARGETS,
       },
     ],
     '@babel/react',
