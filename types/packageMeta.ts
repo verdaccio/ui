@@ -4,6 +4,7 @@ export interface PackageMetaInterface {
   time?: Time;
   latest: {
     author?: Author;
+    deprecated?: string;
     name: string;
     dist: {
       fileCount: number;

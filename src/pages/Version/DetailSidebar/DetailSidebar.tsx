@@ -20,7 +20,6 @@ const Repository = loadable(() => import(/* webpackChunkName: "Repository" */ '.
 
 const DetailSidebar: React.FC = () => {
   const detailContext = useContext(DetailContext);
-
   const { packageMeta, packageName, packageVersion } = detailContext;
 
   if (!packageMeta || !packageName) {
