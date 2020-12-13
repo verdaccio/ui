@@ -795,7 +795,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/plugin-syntax-dynamic-import@npm:7.8.3, @babel/plugin-syntax-dynamic-import@npm:^7.8.0":
+"@babel/plugin-syntax-dynamic-import@npm:^7.8.0, @babel/plugin-syntax-dynamic-import@npm:^7.8.3":
   version: 7.8.3
   resolution: "@babel/plugin-syntax-dynamic-import@npm:7.8.3"
   dependencies:
@@ -3059,10 +3059,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:14.14.12":
-  version: 14.14.12
-  resolution: "@types/node@npm:14.14.12"
-  checksum: def4a93f6ba9ea5ccbed7b403988b5e888dcde27c9d00f3f487500a26a36e13826e294fabc6d01ce563059d3567f27ea8c458edc39b502e38659c5154667602b
+"@types/node@npm:14.14.13":
+  version: 14.14.13
+  resolution: "@types/node@npm:14.14.13"
+  checksum: a879dae2e047e75055b0f4fb217aac31e905e49f921054f6425e8494e7a75dec82d351770b1a0e79a00322345896646a4dadc5fa27c857e392d6909e54cdba9e
   languageName: node
   linkType: hard
 
@@ -3205,7 +3205,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/tapable@npm:*, @types/tapable@npm:^1.0.5":
+"@types/tapable@npm:*":
   version: 1.0.6
   resolution: "@types/tapable@npm:1.0.6"
   checksum: 01709a2f8dbea665a39c008ba6995c76210fabb52434815e7632c7fff22ecad1dd49a1d75b8f5b2e9b365c6d7a6407127bed834587df4777b800110c2a74fc36
@@ -3278,7 +3278,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/webpack@npm:^4.41.8":
+"@types/webpack@npm:^4.41.25":
   version: 4.41.25
   resolution: "@types/webpack@npm:4.41.25"
   dependencies:
@@ -3586,7 +3586,7 @@ __metadata:
     "@babel/plugin-proposal-object-rest-spread": 7.12.1
     "@babel/plugin-proposal-optional-chaining": 7.12.7
     "@babel/plugin-proposal-throw-expressions": 7.12.1
-    "@babel/plugin-syntax-dynamic-import": 7.8.3
+    "@babel/plugin-syntax-dynamic-import": ^7.8.3
     "@babel/plugin-syntax-import-meta": 7.10.4
     "@babel/plugin-transform-async-to-generator": 7.12.1
     "@babel/plugin-transform-classes": 7.12.1
@@ -3616,7 +3616,7 @@ __metadata:
     "@types/jest": 26.0.19
     "@types/js-base64": 3.0.0
     "@types/lodash": 4.14.165
-    "@types/node": 14.14.12
+    "@types/node": 14.14.13
     "@types/react": 16.14.2
     "@types/react-autosuggest": 10.0.1
     "@types/react-dom": ^16.9.10
@@ -3625,6 +3625,7 @@ __metadata:
     "@types/request": 2.48.5
     "@types/testing-library__jest-dom": ^5.9.5
     "@types/validator": 13.1.1
+    "@types/webpack": ^4.41.25
     "@types/webpack-env": 1.16.0
     "@typescript-eslint/eslint-plugin": 2.34.0
     "@typescript-eslint/parser": 2.34.0
@@ -3636,7 +3637,7 @@ __metadata:
     babel-eslint: 10.1.0
     babel-jest: 26.6.3
     babel-loader: ^8.2.2
-    babel-plugin-dynamic-import-node: 2.3.3
+    babel-plugin-dynamic-import-node: ^2.3.3
     babel-plugin-emotion: 10.0.33
     bundlesize: 0.18.0
     codeceptjs: 2.6.11
@@ -3662,7 +3663,7 @@ __metadata:
     github-markdown-css: 3.0.1
     harmony-reflect: ^1.6.1
     history: ^4.10.1
-    html-webpack-plugin: ^4.5.0
+    html-webpack-plugin: ^5.0.0-alpha.15
     husky: 4.3.5
     i18next: ^19.8.4
     in-publish: 2.0.1
@@ -4869,7 +4870,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"babel-plugin-dynamic-import-node@npm:2.3.3, babel-plugin-dynamic-import-node@npm:^2.3.3":
+"babel-plugin-dynamic-import-node@npm:^2.3.3":
   version: 2.3.3
   resolution: "babel-plugin-dynamic-import-node@npm:2.3.3"
   dependencies:
@@ -10139,22 +10140,19 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"html-webpack-plugin@npm:^4.5.0":
-  version: 4.5.0
-  resolution: "html-webpack-plugin@npm:4.5.0"
+"html-webpack-plugin@npm:^5.0.0-alpha.15":
+  version: 5.0.0-alpha.15
+  resolution: "html-webpack-plugin@npm:5.0.0-alpha.15"
   dependencies:
     "@types/html-minifier-terser": ^5.0.0
-    "@types/tapable": ^1.0.5
-    "@types/webpack": ^4.41.8
     html-minifier-terser: ^5.0.1
-    loader-utils: ^1.2.3
-    lodash: ^4.17.15
+    loader-utils: 2.0.0
+    lodash: ^4.17.20
     pretty-error: ^2.1.1
-    tapable: ^1.1.3
-    util.promisify: 1.0.0
+    tapable: 2.0.0
   peerDependencies:
-    webpack: ^4.0.0 || ^5.0.0
-  checksum: df4dd38bd886aaac4cdcfa40f80fd35eb310810c8cad5bf1f7b8ca91550ad7d9f277c80dd4015fd2b0ef235d0384e9708b92a9c39f33d1b09090ca6fd8fdb53b
+    webpack: ^5.1.2
+  checksum: 6e377ec538592ef01b69df367729ce8352af0fc2cf7d685045ea0a06a1bcdf6412bf2480ce75d11a24e191341b56800a0d6a69427dbdac098f414f85c3c0bae0
   languageName: node
   linkType: hard
 
@@ -12635,18 +12633,7 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"loader-utils@npm:^1.1.0, loader-utils@npm:^1.2.3, loader-utils@npm:^1.4.0":
-  version: 1.4.0
-  resolution: "loader-utils@npm:1.4.0"
-  dependencies:
-    big.js: ^5.2.2
-    emojis-list: ^3.0.0
-    json5: ^1.0.1
-  checksum: 9fd690e57ad78d32ff2942383b4a7a175eba575280ba5aca3b4d03183fec34aa0db314f49bd3301adf7e60b02471644161bf53149e8f2d18fd6a52627e95a927
-  languageName: node
-  linkType: hard
-
-"loader-utils@npm:^2.0.0":
+"loader-utils@npm:2.0.0, loader-utils@npm:^2.0.0":
   version: 2.0.0
   resolution: "loader-utils@npm:2.0.0"
   dependencies:
@@ -12654,6 +12641,17 @@ fsevents@^1.2.7:
     emojis-list: ^3.0.0
     json5: ^2.1.2
   checksum: a1c2e48781e1501e126a32c39bc1fb1a7e2f02bd99e5aeb8853ddaf3c121fffefcc4579367f97ca6890b58369e571af1c9ec82e4e20db238d560ab359ff25c33
+  languageName: node
+  linkType: hard
+
+"loader-utils@npm:^1.1.0, loader-utils@npm:^1.4.0":
+  version: 1.4.0
+  resolution: "loader-utils@npm:1.4.0"
+  dependencies:
+    big.js: ^5.2.2
+    emojis-list: ^3.0.0
+    json5: ^1.0.1
+  checksum: 9fd690e57ad78d32ff2942383b4a7a175eba575280ba5aca3b4d03183fec34aa0db314f49bd3301adf7e60b02471644161bf53149e8f2d18fd6a52627e95a927
   languageName: node
   linkType: hard
 
@@ -18360,10 +18358,10 @@ resolve@~1.7.1:
   languageName: node
   linkType: hard
 
-"tapable@npm:^1.1.3":
-  version: 1.1.3
-  resolution: "tapable@npm:1.1.3"
-  checksum: b2c2ab20260394b867fd249d8b6ab3e4645e00f9cce16b558b0de5a86291ef05f536f578744549d1618c9032c7f99bc1d6f68967e4aa11cb0dca4461dc4714bc
+"tapable@npm:2.0.0":
+  version: 2.0.0
+  resolution: "tapable@npm:2.0.0"
+  checksum: e6321280f9ace1043b2d2e893b998454227f27da05e5e1f7c92a67752d6a87e2ca529aeb516f31a21c1a92d2532a77518423b7df7aaf7acd3a8df925f02b4c66
   languageName: node
   linkType: hard
 
@@ -19223,16 +19221,6 @@ typescript@3.9.6:
   version: 1.0.2
   resolution: "util-deprecate@npm:1.0.2"
   checksum: 73c2b1cf0210ccac300645384d8443cabbd93194117b2dc1b3bae8d8279ad39aedac857e020c4ea505e96a1045059c7359db3df6a9df0be6b8584166c9d61dc9
-  languageName: node
-  linkType: hard
-
-"util.promisify@npm:1.0.0":
-  version: 1.0.0
-  resolution: "util.promisify@npm:1.0.0"
-  dependencies:
-    define-properties: ^1.1.2
-    object.getownpropertydescriptors: ^2.0.3
-  checksum: 0dffbe1af61c9c034b5e7b411461e46c17c788d855fb02bcbf96cd0f603c086eb83160a3c878c4d69bede9a42118a7ce2b3cc05ed5a235e1c1c04c93bd5608e7
   languageName: node
   linkType: hard
 

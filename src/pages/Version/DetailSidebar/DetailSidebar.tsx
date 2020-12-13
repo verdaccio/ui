@@ -7,14 +7,16 @@ import Paper from 'verdaccio-ui/components/Paper';
 import { Theme } from 'verdaccio-ui/design-tokens/theme';
 
 import { DetailContext } from '..';
+import loadable from '../../../App/utils/loadable';
 
 import DetailSidebarFundButton from './DetailSidebarFundButton';
 import DetailSidebarTitle from './DetailSidebarTitle';
 import Developers, { DeveloperType } from './Developers';
-import Dist from './Dist';
-import Engines from './Engines';
-import Install from './Install';
-import Repository from './Repository';
+
+const Engines = loadable(() => import(/* webpackChunkName: "Engines" */ './Engines'));
+const Dist = loadable(() => import(/* webpackChunkName: "Dist" */ './Dist'));
+const Install = loadable(() => import(/* webpackChunkName: "Install" */ './Install'));
+const Repository = loadable(() => import(/* webpackChunkName: "Repository" */ './Repository'));
 
 const DetailSidebar: React.FC = () => {
   const detailContext = useContext(DetailContext);
