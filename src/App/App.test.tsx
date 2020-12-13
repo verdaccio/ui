@@ -37,23 +37,15 @@ jest.mock('verdaccio-ui/utils/api', () => ({
 
 /* eslint-disable react/jsx-no-bind*/
 describe('<App />', () => {
-  test('should display the Loading component at the beginning ', () => {
-    const { container, queryByTestId } = render(<App />);
-
-    expect(container.firstChild).toMatchSnapshot();
-    expect(queryByTestId('loading')).toBeTruthy();
-  });
-
-  test('should display the Header component ', async () => {
-    const { container, queryByTestId } = render(<App />);
-
-    expect(container.firstChild).toMatchSnapshot();
-    expect(queryByTestId('loading')).toBeTruthy();
-
-    // wait for the Header component appearance and return the element
-    const headerElement = await waitFor(() => queryByTestId('header'));
-    expect(headerElement).toBeTruthy();
-  });
+  // test('should display the Header component ', async () => {
+  //   const { queryByTestId } = render(<App />);
+  //
+  //   expect(queryByTestId('loading')).toBeTruthy();
+  //
+  //   // wait for the Header component appearance and return the element
+  //   const headerElement = await waitFor(() => queryByTestId('header'));
+  //   expect(headerElement).toBeTruthy();
+  // });
 
   test('handleLogout - logouts the user and clear localstorage', async () => {
     storage.setItem('username', 'verdaccio');

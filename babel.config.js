@@ -20,8 +20,24 @@ module.exports = {
     // FIXME: filter in production
     'react-hot-loader/babel',
     '@babel/transform-runtime',
-    '@babel/syntax-dynamic-import',
+    '@babel/plugin-syntax-dynamic-import',
     'emotion',
   ],
+  env: {
+    test: {
+      presets: [
+        [
+          '@babel/preset-env',
+          {
+            bugfixes: true,
+            debug: false,
+          },
+        ],
+        '@babel/preset-react',
+        '@babel/typescript',
+      ],
+      plugins: ['dynamic-import-node'],
+    },
+  },
   ignore: ['**/*.d.ts'],
 };

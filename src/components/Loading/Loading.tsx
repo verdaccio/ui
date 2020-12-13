@@ -10,7 +10,7 @@ const Loading: React.FC = () => (
     <Badge>
       <Logo size="big" />
     </Badge>
-    <Spinner />
+    <Spinner data-testid="spinnerLogo" />
   </Wrapper>
 );
 
