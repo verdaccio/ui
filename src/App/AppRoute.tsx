@@ -1,5 +1,5 @@
 import { createBrowserHistory } from 'history';
-import React, { lazy, useContext } from 'react';
+import React, { useContext } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Route as ReactRouterDomRoute, Switch, Router } from 'react-router-dom';
 
