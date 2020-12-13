@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.15.0](https://github.com/verdaccio/ui/compare/v1.14.0...v1.15.0) (2020-12-13)
+
+
+### Features
+
+* display deprecated packages ([#592](https://github.com/verdaccio/ui/issues/592)) ([64f84bd](https://github.com/verdaccio/ui/commit/64f84bd68b1dc871ada95c088356bbc15c46d0bf))
+* restore code splitting with webpack ([#594](https://github.com/verdaccio/ui/issues/594)) ([a69454b](https://github.com/verdaccio/ui/commit/a69454bb695b8a4f04dd032295a112d60eac17d6))
+* upgrade to webpack 5 ([#590](https://github.com/verdaccio/ui/issues/590)) ([c6ae364](https://github.com/verdaccio/ui/commit/c6ae36497e7c6e3dbdc75f8552ce2fb220ec0197))
+
 ## [1.14.0](https://github.com/verdaccio/ui/compare/v1.13.2...v1.14.0) (2020-10-16)
 
 
