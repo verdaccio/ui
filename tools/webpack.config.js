@@ -34,6 +34,7 @@ module.exports = {
       name: 'runtime',
     },
     splitChunks: {
+      chunks: 'all',
       cacheGroups: {
         commons: {
           test: /[\\/]node_modules[\\/]/,

@@ -1,10 +1,14 @@
 import React from 'react';
 
-import Dependencies from './Dependencies';
+import loadable from '../../../App/utils/loadable';
+
 import DetailContainerContentReadme from './DetailContainerContentReadme';
 import { TabPosition } from './tabs';
-import UpLinks from './UpLinks';
-import Versions from './Versions';
+
+const Versions = loadable(() => import(/* webpackChunkName: "Versions" */ './Versions'));
+const UpLinks = loadable(() => import(/* webpackChunkName: "UpLinks" */ './UpLinks'));
+
+const Dependencies = loadable(() => import(/* webpackChunkName: "Dependencies" */ './Dependencies'));
 
 interface Props {
   tabPosition: TabPosition;

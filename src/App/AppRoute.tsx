@@ -1,14 +1,17 @@
 import { createBrowserHistory } from 'history';
-import React, { lazy, useContext } from 'react';
+import React, { useContext } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Route as ReactRouterDomRoute, Switch, Router } from 'react-router-dom';
 
 import AppContext from './AppContext';
+import loadable from './utils/loadable';
 
-const NotFound = lazy(() => import('verdaccio-ui/components/NotFound'));
-const VersionContextProvider = lazy(() => import('../pages/Version/VersionContextProvider'));
-const VersionPage = lazy(() => import('../pages/Version'));
-const HomePage = lazy(() => import('../pages/home'));
+const NotFound = loadable(() => import(/* webpackChunkName: "NotFound" */ 'verdaccio-ui/components/NotFound'));
+const VersionContextProvider = loadable(() =>
+  import(/* webpackChunkName: "Provider" */ '../pages/Version/VersionContextProvider')
+);
+const VersionPage = loadable(() => import(/* webpackChunkName: "Version" */ '../pages/Version'));
+const HomePage = loadable(() => import(/* webpackChunkName: "Home" */ '../pages/home'));
 
 enum Route {
   ROOT = '/',
