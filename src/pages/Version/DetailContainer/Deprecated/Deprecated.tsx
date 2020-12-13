@@ -7,8 +7,8 @@ import { Theme } from 'verdaccio-ui/design-tokens/theme';
 
 export const CardStyled = styled(Card)<{ theme?: Theme }>(({ theme }) => {
   return {
-    marginTop: '1rem',
-    marginBottom: '1rem',
+    marginTop: theme?.spacing(1),
+    marginBottom: theme?.spacing(0.5),
     backgroundColor: theme?.palette?.error.light,
     opacity: '0.9',
     color: theme?.palette?.error.contrastText,

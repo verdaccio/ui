@@ -9,7 +9,6 @@ import { Theme } from 'verdaccio-ui/design-tokens/theme';
 import { DetailContext } from '..';
 import loadable from '../../../App/utils/loadable';
 
-import Deprecated from './Deprecated';
 import DetailSidebarFundButton from './DetailSidebarFundButton';
 import DetailSidebarTitle from './DetailSidebarTitle';
 import Developers, { DeveloperType } from './Developers';
@@ -21,7 +20,6 @@ const Repository = loadable(() => import(/* webpackChunkName: "Repository" */ '.
 
 const DetailSidebar: React.FC = () => {
   const detailContext = useContext(DetailContext);
-
   const { packageMeta, packageName, packageVersion } = detailContext;
 
   if (!packageMeta || !packageName) {
@@ -36,7 +34,6 @@ const DetailSidebar: React.FC = () => {
         packageName={packageName}
         version={packageVersion || packageMeta.latest.version}
       />
-      {packageMeta?.latest?.deprecated && <Deprecated message={packageMeta?.latest?.deprecated} />}
       <ActionBar />
       <Install />
       <DetailSidebarFundButton />
