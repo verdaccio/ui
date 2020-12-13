@@ -22,8 +22,7 @@ const DetailContainer: React.FC = () => {
   return (
     <Box component="div" display="flex" flexDirection="column" padding={2}>
       <DetailContainerTabs onChange={handleChange} tabPosition={tabPosition} />
-      <Deprecated message={packageMeta.latest.deprecated} />
-
+      {packageMeta?.latest?.deprecated && <Deprecated message={packageMeta?.latest?.deprecated} />}
       <DetailContainerContent readDescription={readMe} tabPosition={tabs[tabPosition]} />
     </Box>
   );
