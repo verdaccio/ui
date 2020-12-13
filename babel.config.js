@@ -1,20 +1,18 @@
-const BROWSER_TARGETS = {
-  browsers: ['last 5 versions', 'FireFox >= 44', 'Safari >= 7', 'Explorer 11', 'last 4 Edge versions'],
-};
-
 module.exports = {
   presets: [
     [
-      '@babel/env',
+      '@babel/preset-env',
       {
-        targets: BROWSER_TARGETS,
+        targets: ['last 5 versions', 'FireFox >= 44', 'Safari >= 7', 'Explorer 11', 'last 4 Edge versions'],
+        bugfixes: true,
+        modules: 'auto',
+        debug: false,
       },
     ],
-    '@babel/react',
+    '@babel/preset-react',
     '@babel/typescript',
   ],
   plugins: [
-    'babel-plugin-dynamic-import-node',
     '@babel/proposal-class-properties',
     '@babel/proposal-object-rest-spread',
     '@babel/plugin-proposal-optional-chaining',
