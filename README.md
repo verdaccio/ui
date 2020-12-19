@@ -22,7 +22,7 @@
 
 ## Contributing
 
-We use `>=yarn`, keep in mind that we use lockfiles and use at least Node `v12` to be able to build the project.
+We use `>=yarn`, keep in mind that we use lockfiles and use at least Node `v14` to be able to build the project.
 
 Install dependencies
 
