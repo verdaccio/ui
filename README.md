@@ -3,7 +3,7 @@
 
 # Version 4 UI Theme
 
-[Verdaccio](https://verdaccio.org/) UI is a [theme plugin](https://verdaccio.org/docs/en/dev-plugins#theme-plugin) build in React, Flow and Emotion. It uses Jest and Enzyme for Unit testing.
+[Verdaccio](https://verdaccio.org/) UI is a [theme plugin](https://verdaccio.org/docs/en/dev-plugins#theme-plugin) build in React, Typescript and Emotion. It uses Jest and Testing Library for Unit testing.
 
 
 [![verdaccio (latest)](https://img.shields.io/npm/v/@verdaccio/ui-theme/latest.svg)](https://www.npmjs.com/package/@verdaccio/ui-theme)
