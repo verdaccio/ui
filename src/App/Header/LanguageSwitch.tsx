@@ -25,7 +25,7 @@ import MenuItem from 'verdaccio-ui/components/MenuItem';
 import { Theme } from 'verdaccio-ui/design-tokens/theme';
 import ThemeContext from 'verdaccio-ui/design-tokens/ThemeContext';
 
-import { Language } from '../../../../i18n/config';
+import { Language } from '../../../i18n/config';
 
 const lngDetails: Record<Language, { translation: TFunctionKeys; icon: React.ReactElement }> = {
   'fr-FR': {
@@ -161,7 +161,7 @@ const StyledLanguageIcon = styled(LanguageIcon)<{ theme?: Theme }>(({ theme }) =
 const Wrapper = styled('div')<{ theme?: Theme }>(({ theme }) => ({
   width: 220,
   display: 'none',
-  [`@media screen and (min-width: ${theme && theme.breakPoints.medium}px)`]: {
+  [`@media screen and (min-width: ${theme?.breakPoints.medium}px)`]: {
     display: 'inline-block',
   },
 }));
