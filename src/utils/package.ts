@@ -1,5 +1,3 @@
-import { isObject } from 'util';
-
 import { UpLinks } from '@verdaccio/types';
 import dayjs from 'dayjs';
 import localizedFormat from 'dayjs/plugin/localizedFormat';
@@ -25,7 +23,7 @@ export function formatLicense(license: any): string | undefined {
     return license;
   }
 
-  if (license && isObject(license) && license.type) {
+  if (license?.type) {
     return license.type;
   }
 
@@ -49,7 +47,7 @@ export function formatRepository(repository: any): string | null {
     return repository;
   }
 
-  if (repository && isObject(repository) && repository.url) {
+  if (repository?.url) {
     return repository.url;
   }
 
