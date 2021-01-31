@@ -5,15 +5,9 @@ aliases:
     ~/ui-theme
   - &defaults
     working_directory: *repo_path
-  - &node_latest_browser
-    docker:
-      - image: circleci/node:latest-browsers
   - &node_latest_executor
     docker:
       - image: circleci/node:latest
-  - &node_lts_executor
-    docker:
-      - image: circleci/node:lts
   - &default_executor
     <<: *node_latest_executor
   - &yarn_cache_key
@@ -88,25 +82,6 @@ jobs:
           key: *coverage_key
           paths:
           - coverage
-
-  test_e2e:
-    <<: *defaults
-    <<: *node_latest_browser
-    steps:
-      - *restore_repo
-      - run:
-          name: Test E2E Node (LTS)
-          command: yarn test:e2e
-
-  test_node_lts:
-    <<: *defaults
-    <<: *node_lts_executor
-    steps:
-      - *restore_repo
-      - run:
-          name: Test with Node (LTS)
-          command: yarn test
-
   coverage:
     <<: *defaults
     <<: *default_executor
@@ -124,8 +99,7 @@ jobs:
           path: coverage
           prefix: coverage
       - store_test_results:
-          path: coverage/clover.xml
-
+          path: coverage/clover.xmlS
   publish_package:
     <<: *defaults
     <<: *default_executor
@@ -152,14 +126,6 @@ workflows:
           requires:
             - prepare
           <<: *ignore_non_dev_branches
-      - test_node_lts:
-          requires:
-            - prepare
-          <<: *ignore_non_dev_branches
-      - test_e2e:
-          requires:
-            - prepare
-          <<: *ignore_non_dev_branches
       - coverage:
           requires:
             - test_node_latest
@@ -168,7 +134,5 @@ workflows:
           requires:
             - test_bundlesize
             - test_node_latest
-            - test_node_lts
-            - test_e2e
             - coverage
           <<: *execute_on_release
