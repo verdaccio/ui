@@ -1,5 +1,6 @@
 const protectedPackageMetadata = require('./partials/pkg-protected');
 const scopedPackageMetadata = require('./partials/pkg-scoped');
+const { percySnapshot } = require('@percy/puppeteer');
 
 describe('/ (Verdaccio Page)', () => {
   let page;
@@ -58,6 +59,7 @@ describe('/ (Verdaccio Page)', () => {
     await page.waitFor(1000);
 
     expect(text).toContain('verdaccio-server-e2e');
+    await percySnapshot(page, 'main page - should display a title');
   });
   //
 
