@@ -1,3 +1,5 @@
+const { percySnapshot } = require('@percy/puppeteer');
+
 const protectedPackageMetadata = require('./partials/pkg-protected');
 const scopedPackageMetadata = require('./partials/pkg-scoped');
 
@@ -58,6 +60,7 @@ describe('/ (Verdaccio Page)', () => {
     await page.waitFor(1000);
 
     expect(text).toContain('verdaccio-server-e2e');
+    await percySnapshot(page, 'test');
   });
   //
 
