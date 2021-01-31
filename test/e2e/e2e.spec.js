@@ -65,7 +65,7 @@ describe('/ (Verdaccio Page)', () => {
 
   test('should match title with no packages published', async () => {
     const text = await page.evaluate(() => document.querySelector('#help-card__title').textContent);
-    expect(text).toMatch('No Package Published Yet.');
+    expect(text).toMatch('No Package Published.');
     await percySnapshot(page, 'main page - should match title with no packages published');
   });
   //
@@ -199,7 +199,7 @@ describe('/ (Verdaccio Page)', () => {
     await page.reload();
     await page.waitFor(500);
     const text = await page.evaluate(() => document.querySelector('#help-card__title').textContent);
-    expect(text).toMatch('No Package Published Yet');
+    expect(text).toMatch('No Package Published.');
   });
 
   test('should go to 404 page', async () => {

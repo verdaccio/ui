@@ -72,7 +72,7 @@
         "username-or-password-cant-be-empty": "Username or password can't be empty!"
     },
     "help": {
-        "title": "No Package Published Yet.",
+        "title": "No Package Published.",
         "sub-title": "To publish your first package just:",
         "first-step": "1. Login",
         "first-step-command-line": "npm adduser --registry {{registryUrl}}",

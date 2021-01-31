@@ -13,7 +13,7 @@ describe('<PackageList /> component', () => {
       packages: [],
     };
     const wrapper = render(<PackageList packages={props.packages} />);
-    expect(wrapper.getByText('No Package Published Yet.')).toBeInTheDocument();
+    expect(wrapper.getByText('No Package Published.')).toBeInTheDocument();
   });
 
   test('should load the component with packages', () => {
