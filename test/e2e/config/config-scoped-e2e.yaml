@@ -1,6 +1,6 @@
 web:
   enable: true
-  title: verdaccio-server-e2e
+  title: verdaccio-server
 
 store:
   memory:

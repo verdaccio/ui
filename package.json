@@ -201,7 +201,7 @@
     "test:clean": "jest --clearCache",
     "test:acceptance": "codeceptjs run --steps",
     "test:acceptance:server": "concurrently --kill-others \"yarn run verdaccio:server\" \"yarn run test:acceptance\"",
-    "test:e2e": " jest --config ./test/jest.config.e2e.js",
+    "test:e2e": "jest --config ./test/jest.config.e2e.js",
     "test": "BABEL_ENV=test NODE_ENV=test TZ=UTC jest --config ./jest/jest.config.js --maxWorkers 2 --passWithNoTests",
     "test:update-snapshot": "yarn run test -- -u",
     "test:size": "bundlesize",
