@@ -45,9 +45,9 @@ exports[`<Install /> renders correctly 1`] = `
 
 .emotion-10 {
   display: inline-block;
-  text-overflow: ellipsis;
   overflow: hidden;
   white-space: nowrap;
+  text-overflow: ellipsis;
   height: 21px;
   font-size: 1rem;
 }
