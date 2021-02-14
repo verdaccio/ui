@@ -37,9 +37,9 @@ const Wrapper = styled('div')({
 
 const Content = styled('span')({
   display: 'inline-block',
-  textOverflow: 'ellipsis',
   overflow: 'hidden',
   whiteSpace: 'nowrap',
+  textOverflow: 'ellipsis',
   height: '21px',
   fontSize: '1rem',
 });
