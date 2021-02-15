@@ -25,6 +25,7 @@
     "types/*.d.ts",
     "scripts/lib",
     "node_modules/config",
+    "test/unit",
   ],
   "exclude": [
     "node_modules"

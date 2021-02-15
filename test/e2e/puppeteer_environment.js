@@ -29,13 +29,13 @@ class PuppeteerEnvironment extends NodeEnvironment {
     const config1 = new VerdaccioConfig(
       path.join(__dirname, './store-e2e'),
       path.join(__dirname, './config/config-scoped-e2e.yaml'),
-      'http://0.0.0.0:55558/',
+      'http://localhost:55558/',
       55558
     );
     const config2 = new VerdaccioConfig(
       path.join(__dirname, './store-e2e'),
       path.join(__dirname, './config/config-protected-e2e.yaml'),
-      'http://0.0.0.0:55552/',
+      'http://localhost:55552/',
       55552
     );
     const server1 = new Server.default(config1.domainPath);
