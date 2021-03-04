@@ -84,13 +84,7 @@ export const getTheme = (themeMode: ThemeMode) => {
   const palette = themeModes[themeMode];
   return createMuiTheme({
     typography: {
-      fontFamily: [
-        '-apple-system',
-        'BlinkMacSystemFont',
-        '"Helvetica Neue"',
-        'Arial',
-        'sans-serif',
-      ].join(','),
+      fontFamily: ['-apple-system', 'BlinkMacSystemFont', '"Helvetica Neue"', 'Arial', 'sans-serif'].join(','),
     },
     palette: {
       type: themeMode,

@@ -179,18 +179,6 @@
     {
       "path": "./static/main.*.js",
       "maxSize": "400 kB"
-    },
-    {
-      "path": "./static/*.svg",
-      "maxSize": "1.3 kB"
-    },
-    {
-      "path": "./static/*.png",
-      "maxSize": "15 kB"
-    },
-    {
-      "path": "./static/fonts/*.{woff,woff2}",
-      "maxSize": "20 kB"
     }
   ],
   "scripts": {
