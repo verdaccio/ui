@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.0.0](https://github.com/verdaccio/ui/compare/v1.15.1...v2.0.0) (2021-03-11)
+
+
+### ⚠ BREAKING CHANGES
+
+* reduce bundle size webpack improvement (#606)
+
+### Features
+
+* reduce bundle size webpack improvement ([#606](https://github.com/verdaccio/ui/issues/606)) ([cccb573](https://github.com/verdaccio/ui/commit/cccb57335010eff0054d9f299300f01b3a1e68c6))
+* **tests:** Add Percy Visual Snapshots ([#602](https://github.com/verdaccio/ui/issues/602)) ([5ba5aa0](https://github.com/verdaccio/ui/commit/5ba5aa053dcfb9d0cfde6cf45fa8936672e812ac))
+
 ### [1.15.1](https://github.com/verdaccio/ui/compare/v1.15.0...v1.15.1) (2021-01-16)
 
 
