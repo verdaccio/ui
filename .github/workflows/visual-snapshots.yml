@@ -1,6 +1,5 @@
 name: Visual Snapshots
 on:
-  push:
   pull_request:
     paths:
       - .github/workflows/visual-snapshots.yml
