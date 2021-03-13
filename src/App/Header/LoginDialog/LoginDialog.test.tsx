@@ -1,6 +1,6 @@
 import React from 'react';
 
-import api from 'verdaccio-ui/utils/api';
+import api from 'verdaccio-ui/providers/API/api';
 import { render, waitFor, fireEvent } from 'verdaccio-ui/utils/test-react-testing-library';
 
 import AppContext, { AppContextProps } from '../../AppContext';

@@ -6,7 +6,8 @@
     <title>
         <%= htmlWebpackPlugin.options.title %>
     </title>
-    <link rel="icon" type="image/png" href="<%= htmlWebpackPlugin.options.verdaccioURL %>/-/static/favicon.ico" />
+    <base href="<%= htmlWebpackPlugin.options.basePath %>">
+    <link rel="icon" type="image/png" href="<%= htmlWebpackPlugin.options.faviIcoPath %>" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <script>
         window.__VERDACCIO_BASENAME_UI_OPTIONS = JSON.parse('<%= htmlWebpackPlugin.options.__UI_OPTIONS %>');

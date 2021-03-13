@@ -28,6 +28,7 @@ module.exports = {
     // note: this section has to be on sync with webpack configuration
     'verdaccio-ui/components/(.*)': '<rootDir>/src/components/$1',
     'verdaccio-ui/utils/(.*)': '<rootDir>/src/utils/$1',
+    'verdaccio-ui/providers/(.*)': '<rootDir>/src/providers/$1',
     'verdaccio-ui/design-tokens/(.*)': '<rootDir>/src/design-tokens/$1',
   },
 };

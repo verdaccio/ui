@@ -3850,11 +3850,11 @@ __metadata:
     emotion: 10.0.27
     emotion-theming: 10.0.27
     eslint: 7.15.0
+    eslint-config-prettier: 7.2.0
     eslint-loader: ^4.0.2
     eslint-plugin-codeceptjs: 1.3.0
     eslint-plugin-import: 2.22.1
     eslint-plugin-jsx-a11y: 6.4.1
-    eslint-plugin-prettier: 3.2.0
     eslint-plugin-react: 7.21.5
     eslint-plugin-react-hooks: 4.2.0
     eslint-plugin-verdaccio: 9.6.1
@@ -8446,6 +8446,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+"eslint-config-prettier@npm:7.2.0":
+  version: 7.2.0
+  resolution: "eslint-config-prettier@npm:7.2.0"
+  peerDependencies:
+    eslint: ">=7.0.0"
+  bin:
+    eslint-config-prettier: bin/cli.js
+  checksum: 6812150ea49703cd64035527205b4905bc1edcd34646e71f71665e1acff9ab4648f872598389bdb209964093ad73993830a2c821ba12642764a5293513b92a58
+  languageName: node
+  linkType: hard
+
 "eslint-import-resolver-node@npm:^0.3.2, eslint-import-resolver-node@npm:^0.3.4":
   version: 0.3.4
   resolution: "eslint-import-resolver-node@npm:0.3.4"
@@ -8588,18 +8599,6 @@ __metadata:
     eslint: ">= 5.0.0"
     prettier: ">= 1.13.0"
   checksum: 6f22a63a79ac09dbb6784898de51319a5766437c65eb4d9eac94b7442d983cb551a518725b5555caddd4e015e0ec561497cbd88c575f65722006609fee5487f7
-  languageName: node
-  linkType: hard
-
-"eslint-plugin-prettier@npm:3.2.0":
-  version: 3.2.0
-  resolution: "eslint-plugin-prettier@npm:3.2.0"
-  dependencies:
-    prettier-linter-helpers: ^1.0.0
-  peerDependencies:
-    eslint: ">=5.0.0"
-    prettier: ">=1.13.0"
-  checksum: a69ac31b1a39cf54b461b48a05928aa8c7535a87e097e2239a7e9ac22e156c93a6f13447e2ae482b466ae2b89c29c75ecc00137faca6d4ebb1182a81265a4708
   languageName: node
   linkType: hard
 

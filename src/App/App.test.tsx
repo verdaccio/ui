@@ -30,7 +30,7 @@ jest.mock('verdaccio-ui/utils/storage', () => {
   return new LocalStorageMock();
 });
 
-jest.mock('verdaccio-ui/utils/api', () => ({
+jest.mock('verdaccio-ui/providers/API/api', () => ({
   // eslint-disable-next-line jest/no-mocks-import
   request: require('../../jest/unit/components/__mocks__/api').default.request,
 }));

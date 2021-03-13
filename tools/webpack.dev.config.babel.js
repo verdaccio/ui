@@ -34,8 +34,9 @@ export default {
       __APP_VERSION__: `"${getPackageJson('version')}"`,
     }),
     new HTMLWebpackPlugin({
+      basePath: 'http://localhost:4872',
       __UI_OPTIONS: JSON.stringify({
-        base: new URL('/', 'https://localhost:4872'),
+        base: new URL('/', 'http://localhost:4872'),
       }),
       title: 'Verdaccio Dev UI',
       scope: '',

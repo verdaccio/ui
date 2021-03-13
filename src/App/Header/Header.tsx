@@ -52,7 +52,7 @@ const Header: React.FC<Props> = ({ withoutSearch }) => {
             onOpenRegistryInfoDialog={() => setOpenInfoDialog(true)}
             onToggleLogin={() => setShowLoginModal(!showLoginModal)}
             onToggleMobileNav={() => setShowMobileNavBar(!showMobileNavBar)}
-            username={user && user.username}
+            username={user?.username}
             withoutSearch={withoutSearch}
           />
         </InnerNavBar>
