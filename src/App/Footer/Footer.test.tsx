@@ -12,7 +12,7 @@ describe('<Footer /> component', () => {
   });
 
   afterAll(() => {
-    delete window.VERDACCIO_VERSION;
+    delete window.__VERDACCIO_BASENAME_UI_OPTIONS.version;
   });
 
   test('should load the initial state of Footer component', () => {
