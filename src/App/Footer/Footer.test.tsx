@@ -1,12 +1,14 @@
 import React from 'react';
 
+import APIProvider from 'verdaccio-ui/providers/API/APIProvider';
+import AppConfigurationProvider from 'verdaccio-ui/providers/config';
 import { render } from 'verdaccio-ui/utils/test-react-testing-library';
 
 import Footer from './Footer';
 
 describe('<Footer /> component', () => {
   beforeAll(() => {
-    window.VERDACCIO_VERSION = 'v.1.0.0';
+    window.__VERDACCIO_BASENAME_UI_OPTIONS.version = 'v.1.0.0';
   });
 
   afterAll(() => {
@@ -14,7 +16,13 @@ describe('<Footer /> component', () => {
   });
 
   test('should load the initial state of Footer component', () => {
-    const { container } = render(<Footer />);
+    const { container } = render(
+      <AppConfigurationProvider>
+        <APIProvider>
+          <Footer />
+        </APIProvider>
+      </AppConfigurationProvider>
+    );
     expect(container.firstChild).toMatchSnapshot();
   });
 });

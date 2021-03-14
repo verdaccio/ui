@@ -5,6 +5,7 @@ import { useTranslation, Trans } from 'react-i18next';
 import { Austria, Brazil, Earth, Nicaragua, Spain, Germany, India, China, Taiwan } from 'verdaccio-ui/components/Icons';
 import Logo from 'verdaccio-ui/components/Logo';
 import { Theme } from 'verdaccio-ui/design-tokens/theme';
+import { useConfig } from 'verdaccio-ui/providers/config';
 import { goToVerdaccioWebsite } from 'verdaccio-ui/utils/windows';
 
 import { Wrapper, Left, Right, Love, Inner } from './styles';
@@ -12,6 +13,7 @@ import { Wrapper, Left, Right, Love, Inner } from './styles';
 /* eslint-disable react/jsx-key */
 const Footer = () => {
   const { t } = useTranslation();
+  const { configOptions } = useConfig();
   return (
     <Wrapper>
       <Inner>
@@ -32,9 +34,13 @@ const Footer = () => {
           </ToolTip>
         </Left>
         <Right>
-          {t('footer.powered-by')}
-          <Logo onClick={goToVerdaccioWebsite} size="x-small" />
-          {`/ ${window.VERDACCIO_VERSION}`}
+          {configOptions?.version && (
+            <>
+              {t('footer.powered-by')}
+              <Logo onClick={goToVerdaccioWebsite} size="x-small" />
+              {`/ ${configOptions.version}`}
+            </>
+          )}
         </Right>
       </Inner>
     </Wrapper>

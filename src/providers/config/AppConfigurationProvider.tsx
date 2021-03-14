@@ -2,8 +2,15 @@ import React, { createContext, FunctionComponent, useContext, useMemo, useState 
 
 export type VerdaccioOptions = {
   url_prefix?: string;
+  uri?: string;
   base?: string;
   language?: string;
+  version?: string;
+  protocol?: string;
+  host?: string;
+  scope?: string;
+  title?: string;
+  primaryColor?: string;
   darkMode?: boolean;
 };
 
