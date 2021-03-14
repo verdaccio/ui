@@ -1,7 +1,5 @@
 import React from 'react';
 
-import APIProvider from 'verdaccio-ui/providers/API/APIProvider';
-import AppConfigurationProvider from 'verdaccio-ui/providers/config';
 import { render } from 'verdaccio-ui/utils/test-react-testing-library';
 
 import Footer from './Footer';
@@ -16,13 +14,7 @@ describe('<Footer /> component', () => {
   });
 
   test('should load the initial state of Footer component', () => {
-    const { container } = render(
-      <AppConfigurationProvider>
-        <APIProvider>
-          <Footer />
-        </APIProvider>
-      </AppConfigurationProvider>
-    );
+    const { container } = render(<Footer />);
     expect(container.firstChild).toMatchSnapshot();
   });
 });

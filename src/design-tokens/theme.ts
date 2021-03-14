@@ -21,7 +21,7 @@ const colors = {
   love: '#e25555',
   nobel01: '#999999',
   nobel02: '#9f9f9f',
-  primary: window.VERDACCIO_PRIMARY_COLOR || '#4b5e40',
+  primary: '#4b5e40',
   secondary: '#20232a',
   background: '#fff',
   dodgerBlue: '#1ba1f2',
@@ -39,6 +39,14 @@ const themeModes = {
     background: '#1A202C',
   },
 };
+
+function applyPrimaryColor(mode: ThemeMode, primaryColor: string): any {
+  if (mode === 'light') {
+    themeModes['light'].primary = primaryColor;
+  }
+
+  return themeModes[mode];
+}
 
 export type ThemeMode = keyof typeof themeModes;
 
@@ -80,8 +88,9 @@ const customizedTheme = {
 
 type CustomizedTheme = typeof customizedTheme;
 
-export const getTheme = (themeMode: ThemeMode) => {
-  const palette = themeModes[themeMode];
+export const getTheme = (themeMode: ThemeMode, primaryColor: string) => {
+  const palette = applyPrimaryColor(themeMode, primaryColor);
+  console.log('palete', palette);
   return createMuiTheme({
     typography: {
       fontFamily: ['-apple-system', 'BlinkMacSystemFont', '"Helvetica Neue"', 'Arial', 'sans-serif'].join(','),

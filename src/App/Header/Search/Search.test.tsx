@@ -4,8 +4,6 @@ import { BrowserRouter as Router } from 'react-router-dom';
 import '@testing-library/jest-dom/extend-expect';
 
 import api from 'verdaccio-ui/providers/API/api';
-import APIProvider from 'verdaccio-ui/providers/API/APIProvider';
-import AppConfigurationProvider from 'verdaccio-ui/providers/config';
 import { render, fireEvent, waitFor } from 'verdaccio-ui/utils/test-react-testing-library';
 
 jest.mock('lodash/debounce', () =>
@@ -20,11 +18,7 @@ import Search from './Search';
 /* eslint-disable verdaccio/jsx-spread */
 const ComponentToBeRendered: React.FC = () => (
   <Router>
-    <AppConfigurationProvider>
-      <APIProvider>
-        <Search />
-      </APIProvider>
-    </AppConfigurationProvider>
+    <Search />
   </Router>
 );
 

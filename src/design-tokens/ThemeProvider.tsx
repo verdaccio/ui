@@ -3,6 +3,8 @@ import { ThemeProvider as EmotionThemeProvider } from 'emotion-theming';
 import i18next from 'i18next';
 import React, { useEffect } from 'react';
 
+import { useConfig } from 'verdaccio-ui/providers/config';
+
 import loadDayJSLocale from './load-dayjs-locale';
 import { getTheme, ThemeMode } from './theme';
 import ThemeContext from './ThemeContext';
@@ -12,6 +14,7 @@ const ThemeProvider: React.FC = ({ children }) => {
   const prefersDarkMode = window.matchMedia?.('(prefers-color-scheme:dark)').matches;
   const isDarkModeDefault = window?.__VERDACCIO_BASENAME_UI_OPTIONS?.darkMode || prefersDarkMode;
   const currentLanguage = i18next.languages?.[0];
+  const { configOptions } = useConfig();
 
   const [isDarkMode, setIsDarkMode] = useLocalStorage('darkMode', !!isDarkModeDefault);
   const [language, setLanguage] = useLocalStorage('language', currentLanguage);
@@ -26,11 +29,10 @@ const ThemeProvider: React.FC = ({ children }) => {
     changeLanguage();
     loadDayJSLocale();
   }, [language, changeLanguage]);
-
   return (
     <ThemeContext.Provider value={{ isDarkMode, setIsDarkMode, language, setLanguage }}>
-      <EmotionThemeProvider theme={getTheme(themeMode)}>
-        <MuiThemeProvider theme={getTheme(themeMode)}>{children}</MuiThemeProvider>
+      <EmotionThemeProvider theme={getTheme(themeMode, configOptions?.primaryColor)}>
+        <MuiThemeProvider theme={getTheme(themeMode, configOptions?.primaryColor)}>{children}</MuiThemeProvider>
       </EmotionThemeProvider>
     </ThemeContext.Provider>
   );

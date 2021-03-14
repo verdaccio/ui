@@ -2,8 +2,8 @@ import React, { useState, useContext } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import Button from 'verdaccio-ui/components/Button';
+import { useConfig } from 'verdaccio-ui/providers/config';
 import storage from 'verdaccio-ui/utils/storage';
-import { getRegistryURL } from 'verdaccio-ui/utils/url';
 
 import AppContext from '../../App/AppContext';
 
@@ -31,6 +31,7 @@ const Header: React.FC<Props> = ({ withoutSearch }) => {
   }
 
   const { user, scope, setUser } = appContext;
+  const { configOptions } = useConfig();
 
   /**
    * Logouts user
@@ -59,7 +60,7 @@ const Header: React.FC<Props> = ({ withoutSearch }) => {
         <HeaderInfoDialog
           isOpen={isInfoDialogOpen}
           onCloseDialog={() => setOpenInfoDialog(false)}
-          registryUrl={getRegistryURL()}
+          registryUrl={configOptions.base}
           scope={scope}
         />
       </NavBar>

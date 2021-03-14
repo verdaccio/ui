@@ -64,7 +64,7 @@ i18n
   // init i18next
   // for all options read: https://www.i18next.com/overview/configuration-options
   .init({
-    // in case window.VEDACCIO_LANGUAGE is undefined,it will fall back to 'en-US'
+    // in case window.__VERDACCIO_BASENAME_UI_OPTIONS.language is undefined,it will fall back to 'en-US'
     lng: window?.__VERDACCIO_BASENAME_UI_OPTIONS?.language || 'en-US',
     fallbackLng: 'en-US',
     whitelist: [

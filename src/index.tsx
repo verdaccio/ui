@@ -13,14 +13,14 @@ const rootNode = document.getElementById('root');
 const renderApp = (Component: React.ElementType): void => {
   ReactDOM.render(
     <AppContainer>
-      <ThemeProvider>
-        <StyleBaseline />
-        <AppConfigurationContext>
+      <AppConfigurationContext>
+        <ThemeProvider>
+          <StyleBaseline />
           <APIProvider>
             <Component />
           </APIProvider>
-        </AppConfigurationContext>
-      </ThemeProvider>
+        </ThemeProvider>
+      </AppConfigurationContext>
     </AppContainer>,
     rootNode
   );

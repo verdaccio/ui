@@ -16,8 +16,5 @@ export interface VerdaccioOptions {
 declare global {
   interface Window {
     __VERDACCIO_BASENAME_UI_OPTIONS: VerdaccioOptions;
-    VERDACCIO_PRIMARY_COLOR: string;
-    VERDACCIO_LOGO: string;
-    VERDACCIO_SCOPE: string;
   }
 }
