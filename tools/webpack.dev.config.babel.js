@@ -36,7 +36,7 @@ export default {
     new HTMLWebpackPlugin({
       basePath: 'http://localhost:4872',
       __UI_OPTIONS: JSON.stringify({
-        base: new URL('/', 'http://localhost:4872'),
+        base: 'http://localhost:4872',
       }),
       title: 'Verdaccio Dev UI',
       scope: '',

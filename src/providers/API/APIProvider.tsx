@@ -36,8 +36,7 @@ const APIProvider: FunctionComponent = ({ children }) => {
   const { configOptions } = useConfig();
 
   const buildURL = (basePath: string) => {
-    const url = `${configOptions?.base}-/verdaccio/${basePath}`;
-
+    const url = `${configOptions?.base}/-/verdaccio/${basePath}`;
     return url;
   };
 
