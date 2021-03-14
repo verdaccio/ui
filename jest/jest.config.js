@@ -15,6 +15,7 @@ module.exports = {
     '<rootDir>/scripts',
     '<rootDir>/.circleci',
     '<rootDir>/tools',
+    '<rootDir>/jest',
     '<rootDir>/build',
     '<rootDir>/.vscode/',
     '<rootDir>/test/e2e/',

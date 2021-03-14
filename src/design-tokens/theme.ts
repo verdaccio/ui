@@ -90,7 +90,6 @@ type CustomizedTheme = typeof customizedTheme;
 
 export const getTheme = (themeMode: ThemeMode, primaryColor: string) => {
   const palette = applyPrimaryColor(themeMode, primaryColor);
-  console.log('palete', palette);
   return createMuiTheme({
     typography: {
       fontFamily: ['-apple-system', 'BlinkMacSystemFont', '"Helvetica Neue"', 'Arial', 'sans-serif'].join(','),
