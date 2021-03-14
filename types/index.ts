@@ -13,6 +13,5 @@ declare global {
     VERDACCIO_LOGO: string;
     VERDACCIO_SCOPE: string;
     VERDACCIO_VERSION: string;
-    VERDACCIO_API_URL: string;
   }
 }

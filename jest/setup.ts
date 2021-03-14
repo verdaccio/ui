@@ -9,8 +9,6 @@ import 'mutationobserver-shim';
 global.__APP_VERSION__ = '1.0.0';
 // @ts-ignore : Property '__VERDACCIO_BASENAME_UI_OPTIONS' does not exist on type 'Global'.
 global.__VERDACCIO_BASENAME_UI_OPTIONS = { base: 'http://localhost' };
-// @ts-ignore : Property 'VERDACCIO_API_URL' does not exist on type 'Global'.
-global.VERDACCIO_API_URL = 'https://verdaccio.tld';
 
 const customGlobal: GlobalWithFetchMock = global as GlobalWithFetchMock;
 customGlobal.fetch = require('jest-fetch-mock');
