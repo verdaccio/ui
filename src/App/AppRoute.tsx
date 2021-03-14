@@ -22,7 +22,6 @@ enum Route {
 }
 
 export const history = createBrowserHistory({
-  // @ts-ignore
   basename: window?.__VERDACCIO_BASENAME_UI_OPTIONS?.url_prefix,
 });
 

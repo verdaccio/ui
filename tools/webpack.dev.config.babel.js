@@ -50,7 +50,7 @@ export default {
       }),
       title: 'Verdaccio Dev UI',
       filename: 'index.html',
-      verdaccioURL: '//localhost:4872',
+      faviIcoPath: '/-/static/favicon.ico',
       template: `${env.SRC_ROOT}/template/index.html`,
       debug: true,
       inject: true,
