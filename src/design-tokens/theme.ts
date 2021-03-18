@@ -1,5 +1,7 @@
 import createMuiTheme from '@material-ui/core/styles/createMuiTheme';
 
+import { PRIMARY_COLOR } from 'verdaccio-ui/utils/colors';
+
 const colors = {
   black: '#000',
   white: '#fff',
@@ -21,7 +23,7 @@ const colors = {
   love: '#e25555',
   nobel01: '#999999',
   nobel02: '#9f9f9f',
-  primary: '#4b5e40',
+  primary: PRIMARY_COLOR,
   secondary: '#20232a',
   background: '#fff',
   dodgerBlue: '#1ba1f2',

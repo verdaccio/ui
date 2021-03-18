@@ -1,4 +1,5 @@
 /* eslint-disable react-hooks/exhaustive-deps */
+import { Package } from '@verdaccio/types';
 import React, { createContext, FunctionComponent, useContext, useMemo } from 'react';
 
 import { useConfig } from 'verdaccio-ui/providers/config';
@@ -12,7 +13,7 @@ type ConfigProviderProps = {
   callReadme: (packageName: string, packageVersion?: string) => Promise<string>;
   callDetailPage: (packageName: string, packageVersion?: string) => Promise<PackageMetaInterface>;
   callSearch: (value: string, signal: AbortSignal) => Promise<string>;
-  getPackages: () => Promise<any>;
+  getPackages: () => Promise<Package[]>;
   doLogin: (username: string, password: string) => Promise<LoginBody>;
   getResource: (link: string) => Promise<Blob>;
 };
@@ -62,10 +63,10 @@ const APIProvider: FunctionComponent = ({ children }) => {
     return API.request(buildURL(`search/${encodeURIComponent(value)}`), 'GET', { signal, headers: {} });
   };
 
-  const getPackages = async (): Promise<any> => {
+  const getPackages = async (): Promise<Package[]> => {
     const packages = await API.request(buildURL('packages'), 'GET');
 
-    return packages;
+    return packages as Package[];
   };
 
   const doLogin = async (username: string, password: string): Promise<LoginBody> => {

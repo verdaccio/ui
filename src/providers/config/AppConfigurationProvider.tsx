@@ -2,29 +2,31 @@ import isEmpty from 'lodash/isEmpty';
 import isNil from 'lodash/isNil';
 import React, { createContext, FunctionComponent, useContext, useMemo, useState } from 'react';
 
+import { PRIMARY_COLOR } from 'verdaccio-ui/utils/colors';
+
 export type VerdaccioOptions = {
   url_prefix: string;
-  uri?: string;
   base: string;
+  scope: string;
+  title: string;
+  primaryColor: string;
+  darkMode: boolean;
+  uri?: string;
   language?: string;
   version?: string;
   protocol?: string;
   host?: string;
-  scope: string;
-  title: string;
   logo?: string;
-  primaryColor: string;
-  darkMode: boolean;
 };
 
 type ConfigProviderProps = {
   configOptions: VerdaccioOptions;
-  setConfigOptions: any;
+  setConfigOptions: Function;
 };
 
 const defaultValues: ConfigProviderProps = {
   configOptions: {
-    primaryColor: '#4b5e40',
+    primaryColor: PRIMARY_COLOR,
     darkMode: false,
     scope: '',
     base: '',
@@ -38,7 +40,7 @@ const defaultValues: ConfigProviderProps = {
 function getConfiguration() {
   const uiConfiguration = window?.__VERDACCIO_BASENAME_UI_OPTIONS ?? defaultValues.configOptions;
   if (isNil(uiConfiguration.primaryColor) || isEmpty(uiConfiguration.primaryColor)) {
-    uiConfiguration.primaryColor = '#4b5e40';
+    uiConfiguration.primaryColor = PRIMARY_COLOR;
   }
 
   return uiConfiguration;
