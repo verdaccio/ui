@@ -47,7 +47,7 @@ const APIProvider: FunctionComponent = ({ children }) => {
   };
 
   const callDetailPage = async (packageName: string, packageVersion?: string): Promise<PackageMetaInterface> => {
-    const packageMeta = await API.request<PackageMetaInterface>(
+  return await API.request<PackageMetaInterface>(
       buildURL(`sidebar/${packageName}${packageVersion ? `?v=${packageVersion}` : ''}`),
       'GET'
     );
