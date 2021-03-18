@@ -1,7 +1,7 @@
 import { ThemeProvider as MuiThemeProvider } from '@material-ui/core/styles';
 import { ThemeProvider as EmotionThemeProvider } from 'emotion-theming';
 import i18next from 'i18next';
-import React, { useEffect } from 'react';
+import React, { useEffect, useCallback } from 'react';
 
 import { useConfig } from 'verdaccio-ui/providers/config';
 
@@ -21,18 +21,21 @@ const ThemeProvider: React.FC = ({ children }) => {
 
   const themeMode: ThemeMode = isDarkMode ? 'dark' : 'light';
 
-  const changeLanguage = async () => {
+  const changeLanguage = useCallback(async () => {
     await i18next.changeLanguage(language);
-  };
+  }, [language]);
+
+  const currentTheme = getTheme(themeMode, configOptions?.primaryColor);
 
   useEffect(() => {
     changeLanguage();
     loadDayJSLocale();
   }, [language, changeLanguage]);
+
   return (
     <ThemeContext.Provider value={{ isDarkMode, setIsDarkMode, language, setLanguage }}>
-      <EmotionThemeProvider theme={getTheme(themeMode, configOptions?.primaryColor)}>
-        <MuiThemeProvider theme={getTheme(themeMode, configOptions?.primaryColor)}>{children}</MuiThemeProvider>
+      <EmotionThemeProvider theme={currentTheme}>
+        <MuiThemeProvider theme={currentTheme}>{children}</MuiThemeProvider>
       </EmotionThemeProvider>
     </ThemeContext.Provider>
   );

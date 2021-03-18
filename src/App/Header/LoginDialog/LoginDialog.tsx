@@ -25,7 +25,6 @@ const LoginDialog: React.FC<Props> = ({ onClose, open = false }) => {
   const appContext = useContext(AppContext);
   const { doLogin } = useAPI();
 
-  // eslint-disable-next-line react-hooks/exhaustive-deps
   const makeLogin = useCallback(
     async (username?: string, password?: string): Promise<LoginBody> => {
       // checks isEmpty

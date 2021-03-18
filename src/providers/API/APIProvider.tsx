@@ -65,30 +65,23 @@ const APIProvider: FunctionComponent = ({ children }) => {
   };
 
   const doLogin = async (username: string, password: string): Promise<LoginBody> => {
-    const response: LoginBody = await API.request(buildURL('login'), 'POST', {
+    return await API.request(buildURL('login'), 'POST', {
       body: JSON.stringify({ username, password }),
       headers: {
         Accept: HEADERS.JSON,
         'Content-Type': HEADERS.JSON,
       },
     });
-    const result: LoginBody = {
-      username: response.username,
-      token: response.token,
-    };
-    return result;
   };
 
   const getResource = async (link: string): Promise<Blob> => {
-    const fileStream: Blob = await API.request(link, 'GET', {
+    return await API.request(link, 'GET', {
       headers: {
         ['accept']:
           'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3',
       },
       credentials: 'include',
     });
-
-    return fileStream;
   };
 
   const value = useMemo(
@@ -108,6 +101,4 @@ const APIProvider: FunctionComponent = ({ children }) => {
 
 export default APIProvider;
 
-const useAPI = () => useContext(AppAPIContext);
-
-export { useAPI };
+export const useAPI = () => useContext(AppAPIContext);
