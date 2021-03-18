@@ -37,8 +37,7 @@ const APIProvider: FunctionComponent = ({ children }) => {
   const { configOptions } = useConfig();
 
   const buildURL = (basePath: string) => {
-    const url = `${configOptions?.base}/-/verdaccio/${basePath}`;
-    return url;
+    return `${configOptions?.base}/-/verdaccio/${basePath}`;
   };
 
   const callReadme = async (packageName: string, packageVersion?: string): Promise<string> => {
@@ -49,12 +48,10 @@ const APIProvider: FunctionComponent = ({ children }) => {
   };
 
   const callDetailPage = async (packageName: string, packageVersion?: string): Promise<PackageMetaInterface> => {
-    const packageMeta = await API.request<PackageMetaInterface>(
+    return await API.request<PackageMetaInterface>(
       buildURL(`sidebar/${packageName}${packageVersion ? `?v=${packageVersion}` : ''}`),
       'GET'
     );
-
-    return packageMeta;
   };
 
   const callSearch = async (value: string, signal: AbortSignal): Promise<string> => {
@@ -64,9 +61,7 @@ const APIProvider: FunctionComponent = ({ children }) => {
   };
 
   const getPackages = async (): Promise<Package[]> => {
-    const packages = await API.request(buildURL('packages'), 'GET');
-
-    return packages as Package[];
+    return await API.request(buildURL('packages'), 'GET');
   };
 
   const doLogin = async (username: string, password: string): Promise<LoginBody> => {
