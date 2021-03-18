@@ -62,9 +62,7 @@ const APIProvider: FunctionComponent = ({ children }) => {
   };
 
   const getPackages = async (): Promise<any> => {
-    const packages = await API.request(buildURL('packages'), 'GET');
-
-    return packages;
+    return  await API.request(buildURL('packages'), 'GET');
   };
 
   const doLogin = async (username: string, password: string): Promise<LoginBody> => {
