@@ -63,6 +63,4 @@ const AppConfigurationProvider: FunctionComponent = ({ children }) => {
 
 export default AppConfigurationProvider;
 
-const useConfig = () => useContext(AppConfigurationContext);
-
-export { useConfig };
+export const useConfig = () => useContext(AppConfigurationContext);
