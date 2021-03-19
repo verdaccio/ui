@@ -46,7 +46,7 @@ const prodConf = {
     }),
     new HTMLWebpackPlugin({
       title: 'ToReplaceByTitle',
-      basePath: 'ToReplaceByVerdaccio',
+      basePath: 'ToReplaceByVerdaccioBase',
       faviIcoPath: `ToReplaceByVerdaccioFavico`,
       __UI_OPTIONS: 'ToReplaceByVerdaccioUI',
       filename: 'index.html',
