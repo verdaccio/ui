@@ -6,11 +6,11 @@ import Footer from './Footer';
 
 describe('<Footer /> component', () => {
   beforeAll(() => {
-    window.VERDACCIO_VERSION = 'v.1.0.0';
+    window.__VERDACCIO_BASENAME_UI_OPTIONS.version = 'v.1.0.0';
   });
 
   afterAll(() => {
-    delete window.VERDACCIO_VERSION;
+    delete window.__VERDACCIO_BASENAME_UI_OPTIONS.version;
   });
 
   test('should load the initial state of Footer component', () => {

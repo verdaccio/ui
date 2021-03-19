@@ -1,4 +1,4 @@
-import api, { handleResponseType } from '../../src/utils/api';
+import api, { handleResponseType } from './api';
 
 describe('api', () => {
   describe('handleResponseType', () => {
@@ -43,19 +43,6 @@ describe('api', () => {
       fetchSpy.mockRestore();
     });
 
-    test('when there is no VERDACCIO_URL is defined', () => {
-      const { VERDACCIO_API_URL } = window;
-      delete window.VERDACCIO_API_URL;
-      // @ts-ignore
-      window.VERDACCIO_API_URL = undefined;
-
-      expect(() => {
-        api.request('https://verdaccio.tld');
-      }).toThrow(new Error('VERDACCIO_API_URL is not defined!'));
-
-      window.VERDACCIO_API_URL = VERDACCIO_API_URL;
-    });
-
     test('when url is a resource url', async () => {
       fetchSpy.mockImplementation(() =>
         Promise.resolve({
@@ -67,7 +54,7 @@ describe('api', () => {
         })
       );
 
-      const response = await api.request('/resource');
+      const response = await api.request('https://verdaccio.tld/resource');
 
       expect(fetchSpy).toHaveBeenCalledWith('https://verdaccio.tld/resource', {
         credentials: 'same-origin',
@@ -91,8 +78,8 @@ describe('api', () => {
         })
       );
 
-      const api = require('../../src/utils/api').default;
-      const response = await api.request('/resource', 'GET');
+      const api = require('./api').default;
+      const response = await api.request('https://verdaccio.tld/resource', 'GET');
 
       expect(fetchSpy).toHaveBeenCalledWith('https://verdaccio.tld/resource', {
         credentials: 'same-origin',

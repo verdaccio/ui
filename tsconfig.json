@@ -17,7 +17,8 @@
     "paths": {
       "verdaccio-ui/components/*": ["src/components/*"],
       "verdaccio-ui/design-tokens/*": ["src/design-tokens/*"],
-      "verdaccio-ui/utils/*": ["src/utils/*"]
+      "verdaccio-ui/utils/*": ["src/utils/*"],
+      "verdaccio-ui/providers/*": ["src/providers/*"]
     },
   },
   "include": [

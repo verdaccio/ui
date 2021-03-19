@@ -18,6 +18,7 @@ module.exports = {
       'verdaccio-ui/components': `${env.SRC_ROOT}/components`,
       'verdaccio-ui/design-tokens': `${env.SRC_ROOT}/design-tokens`,
       'verdaccio-ui/utils': `${env.SRC_ROOT}/utils`,
+      'verdaccio-ui/providers': `${env.SRC_ROOT}/providers`,
     },
   },
 
