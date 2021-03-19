@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.1.0](https://github.com/verdaccio/ui/compare/v2.0.0...v2.1.0) (2021-03-19)
+
+
+### Features
+
+* api provider and config provider ([#608](https://github.com/verdaccio/ui/issues/608)) ([a2e9969](https://github.com/verdaccio/ui/commit/a2e99691cef9ddaafa14713783b5efe9fa71924f))
+
 ## [2.0.0](https://github.com/verdaccio/ui/compare/v1.15.1...v2.0.0) (2021-03-11)
 
 
