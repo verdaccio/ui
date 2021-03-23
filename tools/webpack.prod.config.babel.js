@@ -1,4 +1,3 @@
-const _ = require('lodash');
 const TerserPlugin = require('terser-webpack-plugin');
 const webpack = require('webpack');
 const { WebpackManifestPlugin } = require('webpack-manifest-plugin');
