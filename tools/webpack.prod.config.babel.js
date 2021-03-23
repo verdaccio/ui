@@ -1,9 +1,7 @@
-const HTMLWebpackPlugin = require('html-webpack-plugin');
 const _ = require('lodash');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
 const webpack = require('webpack');
+const { WebpackManifestPlugin } = require('webpack-manifest-plugin');
 const { merge } = require('webpack-merge');
 
 const env = require('../config/env');
@@ -19,6 +17,7 @@ const banner = `
     Package: ${name}
     Version: v${version}
     License: ${license}
+    https://www.verdaccio.org
     `;
 
 const prodConf = {
@@ -38,27 +37,14 @@ const prodConf = {
       'process.env.NODE_ENV': '"production"',
       __APP_VERSION__: `"${version}"`,
     }),
-    new MiniCssExtractPlugin({
-      // Options similar to the same options in webpackOptions.output
-      // both options are optional
-      filename: '[name].[contenthash].css',
-      chunkFilename: '[id].[contenthash].css',
-    }),
-    new HTMLWebpackPlugin({
-      title: 'ToReplaceByTitle',
-      basePath: 'ToReplaceByVerdaccio',
-      faviIcoPath: `ToReplaceByVerdaccioFavico`,
-      __UI_OPTIONS: 'ToReplaceByVerdaccioUI',
-      filename: 'index.html',
-      template: `${env.SRC_ROOT}/template/index.html`,
-      debug: false,
-      inject: true,
+    new WebpackManifestPlugin({
+      removeKeyHash: true,
     }),
     new webpack.BannerPlugin(banner),
   ],
   optimization: {
     minimize: true,
-    minimizer: [new TerserPlugin(), new OptimizeCSSAssetsPlugin({})],
+    minimizer: [new TerserPlugin()],
   },
   performance: {
     hints: 'warning',
@@ -66,11 +52,5 @@ const prodConf = {
     maxAssetSize: 512000,
   },
 };
-
-prodConf.module.rules = baseConfig.module.rules
-  .filter(loader => Array.isArray(loader.use) && loader.use.find(v => /css/.test(v.loader.split('-')[0])))
-  .forEach(loader => {
-    loader.use = [MiniCssExtractPlugin.loader].concat(_.tail(loader.use));
-  });
 
 module.exports = merge(baseConfig, prodConf);
