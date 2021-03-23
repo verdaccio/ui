@@ -25,6 +25,6 @@ jobs:
       - name: Lint
         run: yarn lint
       - name: Build
-        run: yarn build
+        run: yarn build:e2e
       - name: E2E
         run: yarn test:e2e

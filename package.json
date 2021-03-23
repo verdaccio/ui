@@ -198,6 +198,7 @@
     "dev:web": "babel-node tools/dev.server.js",
     "verdaccio:server": "node tools/verdaccio.js",
     "build": "webpack --config tools/webpack.prod.config.babel.js",
+    "build:e2e": "webpack --config tools/webpack.e2e.config.babel.js",
     "build:stats": "webpack --config tools/webpack.prod.config.babel.js --json > stats.json",
     "build:size": "webpack --config tools/webpack.prod.config.babel.js --json | webpack-bundle-size-analyzer",
     "dev": "concurrently --kill-others \"yarn run dev:web\" \"yarn run verdaccio:server\""
