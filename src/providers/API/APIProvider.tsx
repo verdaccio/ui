@@ -37,7 +37,7 @@ const APIProvider: FunctionComponent = ({ children }) => {
   const { configOptions } = useConfig();
 
   const buildURL = (basePath: string) => {
-    return `${configOptions?.base}/-/verdaccio/${basePath}`;
+    return `${configOptions?.base}-/verdaccio/${basePath}`;
   };
 
   const callReadme = async (packageName: string, packageVersion?: string): Promise<string> => {
