@@ -26,5 +26,6 @@ jobs:
         run: yarn lint
       - name: Build
         run: yarn build
-      - name: E2E
-        run: yarn test:e2e
+# disabled temporary
+#      - name: E2E
+#        run: yarn test:e2e

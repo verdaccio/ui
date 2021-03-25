@@ -1,5 +1,11 @@
 const path = require('path');
 
 module.exports = () => {
-  return path.join(__dirname, 'static');
+  return {
+    staticPath: path.join(__dirname, 'static'),
+    manifest: require('./static/manifest.json'),
+    manifestFiles: {
+      js: ['runtime.js', 'vendors.js', 'main.js'],
+    },
+  };
 };
