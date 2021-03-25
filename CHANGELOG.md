@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [3.0.0](https://github.com/verdaccio/ui/compare/v2.1.0...v3.0.0) (2021-03-25)
+
+
+### ⚠ BREAKING CHANGES
+
+* manifest over html in production build (#610)
+
+### Features
+
+* manifest over html in production build ([#610](https://github.com/verdaccio/ui/issues/610)) ([b9260cb](https://github.com/verdaccio/ui/commit/b9260cb7a6f15f04bbbb69e1ee295430562f1c13))
+
 ## [2.1.0](https://github.com/verdaccio/ui/compare/v2.0.0...v2.1.0) (2021-03-19)
 
 
