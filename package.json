@@ -151,7 +151,7 @@
     "typescript": "3.9.6",
     "url-loader": "^4.1.1",
     "validator": "13.1.1",
-    "verdaccio": "4.11.3",
+    "verdaccio": "next",
     "verdaccio-auth-memory": "9.7.2",
     "verdaccio-memory": "9.7.2",
     "wait-on": "5.2.0",
