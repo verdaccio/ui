@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [3.0.1](https://github.com/verdaccio/ui/compare/v3.0.0...v3.0.1) (2021-04-08)
+
+
+### Bug Fixes
+
+* inject css files to the dom as style ([#612](https://github.com/verdaccio/ui/issues/612)) ([6de7ccf](https://github.com/verdaccio/ui/commit/6de7ccfaefdd8cd0ebe378e9bad87a7f659dc903))
+
 ## [3.0.0](https://github.com/verdaccio/ui/compare/v2.1.0...v3.0.0) (2021-03-25)
 
 
