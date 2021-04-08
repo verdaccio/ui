@@ -64,8 +64,8 @@ module.exports = {
         type: 'asset/inline',
       },
       {
-        test: /\.css$/,
-        type: 'asset/inline',
+        test: /\.css$/i,
+        use: ['style-loader', 'css-loader'],
       },
       /* Typescript loader */
       {
