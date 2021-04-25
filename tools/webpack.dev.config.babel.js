@@ -39,7 +39,7 @@ export default {
         scope: '',
         filename: 'index.html',
         verdaccioURL: '//localhost:4873/',
-        base: 'https://localhost:4872/',
+        base: 'http://localhost:4872/',
       }),
       template: `${env.SRC_ROOT}/template/index.html`,
       debug: true,

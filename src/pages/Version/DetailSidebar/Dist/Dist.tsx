@@ -34,7 +34,7 @@ const Dist: FC = () => {
 
   return (
     <List subheader={<StyledText variant="subtitle1">{t('sidebar.distribution.title')}</StyledText>}>
-      <DistListItem button={true}>
+      <DistListItem button={false}>
         <DistChip name={t('sidebar.distribution.file-count')}>{dist.fileCount}</DistChip>
         <DistChip name={t('sidebar.distribution.size')}>{dist.unpackedSize && fileSizeSI(dist.unpackedSize)}</DistChip>
         <DistChip name={t('sidebar.distribution.license')}>{formatLicense(license)}</DistChip>
