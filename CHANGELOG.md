@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [3.1.0](https://github.com/verdaccio/ui/compare/v3.0.1...v3.1.0) (2021-04-27)
+
+
+### Features
+
+* expand allowed protocols for URLs in repository component ([#412](https://github.com/verdaccio/ui/issues/412)) ([b0c5bf8](https://github.com/verdaccio/ui/commit/b0c5bf8556188d5fbaa3f225d4819c3a68e68d59))
+* update dependencies ([#615](https://github.com/verdaccio/ui/issues/615)) ([227e8a0](https://github.com/verdaccio/ui/commit/227e8a04db47c530cfe3f8f13ba3db9a2806bf21))
+
+
+### Bug Fixes
+
+* markdown lists don't render bullet points ([#614](https://github.com/verdaccio/ui/issues/614)) ([990f749](https://github.com/verdaccio/ui/commit/990f749f984a9aa440f75d36a945a2487798e43e))
+* package detail sidebar overflow ([#613](https://github.com/verdaccio/ui/issues/613)) ([c12f18f](https://github.com/verdaccio/ui/commit/c12f18feea69b597def802e11369ca91924a8621))
+
 ### [3.0.1](https://github.com/verdaccio/ui/compare/v3.0.0...v3.0.1) (2021-04-08)
 
 
