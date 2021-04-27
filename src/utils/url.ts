@@ -4,7 +4,7 @@ import '../../types';
 
 export function isURL(url: string): boolean {
   return isURLValidator(url || '', {
-    protocols: ['http', 'https', 'git+https'],
+    protocols: ['git', 'git+ssh', 'git+http', 'git+https', 'git+file', 'http', 'https'],
     require_protocol: true,
     require_tld: false,
   });
