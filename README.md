@@ -22,6 +22,8 @@
 
 ## Contributing
 
+> If you are willing to ship an improvement for Verdaccio 5.x, here is the repo where you must contribute, but remember, if you are willing your feature persist in next major releases, you also need to PR [here](https://github.com/verdaccio/verdaccio/tree/master/packages/plugins/ui-theme) since this repo is intended to be archived after Verdaccio 5 is being deprecated in the future.
+
 We use `>=yarn`, keep in mind that we use lockfiles and use at least Node `v14` to be able to build the project.
 
 Install dependencies
