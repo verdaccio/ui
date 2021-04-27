@@ -10,6 +10,7 @@ Object {
 
 .emotion-2 {
   padding-left: 0;
+  overflow-x: auto;
   padding-right: 0;
 }
 
@@ -28,11 +29,8 @@ Object {
         >
           Latest Distribution
         </span>
-        <div
-          aria-disabled="false"
-          class="MuiButtonBase-root MuiListItem-root emotion-2 emotion-3 MuiListItem-gutters MuiListItem-button"
-          role="button"
-          tabindex="0"
+        <li
+          class="MuiListItem-root emotion-2 emotion-3 MuiListItem-gutters"
         >
           <div
             class="MuiChip-root emotion-4 emotion-5"
@@ -60,10 +58,7 @@ Object {
               10.00 Bytes
             </span>
           </div>
-          <span
-            class="MuiTouchRipple-root"
-          />
-        </div>
+        </li>
       </ul>
     </div>
   </body>,
@@ -74,6 +69,7 @@ Object {
 
 .emotion-2 {
   padding-left: 0;
+  overflow-x: auto;
   padding-right: 0;
 }
 
@@ -91,11 +87,8 @@ Object {
       >
         Latest Distribution
       </span>
-      <div
-        aria-disabled="false"
-        class="MuiButtonBase-root MuiListItem-root emotion-2 emotion-3 MuiListItem-gutters MuiListItem-button"
-        role="button"
-        tabindex="0"
+      <li
+        class="MuiListItem-root emotion-2 emotion-3 MuiListItem-gutters"
       >
         <div
           class="MuiChip-root emotion-4 emotion-5"
@@ -123,10 +116,7 @@ Object {
             10.00 Bytes
           </span>
         </div>
-        <span
-          class="MuiTouchRipple-root"
-        />
-      </div>
+      </li>
     </ul>
   </div>,
   "debug": [Function],
@@ -193,6 +183,7 @@ Object {
 
 .emotion-2 {
   padding-left: 0;
+  overflow-x: auto;
   padding-right: 0;
 }
 
@@ -211,11 +202,8 @@ Object {
         >
           Latest Distribution
         </span>
-        <div
-          aria-disabled="false"
-          class="MuiButtonBase-root MuiListItem-root emotion-2 emotion-3 MuiListItem-gutters MuiListItem-button"
-          role="button"
-          tabindex="0"
+        <li
+          class="MuiListItem-root emotion-2 emotion-3 MuiListItem-gutters"
         >
           <div
             class="MuiChip-root emotion-4 emotion-5"
@@ -256,10 +244,7 @@ Object {
               MIT
             </span>
           </div>
-          <span
-            class="MuiTouchRipple-root"
-          />
-        </div>
+        </li>
       </ul>
     </div>
   </body>,
@@ -270,6 +255,7 @@ Object {
 
 .emotion-2 {
   padding-left: 0;
+  overflow-x: auto;
   padding-right: 0;
 }
 
@@ -287,11 +273,8 @@ Object {
       >
         Latest Distribution
       </span>
-      <div
-        aria-disabled="false"
-        class="MuiButtonBase-root MuiListItem-root emotion-2 emotion-3 MuiListItem-gutters MuiListItem-button"
-        role="button"
-        tabindex="0"
+      <li
+        class="MuiListItem-root emotion-2 emotion-3 MuiListItem-gutters"
       >
         <div
           class="MuiChip-root emotion-4 emotion-5"
@@ -332,10 +315,7 @@ Object {
             MIT
           </span>
         </div>
-        <span
-          class="MuiTouchRipple-root"
-        />
-      </div>
+      </li>
     </ul>
   </div>,
   "debug": [Function],
@@ -402,6 +382,7 @@ Object {
 
 .emotion-2 {
   padding-left: 0;
+  overflow-x: auto;
   padding-right: 0;
 }
 
@@ -420,11 +401,8 @@ Object {
         >
           Latest Distribution
         </span>
-        <div
-          aria-disabled="false"
-          class="MuiButtonBase-root MuiListItem-root emotion-2 emotion-3 MuiListItem-gutters MuiListItem-button"
-          role="button"
-          tabindex="0"
+        <li
+          class="MuiListItem-root emotion-2 emotion-3 MuiListItem-gutters"
         >
           <div
             class="MuiChip-root emotion-4 emotion-5"
@@ -465,10 +443,7 @@ Object {
               MIT
             </span>
           </div>
-          <span
-            class="MuiTouchRipple-root"
-          />
-        </div>
+        </li>
       </ul>
     </div>
   </body>,
@@ -479,6 +454,7 @@ Object {
 
 .emotion-2 {
   padding-left: 0;
+  overflow-x: auto;
   padding-right: 0;
 }
 
@@ -496,11 +472,8 @@ Object {
       >
         Latest Distribution
       </span>
-      <div
-        aria-disabled="false"
-        class="MuiButtonBase-root MuiListItem-root emotion-2 emotion-3 MuiListItem-gutters MuiListItem-button"
-        role="button"
-        tabindex="0"
+      <li
+        class="MuiListItem-root emotion-2 emotion-3 MuiListItem-gutters"
       >
         <div
           class="MuiChip-root emotion-4 emotion-5"
@@ -541,10 +514,7 @@ Object {
             MIT
           </span>
         </div>
-        <span
-          class="MuiTouchRipple-root"
-        />
-      </div>
+      </li>
     </ul>
   </div>,
   "debug": [Function],

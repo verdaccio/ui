@@ -13,6 +13,7 @@ export const StyledText = styled(Text)<{ theme?: Theme }>(props => ({
 
 export const DistListItem = styled(ListItem)({
   paddingLeft: 0,
+  overflowX: 'auto',
   paddingRight: 0,
 });
 
