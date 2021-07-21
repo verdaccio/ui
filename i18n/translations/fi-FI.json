@@ -1,0 +1,168 @@
+{
+    "copy-to-clipboard": "Kopioi leikepöydälle",
+    "author-anonymous": "Anonyymi",
+    "author-unknown": "Tuntematon",
+    "action-bar-action": {
+        "visit-home-page": "Vieraile kotisivulla",
+        "open-an-issue": "Luo virheilmoitus",
+        "download-tarball": "Lataa tarball"
+    },
+    "dialog": {
+        "registry-info": {
+            "title": "Rekistrin tiedot"
+        }
+    },
+    "header": {
+        "documentation": "Dokumentaatio",
+        "registry-info": "Rekisterin tiedot",
+        "greetings": "Hei "
+    },
+    "search": {
+        "packages": "Hae paketteja"
+    },
+    "autoComplete": {
+        "loading": "Ladataan...",
+        "no-results-found": "Ei hakutuloksia",
+        "clear": "Tyhjennä",
+        "expand": "Avaa",
+        "collapse": "Sulje"
+    },
+    "tab": {
+        "uplinks": "Uplinkit",
+        "versions": "Versiot",
+        "dependencies": "Vaatimukset",
+        "readme": "Readme"
+    },
+    "uplinks": {
+        "title": "Uplinkit",
+        "no-items": "{{name}}:llä ei ole uplinkkejä"
+    },
+    "versions": {
+        "current-tags": "Tagit",
+        "version-history": "Versiohistoria",
+        "not-available": "Ei saatavilla"
+    },
+    "package": {
+        "published-on": "Julkaistu {{time}} •",
+        "version": "v{{version}}",
+        "visit-home-page": "Mene etusivulle",
+        "homepage": "Etusivu",
+        "open-an-issue": "Avaa virheilmoitus",
+        "bugs": "Bugit",
+        "download": "Lataa {{what}}",
+        "the-tar-file": "tar-tiedosto",
+        "tarball": "Tarball"
+    },
+    "dependencies": {
+        "has-no-dependencies": "{{package}}:lla ei ole vaatimuksia.",
+        "dependency-block": "{{package}}@{{version}}"
+    },
+    "form": {
+        "username": "Käyttäjänimi",
+        "password": "Salasana"
+    },
+    "form-placeholder": {
+        "username": "Sinun käyttäjänimi",
+        "password": "Sinun vahva salasana"
+    },
+    "form-validation": {
+        "required-field": "Tämä kenttä on pakollinen",
+        "required-min-length": "Tämän kentän täytyy olla vähintään {{length}} merkkiä pitkä",
+        "unable-to-sign-in": "Sisäänkirjautuminen ei ole mahdollista",
+        "username-or-password-cant-be-empty": "Käyttäjänimi tai salasana ei voi olla tyhjä!"
+    },
+    "help": {
+        "title": "Ei pakettia julkaistu.",
+        "sub-title": "Julkaistaksesi paketin:",
+        "first-step": "1. Kirjaudu",
+        "first-step-command-line": "npm adduser --registry {{registryUrl}}",
+        "second-step": "2. Julkaise",
+        "second-step-command-line": "npm publish --registry {{registryUrl}}",
+        "third-step": "3. Uudelleenlataa tämä sivu."
+    },
+    "sidebar": {
+        "detail": {
+            "latest-version": "Viimeisin v{{version}}",
+            "version": "v{{version}}"
+        },
+        "installation": {
+            "title": "Asennus",
+            "install-using-yarn": "Asenna käyttäen yarn",
+            "install-using-yarn-command": "yarn add {{packageName}}",
+            "install-using-npm": "Asenna käyttäen npm",
+            "install-using-npm-command": "npm install {{packageName}}",
+            "install-using-pnpm": "Asenna käyttäen pnpm",
+            "install-using-pnpm-command": "pnpm install {{packageName}}"
+        },
+        "repository": {
+            "title": "Säilö"
+        },
+        "author": {
+            "title": "Luoja"
+        },
+        "distribution": {
+            "title": "Latest Distribution",
+            "license": "Lisenssi",
+            "size": "Koko",
+            "file-count": "tiedostomäärä"
+        },
+        "maintainers": {
+            "title": "Ylläpitäjät"
+        },
+        "contributors": {
+            "title": "Avustajat"
+        },
+        "engines": {
+            "npm-version": "NPM-versio",
+            "node-js": "NODE JS"
+        }
+    },
+    "footer": {
+        "powered-by": "Moottorina toimii ",
+        "made-with-love-on": "Tehty <0>♥</0> "
+    },
+    "button": {
+        "close": "Sulje",
+        "cancel": "Peru",
+        "login": "Kirjaudu",
+        "logout": "Kirjaudu ulos",
+        "go-to-the-home-page": "Mene etusivulle",
+        "learn-more": "Lue lisää",
+        "fund-this-package": "<0>Tue</0> tätä pakettia"
+    },
+    "error": {
+        "unspecific": "Jotain meni pieleen.",
+        "404": {
+            "page-not-found": "404 - Sivua ei löytynyt",
+            "sorry-we-could-not-find-it": "Pahoittelut, emme löytäneet sitä"
+        },
+        "app-context-not-correct-used": "App contextia ei käytetä oikein",
+        "theme-context-not-correct-used": "Theme contextia ei käytetä oikein",
+        "package-meta-is-required-at-detail-context": "DetailContext vaatii packageMetan"
+    },
+    "lng": {
+        "english": "Englanti",
+        "czech": "Tsekki",
+        "japanese": "Japani",
+        "portuguese": "Portugali",
+        "spanish": "Espanja",
+        "german": "Saksa",
+        "chinese": "Kiina",
+        "chineseTraditional": "Kiina (perinteinen)",
+        "french":  "Ranska",
+        "russian": "Venäjä",
+        "turkish": "Turkki",
+        "ukraine": "Ukraina",
+        "khmer": "Khmer"
+    },
+    "flag": {
+        "austria": "Austria",
+        "brazil": "Brazil",
+        "spain": "Spain",
+        "nicaragua": "Nicaragua",
+        "india": "India",
+        "china": "China",
+        "germany": "Germany",
+        "taiwan": "Taiwan"
+    }
+}
