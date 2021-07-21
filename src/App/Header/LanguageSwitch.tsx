@@ -20,6 +20,7 @@ import {
   Usa,
   Czech,
   Taiwan,
+  Finnish,
 } from 'verdaccio-ui/components/Icons';
 import MenuItem from 'verdaccio-ui/components/MenuItem';
 import { Theme } from 'verdaccio-ui/design-tokens/theme';
@@ -79,6 +80,10 @@ const lngDetails: Record<Language, { translation: TFunctionKeys; icon: React.Rea
   'zh-TW': {
     translation: 'lng.chineseTraditional',
     icon: <Taiwan size="md" />,
+  },
+  'fi-FI': {
+    translation: 'lng.finnish',
+    icon: <Finnish size="md" />,
   },
 };
 
