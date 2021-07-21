@@ -14,6 +14,7 @@ import translationTR from './translations/tr-TR.json';
 import translationUA from './translations/uk-UA.json';
 import translationCN from './translations/zh-CN.json';
 import translatiobTW from './translations/zh-TW.json';
+import translationFI from './translations/fi-FI.json';
 
 const languages = {
   'en-US': {
@@ -55,6 +56,9 @@ const languages = {
   'zh-TW': {
     translation: translatiobTW,
   },
+  'fi-FI': {
+    translation: translationFI,
+  },
 };
 
 type Language = keyof typeof languages;
@@ -81,6 +85,7 @@ i18n
       'uk-UA',
       'km-KH',
       'zh-TW',
+      'fi-FI',
     ],
     load: 'currentOnly',
     resources: languages,
