@@ -1,7 +1,9 @@
+⚠️⚠️ **THIS REPOSITORY IS ON STALE, ALL NEW FEATURES SHOULD BE REDIRECTED TO [https://github.com/verdaccio/verdaccio/tree/master/packages/plugins/ui-theme](https://github.com/verdaccio/verdaccio/tree/master/packages/plugins/ui-theme)** OR IF YOU WANT THE FEATURE AVAILABLE FOR 5.X SHOULD OPEN A PR IN BOTH REPOSITORIES. ⚠️⚠️
+
 
 ![verdaccio gif](https://user-images.githubusercontent.com/558752/52916111-fa4ba980-32db-11e9-8a64-f4e06eb920b3.png)
 
-# Version 4 UI Theme
+# Version 5 UI Theme
 
 [Verdaccio](https://verdaccio.org/) UI is a [theme plugin](https://verdaccio.org/docs/en/dev-plugins#theme-plugin) build in React, Typescript and Emotion. It uses Jest and Testing Library for Unit testing.
 
