@@ -1,73 +1,7 @@
-⚠️⚠️ **THIS REPOSITORY IS ON STALE, ALL NEW FEATURES SHOULD BE REDIRECTED TO [https://github.com/verdaccio/verdaccio/tree/master/packages/plugins/ui-theme](https://github.com/verdaccio/verdaccio/tree/master/packages/plugins/ui-theme)** OR IF YOU WANT THE FEATURE AVAILABLE FOR 5.X SHOULD OPEN A PR IN BOTH REPOSITORIES. ⚠️⚠️
+⚠️⚠️ **THIS REPOSITORY IS DEPRECATED, ONLY BUGFIXES, ALL NEW FEATURES SHOULD BE DEVELOPED INTO [https://github.com/verdaccio/verdaccio/tree/master/packages/plugins/ui-theme](https://github.com/verdaccio/verdaccio/tree/master/packages/plugins/ui-theme)** ⚠️⚠️
 
 
 ![verdaccio gif](https://user-images.githubusercontent.com/558752/52916111-fa4ba980-32db-11e9-8a64-f4e06eb920b3.png)
-
-# Version 5 UI Theme
-
-[Verdaccio](https://verdaccio.org/) UI is a [theme plugin](https://verdaccio.org/docs/en/dev-plugins#theme-plugin) build in React, Typescript and Emotion. It uses Jest and Testing Library for Unit testing.
-
-
-[![verdaccio (latest)](https://img.shields.io/npm/v/@verdaccio/ui-theme/latest.svg)](https://www.npmjs.com/package/@verdaccio/ui-theme)
-[![docker pulls](https://img.shields.io/docker/pulls/verdaccio/verdaccio.svg?maxAge=43200)](https://verdaccio.org/docs/en/docker.html)
-[![backers](https://opencollective.com/verdaccio/tiers/backer/badge.svg?label=Backer&color=brightgreen)](https://opencollective.com/verdaccio)
-[![stackshare](https://img.shields.io/badge/Follow%20on-StackShare-blue.svg?logo=stackshare&style=flat)](https://stackshare.io/verdaccio)
-[![discord](https://img.shields.io/discord/388674437219745793.svg)](http://chat.verdaccio.org/)
-[![node](https://img.shields.io/node/v/@verdaccio/ui-theme/latest.svg)](https://www.npmjs.com/package/@verdaccio/ui-theme)
-[![MIT](https://img.shields.io/github/license/mashape/apistatus.svg)](./LICENSE)
-[![Crowdin](https://d322cqt584bo4o.cloudfront.net/verdaccio/localized.svg)](https://crowdin.com/project/verdaccio)
-[![codecov](https://codecov.io/gh/verdaccio/ui/branch/master/graph/badge.svg)](https://codecov.io/gh/verdaccio/ui)
-
-
-[![Twitter followers](https://img.shields.io/twitter/follow/verdaccio_npm.svg?style=social&label=Follow)](https://twitter.com/verdaccio_npm)
-[![Github](https://img.shields.io/github/stars/verdaccio/verdaccio.svg?style=social&label=Stars)](https://github.com/verdaccio/verdaccio/stargazers)
-
-## Contributing
-
-> If you are willing to ship an improvement for Verdaccio 5.x, here is the repo where you must contribute, but remember, if you are willing your feature persist in next major releases, you also need to PR [here](https://github.com/verdaccio/verdaccio/tree/master/packages/plugins/ui-theme) since this repo is intended to be archived after Verdaccio 5 is being deprecated in the future.
-
-We use `>=yarn`, keep in mind that we use lockfiles and use at least Node `v14` to be able to build the project.
-
-Install dependencies
-
-```
-yarn 
-```
-
-For development run the following command, it will execute `webpack` and `verdaccio` to
-
-```bash
-yarn dev
-```
-The configuration file is located on `tools/_config.yaml`.
-
-Run linting tooling and test to check your code is clean before commit.
-
-> ⚠️ The development mode just emulate interaction of the UI development with a real verdaccio server, but it is not the real integration. UI is just a theme plugin dependency in the [Verdaccio project](https://github.com/verdaccio/verdaccio).
-
-### Before commit
-
-Don't forget run the following commands before commit and push your code, it will save you time.
-
-```bash
-yarn lint && yarn test
-```
-
-#### Commits
-
-Remember we follow the [the Conventional Commits specification](https://www.conventionalcommits.org/en/v1.0.0-beta.4/).
-
-🤓 Feel free to participate in code reviews, let us know if you want to participate in this plugin.
-
-### End to End Testing
-
-Additionally, we recommend run E2E testing before push and verify your changes do not break anything. These command will run in our CI anyway.
-
-```bash
-yarn build && yarn test:e2e
-```
-
-> `yarn build` will build with webpack the production files.
 
 ## Special Thanks
 
@@ -120,29 +54,7 @@ If you have any issue you can try the following options, do no desist to ask or 
 
 ### Translations
 
-Translations are handled locally. I18n files can be found in the folder ```i18n/translations/*``` of this repository. We would love to provide translations from other languages, embracing all our users, but unfortunately we cannot do this without your help. Would you like to help us? Please feel **super welcome** to add a locale by opening a pull request.
-
-Your PR should contain:
-
-1 - A json file in the folder ```i18n/translations/*``` with the translations. The file must be named according to the new added language
-
-2 - The files ```i18n/config.ts``` and  ```LanguageSwitch.tsx``` updated with the new language. Please see the current structure
-
-3 - The other translations containing the new language in the language of the file. Example:
-
-New language: ```cs_CZ ```
-
-The file ```pt-BR ``` should contain:
- ```
- "lng": {
-     ...,
-     "czech": "Tcheco"
- }
- ```
-
-4 - A SVG flag of the new translated language in the the folder ```src/components/Icon/img/*```. You maybe want to compress the svg file using https://jakearchibald.github.io/svgomg/
-
-
+Translations are now part of [main repository](https://github.com/verdaccio/verdaccio), check contribution guidelines.
 
 ### License
 
