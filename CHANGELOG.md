@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [3.2.0](https://github.com/verdaccio/ui/compare/v3.1.0...v3.2.0) (2021-09-17)
+
+
+### Features
+
+* add finnish language support ([#624](https://github.com/verdaccio/ui/issues/624)) ([1735e16](https://github.com/verdaccio/ui/commit/1735e1671507191423e443a8d24b11a6767593b4))
+
 ## [3.1.0](https://github.com/verdaccio/ui/compare/v3.0.1...v3.1.0) (2021-04-27)
 
 
