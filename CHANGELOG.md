@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [3.2.1](https://github.com/verdaccio/ui/compare/v3.2.0...v3.2.1) (2021-09-17)
+
+
+### Bug Fixes
+
+* release workflow ([b54a57b](https://github.com/verdaccio/ui/commit/b54a57be1563f325a4ca38799e729f1a3713ab34))
+* script release ([191fca0](https://github.com/verdaccio/ui/commit/191fca0f0125be3e184dd49bcce8bc0fcf3fa6b0))
+
 ## [3.2.0](https://github.com/verdaccio/ui/compare/v3.1.0...v3.2.0) (2021-09-17)
 
 
