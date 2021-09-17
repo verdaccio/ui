@@ -141,6 +141,7 @@
         "package-meta-is-required-at-detail-context": "packageMeta 在 DetailContext 上是必需的"
     },
     "lng": {
+        "finnish": "Finnish",
         "english": "英语",
         "czech": "捷克語",
         "japanese": "日语",

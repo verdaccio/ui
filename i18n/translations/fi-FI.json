@@ -141,6 +141,7 @@
         "package-meta-is-required-at-detail-context": "DetailContext vaatii packageMetan"
     },
     "lng": {
+        "finnish": "Finnish",
         "english": "Englanti",
         "czech": "Tsekki",
         "japanese": "Japani",

@@ -5,6 +5,7 @@ import translationCS from './translations/cs-CZ.json';
 import translationDE from './translations/de-DE.json';
 import translationEN from './translations/en-US.json';
 import translationES from './translations/es-ES.json';
+import translationFI from './translations/fi-FI.json';
 import translationFR from './translations/fr-FR.json';
 import translationJP from './translations/ja-JP.json';
 import translationKM from './translations/km-KH.json';
@@ -14,7 +15,6 @@ import translationTR from './translations/tr-TR.json';
 import translationUA from './translations/uk-UA.json';
 import translationCN from './translations/zh-CN.json';
 import translatiobTW from './translations/zh-TW.json';
-import translationFI from './translations/fi-FI.json';
 
 const languages = {
   'en-US': {

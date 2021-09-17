@@ -141,6 +141,7 @@
         "package-meta-is-required-at-detail-context": "packageMeta is required at DetailContext"
     },
     "lng": {
+        "finnish": "Finnish",
         "english": "English",
         "czech": "Czech",
         "japanese": "Japanese",
