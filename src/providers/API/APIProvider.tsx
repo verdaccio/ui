@@ -65,7 +65,7 @@ const APIProvider: FunctionComponent = ({ children }) => {
   };
 
   const doLogin = async (username: string, password: string): Promise<LoginBody> => {
-    return await API.request(buildURL('login'), 'POST', {
+    return await API.request(buildURL('/sec/login'), 'POST', {
       body: JSON.stringify({ username, password }),
       headers: {
         Accept: HEADERS.JSON,
