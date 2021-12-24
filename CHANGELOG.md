@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [3.4.0](https://github.com/verdaccio/ui/compare/v3.3.0...v3.4.0) (2021-12-24)
+
+
+### Features
+
+* refactor api endpoints url ([#626](https://github.com/verdaccio/ui/issues/626)) ([2fcac4d](https://github.com/verdaccio/ui/commit/2fcac4d37a983aa88dff90e03a922b723ebd9155))
+
 ## [3.3.0](https://github.com/verdaccio/ui/compare/v3.2.1...v3.3.0) (2021-12-24)
 
 
