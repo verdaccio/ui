@@ -42,14 +42,14 @@ const APIProvider: FunctionComponent = ({ children }) => {
 
   const callReadme = async (packageName: string, packageVersion?: string): Promise<string> => {
     return await API.request<string>(
-      buildURL(`package/readme/${packageName}${packageVersion ? `?v=${packageVersion}` : ''}`),
+      buildURL(`/data/package/readme/${packageName}${packageVersion ? `?v=${packageVersion}` : ''}`),
       'GET'
     );
   };
 
   const callDetailPage = async (packageName: string, packageVersion?: string): Promise<PackageMetaInterface> => {
     return await API.request<PackageMetaInterface>(
-      buildURL(`sidebar/${packageName}${packageVersion ? `?v=${packageVersion}` : ''}`),
+      buildURL(`/data/sidebar/${packageName}${packageVersion ? `?v=${packageVersion}` : ''}`),
       'GET'
     );
   };
@@ -57,11 +57,11 @@ const APIProvider: FunctionComponent = ({ children }) => {
   const callSearch = async (value: string, signal: AbortSignal): Promise<string> => {
     // https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API#Browser_compatibility
     // FUTURE: signal is not well supported for IE and Samsung Browser
-    return API.request(buildURL(`search/${encodeURIComponent(value)}`), 'GET', { signal, headers: {} });
+    return API.request(buildURL(`/data/search/${encodeURIComponent(value)}`), 'GET', { signal, headers: {} });
   };
 
   const getPackages = async (): Promise<Package[]> => {
-    return await API.request(buildURL('packages'), 'GET');
+    return await API.request(buildURL('/data/packages'), 'GET');
   };
 
   const doLogin = async (username: string, password: string): Promise<LoginBody> => {
