@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [3.3.0](https://github.com/verdaccio/ui/compare/v3.2.1...v3.3.0) (2021-12-24)
+
+
+### Features
+
+* update login endpoint ([#625](https://github.com/verdaccio/ui/issues/625)) ([d9a5039](https://github.com/verdaccio/ui/commit/d9a50395c32a968b27f307615957779215dacaba))
+
 ### [3.2.1](https://github.com/verdaccio/ui/compare/v3.2.0...v3.2.1) (2021-09-17)
 
 
