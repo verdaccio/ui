@@ -16,7 +16,7 @@ bundle.js.map
 __tests__
 
 # Compiled script
-static/*
+ui-theme/static/*
 coverage/
 stats.json
 

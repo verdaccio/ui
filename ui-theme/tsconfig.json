@@ -1,0 +1,20 @@
+{
+  "extends": "../tsconfig.reference.json",
+  "compilerOptions": {
+    "skipLibCheck": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "allowSyntheticDefaultImports": true,
+    "jsx": "react",
+    "allowJs": true,
+    "sourceMap": true,
+    "checkJs": false,
+    "baseUrl": ".",
+    "paths": {
+      "verdaccio-ui/components/*": ["src/components/*"],
+      "verdaccio-ui/design-tokens/*": ["src/design-tokens/*"],
+      "verdaccio-ui/utils/*": ["src/utils/*"]
+    }
+  },
+  "include": ["src", "types/*.d.ts", "src/i18n/**/*.json", "jest/unit/components"]
+}
