@@ -5,5 +5,7 @@
     "@verdaccio/ui-theme": "4.0.0",
     "@verdaccio/eslint-config": "1.0.0"
   },
-  "changesets": []
+  "changesets": [
+    "blue-meals-wink"
+  ]
 }
