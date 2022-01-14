@@ -1,21 +1,6 @@
+⚠️⚠️ **THIS REPOSITORY IS DEPRECATED, ONLY BUGFIXES, ALL NEW FEATURES SHOULD BE DEVELOPED INTO [https://github.com/verdaccio/verdaccio/tree/master/packages/plugins/ui-theme](https://github.com/verdaccio/verdaccio/tree/master/packages/plugins/ui-theme)** ⚠️⚠️
+
 ![verdaccio gif](https://user-images.githubusercontent.com/558752/52916111-fa4ba980-32db-11e9-8a64-f4e06eb920b3.png)
-
-# @verdaccio/ui-theme
-
-[Verdaccio](https://verdaccio.org/) UI is a [theme plugin](https://verdaccio.org/docs/en/dev-plugins#theme-plugin) build in React, Typescript and Emotion. It uses Jest and Testing Library for Unit testing.
-
-[![verdaccio (latest)](https://img.shields.io/npm/v/@verdaccio/ui-theme/latest.svg)](https://www.npmjs.com/package/@verdaccio/ui-theme)
-[![docker pulls](https://img.shields.io/docker/pulls/verdaccio/verdaccio.svg?maxAge=43200)](https://verdaccio.org/docs/en/docker.html)
-[![backers](https://opencollective.com/verdaccio/tiers/backer/badge.svg?label=Backer&color=brightgreen)](https://opencollective.com/verdaccio)
-[![stackshare](https://img.shields.io/badge/Follow%20on-StackShare-blue.svg?logo=stackshare&style=flat)](https://stackshare.io/verdaccio)
-[![discord](https://img.shields.io/discord/388674437219745793.svg)](http://chat.verdaccio.org/)
-[![node](https://img.shields.io/node/v/@verdaccio/ui-theme/latest.svg)](https://www.npmjs.com/package/@verdaccio/ui-theme)
-[![MIT](https://img.shields.io/github/license/mashape/apistatus.svg)](./LICENSE)
-[![Crowdin](https://d322cqt584bo4o.cloudfront.net/verdaccio/localized.svg)](https://crowdin.com/project/verdaccio)
-[![codecov](https://codecov.io/gh/verdaccio/ui/branch/master/graph/badge.svg)](https://codecov.io/gh/verdaccio/ui)
-
-[![Twitter followers](https://img.shields.io/twitter/follow/verdaccio_npm.svg?style=social&label=Follow)](https://twitter.com/verdaccio_npm)
-[![Github](https://img.shields.io/github/stars/verdaccio/verdaccio.svg?style=social&label=Stars)](https://github.com/verdaccio/verdaccio/stargazers)
 
 ## Special Thanks
 
@@ -68,29 +53,30 @@ If you have any issue you can try the following options, do no desist to ask or 
 
 ### Translations
 
-Translations are handled locally. I18n files can be found in the folder `i18n/translations/*` of this repository. We would love to provide translations from other languages, embracing all our users, but unfortunately we cannot do this without your help. Would you like to help us? Please feel **super welcome** to add a locale by opening a pull request.
-
-Your PR should contain:
-
-1 - A json file in the folder `i18n/translations/*` with the translations. The file must be named according to the new added language
-
-2 - The files `i18n/config.ts` and `LanguageSwitch.tsx` updated with the new language. Please see the current structure
-
-3 - The other translations containing the new language in the language of the file. Example:
-
-New language: `cs_CZ `
-
-The file `pt-BR ` should contain:
-
-```
-"lng": {
-    ...,
-    "czech": "Tcheco"
-}
-```
-
-4 - A SVG flag of the new translated language in the the folder `src/components/Icon/img/*`. You maybe want to compress the svg file using https://jakearchibald.github.io/svgomg/
+Translations are now part of [main repository](https://github.com/verdaccio/verdaccio), check contribution guidelines.
 
 ### License
 
 Verdaccio is [MIT licensed](https://github.com/verdaccio/verdaccio/blob/master/LICENSE)
+
+### Contributors
+
+<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+<!-- prettier-ignore-start -->
+<!-- markdownlint-disable -->
+<table>
+  <tr>
+    <td align="center"><a href="https://www.linkedin.com/in/jotadeveloper/"><img src="https://avatars0.githubusercontent.com/u/558752?v=4" width="100px;" alt=""/><br /><sub><b>Juan Picado</b></sub></a><br /><a href="https://github.com/verdaccio/ui/commits?author=juanpicado" title="Documentation">📖</a> <a href="https://github.com/verdaccio/ui/commits?author=juanpicado" title="Code">💻</a> <a href="#infra-juanpicado" title="Infrastructure (Hosting, Build-Tools, etc)">🚇</a> <a href="#eventOrganizing-juanpicado" title="Event Organizing">📋</a> <a href="#blog-juanpicado" title="Blogposts">📝</a> <a href="#maintenance-juanpicado" title="Maintenance">🚧</a></td>
+    <td align="center"><a href="https://github.com/sergiohgz"><img src="https://avatars3.githubusercontent.com/u/14012309?v=4" width="100px;" alt=""/><br /><sub><b>Sergio Herrera</b></sub></a><br /><a href="#infra-sergiohgz" title="Infrastructure (Hosting, Build-Tools, etc)">🚇</a> <a href="#maintenance-sergiohgz" title="Maintenance">🚧</a></td>
+    <td align="center"><a href="https://daniel-ruf.de/"><img src="https://avatars1.githubusercontent.com/u/827205?v=4" width="100px;" alt=""/><br /><sub><b>Daniel Ruf</b></sub></a><br /><a href="#security-DanielRuf" title="Security">🛡️</a> <a href="#infra-DanielRuf" title="Infrastructure (Hosting, Build-Tools, etc)">🚇</a> <a href="#maintenance-DanielRuf" title="Maintenance">🚧</a></td>
+    <td align="center"><a href="https://priscilawebdev.github.io/priscilaoliveira/"><img src="https://avatars1.githubusercontent.com/u/29228205?v=4" width="100px;" alt=""/><br /><sub><b>Priscila Oliveira</b></sub></a><br /><a href="#design-priscilawebdev" title="Design">🎨</a> <a href="https://github.com/verdaccio/ui/commits?author=priscilawebdev" title="Code">💻</a> <a href="#maintenance-priscilawebdev" title="Maintenance">🚧</a></td>
+    <td align="center"><a href="https://github.com/VentyCZ"><img src="https://avatars1.githubusercontent.com/u/3247664?v=4" width="100px;" alt=""/><br /><sub><b>Jiří Michel</b></sub></a><br /><a href="https://github.com/verdaccio/ui/commits?author=VentyCZ" title="Code">💻</a> <a href="#maintenance-VentyCZ" title="Maintenance">🚧</a></td>
+    <td align="center"><a href="https://github.com/tso1158687"><img src="https://avatars2.githubusercontent.com/u/9198263?v=4" width="100px;" alt=""/><br /><sub><b>jason</b></sub></a><br /><a href="#translation-tso1158687" title="Translation">🌍</a> <a href="https://github.com/verdaccio/ui/commits?author=tso1158687" title="Code">💻</a></td>
+    <td align="center"><a href="http://ayusharma.github.io"><img src="https://avatars0.githubusercontent.com/u/6918450?v=4" width="100px;" alt=""/><br /><sub><b>Ayush Sharma</b></sub></a><br /><a href="#maintenance-ayusharma" title="Maintenance">🚧</a> <a href="https://github.com/verdaccio/ui/commits?author=ayusharma" title="Code">💻</a></td>
+  </tr>
+</table>
+
+<!-- markdownlint-enable -->
+<!-- prettier-ignore-end -->
+
+<!-- ALL-CONTRIBUTORS-LIST:END -->

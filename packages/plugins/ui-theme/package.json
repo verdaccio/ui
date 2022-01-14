@@ -37,7 +37,6 @@
     "@testing-library/dom": "8.11.1",
     "@testing-library/jest-dom": "5.16.1",
     "@testing-library/react": "12.1.2",
-    "@verdaccio/node-api": "6-next",
     "@verdaccio/types": "6-next",
     "babel-loader": "8.2.3",
     "babel-plugin-dynamic-import-node": "2.3.3",
