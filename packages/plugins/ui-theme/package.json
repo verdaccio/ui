@@ -1,6 +1,6 @@
 {
   "name": "@verdaccio/ui-theme",
-  "version": "4.0.0",
+  "version": "4.1.0-beta.0",
   "description": "Verdaccio User Interface",
   "author": {
     "name": "Verdaccio Contributors",
