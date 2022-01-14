@@ -12,21 +12,24 @@ Some advices before file an issue
 -->
 
 #### My reason:
+
 #### Steps to reproduce:
+
 #### App Version:
+
 #### Config file:
+
 #### Additional information:
 
- - `$ NODE_DEBUG=request verdaccio` display request calls (verdaccio <--> uplinks)
- - `$ DEBUG=express:* verdaccio` enable extreme verdaccio debug mode (verdaccio api)
- - `$ npm -ddd` prints:
- - `$ npm config get registry` prints:
- - Verdaccio terminal output
- - Which (Windows, OS X/macOS, or Linux) environment are you running verdaccio?:
- - Verdaccio configuration file, eg: `cat ~/.config/verdaccio/config.yaml`
-  - Container Options:
-   - Docker?:
-   - Kubernetes?:
+- `$ NODE_DEBUG=request verdaccio` display request calls (verdaccio <--> uplinks)
+- `$ DEBUG=express:* verdaccio` enable extreme verdaccio debug mode (verdaccio api)
+- `$ npm -ddd` prints:
+- `$ npm config get registry` prints:
+- Verdaccio terminal output
+- Which (Windows, OS X/macOS, or Linux) environment are you running verdaccio?:
+- Verdaccio configuration file, eg: `cat ~/.config/verdaccio/config.yaml`
+- Container Options:
+- Docker?:
+- Kubernetes?:
 
 #### Additional verbose log:
-

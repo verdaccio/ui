@@ -3,7 +3,13 @@ module.exports = {
     [
       '@babel/preset-env',
       {
-        targets: ['last 5 versions', 'FireFox >= 44', 'Safari >= 7', 'Explorer 11', 'last 4 Edge versions'],
+        targets: [
+          'last 5 versions',
+          'FireFox >= 44',
+          'Safari >= 7',
+          'Explorer 11',
+          'last 4 Edge versions',
+        ],
         bugfixes: true,
         modules: 'auto',
         debug: false,

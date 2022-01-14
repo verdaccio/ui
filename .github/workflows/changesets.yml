@@ -37,7 +37,7 @@ jobs:
           CROWDIN_VERDACCIO_PROJECT_ID: ${{ secrets.CROWDIN_VERDACCIO_PROJECT_ID }}
           CROWDIN_VERDACCIO_API_KEY: ${{ secrets.CROWDIN_VERDACCIO_API_KEY }}
           CONTEXT: production
-        run: pnpm crowdin:download          
+        run: pnpm crowdin:download
       - name: build
         run: pnpm build
       - name: create versions

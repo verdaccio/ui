@@ -19,16 +19,8 @@
       "verdaccio-ui/design-tokens/*": ["src/design-tokens/*"],
       "verdaccio-ui/utils/*": ["src/utils/*"],
       "verdaccio-ui/providers/*": ["src/providers/*"]
-    },
+    }
   },
-  "include": [
-    "src",
-    "types/*.d.ts",
-    "scripts/lib",
-    "node_modules/config",
-    "test/unit",
-  ],
-  "exclude": [
-    "node_modules"
-  ],
+  "include": ["src", "types/*.d.ts", "scripts/lib", "node_modules/config", "test/unit"],
+  "exclude": ["node_modules"]
 }

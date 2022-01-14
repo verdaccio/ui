@@ -97,11 +97,10 @@
     "update-ts-references": "2.4.1",
     "verdaccio": "5.4.0"
   },
-
   "scripts": {
     "serve": "concurrently --kill-others \"pnpm _start:server\" \"pnpm _start:web\"",
     "_start:server": "node --inspect node_modules/verdaccio/build/lib/cli.js  --listen 8000",
-    "_start:web": "pnpm start --filter ...@verdaccio/ui-theme",    
+    "_start:web": "pnpm start --filter ...@verdaccio/ui-theme",
     "husky:pre-commit": "lint-staged",
     "changeset": "changeset",
     "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,yml,yaml,md}\"",

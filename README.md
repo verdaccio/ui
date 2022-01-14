@@ -1,6 +1,5 @@
 ⚠️⚠️ **THIS REPOSITORY IS DEPRECATED, ONLY BUGFIXES, ALL NEW FEATURES SHOULD BE DEVELOPED INTO [https://github.com/verdaccio/verdaccio/tree/master/packages/plugins/ui-theme](https://github.com/verdaccio/verdaccio/tree/master/packages/plugins/ui-theme)** ⚠️⚠️
 
-
 ![verdaccio gif](https://user-images.githubusercontent.com/558752/52916111-fa4ba980-32db-11e9-8a64-f4e06eb920b3.png)
 
 ## Special Thanks
@@ -42,15 +41,15 @@ This project exists thanks to all the people who contribute.
 
 If you have any issue you can try the following options, do no desist to ask or check our issues database, perhaps someone has asked already what you are looking for.
 
-* [Blog](https://medium.com/verdaccio)
-* [Donations](https://opencollective.com/verdaccio)
-* [Roadmaps](https://github.com/verdaccio/ui/projects)
-* [Reporting an issue](https://github.com/verdaccio/verdaccio/blob/master/CONTRIBUTING.md#reporting-a-bug)
-* [Running discussions](https://github.com/verdaccio/verdaccio/issues?q=is%3Aissue+is%3Aopen+label%3Adiscuss)
-* [Chat](http://chat.verdaccio.org/)
-* [Logos](https://verdaccio.org/docs/en/logo)
-* [FAQ](https://github.com/verdaccio/verdaccio/issues?utf8=%E2%9C%93&q=is%3Aissue%20label%3Aquestion%20)
-* [Docker Examples](https://github.com/verdaccio/docker-examples)
+- [Blog](https://medium.com/verdaccio)
+- [Donations](https://opencollective.com/verdaccio)
+- [Roadmaps](https://github.com/verdaccio/ui/projects)
+- [Reporting an issue](https://github.com/verdaccio/verdaccio/blob/master/CONTRIBUTING.md#reporting-a-bug)
+- [Running discussions](https://github.com/verdaccio/verdaccio/issues?q=is%3Aissue+is%3Aopen+label%3Adiscuss)
+- [Chat](http://chat.verdaccio.org/)
+- [Logos](https://verdaccio.org/docs/en/logo)
+- [FAQ](https://github.com/verdaccio/verdaccio/issues?utf8=%E2%9C%93&q=is%3Aissue%20label%3Aquestion%20)
+- [Docker Examples](https://github.com/verdaccio/docker-examples)
 
 ### Translations
 
@@ -59,7 +58,6 @@ Translations are now part of [main repository](https://github.com/verdaccio/verd
 ### License
 
 Verdaccio is [MIT licensed](https://github.com/verdaccio/verdaccio/blob/master/LICENSE)
-
 
 ### Contributors
 
@@ -80,4 +78,5 @@ Verdaccio is [MIT licensed](https://github.com/verdaccio/verdaccio/blob/master/L
 
 <!-- markdownlint-enable -->
 <!-- prettier-ignore-end -->
+
 <!-- ALL-CONTRIBUTORS-LIST:END -->

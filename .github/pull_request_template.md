@@ -15,12 +15,13 @@ Pick one/multiple type, if none apply please suggest one, we might be included i
 eg: bug / feature / documentation / unit test / build
 
 -->
+
 **Type:**
 
 The following has been addressed in the PR:
 
-*  There is a related issue?
-*  Unit or Functional tests are included in the PR
+- There is a related issue?
+- Unit or Functional tests are included in the PR
 
 **Description:**
 

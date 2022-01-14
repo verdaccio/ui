@@ -8,5 +8,5 @@ files:
     {
       source: '/ui-theme/src/i18n/crowdin/**/*',
       translation: '/ui-theme/src/i18n/download_translations/%locale%/**/%original_file_name%',
-    }
+    },
   ]
