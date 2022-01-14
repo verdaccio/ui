@@ -16,7 +16,6 @@ bundle.js.map
 __tests__
 
 # Compiled script
-static/*
 coverage/
 stats.json
 
@@ -27,3 +26,8 @@ stats.json
 # This is the Yarn install state cache, it can be rebuilt anytime
 /.yarn/install-state.gz
 .history
+
+## ui
+packages/plugins/ui-theme/static
+/packages/plugins/ui-theme/src/i18n/download_translations/
+!/packages/plugins/ui-theme/src/i18n/crowdin/ui.json

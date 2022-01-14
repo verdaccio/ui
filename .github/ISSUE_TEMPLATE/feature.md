@@ -1,9 +1,9 @@
 ---
-name: "Feature Request 🔮"
+name: 'Feature Request 🔮'
 about: You want a feature request.
-title: ""
-labels: "enhancement"
-assignees: ""
+title: ''
+labels: 'enhancement'
+assignees: ''
 ---
 
 <!--
