@@ -1,0 +1,50 @@
+/*!
+ * 
+ *     Name: Repository
+ *     Generated on: 1639427088314
+ *     Package: @verdaccio/ui-theme
+ *     Version: v6.0.0-6-next.12
+ *     License: MIT
+ *     https://www.verdaccio.org
+ *
+ */
+
+/*! ../../context */
+
+/*! ./Repository */
+
+/*! ./img/git.png */
+
+/*! @emotion/styled/base */
+
+/*! react */
+
+/*! react-i18next */
+
+/*! verdaccio-ui/components/Avatar */
+
+/*! verdaccio-ui/components/CopyToClipBoard */
+
+/*! verdaccio-ui/components/Link */
+
+/*! verdaccio-ui/components/List */
+
+/*! verdaccio-ui/components/ListItem */
+
+/*! verdaccio-ui/components/ListItemText */
+
+/*! verdaccio-ui/components/Text */
+
+/*! verdaccio-ui/utils/url */
+
+/*!*************************************************************!*\
+  !*** ./src/pages/Version/DetailSidebar/Repository/index.ts ***!
+  \*************************************************************/
+
+/*!****************************************************************!*\
+  !*** ./src/pages/Version/DetailSidebar/Repository/img/git.png ***!
+  \****************************************************************/
+
+/*!*******************************************************************!*\
+  !*** ./src/pages/Version/DetailSidebar/Repository/Repository.tsx ***!
+  \*******************************************************************/

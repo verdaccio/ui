@@ -1,0 +1,21 @@
+{
+  "main.js": "-/static/main.e2e16d7b7588e103f434.js",
+  "runtime.js": "-/static/runtime.e2e16d7b7588e103f434.js",
+  "NotFound.js": "-/static/NotFound.e2e16d7b7588e103f434.js",
+  "Provider.js": "-/static/Provider.e2e16d7b7588e103f434.js",
+  "Version.js": "-/static/Version.e2e16d7b7588e103f434.js",
+  "Home.js": "-/static/Home.e2e16d7b7588e103f434.js",
+  "Versions.js": "-/static/Versions.e2e16d7b7588e103f434.js",
+  "UpLinks.js": "-/static/UpLinks.e2e16d7b7588e103f434.js",
+  "Dependencies.js": "-/static/Dependencies.e2e16d7b7588e103f434.js",
+  "Engines.js": "-/static/Engines.e2e16d7b7588e103f434.js",
+  "Dist.js": "-/static/Dist.e2e16d7b7588e103f434.js",
+  "Install.js": "-/static/Install.e2e16d7b7588e103f434.js",
+  "Repository.js": "-/static/Repository.e2e16d7b7588e103f434.js",
+  "vendors.js": "-/static/vendors.e2e16d7b7588e103f434.js",
+  "vendors-node_modules_pnpm_mui_icons-material_5_2_5_f463eef15d59df5aa770d062739aa27b_node_modu-03c9e7.e2e16d7b7588e103f434.js": "-/static/vendors-node_modules_pnpm_mui_icons-material_5_2_5_f463eef15d59df5aa770d062739aa27b_node_modu-03c9e7.e2e16d7b7588e103f434.js",
+  "vendors-node_modules_pnpm_mui_material_5_2_8_f5341c4d41f1e34c3a73251df9f98a19_node_modules_mu-6057aa.e2e16d7b7588e103f434.js": "-/static/vendors-node_modules_pnpm_mui_material_5_2_8_f5341c4d41f1e34c3a73251df9f98a19_node_modules_mu-6057aa.e2e16d7b7588e103f434.js",
+  "vendors-node_modules_pnpm_mui_icons-material_5_2_5_f463eef15d59df5aa770d062739aa27b_node_modu-e72974.e2e16d7b7588e103f434.js": "-/static/vendors-node_modules_pnpm_mui_icons-material_5_2_5_f463eef15d59df5aa770d062739aa27b_node_modu-e72974.e2e16d7b7588e103f434.js",
+  "favicon.ico": "-/static/favicon.ico",
+  "index.html": "-/static/index.html"
+}

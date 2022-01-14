@@ -1,0 +1,78 @@
+/*!
+ * 
+ *     Name: Dependencies
+ *     Generated on: 1642193848705
+ *     Package: @verdaccio/ui-theme
+ *     Version: v4.0.0-beta.1
+ *     License: MIT
+ *     https://www.verdaccio.org
+ *
+ */
+
+/*! ../../context */
+
+/*! ../NoItems */
+
+/*! ./Dependencies */
+
+/*! ./NoItems */
+
+/*! ./styles */
+
+/*! @babel/runtime/helpers/extends */
+
+/*! @babel/runtime/helpers/slicedToArray */
+
+/*! @emotion/styled/base */
+
+/*! @mui/material/Card */
+
+/*! @mui/material/CardContent */
+
+/*! @mui/material/Chip */
+
+/*! react */
+
+/*! react-i18next */
+
+/*! react-router-dom */
+
+/*! verdaccio-ui/components/Card */
+
+/*! verdaccio-ui/components/CardContent */
+
+/*! verdaccio-ui/components/Chip */
+
+/*! verdaccio-ui/components/Text */
+
+/*!*********************************!*\
+  !*** ./src/components/Card.tsx ***!
+  \*********************************/
+
+/*!*********************************!*\
+  !*** ./src/components/Chip.tsx ***!
+  \*********************************/
+
+/*!****************************************!*\
+  !*** ./src/components/CardContent.tsx ***!
+  \****************************************/
+
+/*!************************************************************!*\
+  !*** ./src/pages/Version/DetailContainer/NoItems/index.ts ***!
+  \************************************************************/
+
+/*!***************************************************************!*\
+  !*** ./src/pages/Version/DetailContainer/NoItems/NoItems.tsx ***!
+  \***************************************************************/
+
+/*!*****************************************************************!*\
+  !*** ./src/pages/Version/DetailContainer/Dependencies/index.ts ***!
+  \*****************************************************************/
+
+/*!******************************************************************!*\
+  !*** ./src/pages/Version/DetailContainer/Dependencies/styles.ts ***!
+  \******************************************************************/
+
+/*!*************************************************************************!*\
+  !*** ./src/pages/Version/DetailContainer/Dependencies/Dependencies.tsx ***!
+  \*************************************************************************/

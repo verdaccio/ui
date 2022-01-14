@@ -1,0 +1,380 @@
+/*!
+ * 
+ *     Name: Version
+ *     Generated on: 1639427088314
+ *     Package: @verdaccio/ui-theme
+ *     Version: v6.0.0-6-next.12
+ *     License: MIT
+ *     https://www.verdaccio.org
+ *
+ */
+
+/*! .. */
+
+/*! ../.. */
+
+/*! ../../../App/utils/loadable */
+
+/*! ../../pages/Version */
+
+/*! ../Box */
+
+/*! ../Button */
+
+/*! ../FloatingActionButton */
+
+/*! ../Heading */
+
+/*! ../Link */
+
+/*! ../List */
+
+/*! ../ListItem */
+
+/*! ../ListItemText */
+
+/*! ../Text */
+
+/*! ../context */
+
+/*! ./ActionBar */
+
+/*! ./ActionBarAction */
+
+/*! ./Author */
+
+/*! ./Dependencies */
+
+/*! ./Deprecated */
+
+/*! ./DetailContainer */
+
+/*! ./DetailContainerContent */
+
+/*! ./DetailContainerContentReadme */
+
+/*! ./DetailContainerTabs */
+
+/*! ./DetailSidebar */
+
+/*! ./DetailSidebarFundButton */
+
+/*! ./DetailSidebarTitle */
+
+/*! ./Developers */
+
+/*! ./Developers/DevelopersTitle */
+
+/*! ./DevelopersTitle */
+
+/*! ./Dist */
+
+/*! ./Engines */
+
+/*! ./Install */
+
+/*! ./NotFound */
+
+/*! ./Readme */
+
+/*! ./Repository */
+
+/*! ./UpLinks */
+
+/*! ./Version */
+
+/*! ./VersionLayout */
+
+/*! ./Versions */
+
+/*! ./context */
+
+/*! ./get-route-package-name */
+
+/*! ./get-unique-developer-values */
+
+/*! ./img/package.svg */
+
+/*! ./styles */
+
+/*! ./version-config */
+
+/*! @babel/runtime/helpers/asyncToGenerator */
+
+/*! @babel/runtime/helpers/extends */
+
+/*! @babel/runtime/helpers/objectWithoutProperties */
+
+/*! @babel/runtime/helpers/slicedToArray */
+
+/*! @babel/runtime/helpers/toConsumableArray */
+
+/*! @babel/runtime/regenerator */
+
+/*! @emotion/styled/base */
+
+/*! @mui/icons-material/Add */
+
+/*! @mui/icons-material/BugReport */
+
+/*! @mui/icons-material/CloudDownload */
+
+/*! @mui/icons-material/Favorite */
+
+/*! @mui/icons-material/Home */
+
+/*! @mui/material/Avatar */
+
+/*! @mui/material/Card */
+
+/*! @mui/material/CardContent */
+
+/*! @mui/material/Fab */
+
+/*! @mui/material/Grid */
+
+/*! @mui/material/List */
+
+/*! @mui/material/ListItem */
+
+/*! @mui/material/ListItemText */
+
+/*! @mui/material/Tab */
+
+/*! @mui/material/Tabs */
+
+/*! @mui/material/Tooltip */
+
+/*! dayjs */
+
+/*! dayjs/plugin/localizedFormat */
+
+/*! dayjs/plugin/relativeTime */
+
+/*! github-markdown-css */
+
+/*! i18next */
+
+/*! import() | Dependencies */
+
+/*! import() | Dist */
+
+/*! import() | Engines */
+
+/*! import() | Install */
+
+/*! import() | Repository */
+
+/*! import() | UpLinks */
+
+/*! import() | Versions */
+
+/*! lodash/isString */
+
+/*! react */
+
+/*! react-i18next */
+
+/*! react-redux */
+
+/*! react-router-dom */
+
+/*! verdaccio-ui/components/ActionBar */
+
+/*! verdaccio-ui/components/Author */
+
+/*! verdaccio-ui/components/Box */
+
+/*! verdaccio-ui/components/Button */
+
+/*! verdaccio-ui/components/FloatingActionButton */
+
+/*! verdaccio-ui/components/Heading */
+
+/*! verdaccio-ui/components/Link */
+
+/*! verdaccio-ui/components/Loading */
+
+/*! verdaccio-ui/components/NotFound */
+
+/*! verdaccio-ui/components/Paper */
+
+/*! verdaccio-ui/components/Tab */
+
+/*! verdaccio-ui/components/Tabs */
+
+/*! verdaccio-ui/components/Text */
+
+/*! verdaccio-ui/components/Tooltip */
+
+/*! verdaccio-ui/utils/package */
+
+/*! verdaccio-ui/utils/sec-utils */
+
+/*! verdaccio-ui/utils/url */
+
+/*! xss */
+
+/*!******************************!*\
+  !*** ./src/utils/package.ts ***!
+  \******************************/
+
+/*!********************************!*\
+  !*** ./src/components/Tab.tsx ***!
+  \********************************/
+
+/*!********************************!*\
+  !*** ./src/utils/sec-utils.ts ***!
+  \********************************/
+
+/*!*********************************!*\
+  !*** ./src/components/List.tsx ***!
+  \*********************************/
+
+/*!*********************************!*\
+  !*** ./src/components/Tabs.tsx ***!
+  \*********************************/
+
+/*!************************************!*\
+  !*** ./src/pages/Version/index.ts ***!
+  \************************************/
+
+/*!*************************************!*\
+  !*** ./src/components/ListItem.tsx ***!
+  \*************************************/
+
+/*!**************************************!*\
+  !*** ./src/pages/Version/context.ts ***!
+  \**************************************/
+
+/*!***************************************!*\
+  !*** ./src/pages/Version/Version.tsx ***!
+  \***************************************/
+
+/*!****************************************!*\
+  !*** ./src/components/Author/index.ts ***!
+  \****************************************/
+
+/*!*****************************************!*\
+  !*** ./src/components/Author/styles.ts ***!
+  \*****************************************/
+
+/*!*****************************************!*\
+  !*** ./src/components/ListItemText.tsx ***!
+  \*****************************************/
+
+/*!******************************************!*\
+  !*** ./src/components/Author/Author.tsx ***!
+  \******************************************/
+
+/*!******************************************!*\
+  !*** ./src/components/NotFound/index.ts ***!
+  \******************************************/
+
+/*!*******************************************!*\
+  !*** ./src/components/ActionBar/index.ts ***!
+  \*******************************************/
+
+/*!*********************************************!*\
+  !*** ./src/pages/Version/VersionLayout.tsx ***!
+  \*********************************************/
+
+/*!*********************************************!*\
+  !*** ./src/pages/Version/version-config.ts ***!
+  \*********************************************/
+
+/*!**********************************************!*\
+  !*** ./src/components/NotFound/NotFound.tsx ***!
+  \**********************************************/
+
+/*!************************************************!*\
+  !*** ./src/components/ActionBar/ActionBar.tsx ***!
+  \************************************************/
+
+/*!*************************************************!*\
+  !*** ./src/components/FloatingActionButton.tsx ***!
+  \*************************************************/
+
+/*!*************************************************!*\
+  !*** ./src/components/NotFound/img/package.svg ***!
+  \*************************************************/
+
+/*!**************************************************!*\
+  !*** ./src/pages/Version/DetailSidebar/index.ts ***!
+  \**************************************************/
+
+/*!****************************************************!*\
+  !*** ./src/pages/Version/DetailContainer/index.ts ***!
+  \****************************************************/
+
+/*!*****************************************************!*\
+  !*** ./src/pages/Version/get-route-package-name.ts ***!
+  \*****************************************************/
+
+/*!******************************************************!*\
+  !*** ./src/components/ActionBar/ActionBarAction.tsx ***!
+  \******************************************************/
+
+/*!***********************************************************!*\
+  !*** ./src/pages/Version/DetailContainer/Readme/index.ts ***!
+  \***********************************************************/
+
+/*!***********************************************************!*\
+  !*** ./src/pages/Version/DetailSidebar/DetailSidebar.tsx ***!
+  \***********************************************************/
+
+/*!*************************************************************!*\
+  !*** ./src/pages/Version/DetailContainer/Readme/Readme.tsx ***!
+  \*************************************************************/
+
+/*!*************************************************************!*\
+  !*** ./src/pages/Version/DetailSidebar/Developers/index.ts ***!
+  \*************************************************************/
+
+/*!***************************************************************!*\
+  !*** ./src/pages/Version/DetailContainer/Deprecated/index.ts ***!
+  \***************************************************************/
+
+/*!***************************************************************!*\
+  !*** ./src/pages/Version/DetailContainer/DetailContainer.tsx ***!
+  \***************************************************************/
+
+/*!****************************************************************!*\
+  !*** ./src/pages/Version/DetailSidebar/DetailSidebarTitle.tsx ***!
+  \****************************************************************/
+
+/*!*******************************************************************!*\
+  !*** ./src/pages/Version/DetailContainer/DetailContainerTabs.tsx ***!
+  \*******************************************************************/
+
+/*!*******************************************************************!*\
+  !*** ./src/pages/Version/DetailSidebar/Developers/Developers.tsx ***!
+  \*******************************************************************/
+
+/*!*********************************************************************!*\
+  !*** ./src/pages/Version/DetailContainer/Deprecated/Deprecated.tsx ***!
+  \*********************************************************************/
+
+/*!*********************************************************************!*\
+  !*** ./src/pages/Version/DetailSidebar/DetailSidebarFundButton.tsx ***!
+  \*********************************************************************/
+
+/*!**********************************************************************!*\
+  !*** ./src/pages/Version/DetailContainer/DetailContainerContent.tsx ***!
+  \**********************************************************************/
+
+/*!************************************************************************!*\
+  !*** ./src/pages/Version/DetailSidebar/Developers/DevelopersTitle.tsx ***!
+  \************************************************************************/
+
+/*!****************************************************************************!*\
+  !*** ./src/pages/Version/DetailContainer/DetailContainerContentReadme.tsx ***!
+  \****************************************************************************/
+
+/*!***********************************************************************************!*\
+  !*** ./src/pages/Version/DetailSidebar/Developers/get-unique-developer-values.ts ***!
+  \***********************************************************************************/
+
+/*!****************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 16 16%27 version=%271.1%27 width=%2716%27 height=%2716%27 aria-hidden=%27true%27%3E%3Cpath fill-rule=%27evenodd%27 d=%27M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z%27%3E%3C/path%3E%3C/svg%3E ***!
+  \****************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/

@@ -1,0 +1,66 @@
+/*!
+ * 
+ *     Name: Install
+ *     Generated on: 1639427088314
+ *     Package: @verdaccio/ui-theme
+ *     Version: v6.0.0-6-next.12
+ *     License: MIT
+ *     https://www.verdaccio.org
+ *
+ */
+
+/*! ../.. */
+
+/*! ./Install */
+
+/*! ./InstallListItem */
+
+/*! ./img/npm.svg */
+
+/*! ./img/pnpm.svg */
+
+/*! ./img/yarn.svg */
+
+/*! @emotion/styled/base */
+
+/*! react */
+
+/*! react-i18next */
+
+/*! verdaccio-ui/components/Avatar */
+
+/*! verdaccio-ui/components/CopyToClipBoard */
+
+/*! verdaccio-ui/components/List */
+
+/*! verdaccio-ui/components/ListItem */
+
+/*! verdaccio-ui/components/ListItemText */
+
+/*! verdaccio-ui/components/Text */
+
+/*! verdaccio-ui/providers/config */
+
+/*!**********************************************************!*\
+  !*** ./src/pages/Version/DetailSidebar/Install/index.ts ***!
+  \**********************************************************/
+
+/*!*************************************************************!*\
+  !*** ./src/pages/Version/DetailSidebar/Install/Install.tsx ***!
+  \*************************************************************/
+
+/*!*************************************************************!*\
+  !*** ./src/pages/Version/DetailSidebar/Install/img/npm.svg ***!
+  \*************************************************************/
+
+/*!**************************************************************!*\
+  !*** ./src/pages/Version/DetailSidebar/Install/img/pnpm.svg ***!
+  \**************************************************************/
+
+/*!**************************************************************!*\
+  !*** ./src/pages/Version/DetailSidebar/Install/img/yarn.svg ***!
+  \**************************************************************/
+
+/*!*********************************************************************!*\
+  !*** ./src/pages/Version/DetailSidebar/Install/InstallListItem.tsx ***!
+  \*********************************************************************/

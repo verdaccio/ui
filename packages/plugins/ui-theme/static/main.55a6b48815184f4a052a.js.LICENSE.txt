@@ -1,0 +1,1534 @@
+/*!
+ * 
+ *     Name: main
+ *     Generated on: 1631988926575
+ *     Package: @verdaccio/ui-theme
+ *     Version: v6.0.0-6-next.10
+ *     License: MIT
+ *     https://www.verdaccio.org
+ *
+ */
+
+/*! .. */
+
+/*! ../.. */
+
+/*! ../../../../../lib/constants */
+
+/*! ../../../App/AppContext */
+
+/*! ../../../App/utils/loadable */
+
+/*! ../../../lib/constants */
+
+/*! ../../../types */
+
+/*! ../../App/AppContext */
+
+/*! ../../CircularProgress */
+
+/*! ../../context */
+
+/*! ../../i18n/enabledLanguages */
+
+/*! ../../pages/Version */
+
+/*! ../../types */
+
+/*! ../Box */
+
+/*! ../Button */
+
+/*! ../FloatingActionButton */
+
+/*! ../Heading */
+
+/*! ../IconButton */
+
+/*! ../Install/img/npm.svg */
+
+/*! ../Link */
+
+/*! ../List */
+
+/*! ../ListItem */
+
+/*! ../ListItemText */
+
+/*! ../Logo */
+
+/*! ../MenuItem */
+
+/*! ../NoItems */
+
+/*! ../Paper */
+
+/*! ../SvgIcon */
+
+/*! ../Text */
+
+/*! ../TextField */
+
+/*! ../Tooltip */
+
+/*! ../context */
+
+/*! ../i18n/config */
+
+/*! ../pages/Version */
+
+/*! ../pages/Version/VersionContextProvider */
+
+/*! ../pages/home */
+
+/*! ./ActionBar */
+
+/*! ./ActionBarAction */
+
+/*! ./App */
+
+/*! ./AppConfigurationProvider */
+
+/*! ./AppContext */
+
+/*! ./AppContextProvider */
+
+/*! ./AppRoute */
+
+/*! ./Author */
+
+/*! ./AutoComplete */
+
+/*! ./Dependencies */
+
+/*! ./Deprecated */
+
+/*! ./DetailContainer */
+
+/*! ./DetailContainerContent */
+
+/*! ./DetailContainerContentReadme */
+
+/*! ./DetailContainerTabs */
+
+/*! ./DetailSidebar */
+
+/*! ./DetailSidebarFundButton */
+
+/*! ./DetailSidebarTitle */
+
+/*! ./Developers */
+
+/*! ./Developers/DevelopersTitle */
+
+/*! ./DevelopersTitle */
+
+/*! ./Dist */
+
+/*! ./Earth */
+
+/*! ./Engines */
+
+/*! ./FileBinary */
+
+/*! ./Footer */
+
+/*! ./Header */
+
+/*! ./HeaderGreetings */
+
+/*! ./HeaderInfoDialog */
+
+/*! ./HeaderLeft */
+
+/*! ./HeaderMenu */
+
+/*! ./HeaderRight */
+
+/*! ./HeaderToolTip */
+
+/*! ./HeaderToolTipIcon */
+
+/*! ./Help */
+
+/*! ./Home */
+
+/*! ./IconButton */
+
+/*! ./InputAdornment */
+
+/*! ./Install */
+
+/*! ./InstallListItem */
+
+/*! ./Label */
+
+/*! ./LanguageSwitch */
+
+/*! ./Law */
+
+/*! ./Loading */
+
+/*! ./LoginDialog */
+
+/*! ./LoginDialogCloseButton */
+
+/*! ./LoginDialogForm */
+
+/*! ./LoginDialogFormError */
+
+/*! ./LoginDialogHeader */
+
+/*! ./Logo */
+
+/*! ./NoItems */
+
+/*! ./NotFound */
+
+/*! ./Package */
+
+/*! ./PackageList */
+
+/*! ./Readme */
+
+/*! ./RegistryInfoContent */
+
+/*! ./RegistryInfoDialog */
+
+/*! ./Repository */
+
+/*! ./ResetStyles */
+
+/*! ./Search */
+
+/*! ./SearchAdornment */
+
+/*! ./Spinner */
+
+/*! ./Tag */
+
+/*! ./Text */
+
+/*! ./TextConfig */
+
+/*! ./TextField */
+
+/*! ./ThemeContext */
+
+/*! ./Time */
+
+/*! ./Tooltip */
+
+/*! ./UpLinks */
+
+/*! ./Version */
+
+/*! ./VersionLayout */
+
+/*! ./Versions */
+
+/*! ./VersionsHistoryList */
+
+/*! ./VersionsTagList */
+
+/*! ./api */
+
+/*! ./context */
+
+/*! ./crowdin/ui.json */
+
+/*! ./design-tokens/StyleBaseline */
+
+/*! ./design-tokens/ThemeProvider */
+
+/*! ./enabledLanguages */
+
+/*! ./get-route-package-name */
+
+/*! ./get-unique-developer-values */
+
+/*! ./img/git.png */
+
+/*! ./img/logo-black-and-white.svg */
+
+/*! ./img/logo.svg */
+
+/*! ./img/node.png */
+
+/*! ./img/npm.svg */
+
+/*! ./img/package.svg */
+
+/*! ./img/pnpm.svg */
+
+/*! ./img/yarn.svg */
+
+/*! ./is-package-version-valid */
+
+/*! ./load-dayjs-locale */
+
+/*! ./storage */
+
+/*! ./styles */
+
+/*! ./theme */
+
+/*! ./useAutoComplete */
+
+/*! ./useLocalStorage */
+
+/*! ./utils/loadable */
+
+/*! ./version-config */
+
+/*! @babel/runtime/helpers/asyncToGenerator */
+
+/*! @babel/runtime/helpers/classCallCheck */
+
+/*! @babel/runtime/helpers/createClass */
+
+/*! @babel/runtime/helpers/defineProperty */
+
+/*! @babel/runtime/helpers/extends */
+
+/*! @babel/runtime/helpers/objectWithoutProperties */
+
+/*! @babel/runtime/helpers/slicedToArray */
+
+/*! @babel/runtime/helpers/toConsumableArray */
+
+/*! @babel/runtime/helpers/typeof */
+
+/*! @babel/runtime/regenerator */
+
+/*! @emotion/core */
+
+/*! @emotion/styled-base */
+
+/*! @material-ui/core/Accordion */
+
+/*! @material-ui/core/AccordionDetails */
+
+/*! @material-ui/core/AccordionSummary */
+
+/*! @material-ui/core/AppBar */
+
+/*! @material-ui/core/Avatar */
+
+/*! @material-ui/core/Box */
+
+/*! @material-ui/core/Button */
+
+/*! @material-ui/core/Card */
+
+/*! @material-ui/core/CardActions */
+
+/*! @material-ui/core/CardContent */
+
+/*! @material-ui/core/Chip */
+
+/*! @material-ui/core/CircularProgress */
+
+/*! @material-ui/core/CssBaseline */
+
+/*! @material-ui/core/Dialog */
+
+/*! @material-ui/core/DialogActions */
+
+/*! @material-ui/core/DialogContent */
+
+/*! @material-ui/core/DialogTitle */
+
+/*! @material-ui/core/Divider */
+
+/*! @material-ui/core/Fab */
+
+/*! @material-ui/core/Grid */
+
+/*! @material-ui/core/IconButton */
+
+/*! @material-ui/core/InputAdornment */
+
+/*! @material-ui/core/Link */
+
+/*! @material-ui/core/List */
+
+/*! @material-ui/core/ListItem */
+
+/*! @material-ui/core/ListItemText */
+
+/*! @material-ui/core/Menu */
+
+/*! @material-ui/core/MenuItem */
+
+/*! @material-ui/core/Paper */
+
+/*! @material-ui/core/SnackbarContent */
+
+/*! @material-ui/core/SvgIcon */
+
+/*! @material-ui/core/Tab */
+
+/*! @material-ui/core/Tabs */
+
+/*! @material-ui/core/TextField */
+
+/*! @material-ui/core/Toolbar */
+
+/*! @material-ui/core/Tooltip */
+
+/*! @material-ui/core/Typography */
+
+/*! @material-ui/core/styles */
+
+/*! @material-ui/core/styles/createMuiTheme */
+
+/*! @material-ui/icons/AccountCircle */
+
+/*! @material-ui/icons/Add */
+
+/*! @material-ui/icons/BugReport */
+
+/*! @material-ui/icons/Close */
+
+/*! @material-ui/icons/CloudDownload */
+
+/*! @material-ui/icons/Error */
+
+/*! @material-ui/icons/ExpandMore */
+
+/*! @material-ui/icons/Favorite */
+
+/*! @material-ui/icons/FileCopy */
+
+/*! @material-ui/icons/Help */
+
+/*! @material-ui/icons/Home */
+
+/*! @material-ui/icons/Info */
+
+/*! @material-ui/icons/Language */
+
+/*! @material-ui/icons/LockOutlined */
+
+/*! @material-ui/icons/NightsStay */
+
+/*! @material-ui/icons/Search */
+
+/*! @material-ui/icons/WbSunny */
+
+/*! @material-ui/styles */
+
+/*! autosuggest-highlight/match */
+
+/*! autosuggest-highlight/parse */
+
+/*! country-flag-icons/react/3x2 */
+
+/*! dayjs */
+
+/*! dayjs/locale/cs */
+
+/*! dayjs/locale/de */
+
+/*! dayjs/locale/en */
+
+/*! dayjs/locale/es */
+
+/*! dayjs/locale/fr */
+
+/*! dayjs/locale/ja */
+
+/*! dayjs/locale/pt-br */
+
+/*! dayjs/locale/ru */
+
+/*! dayjs/locale/tr */
+
+/*! dayjs/locale/uk */
+
+/*! dayjs/locale/zh-cn */
+
+/*! dayjs/locale/zh-tw */
+
+/*! dayjs/plugin/localizedFormat */
+
+/*! dayjs/plugin/relativeTime */
+
+/*! emotion-theming */
+
+/*! github-markdown-css */
+
+/*! history */
+
+/*! i18next */
+
+/*! js-base64 */
+
+/*! localstorage-memory */
+
+/*! lodash/debounce */
+
+/*! lodash/isEmpty */
+
+/*! lodash/isNil */
+
+/*! lodash/isNumber */
+
+/*! lodash/isString */
+
+/*! normalize.css */
+
+/*! react */
+
+/*! react-autosuggest */
+
+/*! react-dom */
+
+/*! react-hook-form */
+
+/*! react-hot-loader */
+
+/*! react-i18next */
+
+/*! react-router */
+
+/*! react-router-dom */
+
+/*! react-virtualized/dist/commonjs/AutoSizer */
+
+/*! react-virtualized/dist/commonjs/CellMeasurer */
+
+/*! react-virtualized/dist/commonjs/List */
+
+/*! react-virtualized/dist/commonjs/WindowScroller */
+
+/*! validator/lib/isEmail */
+
+/*! validator/lib/isURL */
+
+/*! verdaccio-ui/components/ActionBar */
+
+/*! verdaccio-ui/components/AppBar */
+
+/*! verdaccio-ui/components/Author */
+
+/*! verdaccio-ui/components/AutoComplete */
+
+/*! verdaccio-ui/components/AutoComplete/AutoCompleteV2 */
+
+/*! verdaccio-ui/components/Avatar */
+
+/*! verdaccio-ui/components/Box */
+
+/*! verdaccio-ui/components/Button */
+
+/*! verdaccio-ui/components/Card */
+
+/*! verdaccio-ui/components/CardActions */
+
+/*! verdaccio-ui/components/CardContent */
+
+/*! verdaccio-ui/components/Chip */
+
+/*! verdaccio-ui/components/CopyToClipBoard */
+
+/*! verdaccio-ui/components/Dialog */
+
+/*! verdaccio-ui/components/DialogActions */
+
+/*! verdaccio-ui/components/DialogContent */
+
+/*! verdaccio-ui/components/DialogTitle */
+
+/*! verdaccio-ui/components/Divider */
+
+/*! verdaccio-ui/components/FloatingActionButton */
+
+/*! verdaccio-ui/components/Grid */
+
+/*! verdaccio-ui/components/Heading */
+
+/*! verdaccio-ui/components/IconButton */
+
+/*! verdaccio-ui/components/Icons */
+
+/*! verdaccio-ui/components/InputAdornment */
+
+/*! verdaccio-ui/components/Label */
+
+/*! verdaccio-ui/components/Link */
+
+/*! verdaccio-ui/components/List */
+
+/*! verdaccio-ui/components/ListItem */
+
+/*! verdaccio-ui/components/ListItemText */
+
+/*! verdaccio-ui/components/Loading */
+
+/*! verdaccio-ui/components/Logo */
+
+/*! verdaccio-ui/components/Menu */
+
+/*! verdaccio-ui/components/MenuItem */
+
+/*! verdaccio-ui/components/NotFound */
+
+/*! verdaccio-ui/components/Paper */
+
+/*! verdaccio-ui/components/SnackbarContent */
+
+/*! verdaccio-ui/components/Tab */
+
+/*! verdaccio-ui/components/Tabs */
+
+/*! verdaccio-ui/components/Text */
+
+/*! verdaccio-ui/components/TextField */
+
+/*! verdaccio-ui/components/Toolbar */
+
+/*! verdaccio-ui/components/Tooltip */
+
+/*! verdaccio-ui/design-tokens/StyleBaseline */
+
+/*! verdaccio-ui/design-tokens/ThemeContext */
+
+/*! verdaccio-ui/design-tokens/load-dayjs-locale */
+
+/*! verdaccio-ui/design-tokens/useOnClickOutside */
+
+/*! verdaccio-ui/providers/API/APIProvider */
+
+/*! verdaccio-ui/providers/config */
+
+/*! verdaccio-ui/utils/cli-utils */
+
+/*! verdaccio-ui/utils/colors */
+
+/*! verdaccio-ui/utils/constants */
+
+/*! verdaccio-ui/utils/file-size */
+
+/*! verdaccio-ui/utils/login */
+
+/*! verdaccio-ui/utils/package */
+
+/*! verdaccio-ui/utils/sec-utils */
+
+/*! verdaccio-ui/utils/storage */
+
+/*! verdaccio-ui/utils/url */
+
+/*! verdaccio-ui/utils/windows */
+
+/*! xss */
+
+/*!***********************!*\
+  !*** ./src/index.tsx ***!
+  \***********************/
+
+/*!************************!*\
+  !*** ./types/index.ts ***!
+  \************************/
+
+/*!*************************!*\
+  !*** ./src/App/App.tsx ***!
+  \*************************/
+
+/*!**************************!*\
+  !*** ./lib/constants.ts ***!
+  \**************************/
+
+/*!**************************!*\
+  !*** ./src/App/index.ts ***!
+  \**************************/
+
+/*!**************************!*\
+  !*** ./src/utils/url.ts ***!
+  \**************************/
+
+/*!****************************!*\
+  !*** ./src/i18n/config.ts ***!
+  \****************************/
+
+/*!****************************!*\
+  !*** ./src/utils/login.ts ***!
+  \****************************/
+
+/*!*****************************!*\
+  !*** ./src/utils/colors.ts ***!
+  \*****************************/
+
+/*!******************************!*\
+  !*** ./src/App/AppRoute.tsx ***!
+  \******************************/
+
+/*!******************************!*\
+  !*** ./src/utils/package.ts ***!
+  \******************************/
+
+/*!******************************!*\
+  !*** ./src/utils/storage.ts ***!
+  \******************************/
+
+/*!******************************!*\
+  !*** ./src/utils/windows.ts ***!
+  \******************************/
+
+/*!*******************************!*\
+  !*** ./src/App/AppContext.ts ***!
+  \*******************************/
+
+/*!********************************!*\
+  !*** ./src/components/Box.tsx ***!
+  \********************************/
+
+/*!********************************!*\
+  !*** ./src/components/Tab.tsx ***!
+  \********************************/
+
+/*!********************************!*\
+  !*** ./src/utils/cli-utils.ts ***!
+  \********************************/
+
+/*!********************************!*\
+  !*** ./src/utils/constants.ts ***!
+  \********************************/
+
+/*!********************************!*\
+  !*** ./src/utils/file-size.ts ***!
+  \********************************/
+
+/*!********************************!*\
+  !*** ./src/utils/sec-utils.ts ***!
+  \********************************/
+
+/*!*********************************!*\
+  !*** ./src/App/Footer/index.ts ***!
+  \*********************************/
+
+/*!*********************************!*\
+  !*** ./src/App/Header/index.ts ***!
+  \*********************************/
+
+/*!*********************************!*\
+  !*** ./src/components/Card.tsx ***!
+  \*********************************/
+
+/*!*********************************!*\
+  !*** ./src/components/Chip.tsx ***!
+  \*********************************/
+
+/*!*********************************!*\
+  !*** ./src/components/Grid.tsx ***!
+  \*********************************/
+
+/*!*********************************!*\
+  !*** ./src/components/Link.tsx ***!
+  \*********************************/
+
+/*!*********************************!*\
+  !*** ./src/components/List.tsx ***!
+  \*********************************/
+
+/*!*********************************!*\
+  !*** ./src/components/Menu.tsx ***!
+  \*********************************/
+
+/*!*********************************!*\
+  !*** ./src/components/Tabs.tsx ***!
+  \*********************************/
+
+/*!*********************************!*\
+  !*** ./src/pages/home/Home.tsx ***!
+  \*********************************/
+
+/*!*********************************!*\
+  !*** ./src/pages/home/index.ts ***!
+  \*********************************/
+
+/*!**********************************!*\
+  !*** ./src/App/Footer/styles.ts ***!
+  \**********************************/
+
+/*!**********************************!*\
+  !*** ./src/App/Header/styles.ts ***!
+  \**********************************/
+
+/*!**********************************!*\
+  !*** ./src/components/Paper.tsx ***!
+  \**********************************/
+
+/*!**********************************!*\
+  !*** ./src/i18n/crowdin/ui.json ***!
+  \**********************************/
+
+/*!**********************************!*\
+  !*** ./src/providers/API/api.ts ***!
+  \**********************************/
+
+/*!***********************************!*\
+  !*** ./src/App/Footer/Footer.tsx ***!
+  \***********************************/
+
+/*!***********************************!*\
+  !*** ./src/App/Header/Header.tsx ***!
+  \***********************************/
+
+/*!***********************************!*\
+  !*** ./src/components/AppBar.tsx ***!
+  \***********************************/
+
+/*!***********************************!*\
+  !*** ./src/components/Avatar.tsx ***!
+  \***********************************/
+
+/*!***********************************!*\
+  !*** ./src/components/Button.tsx ***!
+  \***********************************/
+
+/*!***********************************!*\
+  !*** ./src/components/Dialog.tsx ***!
+  \***********************************/
+
+/*!************************************!*\
+  !*** ./src/App/utils/loadable.tsx ***!
+  \************************************/
+
+/*!************************************!*\
+  !*** ./src/components/Divider.tsx ***!
+  \************************************/
+
+/*!************************************!*\
+  !*** ./src/components/Heading.tsx ***!
+  \************************************/
+
+/*!************************************!*\
+  !*** ./src/components/SvgIcon.tsx ***!
+  \************************************/
+
+/*!************************************!*\
+  !*** ./src/components/Toolbar.tsx ***!
+  \************************************/
+
+/*!************************************!*\
+  !*** ./src/components/Tooltip.tsx ***!
+  \************************************/
+
+/*!************************************!*\
+  !*** ./src/design-tokens/theme.ts ***!
+  \************************************/
+
+/*!************************************!*\
+  !*** ./src/pages/Version/index.ts ***!
+  \************************************/
+
+/*!*************************************!*\
+  !*** ./src/components/ListItem.tsx ***!
+  \*************************************/
+
+/*!*************************************!*\
+  !*** ./src/components/MenuItem.tsx ***!
+  \*************************************/
+
+/*!**************************************!*\
+  !*** ./src/components/Icons/Law.tsx ***!
+  \**************************************/
+
+/*!**************************************!*\
+  !*** ./src/components/Logo/Logo.tsx ***!
+  \**************************************/
+
+/*!**************************************!*\
+  !*** ./src/components/Logo/index.ts ***!
+  \**************************************/
+
+/*!**************************************!*\
+  !*** ./src/components/Text/Text.tsx ***!
+  \**************************************/
+
+/*!**************************************!*\
+  !*** ./src/components/Text/index.ts ***!
+  \**************************************/
+
+/*!**************************************!*\
+  !*** ./src/i18n/enabledLanguages.ts ***!
+  \**************************************/
+
+/*!**************************************!*\
+  !*** ./src/pages/Version/context.ts ***!
+  \**************************************/
+
+/*!**************************************!*\
+  !*** ./src/providers/API/storage.ts ***!
+  \**************************************/
+
+/*!***************************************!*\
+  !*** ./src/App/Header/HeaderLeft.tsx ***!
+  \***************************************/
+
+/*!***************************************!*\
+  !*** ./src/App/Header/HeaderMenu.tsx ***!
+  \***************************************/
+
+/*!***************************************!*\
+  !*** ./src/components/IconButton.tsx ***!
+  \***************************************/
+
+/*!***************************************!*\
+  !*** ./src/components/Icons/Time.tsx ***!
+  \***************************************/
+
+/*!***************************************!*\
+  !*** ./src/components/Icons/index.ts ***!
+  \***************************************/
+
+/*!***************************************!*\
+  !*** ./src/components/Label/index.ts ***!
+  \***************************************/
+
+/*!***************************************!*\
+  !*** ./src/pages/Version/Version.tsx ***!
+  \***************************************/
+
+/*!***************************************!*\
+  !*** ./src/providers/config/index.ts ***!
+  \***************************************/
+
+/*!****************************************!*\
+  !*** ./src/App/AppContextProvider.tsx ***!
+  \****************************************/
+
+/*!****************************************!*\
+  !*** ./src/App/Header/HeaderRight.tsx ***!
+  \****************************************/
+
+/*!****************************************!*\
+  !*** ./src/App/Header/Search/index.ts ***!
+  \****************************************/
+
+/*!****************************************!*\
+  !*** ./src/components/Author/index.ts ***!
+  \****************************************/
+
+/*!****************************************!*\
+  !*** ./src/components/CardActions.tsx ***!
+  \****************************************/
+
+/*!****************************************!*\
+  !*** ./src/components/CardContent.tsx ***!
+  \****************************************/
+
+/*!****************************************!*\
+  !*** ./src/components/DialogTitle.tsx ***!
+  \****************************************/
+
+/*!****************************************!*\
+  !*** ./src/components/Icons/Earth.tsx ***!
+  \****************************************/
+
+/*!****************************************!*\
+  !*** ./src/components/Label/Label.tsx ***!
+  \****************************************/
+
+/*!*****************************************!*\
+  !*** ./src/components/Author/styles.ts ***!
+  \*****************************************/
+
+/*!*****************************************!*\
+  !*** ./src/components/ListItemText.tsx ***!
+  \*****************************************/
+
+/*!*****************************************!*\
+  !*** ./src/components/Loading/index.ts ***!
+  \*****************************************/
+
+/*!******************************************!*\
+  !*** ./src/App/Header/HeaderToolTip.tsx ***!
+  \******************************************/
+
+/*!******************************************!*\
+  !*** ./src/App/Header/Search/Search.tsx ***!
+  \******************************************/
+
+/*!******************************************!*\
+  !*** ./src/components/Author/Author.tsx ***!
+  \******************************************/
+
+/*!******************************************!*\
+  !*** ./src/components/DialogActions.tsx ***!
+  \******************************************/
+
+/*!******************************************!*\
+  !*** ./src/components/DialogContent.tsx ***!
+  \******************************************/
+
+/*!******************************************!*\
+  !*** ./src/components/Icons/Version.tsx ***!
+  \******************************************/
+
+/*!******************************************!*\
+  !*** ./src/components/Loading/styles.ts ***!
+  \******************************************/
+
+/*!******************************************!*\
+  !*** ./src/components/Logo/img/logo.svg ***!
+  \******************************************/
+
+/*!******************************************!*\
+  !*** ./src/components/NotFound/index.ts ***!
+  \******************************************/
+
+/*!*******************************************!*\
+  !*** ./src/App/Header/LanguageSwitch.tsx ***!
+  \*******************************************/
+
+/*!*******************************************!*\
+  !*** ./src/components/ActionBar/index.ts ***!
+  \*******************************************/
+
+/*!*******************************************!*\
+  !*** ./src/components/Text/TextConfig.ts ***!
+  \*******************************************/
+
+/*!*******************************************!*\
+  !*** ./src/components/TextField/index.ts ***!
+  \*******************************************/
+
+/*!*******************************************!*\
+  !*** ./src/design-tokens/ResetStyles.tsx ***!
+  \*******************************************/
+
+/*!*******************************************!*\
+  !*** ./src/design-tokens/ThemeContext.ts ***!
+  \*******************************************/
+
+/*!*******************************************!*\
+  !*** ./src/providers/API/APIProvider.tsx ***!
+  \*******************************************/
+
+/*!********************************************!*\
+  !*** ./src/App/Header/HeaderGreetings.tsx ***!
+  \********************************************/
+
+/*!********************************************!*\
+  !*** ./src/components/CopyToClipBoard.tsx ***!
+  \********************************************/
+
+/*!********************************************!*\
+  !*** ./src/components/Loading/Loading.tsx ***!
+  \********************************************/
+
+/*!********************************************!*\
+  !*** ./src/components/SnackbarContent.tsx ***!
+  \********************************************/
+
+/*!*********************************************!*\
+  !*** ./src/App/Header/HeaderInfoDialog.tsx ***!
+  \*********************************************/
+
+/*!*********************************************!*\
+  !*** ./src/App/Header/LoginDialog/index.ts ***!
+  \*********************************************/
+
+/*!*********************************************!*\
+  !*** ./src/components/CircularProgress.tsx ***!
+  \*********************************************/
+
+/*!*********************************************!*\
+  !*** ./src/components/Icons/FileBinary.tsx ***!
+  \*********************************************/
+
+/*!*********************************************!*\
+  !*** ./src/design-tokens/StyleBaseline.tsx ***!
+  \*********************************************/
+
+/*!*********************************************!*\
+  !*** ./src/design-tokens/ThemeProvider.tsx ***!
+  \*********************************************/
+
+/*!*********************************************!*\
+  !*** ./src/pages/Version/VersionLayout.tsx ***!
+  \*********************************************/
+
+/*!*********************************************!*\
+  !*** ./src/pages/Version/version-config.ts ***!
+  \*********************************************/
+
+/*!*********************************************!*\
+  !*** ./src/pages/home/PackageList/index.ts ***!
+  \*********************************************/
+
+/*!**********************************************!*\
+  !*** ./src/App/Header/HeaderToolTipIcon.tsx ***!
+  \**********************************************/
+
+/*!**********************************************!*\
+  !*** ./src/components/AutoComplete/index.ts ***!
+  \**********************************************/
+
+/*!**********************************************!*\
+  !*** ./src/components/NotFound/NotFound.tsx ***!
+  \**********************************************/
+
+/*!**********************************************!*\
+  !*** ./src/design-tokens/useLocalStorage.ts ***!
+  \**********************************************/
+
+/*!************************************************!*\
+  !*** ./src/components/ActionBar/ActionBar.tsx ***!
+  \************************************************/
+
+/*!************************************************!*\
+  !*** ./src/components/AutoComplete/styles.tsx ***!
+  \************************************************/
+
+/*!************************************************!*\
+  !*** ./src/components/InputAdornment/index.ts ***!
+  \************************************************/
+
+/*!************************************************!*\
+  !*** ./src/components/TextField/TextField.tsx ***!
+  \************************************************/
+
+/*!************************************************!*\
+  !*** ./src/design-tokens/load-dayjs-locale.ts ***!
+  \************************************************/
+
+/*!************************************************!*\
+  !*** ./src/design-tokens/useOnClickOutside.ts ***!
+  \************************************************/
+
+/*!*************************************************!*\
+  !*** ./src/components/FloatingActionButton.tsx ***!
+  \*************************************************/
+
+/*!*************************************************!*\
+  !*** ./src/components/NotFound/img/package.svg ***!
+  \*************************************************/
+
+/*!**************************************************!*\
+  !*** ./src/components/Loading/Spinner/index.tsx ***!
+  \**************************************************/
+
+/*!**************************************************!*\
+  !*** ./src/pages/Version/DetailSidebar/index.ts ***!
+  \**************************************************/
+
+/*!**************************************************!*\
+  !*** ./src/pages/home/PackageList/Help/Help.tsx ***!
+  \**************************************************/
+
+/*!**************************************************!*\
+  !*** ./src/pages/home/PackageList/Help/index.ts ***!
+  \**************************************************/
+
+/*!***************************************************!*\
+  !*** ./src/App/Header/Search/SearchAdornment.tsx ***!
+  \***************************************************/
+
+/*!***************************************************!*\
+  !*** ./src/pages/home/PackageList/Help/styles.ts ***!
+  \***************************************************/
+
+/*!****************************************************!*\
+  !*** ./src/App/Header/LoginDialog/LoginDialog.tsx ***!
+  \****************************************************/
+
+/*!****************************************************!*\
+  !*** ./src/App/Header/RegistryInfoDialog/index.ts ***!
+  \****************************************************/
+
+/*!****************************************************!*\
+  !*** ./src/components/Loading/Spinner/Spinner.tsx ***!
+  \****************************************************/
+
+/*!****************************************************!*\
+  !*** ./src/pages/Version/DetailContainer/index.ts ***!
+  \****************************************************/
+
+/*!****************************************************!*\
+  !*** ./src/pages/home/PackageList/PackageList.tsx ***!
+  \****************************************************/
+
+/*!*****************************************************!*\
+  !*** ./src/App/Header/RegistryInfoContent/index.ts ***!
+  \*****************************************************/
+
+/*!*****************************************************!*\
+  !*** ./src/App/Header/RegistryInfoDialog/styles.ts ***!
+  \*****************************************************/
+
+/*!*****************************************************!*\
+  !*** ./src/pages/Version/get-route-package-name.ts ***!
+  \*****************************************************/
+
+/*!*****************************************************!*\
+  !*** ./src/pages/home/PackageList/Package/index.ts ***!
+  \*****************************************************/
+
+/*!******************************************************!*\
+  !*** ./src/components/ActionBar/ActionBarAction.tsx ***!
+  \******************************************************/
+
+/*!******************************************************!*\
+  !*** ./src/components/AutoComplete/AutoComplete.tsx ***!
+  \******************************************************/
+
+/*!******************************************************!*\
+  !*** ./src/i18n/download_translations/ar-SA/ui.json ***!
+  \******************************************************/
+
+/*!******************************************************!*\
+  !*** ./src/i18n/download_translations/cs-CZ/ui.json ***!
+  \******************************************************/
+
+/*!******************************************************!*\
+  !*** ./src/i18n/download_translations/de-DE/ui.json ***!
+  \******************************************************/
+
+/*!******************************************************!*\
+  !*** ./src/i18n/download_translations/es-ES/ui.json ***!
+  \******************************************************/
+
+/*!******************************************************!*\
+  !*** ./src/i18n/download_translations/fi-FI/ui.json ***!
+  \******************************************************/
+
+/*!******************************************************!*\
+  !*** ./src/i18n/download_translations/fr-FR/ui.json ***!
+  \******************************************************/
+
+/*!******************************************************!*\
+  !*** ./src/i18n/download_translations/gl-ES/ui.json ***!
+  \******************************************************/
+
+/*!******************************************************!*\
+  !*** ./src/i18n/download_translations/hi-IN/ui.json ***!
+  \******************************************************/
+
+/*!******************************************************!*\
+  !*** ./src/i18n/download_translations/it-IT/ui.json ***!
+  \******************************************************/
+
+/*!******************************************************!*\
+  !*** ./src/i18n/download_translations/ja-JP/ui.json ***!
+  \******************************************************/
+
+/*!******************************************************!*\
+  !*** ./src/i18n/download_translations/ko-KR/ui.json ***!
+  \******************************************************/
+
+/*!******************************************************!*\
+  !*** ./src/i18n/download_translations/pl-PL/ui.json ***!
+  \******************************************************/
+
+/*!******************************************************!*\
+  !*** ./src/i18n/download_translations/pt-BR/ui.json ***!
+  \******************************************************/
+
+/*!******************************************************!*\
+  !*** ./src/i18n/download_translations/pt-PT/ui.json ***!
+  \******************************************************/
+
+/*!******************************************************!*\
+  !*** ./src/i18n/download_translations/ro-RO/ui.json ***!
+  \******************************************************/
+
+/*!******************************************************!*\
+  !*** ./src/i18n/download_translations/ru-RU/ui.json ***!
+  \******************************************************/
+
+/*!******************************************************!*\
+  !*** ./src/i18n/download_translations/si-LK/ui.json ***!
+  \******************************************************/
+
+/*!******************************************************!*\
+  !*** ./src/i18n/download_translations/sr-CS/ui.json ***!
+  \******************************************************/
+
+/*!******************************************************!*\
+  !*** ./src/i18n/download_translations/sr-SP/ui.json ***!
+  \******************************************************/
+
+/*!******************************************************!*\
+  !*** ./src/i18n/download_translations/tg-TJ/ui.json ***!
+  \******************************************************/
+
+/*!******************************************************!*\
+  !*** ./src/i18n/download_translations/vi-VN/ui.json ***!
+  \******************************************************/
+
+/*!******************************************************!*\
+  !*** ./src/i18n/download_translations/yo-NG/ui.json ***!
+  \******************************************************/
+
+/*!******************************************************!*\
+  !*** ./src/i18n/download_translations/zh-CN/ui.json ***!
+  \******************************************************/
+
+/*!******************************************************!*\
+  !*** ./src/i18n/download_translations/zh-TW/ui.json ***!
+  \******************************************************/
+
+/*!******************************************************!*\
+  !*** ./src/pages/Version/VersionContextProvider.tsx ***!
+  \******************************************************/
+
+/*!******************************************************!*\
+  !*** ./src/pages/home/PackageList/Package/styles.ts ***!
+  \******************************************************/
+
+/*!*******************************************************!*\
+  !*** ./src/i18n/download_translations/fil-PH/ui.json ***!
+  \*******************************************************/
+
+/*!*******************************************************!*\
+  !*** ./src/pages/Version/DetailSidebar/Dist/Dist.tsx ***!
+  \*******************************************************/
+
+/*!*******************************************************!*\
+  !*** ./src/pages/Version/DetailSidebar/Dist/index.ts ***!
+  \*******************************************************/
+
+/*!*******************************************************!*\
+  !*** ./src/pages/Version/is-package-version-valid.ts ***!
+  \*******************************************************/
+
+/*!********************************************************!*\
+  !*** ./src/App/Header/LoginDialog/LoginDialogForm.tsx ***!
+  \********************************************************/
+
+/*!********************************************************!*\
+  !*** ./src/components/AutoComplete/AutoCompleteV2.tsx ***!
+  \********************************************************/
+
+/*!********************************************************!*\
+  !*** ./src/pages/Version/DetailSidebar/Dist/styles.ts ***!
+  \********************************************************/
+
+/*!********************************************************!*\
+  !*** ./src/pages/home/PackageList/Package/Package.tsx ***!
+  \********************************************************/
+
+/*!********************************************************!*\
+  !*** ./src/pages/home/PackageList/Package/Tag/Tag.tsx ***!
+  \********************************************************/
+
+/*!*********************************************************!*\
+  !*** ./src/components/AutoComplete/useAutoComplete.tsx ***!
+  \*********************************************************/
+
+/*!*********************************************************!*\
+  !*** ./src/pages/home/PackageList/Package/Tag/index.ts ***!
+  \*********************************************************/
+
+/*!**********************************************************!*\
+  !*** ./src/App/Header/LoginDialog/LoginDialogHeader.tsx ***!
+  \**********************************************************/
+
+/*!**********************************************************!*\
+  !*** ./src/components/InputAdornment/InputAdornment.tsx ***!
+  \**********************************************************/
+
+/*!**********************************************************!*\
+  !*** ./src/components/Logo/img/logo-black-and-white.svg ***!
+  \**********************************************************/
+
+/*!**********************************************************!*\
+  !*** ./src/pages/Version/DetailSidebar/Engines/index.ts ***!
+  \**********************************************************/
+
+/*!**********************************************************!*\
+  !*** ./src/pages/Version/DetailSidebar/Install/index.ts ***!
+  \**********************************************************/
+
+/*!**********************************************************!*\
+  !*** ./src/pages/home/PackageList/Package/Tag/styles.ts ***!
+  \**********************************************************/
+
+/*!***********************************************************!*\
+  !*** ./src/pages/Version/DetailContainer/Readme/index.ts ***!
+  \***********************************************************/
+
+/*!***********************************************************!*\
+  !*** ./src/pages/Version/DetailSidebar/DetailSidebar.tsx ***!
+  \***********************************************************/
+
+/*!***********************************************************!*\
+  !*** ./src/pages/Version/DetailSidebar/Engines/styles.ts ***!
+  \***********************************************************/
+
+/*!***********************************************************!*\
+  !*** ./src/providers/config/AppConfigurationProvider.tsx ***!
+  \***********************************************************/
+
+/*!************************************************************!*\
+  !*** ./src/pages/Version/DetailContainer/NoItems/index.ts ***!
+  \************************************************************/
+
+/*!************************************************************!*\
+  !*** ./src/pages/Version/DetailContainer/UpLinks/index.ts ***!
+  \************************************************************/
+
+/*!*************************************************************!*\
+  !*** ./src/App/Header/LoginDialog/LoginDialogFormError.tsx ***!
+  \*************************************************************/
+
+/*!*************************************************************!*\
+  !*** ./src/pages/Version/DetailContainer/Readme/Readme.tsx ***!
+  \*************************************************************/
+
+/*!*************************************************************!*\
+  !*** ./src/pages/Version/DetailContainer/UpLinks/styles.ts ***!
+  \*************************************************************/
+
+/*!*************************************************************!*\
+  !*** ./src/pages/Version/DetailContainer/Versions/index.ts ***!
+  \*************************************************************/
+
+/*!*************************************************************!*\
+  !*** ./src/pages/Version/DetailSidebar/Developers/index.ts ***!
+  \*************************************************************/
+
+/*!*************************************************************!*\
+  !*** ./src/pages/Version/DetailSidebar/Engines/Engines.tsx ***!
+  \*************************************************************/
+
+/*!*************************************************************!*\
+  !*** ./src/pages/Version/DetailSidebar/Install/Install.tsx ***!
+  \*************************************************************/
+
+/*!*************************************************************!*\
+  !*** ./src/pages/Version/DetailSidebar/Install/img/npm.svg ***!
+  \*************************************************************/
+
+/*!*************************************************************!*\
+  !*** ./src/pages/Version/DetailSidebar/Repository/index.ts ***!
+  \*************************************************************/
+
+/*!**************************************************************!*\
+  !*** ./src/pages/Version/DetailContainer/Versions/styles.ts ***!
+  \**************************************************************/
+
+/*!**************************************************************!*\
+  !*** ./src/pages/Version/DetailSidebar/Engines/img/node.png ***!
+  \**************************************************************/
+
+/*!**************************************************************!*\
+  !*** ./src/pages/Version/DetailSidebar/Install/img/pnpm.svg ***!
+  \**************************************************************/
+
+/*!**************************************************************!*\
+  !*** ./src/pages/Version/DetailSidebar/Install/img/yarn.svg ***!
+  \**************************************************************/
+
+/*!***************************************************************!*\
+  !*** ./src/App/Header/LoginDialog/LoginDialogCloseButton.tsx ***!
+  \***************************************************************/
+
+/*!***************************************************************!*\
+  !*** ./src/pages/Version/DetailContainer/Deprecated/index.ts ***!
+  \***************************************************************/
+
+/*!***************************************************************!*\
+  !*** ./src/pages/Version/DetailContainer/DetailContainer.tsx ***!
+  \***************************************************************/
+
+/*!***************************************************************!*\
+  !*** ./src/pages/Version/DetailContainer/NoItems/NoItems.tsx ***!
+  \***************************************************************/
+
+/*!***************************************************************!*\
+  !*** ./src/pages/Version/DetailContainer/UpLinks/UpLinks.tsx ***!
+  \***************************************************************/
+
+/*!****************************************************************!*\
+  !*** ./src/pages/Version/DetailSidebar/DetailSidebarTitle.tsx ***!
+  \****************************************************************/
+
+/*!****************************************************************!*\
+  !*** ./src/pages/Version/DetailSidebar/Repository/img/git.png ***!
+  \****************************************************************/
+
+/*!*****************************************************************!*\
+  !*** ./src/i18n/download_translations/ sync ^\.\/.*\/ui\.json$ ***!
+  \*****************************************************************/
+
+/*!*****************************************************************!*\
+  !*** ./src/pages/Version/DetailContainer/Dependencies/index.ts ***!
+  \*****************************************************************/
+
+/*!*****************************************************************!*\
+  !*** ./src/pages/Version/DetailContainer/Versions/Versions.tsx ***!
+  \*****************************************************************/
+
+/*!******************************************************************!*\
+  !*** ./src/App/Header/RegistryInfoDialog/RegistryInfoDialog.tsx ***!
+  \******************************************************************/
+
+/*!******************************************************************!*\
+  !*** ./src/pages/Version/DetailContainer/Dependencies/styles.ts ***!
+  \******************************************************************/
+
+/*!*******************************************************************!*\
+  !*** ./src/pages/Version/DetailContainer/DetailContainerTabs.tsx ***!
+  \*******************************************************************/
+
+/*!*******************************************************************!*\
+  !*** ./src/pages/Version/DetailSidebar/Developers/Developers.tsx ***!
+  \*******************************************************************/
+
+/*!*******************************************************************!*\
+  !*** ./src/pages/Version/DetailSidebar/Repository/Repository.tsx ***!
+  \*******************************************************************/
+
+/*!********************************************************************!*\
+  !*** ./src/App/Header/RegistryInfoContent/RegistryInfoContent.tsx ***!
+  \********************************************************************/
+
+/*!*********************************************************************!*\
+  !*** ./src/pages/Version/DetailContainer/Deprecated/Deprecated.tsx ***!
+  \*********************************************************************/
+
+/*!*********************************************************************!*\
+  !*** ./src/pages/Version/DetailSidebar/DetailSidebarFundButton.tsx ***!
+  \*********************************************************************/
+
+/*!*********************************************************************!*\
+  !*** ./src/pages/Version/DetailSidebar/Install/InstallListItem.tsx ***!
+  \*********************************************************************/
+
+/*!**********************************************************************!*\
+  !*** ./src/pages/Version/DetailContainer/DetailContainerContent.tsx ***!
+  \**********************************************************************/
+
+/*!************************************************************************!*\
+  !*** ./src/pages/Version/DetailContainer/Versions/VersionsTagList.tsx ***!
+  \************************************************************************/
+
+/*!************************************************************************!*\
+  !*** ./src/pages/Version/DetailSidebar/Developers/DevelopersTitle.tsx ***!
+  \************************************************************************/
+
+/*!*************************************************************************!*\
+  !*** ./src/pages/Version/DetailContainer/Dependencies/Dependencies.tsx ***!
+  \*************************************************************************/
+
+/*!****************************************************************************!*\
+  !*** ./src/pages/Version/DetailContainer/DetailContainerContentReadme.tsx ***!
+  \****************************************************************************/
+
+/*!****************************************************************************!*\
+  !*** ./src/pages/Version/DetailContainer/Versions/VersionsHistoryList.tsx ***!
+  \****************************************************************************/
+
+/*!***********************************************************************************!*\
+  !*** ./src/pages/Version/DetailSidebar/Developers/get-unique-developer-values.ts ***!
+  \***********************************************************************************/
+
+/*!****************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 16 16%27 version=%271.1%27 width=%2716%27 height=%2716%27 aria-hidden=%27true%27%3E%3Cpath fill-rule=%27evenodd%27 d=%27M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z%27%3E%3C/path%3E%3C/svg%3E ***!
+  \****************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/

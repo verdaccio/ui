@@ -6,7 +6,7 @@ preserve_hierarchy: true
 files:
   [
     {
-      source: '/ui-theme/src/i18n/crowdin/**/*',
-      translation: '/ui-theme/src/i18n/download_translations/%locale%/**/%original_file_name%',
+      source: 'packages/plugins/ui-theme/src/i18n/crowdin/**/*',
+      translation: '/packages/plugins/ui-theme/src/i18n/download_translations/%locale%/**/%original_file_name%',
     },
   ]

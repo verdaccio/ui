@@ -1,0 +1,40 @@
+/*!
+ * 
+ *     Name: NotFound
+ *     Generated on: 1642193848705
+ *     Package: @verdaccio/ui-theme
+ *     Version: v4.0.0-beta.1
+ *     License: MIT
+ *     https://www.verdaccio.org
+ *
+ */
+
+/*! ../Box */
+
+/*! ../Button */
+
+/*! ../Heading */
+
+/*! ./NotFound */
+
+/*! ./img/package.svg */
+
+/*! @emotion/styled/base */
+
+/*! react */
+
+/*! react-i18next */
+
+/*! react-router-dom */
+
+/*!******************************************!*\
+  !*** ./src/components/NotFound/index.ts ***!
+  \******************************************/
+
+/*!**********************************************!*\
+  !*** ./src/components/NotFound/NotFound.tsx ***!
+  \**********************************************/
+
+/*!*************************************************!*\
+  !*** ./src/components/NotFound/img/package.svg ***!
+  \*************************************************/

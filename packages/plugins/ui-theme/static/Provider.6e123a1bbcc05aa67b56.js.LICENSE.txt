@@ -1,0 +1,32 @@
+/*!
+ * 
+ *     Name: Provider
+ *     Generated on: 1639427088314
+ *     Package: @verdaccio/ui-theme
+ *     Version: v6.0.0-6-next.12
+ *     License: MIT
+ *     https://www.verdaccio.org
+ *
+ */
+
+/*! ./context */
+
+/*! ./get-route-package-name */
+
+/*! react */
+
+/*! react-redux */
+
+/*! react-router-dom */
+
+/*!**************************************!*\
+  !*** ./src/pages/Version/context.ts ***!
+  \**************************************/
+
+/*!*****************************************************!*\
+  !*** ./src/pages/Version/get-route-package-name.ts ***!
+  \*****************************************************/
+
+/*!******************************************************!*\
+  !*** ./src/pages/Version/VersionContextProvider.tsx ***!
+  \******************************************************/

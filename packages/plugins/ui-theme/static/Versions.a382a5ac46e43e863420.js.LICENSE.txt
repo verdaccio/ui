@@ -1,0 +1,64 @@
+/*!
+ * 
+ *     Name: Versions
+ *     Generated on: 1637910604940
+ *     Package: @verdaccio/ui-theme
+ *     Version: v6.0.0-6-next.12
+ *     License: MIT
+ *     https://www.verdaccio.org
+ *
+ */
+
+/*! ../../../../../lib/constants */
+
+/*! ../../context */
+
+/*! ./Versions */
+
+/*! ./VersionsHistoryList */
+
+/*! ./VersionsTagList */
+
+/*! ./styles */
+
+/*! @emotion/styled/base */
+
+/*! react */
+
+/*! react-i18next */
+
+/*! verdaccio-ui/components/Link */
+
+/*! verdaccio-ui/components/List */
+
+/*! verdaccio-ui/components/ListItem */
+
+/*! verdaccio-ui/components/ListItemText */
+
+/*! verdaccio-ui/components/Text */
+
+/*! verdaccio-ui/utils/package */
+
+/*!**************************!*\
+  !*** ./lib/constants.ts ***!
+  \**************************/
+
+/*!*************************************************************!*\
+  !*** ./src/pages/Version/DetailContainer/Versions/index.ts ***!
+  \*************************************************************/
+
+/*!**************************************************************!*\
+  !*** ./src/pages/Version/DetailContainer/Versions/styles.ts ***!
+  \**************************************************************/
+
+/*!*****************************************************************!*\
+  !*** ./src/pages/Version/DetailContainer/Versions/Versions.tsx ***!
+  \*****************************************************************/
+
+/*!************************************************************************!*\
+  !*** ./src/pages/Version/DetailContainer/Versions/VersionsTagList.tsx ***!
+  \************************************************************************/
+
+/*!****************************************************************************!*\
+  !*** ./src/pages/Version/DetailContainer/Versions/VersionsHistoryList.tsx ***!
+  \****************************************************************************/

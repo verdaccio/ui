@@ -1,0 +1,66 @@
+/*!
+ * 
+ *     Name: Engines
+ *     Generated on: 1637910604940
+ *     Package: @verdaccio/ui-theme
+ *     Version: v6.0.0-6-next.12
+ *     License: MIT
+ *     https://www.verdaccio.org
+ *
+ */
+
+/*! ../../context */
+
+/*! ../Install/img/npm.svg */
+
+/*! ./Engines */
+
+/*! ./img/node.png */
+
+/*! ./styles */
+
+/*! @babel/runtime/helpers/extends */
+
+/*! @emotion/styled/base */
+
+/*! @mui/material/Grid */
+
+/*! react */
+
+/*! react-i18next */
+
+/*! verdaccio-ui/components/Avatar */
+
+/*! verdaccio-ui/components/Grid */
+
+/*! verdaccio-ui/components/List */
+
+/*! verdaccio-ui/components/ListItem */
+
+/*! verdaccio-ui/components/ListItemText */
+
+/*! verdaccio-ui/components/Text */
+
+/*!*********************************!*\
+  !*** ./src/components/Grid.tsx ***!
+  \*********************************/
+
+/*!**********************************************************!*\
+  !*** ./src/pages/Version/DetailSidebar/Engines/index.ts ***!
+  \**********************************************************/
+
+/*!***********************************************************!*\
+  !*** ./src/pages/Version/DetailSidebar/Engines/styles.ts ***!
+  \***********************************************************/
+
+/*!*************************************************************!*\
+  !*** ./src/pages/Version/DetailSidebar/Engines/Engines.tsx ***!
+  \*************************************************************/
+
+/*!*************************************************************!*\
+  !*** ./src/pages/Version/DetailSidebar/Install/img/npm.svg ***!
+  \*************************************************************/
+
+/*!**************************************************************!*\
+  !*** ./src/pages/Version/DetailSidebar/Engines/img/node.png ***!
+  \**************************************************************/

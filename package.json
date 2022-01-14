@@ -1,6 +1,7 @@
 {
-  "name": "@verdaccio/ui-theme",
-  "version": "3.4.1",
+  "name": "ui-theme-monorepo",
+  "version": "1.0.0",
+  "private": "true",
   "description": "Verdaccio User Interface",
   "author": {
     "name": "Verdaccio Core Team",

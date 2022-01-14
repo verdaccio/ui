@@ -1,0 +1,10 @@
+/*!
+ * 
+ *     Name: runtime
+ *     Generated on: 1635685901678
+ *     Package: @verdaccio/ui-theme
+ *     Version: v6.0.0-6-next.12
+ *     License: MIT
+ *     https://www.verdaccio.org
+ *
+ */
