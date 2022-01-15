@@ -6,6 +6,7 @@
     "@verdaccio/eslint-config": "1.0.0"
   },
   "changesets": [
-    "blue-meals-wink"
+    "blue-meals-wink",
+    "kind-tomatoes-cover"
   ]
 }

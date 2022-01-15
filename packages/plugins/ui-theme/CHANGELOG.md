@@ -1,5 +1,11 @@
 # Changelog
 
+## 4.1.0-beta.1
+
+### Minor Changes
+
+- f787c5c: feat: move all translations to crowdin
+
 ## 4.1.0-beta.0
 
 ### Minor Changes
