@@ -1,5 +1,11 @@
 # Changelog
 
+## 4.1.0-beta.2
+
+### Minor Changes
+
+- 4c478af: fix: missing search data endpoint prefix
+
 ## 4.1.0-beta.1
 
 ### Minor Changes
